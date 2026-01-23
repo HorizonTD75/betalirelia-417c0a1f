@@ -2,69 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LirElia Design System - Optimized for Low Vision / Accessibility */
-/* All colors MUST be HSL - High contrast ratios for WCAG AAA compliance */
+/* LirElia Design System - Warm Yellow/Cream Theme for Low Vision */
+/* Based on reference: warm yellow background, white cards, blue accents */
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Merriweather:wght@700;900&display=swap');
 
 @layer base {
   :root {
-    /* Primary: Deep trust blue - professional, calming */
-    --primary: 215 80% 25%;
-    --primary-foreground: 45 100% 96%;
+    /* Primary: Deep blue for text and accents */
+    --primary: 208 80% 32%;
+    --primary-foreground: 0 0% 100%;
     
-    /* Secondary: Warm gold - high visibility, welcoming */
-    --secondary: 42 90% 55%;
-    --secondary-foreground: 215 80% 15%;
+    /* Secondary: Warm golden yellow - main background accent */
+    --secondary: 43 90% 62%;
+    --secondary-foreground: 208 80% 20%;
     
-    /* Background: Warm cream - easier on eyes than pure white */
-    --background: 45 40% 97%;
-    --foreground: 215 60% 15%;
+    /* Background: Warm yellow/cream */
+    --background: 43 85% 78%;
+    --foreground: 208 70% 20%;
     
-    /* Cards: Slightly warmer for distinction */
-    --card: 45 30% 99%;
-    --card-foreground: 215 60% 15%;
+    /* Cards: White/cream for contrast */
+    --card: 0 0% 100%;
+    --card-foreground: 208 70% 20%;
     
-    /* Muted: Soft blue-gray */
-    --muted: 210 20% 92%;
-    --muted-foreground: 215 30% 40%;
+    /* Muted: Light cream for softer sections */
+    --muted: 35 50% 94%;
+    --muted-foreground: 208 40% 35%;
     
-    /* Accent: Teal for actions */
-    --accent: 175 60% 35%;
+    /* Accent: Teal/turquoise for actions */
+    --accent: 175 55% 42%;
     --accent-foreground: 0 0% 100%;
     
     /* Popover */
-    --popover: 45 30% 99%;
-    --popover-foreground: 215 60% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 208 70% 20%;
     
     /* Destructive */
     --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Borders - visible but not harsh */
-    --border: 215 30% 80%;
-    --input: 215 30% 85%;
-    --ring: 215 80% 35%;
+    /* Borders - visible but soft */
+    --border: 43 40% 75%;
+    --input: 43 40% 80%;
+    --ring: 208 80% 45%;
     
-    --radius: 0.75rem;
+    --radius: 1rem;
     
     /* Custom tokens for LirElia */
-    --hero-gradient: linear-gradient(135deg, hsl(215 80% 25%) 0%, hsl(215 70% 35%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(215 60% 15% / 0.15);
-    --card-shadow-hover: 0 8px 30px -4px hsl(215 60% 15% / 0.2);
-    --highlight: 42 90% 55%;
+    --hero-gradient: linear-gradient(135deg, hsl(43 85% 78%) 0%, hsl(43 80% 72%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(208 60% 15% / 0.1);
+    --card-shadow-hover: 0 8px 30px -4px hsl(208 60% 15% / 0.15);
+    --highlight: 43 90% 62%;
     --success: 145 60% 35%;
     --success-foreground: 0 0% 100%;
     
     /* Sidebar tokens */
-    --sidebar-background: 215 80% 20%;
-    --sidebar-foreground: 45 100% 96%;
-    --sidebar-primary: 42 90% 55%;
-    --sidebar-primary-foreground: 215 80% 15%;
-    --sidebar-accent: 215 70% 30%;
-    --sidebar-accent-foreground: 45 100% 96%;
-    --sidebar-border: 215 60% 35%;
-    --sidebar-ring: 42 90% 55%;
+    --sidebar-background: 208 80% 25%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 43 90% 62%;
+    --sidebar-primary-foreground: 208 80% 15%;
+    --sidebar-accent: 208 70% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 208 60% 40%;
+    --sidebar-ring: 43 90% 62%;
   }
 
   .dark {
@@ -140,11 +140,11 @@
 @layer components {
   /* High contrast section variants */
   .section-light {
-    @apply bg-background;
+    @apply bg-muted;
   }
   
   .section-cream {
-    @apply bg-muted;
+    @apply bg-background;
   }
   
   .section-primary {
@@ -157,7 +157,7 @@
 
   /* Card variants for accessibility */
   .card-elevated {
-    @apply bg-card rounded-xl border-2 border-border;
+    @apply bg-card rounded-2xl border-2 border-secondary/30;
     box-shadow: var(--card-shadow);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
@@ -168,7 +168,7 @@
   }
 
   .card-highlighted {
-    @apply bg-card rounded-xl border-2 border-secondary;
+    @apply bg-card rounded-2xl border-2 border-secondary;
     box-shadow: 0 0 0 4px hsl(var(--secondary) / 0.2), var(--card-shadow);
   }
 
@@ -208,7 +208,7 @@
 
   /* Badge/tag styles */
   .badge-info {
-    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-secondary/20 text-secondary-foreground border border-secondary/30;
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-primary/10 text-primary border border-primary/30;
   }
   
   .badge-success {
@@ -217,7 +217,7 @@
 
   /* Icon containers */
   .icon-circle {
-    @apply w-16 h-16 rounded-full flex items-center justify-center bg-secondary/20 text-secondary;
+    @apply w-16 h-16 rounded-full flex items-center justify-center bg-secondary/30 text-primary;
   }
 
   .icon-circle-primary {

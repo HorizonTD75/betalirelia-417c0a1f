@@ -21,13 +21,13 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 bg-background" id="temoignages">
+    <section className="py-16 lg:py-20 bg-muted" id="temoignages">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
             Témoignages
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-foreground/70">
             Ce que disent nos patients et leurs aidants (anonymisés)
           </p>
         </div>
@@ -37,10 +37,10 @@ const TestimonialsSection = () => {
             <Card
               key={index}
               variant="elevated"
-              className={`border-t-4 ${testimonial.color}`}
+              className={`border-t-4 ${testimonial.color} bg-card`}
             >
               <CardContent className="pt-8">
-                <Quote className="w-10 h-10 text-secondary/50 mb-4" />
+                <Quote className="w-10 h-10 text-secondary/60 mb-4" />
                 <blockquote className="text-xl font-serif font-bold text-foreground mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
