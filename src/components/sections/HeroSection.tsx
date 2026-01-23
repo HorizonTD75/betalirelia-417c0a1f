@@ -1,0 +1,76 @@
+import { Button } from "@/components/ui/button";
+import { Calendar, ArrowRight, BookOpen } from "lucide-react";
+import heroImage from "@/assets/hero-image.jpg";
+
+const HeroSection = () => {
+  return (
+    <section className="relative overflow-hidden bg-primary">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Personne utilisant une loupe pour lire"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80" />
+      </div>
+
+      <div className="container relative py-20 lg:py-28">
+        <div className="max-w-4xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-8 animate-fade-in">
+            <span className="text-lg font-semibold">25 ans d'expertise en basse vision</span>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-slide-up">
+            Lire et Voir{" "}
+            <span className="text-secondary">Autrement</span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl animate-slide-up delay-100">
+            Accompagnement basse vision, DMLA, glaucome pour les patients et leurs aidants.
+            Continuer à vivre pleinement, c'est possible.
+          </p>
+
+          {/* Value proposition */}
+          <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 mb-10 border border-primary-foreground/20 animate-slide-up delay-200">
+            <p className="text-lg text-primary-foreground/90 leading-relaxed">
+              Ici, vous trouverez une approche pratique : comprendre la basse vision, 
+              faire un bilan fonctionnel, choisir des aides utiles au quotidien.
+            </p>
+            <p className="text-base text-primary-foreground/70 mt-3 italic">
+              Important : je ne réalise pas de diagnostic médical. Le suivi médical reste assuré par votre ophtalmologiste.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 animate-slide-up delay-300">
+            <Button variant="hero" size="lg">
+              <Calendar className="w-6 h-6" />
+              Prendre rendez-vous
+            </Button>
+            <Button variant="heroOutline" size="lg">
+              <BookOpen className="w-6 h-6" />
+              Découvrir les bilans
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Wave decoration */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+          <path
+            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+            fill="hsl(var(--background))"
+          />
+        </svg>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
