@@ -1,4 +1,4 @@
-import { Eye, Phone, Mail, MapPin } from "lucide-react";
+import { BookOpen, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,13 +9,24 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                <Eye className="w-7 h-7 text-secondary-foreground" />
+                <BookOpen className="w-7 h-7 text-secondary-foreground" />
               </div>
-              <span className="font-serif text-2xl font-bold">LirElia</span>
+              <span className="font-serif text-2xl font-bold">Lirelia</span>
             </a>
-            <p className="text-lg text-primary-foreground/80 leading-relaxed">
+            <p className="text-lg text-primary-foreground/80 leading-relaxed mb-6">
               Expert en basse vision depuis 25 ans. Accompagnement, bilans et solutions adaptées.
             </p>
+            <div className="flex gap-4">
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Liens */}
@@ -68,7 +79,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-lg text-primary-foreground/60">
-            © 2026 LirElia. Tous droits réservés.
+            © 2026 Lirelia. Tous droits réservés.
           </p>
           <p className="text-lg text-primary-foreground/60">
             Site accessible selon les normes WCAG 2.1

@@ -22,11 +22,11 @@ const features = [
 
 const ClubSection = () => {
   return (
-    <section className="py-20 bg-primary" id="club">
+    <section className="py-16 lg:py-20 bg-primary" id="club">
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-secondary-foreground mb-6">
             <span className="font-semibold">Gratuit</span>
           </div>
 
@@ -59,7 +59,7 @@ const ClubSection = () => {
             })}
           </div>
 
-          <Button variant="hero" size="lg">
+          <Button variant="secondary" size="lg" className="border-2 border-secondary-foreground/20">
             <Users className="w-6 h-6" />
             Rejoindre le Club
             <ArrowRight className="w-5 h-5" />
