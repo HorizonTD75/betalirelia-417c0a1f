@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X, Calendar, Eye } from "lucide-react";
+import headerBg from "@/assets/header-bg.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,12 +15,22 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b-2 border-border">
+    <header className="sticky top-0 z-50 border-b-2 border-border relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src={headerBg}
+          alt=""
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
+      </div>
       <a href="#main-content" className="skip-link">
         Aller au contenu principal
       </a>
       
-      <div className="container">
+      <div className="container relative z-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
