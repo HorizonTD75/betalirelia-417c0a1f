@@ -17,6 +17,8 @@ import {
 import { Link } from "react-router-dom";
 import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
 import eyeExamImage from "@/assets/eye-exam.jpg";
+import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
+import seniorManStreetImage from "@/assets/senior-man-street.png";
 
 const ComprendreBasseVision = () => {
   const symptoms = [
@@ -151,8 +153,8 @@ const ComprendreBasseVision = () => {
                 
                 <div className="relative">
                   <img 
-                    src={eyeAnatomyImage} 
-                    alt="Schéma illustratif de l'anatomie de l'œil" 
+                    src={comprendreHeroImage} 
+                    alt="Illustration aquarelle montrant différentes situations de basse vision" 
                     className="w-full rounded-2xl shadow-card"
                   />
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
@@ -233,8 +235,8 @@ const ComprendreBasseVision = () => {
               <div className="grid lg:grid-cols-5 gap-8 items-start mb-12">
                 <div className="lg:col-span-2">
                   <img 
-                    src={eyeExamImage} 
-                    alt="Examen ophtalmologique avec un professionnel de santé" 
+                    src={seniorManStreetImage} 
+                    alt="Illustration d'un senior avec une canne blanche se déplaçant dans la rue" 
                     className="w-full rounded-2xl shadow-card"
                   />
                 </div>

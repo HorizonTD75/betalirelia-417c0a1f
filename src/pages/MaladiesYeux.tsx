@@ -19,7 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
+import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/amsler-grid.jpg";
 
 const MaladiesYeux = () => {
@@ -208,8 +208,8 @@ const MaladiesYeux = () => {
                 </div>
                 <div className="relative">
                   <img 
-                    src={eyeAnatomyImage} 
-                    alt="Schéma de l'anatomie de l'œil" 
+                    src={comprendreHeroImage} 
+                    alt="Illustration des différentes maladies des yeux" 
                     className="w-full rounded-2xl shadow-card"
                   />
                 </div>
