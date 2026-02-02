@@ -9,10 +9,10 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Personne utilisant une loupe pour lire"
-          className="w-full h-full object-cover opacity-30"
+          alt="Illustration aquarelle sur le thème de la vision"
+          className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
       </div>
 
       <div className="container relative py-20 lg:py-28">
