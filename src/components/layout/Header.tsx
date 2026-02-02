@@ -7,11 +7,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Comprendre", href: "#comprendre" },
-    { label: "Bilans", href: "#bilans" },
-    { label: "Produits", href: "#produits" },
-    { label: "Aidants", href: "#aidants" },
-    { label: "Club", href: "#club" },
+    { label: "Comprendre", href: "/comprendre-basse-vision" },
+    { label: "Maladies", href: "/maladies-yeux" },
+    { label: "Vivre avec", href: "/vivre-basse-vision" },
+    { label: "Bilans", href: "/#bilans" },
+    { label: "Club", href: "/#club" },
   ];
 
   return (

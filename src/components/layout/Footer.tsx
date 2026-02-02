@@ -1,4 +1,5 @@
 import { Eye, Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -7,12 +8,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="/" className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
                 <Eye className="w-7 h-7 text-secondary-foreground" />
               </div>
               <span className="font-serif text-2xl font-bold">LirElia</span>
-            </a>
+            </Link>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
               Expert en basse vision depuis 25 ans. Accompagnement, bilans et solutions adaptées.
             </p>
@@ -20,13 +21,13 @@ const Footer = () => {
 
           {/* Liens */}
           <div>
-            <h3 className="font-serif text-xl font-bold mb-6">Services</h3>
+            <h3 className="font-serif text-xl font-bold mb-6">Comprendre</h3>
             <ul className="space-y-3">
-              <li><a href="#comprendre" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Comprendre la basse vision</a></li>
-              <li><a href="#bilans" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Bilans personnalisés</a></li>
-              <li><a href="#produits" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Matériels adaptés</a></li>
-              <li><a href="#aidants" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Espace aidants</a></li>
-              <li><a href="#club" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Club & Rencontres</a></li>
+              <li><Link to="/comprendre-basse-vision" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Comprendre la basse vision</Link></li>
+              <li><Link to="/maladies-yeux" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Les maladies des yeux</Link></li>
+              <li><Link to="/vivre-basse-vision" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Vivre au quotidien</Link></li>
+              <li><Link to="/#bilans" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Bilans personnalisés</Link></li>
+              <li><Link to="/#club" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Club & Rencontres</Link></li>
             </ul>
           </div>
 
