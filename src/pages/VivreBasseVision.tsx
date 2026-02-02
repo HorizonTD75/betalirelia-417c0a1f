@@ -21,6 +21,9 @@ import {
   ShoppingBag
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import readingMagnifierImage from "@/assets/reading-magnifier.jpg";
+import tabletAccessibilityImage from "@/assets/tablet-accessibility.jpg";
+import accessibleKitchenImage from "@/assets/accessible-kitchen.jpg";
 
 const VivreBasseVision = () => {
   const dailyActivities = [
@@ -231,6 +234,40 @@ const VivreBasseVision = () => {
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-5xl mx-auto">
+              {/* Intro with images */}
+              <div className="grid lg:grid-cols-3 gap-6 mb-12">
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <img 
+                    src={readingMagnifierImage} 
+                    alt="Personne utilisant une loupe pour lire" 
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                    <span className="text-primary-foreground font-semibold">Lecture adaptée</span>
+                  </div>
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <img 
+                    src={tabletAccessibilityImage} 
+                    alt="Utilisation d'une tablette avec accessibilité" 
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                    <span className="text-primary-foreground font-semibold">Écrans accessibles</span>
+                  </div>
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-card">
+                  <img 
+                    src={accessibleKitchenImage} 
+                    alt="Cuisine adaptée à la basse vision" 
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                    <span className="text-primary-foreground font-semibold">Maison sécurisée</span>
+                  </div>
+                </div>
+              </div>
+
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
                 Les activités du quotidien
               </h2>
