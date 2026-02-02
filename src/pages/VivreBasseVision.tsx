@@ -24,6 +24,7 @@ import { Link } from "react-router-dom";
 import readingMagnifierImage from "@/assets/reading-magnifier.jpg";
 import tabletAccessibilityImage from "@/assets/tablet-accessibility.jpg";
 import accessibleKitchenImage from "@/assets/accessible-kitchen.jpg";
+import seniorWomanStreetImage from "@/assets/senior-woman-street.png";
 
 const VivreBasseVision = () => {
   const dailyActivities = [
@@ -351,17 +352,28 @@ const VivreBasseVision = () => {
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                  <MapPin className="w-7 h-7 text-primary-foreground" />
+              <div className="grid lg:grid-cols-3 gap-8 items-start mb-12">
+                <div className="lg:col-span-1">
+                  <img 
+                    src={seniorWomanStreetImage} 
+                    alt="Illustration d'une senior avec une canne blanche traversant la rue" 
+                    className="w-full rounded-2xl shadow-card"
+                  />
                 </div>
-                <div>
-                  <h2 className="font-serif text-3xl font-bold text-foreground">
-                    À l'extérieur
-                  </h2>
-                  <p className="text-lg text-muted-foreground">
-                    Conseils pour se déplacer et maintenir une vie sociale active
-                  </p>
+                <div className="lg:col-span-2">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
+                      <MapPin className="w-7 h-7 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-3xl font-bold text-foreground">
+                        À l'extérieur
+                      </h2>
+                      <p className="text-lg text-muted-foreground">
+                        Conseils pour se déplacer et maintenir une vie sociale active
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
