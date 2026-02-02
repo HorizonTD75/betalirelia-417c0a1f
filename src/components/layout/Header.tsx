@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X, Calendar, Eye } from "lucide-react";
+import { Phone, Menu, X, Calendar, Eye, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import headerBg from "@/assets/header-bg.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Comprendre", href: "/comprendre-basse-vision" },
-    { label: "Maladies", href: "/maladies-yeux" },
-    { label: "Vivre avec", href: "/vivre-basse-vision" },
-    { label: "Bilans", href: "/#bilans" },
-    { label: "Club", href: "/#club" },
+    { label: "Aides visuelles", href: "/vivre-basse-vision" },
+    { label: "Conseils", href: "/comprendre-basse-vision" },
+    { label: "Bilan", href: "/#bilans" },
+    { label: "Club", href: "/club" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -62,9 +63,11 @@ const Header = () => {
               <Phone className="w-5 h-5" />
               <span className="hidden xl:inline">01 23 45 67 89</span>
             </a>
-            <Button variant="secondary" size="default">
-              <Calendar className="w-5 h-5" />
-              Prendre RDV
+            <Button variant="secondary" size="default" asChild>
+              <Link to="/club">
+                <Users className="w-5 h-5" />
+                S'inscrire au Club
+              </Link>
             </Button>
           </div>
 
