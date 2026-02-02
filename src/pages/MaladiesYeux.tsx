@@ -19,6 +19,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
+import amslerGridImage from "@/assets/amsler-grid.jpg";
 
 const MaladiesYeux = () => {
   const mainDiseases = [
@@ -194,17 +196,27 @@ const MaladiesYeux = () => {
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Les principales maladies causant une basse vision
-                </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  L'œil est un organe complexe qui peut être touché par différentes maladies, silencieuses, d'évolution lente, certaines pouvant aboutir sans traitement à une diminution importante de la vue.
-                </p>
+              {/* Intro with illustration */}
+              <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Les principales maladies causant une basse vision
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    L'œil est un organe complexe qui peut être touché par différentes maladies, silencieuses, d'évolution lente, certaines pouvant aboutir sans traitement à une diminution importante de la vue.
+                  </p>
+                </div>
+                <div className="relative">
+                  <img 
+                    src={eyeAnatomyImage} 
+                    alt="Schéma de l'anatomie de l'œil" 
+                    className="w-full rounded-2xl shadow-card"
+                  />
+                </div>
               </div>
               
               <div className="space-y-6">
-                {mainDiseases.map((disease) => (
+                {mainDiseases.map((disease, diseaseIndex) => (
                   <Card key={disease.id} variant="elevated" className="p-8">
                     <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                       <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shrink-0">
@@ -221,9 +233,18 @@ const MaladiesYeux = () => {
                           {disease.description}
                         </p>
                         {disease.extra && (
-                          <p className="text-lg text-muted-foreground italic">
-                            {disease.extra}
-                          </p>
+                          <div className="flex items-start gap-4">
+                            <p className="text-lg text-muted-foreground italic flex-1">
+                              {disease.extra}
+                            </p>
+                            {diseaseIndex === 0 && (
+                              <img 
+                                src={amslerGridImage} 
+                                alt="Grille d'Amsler pour le test de la DMLA" 
+                                className="w-24 h-24 rounded-lg object-cover shadow-sm"
+                              />
+                            )}
+                          </div>
                         )}
                       </div>
                       <div className="lg:w-64 shrink-0">

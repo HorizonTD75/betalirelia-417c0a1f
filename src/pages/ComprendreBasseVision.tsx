@@ -15,6 +15,8 @@ import {
   Lightbulb
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
+import eyeExamImage from "@/assets/eye-exam.jpg";
 
 const ComprendreBasseVision = () => {
   const symptoms = [
@@ -102,46 +104,59 @@ const ComprendreBasseVision = () => {
           </div>
         </section>
 
-        {/* Différence Section */}
+        {/* Illustration Section */}
         <section className="py-16 bg-background">
           <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
-                À ne pas confondre
-              </h2>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card variant="outline" className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
-                      <Glasses className="w-6 h-6 text-muted-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-3">
-                        Baisse de vision « classique »
-                      </h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        Myopie, hypermétropie, astigmatisme, presbytie. Ces défauts optiques courants se corrigent la plupart du temps avec des lunettes ou des lentilles.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
+                    À ne pas confondre
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <Card variant="outline" className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
+                          <Glasses className="w-6 h-6 text-muted-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-serif text-xl font-bold text-foreground mb-2">
+                            Baisse de vision « classique »
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed">
+                            Myopie, hypermétropie, astigmatisme, presbytie. Ces défauts optiques courants se corrigent avec des lunettes ou des lentilles.
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
 
-                <Card variant="highlighted" className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-                      <Eye className="w-6 h-6 text-secondary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-3">
-                        La basse vision
-                      </h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        Même avec la meilleure correction possible, la vue reste limitée. Elle est liée à une atteinte plus profonde de l'œil ou du nerf optique (DMLA, glaucome, rétinopathie).
-                      </p>
-                    </div>
+                    <Card variant="highlighted" className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                          <Eye className="w-6 h-6 text-secondary-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-serif text-xl font-bold text-foreground mb-2">
+                            La basse vision
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed">
+                            Même avec la meilleure correction possible, la vue reste limitée. Elle est liée à une atteinte plus profonde de l'œil ou du nerf optique.
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
                   </div>
-                </Card>
+                </div>
+                
+                <div className="relative">
+                  <img 
+                    src={eyeAnatomyImage} 
+                    alt="Schéma illustratif de l'anatomie de l'œil" 
+                    className="w-full rounded-2xl shadow-card"
+                  />
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
+                </div>
               </div>
             </div>
           </div>
@@ -215,12 +230,23 @@ const ComprendreBasseVision = () => {
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-5xl mx-auto">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-                Qui fait quoi ?
-              </h2>
-              <p className="text-xl text-muted-foreground mb-12 text-center max-w-3xl mx-auto">
-                Plusieurs professionnels peuvent vous accompagner dans votre parcours basse vision.
-              </p>
+              <div className="grid lg:grid-cols-5 gap-8 items-start mb-12">
+                <div className="lg:col-span-2">
+                  <img 
+                    src={eyeExamImage} 
+                    alt="Examen ophtalmologique avec un professionnel de santé" 
+                    className="w-full rounded-2xl shadow-card"
+                  />
+                </div>
+                <div className="lg:col-span-3">
+                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Qui fait quoi ?
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    Plusieurs professionnels peuvent vous accompagner dans votre parcours basse vision. Chacun a un rôle complémentaire pour vous aider à mieux voir et vivre au quotidien.
+                  </p>
+                </div>
+              </div>
               
               <div className="grid md:grid-cols-2 gap-8">
                 {professionals.map((pro, index) => (
