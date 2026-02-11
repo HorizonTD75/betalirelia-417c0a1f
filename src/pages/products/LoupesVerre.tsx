@@ -8,6 +8,7 @@ import heroImage from "@/assets/loupe-verre.jpg";
 const products = [
   {
     name: "Loupe de lecture classique",
+    slug: "loupe-classique",
     image: loupeClassique,
     imageAlt: "Illustration aquarelle d'une loupe de lecture classique en verre",
     description:
@@ -27,6 +28,7 @@ const products = [
   },
   {
     name: "Loupe éclairante rectangulaire",
+    slug: "loupe-eclairante",
     image: loupeEclairante,
     imageAlt: "Illustration aquarelle d'une loupe rectangulaire avec éclairage LED intégré",
     description:
@@ -46,6 +48,7 @@ const products = [
   },
   {
     name: "Loupe dôme à poser",
+    slug: "loupe-dome",
     image: loupeDome,
     imageAlt: "Illustration aquarelle d'une loupe dôme posée sur un texte",
     description:

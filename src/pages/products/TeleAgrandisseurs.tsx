@@ -8,6 +8,7 @@ import heroImage from "@/assets/tele-agrandisseur.jpg";
 const products = [
   {
     name: "Télé-agrandisseur de bureau",
+    slug: "tele-agrandisseur-bureau",
     image: teleAgrandisseurBureau,
     imageAlt: "Illustration aquarelle d'un télé-agrandisseur de bureau avec grand écran",
     description:
@@ -29,6 +30,7 @@ const products = [
   },
   {
     name: "Télé-agrandisseur portable",
+    slug: "tele-agrandisseur-portable",
     image: teleAgrandisseurPortable,
     imageAlt: "Illustration aquarelle d'un télé-agrandisseur portable pliable",
     description:
@@ -50,6 +52,7 @@ const products = [
   },
   {
     name: "Caméra de lecture sur TV",
+    slug: "tele-agrandisseur-tv",
     image: teleAgrandisseurTv,
     imageAlt: "Illustration aquarelle d'une caméra de lecture projetant un document sur un grand écran TV",
     description:

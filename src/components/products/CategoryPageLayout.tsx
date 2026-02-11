@@ -77,9 +77,11 @@ const CategoryPageLayout = ({
               <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8">
                 {intro}
               </p>
-              <Button variant="secondary" size="lg" className="text-xl">
-                {ctaText}
-                <ArrowRight className="w-6 h-6" />
+              <Button variant="secondary" size="lg" className="text-xl" asChild>
+                <Link to="/contact-conseil">
+                  {ctaText}
+                  <ArrowRight className="w-6 h-6" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -147,9 +149,11 @@ const CategoryPageLayout = ({
                 et sans engagement — nous vous aiderons à trouver la solution la plus adaptée.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="default" size="lg" className="text-xl">
-                  {ctaText}
-                  <ArrowRight className="w-6 h-6" />
+                <Button variant="default" size="lg" className="text-xl" asChild>
+                  <Link to="/contact-conseil">
+                    {ctaText}
+                    <ArrowRight className="w-6 h-6" />
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <Link to="/aides-lecture">

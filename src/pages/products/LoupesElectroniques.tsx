@@ -8,6 +8,7 @@ import heroImage from "@/assets/loupe-electronique.jpg";
 const products = [
   {
     name: "Loupe électronique portable",
+    slug: "loupe-electronique-portable",
     image: loupePortable,
     imageAlt: "Illustration aquarelle d'une loupe électronique portable tenue en main",
     description:
@@ -28,6 +29,7 @@ const products = [
   },
   {
     name: "Loupe électronique de bureau",
+    slug: "loupe-electronique-bureau",
     image: loupeBureau,
     imageAlt: "Illustration aquarelle d'une loupe électronique de bureau avec grand écran",
     description:
@@ -48,6 +50,7 @@ const products = [
   },
   {
     name: "Loupe électronique de poche",
+    slug: "loupe-electronique-poche",
     image: loupePoche,
     imageAlt: "Illustration aquarelle d'une loupe électronique ultra-compacte de poche",
     description:
