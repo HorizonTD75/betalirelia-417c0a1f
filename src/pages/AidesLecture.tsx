@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Check, X, ArrowRight, Search, Lightbulb, Monitor, Eye } from "lucide-react";
@@ -328,6 +329,8 @@ const AidesLecture = () => {
             </div>
           </div>
         </section>
+
+        <ContactFormSection />
       </main>
       <Footer />
     </div>
