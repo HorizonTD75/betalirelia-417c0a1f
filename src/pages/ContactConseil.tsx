@@ -8,23 +8,21 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, ArrowLeft, CheckCircle2 } from "lucide-react";
+import { Send, ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const productOptions = [
   { value: "", label: "— Aucun produit en particulier —" },
-  // Loupes en verre
   { value: "loupe-classique", label: "Loupe classique en verre", category: "Loupes en verre" },
   { value: "loupe-eclairante", label: "Loupe éclairante", category: "Loupes en verre" },
   { value: "loupe-dome", label: "Loupe dôme (à poser)", category: "Loupes en verre" },
-  // Loupes électroniques
   { value: "loupe-electronique-portable", label: "Loupe électronique portable", category: "Loupes électroniques" },
   { value: "loupe-electronique-bureau", label: "Loupe électronique de bureau", category: "Loupes électroniques" },
   { value: "loupe-electronique-poche", label: "Loupe électronique de poche", category: "Loupes électroniques" },
-  // Lampes
   { value: "lampe-bureau-daylight", label: "Lampe de bureau daylight", category: "Lampes adaptées" },
   { value: "lampe-sur-pied", label: "Lampe sur pied orientable", category: "Lampes adaptées" },
   { value: "lampe-loupe", label: "Lampe-loupe combinée", category: "Lampes adaptées" },
-  // Télé-agrandisseurs
   { value: "tele-agrandisseur-bureau", label: "Télé-agrandisseur de bureau", category: "Télé-agrandisseurs" },
   { value: "tele-agrandisseur-portable", label: "Télé-agrandisseur portable", category: "Télé-agrandisseurs" },
   { value: "tele-agrandisseur-tv", label: "Caméra de lecture TV", category: "Télé-agrandisseurs" },
@@ -36,6 +34,12 @@ const ContactConseil = () => {
   const [searchParams] = useSearchParams();
   const [selectedProduct, setSelectedProduct] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const { toast } = useToast();
 
   useEffect(() => {
     const produit = searchParams.get("produit");
@@ -45,9 +49,35 @@ const ContactConseil = () => {
     }
   }, [searchParams]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("submit-contact", {
+        body: {
+          name,
+          email,
+          phone,
+          selected_product: selectedProduct || null,
+          message,
+        },
+      });
+
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error("Submit error:", err);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -103,7 +133,6 @@ const ContactConseil = () => {
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-6">
-                      {/* Produit sélectionné */}
                       <div className="space-y-2">
                         <Label htmlFor="produit" className="text-lg font-semibold">
                           Produit qui vous intéresse
@@ -134,7 +163,6 @@ const ContactConseil = () => {
                         )}
                       </div>
 
-                      {/* Nom & Email */}
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="name" className="text-lg font-semibold">
@@ -144,6 +172,9 @@ const ContactConseil = () => {
                             type="text"
                             id="name"
                             required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            maxLength={100}
                             className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
                             placeholder="Jean Dupont"
                           />
@@ -156,13 +187,15 @@ const ContactConseil = () => {
                             type="email"
                             id="email"
                             required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            maxLength={255}
                             className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
                             placeholder="jean@exemple.fr"
                           />
                         </div>
                       </div>
 
-                      {/* Téléphone optionnel */}
                       <div className="space-y-2">
                         <Label htmlFor="phone" className="text-lg font-semibold">
                           Téléphone <span className="text-muted-foreground font-normal">(optionnel)</span>
@@ -170,12 +203,13 @@ const ContactConseil = () => {
                         <Input
                           type="tel"
                           id="phone"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
                           className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
                           placeholder="06 12 34 56 78"
                         />
                       </div>
 
-                      {/* Situation */}
                       <div className="space-y-2">
                         <Label htmlFor="situation" className="text-lg font-semibold">
                           Décrivez brièvement votre situation
@@ -184,14 +218,26 @@ const ContactConseil = () => {
                           id="situation"
                           required
                           rows={4}
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          maxLength={2000}
                           className="px-4 py-3 text-lg border-2 rounded-xl resize-none"
                           placeholder="Par exemple : Ma mère a été diagnostiquée DMLA il y a 3 mois. Elle n'arrive plus à lire son courrier et aimerait retrouver un peu d'autonomie…"
                         />
                       </div>
 
-                      <Button type="submit" variant="default" size="lg" className="w-full text-xl">
-                        <Send className="w-5 h-5" />
-                        Envoyer ma demande de conseil
+                      <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
+                        {loading ? (
+                          <>
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                            Envoi en cours…
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-5 h-5" />
+                            Envoyer ma demande de conseil
+                          </>
+                        )}
                       </Button>
 
                       <p className="text-center text-muted-foreground italic text-base">
