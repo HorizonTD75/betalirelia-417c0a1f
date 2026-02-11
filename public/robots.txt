@@ -1,2 +1,6 @@
 User-agent: *
 Disallow: /
+Noindex: /
+
+# Staging environment - do not index
+# All pages also include <meta name="robots" content="noindex, nofollow">
