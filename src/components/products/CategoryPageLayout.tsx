@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactFormSection from "@/components/sections/ContactFormSection";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -26,6 +27,11 @@ interface CategoryPageProps {
     criteria: BuyingCriteria[];
   };
   ctaText: string;
+  seo: {
+    title: string;
+    description: string;
+    canonical: string;
+  };
 }
 
 const CategoryPageLayout = ({
@@ -38,9 +44,37 @@ const CategoryPageLayout = ({
   products,
   buyingGuide,
   ctaText,
+  seo,
 }: CategoryPageProps) => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: seo.title,
+    description: seo.description,
+    url: seo.canonical,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: products.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Product",
+          name: p.name,
+          description: p.description,
+          ...(p.priceRange ? { offers: { "@type": "AggregateOffer", priceCurrency: "EUR", availability: "https://schema.org/InStock" } } : {}),
+        },
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        canonical={seo.canonical}
+        jsonLd={jsonLd}
+      />
       <Header />
       <main id="main-content">
         {/* HERO */}

@@ -113,6 +113,11 @@ const TeleAgrandisseurs = () => (
     products={products}
     buyingGuide={buyingGuide}
     ctaText="Découvrir les télé-agrandisseurs"
+    seo={{
+      title: "Télé-agrandisseurs pour malvoyants — Grand écran | LirElia",
+      description: "Télé-agrandisseurs de bureau, portables et caméras TV. Grossissement puissant sur grand écran pour lire longtemps avec une basse vision sévère.",
+      canonical: "https://seen-clearly-space.lovable.app/aides-lecture/tele-agrandisseurs",
+    }}
   />
 );
 
