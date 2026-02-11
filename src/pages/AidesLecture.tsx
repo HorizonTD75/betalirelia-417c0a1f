@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Check, X, ArrowRight, Search, Lightbulb, Monitor, Eye } from "lucide-react";
@@ -118,6 +119,18 @@ const categories = [
 const AidesLecture = () => {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Aides à la lecture pour malvoyants — Loupes, lampes, agrandisseurs | LirElia"
+        description="Retrouvez le plaisir de lire grâce aux aides à la lecture adaptées à la basse vision : loupes en verre, loupes électroniques, lampes et télé-agrandisseurs."
+        canonical="https://seen-clearly-space.lovable.app/aides-lecture"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Aides à la lecture pour malvoyants",
+          description: "Loupes, lampes et télé-agrandisseurs pour retrouver le plaisir de lire malgré la basse vision.",
+          url: "https://seen-clearly-space.lovable.app/aides-lecture",
+        }}
+      />
       <Header />
       <main id="main-content">
         {/* HERO */}
