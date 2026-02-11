@@ -8,6 +8,7 @@ import heroImage from "@/assets/lampe-lecture.jpg";
 const products = [
   {
     name: "Lampe de bureau lumière du jour",
+    slug: "lampe-bureau-daylight",
     image: lampeBureau,
     imageAlt: "Illustration aquarelle d'une lampe de bureau articulée éclairant un livre",
     description:
@@ -28,6 +29,7 @@ const products = [
   },
   {
     name: "Lampe sur pied de lecture",
+    slug: "lampe-sur-pied",
     image: lampeSurPied,
     imageAlt: "Illustration aquarelle d'un lampadaire sur pied à côté d'un fauteuil",
     description:
@@ -48,6 +50,7 @@ const products = [
   },
   {
     name: "Lampe-loupe à pince",
+    slug: "lampe-loupe",
     image: lampeLoupe,
     imageAlt: "Illustration aquarelle d'une lampe-loupe à pince fixée sur un bureau",
     description:

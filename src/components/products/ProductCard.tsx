@@ -1,9 +1,11 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export interface Product {
   name: string;
+  slug: string;
   image: string;
   imageAlt: string;
   description: string;
@@ -61,9 +63,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </CardContent>
       <CardFooter>
-        <Button variant="outline" className="w-full">
-          Être conseillé(e)
-          <ArrowRight className="w-5 h-5" />
+        <Button variant="outline" className="w-full" asChild>
+          <Link to={`/contact-conseil?produit=${product.slug}`}>
+            Être conseillé(e)
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </Button>
       </CardFooter>
     </Card>
