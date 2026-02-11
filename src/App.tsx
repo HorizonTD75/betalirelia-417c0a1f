@@ -10,6 +10,10 @@ import MaladiesYeux from "./pages/MaladiesYeux";
 import VivreBasseVision from "./pages/VivreBasseVision";
 import Club from "./pages/Club";
 import AidesLecture from "./pages/AidesLecture";
+import LoupesVerre from "./pages/products/LoupesVerre";
+import LoupesElectroniques from "./pages/products/LoupesElectroniques";
+import Lampes from "./pages/products/Lampes";
+import TeleAgrandisseurs from "./pages/products/TeleAgrandisseurs";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/maladies-yeux" element={<MaladiesYeux />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           <Route path="/aides-lecture" element={<AidesLecture />} />
+          <Route path="/aides-lecture/loupes-verre" element={<LoupesVerre />} />
+          <Route path="/aides-lecture/loupes-electroniques" element={<LoupesElectroniques />} />
+          <Route path="/aides-lecture/lampes" element={<Lampes />} />
+          <Route path="/aides-lecture/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
           <Route path="/club" element={<Club />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
