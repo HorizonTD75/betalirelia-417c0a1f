@@ -15,6 +15,10 @@ import LoupesElectroniques from "./pages/products/LoupesElectroniques";
 import Lampes from "./pages/products/Lampes";
 import TeleAgrandisseurs from "./pages/products/TeleAgrandisseurs";
 import ContactConseil from "./pages/ContactConseil";
+import Bilans from "./pages/Bilans";
+import BilanEssentiel from "./pages/bilans/BilanEssentiel";
+import BilanExpert from "./pages/bilans/BilanExpert";
+import BilanSuivi from "./pages/bilans/BilanSuivi";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +38,10 @@ const App = () => (
           <Route path="/aides-lecture/loupes-electroniques" element={<LoupesElectroniques />} />
           <Route path="/aides-lecture/lampes" element={<Lampes />} />
           <Route path="/aides-lecture/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
+          <Route path="/bilans" element={<Bilans />} />
+          <Route path="/bilans/essentiel" element={<BilanEssentiel />} />
+          <Route path="/bilans/expert" element={<BilanExpert />} />
+          <Route path="/bilans/suivi" element={<BilanSuivi />} />
           <Route path="/contact-conseil" element={<ContactConseil />} />
           <Route path="/club" element={<Club />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -11,9 +11,9 @@ const Header = () => {
     { label: "Aides à la lecture", href: "/aides-lecture" },
     { label: "Aides visuelles", href: "/vivre-basse-vision" },
     { label: "Conseils", href: "/comprendre-basse-vision" },
-    { label: "Bilan", href: "/#bilans" },
+    { label: "Bilans", href: "/bilans" },
     { label: "Club", href: "/club" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact-conseil" },
   ];
 
   return (
