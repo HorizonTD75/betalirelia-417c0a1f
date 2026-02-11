@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -160,6 +161,8 @@ const CategoryPageLayout = ({
             </div>
           </div>
         </section>
+
+        <ContactFormSection />
       </main>
       <Footer />
     </div>
