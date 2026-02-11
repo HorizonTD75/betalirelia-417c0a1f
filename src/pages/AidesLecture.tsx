@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Check, X, ArrowRight, Search, Lightbulb, Monitor, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import aidesLectureHero from "@/assets/aides-lecture-hero.jpg";
 import loupeVerre from "@/assets/loupe-verre.jpg";
 import loupeElectronique from "@/assets/loupe-electronique.jpg";
@@ -12,6 +13,7 @@ import teleAgrandisseur from "@/assets/tele-agrandisseur.jpg";
 const categories = [
   {
     id: "loupe-verre",
+    link: "/aides-lecture/loupes-verre",
     icon: Search,
     title: "Loupe en verre : grossissement optique simple et immédiat",
     image: loupeVerre,
@@ -36,6 +38,7 @@ const categories = [
   },
   {
     id: "loupe-electronique",
+    link: "/aides-lecture/loupes-electroniques",
     icon: Monitor,
     title: "Loupe électronique : grossissement variable et contraste renforcé",
     image: loupeElectronique,
@@ -60,6 +63,7 @@ const categories = [
   },
   {
     id: "lampes",
+    link: "/aides-lecture/lampes",
     icon: Lightbulb,
     title: "Lampes de lecture : voir mieux grâce à un éclairage maîtrisé",
     image: lampeLecture,
@@ -84,6 +88,7 @@ const categories = [
   },
   {
     id: "tele-agrandisseur",
+    link: "/aides-lecture/tele-agrandisseurs",
     icon: Eye,
     title: "Télé-agrandisseur : confort maximal pour lire longtemps",
     image: teleAgrandisseur,
@@ -186,9 +191,9 @@ const AidesLecture = () => {
             {/* Grille des 4 catégories en cartes résumées */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
               {categories.map((cat) => (
-                <a
+                <Link
                   key={cat.id}
-                  href={`#${cat.id}`}
+                  to={cat.link}
                   className="group"
                 >
                   <Card variant="elevated" className="h-full text-center">
@@ -207,7 +212,7 @@ const AidesLecture = () => {
                       </p>
                     </CardContent>
                   </Card>
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -269,9 +274,11 @@ const AidesLecture = () => {
                       ))}
                     </ul>
 
-                    <Button variant="outline" size="lg">
-                      {cat.cta}
-                      <ArrowRight className="w-5 h-5" />
+                    <Button variant="outline" size="lg" asChild>
+                      <Link to={cat.link}>
+                        {cat.cta}
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
                     </Button>
                   </div>
 
