@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ClipboardCheck, Package, Check, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BilansProduitsSection = () => {
   return (
@@ -64,21 +65,33 @@ const BilansProduitsSection = () => {
             <CardContent className="space-y-4">
               <ul className="space-y-3">
                 {[
-                  "Lire / écrire (loupes, agrandisseurs)",
-                  "Écrans (ordinateur, tablette…)",
-                  "Maison / cuisine (étiquetage, repères)",
-                  "Déplacements / loisirs",
+                  { text: "Lire / écrire (loupes, agrandisseurs)", link: "/aides-lecture" },
+                  { text: "Écrans (ordinateur, tablette…)", link: null },
+                  { text: "Maison / cuisine (étiquetage, repères)", link: null },
+                  { text: "Déplacements / loisirs", link: null },
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-lg">
                     <Check className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
-                    <span>{item}</span>
+                    {item.link ? (
+                      <Link to={item.link} className="underline underline-offset-4 hover:text-primary transition-colors">
+                        {item.text}
+                      </Link>
+                    ) : (
+                      <span>{item.text}</span>
+                    )}
                   </li>
                 ))}
               </ul>
             </CardContent>
-            <CardFooter>
-              <Button variant="secondary">
-                Voir les produits
+            <CardFooter className="flex flex-wrap gap-3">
+              <Button variant="secondary" asChild>
+                <Link to="/aides-lecture">
+                  Aides à la lecture
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+              <Button variant="outline">
+                Voir tous les produits
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </CardFooter>
