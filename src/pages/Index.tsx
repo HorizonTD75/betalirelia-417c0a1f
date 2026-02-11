@@ -17,20 +17,6 @@ const Index = () => {
       <SEOHead
         title="LirElia – Basse Vision : Bilans, Aides Visuelles & Accompagnement"
         description="LirElia vous accompagne dans la basse vision : bilans personnalisés, loupes, lampes, télé-agrandisseurs et conseils pour retrouver confort et autonomie au quotidien."
-        canonical="https://seen-clearly-space.lovable.app/"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "LirElia",
-          "url": "https://seen-clearly-space.lovable.app",
-          "description": "Accompagnement basse vision : bilans, aides visuelles et conseils personnalisés.",
-          "sameAs": [],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "availableLanguage": "French"
-          }
-        }}
       />
       <Header />
       <main id="main-content">

@@ -44,7 +44,6 @@ const BilanEssentiel = () => {
       <SEOHead
         title="Bilan Essentiel basse vision — Faire le point sur votre vue | LirElia"
         description="Le Bilan Essentiel est la formule de base pour comprendre vos difficultés visuelles, tester des solutions simples et repartir avec un plan d'action clair."
-        canonical="https://seen-clearly-space.lovable.app/bilans/essentiel"
       />
       <Header />
       <main id="main-content">

@@ -81,7 +81,6 @@ const BilanSuivi = () => {
       <SEOHead
         title="Pack Suivi basse vision — Accompagnement sur 3 mois | LirElia"
         description="Le Pack Suivi prolonge votre Bilan Essentiel sur 3 mois avec appels réguliers et bilan final pour mettre en pratique les conseils et ajuster les solutions."
-        canonical="https://seen-clearly-space.lovable.app/bilans/suivi"
       />
       <Header />
       <main id="main-content">

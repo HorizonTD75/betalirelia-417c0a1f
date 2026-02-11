@@ -130,14 +130,6 @@ const MaladiesYeux = () => {
       <SEOHead
         title="Maladies des Yeux – DMLA, Glaucome, Rétinopathie & Autres"
         description="Découvrez les principales maladies oculaires responsables de la basse vision : DMLA, glaucome, rétinopathie diabétique, cataracte et plus encore."
-        canonical="https://seen-clearly-space.lovable.app/maladies-yeux"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "Maladies des Yeux",
-          "description": "Guide des maladies oculaires responsables de la basse vision.",
-          "author": { "@type": "Organization", "name": "LirElia" }
-        }}
       />
       <Header />
       <main id="main-content">

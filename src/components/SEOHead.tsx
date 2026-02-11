@@ -3,11 +3,9 @@ import { useEffect } from "react";
 interface SEOHeadProps {
   title: string;
   description: string;
-  canonical?: string;
-  jsonLd?: Record<string, unknown>;
 }
 
-const SEOHead = ({ title, description, canonical, jsonLd }: SEOHeadProps) => {
+const SEOHead = ({ title, description }: SEOHeadProps) => {
   useEffect(() => {
     document.title = title;
 
@@ -22,39 +20,24 @@ const SEOHead = ({ title, description, canonical, jsonLd }: SEOHeadProps) => {
     };
 
     setMeta("description", description);
+    setMeta("robots", "noindex, nofollow");
+    setMeta("googlebot", "noindex, nofollow");
     setMeta("og:title", title, "property");
     setMeta("og:description", description, "property");
     setMeta("og:type", "website", "property");
 
-    // Canonical
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) {
-      if (!link) {
-        link = document.createElement("link");
-        link.setAttribute("rel", "canonical");
-        document.head.appendChild(link);
-      }
-      link.setAttribute("href", canonical);
-    }
+    // Remove any canonical link (staging must not declare canonical)
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.remove();
 
-    // JSON-LD
-    const scriptId = "seo-jsonld";
-    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-    if (jsonLd) {
-      if (!script) {
-        script = document.createElement("script");
-        script.id = scriptId;
-        script.type = "application/ld+json";
-        document.head.appendChild(script);
-      }
-      script.textContent = JSON.stringify(jsonLd);
-    }
+    // Remove any JSON-LD structured data
+    const jsonLd = document.getElementById("seo-jsonld");
+    if (jsonLd) jsonLd.remove();
 
-    return () => {
-      const s = document.getElementById(scriptId);
-      if (s) s.remove();
-    };
-  }, [title, description, canonical, jsonLd]);
+    // Remove any preload/prefetch hints
+    document.querySelectorAll('link[rel="preload"], link[rel="prefetch"], link[rel="dns-prefetch"], link[rel="preconnect"]').forEach(el => el.remove());
+
+  }, [title, description]);
 
   return null;
 };
