@@ -155,7 +155,11 @@ const BilanSuivi = () => {
                   <Card key={i} variant="elevated" className="p-8">
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="shrink-0">
-                        <div className={`w-20 h-20 rounded-2xl bg-${step.color} text-${step.color}-foreground flex flex-col items-center justify-center`}>
+                        <div className={`w-20 h-20 rounded-2xl flex flex-col items-center justify-center ${
+                          step.color === "primary" ? "bg-primary text-primary-foreground" :
+                          step.color === "secondary" ? "bg-secondary text-secondary-foreground" :
+                          "bg-accent text-accent-foreground"
+                        }`}>
                           <Clock className="w-6 h-6" />
                           <span className="text-xs font-bold mt-1">{step.date}</span>
                         </div>
