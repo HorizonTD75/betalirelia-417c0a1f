@@ -123,7 +123,6 @@ const Bilans = () => {
       <SEOHead
         title="Bilans basse vision — Essentiel, Expert, Suivi | LirElia"
         description="Faites le point sur votre vue avec un bilan basse vision personnalisé. Trois formules : Essentiel, Expert ou Suivi sur plusieurs mois."
-        canonical="https://seen-clearly-space.lovable.app/bilans"
       />
       <Header />
       <main id="main-content">

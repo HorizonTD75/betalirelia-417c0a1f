@@ -94,14 +94,6 @@ const ComprendreBasseVision = () => {
       <SEOHead
         title="Comprendre la Basse Vision – Symptômes, Professionnels & Solutions"
         description="Qu'est-ce que la basse vision ? Découvrez les symptômes, les professionnels qui vous accompagnent et les solutions pour mieux vivre au quotidien."
-        canonical="https://seen-clearly-space.lovable.app/comprendre-basse-vision"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "Comprendre la Basse Vision",
-          "description": "Guide complet sur la basse vision : définition, symptômes, professionnels et solutions.",
-          "author": { "@type": "Organization", "name": "LirElia" }
-        }}
       />
       <Header />
       <main id="main-content">

@@ -55,7 +55,6 @@ const ContactConseil = () => {
       <SEOHead
         title="Demander un conseil personnalisé — Aide à la lecture | LirElia"
         description="Décrivez votre situation visuelle et recevez des recommandations personnalisées pour choisir l'aide à la lecture la plus adaptée à vos besoins."
-        canonical="https://seen-clearly-space.lovable.app/contact-conseil"
       />
       <Header />
       <main id="main-content">

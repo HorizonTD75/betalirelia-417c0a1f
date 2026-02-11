@@ -44,7 +44,6 @@ const BilanExpert = () => {
       <SEOHead
         title="Bilan Expert basse vision — Avec opticien-optométriste | LirElia"
         description="Le Pack Bilan Expert combine bilan basse vision et consultation chez un opticien-optométriste partenaire pour optimiser vos lunettes et aides optiques."
-        canonical="https://seen-clearly-space.lovable.app/bilans/expert"
       />
       <Header />
       <main id="main-content">

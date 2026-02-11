@@ -30,7 +30,6 @@ interface CategoryPageProps {
   seo: {
     title: string;
     description: string;
-    canonical: string;
   };
 }
 
@@ -46,34 +45,11 @@ const CategoryPageLayout = ({
   ctaText,
   seo,
 }: CategoryPageProps) => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: seo.title,
-    description: seo.description,
-    url: seo.canonical,
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: products.map((p, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        item: {
-          "@type": "Product",
-          name: p.name,
-          description: p.description,
-          ...(p.priceRange ? { offers: { "@type": "AggregateOffer", priceCurrency: "EUR", availability: "https://schema.org/InStock" } } : {}),
-        },
-      })),
-    },
-  };
-
   return (
     <div className="min-h-screen">
       <SEOHead
         title={seo.title}
         description={seo.description}
-        canonical={seo.canonical}
-        jsonLd={jsonLd}
       />
       <Header />
       <main id="main-content">

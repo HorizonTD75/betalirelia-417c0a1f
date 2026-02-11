@@ -198,14 +198,6 @@ const VivreBasseVision = () => {
       <SEOHead
         title="Vivre avec la Basse Vision – Conseils Pratiques au Quotidien"
         description="Conseils pratiques pour vivre avec la basse vision : lecture, cuisine, déplacements, loisirs et aides techniques pour retrouver votre autonomie."
-        canonical="https://seen-clearly-space.lovable.app/vivre-basse-vision"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "Vivre avec la Basse Vision au Quotidien",
-          "description": "Conseils et solutions pour vivre au quotidien avec la basse vision.",
-          "author": { "@type": "Organization", "name": "LirElia" }
-        }}
       />
       <Header />
       <main id="main-content">
