@@ -9,6 +9,7 @@ import ComprendreBasseVision from "./pages/ComprendreBasseVision";
 import MaladiesYeux from "./pages/MaladiesYeux";
 import VivreBasseVision from "./pages/VivreBasseVision";
 import Club from "./pages/Club";
+import AidesLecture from "./pages/AidesLecture";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/comprendre-basse-vision" element={<ComprendreBasseVision />} />
           <Route path="/maladies-yeux" element={<MaladiesYeux />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
+          <Route path="/aides-lecture" element={<AidesLecture />} />
           <Route path="/club" element={<Club />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
