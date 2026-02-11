@@ -8,6 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { label: "Aides à la lecture", href: "/aides-lecture" },
     { label: "Aides visuelles", href: "/vivre-basse-vision" },
     { label: "Conseils", href: "/comprendre-basse-vision" },
     { label: "Bilan", href: "/#bilans" },
