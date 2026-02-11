@@ -261,7 +261,11 @@ const Bilans = () => {
                     </div>
                   )}
                   <CardHeader className="text-center">
-                    <div className={`w-16 h-16 rounded-xl bg-${bilan.color} text-${bilan.color}-foreground flex items-center justify-center mx-auto mb-4`}>
+                    <div className={`w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 ${
+                      bilan.color === "primary" ? "bg-primary text-primary-foreground" :
+                      bilan.color === "secondary" ? "bg-secondary text-secondary-foreground" :
+                      "bg-accent text-accent-foreground"
+                    }`}>
                       <bilan.icon className="w-8 h-8" />
                     </div>
                     <CardTitle className="text-2xl">Bilan {bilan.name}</CardTitle>
