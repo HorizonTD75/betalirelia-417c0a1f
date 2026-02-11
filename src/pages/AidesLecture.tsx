@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactFormSection from "@/components/sections/ContactFormSection";
+import ComparisonSection from "@/components/sections/ComparisonSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Check, X, ArrowRight, Search, Lightbulb, Monitor, Eye } from "lucide-react";
@@ -301,6 +302,8 @@ const AidesLecture = () => {
             ))}
           </div>
         </section>
+
+        <ComparisonSection />
 
         {/* ACCOMPAGNEMENT FINAL */}
         <section className="py-20 bg-muted">
