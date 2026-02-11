@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -194,6 +195,18 @@ const VivreBasseVision = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Vivre avec la Basse Vision – Conseils Pratiques au Quotidien"
+        description="Conseils pratiques pour vivre avec la basse vision : lecture, cuisine, déplacements, loisirs et aides techniques pour retrouver votre autonomie."
+        canonical="https://seen-clearly-space.lovable.app/vivre-basse-vision"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Vivre avec la Basse Vision au Quotidien",
+          "description": "Conseils et solutions pour vivre au quotidien avec la basse vision.",
+          "author": { "@type": "Organization", "name": "LirElia" }
+        }}
+      />
       <Header />
       <main id="main-content">
         {/* Hero Section */}
