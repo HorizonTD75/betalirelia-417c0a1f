@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -51,6 +52,11 @@ const ContactConseil = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Demander un conseil personnalisé — Aide à la lecture | LirElia"
+        description="Décrivez votre situation visuelle et recevez des recommandations personnalisées pour choisir l'aide à la lecture la plus adaptée à vos besoins."
+        canonical="https://seen-clearly-space.lovable.app/contact-conseil"
+      />
       <Header />
       <main id="main-content">
         <section className="py-16 md:py-24 bg-muted/30">
