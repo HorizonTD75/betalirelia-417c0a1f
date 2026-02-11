@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -126,6 +127,18 @@ const MaladiesYeux = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Maladies des Yeux – DMLA, Glaucome, Rétinopathie & Autres"
+        description="Découvrez les principales maladies oculaires responsables de la basse vision : DMLA, glaucome, rétinopathie diabétique, cataracte et plus encore."
+        canonical="https://seen-clearly-space.lovable.app/maladies-yeux"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MedicalWebPage",
+          "name": "Maladies des Yeux",
+          "description": "Guide des maladies oculaires responsables de la basse vision.",
+          "author": { "@type": "Organization", "name": "LirElia" }
+        }}
+      />
       <Header />
       <main id="main-content">
         {/* Hero Section */}
