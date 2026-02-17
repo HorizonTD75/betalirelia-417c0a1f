@@ -40,7 +40,8 @@ const MaladiesYeux = () => {
       subtitle: "Atteinte du nerf optique",
       stat: "1 à 2% de la population de plus de 40 ans",
       statDetail: "400 000 à 500 000 personnes seraient porteuses sans le savoir",
-      description: "Le glaucome est souvent causé par une pression intraoculaire élevée et peut être asymptomatique pendant des années. Il affecte le nerf optique et peut entraîner une perte de vision progressive."
+      description: "Le glaucome est souvent causé par une pression intraoculaire élevée et peut être asymptomatique pendant des années. Il affecte le nerf optique et peut entraîner une perte de vision progressive.",
+      link: "/maladies-yeux/glaucome"
     },
     {
       id: "cataracte",
@@ -252,11 +253,19 @@ const MaladiesYeux = () => {
                           </div>
                         )}
                       </div>
-                      <div className="lg:w-64 shrink-0">
+                      <div className="lg:w-64 shrink-0 space-y-3">
                         <Card variant="highlighted" className="p-4">
                           <p className="font-bold text-foreground text-lg">{disease.stat}</p>
                           <p className="text-muted-foreground">{disease.statDetail}</p>
                         </Card>
+                        {disease.link && (
+                          <Button variant="outline" size="sm" asChild className="w-full">
+                            <Link to={disease.link}>
+                              En savoir plus
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </Card>
