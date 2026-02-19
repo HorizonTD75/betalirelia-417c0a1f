@@ -6,7 +6,8 @@ const pathways = [
   {
     icon: Eye,
     title: "Je veux comprendre ma basse vision",
-    description: "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une basse vision au quotidien.",
+    description:
+      "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une basse vision au quotidien.",
     cta: "En savoir plus",
     href: "#comprendre",
     color: "text-accent",
@@ -34,8 +35,8 @@ const pathways = [
     icon: Heart,
     title: "Je suis aidant(e) : par où commencer ?",
     description: "Guide pas à pas pour accompagner un proche atteint de basse vision sans s'épuiser.",
-    cta: "Guide aidants",
-    href: "#aidants",
+    cta: "Guide aidant",
+    href: "#aidant",
     color: "text-destructive",
     bgColor: "bg-destructive/10",
   },
@@ -46,9 +47,7 @@ const PathwaysSection = () => {
     <section className="py-20 bg-background" id="parcours">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Par où commencer ?
-          </h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Par où commencer ?</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Choisissez la situation la plus proche de la vôtre pour trouver les réponses adaptées.
           </p>
@@ -58,13 +57,11 @@ const PathwaysSection = () => {
           {pathways.map((pathway, index) => {
             const Icon = pathway.icon;
             return (
-              <Card
-                key={index}
-                variant="elevated"
-                className="group cursor-pointer"
-              >
+              <Card key={index} variant="elevated" className="group cursor-pointer">
                 <CardHeader className="pb-4">
-                  <div className={`w-16 h-16 rounded-xl ${pathway.bgColor} ${pathway.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <div
+                    className={`w-16 h-16 rounded-xl ${pathway.bgColor} ${pathway.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                  >
                     <Icon className="w-8 h-8" />
                   </div>
                   <CardTitle className="text-xl lg:text-2xl">{pathway.title}</CardTitle>
