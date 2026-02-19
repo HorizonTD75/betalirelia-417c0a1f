@@ -20,6 +20,7 @@ import Bilans from "./pages/Bilans";
 import BilanEssentiel from "./pages/bilans/BilanEssentiel";
 import BilanExpert from "./pages/bilans/BilanExpert";
 import BilanSuivi from "./pages/bilans/BilanSuivi";
+import ContactBilan from "./pages/ContactBilan";
 import Glaucome from "./pages/maladies/Glaucome";
 
 const queryClient = new QueryClient();
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
           <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
           <Route path="/bilans-bassevision/suivi" element={<BilanSuivi />} />
+          <Route path="/bilans-bassevision/contact" element={<ContactBilan />} />
           {/* Redirects from old URLs */}
           <Route path="/aides-lecture" element={<Navigate to="/aides-lecture-bassevision" replace />} />
           <Route path="/aides-lecture/*" element={<Navigate to="/aides-lecture-bassevision" replace />} />
