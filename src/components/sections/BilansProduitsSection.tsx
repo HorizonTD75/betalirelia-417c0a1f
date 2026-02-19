@@ -30,21 +30,21 @@ const BilansProduitsSection = () => {
             <CardContent className="space-y-4">
               <ul className="space-y-3">
                 {[
-                  "Objectifs de vie (ce que vous voulez refaire)",
-                  "Essais d'aides \"standard\"",
-                  "Compte-rendu simple et actionnable",
-                  "Orientation vers l'opticien partenaire si utile",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg">
+                "Objectifs de vie (ce que vous voulez refaire)",
+                "Essais d'aides \"standard\"",
+                "Compte-rendu simple et actionnable",
+                "Orientation vers l'opticien partenaire si utile"].
+                map((item, i) =>
+                <li key={i} className="flex items-start gap-3 text-lg">
                     <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
-                ))}
+                )}
               </ul>
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
               <Button variant="default" asChild>
-                <Link to="/contact-conseil">Demander un rendez-vous</Link>
+                
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/bilans-bassevision">
@@ -67,22 +67,22 @@ const BilansProduitsSection = () => {
             <CardContent className="space-y-4">
               <ul className="space-y-3">
                 {[
-                  { text: "Lire / écrire (loupes, agrandisseurs)", link: "/aides-lecture-bassevision" },
-                  { text: "Écrans (ordinateur, tablette…)", link: null },
-                  { text: "Maison / cuisine (étiquetage, repères)", link: null },
-                  { text: "Déplacements / loisirs", link: null },
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg">
+                { text: "Lire / écrire (loupes, agrandisseurs)", link: "/aides-lecture-bassevision" },
+                { text: "Écrans (ordinateur, tablette…)", link: null },
+                { text: "Maison / cuisine (étiquetage, repères)", link: null },
+                { text: "Déplacements / loisirs", link: null }].
+                map((item, i) =>
+                <li key={i} className="flex items-start gap-3 text-lg">
                     <Check className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
-                    {item.link ? (
-                      <Link to={item.link} className="underline underline-offset-4 hover:text-primary transition-colors">
+                    {item.link ?
+                  <Link to={item.link} className="underline underline-offset-4 hover:text-primary transition-colors">
                         {item.text}
-                      </Link>
-                    ) : (
-                      <span>{item.text}</span>
-                    )}
+                      </Link> :
+
+                  <span>{item.text}</span>
+                  }
                   </li>
-                ))}
+                )}
               </ul>
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
@@ -129,8 +129,8 @@ const BilansProduitsSection = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default BilansProduitsSection;
