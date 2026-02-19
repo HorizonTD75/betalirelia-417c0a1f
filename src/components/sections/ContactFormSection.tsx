@@ -33,8 +33,8 @@ const ContactFormSection = () => {
                     type="text"
                     id="name"
                     className="w-full px-4 py-3 text-lg border-2 border-input rounded-xl bg-background focus:border-primary focus:ring-4 focus:ring-ring/20 transition-all"
-                    placeholder="Jean Dupont"
-                  />
+                    placeholder="Jean Dupont" />
+
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-lg font-semibold mb-2">
@@ -44,8 +44,8 @@ const ContactFormSection = () => {
                     type="email"
                     id="email"
                     className="w-full px-4 py-3 text-lg border-2 border-input rounded-xl bg-background focus:border-primary focus:ring-4 focus:ring-ring/20 transition-all"
-                    placeholder="jean@exemple.fr"
-                  />
+                    placeholder="jean@exemple.fr" />
+
                 </div>
               </div>
               <div>
@@ -56,10 +56,10 @@ const ContactFormSection = () => {
                   id="situation"
                   rows={4}
                   className="w-full px-4 py-3 text-lg border-2 border-input rounded-xl bg-background focus:border-primary focus:ring-4 focus:ring-ring/20 transition-all resize-none"
-                  placeholder="Par exemple : Ma mère a été diagnostiquée DMLA il y a 3 mois. Elle n'arrive plus à lire son courrier..."
-                />
+                  placeholder="Par exemple : Ma mère a été diagnostiquée DMLA il y a 3 mois. Elle n'arrive plus à lire son courrier..." />
+
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex-col sm:flex-row gap-4 flex items-center justify-center">
                 <Button variant="default" size="lg">
                   <Send className="w-5 h-5" />
                   Demander un RDV ou un conseil
@@ -77,8 +77,8 @@ const ContactFormSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ContactFormSection;
