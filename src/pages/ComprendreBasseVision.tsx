@@ -98,7 +98,7 @@ const ComprendreBasseVision = () => {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="relative bg-primary text-primary-foreground py-20">
+        <section className="relative bg-primary text-primary-foreground py-20 pb-32">
           <div className="container">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
