@@ -60,15 +60,15 @@ const ContactFormSection = () => {
                   placeholder="Par exemple : Ma mère a été diagnostiquée DMLA il y a 3 mois. Elle n'arrive plus à lire son courrier..." />
 
               </div>
-              <div className="flex-col sm:flex-row gap-4 flex items-center justify-center">
+              <div className="flex-col gap-4 mx-0 px-0 items-center justify-center flex sm:flex-col">
                 <Button variant="default" size="lg" asChild>
-                  <Link to="/contact-conseil" className="text-center">
+                  <Link to="/contact-conseil">
                     <Send className="w-5 h-5" />
                     Demander un RDV ou un conseil
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/bilans-bassevision#bilans-comparaison" className="text-center">
+                  <Link to="/bilans-bassevision#bilans-comparaison">
                     Lire la FAQ sur les bilans
                     <ArrowRight className="w-5 h-5" />
                   </Link>
