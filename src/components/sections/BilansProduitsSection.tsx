@@ -44,10 +44,10 @@ const BilansProduitsSection = () => {
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
               <Button variant="default" asChild>
-                <Link to="/bilans-bassevision/contact">
-                  Prendre rendez-vous
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
+                
+
+
+
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/bilans-bassevision#bilans-comparaison">
