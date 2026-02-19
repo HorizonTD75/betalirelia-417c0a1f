@@ -3,34 +3,34 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Activity, Users, ArrowRight } from "lucide-react";
 
 const situations = [
-  {
-    icon: BookOpen,
-    title: "Je n'arrive plus à lire comme avant",
-    description: "Journal, courrier, livre, étiquettes… on part du concret.",
-    solution: "Solutions pour lire",
-    color: "border-l-primary",
-    iconBg: "bg-primary/10",
-    iconColor: "text-primary",
-  },
-  {
-    icon: Activity,
-    title: "Je suis sportif(ve) et ma vue change",
-    description: "Lunettes et sports sur-mesure via notre opticien partenaire.",
-    solution: "Lunettes adaptées",
-    color: "border-l-secondary",
-    iconBg: "bg-secondary/20",
-    iconColor: "text-secondary-foreground",
-  },
-  {
-    icon: Users,
-    title: "Un proche a une DMLA ou autre pathologie",
-    description: "Aidant : on vous guide pas à pas (priorités, sécurité, solutions).",
-    solution: "Guide aidant",
-    color: "border-l-accent",
-    iconBg: "bg-accent/10",
-    iconColor: "text-accent",
-  },
-];
+{
+  icon: BookOpen,
+  title: "Je n'arrive plus à lire comme avant",
+  description: "Journal, courrier, livre, étiquettes… on part du concret.",
+  solution: "Solutions pour lire",
+  color: "border-l-primary",
+  iconBg: "bg-primary/10",
+  iconColor: "text-primary"
+},
+{
+  icon: Activity,
+  title: "Je suis sportif(ve) et ma vue change",
+  description: "Lunettes et sports sur-mesure via notre opticien partenaire.",
+  solution: "Lunettes adaptées",
+  color: "border-l-secondary",
+  iconBg: "bg-secondary/20",
+  iconColor: "text-secondary-foreground"
+},
+{
+  icon: Users,
+  title: "Un proche a une DMLA ou autre pathologie",
+  description: "Aidant : on vous guide pas à pas (priorités, sécurité, solutions).",
+  solution: "Guide aidant",
+  color: "border-l-accent",
+  iconBg: "bg-accent/10",
+  iconColor: "text-accent"
+}];
+
 
 const SituationsSection = () => {
   return (
@@ -52,8 +52,8 @@ const SituationsSection = () => {
               <Card
                 key={index}
                 variant="elevated"
-                className={`border-l-4 ${situation.color} group cursor-pointer`}
-              >
+                className={`border-l-4 ${situation.color} group cursor-pointer`}>
+
                 <CardHeader>
                   <div className={`w-14 h-14 rounded-xl ${situation.iconBg} ${situation.iconColor} flex items-center justify-center mb-4`}>
                     <Icon className="w-7 h-7" />
@@ -67,25 +67,25 @@ const SituationsSection = () => {
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </CardContent>
-              </Card>
-            );
+              </Card>);
+
           })}
         </div>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
-          <Button variant="default" size="lg">
-            Faire un Bilan
-          </Button>
-          <Button variant="outline" size="lg">
-            Comprendre la Basse Vision
-          </Button>
-          <Button variant="secondary" size="lg">
-            Vous êtes aidant
-          </Button>
-        </div>
+        
+
+
+
+
+
+
+
+
+
+
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default SituationsSection;
