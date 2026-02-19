@@ -62,13 +62,13 @@ const ContactFormSection = () => {
               </div>
               <div className="flex-col sm:flex-row gap-4 flex items-center justify-center">
                 <Button variant="default" size="lg" asChild>
-                  <Link to="/contact-conseil">
+                  <Link to="/contact-conseil" className="text-center">
                     <Send className="w-5 h-5" />
                     Demander un RDV ou un conseil
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/bilans-bassevision#bilans-comparaison">
+                  <Link to="/bilans-bassevision#bilans-comparaison" className="text-center">
                     Lire la FAQ sur les bilans
                     <ArrowRight className="w-5 h-5" />
                   </Link>
