@@ -92,10 +92,10 @@ const BilansProduitsSection = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button variant="outline">
-                Voir tous les produits
-                <ArrowRight className="w-5 h-5" />
-              </Button>
+              
+
+
+
             </CardFooter>
           </Card>
         </div>
