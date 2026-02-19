@@ -12,8 +12,8 @@ import { Send, ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
-const productOptions = [
-  { value: "", label: "— Aucun produit en particulier —" },
+const topicOptions = [
+  { value: "", label: "— Aucun sujet en particulier —" },
   { value: "loupe-classique", label: "Loupe classique en verre", category: "Loupes en verre" },
   { value: "loupe-eclairante", label: "Loupe éclairante", category: "Loupes en verre" },
   { value: "loupe-dome", label: "Loupe dôme (à poser)", category: "Loupes en verre" },
@@ -26,26 +26,41 @@ const productOptions = [
   { value: "tele-agrandisseur-bureau", label: "Télé-agrandisseur de bureau", category: "Télé-agrandisseurs" },
   { value: "tele-agrandisseur-portable", label: "Télé-agrandisseur portable", category: "Télé-agrandisseurs" },
   { value: "tele-agrandisseur-tv", label: "Caméra de lecture TV", category: "Télé-agrandisseurs" },
+  { value: "bilan-essentiel", label: "Bilan basse vision Essentiel", category: "Bilans basse vision" },
+  { value: "bilan-expert", label: "Bilan basse vision Expert", category: "Bilans basse vision" },
+  { value: "bilan-suivi", label: "Bilan de suivi basse vision", category: "Bilans basse vision" },
 ];
 
-const categories = [...new Set(productOptions.filter(o => o.category).map(o => o.category))];
+const categories = [...new Set(topicOptions.filter(o => o.category).map(o => o.category))];
 
 const ContactConseil = () => {
   const [searchParams] = useSearchParams();
-  const [selectedProduct, setSelectedProduct] = useState("");
+  const [topic, setTopic] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [telephone, setTelephone] = useState("");
   const [message, setMessage] = useState("");
+  const [sourceUrl, setSourceUrl] = useState("");
+  const [sourceTag, setSourceTag] = useState("");
   const { toast } = useToast();
 
   useEffect(() => {
+    // Capture the source URL at form load time
+    const url = window.location.href;
+    setSourceUrl(url);
+
+    // Build source tag: "SRC_" + pathname with / replaced by _
+    const pathname = window.location.pathname;
+    const tag = "SRC_" + pathname.replace(/\//g, "_").replace(/^_/, "");
+    setSourceTag(tag);
+
+    // Pre-select topic from query param
     const produit = searchParams.get("produit");
     if (produit) {
-      const found = productOptions.find(o => o.value === produit);
-      if (found) setSelectedProduct(produit);
+      const found = topicOptions.find(o => o.value === produit);
+      if (found) setTopic(produit);
     }
   }, [searchParams]);
 
@@ -54,13 +69,15 @@ const ContactConseil = () => {
     setLoading(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("submit-contact", {
+      const { data, error } = await supabase.functions.invoke("brevo-upsert-contact", {
         body: {
-          name,
+          topic: topic || null,
           email,
-          phone,
-          selected_product: selectedProduct || null,
+          full_name: fullName,
+          telephone: telephone || null,
           message,
+          source_url: sourceUrl,
+          source_tag: sourceTag,
         },
       });
 
@@ -68,11 +85,14 @@ const ContactConseil = () => {
       if (data?.error) throw new Error(data.error);
 
       setSubmitted(true);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Submit error:", err);
+      const errorMessage = err instanceof Error ? err.message : "Erreur inconnue";
       toast({
-        title: "Erreur",
-        description: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+        title: "Une erreur est survenue",
+        description: errorMessage.startsWith("Adresse") || errorMessage.startsWith("Nom") || errorMessage.startsWith("Message")
+          ? errorMessage
+          : "Impossible d'envoyer votre demande. Veuillez réessayer.",
         variant: "destructive",
       });
     } finally {
@@ -106,11 +126,10 @@ const ContactConseil = () => {
                       <CheckCircle2 className="w-10 h-10 text-accent" />
                     </div>
                     <h1 className="font-serif text-3xl font-bold text-foreground">
-                      Merci pour votre message !
+                      Merci !
                     </h1>
                     <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
-                      Nous avons bien reçu votre demande. Nous vous répondrons par e-mail 
-                      sous 24 à 48 heures avec nos recommandations personnalisées.
+                      Nous revenons vers vous rapidement.
                     </p>
                     <Button variant="outline" size="lg" asChild>
                       <Link to="/aides-lecture-bassevision">
@@ -133,20 +152,22 @@ const ContactConseil = () => {
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-6">
+
+                      {/* Topic */}
                       <div className="space-y-2">
-                        <Label htmlFor="produit" className="text-lg font-semibold">
-                          Produit qui vous intéresse
+                        <Label htmlFor="topic" className="text-lg font-semibold">
+                          Sujet d'intérêt
                         </Label>
                         <select
-                          id="produit"
-                          value={selectedProduct}
-                          onChange={(e) => setSelectedProduct(e.target.value)}
+                          id="topic"
+                          value={topic}
+                          onChange={(e) => setTopic(e.target.value)}
                           className="w-full px-4 py-3 text-lg border-2 border-input rounded-xl bg-background focus:border-primary focus:ring-4 focus:ring-ring/20 transition-all"
                         >
-                          <option value="">— Aucun produit en particulier —</option>
+                          <option value="">— Aucun sujet en particulier —</option>
                           {categories.map(cat => (
                             <optgroup key={cat} label={cat}>
-                              {productOptions
+                              {topicOptions
                                 .filter(o => o.category === cat)
                                 .map(o => (
                                   <option key={o.value} value={o.value}>
@@ -156,24 +177,25 @@ const ContactConseil = () => {
                             </optgroup>
                           ))}
                         </select>
-                        {selectedProduct && (
+                        {topic && (
                           <p className="text-base text-accent font-medium">
-                            ✓ Produit pré-sélectionné : {productOptions.find(o => o.value === selectedProduct)?.label}
+                            ✓ Sujet sélectionné : {topicOptions.find(o => o.value === topic)?.label}
                           </p>
                         )}
                       </div>
 
+                      {/* Name + Email */}
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="name" className="text-lg font-semibold">
+                          <Label htmlFor="full_name" className="text-lg font-semibold">
                             Votre nom
                           </Label>
                           <Input
                             type="text"
-                            id="name"
+                            id="full_name"
                             required
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
                             maxLength={100}
                             className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
                             placeholder="Jean Dupont"
@@ -196,23 +218,25 @@ const ContactConseil = () => {
                         </div>
                       </div>
 
+                      {/* Telephone */}
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-lg font-semibold">
+                        <Label htmlFor="telephone" className="text-lg font-semibold">
                           Téléphone <span className="text-muted-foreground font-normal">(optionnel)</span>
                         </Label>
                         <Input
                           type="tel"
-                          id="phone"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
+                          id="telephone"
+                          value={telephone}
+                          onChange={(e) => setTelephone(e.target.value)}
                           className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
-                          placeholder="06 12 34 56 78"
+                          placeholder="01 56 77 88 99"
                         />
                       </div>
 
+                      {/* Message */}
                       <div className="space-y-2">
                         <Label htmlFor="situation" className="text-lg font-semibold">
-                          Décrivez brièvement votre situation
+                          Votre message
                         </Label>
                         <Textarea
                           id="situation"
@@ -225,6 +249,10 @@ const ContactConseil = () => {
                           placeholder="Par exemple : Ma mère a été diagnostiquée DMLA il y a 3 mois. Elle n'arrive plus à lire son courrier et aimerait retrouver un peu d'autonomie…"
                         />
                       </div>
+
+                      {/* Hidden fields for tracking */}
+                      <input type="hidden" value={sourceUrl} readOnly />
+                      <input type="hidden" value={sourceTag} readOnly />
 
                       <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
                         {loading ? (

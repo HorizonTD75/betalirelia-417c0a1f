@@ -16,31 +16,52 @@ export type Database = {
     Tables: {
       contact_requests: {
         Row: {
+          brevo_response: Json | null
           created_at: string
           email: string
+          full_name: string | null
           id: string
           message: string
           name: string
           phone: string | null
           selected_product: string | null
+          source_tag: string | null
+          source_url: string | null
+          status: string
+          telephone: string | null
+          topic: string | null
         }
         Insert: {
+          brevo_response?: Json | null
           created_at?: string
           email: string
+          full_name?: string | null
           id?: string
           message: string
           name: string
           phone?: string | null
           selected_product?: string | null
+          source_tag?: string | null
+          source_url?: string | null
+          status?: string
+          telephone?: string | null
+          topic?: string | null
         }
         Update: {
+          brevo_response?: Json | null
           created_at?: string
           email?: string
+          full_name?: string | null
           id?: string
           message?: string
           name?: string
           phone?: string | null
           selected_product?: string | null
+          source_tag?: string | null
+          source_url?: string | null
+          status?: string
+          telephone?: string | null
+          topic?: string | null
         }
         Relationships: []
       }
