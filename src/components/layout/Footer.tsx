@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-            <img src={logoJaune} alt="Logo LirElia" className="w-12 h-12 object-contain" />
+            <img src={logoJaune} alt="Logo LirElia" className="w-20 h-20 object-contain" />
               <span className="font-serif text-2xl font-bold">LirElia</span>
             </Link>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
@@ -75,8 +75,8 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
