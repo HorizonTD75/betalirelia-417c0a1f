@@ -610,13 +610,13 @@ const Glaucome = () => {
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/bilans">
+                  <Link to="/bilans-bassevision">
                     Découvrir nos bilans
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/aides-lecture">
+                  <Link to="/aides-lecture-bassevision">
                     Nos aides à la lecture
                     <ArrowRight className="w-5 h-5" />
                   </Link>

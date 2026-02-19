@@ -16,7 +16,7 @@ import teleAgrandisseur from "@/assets/tele-agrandisseur.jpg";
 const categories = [
   {
     id: "loupe-verre",
-    link: "/aides-lecture/loupes-verre",
+    link: "/aides-lecture-bassevision/loupes-verre",
     icon: Search,
     title: "Loupe en verre : grossissement optique simple et immédiat",
     image: loupeVerre,
@@ -41,7 +41,7 @@ const categories = [
   },
   {
     id: "loupe-electronique",
-    link: "/aides-lecture/loupes-electroniques",
+    link: "/aides-lecture-bassevision/loupes-electroniques",
     icon: Monitor,
     title: "Loupe électronique : grossissement variable et contraste renforcé",
     image: loupeElectronique,
@@ -66,7 +66,7 @@ const categories = [
   },
   {
     id: "lampes",
-    link: "/aides-lecture/lampes",
+    link: "/aides-lecture-bassevision/lampes",
     icon: Lightbulb,
     title: "Lampes de lecture : voir mieux grâce à un éclairage maîtrisé",
     image: lampeLecture,
@@ -91,7 +91,7 @@ const categories = [
   },
   {
     id: "tele-agrandisseur",
-    link: "/aides-lecture/tele-agrandisseurs",
+    link: "/aides-lecture-bassevision/tele-agrandisseurs",
     icon: Eye,
     title: "Télé-agrandisseur : confort maximal pour lire longtemps",
     image: teleAgrandisseur,

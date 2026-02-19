@@ -27,7 +27,7 @@ const Bilans = () => {
         "Suivi sur plusieurs mois",
       ],
       color: "primary",
-      link: "/bilans/essentiel",
+      link: "/bilans-bassevision/essentiel",
       cta: "Découvrir le Bilan Essentiel",
     },
     {
@@ -46,7 +46,7 @@ const Bilans = () => {
         "Suivi sur plusieurs mois",
       ],
       color: "secondary",
-      link: "/bilans/expert",
+      link: "/bilans-bassevision/expert",
       cta: "Découvrir le Bilan Expert",
       recommended: true,
     },
@@ -64,7 +64,7 @@ const Bilans = () => {
       ],
       notIncludes: [],
       color: "accent",
-      link: "/bilans/suivi",
+      link: "/bilans-bassevision/suivi",
       cta: "Découvrir le Pack Suivi",
     },
   ];

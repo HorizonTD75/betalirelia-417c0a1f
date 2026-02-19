@@ -92,7 +92,7 @@ const BilanSuivi = () => {
           </div>
           <div className="container relative py-20 lg:py-28">
             <div className="max-w-4xl">
-              <Link to="/bilans" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 text-lg">
+              <Link to="/bilans-bassevision" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 text-lg">
                 ← Retour aux bilans
               </Link>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">

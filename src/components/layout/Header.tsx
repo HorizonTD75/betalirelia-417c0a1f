@@ -8,11 +8,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Aides à la lecture", href: "/aides-lecture" },
-    { label: "Aides visuelles", href: "/vivre-basse-vision" },
-    { label: "Conseils", href: "/comprendre-basse-vision" },
-    { label: "Bilans", href: "/bilans" },
-    { label: "Club", href: "/club" },
+    { label: "Comprendre la basse vision", href: "/comprendre-basse-vision" },
+    { label: "Vivre avec la basse vision", href: "/vivre-basse-vision" },
+    { label: "Bilans visuels", href: "/bilans-bassevision" },
+    { label: "Aides à la lecture", href: "/aides-lecture-bassevision" },
     { label: "Contact", href: "/contact-conseil" },
   ];
 
