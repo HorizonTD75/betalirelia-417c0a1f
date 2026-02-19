@@ -105,7 +105,6 @@
 
   html {
     font-size: 18px; /* Base size larger for accessibility */
-    scroll-behavior: smooth;
   }
 
   body {
