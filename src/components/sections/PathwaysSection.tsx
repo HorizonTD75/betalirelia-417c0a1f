@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Eye, ClipboardList, Package, Heart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const pathways = [
   {
@@ -9,7 +10,7 @@ const pathways = [
     description:
       "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une basse vision au quotidien.",
     cta: "En savoir plus",
-    href: "#comprendre",
+    href: "/comprendre-basse-vision",
     color: "text-accent",
     bgColor: "bg-accent/10",
   },
@@ -18,7 +19,7 @@ const pathways = [
     title: "Je veux faire un bilan personnalisé",
     description: "Évaluez vos besoins avec un bilan fonctionnel adapté à votre situation et à vos objectifs de vie.",
     cta: "Découvrir les bilans",
-    href: "#bilans",
+    href: "/bilans-bassevision",
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
@@ -27,7 +28,7 @@ const pathways = [
     title: "Je cherche des matériels adaptés",
     description: "Loupes électroniques, télé-agrandisseurs, scanners vocaux... des outils concrets pour le quotidien.",
     cta: "Voir les produits",
-    href: "#produits",
+    href: "/aides-lecture-bassevision",
     color: "text-secondary",
     bgColor: "bg-secondary/20",
   },
@@ -36,7 +37,7 @@ const pathways = [
     title: "Je suis aidant(e) : par où commencer ?",
     description: "Guide pas à pas pour accompagner un proche atteint de basse vision sans s'épuiser.",
     cta: "Guide aidant",
-    href: "#aidant",
+    href: "/bientot-disponible",
     color: "text-destructive",
     bgColor: "bg-destructive/10",
   },
@@ -57,23 +58,27 @@ const PathwaysSection = () => {
           {pathways.map((pathway, index) => {
             const Icon = pathway.icon;
             return (
-              <Card key={index} variant="elevated" className="group cursor-pointer">
-                <CardHeader className="pb-4">
-                  <div
-                    className={`w-16 h-16 rounded-xl ${pathway.bgColor} ${pathway.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-                  >
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <CardTitle className="text-xl lg:text-2xl">{pathway.title}</CardTitle>
-                  <CardDescription className="text-lg">{pathway.description}</CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Button variant="card" className="group-hover:bg-primary group-hover:text-primary-foreground">
-                    {pathway.cta}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </CardFooter>
-              </Card>
+              <Link key={index} to={pathway.href} className="block group">
+                <Card variant="elevated" className="group cursor-pointer h-full">
+                  <CardHeader className="pb-4">
+                    <div
+                      className={`w-16 h-16 rounded-xl ${pathway.bgColor} ${pathway.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                    >
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <CardTitle className="text-xl lg:text-2xl">{pathway.title}</CardTitle>
+                    <CardDescription className="text-lg">{pathway.description}</CardDescription>
+                  </CardHeader>
+                  <CardFooter>
+                    <Button variant="card" className="group-hover:bg-primary group-hover:text-primary-foreground" asChild>
+                      <span>
+                        {pathway.cta}
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </Link>
             );
           })}
         </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AppointmentSection = () => {
   return (
@@ -24,8 +25,8 @@ const AppointmentSection = () => {
             <p className="text-lg text-muted-foreground mb-6">
               Réservez directement un créneau disponible
             </p>
-            <Button variant="default" className="w-full">
-              Choisir un créneau
+            <Button variant="default" className="w-full" asChild>
+              <Link to="/bilans-bassevision/contact">Choisir un créneau</Link>
             </Button>
           </div>
 
@@ -52,8 +53,8 @@ const AppointmentSection = () => {
             <p className="text-lg text-muted-foreground mb-6">
               Demandez un RDV, réponse par e-mail
             </p>
-            <Button variant="accent" className="w-full">
-              Demander un RDV
+            <Button variant="accent" className="w-full" asChild>
+              <Link to="/contact-conseil">Demander un RDV</Link>
             </Button>
           </div>
         </div>

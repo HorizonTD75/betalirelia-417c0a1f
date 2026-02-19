@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Send, HelpCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ContactFormSection = () => {
   return (
@@ -60,13 +61,17 @@ const ContactFormSection = () => {
 
               </div>
               <div className="flex-col sm:flex-row gap-4 flex items-center justify-center">
-                <Button variant="default" size="lg">
-                  <Send className="w-5 h-5" />
-                  Demander un RDV ou un conseil
+                <Button variant="default" size="lg" asChild>
+                  <Link to="/contact-conseil">
+                    <Send className="w-5 h-5" />
+                    Demander un RDV ou un conseil
+                  </Link>
                 </Button>
-                <Button variant="outline" size="lg">
-                  Lire la FAQ sur les bilans
-                  <ArrowRight className="w-5 h-5" />
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/bilans-bassevision#bilans-comparaison">
+                    Lire la FAQ sur les bilans
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
                 </Button>
               </div>
               <p className="text-center text-muted-foreground italic">

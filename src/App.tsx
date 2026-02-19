@@ -22,6 +22,7 @@ import BilanExpert from "./pages/bilans/BilanExpert";
 import BilanSuivi from "./pages/bilans/BilanSuivi";
 import ContactBilan from "./pages/ContactBilan";
 import Glaucome from "./pages/maladies/Glaucome";
+import BientotDisponible from "./pages/BientotDisponible";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/bilans/*" element={<Navigate to="/bilans-bassevision" replace />} />
           <Route path="/contact-conseil" element={<ContactConseil />} />
           <Route path="/club" element={<Club />} />
+          <Route path="/bientot-disponible" element={<BientotDisponible />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
