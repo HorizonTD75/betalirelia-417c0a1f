@@ -9,12 +9,12 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Comprendre la basse vision", href: "/comprendre-basse-vision" },
-    { label: "Vivre avec la basse vision", href: "/vivre-basse-vision" },
-    { label: "Bilans visuels", href: "/bilans-bassevision" },
-    { label: "Aides à la lecture", href: "/aides-lecture-bassevision" },
-    { label: "Contact", href: "/contact-conseil" },
-  ];
+  { label: "Comprendre la basse vision", href: "/comprendre-basse-vision" },
+  { label: "Vivre avec la basse vision", href: "/vivre-basse-vision" },
+  { label: "Bilans visuels", href: "/bilans-bassevision" },
+  { label: "Aides à la lecture", href: "/aides-lecture-bassevision" },
+  { label: "Contact", href: "/contact-conseil" }];
+
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-border relative overflow-hidden">
@@ -24,8 +24,8 @@ const Header = () => {
           src={headerBg}
           alt=""
           className="w-full h-full object-cover"
-          aria-hidden="true"
-        />
+          aria-hidden="true" />
+
         <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       </div>
       <a href="#main-content" className="skip-link">
@@ -36,7 +36,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
-            <img src={logoLirelia} alt="Logo LirElia" className="w-12 h-12 object-contain" />
+            <img src={logoLirelia} alt="Logo LirElia" className="w-20 h-20 object-contain" />
             <div className="whitespace-nowrap">
               <span className="font-serif text-2xl font-bold text-primary">LirElia</span>
               <span className="block text-sm text-muted-foreground">Basse Vision</span>
@@ -45,15 +45,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1 ml-8" aria-label="Navigation principale">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-base font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors whitespace-nowrap"
-              >
+            {navLinks.map((link) =>
+            <a
+              key={link.href}
+              href={link.href}
+              className="py-2 text-base font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors  mx-[10px] px-0 text-left">
+
                 {link.label}
               </a>
-            ))}
+            )}
           </nav>
 
           {/* CTA Buttons */}
@@ -75,27 +75,27 @@ const Header = () => {
             className="lg:hidden p-3 rounded-lg hover:bg-muted"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          >
+            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}>
+
             {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <nav className="lg:hidden py-6 border-t-2 border-border animate-slide-up" aria-label="Menu mobile">
+        {isMenuOpen &&
+        <nav className="lg:hidden py-6 border-t-2 border-border animate-slide-up" aria-label="Menu mobile">
             <ul className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+              {navLinks.map((link) =>
+            <li key={link.href}>
                   <a
-                    href={link.href}
-                    className="block px-4 py-4 text-xl font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                href={link.href}
+                className="block px-4 py-4 text-xl font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
+
                     {link.label}
                   </a>
                 </li>
-              ))}
+            )}
               <li className="pt-4 border-t-2 border-border mt-2">
                 <Button variant="secondary" size="lg" className="w-full">
                   <Calendar className="w-5 h-5" />
@@ -110,10 +110,10 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-        )}
+        }
       </div>
-    </header>
-  );
+    </header>);
+
 };
 
 export default Header;
