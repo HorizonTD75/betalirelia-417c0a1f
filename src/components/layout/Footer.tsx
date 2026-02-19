@@ -1,5 +1,6 @@
-import { Eye, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoJaune from "@/assets/logo-lirelia-jaune.png";
 
 const Footer = () => {
   return (
@@ -9,9 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                <Eye className="w-7 h-7 text-secondary-foreground" />
-              </div>
+            <img src={logoJaune} alt="Logo LirElia" className="w-12 h-12 object-contain" />
               <span className="font-serif text-2xl font-bold">LirElia</span>
             </Link>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
