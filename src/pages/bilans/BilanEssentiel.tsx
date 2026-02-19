@@ -55,7 +55,7 @@ const BilanEssentiel = () => {
           </div>
           <div className="container relative py-20 lg:py-28">
             <div className="max-w-4xl">
-              <Link to="/bilans" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 text-lg">
+              <Link to="/bilans-bassevision" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 text-lg">
                 ← Retour aux bilans
               </Link>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
@@ -101,7 +101,7 @@ const BilanEssentiel = () => {
               <Card variant="highlighted" className="mt-8 p-6">
                 <p className="text-lg">
                   Si, dès le départ, vous savez que des lunettes spécialisées seront nécessaires, le{" "}
-                  <Link to="/bilans/expert" className="text-primary font-bold underline underline-offset-4">Bilan Expert</Link>{" "}
+                  <Link to="/bilans-bassevision/expert" className="text-primary font-bold underline underline-offset-4">Bilan Expert</Link>{" "}
                   sera peut-être plus adapté.
                 </p>
               </Card>
@@ -277,14 +277,14 @@ const BilanEssentiel = () => {
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Bilan Expert</h3>
                   <p className="text-muted-foreground mb-4">Consultation coordonnée chez l'opticien-optométriste partenaire.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans/expert">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/expert">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6 text-center">
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Suivi</h3>
                   <p className="text-muted-foreground mb-4">Accompagnement régulier par appels, visios et visites.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6 text-center">

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ComprendreBasseVision from "./pages/ComprendreBasseVision";
@@ -35,15 +35,21 @@ const App = () => (
           <Route path="/maladies-yeux" element={<MaladiesYeux />} />
           <Route path="/maladies-yeux/glaucome" element={<Glaucome />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
-          <Route path="/aides-lecture" element={<AidesLecture />} />
-          <Route path="/aides-lecture/loupes-verre" element={<LoupesVerre />} />
-          <Route path="/aides-lecture/loupes-electroniques" element={<LoupesElectroniques />} />
-          <Route path="/aides-lecture/lampes" element={<Lampes />} />
-          <Route path="/aides-lecture/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
-          <Route path="/bilans" element={<Bilans />} />
-          <Route path="/bilans/essentiel" element={<BilanEssentiel />} />
-          <Route path="/bilans/expert" element={<BilanExpert />} />
-          <Route path="/bilans/suivi" element={<BilanSuivi />} />
+          {/* New primary routes */}
+          <Route path="/aides-lecture-bassevision" element={<AidesLecture />} />
+          <Route path="/aides-lecture-bassevision/loupes-verre" element={<LoupesVerre />} />
+          <Route path="/aides-lecture-bassevision/loupes-electroniques" element={<LoupesElectroniques />} />
+          <Route path="/aides-lecture-bassevision/lampes" element={<Lampes />} />
+          <Route path="/aides-lecture-bassevision/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
+          <Route path="/bilans-bassevision" element={<Bilans />} />
+          <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
+          <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
+          <Route path="/bilans-bassevision/suivi" element={<BilanSuivi />} />
+          {/* Redirects from old URLs */}
+          <Route path="/aides-lecture" element={<Navigate to="/aides-lecture-bassevision" replace />} />
+          <Route path="/aides-lecture/*" element={<Navigate to="/aides-lecture-bassevision" replace />} />
+          <Route path="/bilans" element={<Navigate to="/bilans-bassevision" replace />} />
+          <Route path="/bilans/*" element={<Navigate to="/bilans-bassevision" replace />} />
           <Route path="/contact-conseil" element={<ContactConseil />} />
           <Route path="/club" element={<Club />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

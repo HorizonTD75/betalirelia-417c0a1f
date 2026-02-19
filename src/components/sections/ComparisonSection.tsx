@@ -62,10 +62,10 @@ const criteria = [
 ];
 
 const columns = [
-  { key: "loupeVerre" as const, label: "Loupes en verre", link: "/aides-lecture/loupes-verre" },
-  { key: "loupeElec" as const, label: "Loupes électroniques", link: "/aides-lecture/loupes-electroniques" },
-  { key: "lampe" as const, label: "Lampes adaptées", link: "/aides-lecture/lampes" },
-  { key: "teleAgr" as const, label: "Télé-agrandisseurs", link: "/aides-lecture/tele-agrandisseurs" },
+  { key: "loupeVerre" as const, label: "Loupes en verre", link: "/aides-lecture-bassevision/loupes-verre" },
+  { key: "loupeElec" as const, label: "Loupes électroniques", link: "/aides-lecture-bassevision/loupes-electroniques" },
+  { key: "lampe" as const, label: "Lampes adaptées", link: "/aides-lecture-bassevision/lampes" },
+  { key: "teleAgr" as const, label: "Télé-agrandisseurs", link: "/aides-lecture-bassevision/tele-agrandisseurs" },
 ];
 
 const CellContent = ({ value }: { value: boolean | string }) => {

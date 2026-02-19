@@ -55,7 +55,7 @@ const BilanExpert = () => {
           </div>
           <div className="container relative py-20 lg:py-28">
             <div className="max-w-4xl">
-              <Link to="/bilans" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 text-lg">
+              <Link to="/bilans-bassevision" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 text-lg">
                 ← Retour aux bilans
               </Link>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 ml-4">
@@ -253,7 +253,7 @@ const BilanExpert = () => {
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Suivi</h3>
                   <p className="text-muted-foreground mb-4">Accompagnement régulier sur plusieurs mois.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">

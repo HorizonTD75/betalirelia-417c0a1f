@@ -47,7 +47,7 @@ const BilansProduitsSection = () => {
                 <Link to="/contact-conseil">Demander un rendez-vous</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/bilans">
+                <Link to="/bilans-bassevision">
                   Comparer les Bilans
                   <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -67,7 +67,7 @@ const BilansProduitsSection = () => {
             <CardContent className="space-y-4">
               <ul className="space-y-3">
                 {[
-                  { text: "Lire / écrire (loupes, agrandisseurs)", link: "/aides-lecture" },
+                  { text: "Lire / écrire (loupes, agrandisseurs)", link: "/aides-lecture-bassevision" },
                   { text: "Écrans (ordinateur, tablette…)", link: null },
                   { text: "Maison / cuisine (étiquetage, repères)", link: null },
                   { text: "Déplacements / loisirs", link: null },
@@ -87,7 +87,7 @@ const BilansProduitsSection = () => {
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
               <Button variant="secondary" asChild>
-                <Link to="/aides-lecture">
+                <Link to="/aides-lecture-bassevision">
                   Aides à la lecture
                   <ArrowRight className="w-5 h-5" />
                 </Link>

@@ -67,7 +67,7 @@ const CategoryPageLayout = ({
           <div className="container relative z-10">
             <div className="max-w-4xl">
               <Link
-                to="/aides-lecture"
+                to="/aides-lecture-bassevision"
                 className="inline-flex items-center gap-2 text-lg text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -166,7 +166,7 @@ const CategoryPageLayout = ({
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/aides-lecture">
+                  <Link to="/aides-lecture-bassevision">
                     <ArrowLeft className="w-5 h-5" />
                     Toutes les aides à la lecture
                   </Link>

@@ -92,7 +92,7 @@ const ContactConseil = () => {
           <div className="container">
             <div className="max-w-2xl mx-auto">
               <Link
-                to="/aides-lecture"
+                to="/aides-lecture-bassevision"
                 className="inline-flex items-center gap-2 text-lg text-muted-foreground hover:text-foreground mb-8 transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -113,7 +113,7 @@ const ContactConseil = () => {
                       sous 24 à 48 heures avec nos recommandations personnalisées.
                     </p>
                     <Button variant="outline" size="lg" asChild>
-                      <Link to="/aides-lecture">
+                      <Link to="/aides-lecture-bassevision">
                         <ArrowLeft className="w-5 h-5" />
                         Explorer les aides à la lecture
                       </Link>
