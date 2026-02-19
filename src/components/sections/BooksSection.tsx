@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, ArrowRight } from "lucide-react";
 import bookDmla from "@/assets/book-dmla.jpg";
 import bookAidant from "@/assets/book-aidant.jpg";
+import { Link } from "react-router-dom";
 
 const books = [
   {
@@ -55,9 +56,11 @@ const BooksSection = () => {
                     <p className="text-muted-foreground mb-6 leading-relaxed">
                       {book.description}
                     </p>
-                    <Button variant="outline" size="sm">
-                      Découvrir un extrait
-                      <ArrowRight className="w-4 h-4" />
+                    <Button variant="outline" size="sm" asChild>
+                      <Link to="/bientot-disponible">
+                        Découvrir un extrait
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </Button>
                   </div>
                 </div>

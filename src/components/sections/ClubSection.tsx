@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Video, MessageCircle, Calendar, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -59,10 +60,12 @@ const ClubSection = () => {
             })}
           </div>
 
-          <Button variant="hero" size="lg">
-            <Users className="w-6 h-6" />
-            Rejoindre le Club
-            <ArrowRight className="w-5 h-5" />
+          <Button variant="hero" size="lg" asChild>
+            <Link to="/club">
+              <Users className="w-6 h-6" />
+              Rejoindre le Club
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </Button>
         </div>
       </div>

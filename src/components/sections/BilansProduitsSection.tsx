@@ -44,10 +44,13 @@ const BilansProduitsSection = () => {
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
               <Button variant="default" asChild>
-                
+                <Link to="/bilans-bassevision/contact">
+                  Prendre rendez-vous
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/bilans-bassevision">
+                <Link to="/bilans-bassevision#bilans-comparaison">
                   Comparer les Bilans
                   <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -123,9 +126,11 @@ const BilansProduitsSection = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <Button variant="link" size="lg" className="text-xl">
-            Découvrez votre visiopraticien
-            <ArrowRight className="w-5 h-5" />
+          <Button variant="link" size="lg" className="text-xl" asChild>
+            <Link to="/bientot-disponible">
+              Découvrez votre visiopraticien
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </Button>
         </div>
       </div>
