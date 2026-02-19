@@ -44,12 +44,12 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2" aria-label="Navigation principale">
+          <nav className="hidden lg:flex items-center gap-1 ml-8" aria-label="Navigation principale">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-lg font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                className="px-3 py-2 text-base font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -57,17 +57,17 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <a href="tel:0123456789" className="flex items-center gap-2 text-lg font-semibold text-primary hover:text-primary/80">
-              <Phone className="w-5 h-5" />
-              <span className="hidden xl:inline">01 23 45 67 89</span>
-            </a>
+          <div className="hidden md:flex flex-col items-center gap-1 ml-4">
             <Button variant="secondary" size="default" asChild>
               <Link to="/club">
                 <Users className="w-5 h-5" />
-                S'inscrire au Club
+                Le Club
               </Link>
             </Button>
+            <a href="tel:0123456789" className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
+              <Phone className="w-4 h-4" />
+              <span>01 23 45 67 89</span>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
