@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X, Calendar, Eye, Users } from "lucide-react";
+import { Phone, Menu, X, Calendar, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import headerBg from "@/assets/header-bg.jpg";
+import logoLirelia from "@/assets/logo-lirelia.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,10 +36,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-              <Eye className="w-7 h-7 text-primary-foreground" />
-            </div>
-            <div>
+            <img src={logoLirelia} alt="Logo LirElia" className="w-12 h-12 object-contain" />
+            <div className="whitespace-nowrap">
               <span className="font-serif text-2xl font-bold text-primary">LirElia</span>
               <span className="block text-sm text-muted-foreground">Basse Vision</span>
             </div>
