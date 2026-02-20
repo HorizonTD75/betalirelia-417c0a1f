@@ -50,7 +50,7 @@ serve(async (req) => {
         interet: interet?.trim() || null,
         email: email.trim(),
         nom: nom.trim(),
-        telephone: telephone?.trim() || null,
+        phone: telephone?.trim() || null,
         message: message.trim(),
         source_url: source_url || null,
         source_tag: source_tag || null,
@@ -100,7 +100,7 @@ serve(async (req) => {
         headers: {
           "api-key": brevoApiKey,
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(brevoPayload),
       });
