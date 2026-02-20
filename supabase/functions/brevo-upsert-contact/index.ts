@@ -20,9 +20,9 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { topic, email, full_name, telephone, message, source_url, source_tag } = body;
+    const { interet, email, nom, telephone, message, source_url, source_tag } = body;
 
-    // ── 1. Validate required fields ──────────────────────────────────────────
+    // ── 1. Validate required fields
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || typeof email !== "string" || !emailRegex.test(email.trim())) {
       return new Response(JSON.stringify({ error: "Adresse e-mail invalide." }), {
@@ -30,7 +30,7 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-    if (!full_name || typeof full_name !== "string" || full_name.trim().length === 0) {
+    if (!nom || typeof nom !== "string" || nom.trim().length === 0) {
       return new Response(JSON.stringify({ error: "Nom requis." }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -43,22 +43,18 @@ serve(async (req) => {
       });
     }
 
-    // ── 2. Insert into contact_requests (status = "received") ─────────────────
+    // ── 2. Insert into contact_Lirelia (status = "received")
     const { data: insertedRow, error: dbError } = await supabase
-      .from("contact_requests")
+      .from("contact_lirelia")
       .insert({
-        topic: topic?.trim() || null,
+        interet: interet?.trim() || null,
         email: email.trim(),
-        full_name: full_name.trim(),
+        nom: nom.trim(),
         telephone: telephone?.trim() || null,
         message: message.trim(),
         source_url: source_url || null,
         source_tag: source_tag || null,
         status: "received",
-        // keep legacy columns populated too for backward compatibility
-        name: full_name.trim(),
-        phone: telephone?.trim() || null,
-        selected_product: topic?.trim() || null,
       })
       .select()
       .single();
@@ -73,21 +69,20 @@ serve(async (req) => {
 
     const rowId = insertedRow.id;
 
-    // ── 3. Brevo: upsert contact ──────────────────────────────────────────────
+    // ── 3. Brevo: upsert contact
     const brevoPayload: Record<string, unknown> = {
       email: email.trim(),
       updateEnabled: true,
       attributes: {
-        TOPIC: topic?.trim() || "",
-        FULL_NAME: full_name.trim(),
+        NOM: nom.trim(),
         TELEPHONE: telephone?.trim() || "",
+        INTERET: interet?.trim() || "",
         MESSAGE: message.trim(),
         SOURCE_URL: source_url || "",
         SOURCE_TAG: source_tag || "",
       },
     };
 
-    // Optionally add to a list if BREVO_LIST_ID secret is set
     const brevoListId = Deno.env.get("BREVO_LIST_ID");
     if (brevoListId) {
       const listId = parseInt(brevoListId, 10);
@@ -123,13 +118,13 @@ serve(async (req) => {
       brevoResponse = { error: String(brevoErr) };
     }
 
-    // ── 4. Update status + brevo_response ────────────────────────────────────
+    // ── 4. Update status
     await supabase
-      .from("contact_requests")
+      .from("contact_lirelia")
       .update({ status: brevoStatus, brevo_response: brevoResponse })
       .eq("id", rowId);
 
-    // ── 5. Return success to the front (even if Brevo failed) ─────────────────
+    // ── 5. Return success
     return new Response(JSON.stringify({ success: true, id: rowId }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },

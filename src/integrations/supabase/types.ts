@@ -14,54 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      contact_requests: {
+      contact_lirelia: {
         Row: {
           brevo_response: Json | null
-          created_at: string
+          date_creation: string
           email: string
-          full_name: string | null
           id: string
+          interet: string | null
           message: string
-          name: string
-          phone: string | null
-          selected_product: string | null
+          nom: string
           source_tag: string | null
           source_url: string | null
           status: string
           telephone: string | null
-          topic: string | null
         }
         Insert: {
           brevo_response?: Json | null
-          created_at?: string
+          date_creation?: string
           email: string
-          full_name?: string | null
           id?: string
+          interet?: string | null
           message: string
-          name: string
-          phone?: string | null
-          selected_product?: string | null
+          nom: string
           source_tag?: string | null
           source_url?: string | null
           status?: string
           telephone?: string | null
-          topic?: string | null
         }
         Update: {
           brevo_response?: Json | null
-          created_at?: string
+          date_creation?: string
           email?: string
-          full_name?: string | null
           id?: string
+          interet?: string | null
           message?: string
-          name?: string
-          phone?: string | null
-          selected_product?: string | null
+          nom?: string
           source_tag?: string | null
           source_url?: string | null
           status?: string
           telephone?: string | null
-          topic?: string | null
         }
         Relationships: []
       }

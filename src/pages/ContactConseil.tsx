@@ -35,10 +35,10 @@ const categories = [...new Set(topicOptions.filter(o => o.category).map(o => o.c
 
 const ContactConseil = () => {
   const [searchParams] = useSearchParams();
-  const [topic, setTopic] = useState("");
+  const [interet, setInteret] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [fullName, setFullName] = useState("");
+  const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [message, setMessage] = useState("");
@@ -47,20 +47,16 @@ const ContactConseil = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Capture the source URL at form load time
     const url = window.location.href;
     setSourceUrl(url);
-
-    // Build source tag: "SRC_" + pathname with / replaced by _
     const pathname = window.location.pathname;
     const tag = "SRC_" + pathname.replace(/\//g, "_").replace(/^_/, "");
     setSourceTag(tag);
 
-    // Pre-select topic from query param
     const produit = searchParams.get("produit");
     if (produit) {
       const found = topicOptions.find(o => o.value === produit);
-      if (found) setTopic(produit);
+      if (found) setInteret(produit);
     }
   }, [searchParams]);
 
@@ -71,9 +67,9 @@ const ContactConseil = () => {
     try {
       const { data, error } = await supabase.functions.invoke("brevo-upsert-contact", {
         body: {
-          topic: topic || null,
+          interet: interet || null,
           email,
-          full_name: fullName,
+          nom,
           telephone: telephone || null,
           message,
           source_url: sourceUrl,
@@ -125,9 +121,7 @@ const ContactConseil = () => {
                     <div className="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-10 h-10 text-accent" />
                     </div>
-                    <h1 className="font-serif text-3xl font-bold text-foreground">
-                      Merci !
-                    </h1>
+                    <h1 className="font-serif text-3xl font-bold text-foreground">Merci !</h1>
                     <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
                       Nous revenons vers vous rapidement.
                     </p>
@@ -146,22 +140,21 @@ const ContactConseil = () => {
                       Demander un conseil personnalisé
                     </CardTitle>
                     <CardDescription className="text-lg leading-relaxed">
-                      Décrivez votre situation en quelques lignes. Nous vous répondons par e-mail 
+                      Décrivez votre situation en quelques lignes. Nous vous répondons par e-mail
                       avec nos recommandations adaptées à vos besoins visuels.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-6">
-
-                      {/* Topic */}
+                      {/* Sujet d'intérêt */}
                       <div className="space-y-2">
-                        <Label htmlFor="topic" className="text-lg font-semibold">
+                        <Label htmlFor="interet" className="text-lg font-semibold">
                           Sujet d'intérêt
                         </Label>
                         <select
-                          id="topic"
-                          value={topic}
-                          onChange={(e) => setTopic(e.target.value)}
+                          id="interet"
+                          value={interet}
+                          onChange={(e) => setInteret(e.target.value)}
                           className="w-full px-4 py-3 text-lg border-2 border-input rounded-xl bg-background focus:border-primary focus:ring-4 focus:ring-ring/20 transition-all"
                         >
                           <option value="">— Aucun sujet en particulier —</option>
@@ -170,63 +163,47 @@ const ContactConseil = () => {
                               {topicOptions
                                 .filter(o => o.category === cat)
                                 .map(o => (
-                                  <option key={o.value} value={o.value}>
-                                    {o.label}
-                                  </option>
+                                  <option key={o.value} value={o.value}>{o.label}</option>
                                 ))}
                             </optgroup>
                           ))}
                         </select>
-                        {topic && (
+                        {interet && (
                           <p className="text-base text-accent font-medium">
-                            ✓ Sujet sélectionné : {topicOptions.find(o => o.value === topic)?.label}
+                            ✓ Sujet sélectionné : {topicOptions.find(o => o.value === interet)?.label}
                           </p>
                         )}
                       </div>
 
-                      {/* Name + Email */}
+                      {/* Nom + Email */}
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="full_name" className="text-lg font-semibold">
-                            Votre nom
-                          </Label>
+                          <Label htmlFor="nom" className="text-lg font-semibold">Votre nom</Label>
                           <Input
-                            type="text"
-                            id="full_name"
-                            required
-                            value={fullName}
-                            onChange={(e) => setFullName(e.target.value)}
-                            maxLength={100}
+                            type="text" id="nom" required value={nom}
+                            onChange={(e) => setNom(e.target.value)} maxLength={100}
                             className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
                             placeholder="Jean Dupont"
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email" className="text-lg font-semibold">
-                            Votre e-mail
-                          </Label>
+                          <Label htmlFor="email" className="text-lg font-semibold">Votre e-mail</Label>
                           <Input
-                            type="email"
-                            id="email"
-                            required
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            maxLength={255}
+                            type="email" id="email" required value={email}
+                            onChange={(e) => setEmail(e.target.value)} maxLength={255}
                             className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
                             placeholder="jean@exemple.fr"
                           />
                         </div>
                       </div>
 
-                      {/* Telephone */}
+                      {/* Téléphone */}
                       <div className="space-y-2">
                         <Label htmlFor="telephone" className="text-lg font-semibold">
                           Téléphone <span className="text-muted-foreground font-normal">(optionnel)</span>
                         </Label>
                         <Input
-                          type="tel"
-                          id="telephone"
-                          value={telephone}
+                          type="tel" id="telephone" value={telephone}
                           onChange={(e) => setTelephone(e.target.value)}
                           className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
                           placeholder="01 56 77 88 99"
@@ -235,41 +212,28 @@ const ContactConseil = () => {
 
                       {/* Message */}
                       <div className="space-y-2">
-                        <Label htmlFor="situation" className="text-lg font-semibold">
-                          Votre message
-                        </Label>
+                        <Label htmlFor="message" className="text-lg font-semibold">Votre message</Label>
                         <Textarea
-                          id="situation"
-                          required
-                          rows={4}
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
-                          maxLength={2000}
+                          id="message" required rows={4} value={message}
+                          onChange={(e) => setMessage(e.target.value)} maxLength={2000}
                           className="px-4 py-3 text-lg border-2 rounded-xl resize-none"
-                          placeholder="Par exemple : Ma mère a été diagnostiquée DMLA il y a 3 mois. Elle n'arrive plus à lire son courrier et aimerait retrouver un peu d'autonomie…"
+                          placeholder="Par exemple : Ma mère a été diagnostiquée DMLA il y a 3 mois. Elle n'arrive plus à lire son courrier…"
                         />
                       </div>
 
-                      {/* Hidden fields for tracking */}
                       <input type="hidden" value={sourceUrl} readOnly />
                       <input type="hidden" value={sourceTag} readOnly />
 
                       <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
                         {loading ? (
-                          <>
-                            <Loader2 className="w-5 h-5 animate-spin" />
-                            Envoi en cours…
-                          </>
+                          <><Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours…</>
                         ) : (
-                          <>
-                            <Send className="w-5 h-5" />
-                            Envoyer ma demande de conseil
-                          </>
+                          <><Send className="w-5 h-5" /> Envoyer ma demande de conseil</>
                         )}
                       </Button>
 
                       <p className="text-center text-muted-foreground italic text-base">
-                        Astuce aidant : vous pouvez remplir ce formulaire à la place de votre proche, 
+                        Astuce aidant : vous pouvez remplir ce formulaire à la place de votre proche,
                         puis venir au bilan avec lui/elle.
                       </p>
                     </form>
