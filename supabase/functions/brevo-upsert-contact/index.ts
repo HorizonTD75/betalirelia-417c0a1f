@@ -50,7 +50,7 @@ serve(async (req) => {
         interet: interet?.trim() || null,
         email: email.trim(),
         nom: nom.trim(),
-        phone: telephone?.trim() || null,
+        telephone: telephone?.trim() || null,
         message: message.trim(),
         source_url: source_url || null,
         source_tag: source_tag || null,
@@ -75,7 +75,7 @@ serve(async (req) => {
       updateEnabled: true,
       attributes: {
         NOM: nom.trim(),
-        TELEPHONE: telephone?.trim() || "",
+        PHONE: telephone?.trim() || "",
         INTERET: interet?.trim() || "",
         MESSAGE: message.trim(),
         SOURCE_URL: source_url || "",
