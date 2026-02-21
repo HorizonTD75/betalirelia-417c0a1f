@@ -32,7 +32,8 @@ const MaladiesYeux = () => {
       stat: "8% de la population après 50 ans",
       statDetail: "soit 1,5 million de personnes en France",
       description: "La DMLA est une maladie oculaire qui affecte la macula, la partie centrale de la rétine. Elle est souvent associée au vieillissement et peut entraîner une perte de vision centrale.",
-      extra: "La grille d'Amsler est le premier test simple qui informe sur la possibilité d'une DMLA."
+      extra: "La grille d'Amsler est le premier test simple qui informe sur la possibilité d'une DMLA.",
+      link: "/maladies-yeux/dmla"
     },
     {
       id: "glaucome",
