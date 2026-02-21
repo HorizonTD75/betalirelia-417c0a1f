@@ -22,6 +22,7 @@ import BilanExpert from "./pages/bilans/BilanExpert";
 import BilanSuivi from "./pages/bilans/BilanSuivi";
 import ContactBilan from "./pages/ContactBilan";
 import Glaucome from "./pages/maladies/Glaucome";
+import DMLA from "./pages/maladies/DMLA";
 import BientotDisponible from "./pages/BientotDisponible";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/comprendre-basse-vision" element={<ComprendreBasseVision />} />
           <Route path="/maladies-yeux" element={<MaladiesYeux />} />
           <Route path="/maladies-yeux/glaucome" element={<Glaucome />} />
+          <Route path="/maladies-yeux/dmla" element={<DMLA />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           {/* New primary routes */}
           <Route path="/aides-lecture-bassevision" element={<AidesLecture />} />
