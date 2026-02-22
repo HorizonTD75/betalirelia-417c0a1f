@@ -39,7 +39,7 @@ const ComprendreBasseVision = () => {
     "« Ce que j'aimais faire (coudre, bricoler, jardiner, lire…) est devenu trop difficile. »"
   ];
 
-  const professionals = [
+  const professionals: { title: string; icon: typeof Eye; description: string; link?: string }[] = [
     {
       title: "L'ophtalmologiste",
       icon: Stethoscope,
@@ -58,7 +58,8 @@ const ComprendreBasseVision = () => {
     {
       title: "Le visiopraticien",
       icon: Users,
-      description: "J'interviens à côté de ces professionnels. Mon rôle est de traduire vos difficultés en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements."
+      description: "Le Visiopraticien LirElia intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
+      link: "/visiopraticien"
     }
   ];
 
@@ -262,7 +263,7 @@ const ComprendreBasseVision = () => {
               
               <div className="grid md:grid-cols-2 gap-8">
                 {professionals.map((pro, index) => (
-                  <Card key={index} variant="elevated" className="p-8">
+                    <Card key={index} variant="elevated" className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
                         <pro.icon className="w-7 h-7 text-primary-foreground" />
@@ -274,6 +275,14 @@ const ComprendreBasseVision = () => {
                         <p className="text-lg text-muted-foreground leading-relaxed">
                           {pro.description}
                         </p>
+                        {pro.link && (
+                          <Button variant="outline" size="sm" className="mt-4" asChild>
+                            <Link to={pro.link}>
+                              Découvrir le Visiopraticien
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </Card>

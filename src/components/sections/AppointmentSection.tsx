@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Calendar, Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AppointmentSection = () => {
@@ -8,10 +8,10 @@ const AppointmentSection = () => {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Prendre rendez-vous
+            Prendre rendez-vous avec le Visiopraticien
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Vous pouvez choisir un créneau, appeler, ou faire une demande par e-mail.
+            Le Visiopraticien LirElia vous reçoit au cabinet de Palaiseau ou à domicile (selon secteur). En cas de besoin d'équipement, un opticien partenaire peut intervenir dans le parcours.
           </p>
         </div>
 
@@ -83,6 +83,16 @@ const AppointmentSection = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Lien secondaire */}
+        <div className="mt-8 text-center">
+          <Button variant="outline" asChild>
+            <Link to="/visiopraticien">
+              Découvrir le Visiopraticien
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
