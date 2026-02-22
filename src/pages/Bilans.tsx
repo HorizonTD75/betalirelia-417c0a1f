@@ -89,16 +89,16 @@ const Bilans = () => {
     "Pas de diagnostic médical ni de prescription de traitement",
     "Pas de remplacement du suivi chez l'ophtalmologiste",
     "Pas de promesse de « retrouver sa vue d'avant »",
-    "Pas de vente forcée : nous réfléchissons ensemble",
+    "Pas de vente forcée : le Visiopraticien réfléchit avec vous",
   ];
 
   const steps = [
-    { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, nous faisons un premier point sur votre situation et je vous indique ce qu'il est utile d'apporter." },
-    { title: "Accueil et entretien", text: "Nous discutons de vos activités importantes et de ce qui vous pose le plus problème aujourd'hui." },
-    { title: "Évaluation de la vision fonctionnelle", text: "Nous observons comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
-    { title: "Mises en situation concrètes", text: "Selon vos besoins, nous simulons certaines situations du quotidien." },
+    { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu'il est utile d'apporter." },
+    { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
+    { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
+    { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
     { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, filtres, lampes, supports, aides pour écrire…" },
-    { title: "Plan d'action personnalisé", text: "En fin de séance, nous récapitulons les priorités, les aides à envisager et les étapes suivantes." },
+    { title: "Plan d'action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." },
   ];
 
   const takeaways = [
@@ -114,8 +114,8 @@ const Bilans = () => {
     { q: "Dois-je voir mon ophtalmo avant ?", a: "Idéalement oui, car le bilan basse vision s'appuie sur votre diagnostic. Mais si vous n'avez pas de rendez-vous ophtalmo récent, nous pouvons commencer et vous orienter ensuite." },
     { q: "Est-ce remboursé ?", a: "Le bilan basse vision n'est pas un acte médical et n'est pas remboursé par la Sécurité sociale. Certaines mutuelles proposent un forfait « bien-être » ou « prévention » qui peut couvrir une partie. Renseignez-vous auprès de votre complémentaire santé." },
     { q: "Puis-je venir avec un proche ?", a: "Oui, c'est fortement recommandé. L'aidant (conjoint, enfant, proche) peut assister à l'ensemble de la séance et recevoir des conseils adaptés." },
-    { q: "Combien de temps dure une séance ?", a: "En moyenne 1h15 à 1h30, toujours à votre rythme. Nous prenons le temps nécessaire." },
-    { q: "Quelle est la différence avec un bilan chez l'ophtalmologiste ?", a: "L'ophtalmologiste diagnostique et traite la maladie de l'œil. Le bilan basse vision est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie." },
+    { q: "Combien de temps dure une séance ?", a: "En moyenne 1h15 à 1h30, toujours à votre rythme. Le Visiopraticien prend le temps nécessaire." },
+    { q: "Quelle est la différence avec un bilan chez l'ophtalmologiste ?", a: "L'ophtalmologiste diagnostique et traite la maladie de l'œil. Le bilan basse vision réalisé par le Visiopraticien LirElia est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie dans la lecture." },
   ];
 
   return (
@@ -200,7 +200,7 @@ const Bilans = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                Ce que nous faisons pendant le bilan
+                Ce que le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien LirElia</Link> fait pendant le bilan
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="p-8">
@@ -208,7 +208,7 @@ const Bilans = () => {
                     <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center">
                       <Check className="w-6 h-6" />
                     </div>
-                    Ce que nous faisons
+                    Ce que le Visiopraticien fait
                   </h3>
                   <ul className="space-y-4">
                     {doList.map((item, i) => (
@@ -224,7 +224,7 @@ const Bilans = () => {
                     <div className="w-10 h-10 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center">
                       <X className="w-6 h-6" />
                     </div>
-                    Ce que nous ne faisons pas
+                    Ce que le Visiopraticien ne fait pas
                   </h3>
                   <ul className="space-y-4">
                     {dontList.map((item, i) => (
@@ -341,7 +341,7 @@ const Bilans = () => {
                   <div className="w-14 h-14 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-4">
                     <Eye className="w-7 h-7" />
                   </div>
-                  <h3 className="font-serif text-xl font-bold mb-4">Notre rôle pendant le bilan</h3>
+                  <h3 className="font-serif text-xl font-bold mb-4">Le rôle du <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link></h3>
                   <ul className="space-y-3">
                     {[
                       "Identifier vos besoins fonctionnels",
@@ -432,7 +432,7 @@ const Bilans = () => {
                 Prêt à faire le point sur votre vue ?
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10 leading-relaxed">
-                Contactez-nous pour choisir le bilan qui vous convient. Nous répondons à toutes vos questions.
+                Contactez le <Link to="/visiopraticien" className="underline underline-offset-4 hover:text-primary-foreground/80">Visiopraticien LirElia</Link> pour choisir le bilan adapté à votre situation de basse vision.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
