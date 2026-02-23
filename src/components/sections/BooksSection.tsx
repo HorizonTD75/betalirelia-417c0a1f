@@ -11,6 +11,7 @@ const books = [
     title: "DMLA – Votre vie ne s'arrête pas",
     subtitle: "Le guide pratique pour continuer à vivre pleinement",
     description: "Ce livre accompagne les personnes atteintes de DMLA et leurs proches, avec des explications claires, des solutions concrètes et des témoignages inspirants.",
+    link: "/livre-dmla-votre-vie-ne-sarrete-pas",
   },
   {
     image: bookAidant,
@@ -57,7 +58,7 @@ const BooksSection = () => {
                       {book.description}
                     </p>
                     <Button variant="outline" size="sm" asChild>
-                      <Link to="/bientot-disponible">
+                      <Link to={book.link || "/bientot-disponible"}>
                         Découvrir un extrait
                         <ArrowRight className="w-4 h-4" />
                       </Link>
