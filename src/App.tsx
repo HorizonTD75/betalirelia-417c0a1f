@@ -25,6 +25,7 @@ import Glaucome from "./pages/maladies/Glaucome";
 import DMLA from "./pages/maladies/DMLA";
 import BientotDisponible from "./pages/BientotDisponible";
 import Visiopraticien from "./pages/Visiopraticien";
+import LivreDmla from "./pages/LivreDmla";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/bilans/*" element={<Navigate to="/bilans-bassevision" replace />} />
           <Route path="/contact-conseil" element={<ContactConseil />} />
           <Route path="/club" element={<Club />} />
+          <Route path="/livre-dmla-votre-vie-ne-sarrete-pas" element={<LivreDmla />} />
           <Route path="/bientot-disponible" element={<BientotDisponible />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
