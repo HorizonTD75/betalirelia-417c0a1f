@@ -321,6 +321,33 @@ const LivreDmla = () => {
           </div>
         </section>
 
+        {/* Aperçu du livre */}
+        <section className="py-20 bg-muted">
+          <div className="container max-w-4xl">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+              Feuilleter un aperçu du livre
+            </h2>
+            <p className="text-lg text-muted-foreground text-center mb-8 max-w-2xl mx-auto leading-relaxed">
+              Découvrez les premières pages du guide et jugez par vous-même de la clarté des explications et de la qualité de la mise en page, pensée pour les personnes malvoyantes.
+            </p>
+            <div className="bg-background rounded-xl shadow-lg overflow-hidden border">
+              <iframe
+                src="/documents/livre-dmla-apercu.pdf"
+                title="Aperçu du livre DMLA : Votre vie ne s'arrête pas"
+                className="w-full h-[600px] md:h-[750px]"
+              />
+            </div>
+            <div className="text-center mt-6">
+              <Button variant="outline" size="lg" asChild>
+                <a href="/documents/livre-dmla-apercu.pdf" download="DMLA-votre-vie-ne-sarrete-pas-apercu.pdf">
+                  <BookOpen className="w-5 h-5" />
+                  Télécharger l'aperçu (PDF)
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* CTA final */}
         <section className="py-20 bg-primary text-primary-foreground">
           <div className="container max-w-3xl text-center">
