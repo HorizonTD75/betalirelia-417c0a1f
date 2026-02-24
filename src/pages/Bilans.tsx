@@ -121,8 +121,16 @@ const Bilans = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilans basse vision — Essentiel, Expert, Suivi | LirElia"
-        description="Faites le point sur votre vue avec un bilan basse vision personnalisé. Trois formules : Essentiel, Expert ou Suivi sur plusieurs mois."
+        title="Bilans Basse Vision à Palaiseau : Essentiel, Expert, Suivi"
+        description="Évaluez vos besoins visuels avec nos bilans personnalisés. Test d'aides à la lecture et plan d'action concret pour la DMLA et le glaucome."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Bilans Basse Vision LirElia",
+          "description": "Bilans fonctionnels personnalisés pour personnes malvoyantes : Essentiel, Expert et Suivi sur 3 mois.",
+          "provider": { "@type": "Organization", "name": "LirElia" },
+          "serviceType": "Bilan basse vision"
+        }}
       />
       <Header />
       <main id="main-content">

@@ -3,9 +3,10 @@ import { useEffect } from "react";
 interface SEOHeadProps {
   title: string;
   description: string;
+  jsonLd?: Record<string, unknown>;
 }
 
-const SEOHead = ({ title, description }: SEOHeadProps) => {
+const SEOHead = ({ title, description, jsonLd }: SEOHeadProps) => {
   useEffect(() => {
     document.title = title;
 
@@ -30,14 +31,26 @@ const SEOHead = ({ title, description }: SEOHeadProps) => {
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.remove();
 
-    // Remove any JSON-LD structured data
-    const jsonLd = document.getElementById("seo-jsonld");
-    if (jsonLd) jsonLd.remove();
+    // Manage JSON-LD structured data
+    const existingJsonLd = document.getElementById("seo-jsonld");
+    if (jsonLd) {
+      if (existingJsonLd) {
+        existingJsonLd.textContent = JSON.stringify(jsonLd);
+      } else {
+        const script = document.createElement("script");
+        script.id = "seo-jsonld";
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(jsonLd);
+        document.head.appendChild(script);
+      }
+    } else if (existingJsonLd) {
+      existingJsonLd.remove();
+    }
 
     // Remove any preload/prefetch hints
     document.querySelectorAll('link[rel="preload"], link[rel="prefetch"], link[rel="dns-prefetch"], link[rel="preconnect"]').forEach(el => el.remove());
 
-  }, [title, description]);
+  }, [title, description, jsonLd]);
 
   return null;
 };

@@ -196,8 +196,8 @@ const VivreBasseVision = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Vivre avec la Basse Vision – Conseils Pratiques au Quotidien"
-        description="Conseils pratiques pour vivre avec la basse vision : lecture, cuisine, déplacements, loisirs et aides techniques pour retrouver votre autonomie."
+        title="Vivre avec la Basse Vision : Conseils & Autonomie | LirElia"
+        description="Conseils pratiques pour le quotidien : lecture, éclairage, écrans et sécurité à la maison. Maintenez votre qualité de vie malgré une déficience visuelle."
       />
       <Header />
       <main id="main-content">

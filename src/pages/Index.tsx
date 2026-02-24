@@ -16,7 +16,16 @@ const Index = () => {
     <div className="min-h-screen">
       <SEOHead
         title="LirElia – Basse Vision : Bilans, Aides Visuelles & Accompagnement"
-        description="LirElia vous accompagne dans la basse vision : bilans personnalisés, loupes, lampes, télé-agrandisseurs et conseils pour retrouver confort et autonomie au quotidien."
+        description="Accompagnement expert en basse vision, DMLA et glaucome. Retrouvez votre autonomie grâce à nos bilans fonctionnels et aides à la lecture à Palaiseau."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          "name": "LirElia",
+          "description": "Accompagnement expert en basse vision, DMLA et glaucome. Bilans fonctionnels et aides à la lecture.",
+          "url": "https://betalirelia.lovable.app",
+          "medicalSpecialty": "Optometry",
+          "knowsAbout": ["Basse vision", "DMLA", "Glaucome", "Aides à la lecture", "Bilans basse vision"]
+        }}
       />
       <Header />
       <main id="main-content">

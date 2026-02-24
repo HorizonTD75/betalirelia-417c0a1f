@@ -110,8 +110,16 @@ const Visiopraticien = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Visiopraticien LirElia – Accompagnement basse vision, DMLA & aides à la lecture"
-        description="Le Visiopraticien LirElia accompagne les personnes malvoyantes (DMLA, glaucome, basse vision) pour mieux lire, gagner en autonomie et choisir les aides visuelles adaptées. Cabinet à Palaiseau et à domicile."
+        title="Visiopraticien Basse Vision à Palaiseau | LirElia"
+        description="Le Visiopraticien LirElia accompagne les malvoyants (DMLA, glaucome) pour retrouver l'autonomie dans la lecture et le quotidien. Cabinet à Palaiseau et à domicile."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Visiopraticien LirElia",
+          "description": "Accompagnement basse vision pour mieux lire et gagner en autonomie. Bilans fonctionnels, aides visuelles, conseils personnalisés.",
+          "provider": { "@type": "Organization", "name": "LirElia" },
+          "serviceType": "Accompagnement basse vision"
+        }}
       />
       <Header />
       <main id="main-content">

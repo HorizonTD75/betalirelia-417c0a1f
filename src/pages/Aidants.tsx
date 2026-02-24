@@ -47,8 +47,8 @@ const Aidants = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Aidants basse vision : accompagner un proche malvoyant | LirElia"
-        description="Guide pratique pour aidants : accompagnez votre proche malvoyant (DMLA, glaucome) au quotidien. Conseils, solutions de lecture, autonomie à domicile et bilan basse vision."
+        title="Guide pour les Aidants Basse Vision & DMLA | LirElia"
+        description="Comment accompagner un proche malvoyant sans l'infantiliser ? Conseils pratiques, aménagement du domicile et soutien pour les aidants familiaux."
       />
       <Header />
       <main id="main-content">
@@ -72,6 +72,7 @@ const Aidants = () => {
                 Accompagner un proche malvoyant{" "}
                 <span className="text-secondary">au quotidien</span>
               </h1>
+              <p className="sr-only">Accompagner un proche malvoyant au quotidien</p>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
                 Vous êtes conjoint(e), enfant, voisin(e), ami(e) ou aide à domicile.
                 Ce guide vous donne des repères concrets pour soulager votre quotidien,
