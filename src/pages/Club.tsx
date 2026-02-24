@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SEOHead from "@/components/SEOHead";
 import ClubHeroSection from "@/components/sections/club/ClubHeroSection";
 import ClubAudienceSection from "@/components/sections/club/ClubAudienceSection";
 import ClubHowItWorksSection from "@/components/sections/club/ClubHowItWorksSection";
@@ -11,6 +12,10 @@ import ClubRegistrationSection from "@/components/sections/club/ClubRegistration
 const Club = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOHead
+        title="Club Basse Vision LirElia : Rencontres & Échanges Gratuits"
+        description="Rejoignez le Club LirElia : échanges entre malvoyants et aidants, mini-conférences et astuces du quotidien. Gratuit et accessible en visioconférence."
+      />
       <Header />
       <main id="main-content" className="flex-1">
         <ClubHeroSection />

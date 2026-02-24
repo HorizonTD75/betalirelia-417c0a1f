@@ -1,4 +1,7 @@
 User-agent: *
+Disallow:
+
+Sitemap: https://betalirelia.lovable.app/sitemap.xml
 Disallow: /
 Noindex: /
 

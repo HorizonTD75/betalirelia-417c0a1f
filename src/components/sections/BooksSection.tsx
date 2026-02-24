@@ -45,6 +45,8 @@ const BooksSection = () => {
                       src={book.image}
                       alt={book.title}
                       className="w-40 h-auto rounded-lg shadow-lg"
+                      width={160}
+                      height={204}
                     />
                   </div>
                   <div className="md:w-2/3 p-6">

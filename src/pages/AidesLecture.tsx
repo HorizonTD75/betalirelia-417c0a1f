@@ -120,8 +120,16 @@ const AidesLecture = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Aides à la lecture pour malvoyants — Loupes, lampes, agrandisseurs | LirElia"
-        description="Retrouvez le plaisir de lire grâce aux aides à la lecture adaptées à la basse vision : loupes en verre, loupes électroniques, lampes et télé-agrandisseurs."
+        title="Aides à la Lecture Malvoyants : Loupes & Télé-agrandisseurs"
+        description="Retrouvez le plaisir de lire. Comparatif et conseils sur les loupes électroniques, lampes adaptées et télé-agrandisseurs pour basse vision."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Aides à la lecture pour malvoyants",
+          "description": "Conseil et accompagnement dans le choix d'aides à la lecture : loupes, lampes, télé-agrandisseurs.",
+          "provider": { "@type": "Organization", "name": "LirElia" },
+          "serviceType": "Conseil en aides visuelles"
+        }}
       />
       <Header />
       <main id="main-content">
@@ -139,8 +147,11 @@ const AidesLecture = () => {
           <div className="container relative z-10">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-8 leading-tight">
-                Aides à la lecture : retrouver le plaisir de lire, même en cas de basse vision
+                Aides à la lecture : voir autrement
               </h1>
+              <p className="font-serif text-2xl text-primary-foreground/80 mb-4">
+                Retrouver le plaisir de lire, même en cas de basse vision
+              </p>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6">
                 Lorsque la vision baisse, lire devient difficile, fatigant, parfois décourageant.
                 Pourtant, il existe aujourd'hui de nombreuses <strong>aides à la lecture pour malvoyants</strong> permettant 
