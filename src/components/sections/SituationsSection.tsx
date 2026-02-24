@@ -29,7 +29,7 @@ const situations = [
   title: "Un proche a une DMLA ou autre pathologie",
   description: "Aidant : on vous guide pas à pas (priorités, sécurité, solutions).",
   solution: "Guide aidant",
-  href: "/bientot-disponible",
+  href: "/aidants",
   color: "border-l-accent",
   iconBg: "bg-accent/10",
   iconColor: "text-accent"
