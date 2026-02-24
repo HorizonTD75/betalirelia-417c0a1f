@@ -37,7 +37,7 @@ const pathways = [
     title: "Je suis aidant(e) : par où commencer ?",
     description: "Guide pas à pas pour accompagner un proche atteint de basse vision sans s'épuiser.",
     cta: "Guide aidant",
-    href: "/bientot-disponible",
+    href: "/aidants",
     color: "text-destructive",
     bgColor: "bg-destructive/10",
   },
