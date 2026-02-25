@@ -18,6 +18,7 @@ const books = [
     title: "Aider un proche atteint de DMLA",
     subtitle: "Le guide indispensable pour accompagner sans s'épuiser",
     description: "Destiné aux aidants familiaux et professionnels, ce livre vous apprend à soutenir sans étouffer et à préserver votre propre équilibre.",
+    link: "/livre-aider-proche-dmla",
   },
 ];
 
