@@ -73,8 +73,8 @@ const pourquoiUnique = [
     desc: "Un chapitre entier sur le burn-out de l'aidant : reconnaître les signes, trouver du répit, dire ses limites sans culpabiliser. Parce qu'on ne peut bien aider que si on prend aussi soin de soi.",
   },
   {
-    title: "À jour 2025",
-    desc: "Toutes les informations administratives, aides financières (PCH, APA, MaPrimeAdapt'), contacts d'associations et démarches sont actualisées pour 2025.",
+    title: "À jour 2026",
+    desc: "Toutes les informations administratives, aides financières (PCH, APA, MaPrimeAdapt'), contacts d'associations et démarches sont actualisées pour 2026.",
   },
 ];
 
