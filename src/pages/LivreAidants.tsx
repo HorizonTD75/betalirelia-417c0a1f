@@ -4,7 +4,18 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BookOpen, ArrowRight, Eye, Heart, Users, HelpCircle, Star, CheckCircle, Home, ShieldCheck } from "lucide-react";
+import {
+  BookOpen,
+  ArrowRight,
+  Eye,
+  Heart,
+  Users,
+  HelpCircle,
+  Star,
+  CheckCircle,
+  Home,
+  ShieldCheck,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import bookAidant from "@/assets/book-aidant.jpg";
 
@@ -43,7 +54,7 @@ const planDuLivre = [
     ],
   },
   {
-    title: "Ressources et accompagnementsr",
+    title: "Ressources et accompagnements",
     icon: HelpCircle,
     items: [
       "Qui fait quoi : ophtalmologiste, orthoptiste, ergothérapeute, opticien spécialisé, instructeur en locomotion",
@@ -80,15 +91,18 @@ const pourquoiUnique = [
 
 const temoignages = [
   {
-    quote: "Enfin un livre qui nous parle à nous, les aidants. J'ai arrêté de faire à sa place. On avance plus lentement, mais on avance ensemble.",
+    quote:
+      "Enfin un livre qui nous parle à nous, les aidants. J'ai arrêté de faire à sa place. On avance plus lentement, mais on avance ensemble.",
     author: "Marc, 58 ans, fils d'un père atteint de DMLA",
   },
   {
-    quote: "Le chapitre sur le burn-out m'a sauvée. J'ai compris que prendre deux heures pour moi le jeudi n'était pas de l'égoïsme, c'était ce qui me permettait de continuer.",
+    quote:
+      "Le chapitre sur le burn-out m'a sauvée. J'ai compris que prendre deux heures pour moi le jeudi n'était pas de l'égoïsme, c'était ce qui me permettait de continuer.",
     author: "Sophie, 68 ans, épouse",
   },
   {
-    quote: "Les phrases toutes faites ('Tu vois bien pourtant', 'Laisse, je vais le faire') : je les disais toutes. Maintenant je comprends pourquoi ça bloquait. Les formulations proposées ont changé notre relation.",
+    quote:
+      "Les phrases toutes faites ('Tu vois bien pourtant', 'Laisse, je vais le faire') : je les disais toutes. Maintenant je comprends pourquoi ça bloquait. Les formulations proposées ont changé notre relation.",
     author: "Nathalie, 57 ans, voisine aidante",
   },
 ];
@@ -125,14 +139,15 @@ const LivreAidants = () => {
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Book",
-          "name": "Aider un proche atteint de DMLA",
-          "description": "Guide pratique pour accompagner un proche malvoyant atteint de DMLA. Conseils concrets pour les aidants familiaux et professionnels.",
-          "author": { "@type": "Organization", "name": "LirElia" },
-          "publisher": { "@type": "Organization", "name": "LirElia" },
-          "about": ["DMLA", "Aidant", "Basse vision", "Malvoyance", "Autonomie"],
-          "audience": {
+          name: "Aider un proche atteint de DMLA",
+          description:
+            "Guide pratique pour accompagner un proche malvoyant atteint de DMLA. Conseils concrets pour les aidants familiaux et professionnels.",
+          author: { "@type": "Organization", name: "LirElia" },
+          publisher: { "@type": "Organization", name: "LirElia" },
+          about: ["DMLA", "Aidant", "Basse vision", "Malvoyance", "Autonomie"],
+          audience: {
             "@type": "Audience",
-            "audienceType": "Aidants familiaux et professionnels de personnes malvoyantes"
+            audienceType: "Aidants familiaux et professionnels de personnes malvoyantes",
           },
         }}
       />
@@ -158,10 +173,12 @@ const LivreAidants = () => {
                   Aider un proche atteint de DMLA
                 </h1>
                 <p className="text-xl md:text-2xl mb-4 opacity-90 leading-relaxed">
-                  Accompagner sans s'épuiser : comprendre la basse vision, soutenir au quotidien et préserver votre propre équilibre.
+                  Accompagner sans s'épuiser : comprendre la basse vision, soutenir au quotidien et préserver votre
+                  propre équilibre.
                 </p>
                 <p className="text-lg mb-8 opacity-80">
-                  Un guide empathique et concret pour les conjoints, enfants, amis et professionnels qui accompagnent une personne malvoyante.
+                  Un guide empathique et concret pour les conjoints, enfants, amis et professionnels qui accompagnent
+                  une personne malvoyante.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button variant="secondary" size="lg" asChild>
@@ -171,9 +188,7 @@ const LivreAidants = () => {
                     </a>
                   </Button>
                   <Button variant="heroOutline" size="lg" asChild>
-                    <Link to="/bilans-bassevision/contact">
-                      Prendre rendez-vous
-                    </Link>
+                    <Link to="/bilans-bassevision/contact">Prendre rendez-vous</Link>
                   </Button>
                 </div>
               </div>
@@ -214,7 +229,8 @@ const LivreAidants = () => {
                 Ce que vous allez découvrir
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Le plan complet du livre, conçu pour vous accompagner pas à pas dans votre rôle d'aidant auprès d'une personne atteinte de DMLA.
+                Le plan complet du livre, conçu pour vous accompagner pas à pas dans votre rôle d'aidant auprès d'une
+                personne atteinte de DMLA.
               </p>
             </div>
 
@@ -228,9 +244,7 @@ const LivreAidants = () => {
                         <div className="p-3 rounded-xl bg-primary/10 text-primary shrink-0">
                           <Icon className="w-6 h-6" />
                         </div>
-                        <h3 className="font-serif text-xl font-bold text-foreground leading-snug">
-                          {section.title}
-                        </h3>
+                        <h3 className="font-serif text-xl font-bold text-foreground leading-snug">{section.title}</h3>
                       </div>
                       <ul className="space-y-2 ml-2">
                         {section.items.map((item, i) => (
@@ -277,9 +291,7 @@ const LivreAidants = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {temoignages.map((t, i) => (
                 <Card key={i} variant="default" className="p-6">
-                  <blockquote className="text-muted-foreground leading-relaxed mb-4 italic">
-                    « {t.quote} »
-                  </blockquote>
+                  <blockquote className="text-muted-foreground leading-relaxed mb-4 italic">« {t.quote} »</blockquote>
                   <p className="text-sm font-semibold text-foreground">— {t.author}</p>
                 </Card>
               ))}
@@ -294,7 +306,8 @@ const LivreAidants = () => {
               Feuilleter un extrait du livre
             </h2>
             <p className="text-lg text-muted-foreground text-center mb-8 max-w-2xl mx-auto leading-relaxed">
-              Découvrez un extrait du guide pour juger par vous-même du ton, de la clarté et de l'approche empathique envers les aidants.
+              Découvrez un extrait du guide pour juger par vous-même du ton, de la clarté et de l'approche empathique
+              envers les aidants.
             </p>
             <div className="bg-background rounded-xl shadow-lg overflow-hidden border">
               <iframe
@@ -323,9 +336,7 @@ const LivreAidants = () => {
             <Accordion type="single" collapsible className="space-y-2">
               {faqItems.map((item, i) => (
                 <AccordionItem key={i} value={`faq-${i}`} className="border rounded-xl px-6">
-                  <AccordionTrigger className="text-lg font-semibold text-foreground">
-                    {item.q}
-                  </AccordionTrigger>
+                  <AccordionTrigger className="text-lg font-semibold text-foreground">{item.q}</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground text-lg leading-relaxed">
                     {item.a}
                   </AccordionContent>
@@ -338,11 +349,10 @@ const LivreAidants = () => {
         {/* CTA final */}
         <section className="py-20 bg-primary text-primary-foreground">
           <div className="container max-w-3xl text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
-              Aller plus loin dans l'accompagnement
-            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Aller plus loin dans l'accompagnement</h2>
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
-              Découvrez les bilans basse vision et les aides à la lecture proposés par LirElia pour aider concrètement votre proche malvoyant.
+              Découvrez les bilans basse vision et les aides à la lecture proposés par LirElia pour aider concrètement
+              votre proche malvoyant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>
