@@ -27,6 +27,7 @@ import BientotDisponible from "./pages/BientotDisponible";
 import Visiopraticien from "./pages/Visiopraticien";
 import LivreDmla from "./pages/LivreDmla";
 import Aidants from "./pages/Aidants";
+import LivreAidants from "./pages/LivreAidants";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => (
           <Route path="/livre-dmla-votre-vie-ne-sarrete-pas" element={<LivreDmla />} />
           <Route path="/bientot-disponible" element={<BientotDisponible />} />
           <Route path="/aidants" element={<Aidants />} />
+          <Route path="/livre-aider-proche-dmla" element={<LivreAidants />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
