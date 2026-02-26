@@ -68,7 +68,7 @@ const ContactFormSection = () => {
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/bilans-bassevision#bilans-comparaison">
+                <Link to="/bilans-bassevision#faq-bilans">
                     Lire la FAQ sur les bilans
                     <ArrowRight className="w-5 h-5" />
                   </Link>
