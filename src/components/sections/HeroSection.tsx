@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -47,14 +48,18 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 animate-slide-up delay-300">
-            <Button variant="hero" size="lg">
-              <Calendar className="w-6 h-6" />
-              Prendre rendez-vous
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/contact-conseil">
+                <Calendar className="w-6 h-6" />
+                Prendre rendez-vous
+              </Link>
             </Button>
-            <Button variant="heroOutline" size="lg">
-              <BookOpen className="w-6 h-6" />
-              Découvrir les bilans
-              <ArrowRight className="w-5 h-5" />
+            <Button variant="heroOutline" size="lg" asChild>
+              <Link to="/bilans-bassevision">
+                <BookOpen className="w-6 h-6" />
+                Découvrir les bilans
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </Button>
           </div>
         </div>

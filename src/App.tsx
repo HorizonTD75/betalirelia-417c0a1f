@@ -28,6 +28,8 @@ import Visiopraticien from "./pages/Visiopraticien";
 import LivreDmla from "./pages/LivreDmla";
 import Aidants from "./pages/Aidants";
 import LivreAidants from "./pages/LivreAidants";
+import MentionsLegales from "./pages/MentionsLegales";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +70,8 @@ const App = () => (
           <Route path="/bientot-disponible" element={<BientotDisponible />} />
           <Route path="/aidants" element={<Aidants />} />
           <Route path="/livre-aider-proche-dmla" element={<LivreAidants />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
