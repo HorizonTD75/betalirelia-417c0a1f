@@ -132,6 +132,7 @@ const MaladiesYeux = () => {
       <SEOHead
         title="Maladies des Yeux – DMLA, Glaucome, Rétinopathie & Autres"
         description="Découvrez les principales maladies oculaires responsables de la basse vision : DMLA, glaucome, rétinopathie diabétique, cataracte et plus encore."
+        canonicalPath="/maladies-yeux"
       />
       <Header />
       <main id="main-content">

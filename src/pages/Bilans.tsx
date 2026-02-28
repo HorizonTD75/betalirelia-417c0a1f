@@ -123,6 +123,7 @@ const Bilans = () => {
       <SEOHead
         title="Bilans Basse Vision à Palaiseau : Essentiel, Expert, Suivi"
         description="Évaluez vos besoins visuels avec nos bilans personnalisés. Test d'aides à la lecture et plan d'action concret pour la DMLA et le glaucome."
+        canonicalPath="/bilans-bassevision"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",

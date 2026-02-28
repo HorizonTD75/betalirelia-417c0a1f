@@ -42,8 +42,9 @@ const BilanEssentiel = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilan Essentiel basse vision — Faire le point sur votre vue | LirElia"
+        title="Bilan Essentiel basse vision | LirElia"
         description="Le Bilan Essentiel est la formule de base pour comprendre vos difficultés visuelles, tester des solutions simples et repartir avec un plan d'action clair."
+        canonicalPath="/bilans-bassevision/essentiel"
       />
       <Header />
       <main id="main-content">

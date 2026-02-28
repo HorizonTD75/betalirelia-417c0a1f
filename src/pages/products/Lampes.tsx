@@ -113,6 +113,7 @@ const Lampes = () => (
     seo={{
       title: "Lampes de lecture basse vision — Éclairage adapté | LirElia",
       description: "Lampes de lecture adaptées aux malvoyants : lumière du jour, lampadaires orientables et lampes-loupes. Réduisez la fatigue visuelle avec un éclairage maîtrisé.",
+      canonicalPath: "/aides-lecture-bassevision/lampes",
     }}
   />
 );

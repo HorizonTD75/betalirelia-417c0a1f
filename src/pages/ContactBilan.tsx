@@ -81,8 +81,9 @@ const ContactBilan = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Prendre rendez-vous pour un bilan basse vision | LirElia"
-        description="Réservez votre bilan basse vision : Essentiel, Expert ou Suivi. Un conseiller en basse vision de 25 ans d'expérience vous accompagne."
+        title="Rendez-vous bilan basse vision | LirElia"
+        description="Réservez votre bilan basse vision : Essentiel, Expert ou Suivi. Un conseiller de 25 ans d'expérience vous accompagne à Palaiseau ou à domicile."
+        canonicalPath="/bilans-bassevision/contact"
       />
       <Header />
       <main id="main-content">

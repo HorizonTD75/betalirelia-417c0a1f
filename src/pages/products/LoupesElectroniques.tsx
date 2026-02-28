@@ -113,6 +113,7 @@ const LoupesElectroniques = () => (
     seo={{
       title: "Loupes électroniques pour malvoyants — Zoom et contraste | LirElia",
       description: "Loupes électroniques portables, de bureau et de poche. Zoom réglable, contraste renforcé et écran HD pour une lecture confortable malgré la basse vision.",
+      canonicalPath: "/aides-lecture-bassevision/loupes-electroniques",
     }}
   />
 );

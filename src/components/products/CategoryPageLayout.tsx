@@ -30,6 +30,7 @@ interface CategoryPageProps {
   seo: {
     title: string;
     description: string;
+    canonicalPath?: string;
   };
 }
 
@@ -50,6 +51,7 @@ const CategoryPageLayout = ({
       <SEOHead
         title={seo.title}
         description={seo.description}
+        canonicalPath={seo.canonicalPath}
       />
       <Header />
       <main id="main-content">
