@@ -8,6 +8,7 @@ const MentionsLegales = () => {
       <SEOHead
         title="Mentions légales | LirElia"
         description="Mentions légales du site LirElia : éditeur, hébergeur, contact, propriété intellectuelle et informations légales."
+        canonicalPath="/mentions-legales"
       />
       <Header />
       <main id="main-content">

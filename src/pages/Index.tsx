@@ -17,6 +17,7 @@ const Index = () => {
       <SEOHead
         title="LirElia – Basse Vision : Bilans, Aides Visuelles & Accompagnement"
         description="Accompagnement expert en basse vision, DMLA et glaucome. Retrouvez votre autonomie grâce à nos bilans fonctionnels et aides à la lecture à Palaiseau."
+        canonicalPath="/"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",

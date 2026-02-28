@@ -99,8 +99,9 @@ const ContactConseil = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Demander un conseil personnalisé — Aide à la lecture | LirElia"
+        title="Conseil personnalisé aide à la lecture | LirElia"
         description="Décrivez votre situation visuelle et recevez des recommandations personnalisées pour choisir l'aide à la lecture la plus adaptée à vos besoins."
+        canonicalPath="/contact-conseil"
       />
       <Header />
       <main id="main-content">

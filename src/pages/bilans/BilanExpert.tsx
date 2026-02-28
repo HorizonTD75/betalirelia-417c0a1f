@@ -42,8 +42,9 @@ const BilanExpert = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilan Expert basse vision — Avec opticien-optométriste | LirElia"
-        description="Le Pack Bilan Expert combine bilan basse vision et consultation chez un opticien-optométriste partenaire pour optimiser vos lunettes et aides optiques."
+        title="Bilan Expert basse vision — Avec opticien | LirElia"
+        description="Le Pack Bilan Expert combine bilan basse vision et consultation opticien-optométriste partenaire pour optimiser vos lunettes et aides optiques."
+        canonicalPath="/bilans-bassevision/expert"
       />
       <Header />
       <main id="main-content">

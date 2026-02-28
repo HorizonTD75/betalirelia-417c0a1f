@@ -49,6 +49,7 @@ const Aidants = () => {
       <SEOHead
         title="Guide pour les Aidants Basse Vision & DMLA | LirElia"
         description="Comment accompagner un proche malvoyant sans l'infantiliser ? Conseils pratiques, aménagement du domicile et soutien pour les aidants familiaux."
+        canonicalPath="/aidants"
       />
       <Header />
       <main id="main-content">

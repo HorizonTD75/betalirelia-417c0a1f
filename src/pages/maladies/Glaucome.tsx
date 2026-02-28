@@ -31,7 +31,8 @@ const Glaucome = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Le Glaucome – Comprendre, Dépister et Agir | LirElia"
-        description="Tout savoir sur le glaucome : formes, symptômes, dépistage, traitements et conseils pour vivre avec cette maladie des yeux. Informations complètes et rassurantes."
+        description="Tout savoir sur le glaucome : formes, symptômes, dépistage, traitements et conseils pour vivre avec cette maladie des yeux."
+        canonicalPath="/maladies-yeux/glaucome"
       />
       <Header />
       <main id="main-content">

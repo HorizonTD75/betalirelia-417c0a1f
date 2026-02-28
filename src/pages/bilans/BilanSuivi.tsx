@@ -79,8 +79,9 @@ const BilanSuivi = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Pack Suivi basse vision — Accompagnement sur 3 mois | LirElia"
-        description="Le Pack Suivi prolonge votre Bilan Essentiel sur 3 mois avec appels réguliers et bilan final pour mettre en pratique les conseils et ajuster les solutions."
+        title="Pack Suivi basse vision — Accompagnement 3 mois | LirElia"
+        description="Le Pack Suivi prolonge votre Bilan Essentiel sur 3 mois avec appels réguliers et bilan final pour ajuster les solutions au quotidien."
+        canonicalPath="/bilans-bassevision/suivi"
       />
       <Header />
       <main id="main-content">

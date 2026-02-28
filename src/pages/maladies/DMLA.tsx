@@ -32,7 +32,8 @@ const DMLA = () => {
     <div className="min-h-screen">
       <SEOHead
         title="DMLA – Dégénérescence Maculaire Liée à l'Âge | LirElia"
-        description="Tout savoir sur la DMLA : formes sèche et humide, symptômes, diagnostic, traitements, solutions de compensation et conseils pour vivre avec cette maladie des yeux."
+        description="Tout savoir sur la DMLA : formes sèche et humide, symptômes, diagnostic, traitements et conseils pour vivre avec cette maladie des yeux."
+        canonicalPath="/maladies-yeux/dmla"
       />
       <Header />
       <main id="main-content">

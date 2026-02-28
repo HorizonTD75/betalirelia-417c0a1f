@@ -12,6 +12,7 @@ const BientotDisponible = () => {
         title="Bientôt disponible – LirElia"
         description="Cette page arrive très prochainement. Laissez-nous votre email ou revenez bientôt."
       />
+      {/* Pas de canonical pour les pages temporaires */}
       <Header />
       <main id="main-content" className="flex-1 flex items-center justify-center py-20 bg-background">
         <div className="container">

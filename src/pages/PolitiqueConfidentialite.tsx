@@ -8,6 +8,7 @@ const PolitiqueConfidentialite = () => {
       <SEOHead
         title="Politique de confidentialité | LirElia"
         description="Politique de confidentialité LirElia : données collectées, finalités, conservation, droits RGPD, cookies et contact pour exercer vos droits."
+        canonicalPath="/politique-de-confidentialite"
       />
       <Header />
       <main id="main-content">

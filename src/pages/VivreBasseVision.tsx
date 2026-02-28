@@ -198,6 +198,7 @@ const VivreBasseVision = () => {
       <SEOHead
         title="Vivre avec la Basse Vision : Conseils & Autonomie | LirElia"
         description="Conseils pratiques pour le quotidien : lecture, éclairage, écrans et sécurité à la maison. Maintenez votre qualité de vie malgré une déficience visuelle."
+        canonicalPath="/vivre-basse-vision"
       />
       <Header />
       <main id="main-content">

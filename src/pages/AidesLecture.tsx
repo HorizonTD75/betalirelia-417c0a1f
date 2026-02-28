@@ -120,8 +120,9 @@ const AidesLecture = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Aides à la Lecture Malvoyants : Loupes & Télé-agrandisseurs"
+        title="Aides à la Lecture Malvoyants : Loupes & Agrandisseurs | LirElia"
         description="Retrouvez le plaisir de lire. Comparatif et conseils sur les loupes électroniques, lampes adaptées et télé-agrandisseurs pour basse vision."
+        canonicalPath="/aides-lecture-bassevision"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",

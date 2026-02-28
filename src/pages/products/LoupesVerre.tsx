@@ -110,6 +110,7 @@ const LoupesVerre = () => (
     seo={{
       title: "Loupes en verre pour malvoyants — Aide à la lecture | LirElia",
       description: "Découvrez notre sélection de loupes en verre : classiques, éclairantes et dômes. Grossissement optique simple et immédiat pour lire courrier, livres et étiquettes.",
+      canonicalPath: "/aides-lecture-bassevision/loupes-verre",
     }}
   />
 );
