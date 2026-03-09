@@ -31,8 +31,8 @@ const BilansProduitsSection = () => {
               <ul className="space-y-3">
                 {[
                 "Objectifs de vie (ce que vous voulez refaire)",
-                'Essais d\'aides "standard"',
-                "Compte-rendu simple et actionnable",
+                "Essais de produits( loupes, lampes, machines à lire, logiciels )",
+                "Compte-rendu personnel et concret",
                 "Orientation vers l'opticien partenaire si utile"].
                 map((item, i) =>
                 <li key={i} className="flex items-start gap-3 text-lg">
