@@ -217,7 +217,7 @@ const Bilans = () => {
                     <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center">
                       <Check className="w-6 h-6" />
                     </div>
-                    Ce que le Visiopraticien fait
+                    Ce que fait le Visiopraticien
                   </h3>
                   <ul className="space-y-4">
                     {doList.map((item, i) =>
