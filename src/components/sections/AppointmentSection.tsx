@@ -8,10 +8,10 @@ const AppointmentSection = () => {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Prendre rendez-vous avec le Visiopraticien
+            Rencontrez le Visiopraticien
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Le Visiopraticien LirElia vous reçoit au cabinet de Palaiseau ou à domicile (selon secteur). En cas de besoin d'équipement, un opticien partenaire peut intervenir dans le parcours.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Le Visiopraticien LirElia vous reçoit au cabinet de Palaiseau ou à domicile (selon secteur). En cas de besoin d'équipement optique, un opticien partenaire peut intervenir dans le parcours.
+
           </p>
         </div>
 
@@ -23,7 +23,7 @@ const AppointmentSection = () => {
             </div>
             <h3 className="font-serif text-xl font-bold mb-3">Calendrier</h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Réservez directement un créneau disponible
+              Réservez directement un entretien téléphonique 
             </p>
             <Button variant="default" className="w-full" asChild>
               <Link to="/bilans-bassevision/contact">Choisir un créneau</Link>
@@ -69,7 +69,7 @@ const AppointmentSection = () => {
               <div>
                 <h4 className="font-bold text-lg mb-2">Cabinet à Palaiseau (91120)</h4>
                 <p className="text-muted-foreground">4 rue Léon Blum</p>
-                <p className="text-muted-foreground">Opticien partenaire à Antony (92160)</p>
+                <p className="text-muted-foreground">Parking privé gratuit    </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -95,8 +95,8 @@ const AppointmentSection = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AppointmentSection;
