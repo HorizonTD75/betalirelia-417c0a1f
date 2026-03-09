@@ -276,7 +276,7 @@ const Bilans = () => {
                   }>
                       <bilan.icon className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-2xl text-center">Bilan {bilan.name}</CardTitle>
+                    <CardTitle className="text-2xl text-center">Bilan<br />{bilan.name}</CardTitle>
                     <p className="text-lg text-muted-foreground mt-2">{bilan.description}</p>
                   </CardHeader>
                   <CardContent className="flex-1">
