@@ -51,7 +51,7 @@ const Bilans = () => {
     recommended: true
   },
   {
-    name: "Suivi",
+    name: "SUIVI",
     icon: Video,
     description: "Un accompagnement sur 3 mois pour mettre en pratique les conseils.",
     includes: [
