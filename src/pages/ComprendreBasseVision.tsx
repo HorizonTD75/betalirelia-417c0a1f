@@ -26,7 +26,7 @@ const ComprendreBasseVision = () => {
   "La lecture du journal ou de documents devient très lente, même avec une bonne lumière",
   "Reconnaître le visage des proches à quelques mètres devient difficile",
   "Se sentir moins à l'aise pour sortir seul, traverser la rue, repérer les trottoirs",
-  "Devoir approcher très près pour voir la télévision, l'ordinateur, la tablette",
+  "Devoir s'approcher très près pour voir la télévision, l'ordinateur, la tablette",
   "Être ébloui facilement par les phares, les vitrines, le soleil",
   "Se sentir vite fatigué ou découragé quand il faut utiliser la vue longtemps"];
 
