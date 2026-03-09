@@ -7,8 +7,7 @@ const pathways = [
   {
     icon: Eye,
     title: "Je veux comprendre ma basse vision",
-    description:
-      "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une basse vision au quotidien.",
+    description: "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une DMLA au quotidien.",
     cta: "En savoir plus",
     href: "/comprendre-basse-vision",
     color: "text-accent",
@@ -17,7 +16,7 @@ const pathways = [
   {
     icon: ClipboardList,
     title: "Je veux faire un bilan personnalisé",
-    description: "Évaluez vos besoins avec un bilan fonctionnel adapté à votre situation et à vos objectifs de vie.",
+    description: "Évaluez vos besoins avec un visuels visuels bilan fonctionnel adapté à votre situation et à vos objectifs de vie.",
     cta: "Découvrir les bilans",
     href: "/bilans-bassevision",
     color: "text-primary",
@@ -26,7 +25,7 @@ const pathways = [
   {
     icon: Package,
     title: "Je cherche des matériels adaptés",
-    description: "Loupes électroniques, télé-agrandisseurs, scanners vocaux... des outils concrets pour le quotidien.",
+    description: "Loupes électroniques, télé-agrandisseurs, lecteurs vocaux... des appareils concrets lire au quotidien.",
     cta: "Voir les produits",
     href: "/aides-lecture-bassevision",
     color: "text-secondary",
