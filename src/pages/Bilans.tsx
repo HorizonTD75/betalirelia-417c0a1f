@@ -78,11 +78,11 @@ const Bilans = () => {
 
 
   const doList = [
-  "Écouter vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
-  "Analyser l'impact de la basse vision sur votre autonomie",
-  "Évaluer votre vision fonctionnelle dans des situations concrètes",
-  "Tester des aides et aménagements : loupes, éclairage, supports",
-  "Identifier vos priorités : ce qui compte le plus pour vous"];
+  "Il ecoute vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
+  "Il analyse l'impact de la basse vision sur votre autonomie",
+  "Il evaluer votre vision fonctionnelle dans des situations concrètes",
+  "Il vous fait tester des aides à la lecture : loupes, éclairage, supports",
+  "Il identifier vos priorités : ce qui compte le plus pour vous"];
 
 
   const dontList = [
