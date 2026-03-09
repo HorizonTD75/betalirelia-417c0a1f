@@ -8,7 +8,7 @@ const pathways = [
     icon: Eye,
     title: "Je veux comprendre ma basse vision",
     description:
-      "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une basse vision au quotidien.",
+      "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une DMLA au quotidien.",
     cta: "En savoir plus",
     href: "/comprendre-basse-vision",
     color: "text-accent",
