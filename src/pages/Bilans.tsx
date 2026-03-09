@@ -31,9 +31,9 @@ const Bilans = () => {
     cta: "Découvrir le Bilan Essentiel"
   },
   {
-    name: "Expert",
+    name: "EXPERT",
     icon: Glasses,
-    description: "Bilan + consultation opticien-optométriste pour lunettes spécialisées.",
+    description: "Bilan Essentiel + consultation opticien-optométriste ",
     includes: [
     "Bilan Essentiel complet",
     "Compte-rendu détaillé",
