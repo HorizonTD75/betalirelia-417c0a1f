@@ -43,7 +43,7 @@ const ComprendreBasseVision = () => {
   {
     title: "L'ophtalmologiste",
     icon: Stethoscope,
-    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). Il prescrit les traitements médicaux, les injections et la chirurgie si besoin."
+    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). \nIl prescrit les traitements médicaux, les injections et la chirurgie si besoin."
   },
   {
     title: "L'orthoptiste",
