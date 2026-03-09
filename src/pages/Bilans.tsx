@@ -11,112 +11,112 @@ import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 
 const Bilans = () => {
   const bilansComparison = [
-    {
-      name: "Essentiel",
-      icon: ClipboardCheck,
-      description: "La formule de base pour faire le point sur votre basse vision.",
-      includes: [
-        "Séance individuelle 1h15–1h30",
-        "Évaluation vision fonctionnelle",
-        "Essais d'aides standard",
-        "Compte-rendu synthétique",
-        "Plan d'action clair",
-      ],
-      notIncludes: [
-        "Consultation opticien",
-        "Suivi sur plusieurs mois",
-      ],
-      color: "primary",
-      link: "/bilans-bassevision/essentiel",
-      cta: "Découvrir le Bilan Essentiel",
-    },
-    {
-      name: "Expert",
-      icon: Glasses,
-      description: "Bilan + consultation opticien-optométriste pour lunettes spécialisées.",
-      includes: [
-        "Bilan Essentiel complet",
-        "Compte-rendu détaillé",
-        "Consultation opticien partenaire",
-        "Essais lunettes basse vision",
-        "Pré-sélection corrections",
-        "Coordination médicale",
-      ],
-      notIncludes: [
-        "Suivi sur plusieurs mois",
-      ],
-      color: "secondary",
-      link: "/bilans-bassevision/expert",
-      cta: "Découvrir le Bilan Expert",
-      recommended: true,
-    },
-    {
-      name: "Suivi",
-      icon: Video,
-      description: "Un accompagnement sur 3 mois pour mettre en pratique les conseils.",
-      includes: [
-        "Bilan Essentiel (J0)",
-        "1er appel/visio à J+1 mois",
-        "2e appel/visio à J+2 mois",
-        "Bilan final à J+3 mois",
-        "Rapport final complet",
-        "Ajustements continus",
-      ],
-      notIncludes: [],
-      color: "accent",
-      link: "/bilans-bassevision/suivi",
-      cta: "Découvrir le Pack Suivi",
-    },
-  ];
+  {
+    name: "Essentiel",
+    icon: ClipboardCheck,
+    description: "La formule de base pour faire le point sur votre basse vision.",
+    includes: [
+    "Séance individuelle 1h15–1h30",
+    "Évaluation vision fonctionnelle",
+    "Essais d'aides standard",
+    "Compte-rendu synthétique",
+    "Plan d'action clair"],
+
+    notIncludes: [
+    "Consultation opticien",
+    "Suivi sur plusieurs mois"],
+
+    color: "primary",
+    link: "/bilans-bassevision/essentiel",
+    cta: "Découvrir le Bilan Essentiel"
+  },
+  {
+    name: "Expert",
+    icon: Glasses,
+    description: "Bilan + consultation opticien-optométriste pour lunettes spécialisées.",
+    includes: [
+    "Bilan Essentiel complet",
+    "Compte-rendu détaillé",
+    "Consultation opticien partenaire",
+    "Essais lunettes basse vision",
+    "Pré-sélection corrections",
+    "Coordination médicale"],
+
+    notIncludes: [
+    "Suivi sur plusieurs mois"],
+
+    color: "secondary",
+    link: "/bilans-bassevision/expert",
+    cta: "Découvrir le Bilan Expert",
+    recommended: true
+  },
+  {
+    name: "Suivi",
+    icon: Video,
+    description: "Un accompagnement sur 3 mois pour mettre en pratique les conseils.",
+    includes: [
+    "Bilan Essentiel (J0)",
+    "1er appel/visio à J+1 mois",
+    "2e appel/visio à J+2 mois",
+    "Bilan final à J+3 mois",
+    "Rapport final complet",
+    "Ajustements continus"],
+
+    notIncludes: [],
+    color: "accent",
+    link: "/bilans-bassevision/suivi",
+    cta: "Découvrir le Pack Suivi"
+  }];
+
 
   const targetAudience = [
-    "Vous avez une maladie des yeux connue (DMLA, glaucome, rétinopathie diabétique, etc.)",
-    "Malgré des lunettes récentes, vous peinez à lire, à vous déplacer ou à reconnaître les visages",
-    "Vous vous sentez fatigué par l'effort visuel au quotidien",
-    "Vous avez dû renoncer à certaines activités (lecture, bricolage, cuisine, sorties)",
-    "Vous êtes aidant et souhaitez comprendre comment aider au mieux",
-  ];
+  "Vous avez une maladie des yeux connue (DMLA, glaucome, rétinopathie diabétique, etc.)",
+  "Malgré des lunettes récentes, vous peinez à lire, à vous déplacer ou à reconnaître les visages",
+  "Vous vous sentez fatigué par l'effort visuel au quotidien",
+  "Vous avez dû renoncer à certaines activités (lecture, bricolage, cuisine, sorties)",
+  "Vous êtes aidant et souhaitez comprendre comment aider au mieux"];
+
 
   const doList = [
-    "Écouter vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
-    "Analyser l'impact de la basse vision sur votre autonomie",
-    "Évaluer votre vision fonctionnelle dans des situations concrètes",
-    "Tester des aides et aménagements : loupes, éclairage, supports",
-    "Identifier vos priorités : ce qui compte le plus pour vous",
-  ];
+  "Écouter vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
+  "Analyser l'impact de la basse vision sur votre autonomie",
+  "Évaluer votre vision fonctionnelle dans des situations concrètes",
+  "Tester des aides et aménagements : loupes, éclairage, supports",
+  "Identifier vos priorités : ce qui compte le plus pour vous"];
+
 
   const dontList = [
-    "Pas de diagnostic médical ni de prescription de traitement",
-    "Pas de remplacement du suivi chez l'ophtalmologiste",
-    "Pas de promesse de « retrouver sa vue d'avant »",
-    "Pas de vente forcée : le Visiopraticien réfléchit avec vous",
-  ];
+  "Pas de diagnostic médical ni de prescription de traitement",
+  "Pas de remplacement du suivi chez l'ophtalmologiste",
+  "Pas de promesse de « retrouver sa vue d'avant »",
+  "Pas de vente forcée : le Visiopraticien réfléchit avec vous"];
+
 
   const steps = [
-    { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu'il est utile d'apporter." },
-    { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
-    { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
-    { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
-    { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, filtres, lampes, supports, aides pour écrire…" },
-    { title: "Plan d'action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." },
-  ];
+  { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu'il est utile d'apporter." },
+  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
+  { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
+  { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
+  { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, filtres, lampes, supports, aides pour écrire…" },
+  { title: "Plan d'action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." }];
+
 
   const takeaways = [
-    "Un compte-rendu simple des points importants vus ensemble",
-    "Une liste de priorités : ce qu'il est le plus urgent d'améliorer",
-    "Une proposition d'aides standard : loupes, lampes, supports…",
-    "Des conseils d'organisation pour la maison, la cuisine, les écrans",
-    "Si besoin, une recommandation vers l'opticien partenaire",
-    "La possibilité de mettre en place un Pack Suivi",
-  ];
+  "Un compte-rendu simple des points importants vus ensemble",
+  "Une liste de priorités : ce qu'il est le plus urgent d'améliorer",
+  "Une proposition d'aides standard : loupes, lampes, supports…",
+  "Des conseils d'organisation pour la maison, la cuisine, les écrans",
+  "Si besoin, une recommandation vers l'opticien partenaire",
+  "La possibilité de mettre en place un Pack Suivi"];
+
 
   const faqItems = [
-    { q: "Dois-je voir mon ophtalmo avant ?", a: "Idéalement oui, car le bilan basse vision s'appuie sur votre diagnostic. Mais si vous n'avez pas de rendez-vous ophtalmo récent, nous pouvons commencer et vous orienter ensuite." },
-    { q: "Est-ce remboursé ?", a: "Le bilan basse vision n'est pas un acte médical et n'est pas remboursé par la Sécurité sociale. Certaines mutuelles proposent un forfait « bien-être » ou « prévention » qui peut couvrir une partie. Renseignez-vous auprès de votre complémentaire santé." },
-    { q: "Puis-je venir avec un proche ?", a: "Oui, c'est fortement recommandé. L'aidant (conjoint, enfant, proche) peut assister à l'ensemble de la séance et recevoir des conseils adaptés." },
-    { q: "Combien de temps dure une séance ?", a: "En moyenne 1h15 à 1h30, toujours à votre rythme. Le Visiopraticien prend le temps nécessaire." },
-    { q: "Quelle est la différence avec un bilan chez l'ophtalmologiste ?", a: "L'ophtalmologiste diagnostique et traite la maladie de l'œil. Le bilan basse vision réalisé par le Visiopraticien LirElia est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie dans la lecture." },
-  ];
+  { q: "Dois-je voir mon ophtalmo avant ?", a: "Idéalement oui, car le bilan basse vision s'appuie sur votre diagnostic. Mais si vous n'avez pas de rendez-vous ophtalmo récent, nous pouvons commencer et vous orienter ensuite." },
+  { q: "Est-ce remboursé ?", a: "Le bilan basse vision n'est pas un acte médical et n'est pas remboursé par la Sécurité sociale. Certaines mutuelles proposent un forfait « bien-être » ou « prévention » qui peut couvrir une partie. Renseignez-vous auprès de votre complémentaire santé." },
+  { q: "Puis-je venir avec un proche ?", a: "Oui, c'est fortement recommandé. L'aidant (conjoint, enfant, proche) peut assister à l'ensemble de la séance et recevoir des conseils adaptés." },
+  { q: "Combien de temps dure une séance ?", a: "En moyenne 1h15 à 1h30, toujours à votre rythme. Le Visiopraticien prend le temps nécessaire." },
+  { q: "Quelle est la différence avec un bilan chez l'ophtalmologiste ?", a: "L'ophtalmologiste diagnostique et traite la maladie de l'œil. Le bilan basse vision réalisé par le Visiopraticien LirElia est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie dans la lecture." }];
+
 
   return (
     <div className="min-h-screen">
@@ -131,8 +131,8 @@ const Bilans = () => {
           "description": "Bilans fonctionnels personnalisés pour personnes malvoyantes : Essentiel, Expert et Suivi sur 3 mois.",
           "provider": { "@type": "Organization", "name": "LirElia" },
           "serviceType": "Bilan basse vision"
-        }}
-      />
+        }} />
+      
       <Header />
       <main id="main-content">
         {/* HERO */}
@@ -188,12 +188,12 @@ const Bilans = () => {
                   Il ne remplace pas le suivi chez l'ophtalmologiste, mais il complète ce suivi en se concentrant sur votre quotidien et votre autonomie.
                 </p>
                 <ul className="space-y-4">
-                  {targetAudience.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-lg">
+                  {targetAudience.map((item, i) =>
+                  <li key={i} className="flex items-start gap-3 text-lg">
                       <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </div>
               <div className="relative">
@@ -220,12 +220,12 @@ const Bilans = () => {
                     Ce que le Visiopraticien fait
                   </h3>
                   <ul className="space-y-4">
-                    {doList.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-lg">
+                    {doList.map((item, i) =>
+                    <li key={i} className="flex items-start gap-3 text-lg">
                         <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
                         <span>{item}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </Card>
                 <Card className="p-8 border-destructive/30">
@@ -236,12 +236,12 @@ const Bilans = () => {
                     Ce que le Visiopraticien ne fait pas
                   </h3>
                   <ul className="space-y-4">
-                    {dontList.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-lg">
+                    {dontList.map((item, i) =>
+                    <li key={i} className="flex items-start gap-3 text-lg">
                         <X className="w-5 h-5 text-destructive shrink-0 mt-1" />
                         <span>{item}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </Card>
               </div>
@@ -261,38 +261,38 @@ const Bilans = () => {
               </p>
             </div>
             <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {bilansComparison.map((bilan) => (
-                <Card key={bilan.name} variant={bilan.recommended ? "highlighted" : "elevated"} className="relative flex flex-col">
-                  {bilan.recommended && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary text-secondary-foreground rounded-full text-base font-bold flex items-center gap-1">
+              {bilansComparison.map((bilan) =>
+              <Card key={bilan.name} variant={bilan.recommended ? "highlighted" : "elevated"} className="relative flex flex-col">
+                  {bilan.recommended &&
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary text-secondary-foreground rounded-full text-base font-bold flex items-center gap-1">
                       <Star className="w-4 h-4" /> Recommandé
                     </div>
-                  )}
+                }
                   <CardHeader className="text-center">
                     <div className={`w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 ${
-                      bilan.color === "primary" ? "bg-primary text-primary-foreground" :
-                      bilan.color === "secondary" ? "bg-secondary text-secondary-foreground" :
-                      "bg-accent text-accent-foreground"
-                    }`}>
+                  bilan.color === "primary" ? "bg-primary text-primary-foreground" :
+                  bilan.color === "secondary" ? "bg-secondary text-secondary-foreground" :
+                  "bg-accent text-accent-foreground"}`
+                  }>
                       <bilan.icon className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-2xl">Bilan {bilan.name}</CardTitle>
+                    <CardTitle className="text-2xl text-center">Bilan {bilan.name}</CardTitle>
                     <p className="text-lg text-muted-foreground mt-2">{bilan.description}</p>
                   </CardHeader>
                   <CardContent className="flex-1">
                     <ul className="space-y-3">
-                      {bilan.includes.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-lg">
+                      {bilan.includes.map((item, i) =>
+                    <li key={i} className="flex items-start gap-2 text-lg">
                           <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
                           <span>{item}</span>
                         </li>
-                      ))}
-                      {bilan.notIncludes.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-lg text-muted-foreground">
-                          <X className="w-5 h-5 shrink-0 mt-1" />
+                    )}
+                      {bilan.notIncludes.map((item, i) =>
+                    <li key={i} className="flex items-start gap-2 text-lg text-muted-foreground">
+                          <X className="w-5 h-5 shrink-0 mt-1 text-red-600" />
                           <span>{item}</span>
                         </li>
-                      ))}
+                    )}
                     </ul>
                   </CardContent>
                   <CardFooter>
@@ -304,7 +304,7 @@ const Bilans = () => {
                     </Button>
                   </CardFooter>
                 </Card>
-              ))}
+              )}
             </div>
           </div>
         </section>
@@ -320,8 +320,8 @@ const Bilans = () => {
                 Une séance dure en moyenne 1h30, toujours à votre rythme.
               </p>
               <div className="space-y-6">
-                {steps.map((step, i) => (
-                  <Card key={i} variant="elevated" className="p-6">
+                {steps.map((step, i) =>
+                <Card key={i} variant="elevated" className="p-6">
                     <div className="flex items-start gap-6">
                       <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0 text-xl font-bold">
                         {i + 1}
@@ -332,7 +332,7 @@ const Bilans = () => {
                       </div>
                     </div>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -353,16 +353,16 @@ const Bilans = () => {
                   <h3 className="font-serif text-xl font-bold mb-4">Le rôle du <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link></h3>
                   <ul className="space-y-3">
                     {[
-                      "Identifier vos besoins fonctionnels",
-                      "Tester des aides standard et aménagements simples",
-                      "Repérer les situations où des lunettes spécifiques aideraient",
-                      "Remettre un compte-rendu clair pour l'opticien",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-lg">
+                    "Identifier vos besoins fonctionnels",
+                    "Tester des aides standard et aménagements simples",
+                    "Repérer les situations où des lunettes spécifiques aideraient",
+                    "Remettre un compte-rendu clair pour l'opticien"].
+                    map((item, i) =>
+                    <li key={i} className="flex items-start gap-2 text-lg">
                         <Check className="w-5 h-5 text-primary shrink-0 mt-1" />
                         <span>{item}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </Card>
                 <Card className="p-8">
@@ -372,16 +372,16 @@ const Bilans = () => {
                   <h3 className="font-serif text-xl font-bold mb-4">Le rôle de l'opticien</h3>
                   <ul className="space-y-3">
                     {[
-                      "Évaluation optique détaillée (correction, verres, filtres)",
-                      "Lunettes adaptées à vos usages : lecture, TV, sport…",
-                      "Aides optiques spécialisées",
-                      "Suivi pour ajuster les équipements",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-lg">
+                    "Évaluation optique détaillée (correction, verres, filtres)",
+                    "Lunettes adaptées à vos usages : lecture, TV, sport…",
+                    "Aides optiques spécialisées",
+                    "Suivi pour ajuster les équipements"].
+                    map((item, i) =>
+                    <li key={i} className="flex items-start gap-2 text-lg">
                         <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
                         <span>{item}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </Card>
               </div>
@@ -397,14 +397,14 @@ const Bilans = () => {
                 Ce que vous emportez après le bilan
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {takeaways.map((item, i) => (
-                  <Card key={i} variant="elevated" className="p-6 text-center">
+                {takeaways.map((item, i) =>
+                <Card key={i} variant="elevated" className="p-6 text-center">
                     <div className="w-12 h-12 rounded-full bg-secondary/20 text-secondary flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                       {i + 1}
                     </div>
                     <p className="text-lg">{item}</p>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -418,8 +418,8 @@ const Bilans = () => {
                 Questions fréquentes
               </h2>
               <Accordion type="single" collapsible className="space-y-4">
-                {faqItems.map((item, i) => (
-                  <AccordionItem key={i} value={`faq-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
+                {faqItems.map((item, i) =>
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
                     <AccordionTrigger className="text-lg font-semibold text-left py-6">
                       {item.q}
                     </AccordionTrigger>
@@ -427,7 +427,7 @@ const Bilans = () => {
                       {item.a}
                     </AccordionContent>
                   </AccordionItem>
-                ))}
+                )}
               </Accordion>
             </div>
           </div>
@@ -462,8 +462,8 @@ const Bilans = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default Bilans;
