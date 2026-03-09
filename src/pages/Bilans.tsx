@@ -102,7 +102,7 @@ const Bilans = () => {
 
 
   const takeaways = [
-  "Un compte-rendu simple des points importants vus ensemble",
+  "Un compte-rendu précis des points importants vus ensemble",
   "Une liste de priorités : ce qu'il est le plus urgent d'améliorer",
   "Une proposition d'aides standard : loupes, lampes, supports…",
   "Des conseils d'organisation pour la maison, la cuisine, les écrans",
