@@ -12,13 +12,13 @@ import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 const Bilans = () => {
   const bilansComparison = [
   {
-    name: "Essentiel",
+    name: "ESSENTIEL",
     icon: ClipboardCheck,
     description: "La formule de base pour faire le point sur votre basse vision.",
     includes: [
     "Séance individuelle 1h15–1h30",
     "Évaluation vision fonctionnelle",
-    "Essais d'aides standard",
+    "Essais d'aides adaptées",
     "Compte-rendu synthétique",
     "Plan d'action clair"],
 
