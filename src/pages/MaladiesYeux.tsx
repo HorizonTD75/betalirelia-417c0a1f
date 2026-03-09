@@ -3,137 +3,137 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Eye, 
-  AlertTriangle, 
-  Users, 
+import {
+  Eye,
+  AlertTriangle,
+  Users,
   ArrowRight,
   ChevronRight,
   Dna,
   Droplets,
-  Sun
-} from "lucide-react";
+  Sun } from
+"lucide-react";
 import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  AccordionTrigger } from
+"@/components/ui/accordion";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/amsler-grid.jpg";
 
 const MaladiesYeux = () => {
   const mainDiseases = [
-    {
-      id: "dmla",
-      title: "La DMLA",
-      subtitle: "Dégénérescence Maculaire Liée à l'Âge",
-      stat: "8% de la population après 50 ans",
-      statDetail: "soit 1,5 million de personnes en France",
-      description: "La DMLA est une maladie oculaire qui affecte la macula, la partie centrale de la rétine. Elle est souvent associée au vieillissement et peut entraîner une perte de vision centrale.",
-      extra: "La grille d'Amsler est le premier test simple qui informe sur la possibilité d'une DMLA.",
-      link: "/maladies-yeux/dmla"
-    },
-    {
-      id: "glaucome",
-      title: "Le Glaucome",
-      subtitle: "Atteinte du nerf optique",
-      stat: "1 à 2% de la population de plus de 40 ans",
-      statDetail: "400 000 à 500 000 personnes seraient porteuses sans le savoir",
-      description: "Le glaucome est souvent causé par une pression intraoculaire élevée et peut être asymptomatique pendant des années. Il affecte le nerf optique et peut entraîner une perte de vision progressive.",
-      link: "/maladies-yeux/glaucome"
-    },
-    {
-      id: "cataracte",
-      title: "La Cataracte",
-      subtitle: "Opacification du cristallin",
-      stat: "Très courante avec l'âge",
-      statDetail: "Peut aussi être causée par le tabagisme, le diabète, les UV",
-      description: "La cataracte se produit lorsque le cristallin devient opaque, ce qui rend la vision floue ou trouble. Elle est souvent associée au vieillissement."
-    },
-    {
-      id: "retinopathie",
-      title: "Les Rétinopathies",
-      subtitle: "Dont la rétinopathie diabétique",
-      stat: "30% des personnes diabétiques",
-      statDetail: "soit 1 million de personnes en France",
-      description: "La rétinopathie diabétique est une complication du diabète qui endommage les vaisseaux sanguins de la rétine. Cette maladie peut entraîner une perte de vision si elle n'est pas traitée."
-    },
-    {
-      id: "nystagmus",
-      title: "Le Nystagmus",
-      subtitle: "Mouvement involontaire des yeux",
-      stat: "Maladie neurologique",
-      statDetail: "Mouvements incontrôlables et involontaires des yeux",
-      description: "Le nystagmus se manifeste par un mouvement incontrôlable et involontaire des yeux, pouvant affecter la stabilité de la vision."
-    }
-  ];
+  {
+    id: "dmla",
+    title: "La DMLA",
+    subtitle: "Dégénérescence Maculaire Liée à l'Âge",
+    stat: "8% de la population après 50 ans",
+    statDetail: "soit 1,5 million de personnes en France",
+    description: "La DMLA est une maladie oculaire qui affecte la macula, la partie centrale de la rétine. Elle est souvent associée au vieillissement et peut entraîner une perte de vision centrale.",
+    extra: "La grille d'Amsler est le premier test simple qui informe sur la possibilité d'une DMLA.",
+    link: "/maladies-yeux/dmla"
+  },
+  {
+    id: "glaucome",
+    title: "Le Glaucome",
+    subtitle: "Atteinte du nerf optique",
+    stat: "1 à 2% de la population de plus de 40 ans",
+    statDetail: "400 000 à 500 000 personnes seraient porteuses sans le savoir",
+    description: "Le glaucome est souvent causé par une pression intraoculaire élevée et peut être asymptomatique pendant des années. Il affecte le nerf optique et peut entraîner une perte de vision progressive.",
+    link: "/maladies-yeux/glaucome"
+  },
+  {
+    id: "cataracte",
+    title: "La Cataracte",
+    subtitle: "Opacification du cristallin",
+    stat: "Très courante avec l'âge",
+    statDetail: "Peut aussi être causée par le tabagisme, le diabète, les UV",
+    description: "La cataracte se produit lorsque le cristallin devient opaque, ce qui rend la vision floue ou trouble. Elle est souvent associée au vieillissement."
+  },
+  {
+    id: "retinopathie",
+    title: "Les Rétinopathies",
+    subtitle: "Dont la rétinopathie diabétique",
+    stat: "30% des personnes diabétiques",
+    statDetail: "soit 1 million de personnes en France",
+    description: "La rétinopathie diabétique est une complication du diabète qui endommage les vaisseaux sanguins de la rétine. Cette maladie peut entraîner une perte de vision si elle n'est pas traitée."
+  },
+  {
+    id: "nystagmus",
+    title: "Le Nystagmus",
+    subtitle: "Mouvement involontaire des yeux",
+    stat: "Maladie neurologique",
+    statDetail: "Mouvements incontrôlables et involontaires des yeux",
+    description: "Le nystagmus se manifeste par un mouvement incontrôlable et involontaire des yeux, pouvant affecter la stabilité de la vision."
+  }];
+
 
   const refractionDefects = [
-    {
-      title: "La Myopie",
-      description: "L'œil est trop long ou la cornée trop courbée. La lumière se focalise en avant de la rétine. Les objets éloignés apparaissent flous, les objets proches sont clairs."
-    },
-    {
-      title: "L'Hypermétropie",
-      description: "L'œil est trop court ou la cornée trop plate. La lumière se focalise derrière la rétine. Les objets proches apparaissent flous, les objets éloignés sont plus clairs."
-    },
-    {
-      title: "L'Astigmatisme",
-      description: "La courbure de la cornée ou du cristallin est irrégulière. La lumière se focalise sur plusieurs points. Les objets peuvent apparaître dédoublés, flous ou distordus."
-    },
-    {
-      title: "La Presbytie",
-      description: "Le cristallin perd de son élasticité avec l'âge, rendant difficile la vision de près. Symptômes : difficulté à lire, fatigue oculaire, maux de tête."
-    }
-  ];
+  {
+    title: "La Myopie",
+    description: "L'œil est trop long ou la cornée trop courbée. La lumière se focalise en avant de la rétine. Les objets éloignés apparaissent flous, les objets proches sont clairs."
+  },
+  {
+    title: "L'Hypermétropie",
+    description: "L'œil est trop court ou la cornée trop plate. La lumière se focalise derrière la rétine. Les objets proches apparaissent flous, les objets éloignés sont plus clairs."
+  },
+  {
+    title: "L'Astigmatisme",
+    description: "La courbure de la cornée ou du cristallin est irrégulière. La lumière se focalise sur plusieurs points. Les objets peuvent apparaître dédoublés, flous ou distordus."
+  },
+  {
+    title: "La Presbytie",
+    description: "Le cristallin perd de son élasticité avec l'âge, rendant difficile la vision de près. Symptômes : difficulté à lire, fatigue oculaire, maux de tête."
+  }];
+
 
   const hereditaryDiseases = [
-    {
-      title: "La maladie de Leber",
-      description: "Maladie génétique rare qui affecte la rétine. Elle provoque une perte progressive de la vision centrale et peut entraîner la cécité. Elle se développe généralement chez les jeunes adultes."
-    },
-    {
-      title: "La maladie de Stargardt",
-      description: "Maladie héréditaire de la rétine qui touche la vision centrale à un âge relativement jeune en attaquant la macula. Elle se caractérise par une perte progressive de la vision centrale."
-    },
-    {
-      title: "L'achromatopsie",
-      description: "Maladie héréditaire rare qui affecte la vision des couleurs et la vision de la lumière vive. Elle peut également causer une perte de l'acuité visuelle."
-    },
-    {
-      title: "Le syndrome d'Usher",
-      description: "Maladie génétique rare qui affecte à la fois l'ouïe et la vision. Elle peut causer une perte de la vision périphérique et une perte de l'audition."
-    },
-    {
-      title: "L'Aniridie",
-      description: "Maladie congénitale rare caractérisée par l'absence totale ou partielle de l'iris. La pupille ne peut pas se contracter normalement, entraînant photophobie et vision réduite."
-    }
-  ];
+  {
+    title: "La maladie de Leber",
+    description: "Maladie génétique rare qui affecte la rétine. Elle provoque une perte progressive de la vision centrale et peut entraîner la cécité. Elle se développe généralement chez les jeunes adultes."
+  },
+  {
+    title: "La maladie de Stargardt",
+    description: "Maladie héréditaire de la rétine qui touche la vision centrale à un âge relativement jeune en attaquant la macula. Elle se caractérise par une perte progressive de la vision centrale."
+  },
+  {
+    title: "L'achromatopsie",
+    description: "Maladie héréditaire rare qui affecte la vision des couleurs et la vision de la lumière vive. Elle peut également causer une perte de l'acuité visuelle."
+  },
+  {
+    title: "Le syndrome d'Usher",
+    description: "Maladie génétique rare qui affecte à la fois l'ouïe et la vision. Elle peut causer une perte de la vision périphérique et une perte de l'audition."
+  },
+  {
+    title: "L'Aniridie",
+    description: "Maladie congénitale rare caractérisée par l'absence totale ou partielle de l'iris. La pupille ne peut pas se contracter normalement, entraînant photophobie et vision réduite."
+  }];
+
 
   const otherDiseases = [
-    {
-      title: "L'Uvéite",
-      description: "Inflammation de la couche intermédiaire de l'œil (uvea). Peut être causée par une infection, une maladie auto-immune ou une réaction allergique."
-    },
-    {
-      title: "La Conjonctivite",
-      description: "Infection ou inflammation de la conjonctive, la membrane qui recouvre la surface de l'œil. Peut être causée par une infection bactérienne ou virale, une allergie."
-    },
-    {
-      title: "Le syndrome de l'œil sec",
-      description: "Se produit lorsque les yeux ne produisent pas suffisamment de larmes ou lorsqu'elles s'évaporent trop rapidement. Cause yeux rouges, démangeaisons, brûlures et vision floue."
-    }
-  ];
+  {
+    title: "L'Uvéite",
+    description: "Inflammation de la couche intermédiaire de l'œil (uvea). Peut être causée par une infection, une maladie auto-immune ou une réaction allergique."
+  },
+  {
+    title: "La Conjonctivite",
+    description: "Infection ou inflammation de la conjonctive, la membrane qui recouvre la surface de l'œil. Peut être causée par une infection bactérienne ou virale, une allergie."
+  },
+  {
+    title: "Le syndrome de l'œil sec",
+    description: "Se produit lorsque les yeux ne produisent pas suffisamment de larmes ou lorsqu'elles s'évaporent trop rapidement. Cause yeux rouges, démangeaisons, brûlures et vision floue."
+  }];
+
 
   return (
     <div className="min-h-screen">
       <SEOHead
         title="Maladies des Yeux – DMLA, Glaucome, Rétinopathie & Autres"
         description="Découvrez les principales maladies oculaires responsables de la basse vision : DMLA, glaucome, rétinopathie diabétique, cataracte et plus encore."
-        canonicalPath="/maladies-yeux"
-      />
+        canonicalPath="/maladies-yeux" />
+      
       <Header />
       <main id="main-content">
         {/* Hero Section */}
@@ -159,8 +159,8 @@ const MaladiesYeux = () => {
                 <p className="text-lg text-foreground">Défauts de réfraction courants</p>
               </Card>
               <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">3M</p>
-                <p className="text-lg text-foreground">Français concernés par la basse vision</p>
+                <p className="font-serif text-3xl font-bold text-primary mb-2">3 M </p>
+                <p className="text-lg text-foreground">De Français concernés par la basse vision</p>
               </Card>
               <Card className="p-6 text-center">
                 <p className="font-serif text-3xl font-bold text-primary mb-2">5+</p>
@@ -182,18 +182,18 @@ const MaladiesYeux = () => {
               <Card className="p-6">
                 <ul className="grid md:grid-cols-2 gap-3">
                   {[
-                    "Les principales maladies causant une basse vision",
-                    "La DMLA, le Glaucome, la Cataracte",
-                    "Le Nystagmus et les Rétinopathies",
-                    "Les défauts de réfraction de l'œil",
-                    "Les maladies héréditaires et génétiques",
-                    "Autres maladies des yeux"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-2">
+                  "Les principales maladies causant une basse vision",
+                  "La DMLA, le Glaucome, la Cataracte",
+                  "Le Nystagmus et les Rétinopathies",
+                  "Les défauts de réfraction de l'œil",
+                  "Les maladies héréditaires et génétiques",
+                  "Autres maladies des yeux"].
+                  map((item, index) =>
+                  <li key={index} className="flex items-center gap-2">
                       <ChevronRight className="w-5 h-5 text-secondary" />
                       <span className="text-lg text-foreground">{item}</span>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </Card>
             </div>
@@ -211,21 +211,21 @@ const MaladiesYeux = () => {
                     Les principales maladies causant une basse vision
                   </h2>
                   <p className="text-xl text-muted-foreground">
-                    L'œil est un organe complexe qui peut être touché par différentes maladies, silencieuses, d'évolution lente, certaines pouvant aboutir sans traitement à une diminution importante de la vue.
+                    L'œil est un organe complexe qui peut être touché par différentes maladies, silencieuses, d'évolution lente, certaines pouvant aboutir sans traitement à une diminution importante de la vue, voir la cécité.   
                   </p>
                 </div>
                 <div className="relative">
-                  <img 
-                    src={comprendreHeroImage} 
-                    alt="Illustration des différentes maladies des yeux" 
-                    className="w-full rounded-2xl shadow-card"
-                  />
+                  <img
+                    src={comprendreHeroImage}
+                    alt="Illustration des différentes maladies des yeux"
+                    className="w-full rounded-2xl shadow-card" />
+                  
                 </div>
               </div>
               
               <div className="space-y-6">
-                {mainDiseases.map((disease, diseaseIndex) => (
-                  <Card key={disease.id} variant="elevated" className="p-8">
+                {mainDiseases.map((disease, diseaseIndex) =>
+                <Card key={disease.id} variant="elevated" className="p-8">
                     <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                       <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shrink-0">
                         <Eye className="w-8 h-8 text-primary-foreground" />
@@ -240,38 +240,38 @@ const MaladiesYeux = () => {
                         <p className="text-lg text-foreground mb-4 leading-relaxed">
                           {disease.description}
                         </p>
-                        {disease.extra && (
-                          <div className="flex items-start gap-4">
+                        {disease.extra &&
+                      <div className="flex items-start gap-4">
                             <p className="text-lg text-muted-foreground italic flex-1">
                               {disease.extra}
                             </p>
-                            {diseaseIndex === 0 && (
-                              <img 
-                                src={amslerGridImage} 
-                                alt="Grille d'Amsler pour le test de la DMLA" 
-                                className="w-24 h-24 rounded-lg object-cover shadow-sm"
-                              />
-                            )}
+                            {diseaseIndex === 0 &&
+                        <img
+                          src={amslerGridImage}
+                          alt="Grille d'Amsler pour le test de la DMLA"
+                          className="w-24 h-24 rounded-lg object-cover shadow-sm" />
+
+                        }
                           </div>
-                        )}
+                      }
                       </div>
                       <div className="lg:w-64 shrink-0 space-y-3">
                         <Card variant="highlighted" className="p-4">
                           <p className="font-bold text-foreground text-lg">{disease.stat}</p>
                           <p className="text-muted-foreground">{disease.statDetail}</p>
                         </Card>
-                        {disease.link && (
-                          <Button variant="outline" size="sm" asChild className="w-full">
+                        {disease.link &&
+                      <Button variant="outline" size="sm" asChild className="w-full">
                             <Link to={disease.link}>
                               En savoir plus
                               <ArrowRight className="w-4 h-4" />
                             </Link>
                           </Button>
-                        )}
+                      }
                       </div>
                     </div>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -296,8 +296,8 @@ const MaladiesYeux = () => {
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
-                {refractionDefects.map((defect, index) => (
-                  <Card key={index} className="p-6">
+                {refractionDefects.map((defect, index) =>
+                <Card key={index} className="p-6">
                     <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                       {defect.title}
                     </h3>
@@ -305,7 +305,7 @@ const MaladiesYeux = () => {
                       {defect.description}
                     </p>
                   </Card>
-                ))}
+                )}
               </div>
 
               <Card variant="muted" className="mt-8 p-6">
@@ -336,8 +336,8 @@ const MaladiesYeux = () => {
               </div>
               
               <Accordion type="single" collapsible className="space-y-4">
-                {hereditaryDiseases.map((disease, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="bg-card rounded-xl border-2 border-border px-6">
+                {hereditaryDiseases.map((disease, index) =>
+                <AccordionItem key={index} value={`item-${index}`} className="bg-card rounded-xl border-2 border-border px-6">
                     <AccordionTrigger className="text-xl font-serif font-bold text-foreground hover:no-underline">
                       {disease.title}
                     </AccordionTrigger>
@@ -345,7 +345,7 @@ const MaladiesYeux = () => {
                       {disease.description}
                     </AccordionContent>
                   </AccordionItem>
-                ))}
+                )}
               </Accordion>
 
               <Card variant="highlighted" className="mt-8 p-6">
@@ -379,8 +379,8 @@ const MaladiesYeux = () => {
               </div>
               
               <div className="grid md:grid-cols-3 gap-6">
-                {otherDiseases.map((disease, index) => (
-                  <Card key={index} variant="elevated" className="p-6">
+                {otherDiseases.map((disease, index) =>
+                <Card key={index} variant="elevated" className="p-6">
                     <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                       {disease.title}
                     </h3>
@@ -388,7 +388,7 @@ const MaladiesYeux = () => {
                       {disease.description}
                     </p>
                   </Card>
-                ))}
+                )}
               </div>
 
               <p className="text-lg text-muted-foreground mt-8 text-center max-w-3xl mx-auto">
@@ -427,8 +427,8 @@ const MaladiesYeux = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default MaladiesYeux;
