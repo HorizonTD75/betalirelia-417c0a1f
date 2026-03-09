@@ -209,7 +209,7 @@ const Bilans = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                Ce que le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien LirElia</Link> fait pendant le bilan
+                Que fait le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link> pendant le bilan?
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="p-8">
