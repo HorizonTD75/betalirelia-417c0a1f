@@ -20,6 +20,8 @@ import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
 import eyeExamImage from "@/assets/eye-exam.jpg";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import seniorManStreetImage from "@/assets/senior-man-street.png";
+import professionnelsOptiqueImage from "@/assets/professionnels-optique.jpg";
+import comprendreHeaderImage from "@/assets/comprendre-basse-vision-header.jpg";
 
 const ComprendreBasseVision = () => {
   const symptoms = [
@@ -100,10 +102,14 @@ const ComprendreBasseVision = () => {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="relative bg-primary text-primary-foreground py-20 pb-32">
-          <div className="container">
+        <section className="relative overflow-hidden bg-primary">
+          <div className="absolute inset-0">
+            <img src={comprendreHeaderImage} alt="Illustration aquarelle évoquant la compréhension de la basse vision" className="w-full h-full object-cover opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+          </div>
+          <div className="container relative py-20 lg:py-28">
             <div className="max-w-4xl">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
                 Comprendre la Basse Vision
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
@@ -157,6 +163,12 @@ const ComprendreBasseVision = () => {
                           <p className="text-muted-foreground leading-relaxed">
                             Même avec la meilleure correction possible, la vue reste limitée. Elle est liée à une atteinte plus profonde de l'œil ou du nerf optique.
                           </p>
+                          <Button variant="outline" size="sm" className="mt-4" asChild>
+                            <Link to="/maladies-yeux">
+                              Les maladies entraînant une basse vision
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </Button>
                         </div>
                       </div>
                     </Card>
@@ -247,8 +259,8 @@ const ComprendreBasseVision = () => {
               <div className="grid lg:grid-cols-5 gap-8 items-start mb-12">
                 <div className="lg:col-span-2">
                   <img
-                    src={seniorManStreetImage}
-                    alt="Illustration d'un senior avec une canne blanche se déplaçant dans la rue"
+                    src={professionnelsOptiqueImage}
+                    alt="Illustration aquarelle d'un professionnel de l'optique réalisant un examen visuel"
                     className="w-full rounded-2xl shadow-card" />
                   
                 </div>
