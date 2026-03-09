@@ -56,8 +56,8 @@ const Bilans = () => {
     description: "Un accompagnement sur 3 mois pour mettre en pratique les conseils.",
     includes: [
     "Bilan Essentiel (J0)",
-    "1er appel/visio à J+1 mois",
-    "2e appel/visio à J+2 mois",
+    "1er point d'étape , appel/visio à J+1 mois",
+    "2e point d'étape, appel/visio à J+2 mois",
     "Bilan final à J+3 mois",
     "Rapport final complet",
     "Ajustements continus"],
