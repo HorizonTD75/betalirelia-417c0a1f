@@ -441,7 +441,7 @@ const Bilans = () => {
                 Prêt à faire le point sur votre vue ?
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10 leading-relaxed">
-                Contactez le <Link to="/visiopraticien" className="underline underline-offset-4 hover:text-primary-foreground/80">Visiopraticien LirElia</Link> pour choisir le bilan adapté à votre situation de basse vision.
+                Contactez notre <Link to="/visiopraticien" className="underline underline-offset-4 hover:text-primary-foreground/80">Visiopraticien</Link> pour choisir le bilan adapté à votre situation de basse vision.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
