@@ -31,8 +31,8 @@ const BilansProduitsSection = () => {
               <ul className="space-y-3">
                 {[
                 "Objectifs de vie (ce que vous voulez refaire)",
-                "Essais de produits( loupes, lampes, machines à lire, logiciels )",
-                "Compte-rendu personnel et concret",
+                'Essais d\'aides "standard"',
+                "Compte-rendu simple et actionnable",
                 "Orientation vers l'opticien partenaire si utile"].
                 map((item, i) =>
                 <li key={i} className="flex items-start gap-3 text-lg">
@@ -44,10 +44,10 @@ const BilansProduitsSection = () => {
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
               <Button variant="default" asChild>
-                <Link to="/bilans-bassevision">
-                  Découvrir les bilans
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
+                
+
+
+                
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/bilans-bassevision#bilans-comparaison">
