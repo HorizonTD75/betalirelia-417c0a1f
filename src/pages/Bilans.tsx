@@ -97,7 +97,7 @@ const Bilans = () => {
   { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur votre accuité visuelle, vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
   { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
   { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
-  { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, filtres, lampes, supports, aides pour écrire…" },
+  { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, télé-agrandisseurs, lampes, supports, macines à lire, claviers, téléphones grosses touches, aides pour écrire…" },
   { title: "Plan d'action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." }];
 
 
