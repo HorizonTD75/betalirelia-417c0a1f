@@ -12,13 +12,13 @@ import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 const Bilans = () => {
   const bilansComparison = [
   {
-    name: "Essentiel",
+    name: "ESSENTIEL",
     icon: ClipboardCheck,
     description: "La formule de base pour faire le point sur votre basse vision.",
     includes: [
     "Séance individuelle 1h15–1h30",
     "Évaluation vision fonctionnelle",
-    "Essais d'aides standard",
+    "Essais d'aides adaptées",
     "Compte-rendu synthétique",
     "Plan d'action clair"],
 
@@ -31,9 +31,9 @@ const Bilans = () => {
     cta: "Découvrir le Bilan Essentiel"
   },
   {
-    name: "Expert",
+    name: "EXPERT",
     icon: Glasses,
-    description: "Bilan + consultation opticien-optométriste pour lunettes spécialisées.",
+    description: "Bilan Essentiel + consultation opticien-optométriste ",
     includes: [
     "Bilan Essentiel complet",
     "Compte-rendu détaillé",
@@ -51,13 +51,13 @@ const Bilans = () => {
     recommended: true
   },
   {
-    name: "Suivi",
+    name: "SUIVI",
     icon: Video,
     description: "Un accompagnement sur 3 mois pour mettre en pratique les conseils.",
     includes: [
     "Bilan Essentiel (J0)",
-    "1er appel/visio à J+1 mois",
-    "2e appel/visio à J+2 mois",
+    "1er point d'étape , appel/visio à J+1 mois",
+    "2e point d'étape, appel/visio à J+2 mois",
     "Bilan final à J+3 mois",
     "Rapport final complet",
     "Ajustements continus"],
@@ -78,11 +78,11 @@ const Bilans = () => {
 
 
   const doList = [
-  "Écouter vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
-  "Analyser l'impact de la basse vision sur votre autonomie",
-  "Évaluer votre vision fonctionnelle dans des situations concrètes",
-  "Tester des aides et aménagements : loupes, éclairage, supports",
-  "Identifier vos priorités : ce qui compte le plus pour vous"];
+  "Il ecoute vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
+  "Il analyse l'impact de la basse vision sur votre autonomie",
+  "Il evaluer votre vision fonctionnelle dans des situations concrètes",
+  "Il vous fait tester des aides à la lecture : loupes, éclairage, supports",
+  "Il identifier vos priorités : ce qui compte le plus pour vous"];
 
 
   const dontList = [
@@ -94,15 +94,15 @@ const Bilans = () => {
 
   const steps = [
   { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu'il est utile d'apporter." },
-  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
+  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur votre accuité visuelle, vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
   { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
   { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
-  { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, filtres, lampes, supports, aides pour écrire…" },
+  { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, télé-agrandisseurs, lampes, supports, macines à lire, claviers, téléphones grosses touches, aides pour écrire…" },
   { title: "Plan d'action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." }];
 
 
   const takeaways = [
-  "Un compte-rendu simple des points importants vus ensemble",
+  "Un compte-rendu précis des points importants vus ensemble",
   "Une liste de priorités : ce qu'il est le plus urgent d'améliorer",
   "Une proposition d'aides standard : loupes, lampes, supports…",
   "Des conseils d'organisation pour la maison, la cuisine, les écrans",
@@ -209,7 +209,7 @@ const Bilans = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                Ce que le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien LirElia</Link> fait pendant le bilan
+                Que fait le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link> pendant le bilan?
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card className="p-8">
@@ -217,7 +217,7 @@ const Bilans = () => {
                     <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center">
                       <Check className="w-6 h-6" />
                     </div>
-                    Ce que le Visiopraticien fait
+                    Ce que fait le Visiopraticien
                   </h3>
                   <ul className="space-y-4">
                     {doList.map((item, i) =>
@@ -276,7 +276,7 @@ const Bilans = () => {
                   }>
                       <bilan.icon className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-2xl text-center">Bilan {bilan.name}</CardTitle>
+                    <CardTitle className="text-2xl text-center">Bilan<br />{bilan.name}</CardTitle>
                     <p className="text-lg text-muted-foreground mt-2">{bilan.description}</p>
                   </CardHeader>
                   <CardContent className="flex-1">
@@ -441,7 +441,7 @@ const Bilans = () => {
                 Prêt à faire le point sur votre vue ?
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10 leading-relaxed">
-                Contactez le <Link to="/visiopraticien" className="underline underline-offset-4 hover:text-primary-foreground/80">Visiopraticien LirElia</Link> pour choisir le bilan adapté à votre situation de basse vision.
+                Contactez notre <Link to="/visiopraticien" className="underline underline-offset-4 hover:text-primary-foreground/80">Visiopraticien</Link> pour choisir le bilan adapté à votre situation de basse vision.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
