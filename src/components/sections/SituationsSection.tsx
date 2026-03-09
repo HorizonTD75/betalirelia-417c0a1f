@@ -19,7 +19,7 @@ const situations = [
   title: "Je suis sportif(ve) et ma vue change",
   description: "Lunettes et sports sur-mesure via notre opticien partenaire.",
   solution: "Lunettes adaptées",
-  href: "/aides-lecture-bassevision",
+  href: "/bientot-disponible",
   color: "border-l-secondary",
   iconBg: "bg-secondary/20",
   iconColor: "text-secondary-foreground"
