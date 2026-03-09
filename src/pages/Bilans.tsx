@@ -94,7 +94,7 @@ const Bilans = () => {
 
   const steps = [
   { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu'il est utile d'apporter." },
-  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
+  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur votre accuité visuelle, vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
   { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
   { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
   { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, filtres, lampes, supports, aides pour écrire…" },
