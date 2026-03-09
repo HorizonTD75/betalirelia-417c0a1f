@@ -38,11 +38,11 @@ const HeroSection = () => {
           {/* Value proposition */}
           <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 mb-10 border border-primary-foreground/20 animate-slide-up delay-200">
             <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              Ici, vous trouverez une approche pratique : comprendre la basse vision, faire un bilan fonctionnel, choisir des loupes, des lampes, ds aides utiles au quotidien.
+              Ici, vous trouverez une approche pratique : comprendre la basse vision, faire un bilan fonctionnel, choisir des loupes, des lampes, des aides utiles au quotidien.
             
             </p>
             <p className="text-base text-primary-foreground/70 mt-3 italic">
-              Important : je ne réalise pas de diagnostic médical. Le suivi médical reste assuré par votre ophtalmologiste.
+              Important : nous ne réalisons pas de diagnostic médical. Le suivi médical reste assuré par votre ophtalmologiste.
             </p>
           </div>
 
