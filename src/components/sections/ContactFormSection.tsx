@@ -20,8 +20,8 @@ const ContactFormSection = () => {
                 Décrivez votre situation
               </CardTitle>
               <CardDescription className="text-lg">
-                En 2 minutes, vous pouvez décrire ce qui gêne (vous ou votre proche). 
-                Je vous réponds par e-mail et nous décidons ensemble de la meilleure première étape.
+                En 2 minutes, vous pouvez décrire votre préoccupation, ou celle de votre proche. Nous vous répondons par e-mail et nous décidons ensemble de la meilleure première étape.
+              
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
