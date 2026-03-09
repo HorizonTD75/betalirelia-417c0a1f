@@ -11,8 +11,8 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Illustration aquarelle sur le thème de la vision"
-          className="w-full h-full object-cover opacity-50"
-        />
+          className="w-full h-full object-cover opacity-50" />
+        
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
       </div>
 
@@ -31,8 +31,8 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl animate-slide-up delay-100">
-            Accompagnement basse vision, DMLA, glaucome pour les patients et leurs aidants.
-            Continuer à vivre pleinement, c'est possible.
+            Accompagnement basse vision pour les patients et leurs aidants. Continuer à vivre pleinement avec une DMLA, un glaucome , c'est possible.
+          
           </p>
 
           {/* Value proposition */}
@@ -70,12 +70,12 @@ const HeroSection = () => {
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path
             d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="hsl(var(--background))"
-          />
+            fill="hsl(var(--background))" />
+          
         </svg>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
