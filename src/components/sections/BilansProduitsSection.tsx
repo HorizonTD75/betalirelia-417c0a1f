@@ -12,8 +12,8 @@ const BilansProduitsSection = () => {
             Bilans & produits : deux aides complémentaires
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Vous pouvez commencer par un bilan (pour clarifier les priorités), ou par des produits utiles (quand le
-            besoin est évident).
+            Vous pouvez commencer par un bilan basse vision (pour clarifier les priorités), ou par des produits d'aide à la lecture (quand le besoin est évident).
+          
           </p>
         </div>
 
@@ -30,16 +30,16 @@ const BilansProduitsSection = () => {
             <CardContent className="space-y-4">
               <ul className="space-y-3">
                 {[
-                  "Objectifs de vie (ce que vous voulez refaire)",
-                  'Essais d\'aides "standard"',
-                  "Compte-rendu simple et actionnable",
-                  "Orientation vers l'opticien partenaire si utile",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg">
+                "Objectifs de vie (ce que vous voulez refaire)",
+                'Essais d\'aides "standard"',
+                "Compte-rendu simple et actionnable",
+                "Orientation vers l'opticien partenaire si utile"].
+                map((item, i) =>
+                <li key={i} className="flex items-start gap-3 text-lg">
                     <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
-                ))}
+                )}
               </ul>
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
@@ -70,25 +70,25 @@ const BilansProduitsSection = () => {
             <CardContent className="space-y-4">
               <ul className="space-y-3">
                 {[
-                  { text: "Lire / écrire (loupes, agrandisseurs)", link: "/aides-lecture-bassevision" },
-                  { text: "Écrans (ordinateur, tablette…)", link: null },
-                  { text: "Maison / cuisine (étiquetage, repères)", link: null },
-                  { text: "Déplacements / loisirs", link: null },
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg">
+                { text: "Lire / écrire (loupes, agrandisseurs)", link: "/aides-lecture-bassevision" },
+                { text: "Écrans (ordinateur, tablette…)", link: null },
+                { text: "Maison / cuisine (étiquetage, repères)", link: null },
+                { text: "Déplacements / loisirs", link: null }].
+                map((item, i) =>
+                <li key={i} className="flex items-start gap-3 text-lg">
                     <Check className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
-                    {item.link ? (
-                      <Link
-                        to={item.link}
-                        className="underline underline-offset-4 hover:text-primary transition-colors"
-                      >
+                    {item.link ?
+                  <Link
+                    to={item.link}
+                    className="underline underline-offset-4 hover:text-primary transition-colors">
+                    
                         {item.text}
-                      </Link>
-                    ) : (
-                      <span>{item.text}</span>
-                    )}
+                      </Link> :
+
+                  <span>{item.text}</span>
+                  }
                   </li>
-                ))}
+                )}
               </ul>
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
@@ -129,8 +129,8 @@ const BilansProduitsSection = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default BilansProduitsSection;
