@@ -53,10 +53,12 @@ const ComprendreBasseVision = () => {
   {
     title: "L'opticien-optométriste",
     icon: Glasses,
-    description: "Il réalise les mesures de correction et conseille sur les verres, montures et filtres. Formé à la alors proposer des lunettes très spécifiques, des loupes, des éclairages,rès spécifiques, des loupes, des éclairages,pécifiques pour la lecture, la télévision ou le sport."
+    description: "Il réalise les mesures de correction et conseille sur les verres, montures et filtres. Formé à la basse vision, il peut alors proposer des lunettes très spécifiques, des loupes, des éclairages, pour la lecture, la télévision ou le sport."
   },
   {
-    title: "Le visioChez LirElia, il intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés de vision ,els. Son rôle est de traduire vos difficultés en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
+    title: "Le visiopraticien",
+    icon: Users,
+    description: "Chez LirElia, il intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés de vision , en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
     link: "/visiopraticien"
   }];
 
