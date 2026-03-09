@@ -163,6 +163,12 @@ const ComprendreBasseVision = () => {
                           <p className="text-muted-foreground leading-relaxed">
                             Même avec la meilleure correction possible, la vue reste limitée. Elle est liée à une atteinte plus profonde de l'œil ou du nerf optique.
                           </p>
+                          <Button variant="outline" size="sm" className="mt-4" asChild>
+                            <Link to="/maladies-yeux">
+                              Les maladies entraînant une basse vision
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </Button>
                         </div>
                       </div>
                     </Card>
