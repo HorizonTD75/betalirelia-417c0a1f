@@ -4,22 +4,22 @@ import { Users, Video, MessageCircle, Calendar, ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom";
 
 const features = [
-  {
-    icon: MessageCircle,
-    title: "Échanges",
-    description: "Partagez vos astuces et retours d'expérience",
-  },
-  {
-    icon: Video,
-    title: "Visioconférences",
-    description: "Mini-conférences thématiques régulières",
-  },
-  {
-    icon: Calendar,
-    title: "Rencontres",
-    description: "Moments simples pour rompre l'isolement",
-  },
-];
+{
+  icon: MessageCircle,
+  title: "Échanges",
+  description: "Partagez vos astuces et retours d'expérience"
+},
+{
+  icon: Video,
+  title: "Visioconférences",
+  description: "Mini-conférences thématiques régulières"
+},
+{
+  icon: Calendar,
+  title: "Rencontres",
+  description: "Moments simples pour rompre l'isolement"
+}];
+
 
 const ClubSection = () => {
   return (
@@ -35,8 +35,8 @@ const ClubSection = () => {
             Club & Rencontres
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
-            Un espace d'échanges entre personnes concernées et aidants : 
-            astuces, retours d'expérience, mini-conférences, et moments simples pour rompre l'isolement.
+            Un espace d'échanges entre personnes malvoyantes et aidants : astuces, retours d'expérience, mini-conférences, et moments simples pour rompre l'isolement.
+          
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -55,8 +55,8 @@ const ClubSection = () => {
                       {feature.description}
                     </p>
                   </CardContent>
-                </Card>
-              );
+                </Card>);
+
             })}
           </div>
 
@@ -69,8 +69,8 @@ const ClubSection = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ClubSection;
