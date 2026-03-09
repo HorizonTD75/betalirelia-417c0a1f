@@ -43,22 +43,22 @@ const ComprendreBasseVision = () => {
   {
     title: "L'ophtalmologiste",
     icon: Stethoscope,
-    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). Il prescrit les traitements médicaux, les injections et la chirurgie si besoin."
+    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). \n\n\n\nIl prescrit les traitements médicaux, les injections et la chirurgie si besoin."
   },
   {
     title: "L'orthoptiste",
     icon: Eye,
-    description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'ophtalmo. Il intervient parfois dans des centres basse vision."
+    description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'oplogiste. \nlogiste. \nlogiste. \n. Il intervient parfois dans des centres basse vision."
   },
   {
     title: "L'opticien-optométriste",
     icon: Glasses,
-    description: "Il réalise les mesures de correction et conseille sur les verres, montures et filtres. Formé à la basse vision, il peut proposer des lunettes très spécifiques pour la lecture, la télévision ou le sport."
+    description: "Il réalise les mesures de correction et conseille sur les verres, montures et filtres. Formé à la basse vision, il peut alors proposer des lunettes très spécifiques, des loupes, des éclairages, pour la lecture, la télévision ou le sport."
   },
   {
     title: "Le visiopraticien",
     icon: Users,
-    description: "Le Visiopraticien LirElia intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
+    description: "Chez LirElia, il intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés de vision , en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
     link: "/visiopraticien"
   }];
 
