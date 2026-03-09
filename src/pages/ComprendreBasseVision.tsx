@@ -259,8 +259,8 @@ const ComprendreBasseVision = () => {
               <div className="grid lg:grid-cols-5 gap-8 items-start mb-12">
                 <div className="lg:col-span-2">
                   <img
-                    src={seniorManStreetImage}
-                    alt="Illustration d'un senior avec une canne blanche se déplaçant dans la rue"
+                    src={professionnelsOptiqueImage}
+                    alt="Illustration aquarelle d'un professionnel de l'optique réalisant un examen visuel"
                     className="w-full rounded-2xl shadow-card" />
                   
                 </div>
