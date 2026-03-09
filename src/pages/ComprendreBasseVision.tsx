@@ -43,12 +43,12 @@ const ComprendreBasseVision = () => {
   {
     title: "L'ophtalmologiste",
     icon: Stethoscope,
-    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). \nIl prescrit les traitements médicaux, les injections et la chirurgie si besoin."
+    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). \n\nIl prescrit les traitements médicaux, les injections et la chirurgie si besoin."
   },
   {
     title: "L'orthoptiste",
     icon: Eye,
-    description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'ophtalmo. Il intervient parfois dans des centres basse vision."
+    description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'ophtallogiste. \n. Il intervient parfois dans des centres basse vision."
   },
   {
     title: "L'opticien-optométriste",
