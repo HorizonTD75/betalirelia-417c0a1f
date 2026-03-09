@@ -3,18 +3,18 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Eye, 
-  AlertCircle, 
-  Users, 
-  Glasses, 
-  Stethoscope, 
+import {
+  Eye,
+  AlertCircle,
+  Users,
+  Glasses,
+  Stethoscope,
   BookOpen,
   ArrowRight,
   CheckCircle,
   HelpCircle,
-  Lightbulb
-} from "lucide-react";
+  Lightbulb } from
+"lucide-react";
 import { Link } from "react-router-dom";
 import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
 import eyeExamImage from "@/assets/eye-exam.jpg";
@@ -23,80 +23,80 @@ import seniorManStreetImage from "@/assets/senior-man-street.png";
 
 const ComprendreBasseVision = () => {
   const symptoms = [
-    "La lecture du journal ou de documents devient très lente, même avec une bonne lumière",
-    "Reconnaître le visage des proches à quelques mètres devient difficile",
-    "Se sentir moins à l'aise pour sortir seul, traverser la rue, repérer les trottoirs",
-    "Devoir approcher très près pour voir la télévision, l'ordinateur, la tablette",
-    "Être ébloui facilement par les phares, les vitrines, le soleil",
-    "Se sentir vite fatigué ou découragé quand il faut utiliser la vue longtemps"
-  ];
+  "La lecture du journal ou de documents devient très lente, même avec une bonne lumière",
+  "Reconnaître le visage des proches à quelques mètres devient difficile",
+  "Se sentir moins à l'aise pour sortir seul, traverser la rue, repérer les trottoirs",
+  "Devoir approcher très près pour voir la télévision, l'ordinateur, la tablette",
+  "Être ébloui facilement par les phares, les vitrines, le soleil",
+  "Se sentir vite fatigué ou découragé quand il faut utiliser la vue longtemps"];
+
 
   const feelings = [
-    "« Je dois choisir entre lire ou faire autre chose, car je suis épuisé si je lis trop longtemps. »",
-    "« Je vois que quelqu'un arrive, mais je ne reconnais pas son visage. »",
-    "« Je n'ose plus sortir seul, j'ai peur de trébucher ou de me perdre. »",
-    "« Je dois monter la luminosité de tous mes écrans au maximum. »",
-    "« Ce que j'aimais faire (coudre, bricoler, jardiner, lire…) est devenu trop difficile. »"
-  ];
+  "« Je dois choisir entre lire ou faire autre chose, car je suis épuisé si je lis trop longtemps. »",
+  "« Je vois que quelqu'un arrive, mais je ne reconnais pas son visage. »",
+  "« Je n'ose plus sortir seul, j'ai peur de trébucher ou de me perdre. »",
+  "« Je dois monter la luminosité de tous mes écrans au maximum. »",
+  "« Ce que j'aimais faire (coudre, bricoler, jardiner, lire…) est devenu trop difficile. »"];
 
-  const professionals: { title: string; icon: typeof Eye; description: string; link?: string }[] = [
-    {
-      title: "L'ophtalmologiste",
-      icon: Stethoscope,
-      description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). Il prescrit les traitements médicaux, les injections et la chirurgie si besoin."
-    },
-    {
-      title: "L'orthoptiste",
-      icon: Eye,
-      description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'ophtalmo. Il intervient parfois dans des centres basse vision."
-    },
-    {
-      title: "L'opticien-optométriste",
-      icon: Glasses,
-      description: "Il réalise les mesures de correction et conseille sur les verres, montures et filtres. Formé à la basse vision, il peut proposer des lunettes très spécifiques pour la lecture, la télévision ou le sport."
-    },
-    {
-      title: "Le visiopraticien",
-      icon: Users,
-      description: "Le Visiopraticien LirElia intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
-      link: "/visiopraticien"
-    }
-  ];
+
+  const professionals: {title: string;icon: typeof Eye;description: string;link?: string;}[] = [
+  {
+    title: "L'ophtalmologiste",
+    icon: Stethoscope,
+    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). Il prescrit les traitements médicaux, les injections et la chirurgie si besoin."
+  },
+  {
+    title: "L'orthoptiste",
+    icon: Eye,
+    description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'ophtalmo. Il intervient parfois dans des centres basse vision."
+  },
+  {
+    title: "L'opticien-optométriste",
+    icon: Glasses,
+    description: "Il réalise les mesures de correction et conseille sur les verres, montures et filtres. Formé à la basse vision, il peut proposer des lunettes très spécifiques pour la lecture, la télévision ou le sport."
+  },
+  {
+    title: "Le visiopraticien",
+    icon: Users,
+    description: "Le Visiopraticien LirElia intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
+    link: "/visiopraticien"
+  }];
+
 
   const whenToConsult = [
-    {
-      professional: "Consulter un ophtalmologiste si :",
-      items: [
-        "Votre vue baisse brutalement",
-        "Vous voyez des taches sombres, des éclairs, des déformations des lignes",
-        "Vous avez des douleurs oculaires, une rougeur importante, des maux de tête violents"
-      ]
-    },
-    {
-      professional: "Consulter un orthoptiste pour :",
-      items: [
-        "Un bilan de champ visuel",
-        "Une rééducation",
-        "Un avis complémentaire"
-      ]
-    },
-    {
-      professional: "Voir un opticien-optométriste si :",
-      items: [
-        "Vous avez déjà un diagnostic (DMLA, glaucome, etc.)",
-        "Vos lunettes actuelles sont récentes mais ne suffisent plus pour lire, regarder la TV ou faire du sport",
-        "Vous souhaitez des lunettes plus adaptées à une activité précise"
-      ]
-    }
-  ];
+  {
+    professional: "Consulter un ophtalmologiste si :",
+    items: [
+    "Votre vue baisse brutalement",
+    "Vous voyez des taches sombres, des éclairs, des déformations des lignes",
+    "Vous avez des douleurs oculaires, une rougeur importante, des maux de tête violents"]
+
+  },
+  {
+    professional: "Consulter un orthoptiste pour :",
+    items: [
+    "Un bilan de champ visuel",
+    "Une rééducation",
+    "Un avis complémentaire"]
+
+  },
+  {
+    professional: "Voir un opticien-optométriste si :",
+    items: [
+    "Vous avez déjà un diagnostic (DMLA, glaucome, etc.)",
+    "Vos lunettes actuelles sont récentes mais ne suffisent plus pour lire, regarder la TV ou faire du sport",
+    "Vous souhaitez des lunettes plus adaptées à une activité précise"]
+
+  }];
+
 
   return (
     <div className="min-h-screen">
       <SEOHead
         title="Comprendre la Basse Vision : Symptômes & Solutions | LirElia"
         description="Qu'est-ce que la basse vision ? Découvrez les causes (DMLA, glaucome) et le rôle des professionnels (ophtalmo, visiopraticien) pour vous accompagner."
-        canonicalPath="/comprendre-basse-vision"
-      />
+        canonicalPath="/comprendre-basse-vision" />
+      
       <Header />
       <main id="main-content">
         {/* Hero Section */}
@@ -164,11 +164,11 @@ const ComprendreBasseVision = () => {
                 </div>
                 
                 <div className="relative">
-                  <img 
-                    src={comprendreHeroImage} 
-                    alt="Illustration aquarelle montrant différentes situations de basse vision" 
-                    className="w-full rounded-2xl shadow-card"
-                  />
+                  <img
+                    src={comprendreHeroImage}
+                    alt="Illustration aquarelle montrant différentes situations de basse vision"
+                    className="w-full rounded-2xl shadow-card" />
+                  
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
                 </div>
               </div>
@@ -192,12 +192,12 @@ const ComprendreBasseVision = () => {
                   Concrètement, cela peut se traduire par :
                 </h3>
                 <ul className="space-y-4">
-                  {symptoms.map((symptom, index) => (
-                    <li key={index} className="flex items-start gap-4">
+                  {symptoms.map((symptom, index) =>
+                  <li key={index} className="flex items-start gap-4">
                       <AlertCircle className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
                       <span className="text-lg text-foreground">{symptom}</span>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </Card>
             </div>
@@ -209,18 +209,18 @@ const ComprendreBasseVision = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Ce que vous pouvez ressentir au quotidien
+                Que ressentez vous au quotidien ?  
               </h2>
               <p className="text-xl text-muted-foreground mb-10">
                 Vous vous reconnaîtrez peut-être dans certaines de ces situations :
               </p>
               
               <div className="space-y-4">
-                {feelings.map((feeling, index) => (
-                  <Card key={index} variant="outline" className="p-6">
+                {feelings.map((feeling, index) =>
+                <Card key={index} variant="outline" className="p-6">
                     <p className="text-lg text-foreground italic">{feeling}</p>
                   </Card>
-                ))}
+                )}
               </div>
 
               <Card variant="highlighted" className="mt-10 p-8">
@@ -231,7 +231,7 @@ const ComprendreBasseVision = () => {
                       Ces difficultés ne sont pas « dans votre tête ». Elles sont liées à la façon dont vos yeux et votre cerveau reçoivent les images.
                     </p>
                     <p className="text-lg text-foreground font-bold mt-4">
-                      La bonne nouvelle, c'est qu'on peut travailler ensemble sur des solutions : aides visuelles, éclairage, organisation de l'espace, lunettes spécifiques, etc.
+                      La bonne nouvelle, c'est que nous pouvons travailler ensemble sur des solutions : aides visuelles, éclairage, organisation de l'espace, lunettes spécifiques, etc.
                     </p>
                   </div>
                 </div>
@@ -246,11 +246,11 @@ const ComprendreBasseVision = () => {
             <div className="max-w-5xl mx-auto">
               <div className="grid lg:grid-cols-5 gap-8 items-start mb-12">
                 <div className="lg:col-span-2">
-                  <img 
-                    src={seniorManStreetImage} 
-                    alt="Illustration d'un senior avec une canne blanche se déplaçant dans la rue" 
-                    className="w-full rounded-2xl shadow-card"
-                  />
+                  <img
+                    src={seniorManStreetImage}
+                    alt="Illustration d'un senior avec une canne blanche se déplaçant dans la rue"
+                    className="w-full rounded-2xl shadow-card" />
+                  
                 </div>
                 <div className="lg:col-span-3">
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -263,8 +263,8 @@ const ComprendreBasseVision = () => {
               </div>
               
               <div className="grid md:grid-cols-2 gap-8">
-                {professionals.map((pro, index) => (
-                    <Card key={index} variant="elevated" className="p-8">
+                {professionals.map((pro, index) =>
+                <Card key={index} variant="elevated" className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
                         <pro.icon className="w-7 h-7 text-primary-foreground" />
@@ -276,18 +276,18 @@ const ComprendreBasseVision = () => {
                         <p className="text-lg text-muted-foreground leading-relaxed">
                           {pro.description}
                         </p>
-                        {pro.link && (
-                          <Button variant="outline" size="sm" className="mt-4" asChild>
+                        {pro.link &&
+                      <Button variant="outline" size="sm" className="mt-4" asChild>
                             <Link to={pro.link}>
                               Découvrir le Visiopraticien
                               <ArrowRight className="w-4 h-4" />
                             </Link>
                           </Button>
-                        )}
+                      }
                       </div>
                     </div>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -302,21 +302,21 @@ const ComprendreBasseVision = () => {
               </h2>
               
               <div className="space-y-8">
-                {whenToConsult.map((item, index) => (
-                  <Card key={index} className="p-8">
+                {whenToConsult.map((item, index) =>
+                <Card key={index} className="p-8">
                     <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                       {item.professional}
                     </h3>
                     <ul className="space-y-3">
-                      {item.items.map((point, i) => (
-                        <li key={i} className="flex items-start gap-3">
+                      {item.items.map((point, i) =>
+                    <li key={i} className="flex items-start gap-3">
                           <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                           <span className="text-lg text-foreground">{point}</span>
                         </li>
-                      ))}
+                    )}
                     </ul>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -352,8 +352,8 @@ const ComprendreBasseVision = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default ComprendreBasseVision;
