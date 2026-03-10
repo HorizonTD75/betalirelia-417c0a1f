@@ -165,34 +165,39 @@ const Visiopraticien = () => {
         {/* Pour qui */}
         <section className="py-16 bg-background">
           <div className="container">
-            <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Pour qui ? Malvoyants, DMLA, glaucome et basse vision
-                </h2>
-                <p className="text-xl text-muted-foreground mb-8">
-                  Le Visiopraticien LirElia accompagne les personnes atteintes de différentes pathologies responsables de baisse de vision ou de malvoyance :
-                </p>
-                <ul className="space-y-3">
-                  {targetConditions.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-lg">
-                      <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-lg text-muted-foreground mt-6">
-                  Dans toutes ces situations, même lorsque le traitement médical est stabilisé, des difficultés persistent : vision floue, taches centrales, perte du champ visuel, difficulté à lire, éblouissements, fatigue visuelle.
+            <div className="max-w-5xl mx-auto">
+              {/* Titre pleine largeur */}
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10">
+                Pour qui ? Malvoyants, DMLA, glaucome et basse vision
+              </h2>
+
+              {/* Image + premier paragraphe sur la même ligne */}
+              <div className="grid lg:grid-cols-2 gap-8 items-center mb-10">
+                <div className="relative">
+                  <img
+                    src={visiopraticienConsultationImage}
+                    alt="Visiopraticien en consultation avec une personne malvoyante autour d'une table avec livre, loupe, lunettes et tablette"
+                    className="w-full rounded-2xl shadow-card"
+                  />
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
+                </div>
+                <p className="text-xl text-foreground leading-relaxed">
+                  Le Visiopraticien LirElia accompagne les personnes atteintes de différentes pathologies responsables de baisse de vision ou de malvoyance. Que la cause soit une DMLA, un glaucome, une cataracte ou toute autre atteinte visuelle, l'objectif est le même : vous aider à retrouver du confort et de l'autonomie dans votre quotidien.
                 </p>
               </div>
-              <div className="relative">
-                <img
-                  src={visiopraticienConsultationImage}
-                  alt="Visiopraticien en consultation avec une personne malvoyante autour d'une table avec livre, loupe, lunettes et tablette"
-                  className="w-full rounded-2xl shadow-card"
-                />
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
-              </div>
+
+              {/* Liste des pathologies + paragraphe complémentaire */}
+              <ul className="grid sm:grid-cols-2 gap-3 mb-8">
+                {targetConditions.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-lg">
+                    <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-lg text-foreground leading-relaxed">
+                Dans toutes ces situations, même lorsque le traitement médical est stabilisé, des difficultés persistent : vision floue, taches centrales, perte du champ visuel, difficulté à lire, éblouissements, fatigue visuelle.
+              </p>
             </div>
           </div>
         </section>

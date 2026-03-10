@@ -26,6 +26,8 @@ import {
   AccordionTrigger } from
 "@/components/ui/accordion";
 import cataracteHeroImage from "@/assets/cataracte-hero.jpg";
+import cataracteSchemaImage from "@/assets/cataracte-schema-oeil.jpg";
+import cataracteVisionImage from "@/assets/cataracte-vision-comparaison.jpg";
 
 const Cataracte = () => {
   return (
@@ -84,15 +86,15 @@ const Cataracte = () => {
                 <p className="text-lg text-foreground">des personnes de plus de 85 ans sont concernées</p>
               </Card>
               <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">600 000</p>
+                <p className="font-serif text-3xl font-bold text-primary mb-2 whitespace-nowrap">600&nbsp;000</p>
                 <p className="text-lg text-foreground">opérations de la cataracte par an en France</p>
               </Card>
               <Card className="p-6 text-center">
                 <p className="font-serif text-3xl font-bold text-primary mb-2">90%</p>
-                <p className="text-lg text-foreground">de réussite fonctionnelle dès le lendemain</p>
+                <p className="text-lg text-foreground">de réussite fonctionnelle de l'opération dès le lendemain</p>
               </Card>
               <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">&lt;15 min</p>
+                <p className="font-serif text-3xl font-bold text-primary mb-2 whitespace-nowrap">&lt;15&nbsp;min</p>
                 <p className="text-lg text-foreground">durée de l'intervention chirurgicale</p>
               </Card>
             </div>
@@ -152,6 +154,30 @@ const Cataracte = () => {
                     La cataracte peut toucher un seul œil, mais affecte généralement les deux yeux. Heureusement, c'est l'une des rares maladies de la vision dont on peut <strong>guérir complètement</strong> grâce à une opération chirurgicale très courante et très bien maîtrisée.
                   </p>
                 </Card>
+
+                {/* Schémas illustratifs */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Card variant="elevated" className="p-6">
+                    <img
+                      src={cataracteSchemaImage}
+                      alt="Illustration d'un œil atteint de cataracte montrant l'opacification du cristallin"
+                      className="w-full rounded-xl mb-4"
+                    />
+                    <p className="text-foreground text-center font-semibold">
+                      Œil atteint de cataracte : le cristallin devient opaque
+                    </p>
+                  </Card>
+                  <Card variant="elevated" className="p-6">
+                    <img
+                      src={cataracteVisionImage}
+                      alt="Comparaison entre une vision normale et une vision affectée par la cataracte"
+                      className="w-full rounded-xl mb-4"
+                    />
+                    <p className="text-foreground text-center font-semibold">
+                      Vision normale (gauche) vs vision avec cataracte (droite)
+                    </p>
+                  </Card>
+                </div>
 
                 <Card variant="muted" className="p-6">
                   <div className="flex items-start gap-4">
@@ -338,7 +364,7 @@ const Cataracte = () => {
                   </p>
                   <Card variant="highlighted" className="p-4">
                     <p className="text-foreground font-semibold text-lg">
-                      💡 Le taux de réussite fonctionnelle est de 90 % dès le lendemain de l'opération. Les personnes de plus de 85 ans qui en bénéficient récupèrent souvent une meilleure autonomie physique et cognitive.
+                      💡 Le taux de réussite fonctionnelle de l'opération de la cataracte est de 90&nbsp;% dès le lendemain de l'intervention. Les personnes de plus de 85 ans qui en bénéficient récupèrent souvent une meilleure autonomie physique et cognitive.
                     </p>
                   </Card>
                 </Card>
@@ -413,8 +439,8 @@ const Cataracte = () => {
                 </h2>
               </div>
 
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                L'opération n'est pas programmée dès les premiers symptômes. Il faut donc parfois vivre avec une vue affaiblie pendant une période. Des aides visuelles existent pour améliorer le quotidien en attendant l'intervention.
+              <p className="text-lg text-foreground mb-8 leading-relaxed">
+                L'opération de la cataracte n'est pas programmée dès les premiers symptômes. Il faut donc parfois vivre avec une vue affaiblie pendant une période. Des aides visuelles existent pour améliorer le quotidien en attendant l'intervention.
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">

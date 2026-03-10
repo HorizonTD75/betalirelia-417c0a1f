@@ -68,7 +68,8 @@ const MaladiesYeux = () => {
     subtitle: "Mouvement involontaire des yeux",
     stat: "Maladie neurologique",
     statDetail: "Mouvements incontrôlables et involontaires des yeux",
-    description: "Le nystagmus se manifeste par un mouvement incontrôlable et involontaire des yeux, pouvant affecter la stabilité de la vision."
+    description: "Le nystagmus se manifeste par un mouvement incontrôlable et involontaire des yeux, pouvant affecter la stabilité de la vision.",
+    link: "/maladies-yeux/nystagmus"
   }];
 
 
