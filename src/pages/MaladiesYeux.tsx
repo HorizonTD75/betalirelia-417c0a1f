@@ -279,6 +279,14 @@ const MaladiesYeux = () => {
                             </Link>
                           </Button>
                       }
+                        {disease.subLinks && disease.subLinks.map((sl: {label: string; to: string}, idx: number) => (
+                          <Button key={idx} variant="outline" size="sm" asChild className="w-full">
+                            <Link to={sl.to}>
+                              {sl.label}
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        ))}
                       </div>
                     </div>
                   </Card>

@@ -367,7 +367,7 @@ const Nystagmus = () => {
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
                     Traitements et accompagnement du nystagmus
                   </h2>
-                  <p className="text-lg text-foreground">Réduire les symptômes et améliorer le confort visuel</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Réduire les symptômes et améliorer le confort visuel</p>
                 </div>
               </div>
 
