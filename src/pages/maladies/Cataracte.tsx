@@ -26,6 +26,8 @@ import {
   AccordionTrigger } from
 "@/components/ui/accordion";
 import cataracteHeroImage from "@/assets/cataracte-hero.jpg";
+import cataracteSchemaImage from "@/assets/cataracte-schema-oeil.jpg";
+import cataracteVisionImage from "@/assets/cataracte-vision-comparaison.jpg";
 
 const Cataracte = () => {
   return (
