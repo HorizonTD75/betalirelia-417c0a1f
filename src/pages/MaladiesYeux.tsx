@@ -57,10 +57,14 @@ const MaladiesYeux = () => {
   {
     id: "retinopathie",
     title: "Les Rétinopathies",
-    subtitle: "Dont la rétinopathie diabétique",
+    subtitle: "Rétinopathie diabétique et rétinite pigmentaire",
     stat: "30% des personnes diabétiques",
     statDetail: "soit 1 million de personnes en France",
-    description: "La rétinopathie diabétique est une complication du diabète qui endommage les vaisseaux sanguins de la rétine. Cette maladie peut entraîner une perte de vision si elle n'est pas traitée."
+    description: "Les rétinopathies regroupent plusieurs maladies affectant la rétine. La rétinopathie diabétique, complication du diabète, endommage les vaisseaux sanguins de la rétine. La rétinite pigmentaire est une maladie génétique rare provoquant une dégénérescence progressive des cellules rétiniennes.",
+    subLinks: [
+      { label: "Rétinopathie diabétique", to: "/maladies-yeux/retinopathie-diabetique" },
+      { label: "Rétinite pigmentaire", to: "/maladies-yeux/retinite-pigmentaire" },
+    ]
   },
   {
     id: "nystagmus",
@@ -275,6 +279,14 @@ const MaladiesYeux = () => {
                             </Link>
                           </Button>
                       }
+                        {disease.subLinks && disease.subLinks.map((sl: {label: string; to: string}, idx: number) => (
+                          <Button key={idx} variant="outline" size="sm" asChild className="w-full">
+                            <Link to={sl.to}>
+                              {sl.label}
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        ))}
                       </div>
                     </div>
                   </Card>

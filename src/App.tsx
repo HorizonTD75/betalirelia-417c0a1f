@@ -25,6 +25,8 @@ import Glaucome from "./pages/maladies/Glaucome";
 import DMLA from "./pages/maladies/DMLA";
 import Cataracte from "./pages/maladies/Cataracte";
 import Nystagmus from "./pages/maladies/Nystagmus";
+import RetinitePigmentaire from "./pages/maladies/RetinitePigmentaire";
+import RetinopathieDiabetique from "./pages/maladies/RetinopathieDiabetique";
 import BientotDisponible from "./pages/BientotDisponible";
 import Visiopraticien from "./pages/Visiopraticien";
 import LivreDmla from "./pages/LivreDmla";
@@ -51,6 +53,8 @@ const App = () => (
           <Route path="/maladies-yeux/dmla" element={<DMLA />} />
           <Route path="/maladies-yeux/cataracte" element={<Cataracte />} />
           <Route path="/maladies-yeux/nystagmus" element={<Nystagmus />} />
+          <Route path="/maladies-yeux/retinite-pigmentaire" element={<RetinitePigmentaire />} />
+          <Route path="/maladies-yeux/retinopathie-diabetique" element={<RetinopathieDiabetique />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           <Route path="/visiopraticien" element={<Visiopraticien />} />
           {/* New primary routes */}

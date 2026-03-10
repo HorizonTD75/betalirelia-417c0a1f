@@ -56,7 +56,7 @@ const Nystagmus = () => {
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
-              <p className="text-secondary font-semibold text-lg mb-3">Maladie des yeux</p>
+              <p className="text-primary-foreground/80 font-bold text-lg mb-3">Maladie des yeux</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Le Nystagmus
               </h1>
@@ -145,7 +145,7 @@ const Nystagmus = () => {
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
                     Les différentes formes de nystagmus
                   </h2>
-                  <p className="text-lg text-foreground">Congénital ou acquis, selon l'origine du trouble</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Congénital ou acquis, selon l'origine du trouble</p>
                 </div>
               </div>
 
@@ -157,7 +157,7 @@ const Nystagmus = () => {
                     </div>
                     <div>
                       <h3 className="font-serif text-2xl font-bold text-foreground">Nystagmus congénital</h3>
-                      <p className="text-secondary font-semibold">Présent dès la naissance ou la petite enfance</p>
+                      <p className="text-primary font-bold text-lg">Présent dès la naissance ou la petite enfance</p>
                     </div>
                   </div>
                   <p className="text-lg text-foreground leading-relaxed mb-4">
@@ -175,7 +175,7 @@ const Nystagmus = () => {
                     </div>
                     <div>
                       <h3 className="font-serif text-2xl font-bold text-foreground">Nystagmus acquis</h3>
-                      <p className="text-secondary font-semibold">Apparition à tout âge</p>
+                      <p className="text-primary font-bold text-lg">Apparition à tout âge</p>
                     </div>
                   </div>
                   <p className="text-lg text-foreground leading-relaxed mb-4">
@@ -269,7 +269,7 @@ const Nystagmus = () => {
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
                     Symptômes et manifestations du nystagmus
                   </h2>
-                  <p className="text-lg text-foreground">Reconnaître les signes visibles et ressentis</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Reconnaître les signes visibles et ressentis</p>
                 </div>
               </div>
 
@@ -367,7 +367,7 @@ const Nystagmus = () => {
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
                     Traitements et accompagnement du nystagmus
                   </h2>
-                  <p className="text-lg text-foreground">Réduire les symptômes et améliorer le confort visuel</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Réduire les symptômes et améliorer le confort visuel</p>
                 </div>
               </div>
 
