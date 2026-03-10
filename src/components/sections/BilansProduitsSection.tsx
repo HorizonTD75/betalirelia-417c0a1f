@@ -43,12 +43,6 @@ const BilansProduitsSection = () => {
               </ul>
             </CardContent>
             <CardFooter className="flex flex-wrap gap-3">
-              <Button variant="default" asChild>
-                
-
-
-                
-              </Button>
               <Button variant="outline" asChild>
                 <Link to="/bilans-bassevision#bilans-comparaison">
                   Comparer les Bilans
