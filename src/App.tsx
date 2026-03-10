@@ -50,6 +50,7 @@ const App = () => (
           <Route path="/maladies-yeux/glaucome" element={<Glaucome />} />
           <Route path="/maladies-yeux/dmla" element={<DMLA />} />
           <Route path="/maladies-yeux/cataracte" element={<Cataracte />} />
+          <Route path="/maladies-yeux/nystagmus" element={<Nystagmus />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           <Route path="/visiopraticien" element={<Visiopraticien />} />
           {/* New primary routes */}
