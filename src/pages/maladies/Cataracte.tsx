@@ -338,7 +338,7 @@ const Cataracte = () => {
                   </p>
                   <Card variant="highlighted" className="p-4">
                     <p className="text-foreground font-semibold text-lg">
-                      💡 Le taux de réussite fonctionnelle est de 90 % dès le lendemain de l'opération. Les personnes de plus de 85 ans qui en bénéficient récupèrent souvent une meilleure autonomie physique et cognitive.
+                      💡 Le taux de réussite fonctionnelle de l'opération de la cataracte est de 90&nbsp;% dès le lendemain de l'intervention. Les personnes de plus de 85 ans qui en bénéficient récupèrent souvent une meilleure autonomie physique et cognitive.
                     </p>
                   </Card>
                 </Card>
