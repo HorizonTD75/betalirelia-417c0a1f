@@ -236,7 +236,10 @@ const Cataracte = () => {
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-4">Facteur principal</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    Le <strong>vieillissement</strong> est la cause principale de la cataracte. Le cristallin perd de sa transparence et de sa souplesse avec l'âge. 10 % des moins de 65 ans sont concernés, 20 % après 65 ans et jusqu'à 60 % après 85 ans.
+                    Le <strong>vieillissement</strong> est la cause principale de la cataracte.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                    Le cristallin perd de sa transparence et de sa souplesse avec l'âge. 10 % des moins de 65 ans sont concernés, 20 % après 65 ans et jusqu'à 60 % après 85 ans.
                   </p>
                 </Card>
 
