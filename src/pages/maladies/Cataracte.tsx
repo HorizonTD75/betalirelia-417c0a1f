@@ -155,6 +155,30 @@ const Cataracte = () => {
                   </p>
                 </Card>
 
+                {/* Schémas illustratifs */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Card variant="elevated" className="p-6">
+                    <img
+                      src={cataracteSchemaImage}
+                      alt="Illustration d'un œil atteint de cataracte montrant l'opacification du cristallin"
+                      className="w-full rounded-xl mb-4"
+                    />
+                    <p className="text-foreground text-center font-semibold">
+                      Œil atteint de cataracte : le cristallin devient opaque
+                    </p>
+                  </Card>
+                  <Card variant="elevated" className="p-6">
+                    <img
+                      src={cataracteVisionImage}
+                      alt="Comparaison entre une vision normale et une vision affectée par la cataracte"
+                      className="w-full rounded-xl mb-4"
+                    />
+                    <p className="text-foreground text-center font-semibold">
+                      Vision normale (gauche) vs vision avec cataracte (droite)
+                    </p>
+                  </Card>
+                </div>
+
                 <Card variant="muted" className="p-6">
                   <div className="flex items-start gap-4">
                     <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
