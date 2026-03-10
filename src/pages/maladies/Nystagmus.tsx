@@ -269,7 +269,7 @@ const Nystagmus = () => {
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
                     Symptômes et manifestations du nystagmus
                   </h2>
-                  <p className="text-lg text-foreground">Reconnaître les signes visibles et ressentis</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Reconnaître les signes visibles et ressentis</p>
                 </div>
               </div>
 
