@@ -145,7 +145,7 @@ const Nystagmus = () => {
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
                     Les différentes formes de nystagmus
                   </h2>
-                  <p className="text-lg text-foreground">Congénital ou acquis, selon l'origine du trouble</p>
+                  <p className="text-lg text-muted-foreground font-semibold">Congénital ou acquis, selon l'origine du trouble</p>
                 </div>
               </div>
 
