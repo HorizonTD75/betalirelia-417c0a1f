@@ -23,6 +23,7 @@ import BilanSuivi from "./pages/bilans/BilanSuivi";
 import ContactBilan from "./pages/ContactBilan";
 import Glaucome from "./pages/maladies/Glaucome";
 import DMLA from "./pages/maladies/DMLA";
+import Cataracte from "./pages/maladies/Cataracte";
 import BientotDisponible from "./pages/BientotDisponible";
 import Visiopraticien from "./pages/Visiopraticien";
 import LivreDmla from "./pages/LivreDmla";
