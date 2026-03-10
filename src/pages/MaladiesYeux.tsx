@@ -51,7 +51,8 @@ const MaladiesYeux = () => {
     subtitle: "Opacification du cristallin",
     stat: "Très courante avec l'âge",
     statDetail: "Peut aussi être causée par le tabagisme, le diabète, les UV",
-    description: "La cataracte se produit lorsque le cristallin devient opaque, ce qui rend la vision floue ou trouble. Elle est souvent associée au vieillissement."
+    description: "La cataracte se produit lorsque le cristallin devient opaque, ce qui rend la vision floue ou trouble. Elle est souvent associée au vieillissement.",
+    link: "/maladies-yeux/cataracte"
   },
   {
     id: "retinopathie",
