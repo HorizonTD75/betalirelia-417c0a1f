@@ -84,15 +84,15 @@ const Cataracte = () => {
                 <p className="text-lg text-foreground">des personnes de plus de 85 ans sont concernées</p>
               </Card>
               <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">600 000</p>
+                <p className="font-serif text-3xl font-bold text-primary mb-2 whitespace-nowrap">600&nbsp;000</p>
                 <p className="text-lg text-foreground">opérations de la cataracte par an en France</p>
               </Card>
               <Card className="p-6 text-center">
                 <p className="font-serif text-3xl font-bold text-primary mb-2">90%</p>
-                <p className="text-lg text-foreground">de réussite fonctionnelle dès le lendemain</p>
+                <p className="text-lg text-foreground">de réussite fonctionnelle de l'opération dès le lendemain</p>
               </Card>
               <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">&lt;15 min</p>
+                <p className="font-serif text-3xl font-bold text-primary mb-2 whitespace-nowrap">&lt;15&nbsp;min</p>
                 <p className="text-lg text-foreground">durée de l'intervention chirurgicale</p>
               </Card>
             </div>
