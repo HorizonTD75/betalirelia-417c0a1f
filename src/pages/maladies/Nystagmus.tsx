@@ -56,7 +56,7 @@ const Nystagmus = () => {
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
-              <p className="text-secondary font-semibold text-lg mb-3">Maladie des yeux</p>
+              <p className="text-primary-foreground/80 font-bold text-lg mb-3">Maladie des yeux</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Le Nystagmus
               </h1>
