@@ -19,7 +19,8 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import seniorWomanStreetImage from "@/assets/senior-woman-street.png";
+import visiopraticienHeroImage from "@/assets/visiopraticien-hero.jpg";
+import visiopraticienConsultationImage from "@/assets/visiopraticien-consultation.jpg";
 
 const Visiopraticien = () => {
   const targetConditions = [
@@ -125,8 +126,12 @@ const Visiopraticien = () => {
       <Header />
       <main id="main-content">
         {/* Hero */}
-        <section className="relative bg-primary text-primary-foreground py-20 pb-32">
-          <div className="container">
+        <section className="relative bg-primary text-primary-foreground py-20 pb-32 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={visiopraticienHeroImage} alt="" className="w-full h-full object-cover opacity-30" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+          </div>
+          <div className="container relative">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Le Visiopraticien LirElia : accompagnement basse vision pour mieux lire et gagner en autonomie
@@ -182,8 +187,8 @@ const Visiopraticien = () => {
               </div>
               <div className="relative">
                 <img
-                  src={seniorWomanStreetImage}
-                  alt="Accompagnement basse vision pour les personnes malvoyantes"
+                  src={visiopraticienConsultationImage}
+                  alt="Visiopraticien en consultation avec une personne malvoyante autour d'une table avec livre, loupe, lunettes et tablette"
                   className="w-full rounded-2xl shadow-card"
                 />
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />

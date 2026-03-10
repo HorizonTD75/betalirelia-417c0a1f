@@ -23,6 +23,7 @@ import BilanSuivi from "./pages/bilans/BilanSuivi";
 import ContactBilan from "./pages/ContactBilan";
 import Glaucome from "./pages/maladies/Glaucome";
 import DMLA from "./pages/maladies/DMLA";
+import Cataracte from "./pages/maladies/Cataracte";
 import BientotDisponible from "./pages/BientotDisponible";
 import Visiopraticien from "./pages/Visiopraticien";
 import LivreDmla from "./pages/LivreDmla";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/maladies-yeux" element={<MaladiesYeux />} />
           <Route path="/maladies-yeux/glaucome" element={<Glaucome />} />
           <Route path="/maladies-yeux/dmla" element={<DMLA />} />
+          <Route path="/maladies-yeux/cataracte" element={<Cataracte />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           <Route path="/visiopraticien" element={<Visiopraticien />} />
           {/* New primary routes */}
