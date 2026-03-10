@@ -16,97 +16,97 @@ import {
   Lightbulb,
   Heart,
   Home,
-  HelpCircle,
-} from "lucide-react";
+  HelpCircle } from
+"lucide-react";
 import { Link } from "react-router-dom";
 import visiopraticienHeroImage from "@/assets/visiopraticien-hero.jpg";
 import visiopraticienConsultationImage from "@/assets/visiopraticien-consultation.jpg";
 
 const Visiopraticien = () => {
   const targetConditions = [
-    "DMLA (Dégénérescence Maculaire Liée à l'Âge)",
-    "Glaucome",
-    "Rétinopathie diabétique",
-    "Cataracte évoluée ou opérée avec séquelles visuelles",
-    "Myopie forte pathologique",
-    "Atteintes du champ visuel",
-    "Séquelles d'AVC ou troubles neurologiques visuels",
-    "Pathologies rétiniennes rares",
-  ];
+  "DMLA (Dégénérescence Maculaire Liée à l'Âge)",
+  "Glaucome",
+  "Rétinopathie diabétique",
+  "Cataracte évoluée ou opérée avec séquelles visuelles",
+  "Myopie forte pathologique",
+  "Atteintes du champ visuel",
+  "Séquelles d'AVC ou troubles neurologiques visuels",
+  "Pathologies rétiniennes rares"];
+
 
   const whatWeDo = [
-    "Évaluer la vision fonctionnelle restante dans des situations concrètes",
-    "Identifier les difficultés réelles : lecture, écriture, écrans, déplacements",
-    "Analyser l'impact émotionnel et psychologique de la perte visuelle",
-    "Sélectionner les aides adaptées : loupes, télé-agrandisseurs, lunettes spécifiques, éclairage",
-    "Mettre en place des stratégies pratiques d'autonomie dans la lecture et le quotidien",
-    "Accompagner les aidants familiaux avec des conseils dédiés",
-  ];
+  "Évaluer la vision fonctionnelle restante dans des situations concrètes",
+  "Identifier les difficultés réelles : lecture, écriture, écrans, déplacements",
+  "Analyser l'impact émotionnel et psychologique de la perte visuelle",
+  "Sélectionner les aides adaptées : loupes, télé-agrandisseurs, lunettes spécifiques, éclairage",
+  "Mettre en place des stratégies pratiques d'autonomie dans la lecture et le quotidien",
+  "Accompagner les aidants familiaux avec des conseils dédiés"];
+
 
   const expertise = [
-    {
-      icon: Eye,
-      title: "Expertise technique",
-      text: "25 ans d'expérience dans les aides visuelles pour malvoyants, avec une connaissance approfondie des dispositifs optiques et électroniques.",
-    },
-    {
-      icon: Heart,
-      title: "Approche humaine",
-      text: "Une compréhension fine des enjeux psychologiques liés à la basse vision, et une pédagogie issue de l'accompagnement au quotidien.",
-    },
-    {
-      icon: Users,
-      title: "Collaboration avec l'opticien partenaire",
-      text: "En cas de besoin d'équipement (lunettes adaptées, filtres spéciaux), un opticien-optométriste partenaire peut intervenir dans le parcours pour compléter l'accompagnement.",
-    },
-    {
-      icon: Lightbulb,
-      title: "Solutions concrètes",
-      text: "L'objectif n'est pas uniquement d'augmenter une image. L'objectif est de restaurer la capacité d'agir, de lire, de vivre mieux au quotidien.",
-    },
-  ];
+  {
+    icon: Eye,
+    title: "Expertise technique",
+    text: "25 ans d'expérience dans les aides visuelles pour malvoyants, avec une connaissance approfondie des dispositifs optiques et électroniques."
+  },
+  {
+    icon: Heart,
+    title: "Approche humaine",
+    text: "Une compréhension fine des enjeux psychologiques liés à la basse vision, et une pédagogie issue de l'accompagnement au quotidien."
+  },
+  {
+    icon: Users,
+    title: "Collaboration avec l'opticien partenaire",
+    text: "En cas de besoin d'équipement (lunettes adaptées, filtres spéciaux), un opticien-optométriste partenaire peut intervenir dans le parcours pour compléter l'accompagnement."
+  },
+  {
+    icon: Lightbulb,
+    title: "Solutions concrètes",
+    text: "L'objectif n'est pas uniquement d'augmenter une image. L'objectif est de restaurer la capacité d'agir, de lire, de vivre mieux au quotidien."
+  }];
+
 
   const notList = [
-    "N'est pas médecin et ne pose pas de diagnostic médical",
-    "Ne remplace pas l'ophtalmologiste ni l'orthoptiste",
-    "Ne réalise pas d'acte médical ni de prescription de traitement",
-    "Ne promet pas de « retrouver sa vue d'avant »",
-  ];
+  "N'est pas médecin et ne pose pas de diagnostic médical",
+  "Ne remplace pas l'ophtalmologiste ni l'orthoptiste",
+  "Ne réalise pas d'acte médical ni de prescription de traitement",
+  "Ne promet pas de « retrouver sa vue d'avant »"];
+
 
   const faqItems = [
-    {
-      q: "Qu'est-ce que la basse vision ?",
-      a: "La basse vision désigne une baisse importante de la vue qui ne peut pas être entièrement corrigée par des lunettes classiques, des lentilles ou un traitement médical. Elle résulte souvent d'une DMLA, d'un glaucome ou d'autres pathologies oculaires.",
-    },
-    {
-      q: "Le Visiopraticien remplace-t-il un ophtalmologiste ?",
-      a: "Non. Le suivi médical est indispensable pour diagnostiquer et traiter la pathologie (DMLA, glaucome, cataracte…). Le Visiopraticien LirElia intervient en complément, pour l'adaptation pratique du quotidien et l'autonomie dans la lecture.",
-    },
-    {
-      q: "DMLA : quelles solutions pour continuer à lire ?",
-      a: "Dans de nombreux cas, la lecture reste possible avec une DMLA. Avec les bonnes aides — loupes adaptées, télé-agrandisseurs, éclairage optimisé, stratégies de lecture — le Visiopraticien LirElia aide à retrouver un confort de lecture.",
-    },
-    {
-      q: "À partir de quel moment consulter un Visiopraticien ?",
-      a: "Dès que la vision ne permet plus de lire confortablement, d'utiliser un téléphone, de reconnaître des visages ou d'effectuer des tâches quotidiennes sans difficulté. Il n'est pas nécessaire d'attendre une perte totale de vision.",
-    },
-    {
-      q: "Quelles aides pour retrouver l'autonomie au quotidien ?",
-      a: "Le Visiopraticien évalue votre situation et propose des solutions adaptées : loupes, lampes d'appoint, télé-agrandisseurs, aménagement de l'éclairage et de l'espace, méthodes de lecture adaptées, conseils numériques. L'objectif est de préserver au maximum votre indépendance.",
-    },
-    {
-      q: "Le Visiopraticien travaille-t-il avec les aidants ?",
-      a: "Oui. Les proches jouent un rôle essentiel. Le bilan peut inclure des conseils spécifiques pour les aidants familiaux, afin qu'ils comprennent mieux la situation et sachent comment accompagner au quotidien.",
-    },
-    {
-      q: "Les aides visuelles sont-elles vraiment efficaces ?",
-      a: "Oui, à condition qu'elles soient adaptées à la situation précise. Une loupe ou un appareil mal choisi peut être inefficace ou abandonné. L'objectif du bilan basse vision est justement d'éviter ces erreurs et de proposer des solutions réellement utiles.",
-    },
-    {
-      q: "La cataracte est-elle concernée ?",
-      a: "Lorsque la cataracte est opérée et que des troubles visuels persistent, ou lorsqu'une chirurgie n'est pas possible immédiatement, un accompagnement en basse vision peut être utile pour améliorer le confort visuel.",
-    },
-  ];
+  {
+    q: "Qu'est-ce que la basse vision ?",
+    a: "La basse vision désigne une baisse importante de la vue qui ne peut pas être entièrement corrigée par des lunettes classiques, des lentilles ou un traitement médical. Elle résulte souvent d'une DMLA, d'un glaucome ou d'autres pathologies oculaires."
+  },
+  {
+    q: "Le Visiopraticien remplace-t-il un ophtalmologiste ?",
+    a: "Non. Le suivi médical est indispensable pour diagnostiquer et traiter la pathologie (DMLA, glaucome, cataracte…). Le Visiopraticien LirElia intervient en complément, pour l'adaptation pratique du quotidien et l'autonomie dans la lecture."
+  },
+  {
+    q: "DMLA : quelles solutions pour continuer à lire ?",
+    a: "Dans de nombreux cas, la lecture reste possible avec une DMLA. Avec les bonnes aides — loupes adaptées, télé-agrandisseurs, éclairage optimisé, stratégies de lecture — le Visiopraticien LirElia aide à retrouver un confort de lecture."
+  },
+  {
+    q: "À partir de quel moment consulter un Visiopraticien ?",
+    a: "Dès que la vision ne permet plus de lire confortablement, d'utiliser un téléphone, de reconnaître des visages ou d'effectuer des tâches quotidiennes sans difficulté. Il n'est pas nécessaire d'attendre une perte totale de vision."
+  },
+  {
+    q: "Quelles aides pour retrouver l'autonomie au quotidien ?",
+    a: "Le Visiopraticien évalue votre situation et propose des solutions adaptées : loupes, lampes d'appoint, télé-agrandisseurs, aménagement de l'éclairage et de l'espace, méthodes de lecture adaptées, conseils numériques. L'objectif est de préserver au maximum votre indépendance."
+  },
+  {
+    q: "Le Visiopraticien travaille-t-il avec les aidants ?",
+    a: "Oui. Les proches jouent un rôle essentiel. Le bilan peut inclure des conseils spécifiques pour les aidants familiaux, afin qu'ils comprennent mieux la situation et sachent comment accompagner au quotidien."
+  },
+  {
+    q: "Les aides visuelles sont-elles vraiment efficaces ?",
+    a: "Oui, à condition qu'elles soient adaptées à la situation précise. Une loupe ou un appareil mal choisi peut être inefficace ou abandonné. L'objectif du bilan basse vision est justement d'éviter ces erreurs et de proposer des solutions réellement utiles."
+  },
+  {
+    q: "La cataracte est-elle concernée ?",
+    a: "Lorsque la cataracte est opérée et que des troubles visuels persistent, ou lorsqu'une chirurgie n'est pas possible immédiatement, un accompagnement en basse vision peut être utile pour améliorer le confort visuel."
+  }];
+
 
   return (
     <div className="min-h-screen">
@@ -121,8 +121,8 @@ const Visiopraticien = () => {
           "description": "Accompagnement basse vision pour mieux lire et gagner en autonomie. Bilans fonctionnels, aides visuelles, conseils personnalisés.",
           "provider": { "@type": "Organization", "name": "LirElia" },
           "serviceType": "Accompagnement basse vision"
-        }}
-      />
+        }} />
+      
       <Header />
       <main id="main-content">
         {/* Hero */}
@@ -165,39 +165,34 @@ const Visiopraticien = () => {
         {/* Pour qui */}
         <section className="py-16 bg-background">
           <div className="container">
-            <div className="max-w-5xl mx-auto">
-              {/* Titre pleine largeur */}
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10">
-                Pour qui ? Malvoyants, DMLA, glaucome et basse vision
-              </h2>
-
-              {/* Image + premier paragraphe sur la même ligne */}
-              <div className="grid lg:grid-cols-2 gap-8 items-center mb-10">
-                <div className="relative">
-                  <img
-                    src={visiopraticienConsultationImage}
-                    alt="Visiopraticien en consultation avec une personne malvoyante autour d'une table avec livre, loupe, lunettes et tablette"
-                    className="w-full rounded-2xl shadow-card"
-                  />
-                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
-                </div>
-                <p className="text-xl text-foreground leading-relaxed">
-                  Le Visiopraticien LirElia accompagne les personnes atteintes de différentes pathologies responsables de baisse de vision ou de malvoyance. Que la cause soit une DMLA, un glaucome, une cataracte ou toute autre atteinte visuelle, l'objectif est le même : vous aider à retrouver du confort et de l'autonomie dans votre quotidien.
+            <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+                  Pour qui ? Malvoyants, DMLA, glaucome et basse vision
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Le Visiopraticien LirElia accompagne les personnes atteintes de différentes pathologies responsables de baisse de vision ou de malvoyance :
+                </p>
+                <ul className="space-y-3">
+                  {targetConditions.map((item, i) =>
+                  <li key={i} className="flex items-start gap-3 text-lg">
+                      <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
+                      <span>{item}</span>
+                    </li>
+                  )}
+                </ul>
+                <p className="text-lg text-muted-foreground mt-6">
+                  Le Visiopraticien LirElia accompagne les personnes atteintes de différentes pathologies responsables de baisse de vision ou de malvoyance. 
+Que la cause soit une DMLA, un glaucome, une cataracte ou toute autre atteinte visuelle, l'objectif est le même : vous aider à retrouver du confort et de l'autonomie dans votre quotidien.
+                
                 </p>
               </div>
-
-              {/* Liste des pathologies + paragraphe complémentaire */}
-              <ul className="grid sm:grid-cols-2 gap-3 mb-8">
-                {targetConditions.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg">
-                    <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-lg text-foreground leading-relaxed">
-                Dans toutes ces situations, même lorsque le traitement médical est stabilisé, des difficultés persistent : vision floue, taches centrales, perte du champ visuel, difficulté à lire, éblouissements, fatigue visuelle.
-              </p>
+              <div className="relative">
+                <img src={visiopraticienConsultationImage} alt="Visiopraticien en consultation avec une personne malvoyante autour d'une table avec livre, loupe, lunettes et tablette"
+                className="w-full rounded-2xl shadow-card" />
+                
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
+              </div>
             </div>
           </div>
         </section>
@@ -214,12 +209,12 @@ const Visiopraticien = () => {
               </p>
               <Card className="p-8">
                 <ul className="space-y-4">
-                  {whatWeDo.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4">
+                  {whatWeDo.map((item, i) =>
+                  <li key={i} className="flex items-start gap-4">
                       <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
                       <span className="text-lg text-foreground">{item}</span>
                     </li>
-                  ))}
+                  )}
                 </ul>
                 <p className="text-lg text-foreground font-semibold mt-8">
                   L'objectif n'est pas uniquement d'augmenter une image. L'objectif est de restaurer la capacité d'agir.
@@ -246,8 +241,8 @@ const Visiopraticien = () => {
                 Une expertise technique et humaine au service des malvoyants
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                {expertise.map((item, i) => (
-                  <Card key={i} variant="elevated" className="p-8">
+                {expertise.map((item, i) =>
+                <Card key={i} variant="elevated" className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
                         <item.icon className="w-7 h-7 text-primary-foreground" />
@@ -262,7 +257,7 @@ const Visiopraticien = () => {
                       </div>
                     </div>
                   </Card>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -278,12 +273,12 @@ const Visiopraticien = () => {
                   Le Visiopraticien n'est pas…
                 </h2>
                 <ul className="space-y-4 mb-6">
-                  {notList.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-lg">
+                  {notList.map((item, i) =>
+                  <li key={i} className="flex items-start gap-3 text-lg">
                       <X className="w-5 h-5 text-destructive shrink-0 mt-1" />
                       <span>{item}</span>
                     </li>
-                  ))}
+                  )}
                 </ul>
                 <p className="text-lg text-foreground leading-relaxed">
                   Son intervention est <strong>complémentaire au parcours médical</strong>, centrée sur l'accompagnement, l'orientation et les solutions concrètes pour mieux vivre avec une basse vision. Le suivi médical traite la pathologie ; le Visiopraticien agit comme un pont entre le diagnostic et la vie réelle.
@@ -355,8 +350,8 @@ const Visiopraticien = () => {
                 Questions fréquentes sur le Visiopraticien et la basse vision
               </h2>
               <Accordion type="single" collapsible className="space-y-4">
-                {faqItems.map((item, i) => (
-                  <AccordionItem key={i} value={`faq-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
+                {faqItems.map((item, i) =>
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
                     <AccordionTrigger className="text-lg font-semibold text-left py-6">
                       {item.q}
                     </AccordionTrigger>
@@ -364,7 +359,7 @@ const Visiopraticien = () => {
                       {item.a}
                     </AccordionContent>
                   </AccordionItem>
-                ))}
+                )}
               </Accordion>
             </div>
           </div>
@@ -399,8 +394,8 @@ const Visiopraticien = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default Visiopraticien;
