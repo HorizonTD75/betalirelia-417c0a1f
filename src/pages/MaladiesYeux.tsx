@@ -22,6 +22,7 @@ import {
 "@/components/ui/accordion";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/amsler-grid.jpg";
+import maladiesHeroImage from "@/assets/maladies-yeux-hero.jpg";
 
 const MaladiesYeux = () => {
   const mainDiseases = [
@@ -137,8 +138,12 @@ const MaladiesYeux = () => {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-20">
-          <div className="container">
+        <section className="relative overflow-hidden bg-primary text-primary-foreground py-20">
+          <div className="absolute inset-0">
+            <img src={maladiesHeroImage} alt="Examen ophtalmologique pour la basse vision" className="w-full h-full object-cover opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+          </div>
+          <div className="container relative">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Les maladies des yeux entraînant une basse vision

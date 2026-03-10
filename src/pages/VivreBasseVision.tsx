@@ -19,19 +19,23 @@ import {
   Smartphone,
   Lamp,
   Palette,
-  ShoppingBag
+  ShoppingBag,
+  MessageCircle,
+  HandHeart,
+  Stethoscope
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import readingMagnifierImage from "@/assets/reading-magnifier.jpg";
 import tabletAccessibilityImage from "@/assets/tablet-accessibility.jpg";
 import accessibleKitchenImage from "@/assets/accessible-kitchen.jpg";
 import seniorWomanStreetImage from "@/assets/senior-woman-street.png";
+import vivreHeroImage from "@/assets/vivre-basse-vision-hero.jpg";
 
 const VivreBasseVision = () => {
   const dailyActivities = [
     {
       icon: BookOpen,
-      title: "Lire et Écrire",
+      title: "Lire et écrire malgré une déficience visuelle",
       tips: [
         "Utiliser des loupes électroniques ou optiques adaptées",
         "Privilégier un éclairage directionnel sur le document",
@@ -53,9 +57,9 @@ const VivreBasseVision = () => {
     },
     {
       icon: Smartphone,
-      title: "Utiliser les écrans",
+      title: "Accessibilité des écrans et du numérique",
       tips: [
-        "Activer le mode d'accessibilité sur vos appareils",
+        "Activer le mode d'accessibilité (VoiceOver, TalkBack)",
         "Augmenter la taille des polices et icônes",
         "Utiliser le mode sombre si la lumière vous gêne",
         "Activer la fonction loupe intégrée",
@@ -78,8 +82,8 @@ const VivreBasseVision = () => {
   const homeAdaptations = [
     {
       icon: Lamp,
-      title: "L'éclairage",
-      description: "Un bon éclairage est essentiel. Privilégiez les lampes directionnelles pour la lecture, évitez les zones d'ombre et les éblouissements.",
+      title: "L'éclairage adapté",
+      description: "Un éclairage adapté à la basse vision est essentiel. Privilégiez les lampes directionnelles pour la lecture, évitez les zones d'ombre et les éblouissements.",
       tips: [
         "Lampe de bureau orientable sur chaque poste de lecture",
         "Éclairage uniforme dans les couloirs et escaliers",
@@ -89,8 +93,8 @@ const VivreBasseVision = () => {
     },
     {
       icon: Palette,
-      title: "Les contrastes",
-      description: "Utiliser des contrastes forts aide à mieux repérer les objets et les limites des espaces.",
+      title: "Les contrastes visuels",
+      description: "Utiliser des contrastes forts aide à mieux repérer les objets et les limites des espaces pour les personnes malvoyantes.",
       tips: [
         "Marquer les marches d'escalier avec des bandes contrastées",
         "Utiliser de la vaisselle de couleur contrastante",
@@ -100,8 +104,8 @@ const VivreBasseVision = () => {
     },
     {
       icon: Home,
-      title: "L'organisation",
-      description: "Une maison bien organisée réduit la fatigue et le stress liés à la recherche d'objets.",
+      title: "L'organisation du domicile",
+      description: "Un logement bien aménagé réduit la fatigue visuelle, prévient les chutes et améliore l'autonomie au quotidien.",
       tips: [
         "Toujours ranger les objets au même endroit",
         "Dégager les passages et éviter les obstacles au sol",
@@ -113,7 +117,7 @@ const VivreBasseVision = () => {
 
   const outdoorTips = [
     {
-      title: "Les déplacements",
+      title: "Déplacements et mobilité",
       items: [
         "Porter des lunettes filtrantes contre l'éblouissement",
         "Utiliser une canne blanche si le champ visuel est réduit",
@@ -122,7 +126,7 @@ const VivreBasseVision = () => {
       ]
     },
     {
-      title: "Les transports",
+      title: "Transports accessibles",
       items: [
         "Demander les titres de transport en gros caractères",
         "Utiliser les applications d'aide au transport accessibles",
@@ -131,7 +135,7 @@ const VivreBasseVision = () => {
       ]
     },
     {
-      title: "Les activités sociales",
+      title: "Vie sociale et sorties",
       items: [
         "Prévenir vos interlocuteurs de votre déficience visuelle",
         "Demander aux gens de se présenter quand ils vous abordent",
@@ -145,7 +149,7 @@ const VivreBasseVision = () => {
     {
       icon: BookOpen,
       title: "Lecture",
-      description: "Livres audio, liseuses à gros caractères, livres en grands caractères"
+      description: "Livres audio, liseuses à gros caractères, aides à la lecture optiques et électroniques"
     },
     {
       icon: Tv,
@@ -164,53 +168,28 @@ const VivreBasseVision = () => {
     }
   ];
 
-  const services = [
-    {
-      title: "En combinant",
-      items: [
-        "Un suivi médical sérieux (ophtalmo)",
-        "Une correction optique optimisée (opticien)",
-        "Un accompagnement personnalisé (visiopraticien)"
-      ]
-    },
-    {
-      title: "On peut souvent",
-      items: [
-        "Retrouver le plaisir de lire, même différemment",
-        "Sécuriser les déplacements à l'intérieur et à l'extérieur",
-        "Adapter les loisirs (télé, jeux, couture, jardinage)",
-        "Réduire la fatigue visuelle et le stress"
-      ]
-    },
-    {
-      title: "Lors d'un bilan",
-      items: [
-        "Analyser vos besoins réels",
-        "Tester différentes aides visuelles",
-        "Identifier si des lunettes spécifiques vous aideraient",
-        "Construire un plan d'adaptation au quotidien"
-      ]
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Vivre avec la Basse Vision : Conseils & Autonomie | LirElia"
-        description="Conseils pratiques pour le quotidien : lecture, éclairage, écrans et sécurité à la maison. Maintenez votre qualité de vie malgré une déficience visuelle."
+        title="Vivre avec la Basse Vision : Autonomie, Aides & Conseils Pratiques"
+        description="DMLA, glaucome, malvoyance : conseils pratiques pour le quotidien. Aides à la lecture, éclairage adapté, aménagement du domicile et autonomie pour personnes malvoyantes."
         canonicalPath="/vivre-basse-vision"
       />
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="relative bg-primary text-primary-foreground py-20 pb-32">
-          <div className="container">
+        <section className="relative overflow-hidden bg-primary text-primary-foreground py-20 pb-32">
+          <div className="absolute inset-0">
+            <img src={vivreHeroImage} alt="Personne malvoyante lisant avec une loupe chez elle" className="w-full h-full object-cover opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+          </div>
+          <div className="container relative">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Vivre au quotidien avec une basse vision
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-                Des solutions concrètes et des conseils pratiques pour maintenir votre autonomie et votre qualité de vie malgré une déficience visuelle.
+                Des solutions concrètes et des conseils pratiques pour maintenir votre autonomie et votre qualité de vie malgré une malvoyance.
               </p>
             </div>
           </div>
@@ -233,7 +212,7 @@ const VivreBasseVision = () => {
                       La basse vision n'est pas une fatalité
                     </h2>
                     <p className="text-lg text-foreground leading-relaxed">
-                      Même si la maladie de l'œil ne peut pas toujours être guérie, on peut adapter l'environnement, le matériel et les habitudes pour mieux utiliser la vision qui reste. Ce guide vous propose des solutions concrètes pour chaque aspect de votre vie quotidienne.
+                      Que la cause soit une DMLA, un glaucome ou une autre maladie de l'œil, la basse vision peut être accompagnée. En adaptant l'environnement, le matériel et les habitudes, il est possible de mieux utiliser la vision restante et de préserver son autonomie. Ce guide vous propose des aides concrètes pour chaque aspect de votre vie quotidienne.
                     </p>
                   </div>
                 </div>
@@ -251,17 +230,17 @@ const VivreBasseVision = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <img 
                     src={readingMagnifierImage} 
-                    alt="Personne utilisant une loupe pour lire" 
+                    alt="Personne malvoyante utilisant une loupe pour lire" 
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
-                    <span className="text-primary-foreground font-semibold">Lecture adaptée</span>
+                    <span className="text-primary-foreground font-semibold">Aides à la lecture</span>
                   </div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <img 
                     src={tabletAccessibilityImage} 
-                    alt="Utilisation d'une tablette avec accessibilité" 
+                    alt="Utilisation d'une tablette avec accessibilité visuelle" 
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
@@ -271,7 +250,7 @@ const VivreBasseVision = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <img 
                     src={accessibleKitchenImage} 
-                    alt="Cuisine adaptée à la basse vision" 
+                    alt="Cuisine adaptée pour personne malvoyante" 
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
@@ -281,10 +260,10 @@ const VivreBasseVision = () => {
               </div>
 
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-                Les activités du quotidien
+                Les activités du quotidien avec une basse vision
               </h2>
               <p className="text-xl text-muted-foreground mb-12 text-center max-w-3xl mx-auto">
-                Des adaptations simples pour continuer à profiter de vos activités préférées.
+                Des adaptations simples et des aides techniques pour continuer à profiter de vos activités préférées malgré une vision réduite.
               </p>
               
               <div className="grid md:grid-cols-2 gap-8">
@@ -318,10 +297,10 @@ const VivreBasseVision = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-                Adapter son domicile
+                Aménager son domicile pour mieux voir
               </h2>
               <p className="text-xl text-muted-foreground mb-12 text-center max-w-3xl mx-auto">
-                Un environnement bien adapté réduit la fatigue visuelle et améliore l'autonomie.
+                Un logement bien adapté réduit la fatigue visuelle, prévient les chutes et favorise le maintien à domicile.
               </p>
               
               <div className="space-y-8">
@@ -359,42 +338,40 @@ const VivreBasseVision = () => {
           </div>
         </section>
 
-        {/* Outdoor Section */}
+        {/* Outdoor Section - Redesigned */}
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-5xl mx-auto">
-              <div className="grid lg:grid-cols-3 gap-8 items-start mb-12">
-                <div className="lg:col-span-1">
-                  <img 
-                    src={seniorWomanStreetImage} 
-                    alt="Illustration d'une senior avec une canne blanche traversant la rue" 
-                    className="w-full rounded-2xl shadow-card"
-                  />
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
+                  <MapPin className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <div className="lg:col-span-2">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                      <MapPin className="w-7 h-7 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h2 className="font-serif text-3xl font-bold text-foreground">
-                        À l'extérieur
-                      </h2>
-                      <p className="text-lg text-muted-foreground">
-                        Conseils pour se déplacer et maintenir une vie sociale active
-                      </p>
-                    </div>
-                  </div>
+                <div>
+                  <h2 className="font-serif text-3xl font-bold text-foreground">
+                    Autonomie à l'extérieur : mobilité et vie sociale
+                  </h2>
+                  <p className="text-lg text-muted-foreground">
+                    Conseils pour se déplacer en sécurité et maintenir une vie sociale active malgré la malvoyance
+                  </p>
                 </div>
               </div>
-              
-              <div className="grid md:grid-cols-3 gap-6">
+
+              <div className="grid lg:grid-cols-3 gap-6">
                 {outdoorTips.map((section, index) => (
-                  <Card key={index} variant="elevated" className="p-6">
+                  <Card key={index} variant="elevated" className="p-6 flex flex-col">
+                    {index === 0 && (
+                      <div className="mb-4 -mx-6 -mt-6 rounded-t-xl overflow-hidden">
+                        <img 
+                          src={seniorWomanStreetImage} 
+                          alt="Personne malvoyante se déplaçant en ville avec une canne blanche" 
+                          className="w-full h-40 object-cover object-top"
+                        />
+                      </div>
+                    )}
                     <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                       {section.title}
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 flex-1">
                       {section.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
@@ -409,15 +386,44 @@ const VivreBasseVision = () => {
           </div>
         </section>
 
+        {/* Comprendre les maladies - transition naturelle */}
+        <section className="py-12 bg-background">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <Card variant="muted" className="p-8">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <Stethoscope className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
+                      Mieux comprendre les maladies des yeux
+                    </h2>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      DMLA, glaucome, rétinopathie diabétique, cataracte… Comprendre l'origine de votre basse vision vous aide à mieux agir au quotidien et à choisir les aides visuelles les plus adaptées.
+                    </p>
+                  </div>
+                  <Button variant="outline" size="default" asChild className="shrink-0">
+                    <Link to="/maladies-yeux">
+                      Découvrir les maladies
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Leisure Section */}
         <section className="py-16 bg-background">
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-                Continuer ses loisirs
+                Continuer ses loisirs malgré la malvoyance
               </h2>
               <p className="text-xl text-muted-foreground mb-12 text-center max-w-3xl mx-auto">
-                Avec les bonnes adaptations, vous pouvez continuer à profiter de vos passions.
+                Avec les bonnes aides techniques et adaptations, vous pouvez continuer à profiter de vos passions.
               </p>
               
               <div className="grid md:grid-cols-4 gap-6">
@@ -439,55 +445,92 @@ const VivreBasseVision = () => {
           </div>
         </section>
 
-        {/* What We Offer Section */}
+        {/* What We Offer Section - Reworked with Bilan CTA */}
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-5xl mx-auto">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                Ce que nous pouvons faire pour vous aider
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+                Un accompagnement personnalisé pour mieux vivre au quotidien
               </h2>
+              <p className="text-xl text-muted-foreground mb-10 text-center max-w-3xl mx-auto">
+                Le bilan basse vision est la première étape pour retrouver confort et autonomie dans votre vie de tous les jours.
+              </p>
               
-              <div className="grid md:grid-cols-3 gap-6">
-                {services.map((service, index) => (
-                  <Card key={index} variant={index === 1 ? "highlighted" : "default"} className="p-6">
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
-                      {service.title}
-                    </h3>
-                    <ul className="space-y-3">
-                      {service.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                          <span className="text-foreground">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                ))}
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <Card variant="elevated" className="p-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4">
+                    <Eye className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold text-foreground mb-3">
+                    Faire le point sur votre vue
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Le visiopraticien évalue votre vision fonctionnelle, analyse vos difficultés concrètes et identifie vos priorités pour mieux voir au quotidien.
+                  </p>
+                </Card>
+                <Card variant="highlighted" className="p-6">
+                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
+                    <HandHeart className="w-6 h-6 text-secondary-foreground" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold text-foreground mb-3">
+                    Tester des aides adaptées
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Loupes, télé-agrandisseurs, éclairage adapté, filtres… Vous essayez les aides techniques les plus adaptées à vos besoins de lecture et d'autonomie.
+                  </p>
+                </Card>
+                <Card variant="elevated" className="p-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4">
+                    <Lightbulb className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-serif text-xl font-bold text-foreground mb-3">
+                    Un plan d'action concret
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Vous repartez avec un compte-rendu précis, des recommandations claires et un plan d'adaptation personnalisé pour améliorer votre quotidien.
+                  </p>
+                </Card>
+              </div>
+
+              <div className="flex justify-center">
+                <Button variant="default" size="lg" asChild>
+                  <Link to="/#bilans">
+                    Découvrir nos bilans basse vision
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Club Section - New */}
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-8">
+                <MessageCircle className="w-5 h-5" />
+                <span className="text-lg font-semibold">Rompre l'isolement, partager, s'entraider</span>
+              </div>
               <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
-                Prêt à retrouver votre autonomie ?
+                Rejoignez le Club LirElia
               </h2>
-              <p className="text-xl text-primary-foreground/90 mb-10 leading-relaxed">
-                Un bilan personnalisé vous permettra d'identifier les solutions les mieux adaptées à votre situation et à vos besoins.
+              <p className="text-xl text-primary-foreground/90 mb-6 leading-relaxed">
+                Vivre avec une basse vision peut être isolant. Le Club LirElia vous permet de rencontrer d'autres personnes malvoyantes, d'échanger des conseils pratiques pour le quotidien et de partager vos expériences lors de visioconférences thématiques.
+              </p>
+              <p className="text-lg text-primary-foreground/80 mb-10 leading-relaxed">
+                Chaque mois, un thème différent : aides à la lecture, vie numérique, bien-être, témoignages d'aidants… Un espace bienveillant pour avancer ensemble.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="secondary" size="lg" asChild>
-                  <Link to="/#bilans">
-                    Découvrir nos bilans
+                  <Link to="/club-lirelia">
+                    Découvrir le Club
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/#club">
-                    Rejoindre le Club
+                  <Link to="/aidants-malvoyants">
+                    Espace aidants
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
