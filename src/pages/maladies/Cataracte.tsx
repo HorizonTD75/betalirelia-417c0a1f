@@ -16,15 +16,15 @@ import {
   Phone,
   ShieldCheck,
   Scissors,
-  Baby,
-} from "lucide-react";
+  Baby } from
+"lucide-react";
 import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  AccordionTrigger } from
+"@/components/ui/accordion";
 import cataracteHeroImage from "@/assets/cataracte-hero.jpg";
 
 const Cataracte = () => {
@@ -40,8 +40,8 @@ const Cataracte = () => {
           "name": "La Cataracte – Symptômes, Diagnostic et Traitement",
           "description": "Guide complet sur la cataracte : définition, symptômes, causes, opération et aides visuelles pour mieux vivre avec cette maladie des yeux.",
           "about": { "@type": "MedicalCondition", "name": "Cataracte" }
-        }}
-      />
+        }} />
+      
       <Header />
       <main id="main-content">
         {/* Breadcrumb */}
@@ -107,20 +107,20 @@ const Cataracte = () => {
               <Card className="p-6">
                 <ul className="grid md:grid-cols-2 gap-3">
                   {[
-                    "Qu'est-ce que la cataracte ?",
-                    "Symptômes et signes d'alerte",
-                    "Causes et facteurs de risque",
-                    "Diagnostic de la cataracte",
-                    "L'opération de la cataracte",
-                    "Cataracte congénitale",
-                    "Vivre avec la cataracte",
-                    "Cataracte et basse vision",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-2">
+                  "Qu'est-ce que la cataracte ?",
+                  "Symptômes et signes d'alerte",
+                  "Causes et facteurs de risque",
+                  "Diagnostic de la cataracte",
+                  "L'opération de la cataracte",
+                  "Cataracte congénitale",
+                  "Vivre avec la cataracte",
+                  "Cataracte et basse vision"].
+                  map((item, index) =>
+                  <li key={index} className="flex items-center gap-2">
                       <ChevronRight className="w-5 h-5 text-secondary shrink-0" />
                       <span className="text-lg text-foreground">{item}</span>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </Card>
             </div>
@@ -189,21 +189,21 @@ const Cataracte = () => {
                 <h3 className="font-serif text-xl font-bold text-foreground mb-4">Les signes les plus courants</h3>
                 <ul className="grid md:grid-cols-2 gap-3">
                   {[
-                    "La lecture devient difficile",
-                    "La vision est floue, voilée",
-                    "L'éblouissement par la lumière ou les phares",
-                    "Distorsion des formes : image vue comme dans le brouillard",
-                    "Les couleurs sont ternes et jaunies",
-                    "La vision de loin se détériore",
-                    "Les contrastes sont moins francs",
-                    "Diminution globale de l'acuité visuelle",
-                    "Des taches ou points noirs dans le champ de vision (plus rare)",
-                  ].map((symptom, i) => (
-                    <li key={i} className="flex items-start gap-3">
+                  "La lecture devient difficile",
+                  "La vision est floue, voilée",
+                  "L'éblouissement par la lumière ou les phares",
+                  "Distorsion des formes : image vue comme dans le brouillard",
+                  "Les couleurs sont ternes et jaunies",
+                  "La vision de loin se détériore",
+                  "Les contrastes sont moins francs",
+                  "Diminution globale de l'acuité visuelle",
+                  "Des taches ou points noirs dans le champ de vision (plus rare)"].
+                  map((symptom, i) =>
+                  <li key={i} className="flex items-start gap-3">
                       <ChevronRight className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                       <span className="text-foreground">{symptom}</span>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </Card>
 
@@ -236,10 +236,7 @@ const Cataracte = () => {
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-4">Facteur principal</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    Le <strong>vieillissement</strong> est la cause principale de la cataracte.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    Le cristallin perd de sa transparence et de sa souplesse avec l'âge. 10 % des moins de 65 ans sont concernés, 20 % après 65 ans et jusqu'à 60 % après 85 ans.
+                    Le <strong>vieillissement</strong> est la cause principale de la cataracte. Le cristallin perd de sa transparence et de sa souplesse avec l'âge. 10 % des moins de 65 ans sont concernés, 20 % après 65 ans et jusqu'à 60 % après 85 ans.
                   </p>
                 </Card>
 
@@ -247,20 +244,20 @@ const Cataracte = () => {
                   <h3 className="font-serif text-xl font-bold text-foreground mb-4">Facteurs aggravants</h3>
                   <ul className="space-y-3">
                     {[
-                      { label: "Le diabète", detail: "Accélère l'opacification du cristallin" },
-                      { label: "Le tabagisme", detail: "Facteur de risque avéré" },
-                      { label: "L'exposition aux UV", detail: "Soleil sans protection adaptée" },
-                      { label: "Les corticoïdes", detail: "Usage prolongé" },
-                      { label: "Traumatismes oculaires", detail: "Cataracte dite traumatique" },
-                    ].map((factor, i) => (
-                      <li key={i} className="flex items-start gap-3">
+                    { label: "Le diabète", detail: "Accélère l'opacification du cristallin" },
+                    { label: "Le tabagisme", detail: "Facteur de risque avéré" },
+                    { label: "L'exposition aux UV", detail: "Soleil sans protection adaptée" },
+                    { label: "Les corticoïdes", detail: "Usage prolongé" },
+                    { label: "Traumatismes oculaires", detail: "Cataracte dite traumatique" }].
+                    map((factor, i) =>
+                    <li key={i} className="flex items-start gap-3">
                         <ChevronRight className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                         <div>
                           <span className="font-bold text-foreground">{factor.label}</span>
                           <p className="text-muted-foreground">{factor.detail}</p>
                         </div>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </Card>
               </div>
@@ -298,7 +295,7 @@ const Cataracte = () => {
                   L'ophtalmologue vérifie également l'absence d'autres maladies associées en examinant le fond de l'œil et en prenant diverses mesures (pression intraoculaire, dilatation de la pupille). En fonction de la gravité de la cataracte, différentes options de traitement sont proposées.
                 </p>
                 <Card variant="highlighted" className="p-4">
-                  <p className="text-foreground font-semibold">
+                  <p className="text-foreground font-semibold text-lg">
                     💡 La chirurgie n'est recommandée que lorsque les aides à la vision ne suffisent plus et que la cataracte handicape significativement le quotidien. Il n'y a pas d'âge limite pour l'opération.
                   </p>
                 </Card>
@@ -340,7 +337,7 @@ const Cataracte = () => {
                     Le patient peut rentrer chez lui quelques heures après l'intervention. Dès le lendemain, la vue s'améliore significativement. Des traitements anti-inflammatoires sont prescrits pour quelques semaines.
                   </p>
                   <Card variant="highlighted" className="p-4">
-                    <p className="text-foreground font-semibold">
+                    <p className="text-foreground font-semibold text-lg">
                       💡 Le taux de réussite fonctionnelle est de 90 % dès le lendemain de l'opération. Les personnes de plus de 85 ans qui en bénéficient récupèrent souvent une meilleure autonomie physique et cognitive.
                     </p>
                   </Card>
@@ -353,16 +350,16 @@ const Cataracte = () => {
                   </p>
                   <ul className="space-y-2">
                     {[
-                      "Endophtalmie (infection rare prévenue par l'hygiène stricte)",
-                      "Déchirure ou décollement de rétine (risque accru en cas de myopie forte)",
-                      "Œdème maculaire (traité par collyres anti-inflammatoires)",
-                      "Rupture capsulaire (réparable par changement de modèle d'implant)",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
+                    "Endophtalmie (infection rare prévenue par l'hygiène stricte)",
+                    "Déchirure ou décollement de rétine (risque accru en cas de myopie forte)",
+                    "Œdème maculaire (traité par collyres anti-inflammatoires)",
+                    "Rupture capsulaire (réparable par changement de modèle d'implant)"].
+                    map((item, i) =>
+                    <li key={i} className="flex items-start gap-3">
                         <ChevronRight className="w-5 h-5 text-muted-foreground shrink-0 mt-0.5" />
                         <span className="text-foreground">{item}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                 </Card>
               </div>
@@ -394,7 +391,7 @@ const Cataracte = () => {
                   <div className="flex items-start gap-3">
                     <AlertTriangle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                     <p className="text-foreground">
-                      <strong>Un diagnostic et un traitement précoces</strong> sont essentiels pour prévenir toute perte de vision permanente chez l'enfant.
+                      <strong className="text-lg">Un diagnostic et un traitement précoces</strong> sont essentiels pour prévenir toute perte de vision permanente chez l'enfant.
                     </p>
                   </div>
                 </Card>
@@ -526,8 +523,8 @@ const Cataracte = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default Cataracte;
