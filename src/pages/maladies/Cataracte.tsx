@@ -413,8 +413,8 @@ const Cataracte = () => {
                 </h2>
               </div>
 
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                L'opération n'est pas programmée dès les premiers symptômes. Il faut donc parfois vivre avec une vue affaiblie pendant une période. Des aides visuelles existent pour améliorer le quotidien en attendant l'intervention.
+              <p className="text-lg text-foreground mb-8 leading-relaxed">
+                L'opération de la cataracte n'est pas programmée dès les premiers symptômes. Il faut donc parfois vivre avec une vue affaiblie pendant une période. Des aides visuelles existent pour améliorer le quotidien en attendant l'intervention.
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
