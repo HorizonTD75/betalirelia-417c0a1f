@@ -157,7 +157,7 @@ const Nystagmus = () => {
                     </div>
                     <div>
                       <h3 className="font-serif text-2xl font-bold text-foreground">Nystagmus congénital</h3>
-                      <p className="text-secondary font-semibold">Présent dès la naissance ou la petite enfance</p>
+                      <p className="text-primary font-bold text-lg">Présent dès la naissance ou la petite enfance</p>
                     </div>
                   </div>
                   <p className="text-lg text-foreground leading-relaxed mb-4">
