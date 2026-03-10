@@ -22,7 +22,8 @@ import {
   ShoppingBag,
   MessageCircle,
   HandHeart,
-  Stethoscope
+  Stethoscope,
+  EyeOff
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import readingMagnifierImage from "@/assets/reading-magnifier.jpg";
@@ -73,7 +74,7 @@ const VivreBasseVision = () => {
         "Préparer une liste avec de gros caractères",
         "Utiliser une loupe portative pour lire les étiquettes",
         "Privilégier les magasins bien éclairés",
-        "Demander de l'aide au personnel si nécessaire",
+        "Demander de l'aide au personnel si besoin",
         "Utiliser des applications de lecture à haute voix"
       ]
     }
@@ -338,7 +339,7 @@ const VivreBasseVision = () => {
           </div>
         </section>
 
-        {/* Outdoor Section - Redesigned */}
+        {/* Outdoor Section - Restructured: Row 1 = image + 2 blocks, Row 2 = full-width */}
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-5xl mx-auto">
@@ -356,60 +357,61 @@ const VivreBasseVision = () => {
                 </div>
               </div>
 
-              <div className="grid lg:grid-cols-3 gap-6">
-                {outdoorTips.map((section, index) => (
-                  <Card key={index} variant="elevated" className="p-6 flex flex-col">
-                    {index === 0 && (
-                      <div className="mb-4 -mx-6 -mt-6 rounded-t-xl overflow-hidden">
-                        <img 
-                          src={seniorWomanStreetImage} 
-                          alt="Personne malvoyante se déplaçant en ville avec une canne blanche" 
-                          className="w-full h-40 object-cover object-top"
-                        />
-                      </div>
-                    )}
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
-                      {section.title}
-                    </h3>
-                    <ul className="space-y-3 flex-1">
-                      {section.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                          <span className="text-foreground">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Comprendre les maladies - transition naturelle */}
-        <section className="py-12 bg-background">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <Card variant="muted" className="p-8">
-                <div className="flex flex-col md:flex-row items-center gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Stethoscope className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
-                      Mieux comprendre les maladies des yeux
-                    </h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      DMLA, glaucome, rétinopathie diabétique, cataracte… Comprendre l'origine de votre basse vision vous aide à mieux agir au quotidien et à choisir les aides visuelles les plus adaptées.
-                    </p>
-                  </div>
-                  <Button variant="outline" size="default" asChild className="shrink-0">
-                    <Link to="/maladies-yeux">
-                      Découvrir les maladies
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </Button>
+              {/* Row 1: Image + 2 blocks */}
+              <div className="grid lg:grid-cols-3 gap-6 mb-6">
+                {/* Column 1: Image */}
+                <div className="rounded-2xl overflow-hidden shadow-card">
+                  <img 
+                    src={seniorWomanStreetImage} 
+                    alt="Personne malvoyante se déplaçant en ville" 
+                    className="w-full h-full object-cover object-center min-h-[280px]"
+                  />
                 </div>
+
+                {/* Column 2: Déplacements */}
+                <Card variant="elevated" className="p-6">
+                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                    {outdoorTips[0].title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {outdoorTips[0].items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                        <span className="text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+
+                {/* Column 3: Transports */}
+                <Card variant="elevated" className="p-6">
+                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                    {outdoorTips[1].title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {outdoorTips[1].items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                        <span className="text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </div>
+
+              {/* Row 2: Full-width Vie sociale */}
+              <Card variant="elevated" className="p-6">
+                <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                  {outdoorTips[2].title}
+                </h3>
+                <ul className="grid md:grid-cols-2 gap-3">
+                  {outdoorTips[2].items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </Card>
             </div>
           </div>
@@ -445,8 +447,40 @@ const VivreBasseVision = () => {
           </div>
         </section>
 
+        {/* Comprendre les maladies - enriched, moved after loisirs */}
+        <section className="py-12 bg-muted">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <Card variant="highlighted" className="p-8">
+                <div className="flex flex-col md:flex-row items-start gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <EyeOff className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="font-serif text-2xl font-bold text-foreground mb-3">
+                      Mieux comprendre les maladies des yeux
+                    </h2>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                      DMLA, glaucome, rétinopathie diabétique, cataracte… Comprendre l'origine de votre basse vision vous aide à mieux agir au quotidien et à choisir les aides visuelles les plus adaptées.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                      Les maladies des yeux ne sont généralement pas visibles de l'extérieur. L'entourage, les collègues ou les passants ne perçoivent pas toujours le handicap visuel. Les personnes malvoyantes sont ainsi souvent incomprises dans leurs difficultés du quotidien — une réalité d'autant plus importante à comprendre pour mieux accompagner et mieux vivre avec la basse vision.
+                    </p>
+                    <Button variant="outline" size="default" asChild>
+                      <Link to="/maladies-yeux">
+                        Découvrir les maladies des yeux
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* What We Offer Section - Reworked with Bilan CTA */}
-        <section className="py-16 bg-muted">
+        <section className="py-16 bg-background">
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
@@ -494,7 +528,7 @@ const VivreBasseVision = () => {
 
               <div className="flex justify-center">
                 <Button variant="default" size="lg" asChild>
-                  <Link to="/#bilans">
+                  <Link to="/bilans-bassevision">
                     Découvrir nos bilans basse vision
                     <ArrowRight className="w-5 h-5" />
                   </Link>
@@ -504,7 +538,7 @@ const VivreBasseVision = () => {
           </div>
         </section>
 
-        {/* Club Section - New */}
+        {/* Club Section */}
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
@@ -523,13 +557,13 @@ const VivreBasseVision = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="secondary" size="lg" asChild>
-                  <Link to="/club-lirelia">
+                  <Link to="/club">
                     Découvrir le Club
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/aidants-malvoyants">
+                  <Link to="/aidants">
                     Espace aidants
                     <ArrowRight className="w-5 h-5" />
                   </Link>
