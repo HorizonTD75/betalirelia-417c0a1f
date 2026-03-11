@@ -103,19 +103,19 @@ const ClubHeroSection = () => {
             </div>
           </div>
 
-          {/* Right Illustration Placeholder */}
+          {/* Right Video */}
           <div className="hidden lg:block">
-            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-3xl p-8 border border-primary-foreground/20">
-              <div className="aspect-[4/3] rounded-2xl bg-primary-foreground/5 border-2 border-dashed border-primary-foreground/30 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-4">
-                    <Video className="w-10 h-10 text-secondary" />
-                  </div>
-                  <p className="text-lg text-primary-foreground/70 max-w-xs">
-                    Illustration : Visio en groupe, ambiance chaleureuse, 
-                    4-6 participants, animateur
-                  </p>
-                </div>
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-3xl p-4 border border-primary-foreground/20">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                <video
+                  src="/videos/club-lirelia-hero.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                  aria-label="Aperçu d'une session du Club LirElia en visioconférence"
+                />
               </div>
             </div>
           </div>
