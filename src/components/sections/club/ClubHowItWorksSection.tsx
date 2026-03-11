@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { UserPlus, Link2, Users, Lightbulb, Clock, Check, HelpCircle, Calendar } from "lucide-react";
+import { UserPlus, Link2, Users, Lightbulb, Clock, Check, HelpCircle } from "lucide-react";
 
 const steps = [
   {
@@ -84,7 +84,7 @@ const ClubHowItWorksSection = () => {
           </div>
 
           {/* FAQ + Session Details Row */}
-          <div className="grid md:grid-cols-3 gap-8 mb-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* FAQ Items */}
             {faqs.map((faq, index) => (
               <Card key={index} variant="elevated">
@@ -121,17 +121,6 @@ const ClubHowItWorksSection = () => {
                 </ul>
               </CardContent>
             </Card>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="secondary" size="lg">
-              <Calendar className="w-6 h-6" />
-              Voir les dates & s'inscrire
-            </Button>
-            <Button variant="outline" size="lg">
-              Proposer un thème
-            </Button>
           </div>
         </div>
       </div>

@@ -35,6 +35,7 @@ import LivreAidants from "./pages/LivreAidants";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import CGV from "./pages/CGV";
+import CharteClub from "./pages/CharteClub";
 
 const queryClient = new QueryClient();
 

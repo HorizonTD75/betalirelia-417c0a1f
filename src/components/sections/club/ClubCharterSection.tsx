@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Shield, Lock, UserCheck, LogOut, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const rules = [
   {
@@ -64,9 +65,11 @@ const ClubCharterSection = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="ghost" size="lg" className="text-primary">
-              <FileText className="w-5 h-5" />
-              Lire la charte complète
+            <Button variant="ghost" size="lg" className="text-primary" asChild>
+              <Link to="/charte-club-lirelia">
+                <FileText className="w-5 h-5" />
+                Lire la charte complète
+              </Link>
             </Button>
           </div>
         </div>

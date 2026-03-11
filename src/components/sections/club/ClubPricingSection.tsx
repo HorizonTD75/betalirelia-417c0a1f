@@ -3,6 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Clock, Users, Gift } from "lucide-react";
 
 const ClubPricingSection = () => {
+  const scrollToRegistration = () => {
+    document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="py-20 bg-background" id="pricing">
       <div className="container">
@@ -47,7 +51,7 @@ const ClubPricingSection = () => {
                     <span className="text-foreground">Accès à tous les thèmes</span>
                   </li>
                 </ul>
-                <Button variant="secondary" size="lg" className="w-full">
+                <Button variant="secondary" size="lg" className="w-full" onClick={scrollToRegistration}>
                   <Users className="w-5 h-5" />
                   Je rejoins la liste d'invités
                 </Button>
