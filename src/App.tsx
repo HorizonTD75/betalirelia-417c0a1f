@@ -67,7 +67,9 @@ const App = () => (
           <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
           <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
           <Route path="/bilans-bassevision/suivi" element={<BilanSuivi />} />
-          <Route path="/bilans-bassevision/contact" element={<ContactBilan />} />
+          <Route path="/rdv-bilan" element={<ContactBilan />} />
+          {/* Redirect old contact URL */}
+          <Route path="/bilans-bassevision/contact" element={<Navigate to="/rdv-bilan" replace />} />
           {/* Redirects from old URLs */}
           <Route path="/aides-lecture" element={<Navigate to="/aides-lecture-bassevision" replace />} />
           <Route path="/aides-lecture/*" element={<Navigate to="/aides-lecture-bassevision" replace />} />

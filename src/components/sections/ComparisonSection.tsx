@@ -7,71 +7,71 @@ const criteria = [
     label: "Grossissement",
     loupeVerre: "×2 à ×5 (fixe)",
     loupeElec: "×2 à ×25 (réglable)",
-    lampe: "Aucun (complément)",
     teleAgr: "×2 à ×60 (réglable)",
+    lampe: "Aucun (complément)",
   },
   {
     label: "Contraste renforcé",
     loupeVerre: false,
     loupeElec: true,
-    lampe: false,
     teleAgr: true,
+    lampe: false,
   },
   {
     label: "Éclairage intégré",
     loupeVerre: "Certains modèles",
     loupeElec: "Rétro-éclairage écran",
-    lampe: "Oui (fonction principale)",
     teleAgr: "Oui",
+    lampe: "Oui (fonction principale)",
   },
   {
     label: "Mains libres",
     loupeVerre: "Loupe dôme uniquement",
     loupeElec: "Modèles de bureau",
-    lampe: true,
     teleAgr: true,
+    lampe: true,
   },
   {
     label: "Lecture prolongée",
     loupeVerre: false,
     loupeElec: "Modèles de bureau",
-    lampe: true,
     teleAgr: true,
+    lampe: true,
   },
   {
     label: "Portable / mobile",
     loupeVerre: true,
     loupeElec: "Modèles portables",
-    lampe: false,
     teleAgr: "Modèles portables",
+    lampe: false,
   },
   {
     label: "Sans batterie",
     loupeVerre: true,
     loupeElec: false,
-    lampe: "Secteur",
     teleAgr: "Secteur",
+    lampe: "Secteur",
   },
   {
     label: "Budget indicatif",
-    loupeVerre: "15 – 60 €",
-    loupeElec: "150 – 800 €",
-    lampe: "45 – 120 €",
+    loupeVerre: "10 – 90 €",
+    loupeElec: "150 – 1 200 €",
     teleAgr: "500 – 3 500 €",
+    lampe: "45 – 120 €",
   },
 ];
 
 const columns = [
   { key: "loupeVerre" as const, label: "Loupes en verre", link: "/aides-lecture-bassevision/loupes-verre" },
   { key: "loupeElec" as const, label: "Loupes électroniques", link: "/aides-lecture-bassevision/loupes-electroniques" },
-  { key: "lampe" as const, label: "Lampes adaptées", link: "/aides-lecture-bassevision/lampes" },
   { key: "teleAgr" as const, label: "Télé-agrandisseurs", link: "/aides-lecture-bassevision/tele-agrandisseurs" },
+  { key: "lampe" as const, label: "Lampes adaptées", link: "/aides-lecture-bassevision/lampes" },
 ];
 
 const CellContent = ({ value }: { value: boolean | string }) => {
   if (value === true) return <Check className="w-6 h-6 text-accent mx-auto" aria-label="Oui" />;
   if (value === false) return <X className="w-6 h-6 text-destructive mx-auto" aria-label="Non" />;
-  return <span>{value}</span>;
+  return <span className="whitespace-nowrap">{value}</span>;
 };
 
 const ComparisonSection = () => {
@@ -89,8 +89,8 @@ const ComparisonSection = () => {
         </div>
 
         {/* Desktop table */}
-        <div className="hidden lg:block overflow-x-auto">
-          <table className="w-full border-collapse" role="table">
+        <div className="hidden lg:block overflow-x-auto -mx-4 px-4">
+          <table className="w-full border-collapse table-fixed" role="table">
             <caption className="sr-only">
               Comparatif des 4 catégories d'aides à la lecture pour malvoyants
             </caption>
@@ -98,7 +98,7 @@ const ComparisonSection = () => {
               <tr>
                 <th
                   scope="col"
-                  className="text-left text-lg font-bold text-foreground p-4 bg-card border-2 border-border rounded-tl-xl"
+                  className="text-left text-base font-bold text-foreground p-3 bg-card border-2 border-border rounded-tl-xl w-[18%]"
                 >
                   Critère
                 </th>
@@ -106,7 +106,7 @@ const ComparisonSection = () => {
                   <th
                     key={col.key}
                     scope="col"
-                    className={`text-center text-lg font-bold text-primary-foreground p-4 bg-primary ${
+                    className={`text-center text-base font-bold text-primary-foreground p-3 bg-primary w-[20.5%] ${
                       i === columns.length - 1 ? "rounded-tr-xl" : ""
                     }`}
                   >
@@ -120,14 +120,14 @@ const ComparisonSection = () => {
                 <tr key={row.label} className={ri % 2 === 0 ? "bg-card" : "bg-muted/30"}>
                   <th
                     scope="row"
-                    className="text-left text-lg font-semibold text-foreground p-4 border-2 border-border"
+                    className="text-left text-base font-semibold text-foreground p-3 border-2 border-border"
                   >
                     {row.label}
                   </th>
                   {columns.map((col) => (
                     <td
                       key={col.key}
-                      className="text-center text-lg text-foreground p-4 border-2 border-border"
+                      className="text-center text-base text-foreground p-3 border-2 border-border"
                     >
                       <CellContent value={row[col.key]} />
                     </td>
@@ -137,18 +137,18 @@ const ComparisonSection = () => {
             </tbody>
             <tfoot>
               <tr>
-                <td className="p-4 border-2 border-border bg-card rounded-bl-xl" />
+                <td className="p-3 border-2 border-border bg-card rounded-bl-xl" />
                 {columns.map((col, i) => (
                   <td
                     key={col.key}
-                    className={`p-4 border-2 border-border bg-card text-center ${
+                    className={`p-3 border-2 border-border bg-card text-center ${
                       i === columns.length - 1 ? "rounded-br-xl" : ""
                     }`}
                   >
-                    <Button variant="outline" size="lg" asChild>
+                    <Button variant="outline" size="sm" asChild>
                       <Link to={col.link}>
                         Voir la sélection
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </Button>
                   </td>

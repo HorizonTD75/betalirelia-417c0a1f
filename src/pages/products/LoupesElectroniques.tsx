@@ -109,6 +109,9 @@ const LoupesElectroniques = () => (
     semanticKeywords="loupe électronique malvoyant, loupe numérique, zoom lecture, contraste élevé, aide visuelle électronique, loupe portable basse vision, agrandisseur numérique, lecture DMLA"
     products={products}
     buyingGuide={buyingGuide}
+    heroCta="Avoir de l'aide pour le choix d'une loupe électronique"
+    bottomCta="Demandez-nous des informations sur les loupes électroniques"
+    contactSubject="loupe électronique"
     ctaText="Être orienté(e) vers une loupe électronique adaptée"
     seo={{
       title: "Loupes électroniques pour malvoyants — Zoom et contraste | LirElia",

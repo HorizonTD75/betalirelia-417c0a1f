@@ -1,6 +1,5 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ContactFormSection from "@/components/sections/ContactFormSection";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, Check } from "lucide-react";
@@ -27,6 +26,12 @@ interface CategoryPageProps {
     criteria: BuyingCriteria[];
   };
   ctaText: string;
+  /** Text for the hero CTA button */
+  heroCta?: string;
+  /** Text for the bottom CTA button */
+  bottomCta?: string;
+  /** Subject pre-fill for contact-conseil */
+  contactSubject?: string;
   seo: {
     title: string;
     description: string;
@@ -44,8 +49,15 @@ const CategoryPageLayout = ({
   products,
   buyingGuide,
   ctaText,
+  heroCta,
+  bottomCta,
+  contactSubject,
   seo,
 }: CategoryPageProps) => {
+  const subject = contactSubject || title.toLowerCase();
+  const heroCtaText = heroCta || ctaText;
+  const bottomCtaText = bottomCta || `Demandez-nous des informations sur les ${title.toLowerCase()}`;
+
   return (
     <div className="min-h-screen">
       <SEOHead
@@ -90,8 +102,8 @@ const CategoryPageLayout = ({
                 {intro}
               </p>
               <Button variant="secondary" size="lg" className="text-xl" asChild>
-                <Link to="/contact-conseil">
-                  {ctaText}
+                <Link to={`/contact-conseil?sujet=${encodeURIComponent(subject)}`}>
+                  {heroCtaText}
                   <ArrowRight className="w-6 h-6" />
                 </Link>
               </Button>
@@ -162,8 +174,8 @@ const CategoryPageLayout = ({
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="default" size="lg" className="text-xl" asChild>
-                  <Link to="/contact-conseil">
-                    {ctaText}
+                  <Link to={`/contact-conseil?sujet=${encodeURIComponent(subject)}`}>
+                    {bottomCtaText}
                     <ArrowRight className="w-6 h-6" />
                   </Link>
                 </Button>
@@ -177,8 +189,6 @@ const CategoryPageLayout = ({
             </div>
           </div>
         </section>
-
-        <ContactFormSection />
       </main>
       <Footer />
     </div>

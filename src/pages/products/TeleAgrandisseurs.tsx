@@ -112,6 +112,9 @@ const TeleAgrandisseurs = () => (
     semanticKeywords="télé agrandisseur malvoyant, vidéo agrandisseur, lecture écran agrandi, basse vision sévère, agrandisseur de documents, DMLA aide lecture, caméra lecture TV, loupe grand écran"
     products={products}
     buyingGuide={buyingGuide}
+    heroCta="Avoir de l'aide pour le choix d'un télé-agrandisseur"
+    bottomCta="Demandez-nous des informations sur les télé-agrandisseurs"
+    contactSubject="télé-agrandisseur"
     ctaText="Découvrir les télé-agrandisseurs"
     seo={{
       title: "Télé-agrandisseurs pour malvoyants — Grand écran | LirElia",
