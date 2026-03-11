@@ -103,9 +103,9 @@ const Header = () => {
                 </Button>
               </li>
               <li>
-                <a href="tel:0123456789" className="flex items-center justify-center gap-2 py-4 text-xl font-semibold text-primary">
+                <a href="tel:0768474235" className="flex items-center justify-center gap-2 py-4 text-xl font-semibold text-primary">
                   <Phone className="w-6 h-6" />
-                  01 23 45 67 89
+                  07 68 47 42 35
                 </a>
               </li>
             </ul>

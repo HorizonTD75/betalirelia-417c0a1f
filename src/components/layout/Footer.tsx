@@ -39,9 +39,9 @@ const Footer = () => {
                 <span className="text-lg text-primary-foreground/80">4 rue Léon Blum<br />91120 Palaiseau</span>
               </li>
               <li>
-                <a href="tel:0123456789" className="flex items-center gap-3 text-lg text-primary-foreground/80 hover:text-secondary transition-colors">
+                <a href="tel:0768474235" className="flex items-center gap-3 text-lg text-primary-foreground/80 hover:text-secondary transition-colors">
                   <Phone className="w-6 h-6 text-secondary" />
-                  01 23 45 67 89
+                  07 68 47 42 35
                 </a>
               </li>
               <li>

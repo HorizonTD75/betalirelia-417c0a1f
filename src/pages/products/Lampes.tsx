@@ -111,7 +111,7 @@ const Lampes = () => (
     buyingGuide={buyingGuide}
     heroCta="Avoir de l'aide pour le choix d'une lampe adaptée"
     bottomCta="Demandez-nous des informations sur les lampes adaptées"
-    contactSubject="éclairage basse vision"
+    contactSubject="eclairage-basse-vision"
     ctaText="Optimiser mon éclairage de lecture"
     seo={{
       title: "Lampes de lecture basse vision — Éclairage adapté | LirElia",

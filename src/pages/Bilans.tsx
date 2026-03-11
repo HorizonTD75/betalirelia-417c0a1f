@@ -451,9 +451,9 @@ const Bilans = () => {
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <a href="tel:0123456789">
+                  <a href="tel:0768474235">
                     <Phone className="w-5 h-5" />
-                    01 23 45 67 89
+                    07 68 47 42 35
                   </a>
                 </Button>
               </div>

@@ -111,7 +111,7 @@ const LoupesElectroniques = () => (
     buyingGuide={buyingGuide}
     heroCta="Avoir de l'aide pour le choix d'une loupe électronique"
     bottomCta="Demandez-nous des informations sur les loupes électroniques"
-    contactSubject="loupe électronique"
+    contactSubject="loupe-electronique"
     ctaText="Être orienté(e) vers une loupe électronique adaptée"
     seo={{
       title: "Loupes électroniques pour malvoyants — Zoom et contraste | LirElia",
