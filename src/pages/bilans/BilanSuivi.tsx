@@ -103,7 +103,7 @@ const BilanSuivi = () => {
                 Un accompagnement sur 3 mois pour vous aider à mettre en pratique les conseils et ajuster les solutions au fil du temps, sans rester seul face à vos difficultés.
               </p>
               <Button variant="hero" size="lg" asChild>
-                <Link to="/bilans-bassevision/contact?type=suivi"><Calendar className="w-6 h-6" /> Réserver un Pack Suivi</Link>
+                <Link to="/rdv-bilan?type=suivi"><Calendar className="w-6 h-6" /> Réserver un Pack Suivi</Link>
               </Button>
             </div>
           </div>
