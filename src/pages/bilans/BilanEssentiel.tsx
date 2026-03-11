@@ -69,7 +69,7 @@ const BilanEssentiel = () => {
                 En cabinet à Palaiseau ou à domicile. Vous pouvez venir accompagné d'un proche.
               </p>
               <Button variant="hero" size="lg" asChild>
-                <Link to="/bilans-bassevision/contact?type=essentiel">
+                <Link to="/rdv-bilan?type=essentiel">
                   <Calendar className="w-6 h-6" />
                   Réserver un bilan Essentiel
                 </Link>
