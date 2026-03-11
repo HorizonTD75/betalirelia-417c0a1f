@@ -64,9 +64,9 @@ const Header = () => {
                 Le Club
               </Link>
             </Button>
-            <a href="tel:0123456789" className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
+            <a href="tel:0768474235" className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
               <Phone className="w-4 h-4" />
-              <span>01 23 45 67 89</span>
+              <span>07 68 47 42 35</span>
             </a>
           </div>
 
