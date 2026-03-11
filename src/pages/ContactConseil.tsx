@@ -13,23 +13,15 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 const topicOptions = [
-{ value: "", label: "— Aucun sujet en particulier —" },
-{ value: "loupe-classique", label: "Loupe classique en verre", category: "Loupes en verre" },
-{ value: "loupe-eclairante", label: "Loupe éclairante", category: "Loupes en verre" },
-{ value: "loupe-dome", label: "Loupe dôme (à poser)", category: "Loupes en verre" },
-{ value: "loupe-electronique-portable", label: "Loupe électronique portable", category: "Loupes électroniques" },
-{ value: "loupe-electronique-bureau", label: "Loupe électronique de bureau", category: "Loupes électroniques" },
-{ value: "loupe-electronique-poche", label: "Loupe électronique de poche", category: "Loupes électroniques" },
-{ value: "lampe-bureau-daylight", label: "Lampe de bureau daylight", category: "Lampes adaptées" },
-{ value: "lampe-sur-pied", label: "Lampe sur pied orientable", category: "Lampes adaptées" },
-{ value: "lampe-loupe", label: "Lampe-loupe combinée", category: "Lampes adaptées" },
-{ value: "tele-agrandisseur-bureau", label: "Télé-agrandisseur de bureau", category: "Télé-agrandisseurs" },
-{ value: "tele-agrandisseur-portable", label: "Télé-agrandisseur portable", category: "Télé-agrandisseurs" },
-{ value: "tele-agrandisseur-tv", label: "Caméra de lecture TV", category: "Télé-agrandisseurs" },
-{ value: "bilan-essentiel", label: "Bilan basse vision Essentiel", category: "Bilans basse vision" },
-{ value: "bilan-expert", label: "Bilan basse vision Expert", category: "Bilans basse vision" },
-{ value: "bilan-suivi", label: "Bilan de suivi basse vision", category: "Bilans basse vision" }];
-
+  { value: "", label: "— Aucun sujet en particulier —" },
+  { value: "loupes-verre", label: "Loupes en verre", category: "Aides à la lecture" },
+  { value: "loupe-electronique", label: "Loupe électronique", category: "Aides à la lecture" },
+  { value: "tele-agrandisseur", label: "Télé-agrandisseur", category: "Aides à la lecture" },
+  { value: "eclairage-basse-vision", label: "Éclairage basse vision", category: "Aides à la lecture" },
+  { value: "aide-choix", label: "Aide pour choisir mon équipement", category: "Conseil" },
+  { value: "bilan-basse-vision", label: "Bilan basse vision", category: "Conseil" },
+  { value: "autre", label: "Autre question", category: "Conseil" },
+];
 
 const categories = [...new Set(topicOptions.filter((o) => o.category).map((o) => o.category))];
 
@@ -53,10 +45,13 @@ const ContactConseil = () => {
     const tag = "SRC_" + pathname.replace(/\//g, "_").replace(/^_/, "");
     setSourceTag(tag);
 
+    // Support both ?produit= (legacy) and ?sujet= (new)
+    const sujet = searchParams.get("sujet");
     const produit = searchParams.get("produit");
-    if (produit) {
-      const found = topicOptions.find((o) => o.value === produit);
-      if (found) setInteret(produit);
+    const param = sujet || produit;
+    if (param) {
+      const found = topicOptions.find((o) => o.value === param);
+      if (found) setInteret(param);
     }
   }, [searchParams]);
 
@@ -99,8 +94,8 @@ const ContactConseil = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Conseil personnalisé aide à la lecture | LirElia"
-        description="Décrivez votre situation visuelle et recevez des recommandations personnalisées pour choisir l'aide à la lecture la plus adaptée à vos besoins."
+        title="Conseil personnalisé aide à la lecture basse vision | LirElia"
+        description="Décrivez votre situation visuelle et recevez des recommandations personnalisées pour choisir l'aide à la lecture la plus adaptée : loupe, lampe, télé-agrandisseur."
         canonicalPath="/contact-conseil" />
       
       <Header />
@@ -108,13 +103,6 @@ const ContactConseil = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <div className="max-w-2xl mx-auto">
-              
-
-
-
-
-
-              
 
               {submitted ?
               <Card variant="highlighted" className="text-center py-12">
@@ -213,7 +201,7 @@ const ContactConseil = () => {
 
                       {/* Message */}
                       <div className="space-y-2">
-                        <Label htmlFor="message" className="text-lg font-semibold">Votre message</Label>
+                        <Label htmlFor="message" className="text-lg font-semibold">Décrivez votre situation</Label>
                         <Textarea
                         id="message" required rows={4} value={message}
                         onChange={(e) => setMessage(e.target.value)} maxLength={2000}

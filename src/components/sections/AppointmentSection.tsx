@@ -26,7 +26,7 @@ const AppointmentSection = () => {
               Réservez directement un entretien téléphonique 
             </p>
             <Button variant="default" className="w-full" asChild>
-              <Link to="/bilans-bassevision/contact">Choisir un créneau</Link>
+              <Link to="/rdv-bilan">Choisir un créneau</Link>
             </Button>
           </div>
 

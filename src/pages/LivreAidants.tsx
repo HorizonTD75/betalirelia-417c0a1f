@@ -189,7 +189,7 @@ const LivreAidants = () => {
                     </a>
                   </Button>
                   <Button variant="heroOutline" size="lg" asChild>
-                    <Link to="/bilans-bassevision/contact">Prendre rendez-vous</Link>
+                    <Link to="/rdv-bilan">Prendre rendez-vous</Link>
                   </Button>
                 </div>
               </div>

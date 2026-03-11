@@ -165,7 +165,7 @@ const LivreDmla = () => {
                     </a>
                   </Button>
                   <Button variant="heroOutline" size="lg" asChild>
-                    <Link to="/bilans-bassevision/contact">
+                    <Link to="/rdv-bilan">
                       Prendre rendez-vous
                     </Link>
                   </Button>

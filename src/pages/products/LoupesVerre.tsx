@@ -103,15 +103,18 @@ const LoupesVerre = () => (
     title="Loupes en verre"
     subtitle="Grossissement optique simple, direct et sans technologie"
     intro="La loupe en verre reste l'aide à la lecture la plus accessible et intuitive. Avec une lentille convergente de qualité, elle offre un grossissement immédiat pour lire un texte, une étiquette ou un document imprimé. Légère, sans batterie et facile à utiliser, c'est le premier réflexe quand la vision de près diminue."
-    semanticKeywords="loupe de lecture, loupe optique, grossissement visuel, lecture rapprochée, vision de près, aide visuelle optique, loupe à main, loupe éclairante, loupe dôme, loupe malvoyant"
+    semanticKeywords="loupe de lecture, loupe optique, grossissement visuel, lecture rapprochée, vision de près, aide visuelle optique, loupe à main, loupe éclairante, loupe dôme, loupe malvoyant, loupe pour malvoyant"
     products={products}
     buyingGuide={buyingGuide}
-    ctaText="Être conseillé(e) pour choisir ma loupe"
+    heroCta="Avoir de l'aide pour le choix d'une loupe en verre"
+    bottomCta="Demandez-nous des informations sur les loupes en verre"
+    contactSubject="loupes en verre"
     seo={{
       title: "Loupes en verre pour malvoyants — Aide à la lecture | LirElia",
       description: "Découvrez notre sélection de loupes en verre : classiques, éclairantes et dômes. Grossissement optique simple et immédiat pour lire courrier, livres et étiquettes.",
       canonicalPath: "/aides-lecture-bassevision/loupes-verre",
     }}
+    ctaText="Être conseillé(e) pour choisir ma loupe"
   />
 );
 

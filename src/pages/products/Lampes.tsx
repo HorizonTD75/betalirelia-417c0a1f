@@ -109,6 +109,9 @@ const Lampes = () => (
     semanticKeywords="lampe de lecture malvoyant, éclairage basse vision, lumière anti-éblouissement, fatigue visuelle, lampe adaptée, lampe loupe, éclairage lumière du jour, lampe LED lecture, lampadaire lecture basse vision"
     products={products}
     buyingGuide={buyingGuide}
+    heroCta="Avoir de l'aide pour le choix d'une lampe adaptée"
+    bottomCta="Demandez-nous des informations sur les lampes adaptées"
+    contactSubject="éclairage basse vision"
     ctaText="Optimiser mon éclairage de lecture"
     seo={{
       title: "Lampes de lecture basse vision — Éclairage adapté | LirElia",

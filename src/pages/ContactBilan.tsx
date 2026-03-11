@@ -9,16 +9,32 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Calendar, Phone, Send, Check, Shield } from "lucide-react";
+import { Calendar, Phone, Send, Check, Shield, Info } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import bilanHeroImage from "@/assets/bilan-hero.jpg";
 
 type BilanType = "essentiel" | "expert" | "suivi";
 
-const bilanOptions: { value: BilanType; label: string; price: number }[] = [
-  { value: "essentiel", label: "Bilan Essentiel", price: 120 },
-  { value: "expert", label: "Bilan Expert", price: 150 },
-  { value: "suivi", label: "Pack Suivi", price: 190 },
+const bilanOptions: { value: BilanType; label: string; price: number; reassurance: string }[] = [
+  {
+    value: "essentiel",
+    label: "Bilan Essentiel",
+    price: 75,
+    reassurance: "Un premier bilan complet pour évaluer votre vision fonctionnelle, tester des aides adaptées et repartir avec un plan d'action concret.",
+  },
+  {
+    value: "expert",
+    label: "Bilan Expert",
+    price: 135,
+    reassurance: "Le Bilan Essentiel enrichi d'une consultation opticien-optométriste pour explorer les corrections et lunettes basse vision les plus adaptées.",
+  },
+  {
+    value: "suivi",
+    label: "Pack Suivi",
+    price: 215,
+    reassurance: "Un accompagnement complet sur plusieurs mois : bilan initial, essais, ajustements et suivi pour installer durablement les bonnes habitudes.",
+  },
 ];
 
 const ContactBilan = () => {
@@ -38,6 +54,7 @@ const ContactBilan = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const selectedPrice = bilanOptions.find((b) => b.value === selectedBilan)?.price;
+  const selectedReassurance = bilanOptions.find((b) => b.value === selectedBilan)?.reassurance;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,15 +98,24 @@ const ContactBilan = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Rendez-vous bilan basse vision | LirElia"
-        description="Réservez votre bilan basse vision : Essentiel, Expert ou Suivi. Un conseiller de 25 ans d'expérience vous accompagne à Palaiseau ou à domicile."
-        canonicalPath="/bilans-bassevision/contact"
+        title="Rendez-vous bilan basse vision — Essentiel, Expert ou Suivi | LirElia"
+        description="Réservez votre bilan basse vision : Essentiel (75 €), Expert (135 €) ou Suivi (215 €). Un conseiller de 25 ans d'expérience vous accompagne à Palaiseau ou à domicile."
+        canonicalPath="/rdv-bilan"
       />
       <Header />
       <main id="main-content">
-        {/* Hero */}
-        <section className="relative bg-primary text-primary-foreground py-20 pb-32">
-          <div className="container">
+        {/* Hero with background image */}
+        <section className="relative bg-primary text-primary-foreground py-20 pb-32 overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={bilanHeroImage}
+              alt=""
+              className="w-full h-full object-cover opacity-20"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+          </div>
+          <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Prendre <span className="text-secondary">rendez-vous</span>
@@ -170,6 +196,15 @@ const ContactBilan = () => {
                           </button>
                         ))}
                       </div>
+                      {/* Reassurance message */}
+                      {selectedReassurance && (
+                        <div className="mt-3 flex items-start gap-2 px-4 py-3 bg-accent/10 rounded-xl border border-accent/20">
+                          <Info className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                          <p className="text-base text-foreground leading-relaxed">
+                            {selectedReassurance}
+                          </p>
+                        </div>
+                      )}
                     </div>
 
                     {/* Profil */}
