@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Plane, Cpu, BookOpen, Music, Clock, Users, UserCheck, Heart, Calendar, MessageSquare } from "lucide-react";
+import { Plane, Cpu, BookOpen, Music, Clock, Users, UserCheck, Heart, MessageSquare } from "lucide-react";
 
 const themes = [
   {
@@ -106,16 +106,10 @@ const ClubProgramSection = () => {
                     })}
                   </ul>
 
-                  <div className="space-y-3">
-                    <Button variant="secondary" size="lg" className="w-full">
-                      <Calendar className="w-5 h-5" />
-                      Voir les dates & m'inscrire
-                    </Button>
-                    <Button variant="outline" size="default" className="w-full">
-                      <MessageSquare className="w-5 h-5" />
-                      Proposer un thème
-                    </Button>
-                  </div>
+                  <Button variant="outline" size="default" className="w-full">
+                    <MessageSquare className="w-5 h-5" />
+                    Proposer un thème
+                  </Button>
                 </CardContent>
               </Card>
             </div>

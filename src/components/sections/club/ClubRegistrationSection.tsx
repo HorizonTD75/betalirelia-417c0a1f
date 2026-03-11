@@ -5,7 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import { UserPlus, Shield } from "lucide-react";
+import { UserPlus, Shield, Loader2, CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const profiles = [
   { value: "patient", label: "Personne concernée" },
@@ -34,6 +36,9 @@ const ClubRegistrationSection = () => {
     themes: [] as string[],
     needZoomHelp: false,
   });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const { toast } = useToast();
 
   const handleThemeToggle = (themeId: string) => {
     setFormData(prev => ({
@@ -44,11 +49,67 @@ const ClubRegistrationSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+    setLoading(true);
+
+    try {
+      // Map form values to readable labels
+      const profileLabel = profiles.find(p => p.value === formData.profile)?.label || formData.profile;
+      const sessionLabel = sessions.find(s => s.value === formData.session)?.label || formData.session;
+      const themeLabels = formData.themes.map(t => themes.find(th => th.id === t)?.label || t).join(", ");
+
+      const { data, error } = await supabase.functions.invoke("brevo-club-registration", {
+        body: {
+          email: formData.email,
+          prenom: formData.prenom,
+          type: profileLabel,
+          souhait: sessionLabel,
+          themes: themeLabels,
+          needZoomHelp: formData.needZoomHelp,
+          source_url: window.location.href,
+          source_tag: "SRC_club",
+        }
+      });
+
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      console.error("Submit error:", err);
+      const errorMessage = err instanceof Error ? err.message : "Erreur inconnue";
+      toast({
+        title: "Une erreur est survenue",
+        description: errorMessage,
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
+  if (submitted) {
+    return (
+      <section className="py-20 bg-background" id="registration">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <Card variant="highlighted" className="text-center py-12">
+              <CardContent className="space-y-6">
+                <div className="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-10 h-10 text-accent" />
+                </div>
+                <h2 className="font-serif text-3xl font-bold text-foreground">Merci pour votre inscription !</h2>
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
+                  Vous recevrez prochainement un e-mail avec les informations pour la prochaine session du Club.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-background" id="registration">
@@ -201,9 +262,12 @@ const ClubRegistrationSection = () => {
                 </div>
 
                 {/* Submit Button */}
-                <Button type="submit" variant="secondary" size="lg" className="w-full">
-                  <UserPlus className="w-6 h-6" />
-                  Je m'inscris
+                <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading}>
+                  {loading ? (
+                    <><Loader2 className="w-6 h-6 animate-spin" /> Inscription en cours…</>
+                  ) : (
+                    <><UserPlus className="w-6 h-6" /> Je m'inscris</>
+                  )}
                 </Button>
 
                 {/* Trust Message */}

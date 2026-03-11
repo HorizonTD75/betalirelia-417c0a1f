@@ -108,7 +108,7 @@ const LoupesVerre = () => (
     buyingGuide={buyingGuide}
     heroCta="Avoir de l'aide pour le choix d'une loupe en verre"
     bottomCta="Demandez-nous des informations sur les loupes en verre"
-    contactSubject="loupes en verre"
+    contactSubject="loupes-verre"
     seo={{
       title: "Loupes en verre pour malvoyants — Aide à la lecture | LirElia",
       description: "Découvrez notre sélection de loupes en verre : classiques, éclairantes et dômes. Grossissement optique simple et immédiat pour lire courrier, livres et étiquettes.",

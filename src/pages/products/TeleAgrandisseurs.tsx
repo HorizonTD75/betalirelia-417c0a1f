@@ -114,7 +114,7 @@ const TeleAgrandisseurs = () => (
     buyingGuide={buyingGuide}
     heroCta="Avoir de l'aide pour le choix d'un télé-agrandisseur"
     bottomCta="Demandez-nous des informations sur les télé-agrandisseurs"
-    contactSubject="télé-agrandisseur"
+    contactSubject="tele-agrandisseur"
     ctaText="Découvrir les télé-agrandisseurs"
     seo={{
       title: "Télé-agrandisseurs pour malvoyants — Grand écran | LirElia",

@@ -297,7 +297,7 @@ const BilanSuivi = () => {
                   <Link to="/rdv-bilan?type=suivi"><Calendar className="w-6 h-6" /> Prendre rendez-vous</Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <a href="tel:0123456789"><Phone className="w-5 h-5" /> 01 23 45 67 89</a>
+                  <a href="tel:0768474235"><Phone className="w-5 h-5" /> 07 68 47 42 35</a>
                 </Button>
               </div>
             </div>

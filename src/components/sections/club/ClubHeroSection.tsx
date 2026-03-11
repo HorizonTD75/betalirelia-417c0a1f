@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle, Video, Users, Calendar, Check, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MessageCircle, Video, Users, Check, ArrowRight } from "lucide-react";
 
 const benefits = [
   {
@@ -27,6 +27,10 @@ const reassurances = [
 ];
 
 const ClubHeroSection = () => {
+  const scrollToProgram = () => {
+    document.getElementById("program")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
       {/* Background subtle pattern */}
@@ -76,13 +80,9 @@ const ClubHeroSection = () => {
               })}
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Button - scroll to program */}
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button variant="hero" size="lg">
-                <Calendar className="w-6 h-6" />
-                Je réserve ma place (gratuit)
-              </Button>
-              <Button variant="heroOutline" size="lg">
+              <Button variant="heroOutline" size="lg" onClick={scrollToProgram}>
                 Voir le programme du mois
                 <ArrowRight className="w-5 h-5" />
               </Button>

@@ -9,6 +9,10 @@ const benefits = [
 ];
 
 const ClubAudienceSection = () => {
+  const scrollToRegistration = () => {
+    document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="py-20 bg-background" id="audience">
       <div className="container">
@@ -68,7 +72,7 @@ const ClubAudienceSection = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="secondary" size="lg">
+            <Button variant="secondary" size="lg" onClick={scrollToRegistration}>
               <Users className="w-6 h-6" />
               Je m'inscris même si je ne suis pas client
             </Button>
