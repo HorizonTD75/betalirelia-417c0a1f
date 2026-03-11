@@ -69,7 +69,7 @@ const BilanExpert = () => {
                 Pour aller au bout de l'optimisation des lunettes et aides optiques, en collaboration avec un opticien-optométriste partenaire reconnu au niveau national.
               </p>
               <Button variant="hero" size="lg" asChild>
-                <Link to="/bilans-bassevision/contact?type=expert"><Calendar className="w-6 h-6" /> Réserver un bilan Expert</Link>
+                <Link to="/rdv-bilan?type=expert"><Calendar className="w-6 h-6" /> Réserver un bilan Expert</Link>
               </Button>
             </div>
           </div>
