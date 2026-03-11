@@ -445,7 +445,7 @@ const Bilans = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
-                  <Link to="/bilans-bassevision/contact">
+                  <Link to="/rdv-bilan">
                     <Calendar className="w-6 h-6" />
                     Prendre rendez-vous
                   </Link>

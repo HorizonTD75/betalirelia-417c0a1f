@@ -279,7 +279,7 @@ const BilanExpert = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
-                  <Link to="/bilans-bassevision/contact?type=expert"><Calendar className="w-6 h-6" /> Prendre rendez-vous</Link>
+                  <Link to="/rdv-bilan?type=expert"><Calendar className="w-6 h-6" /> Prendre rendez-vous</Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <a href="tel:0123456789"><Phone className="w-5 h-5" /> 01 23 45 67 89</a>
