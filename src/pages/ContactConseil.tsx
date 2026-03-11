@@ -157,11 +157,6 @@ const ContactConseil = () => {
                             </optgroup>
                         )}
                         </select>
-                        {interet &&
-                      <p className="text-base text-accent font-medium">
-                            ✓ Sujet sélectionné : {topicOptions.find((o) => o.value === interet)?.label}
-                          </p>
-                      }
                       </div>
 
                       {/* Nom + Email */}
