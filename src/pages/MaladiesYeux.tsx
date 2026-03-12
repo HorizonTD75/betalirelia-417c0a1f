@@ -80,19 +80,23 @@ const MaladiesYeux = () => {
   const refractionDefects = [
   {
     title: "La Myopie",
-    description: "L'œil est trop long ou la cornée trop courbée. La lumière se focalise en avant de la rétine. Les objets éloignés apparaissent flous, les objets proches sont clairs."
+    description: "L'œil est trop long ou la cornée trop courbée. La lumière se focalise en avant de la rétine. Les objets éloignés apparaissent flous, les objets proches sont clairs.",
+    link: "/maladies-yeux/myopie"
   },
   {
     title: "L'Hypermétropie",
-    description: "L'œil est trop court ou la cornée trop plate. La lumière se focalise derrière la rétine. Les objets proches apparaissent flous, les objets éloignés sont plus clairs."
+    description: "L'œil est trop court ou la cornée trop plate. La lumière se focalise derrière la rétine. Les objets proches apparaissent flous, les objets éloignés sont plus clairs.",
+    link: "/maladies-yeux/hypermetropie"
   },
   {
     title: "L'Astigmatisme",
-    description: "La courbure de la cornée ou du cristallin est irrégulière. La lumière se focalise sur plusieurs points. Les objets peuvent apparaître dédoublés, flous ou distordus."
+    description: "La courbure de la cornée ou du cristallin est irrégulière. La lumière se focalise sur plusieurs points. Les objets peuvent apparaître dédoublés, flous ou distordus.",
+    link: "/maladies-yeux/astigmatisme"
   },
   {
     title: "La Presbytie",
-    description: "Le cristallin perd de son élasticité avec l'âge, rendant difficile la vision de près. Symptômes : difficulté à lire, fatigue oculaire, maux de tête."
+    description: "Le cristallin perd de son élasticité avec l'âge, rendant difficile la vision de près. Symptômes : difficulté à lire, fatigue oculaire, maux de tête.",
+    link: "/maladies-yeux/presbytie"
   }];
 
 
@@ -320,9 +324,15 @@ const MaladiesYeux = () => {
                     <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                       {defect.title}
                     </h3>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                       {defect.description}
                     </p>
+                    <Button variant="outline" size="sm" asChild>
+                      <Link to={defect.link}>
+                        En savoir plus
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
                   </Card>
                 )}
               </div>

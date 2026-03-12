@@ -66,7 +66,7 @@ const BilanEssentiel = () => {
                 La formule de base pour faire le point sur votre basse vision : comprendre ce qui vous gêne le plus, tester des solutions simples et repartir avec un plan d'action clair.
               </p>
               <p className="text-lg text-primary-foreground/70 italic mb-8">
-                En cabinet à Palaiseau ou à domicile. Vous pouvez venir accompagné d'un proche.
+                En cabinet à Paris ou à domicile. Vous pouvez venir accompagné d'un proche.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=essentiel">
@@ -80,6 +80,24 @@ const BilanEssentiel = () => {
             <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
               <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="hsl(var(--background))" />
             </svg>
+          </div>
+        </section>
+
+        {/* Bandeau visites à domicile */}
+        <section className="py-8 bg-secondary/10 border-b-2 border-secondary/20">
+          <div className="container">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
+              <div className="w-14 h-14 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center shrink-0">
+                <Home className="w-7 h-7" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-serif text-xl font-bold text-foreground mb-1">Ce bilan peut aussi être réalisé à domicile</h3>
+                <p className="text-lg text-muted-foreground">Pour les personnes ayant des difficultés de déplacement, le Visiopraticien LirElia se rend chez vous. Le bilan est adapté à votre environnement réel.</p>
+              </div>
+              <Button variant="secondary" size="default" asChild className="shrink-0">
+                <Link to="/bilans-bassevision/visites-domicile">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -152,7 +170,7 @@ const BilanEssentiel = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center">
                       <Building className="w-6 h-6" />
                     </div>
-                    <h3 className="font-serif text-2xl font-bold">En cabinet (Palaiseau)</h3>
+                    <h3 className="font-serif text-2xl font-bold">En cabinet (Paris 16e)</h3>
                   </div>
                   <p className="text-lg text-muted-foreground mb-6">
                     Séance de 1h15 à 1h30 dans un environnement calme, avec du matériel dédié à la basse vision.
@@ -308,7 +326,7 @@ const BilanEssentiel = () => {
                 Réserver un Bilan Essentiel
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10">
-                En cabinet à Palaiseau ou à domicile. Contactez-nous pour choisir la formule adaptée.
+                En cabinet à Paris ou à domicile. Contactez-nous pour choisir la formule adaptée.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>

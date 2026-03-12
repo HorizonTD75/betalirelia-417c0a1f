@@ -99,7 +99,7 @@ const BilansProduitsSection = () => {
         {/* Praticiens info */}
         <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <div className="bg-card rounded-2xl border-2 border-border p-6">
-            <h3 className="font-serif text-xl font-bold mb-3 text-primary">Le visiopraticien (Palaiseau)</h3>
+            <h3 className="font-serif text-xl font-bold mb-3 text-primary">Le visiopraticien (Paris 16e)</h3>
             <p className="text-lg text-muted-foreground">
               Accompagnement, essais d'aides "standard", organisation du quotidien, et plan d'action clair. Bilan au
               cabinet ou à domicile selon la situation.

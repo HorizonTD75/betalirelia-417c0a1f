@@ -27,6 +27,10 @@ import Cataracte from "./pages/maladies/Cataracte";
 import Nystagmus from "./pages/maladies/Nystagmus";
 import RetinitePigmentaire from "./pages/maladies/RetinitePigmentaire";
 import RetinopathieDiabetique from "./pages/maladies/RetinopathieDiabetique";
+import Myopie from "./pages/maladies/Myopie";
+import Hypermetropie from "./pages/maladies/Hypermetropie";
+import Astigmatisme from "./pages/maladies/Astigmatisme";
+import Presbytie from "./pages/maladies/Presbytie";
 import BientotDisponible from "./pages/BientotDisponible";
 import Visiopraticien from "./pages/Visiopraticien";
 import LivreDmla from "./pages/LivreDmla";
@@ -36,6 +40,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import CGV from "./pages/CGV";
 import CharteClub from "./pages/CharteClub";
+import VisitesDomicile from "./pages/bilans/VisitesDomicile";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +61,10 @@ const App = () => (
           <Route path="/maladies-yeux/nystagmus" element={<Nystagmus />} />
           <Route path="/maladies-yeux/retinite-pigmentaire" element={<RetinitePigmentaire />} />
           <Route path="/maladies-yeux/retinopathie-diabetique" element={<RetinopathieDiabetique />} />
+          <Route path="/maladies-yeux/myopie" element={<Myopie />} />
+          <Route path="/maladies-yeux/hypermetropie" element={<Hypermetropie />} />
+          <Route path="/maladies-yeux/astigmatisme" element={<Astigmatisme />} />
+          <Route path="/maladies-yeux/presbytie" element={<Presbytie />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           <Route path="/visiopraticien" element={<Visiopraticien />} />
           {/* New primary routes */}
@@ -68,6 +77,7 @@ const App = () => (
           <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
           <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
           <Route path="/bilans-bassevision/suivi" element={<BilanSuivi />} />
+          <Route path="/bilans-bassevision/visites-domicile" element={<VisitesDomicile />} />
           <Route path="/rdv-bilan" element={<ContactBilan />} />
           {/* Redirect old contact URL */}
           <Route path="/bilans-bassevision/contact" element={<Navigate to="/rdv-bilan" replace />} />

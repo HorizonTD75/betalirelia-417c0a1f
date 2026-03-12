@@ -111,8 +111,8 @@ const Visiopraticien = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Visiopraticien Basse Vision à Palaiseau | LirElia"
-        description="Le Visiopraticien LirElia accompagne les malvoyants (DMLA, glaucome) pour retrouver l'autonomie dans la lecture et le quotidien. À Palaiseau et à domicile."
+        title="Visiopraticien Basse Vision à Paris | LirElia"
+        description="Le Visiopraticien LirElia accompagne les malvoyants (DMLA, glaucome) pour retrouver l'autonomie dans la lecture et le quotidien. À Paris et à domicile."
         canonicalPath="/visiopraticien"
         jsonLd={{
           "@context": "https://schema.org",
@@ -317,10 +317,10 @@ const Visiopraticien = () => {
                     </div>
                     <div>
                       <h3 className="font-serif text-xl font-bold text-foreground mb-3">
-                        Cabinet à Palaiseau (91120)
+                        Cabinet à Paris (75116)
                       </h3>
                       <p className="text-lg text-muted-foreground leading-relaxed">
-                        4 rue Léon Blum, Palaiseau. Un environnement calme et adapté pour le bilan basse vision et les essais d'aides visuelles.
+                        2-4 rue Pierre Louÿs, Paris 16e. Un environnement calme et adapté pour le bilan basse vision et les essais d'aides visuelles.
                       </p>
                     </div>
                   </div>

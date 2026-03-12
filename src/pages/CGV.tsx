@@ -163,7 +163,7 @@ const CGV = () => {
               Adresse de retour (sauf instruction différente communiquée) :
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              HORIZON TD — Retours LirElia.fr, 4 rue Leon Blum, 91120 Palaiseau, France
+              HORIZON TD — Retours LirElia.fr, 2-4 rue Pierre Louÿs, 75116 Paris, France
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               Les produits doivent être retournés dans un état permettant leur remise en vente (avec accessoires, notice, emballage si possible). Toute dépréciation résultant de manipulations autres que nécessaires peut engager la responsabilité du Client.

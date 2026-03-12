@@ -10,7 +10,7 @@ const AppointmentSection = () => {
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
             Rencontrez le Visiopraticien
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Le Visiopraticien LirElia vous reçoit au cabinet de Palaiseau ou à domicile (selon secteur). En cas de besoin d'équipement optique, un opticien partenaire peut intervenir dans le parcours.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Le Visiopraticien LirElia vous reçoit au cabinet de Paris ou à domicile (selon secteur). En cas de besoin d'équipement optique, un opticien partenaire peut intervenir dans le parcours.
 
           </p>
         </div>
@@ -67,9 +67,8 @@ const AppointmentSection = () => {
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-2">Cabinet à Palaiseau (91120)</h4>
-                <p className="text-muted-foreground">4 rue Léon Blum</p>
-                <p className="text-muted-foreground">Parking privé gratuit    </p>
+                <h4 className="font-bold text-lg mb-2">Cabinet à Paris (75116)</h4>
+                <p className="text-muted-foreground">2-4 rue Pierre Louÿs</p>
               </div>
             </div>
             <div className="flex items-start gap-4">

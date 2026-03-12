@@ -99,7 +99,7 @@ const ContactBilan = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Rendez-vous bilan basse vision — Essentiel, Expert ou Suivi | LirElia"
-        description="Réservez votre bilan basse vision : Essentiel (75 €), Expert (135 €) ou Suivi (215 €). Un conseiller de 25 ans d'expérience vous accompagne à Palaiseau ou à domicile."
+        description="Réservez votre bilan basse vision : Essentiel (75 €), Expert (135 €) ou Suivi (215 €). Un conseiller de 25 ans d'expérience vous accompagne à Paris ou à domicile."
         canonicalPath="/rdv-bilan"
       />
       <Header />
