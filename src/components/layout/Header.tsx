@@ -4,6 +4,7 @@ import { Phone, Menu, X, Calendar, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import headerBg from "@/assets/header-bg.jpg";
 import logoLirelia from "@/assets/logo-lirelia.png";
+import { CartDrawer } from "@/components/shop/CartDrawer";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
