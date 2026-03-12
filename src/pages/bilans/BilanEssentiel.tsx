@@ -152,7 +152,7 @@ const BilanEssentiel = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center">
                       <Building className="w-6 h-6" />
                     </div>
-                    <h3 className="font-serif text-2xl font-bold">En cabinet (Palaiseau)</h3>
+                    <h3 className="font-serif text-2xl font-bold">En cabinet (Paris 16e)</h3>
                   </div>
                   <p className="text-lg text-muted-foreground mb-6">
                     Séance de 1h15 à 1h30 dans un environnement calme, avec du matériel dédié à la basse vision.
