@@ -70,6 +70,8 @@ const products = [
       "Complément à un agrandisseur de bureau",
     ],
     priceRange: "À partir de 150 €",
+    shopLink: "/boutique/loupe-amelie",
+    shopLabel: "Découvrir la Loupe Amélie",
   },
 ];
 
