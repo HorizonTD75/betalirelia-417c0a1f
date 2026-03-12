@@ -10,42 +10,42 @@ import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 
 const BilanEssentiel = () => {
   const targetAudience = [
-    "Vous avez une pathologie oculaire connue (DMLA, glaucome, rétinopathie diabétique…) et votre vue reste gênante au quotidien",
-    "Vos lunettes sont à jour, mais vous peinez à lire, voir la télévision ou vous déplacer",
-    "Vous avez dû réduire ou arrêter certaines activités à cause de votre vision",
-    "Vous êtes aidant et souhaitez comprendre comment adapter la maison et les habitudes",
-    "Vous souhaitez avant tout des solutions simples et concrètes",
-  ];
+  "Vous avez une pathologie oculaire connue (DMLA, glaucome, rétinopathie diabétique…) et votre vue reste gênante au quotidien",
+  "Vos lunettes sont à jour, mais vous peinez à lire, voir la télévision ou vous déplacer",
+  "Vous avez dû réduire ou arrêter certaines activités à cause de votre vision",
+  "Vous êtes aidant et souhaitez comprendre comment adapter la maison et les habitudes",
+  "Vous souhaitez avant tout des solutions simples et concrètes"];
+
 
   const includes = [
-    { icon: Users, title: "Entretien sur vos besoins et objectifs", text: "Nous discutons de vos activités importantes et de ce qui vous pose le plus problème." },
-    { icon: ClipboardCheck, title: "Évaluation de la vision fonctionnelle", text: "Tests de lecture, repérage, contrastes, gestion de la lumière." },
-    { icon: Lightbulb, title: "Essai d'aides pour mieux voir", text: "Vous testez loupes, lampes, supports, repères visuels." },
-    { icon: FileText, title: "Conseils d'organisation et priorités", text: "Un plan d'action clair et un compte-rendu synthétique." },
-  ];
+  { icon: Users, title: "Entretien sur vos besoins et objectifs", text: "Nous discutons de vos activités importantes et de ce qui vous pose le plus problème." },
+  { icon: ClipboardCheck, title: "Évaluation de la vision fonctionnelle", text: "Tests de lecture, repérage, contrastes, gestion de la lumière." },
+  { icon: Lightbulb, title: "Essai d'aides pour mieux voir", text: "Vous testez loupes, lampes, supports, repères visuels." },
+  { icon: FileText, title: "Conseils d'organisation et priorités", text: "Un plan d'action clair et un compte-rendu synthétique." }];
+
 
   const cabinetSteps = [
-    "Accueil et installation : nous revoyons votre situation, comptes-rendus et lunettes actuelles",
-    "Entretien détaillé : difficultés, ce qui vous manque aujourd'hui",
-    "Évaluation et mises en situation : tests de lecture, observation, gestion de la lumière",
-    "Essais d'aides standard et conseils personnalisés",
-    "Conclusion et plan d'action : priorités, aides à envisager, étapes suivantes",
-  ];
+  "Accueil et installation : nous revoyons votre situation, comptes-rendus et lunettes actuelles",
+  "Entretien détaillé : difficultés, ce qui vous manque aujourd'hui",
+  "Évaluation et mises en situation : tests de lecture, observation, gestion de la lumière",
+  "Essais d'aides standard et conseils personnalisés",
+  "Conclusion et plan d'action : priorités, aides à envisager, étapes suivantes"];
+
 
   const domicileAdvantages = [
-    "Observer vos conditions réelles d'éclairage (salon, cuisine, chambre, couloirs)",
-    "Repérer les difficultés concrètes (escaliers, seuils, tapis, repères sur les appareils)",
-    "Proposer des aménagements simples sur place",
-    "Impliquer directement votre aidant et votre entourage",
-  ];
+  "Observer vos conditions réelles d'éclairage (salon, cuisine, chambre, couloirs)",
+  "Repérer les difficultés concrètes (escaliers, seuils, tapis, repères sur les appareils)",
+  "Proposer des aménagements simples sur place",
+  "Impliquer directement votre aidant et votre entourage"];
+
 
   return (
     <div className="min-h-screen">
       <SEOHead
         title="Bilan Essentiel basse vision | LirElia"
         description="Le Bilan Essentiel est la formule de base pour comprendre vos difficultés visuelles, tester des solutions simples et repartir avec un plan d'action clair."
-        canonicalPath="/bilans-bassevision/essentiel"
-      />
+        canonicalPath="/bilans-bassevision/essentiel" />
+      
       <Header />
       <main id="main-content">
         {/* HERO */}
@@ -110,12 +110,12 @@ const BilanEssentiel = () => {
               </h2>
               <p className="text-xl text-muted-foreground mb-8">Cette formule est particulièrement adaptée si :</p>
               <ul className="space-y-4">
-                {targetAudience.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-lg">
+                {targetAudience.map((item, i) =>
+                <li key={i} className="flex items-start gap-3 text-lg">
                     <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
-                ))}
+                )}
               </ul>
               <Card variant="highlighted" className="mt-8 p-6">
                 <p className="text-lg">
@@ -136,8 +136,8 @@ const BilanEssentiel = () => {
                 Ce que comprend le Bilan Essentiel
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                {includes.map((item, i) => (
-                  <Card key={i} variant="elevated" className="p-8">
+                {includes.map((item, i) =>
+                <Card key={i} variant="elevated" className="p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-14 h-14 rounded-xl bg-primary text-primary-foreground flex items-center justify-center shrink-0">
                         <item.icon className="w-7 h-7" />
@@ -148,7 +148,7 @@ const BilanEssentiel = () => {
                       </div>
                     </div>
                   </Card>
-                ))}
+                )}
               </div>
               <p className="text-lg text-muted-foreground mt-8 text-center">
                 À l'issue du Bilan Essentiel, vous recevez un compte-rendu synthétique avec les points clés et les priorités, que vous pouvez partager avec votre ophtalmologiste, votre opticien et vos proches.
@@ -170,18 +170,18 @@ const BilanEssentiel = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center">
                       <Building className="w-6 h-6" />
                     </div>
-                    <h3 className="font-serif text-2xl font-bold">En cabinet (Paris 16e)</h3>
+                    <h3 className="font-serif text-2xl font-bold">En cabinet  </h3>
                   </div>
                   <p className="text-lg text-muted-foreground mb-6">
                     Séance de 1h15 à 1h30 dans un environnement calme, avec du matériel dédié à la basse vision.
                   </p>
                   <ol className="space-y-3">
-                    {cabinetSteps.map((step, i) => (
-                      <li key={i} className="flex items-start gap-3 text-lg">
+                    {cabinetSteps.map((step, i) =>
+                    <li key={i} className="flex items-start gap-3 text-lg">
                         <span className="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 text-sm font-bold mt-0.5">{i + 1}</span>
                         <span>{step}</span>
                       </li>
-                    ))}
+                    )}
                   </ol>
                 </Card>
 
@@ -198,12 +198,12 @@ const BilanEssentiel = () => {
                   </p>
                   <p className="text-lg font-semibold mb-4">Le bilan à domicile permet de :</p>
                   <ul className="space-y-3">
-                    {domicileAdvantages.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-lg">
+                    {domicileAdvantages.map((item, i) =>
+                    <li key={i} className="flex items-start gap-3 text-lg">
                         <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
                         <span>{item}</span>
                       </li>
-                    ))}
+                    )}
                   </ul>
                   <img src={bilanDomicileImage} alt="Visite à domicile" className="w-full rounded-xl mt-6" />
                 </Card>
@@ -230,16 +230,16 @@ const BilanEssentiel = () => {
                     </p>
                     <ul className="space-y-3">
                       {[
-                        "Il peut assister à l'ensemble de la séance",
-                        "Il peut exprimer ses propres difficultés",
-                        "Il reçoit des explications simples sur la basse vision",
-                        "Il repart avec des repères concrets pour aider au quotidien",
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-lg">
+                      "Il peut assister à l'ensemble de la séance",
+                      "Il peut exprimer ses propres difficultés",
+                      "Il reçoit des explications simples sur la basse vision",
+                      "Il repart avec des repères concrets pour aider au quotidien"].
+                      map((item, i) =>
+                      <li key={i} className="flex items-start gap-2 text-lg">
                           <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
                           <span>{item}</span>
                         </li>
-                      ))}
+                      )}
                     </ul>
                   </div>
                 </div>
@@ -341,8 +341,8 @@ const BilanEssentiel = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default BilanEssentiel;
