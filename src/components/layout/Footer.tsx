@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoJaune from "@/assets/logo-lirelia-jaune.png";
 

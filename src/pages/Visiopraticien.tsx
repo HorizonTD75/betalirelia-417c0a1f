@@ -317,10 +317,10 @@ const Visiopraticien = () => {
                     </div>
                     <div>
                       <h3 className="font-serif text-xl font-bold text-foreground mb-3">
-                        Cabinet à Palaiseau (91120)
+                        Cabinet à Paris (75116)
                       </h3>
                       <p className="text-lg text-muted-foreground leading-relaxed">
-                        4 rue Léon Blum, Palaiseau. Un environnement calme et adapté pour le bilan basse vision et les essais d'aides visuelles.
+                        2-4 rue Pierre Louÿs, Paris 16e. Un environnement calme et adapté pour le bilan basse vision et les essais d'aides visuelles.
                       </p>
                     </div>
                   </div>
