@@ -66,7 +66,7 @@ const BilanEssentiel = () => {
                 La formule de base pour faire le point sur votre basse vision : comprendre ce qui vous gêne le plus, tester des solutions simples et repartir avec un plan d'action clair.
               </p>
               <p className="text-lg text-primary-foreground/70 italic mb-8">
-                En cabinet à Palaiseau ou à domicile. Vous pouvez venir accompagné d'un proche.
+                En cabinet à Paris ou à domicile. Vous pouvez venir accompagné d'un proche.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=essentiel">
