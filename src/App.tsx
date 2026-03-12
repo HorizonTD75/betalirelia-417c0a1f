@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useCartSync } from "@/hooks/useCartSync";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -41,8 +42,14 @@ import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import CGV from "./pages/CGV";
 import CharteClub from "./pages/CharteClub";
 import VisitesDomicile from "./pages/bilans/VisitesDomicile";
+import LoupeAmelie from "./pages/products/LoupeAmelie";
 
 const queryClient = new QueryClient();
+
+const AppContent = () => {
+  useCartSync();
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -50,6 +57,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <AppContent />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -73,6 +81,7 @@ const App = () => (
           <Route path="/aides-lecture-bassevision/loupes-electroniques" element={<LoupesElectroniques />} />
           <Route path="/aides-lecture-bassevision/lampes" element={<Lampes />} />
           <Route path="/aides-lecture-bassevision/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
+          <Route path="/boutique/loupe-amelie" element={<LoupeAmelie />} />
           <Route path="/bilans-bassevision" element={<Bilans />} />
           <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
           <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />

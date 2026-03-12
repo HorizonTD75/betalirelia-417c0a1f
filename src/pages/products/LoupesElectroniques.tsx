@@ -1,5 +1,7 @@
-import { Monitor } from "lucide-react";
+import { Monitor, ArrowRight } from "lucide-react";
 import CategoryPageLayout from "@/components/products/CategoryPageLayout";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import loupePortable from "@/assets/products/loupe-electronique-portable.jpg";
 import loupeBureau from "@/assets/products/loupe-electronique-bureau.jpg";
 import loupePoche from "@/assets/products/loupe-electronique-poche.jpg";
@@ -68,6 +70,8 @@ const products = [
       "Complément à un agrandisseur de bureau",
     ],
     priceRange: "À partir de 150 €",
+    shopLink: "/boutique/loupe-amelie",
+    shopLabel: "Découvrir la Loupe Amélie",
   },
 ];
 

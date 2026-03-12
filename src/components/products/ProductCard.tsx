@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export interface Product {
@@ -12,6 +12,8 @@ export interface Product {
   features: string[];
   idealFor: string[];
   priceRange?: string;
+  shopLink?: string;
+  shopLabel?: string;
 }
 
 interface ProductCardProps {
@@ -62,7 +64,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </ul>
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex flex-col gap-3">
+        {product.shopLink && (
+          <Button variant="secondary" className="w-full" asChild>
+            <Link to={product.shopLink}>
+              <ShoppingBag className="w-5 h-5" />
+              {product.shopLabel || "Voir le produit"}
+            </Link>
+          </Button>
+        )}
         <Button variant="outline" className="w-full" asChild>
           <Link to={`/contact-conseil?produit=${product.slug}`}>
             Être conseillé(e)
