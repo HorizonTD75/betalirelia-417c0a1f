@@ -61,6 +61,10 @@ const App = () => (
           <Route path="/maladies-yeux/nystagmus" element={<Nystagmus />} />
           <Route path="/maladies-yeux/retinite-pigmentaire" element={<RetinitePigmentaire />} />
           <Route path="/maladies-yeux/retinopathie-diabetique" element={<RetinopathieDiabetique />} />
+          <Route path="/maladies-yeux/myopie" element={<Myopie />} />
+          <Route path="/maladies-yeux/hypermetropie" element={<Hypermetropie />} />
+          <Route path="/maladies-yeux/astigmatisme" element={<Astigmatisme />} />
+          <Route path="/maladies-yeux/presbytie" element={<Presbytie />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           <Route path="/visiopraticien" element={<Visiopraticien />} />
           {/* New primary routes */}
