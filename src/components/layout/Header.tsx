@@ -58,13 +58,14 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex flex-col items-center gap-1 ml-4">
+          <div className="hidden md:flex items-center gap-3 ml-4">
             <Button variant="secondary" size="default" asChild>
               <Link to="/club">
                 <Users className="w-5 h-5" />
                 Le Club
               </Link>
             </Button>
+            <CartDrawer />
             <a href="tel:0768474235" className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
               <Phone className="w-4 h-4" />
               <span>07 68 47 42 35</span>

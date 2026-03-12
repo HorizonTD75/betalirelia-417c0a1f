@@ -1,5 +1,7 @@
-import { Monitor } from "lucide-react";
+import { Monitor, ArrowRight } from "lucide-react";
 import CategoryPageLayout from "@/components/products/CategoryPageLayout";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import loupePortable from "@/assets/products/loupe-electronique-portable.jpg";
 import loupeBureau from "@/assets/products/loupe-electronique-bureau.jpg";
 import loupePoche from "@/assets/products/loupe-electronique-poche.jpg";

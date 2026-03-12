@@ -81,6 +81,7 @@ const App = () => (
           <Route path="/aides-lecture-bassevision/loupes-electroniques" element={<LoupesElectroniques />} />
           <Route path="/aides-lecture-bassevision/lampes" element={<Lampes />} />
           <Route path="/aides-lecture-bassevision/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
+          <Route path="/boutique/loupe-amelie" element={<LoupeAmelie />} />
           <Route path="/bilans-bassevision" element={<Bilans />} />
           <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
           <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
