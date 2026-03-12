@@ -34,10 +34,6 @@ const Footer = () => {
           <div>
             <h3 className="font-serif text-xl font-bold mb-6">Contact</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-6 h-6 text-secondary shrink-0 mt-0.5" />
-                <span className="text-lg text-primary-foreground/80">4 rue Léon Blum<br />91120 Palaiseau</span>
-              </li>
               <li>
                 <a href="tel:0768474235" className="flex items-center gap-3 text-lg text-primary-foreground/80 hover:text-secondary transition-colors">
                   <Phone className="w-6 h-6 text-secondary" />
