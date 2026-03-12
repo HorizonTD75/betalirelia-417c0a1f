@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export interface Product {
