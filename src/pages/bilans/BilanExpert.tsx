@@ -80,6 +80,24 @@ const BilanExpert = () => {
           </div>
         </section>
 
+        {/* Bandeau visites à domicile */}
+        <section className="py-8 bg-secondary/10 border-b-2 border-secondary/20">
+          <div className="container">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
+              <div className="w-14 h-14 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center shrink-0">
+                <Home className="w-7 h-7" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-serif text-xl font-bold text-foreground mb-1">Première étape réalisable à domicile</h3>
+                <p className="text-lg text-muted-foreground">Le Bilan Essentiel (étape 1 du parcours Expert) peut être effectué chez vous si le déplacement est difficile.</p>
+              </div>
+              <Button variant="secondary" size="default" asChild className="shrink-0">
+                <Link to="/bilans-bassevision/visites-domicile">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* À qui s'adresse */}
         <section className="py-16 bg-background">
           <div className="container">
