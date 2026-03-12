@@ -42,8 +42,14 @@ import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import CGV from "./pages/CGV";
 import CharteClub from "./pages/CharteClub";
 import VisitesDomicile from "./pages/bilans/VisitesDomicile";
+import LoupeAmelie from "./pages/products/LoupeAmelie";
 
 const queryClient = new QueryClient();
+
+const AppContent = () => {
+  useCartSync();
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
