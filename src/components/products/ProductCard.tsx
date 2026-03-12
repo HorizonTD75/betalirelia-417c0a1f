@@ -64,7 +64,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </ul>
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex flex-col gap-3">
+        {product.shopLink && (
+          <Button variant="secondary" className="w-full" asChild>
+            <Link to={product.shopLink}>
+              <ShoppingBag className="w-5 h-5" />
+              {product.shopLabel || "Voir le produit"}
+            </Link>
+          </Button>
+        )}
         <Button variant="outline" className="w-full" asChild>
           <Link to={`/contact-conseil?produit=${product.slug}`}>
             Être conseillé(e)
