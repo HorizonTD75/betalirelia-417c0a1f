@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Glasses, ArrowRight, Check, Calendar, Phone, Building, Users, FileText, Eye, Star } from "lucide-react";
+import { Glasses, ArrowRight, Check, Calendar, Phone, Building, Users, FileText, Eye, Star, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero.jpg";
 import bilanExpertImage from "@/assets/bilan-expert-opticien.jpg";

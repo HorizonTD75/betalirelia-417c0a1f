@@ -324,9 +324,15 @@ const MaladiesYeux = () => {
                     <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                       {defect.title}
                     </h3>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                       {defect.description}
                     </p>
+                    <Button variant="outline" size="sm" asChild>
+                      <Link to={defect.link}>
+                        En savoir plus
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
                   </Card>
                 )}
               </div>
