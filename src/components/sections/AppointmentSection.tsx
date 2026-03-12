@@ -10,7 +10,7 @@ const AppointmentSection = () => {
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
             Rencontrez le Visiopraticien
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Le Visiopraticien LirElia vous reçoit au cabinet de Palaiseau ou à domicile (selon secteur). En cas de besoin d'équipement optique, un opticien partenaire peut intervenir dans le parcours.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Le Visiopraticien LirElia vous reçoit au cabinet de Paris ou à domicile (selon secteur). En cas de besoin d'équipement optique, un opticien partenaire peut intervenir dans le parcours.
 
           </p>
         </div>
