@@ -27,6 +27,10 @@ import Cataracte from "./pages/maladies/Cataracte";
 import Nystagmus from "./pages/maladies/Nystagmus";
 import RetinitePigmentaire from "./pages/maladies/RetinitePigmentaire";
 import RetinopathieDiabetique from "./pages/maladies/RetinopathieDiabetique";
+import Myopie from "./pages/maladies/Myopie";
+import Hypermetropie from "./pages/maladies/Hypermetropie";
+import Astigmatisme from "./pages/maladies/Astigmatisme";
+import Presbytie from "./pages/maladies/Presbytie";
 import BientotDisponible from "./pages/BientotDisponible";
 import Visiopraticien from "./pages/Visiopraticien";
 import LivreDmla from "./pages/LivreDmla";
@@ -36,6 +40,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import CGV from "./pages/CGV";
 import CharteClub from "./pages/CharteClub";
+import VisitesDomicile from "./pages/bilans/VisitesDomicile";
 
 const queryClient = new QueryClient();
 
