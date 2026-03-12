@@ -12,6 +12,8 @@ export interface Product {
   features: string[];
   idealFor: string[];
   priceRange?: string;
+  shopLink?: string;
+  shopLabel?: string;
 }
 
 interface ProductCardProps {
