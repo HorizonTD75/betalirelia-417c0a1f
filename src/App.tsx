@@ -106,6 +106,7 @@ const App = () => (
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           <Route path="/cgv" element={<CGV />} />
           <Route path="/charte-club-lirelia" element={<CharteClub />} />
+          <Route path="/qui-sommes-nous" element={<QuiSommesNous />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

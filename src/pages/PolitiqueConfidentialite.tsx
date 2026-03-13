@@ -25,7 +25,7 @@ const PolitiqueConfidentialite = () => {
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Le responsable du traitement est :<br />
               HORIZON TD (SAS)<br />
-              22 rue Paul Valery, 75116 Paris, France<br />
+              4-6 rue Pierre Louÿs, 75116 Paris, France<br />
               Email : <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4 hover:text-primary/80">contact@lirelia.fr</a>
             </p>
 

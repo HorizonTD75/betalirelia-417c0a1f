@@ -320,7 +320,7 @@ const Visiopraticien = () => {
                         Cabinet à Paris (75116)
                       </h3>
                       <p className="text-lg text-muted-foreground leading-relaxed">
-                        2-4 rue Pierre Louÿs, Paris 16e. Un environnement calme et adapté pour le bilan basse vision et les essais d'aides visuelles.
+                        4-6 rue Pierre Louÿs, Paris 16e. Un environnement calme et adapté pour le bilan basse vision et les essais d'aides visuelles.
                       </p>
                     </div>
                   </div>
