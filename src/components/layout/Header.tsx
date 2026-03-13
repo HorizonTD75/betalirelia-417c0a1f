@@ -36,21 +36,21 @@ const Header = () => {
       <div className="container relative z-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group">
-            <img src={logoLirelia} alt="Logo LirElia" className="w-20 h-20 object-contain" />
+          <a href="/" className="flex items-center gap-2 group shrink-0">
+            <img src={logoLirelia} alt="Logo LirElia" className="w-14 h-14 xl:w-20 xl:h-20 object-contain" />
             <div className="whitespace-nowrap">
-              <span className="font-serif text-2xl font-bold text-primary">LirElia</span>
-              <span className="block text-sm text-muted-foreground">Basse Vision</span>
+              <span className="font-serif text-xl xl:text-2xl font-bold text-primary">LirElia</span>
+              <span className="block text-xs xl:text-sm text-muted-foreground">Basse Vision</span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 ml-8" aria-label="Navigation principale">
+          <nav className="hidden xl:flex items-center gap-1 ml-6" aria-label="Navigation principale">
             {navLinks.map((link) =>
             <a
               key={link.href}
               href={link.href}
-              className="py-2 text-base font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors  mx-[10px] px-0 text-left">
+              className="py-2 text-[0.9rem] xl:text-base font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors mx-1 xl:mx-2 px-1 text-left whitespace-nowrap">
 
                 {link.label}
               </a>
@@ -58,8 +58,8 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3 ml-4">
-            <Button variant="secondary" size="default" asChild>
+          <div className="hidden md:flex items-center gap-2 xl:gap-3 ml-3 shrink-0">
+            <Button variant="secondary" size="default" asChild className="hidden xl:inline-flex">
               <Link to="/club">
                 <Users className="w-5 h-5" />
                 Le Club
@@ -68,13 +68,13 @@ const Header = () => {
             <CartDrawer />
             <a href="tel:0768474235" className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
               <Phone className="w-4 h-4" />
-              <span>07 68 47 42 35</span>
+              <span className="hidden xl:inline">07 68 47 42 35</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-3 rounded-lg hover:bg-muted"
+            className="xl:hidden p-3 rounded-lg hover:bg-muted"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}>
@@ -85,7 +85,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen &&
-        <nav className="lg:hidden py-6 border-t-2 border-border animate-slide-up" aria-label="Menu mobile">
+        <nav className="xl:hidden py-6 border-t-2 border-border animate-slide-up" aria-label="Menu mobile">
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) =>
             <li key={link.href}>
