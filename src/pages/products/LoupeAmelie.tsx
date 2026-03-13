@@ -17,7 +17,7 @@ const LoupeAmelie = () => {
   const { addItem, isLoading: cartLoading, getCheckoutUrl } = useCartStore();
 
   useEffect(() => {
-    fetchProductByHandle("loupe-amelie")
+    fetchProductByHandle("loupe-de-lecture-electronique-amelie")
       .then((p) => {
         setProduct(p);
         setLoading(false);

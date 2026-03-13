@@ -28,7 +28,7 @@ const CGV = () => {
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-2">
               HORIZON TD — Société par actions simplifiée (SAS)<br />
-              Siège social : 22 rue Paul Valery, 75116 Paris, France<br />
+              Siège social : 4-6 rue Pierre Louÿs, 75116 Paris, France<br />
               SIREN : 840 698 039 — SIRET (siège) : 840 698 039 00012<br />
               TVA intracommunautaire : FR39840698039<br />
               Email : contact@lirelia.fr
@@ -163,7 +163,7 @@ const CGV = () => {
               Adresse de retour (sauf instruction différente communiquée) :
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              HORIZON TD — Retours LirElia.fr, 2-4 rue Pierre Louÿs, 75116 Paris, France
+              HORIZON TD — Retours LirElia.fr, 4-6 rue Pierre Louÿs, 75116 Paris, France
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               Les produits doivent être retournés dans un état permettant leur remise en vente (avec accessoires, notice, emballage si possible). Toute dépréciation résultant de manipulations autres que nécessaires peut engager la responsabilité du Client.

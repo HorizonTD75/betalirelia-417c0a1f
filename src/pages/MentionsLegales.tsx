@@ -24,7 +24,7 @@ const MentionsLegales = () => {
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-2">
               HORIZON TD — Société par actions simplifiée (SAS)<br />
-              Siège social : 22 rue Paul Valery, 75116 Paris, France<br />
+              Siège social : 4-6 rue Pierre Louÿs, 75116 Paris, France<br />
               SIREN : 840 698 039 — SIRET (siège) : 840 698 039 00012<br />
               TVA intracommunautaire : FR39840698039<br />
               Activité (NAF/APE) : 4791B – Vente à distance sur catalogue spécialisé<br />

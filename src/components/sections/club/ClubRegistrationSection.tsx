@@ -29,8 +29,10 @@ const themes = [
 
 const ClubRegistrationSection = () => {
   const [formData, setFormData] = useState({
+    nom: "",
     prenom: "",
     email: "",
+    telephone: "",
     profile: "",
     session: "monthly",
     themes: [] as string[],
@@ -59,14 +61,30 @@ const ClubRegistrationSection = () => {
       const sessionLabel = sessions.find(s => s.value === formData.session)?.label || formData.session;
       const themeLabels = formData.themes.map(t => themes.find(th => th.id === t)?.label || t).join(", ");
 
+      // Build MESSAGE field by appending each line
+      const messageParts: string[] = [];
+      if (sessionLabel) {
+        messageParts.push(`Je souhaite ${sessionLabel}`);
+      }
+      if (themeLabels) {
+        messageParts.push(`Thèmes de discussion préférés : ${themeLabels}`);
+      }
+      if (formData.needZoomHelp) {
+        messageParts.push("J'ai besoin d'aide pour Zoom");
+      }
+      const message = messageParts.join("\n");
+
       const { data, error } = await supabase.functions.invoke("brevo-club-registration", {
         body: {
           email: formData.email,
           prenom: formData.prenom,
+          nom: formData.nom,
+          telephone: formData.telephone,
           type: profileLabel,
           souhait: sessionLabel,
           themes: themeLabels,
           needZoomHelp: formData.needZoomHelp,
+          message,
           source_url: window.location.href,
           source_tag: "SRC_club",
         }
@@ -137,6 +155,20 @@ const ClubRegistrationSection = () => {
                 {/* Personal Info */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
+                    <Label htmlFor="nom" className="text-lg font-semibold">
+                      Nom
+                    </Label>
+                    <Input
+                      id="nom"
+                      type="text"
+                      placeholder="Votre nom"
+                      value={formData.nom}
+                      onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
+                      className="h-14 text-lg"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
                     <Label htmlFor="prenom" className="text-lg font-semibold">
                       Prénom
                     </Label>
@@ -150,6 +182,9 @@ const ClubRegistrationSection = () => {
                       required
                     />
                   </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-lg font-semibold">
                       Email
@@ -162,6 +197,19 @@ const ClubRegistrationSection = () => {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="h-14 text-lg"
                       required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="telephone" className="text-lg font-semibold">
+                      Téléphone
+                    </Label>
+                    <Input
+                      id="telephone"
+                      type="tel"
+                      placeholder="06 12 34 56 78"
+                      value={formData.telephone}
+                      onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
+                      className="h-14 text-lg"
                     />
                   </div>
                 </div>

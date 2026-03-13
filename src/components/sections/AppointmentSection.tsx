@@ -68,7 +68,7 @@ const AppointmentSection = () => {
               </div>
               <div>
                 <h4 className="font-bold text-lg mb-2">Cabinet à Paris (75116)</h4>
-                <p className="text-muted-foreground">2-4 rue Pierre Louÿs</p>
+                <p className="text-muted-foreground">4-6 rue Pierre Louÿs</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
