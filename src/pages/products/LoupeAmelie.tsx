@@ -3,18 +3,72 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, ShoppingCart, Check, Shield, Truck, Phone, Loader2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, ShoppingCart, Check, Shield, Truck, Phone, Loader2, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { fetchProductByHandle, type ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+/* ────────────────────────────────────────────
+   Parse the Shopify HTML description into
+   logical sections for structured display
+   ──────────────────────────────────────────── */
+function parseDescriptionSections(html: string) {
+  const sections: { intro: string; description: string; specs: string; strengths: string; faq: { q: string; a: string }[] } = {
+    intro: "",
+    description: "",
+    specs: "",
+    strengths: "",
+    faq: [],
+  };
+
+  // Split by <hr> which separates major sections in the Shopify description
+  const parts = html.split(/<hr\s*\/?>/i);
+
+  if (parts.length >= 1) sections.intro = parts[0].trim();
+  if (parts.length >= 2) sections.description = parts[1].trim();
+  if (parts.length >= 3) sections.specs = parts[2].trim();
+  if (parts.length >= 4) sections.strengths = parts[3].trim();
+
+  // Extract FAQ from the last part (or strengths part if it contains FAQ)
+  const faqSource = parts.length >= 5 ? parts[4] : parts[parts.length - 1];
+  if (faqSource && faqSource.includes("FAQ")) {
+    // Extract Q&A pairs: h3 = question, following p = answer
+    const faqHtml = faqSource;
+    const qMatches = faqHtml.match(/<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gs);
+    if (qMatches) {
+      for (const match of qMatches) {
+        const qMatch = match.match(/<h3[^>]*>(.*?)<\/h3>/s);
+        const aMatch = match.match(/<h3[^>]*>.*?<\/h3>\s*<p[^>]*>(.*?)<\/p>/s);
+        if (qMatch && aMatch) {
+          sections.faq.push({ q: qMatch[1].trim(), a: aMatch[1].trim() });
+        }
+      }
+    }
+    // Remove FAQ heading from the source
+    if (parts.length >= 5) {
+      // FAQ is in its own section, strengths stays separate
+    } else {
+      // FAQ was in last section, remove it from strengths
+      sections.strengths = sections.strengths.replace(/<h2[^>]*>Foire Aux Questions.*$/s, "").trim();
+    }
+  }
+
+  return sections;
+}
 
 const LoupeAmelie = () => {
   const [product, setProduct] = useState<ShopifyProduct | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
-  const { addItem, isLoading: cartLoading, getCheckoutUrl } = useCartStore();
+  const { addItem, isLoading: cartLoading } = useCartStore();
 
   useEffect(() => {
     fetchProductByHandle("loupe-de-lecture-electronique-amelie")
@@ -63,6 +117,9 @@ const LoupeAmelie = () => {
   const hasMultipleVariants = variants.length > 1 && !(variants.length === 1 && variants[0].node.title === "Default Title");
   const price = selectedVariant?.price;
 
+  // Parse description into sections
+  const descSections = node.descriptionHtml ? parseDescriptionSections(node.descriptionHtml) : null;
+
   const handleAddToCart = async () => {
     if (!selectedVariant) return;
     await addItem({
@@ -73,9 +130,7 @@ const LoupeAmelie = () => {
       quantity: 1,
       selectedOptions: selectedVariant.selectedOptions || [],
     });
-    toast.success("Produit ajouté au panier", {
-      description: node.title,
-    });
+    toast.success("Produit ajouté au panier", { description: node.title });
   };
 
   const handleBuyNow = async () => {
@@ -89,9 +144,7 @@ const LoupeAmelie = () => {
       selectedOptions: selectedVariant.selectedOptions || [],
     });
     const checkoutUrl = useCartStore.getState().getCheckoutUrl();
-    if (checkoutUrl) {
-      window.open(checkoutUrl, "_blank");
-    }
+    if (checkoutUrl) window.open(checkoutUrl, "_blank");
   };
 
   const formatPrice = (amount: string, currency: string) =>
@@ -100,8 +153,8 @@ const LoupeAmelie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Loupe Amélie — Loupe électronique de poche | LirElia"
-        description="La loupe Amélie est une loupe électronique ultra-compacte avec 3 grossissements (3x, 6x, 9x). Idéale pour les personnes malvoyantes. Achetez en ligne sur LirElia."
+        title="Loupe Amélie — Loupe électronique de lecture 3x 6x 9x | LirElia"
+        description="La loupe Amélie est une loupe électronique de lecture ultra-compacte avec 3 grossissements (3x, 6x, 9x). Idéale pour les personnes atteintes de DMLA, glaucome ou cataracte. Achat en ligne."
         canonicalPath="/boutique/loupe-amelie"
       />
       <Header />
@@ -119,8 +172,8 @@ const LoupeAmelie = () => {
           </nav>
         </div>
 
-        {/* Product section */}
-        <section className="container pb-16">
+        {/* Product top section */}
+        <section className="container pb-12">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Image gallery */}
             <div>
@@ -157,21 +210,40 @@ const LoupeAmelie = () => {
 
             {/* Product info */}
             <div className="flex flex-col">
-              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">
                 {node.title}
               </h1>
 
+              {/* Subtitle */}
+              <p className="text-lg font-semibold text-muted-foreground mb-4">
+                Loupe de lecture Amélie — Grossissement 3x, 6x et 9x
+              </p>
+
               {price && (
-                <p className="text-3xl font-bold text-primary mb-6">
+                <p className="text-3xl font-bold text-primary mb-4">
                   {formatPrice(price.amount, price.currencyCode)}
                 </p>
               )}
 
-              {node.description && (
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  {node.description}
+              {/* Key selling points */}
+              <div className="mb-6">
+                <p className="text-lg text-foreground leading-relaxed mb-4">
+                  <strong>Idéale pour les personnes âgées souffrant de DMLA, glaucome, ou cataracte</strong>, la Loupe de lecture Amélie facilite grandement et simplement la lecture.
                 </p>
-              )}
+                <ul className="space-y-2">
+                  {[
+                    "Un seul bouton pour choisir entre les grossissements 3x, 6x, 9x.",
+                    "Légère, ergonomique et dotée d'un écran de 11 cm lumineux.",
+                    "S'utilise tenue à la main par sa poignée comme une loupe en verre.",
+                    "Éclairage et batterie rechargeable intégrés.",
+                  ].map((point, i) => (
+                    <li key={i} className="flex items-start gap-3 text-lg text-foreground">
+                      <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               {/* Variant selector */}
               {hasMultipleVariants && node.options.length > 0 && (
@@ -276,27 +348,93 @@ const LoupeAmelie = () => {
           </div>
         </section>
 
-        {/* Long description */}
-        {node.descriptionHtml && (
-          <section className="py-16 bg-muted">
-            <div className="container">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
-                <div
-                  className="prose prose-lg max-w-none text-foreground
-                    prose-headings:font-serif prose-headings:text-foreground
-                    prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
-                    prose-li:text-muted-foreground prose-li:text-lg
-                    prose-strong:text-foreground"
-                  dangerouslySetInnerHTML={{ __html: node.descriptionHtml }}
-                />
-              </div>
-            </div>
-          </section>
+        {/* Structured content sections from Shopify description */}
+        {descSections && (
+          <>
+            {/* Description détaillée */}
+            {descSections.description && (
+              <section className="py-12 lg:py-16 bg-muted">
+                <div className="container">
+                  <div className="max-w-4xl mx-auto">
+                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
+                    <div
+                      className="prose prose-lg max-w-none text-foreground
+                        prose-headings:font-serif prose-headings:text-foreground
+                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
+                        prose-li:text-muted-foreground prose-li:text-lg
+                        prose-strong:text-foreground"
+                      dangerouslySetInnerHTML={{ __html: descSections.description }}
+                    />
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Caractéristiques techniques */}
+            {descSections.specs && (
+              <section className="py-12 lg:py-16">
+                <div className="container">
+                  <div className="max-w-4xl mx-auto">
+                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Caractéristiques techniques</h2>
+                    <div
+                      className="prose prose-lg max-w-none text-foreground
+                        prose-headings:font-serif prose-headings:text-foreground
+                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
+                        prose-li:text-muted-foreground prose-li:text-lg prose-li:marker:text-primary
+                        prose-strong:text-foreground"
+                      dangerouslySetInnerHTML={{ __html: descSections.specs.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
+                    />
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Points forts */}
+            {descSections.strengths && (
+              <section className="py-12 lg:py-16 bg-muted">
+                <div className="container">
+                  <div className="max-w-4xl mx-auto">
+                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Pourquoi choisir cette loupe ?</h2>
+                    <div
+                      className="prose prose-lg max-w-none text-foreground
+                        prose-headings:font-serif prose-headings:text-foreground
+                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
+                        prose-li:text-muted-foreground prose-li:text-lg prose-li:marker:text-accent
+                        prose-strong:text-foreground"
+                      dangerouslySetInnerHTML={{ __html: descSections.strengths.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
+                    />
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* FAQ */}
+            {descSections.faq.length > 0 && (
+              <section className="py-12 lg:py-16">
+                <div className="container">
+                  <div className="max-w-4xl mx-auto">
+                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Foire aux questions</h2>
+                    <Accordion type="single" collapsible className="space-y-3">
+                      {descSections.faq.map((item, i) => (
+                        <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-2xl border-2 border-border px-6">
+                          <AccordionTrigger className="text-lg font-bold text-foreground text-left py-5 hover:no-underline">
+                            {item.q}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-lg text-muted-foreground leading-relaxed pb-5">
+                            {item.a}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
+                </div>
+              </section>
+            )}
+          </>
         )}
 
         {/* Back CTA */}
-        <section className="py-16">
+        <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-6">
