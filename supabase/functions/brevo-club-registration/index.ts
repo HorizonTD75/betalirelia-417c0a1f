@@ -15,7 +15,7 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { email, prenom, type, souhait, themes, needZoomHelp, source_url, source_tag } = body;
+    const { email, prenom, nom, telephone, type, souhait, themes, needZoomHelp, message, source_url, source_tag } = body;
 
     // Validate required fields
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,10 +38,14 @@ serve(async (req) => {
       updateEnabled: true,
       attributes: {
         PRENOM: prenom.trim(),
+        NOM: (nom || "").trim(),
+        SMS: (telephone || "").trim(),
+        ROLE: type || "",
         TYPE: type || "",
         SOUHAIT: souhait || "",
         THEMES: themes || "",
         ZOOM_HELP: needZoomHelp ? "Oui" : "Non",
+        MESSAGE: message || "",
         SOURCE_URL: source_url || "",
         SOURCE_TAG: source_tag || "",
       },
