@@ -43,6 +43,7 @@ import CGV from "./pages/CGV";
 import CharteClub from "./pages/CharteClub";
 import VisitesDomicile from "./pages/bilans/VisitesDomicile";
 import LoupeAmelie from "./pages/products/LoupeAmelie";
+import QuiSommesNous from "./pages/QuiSommesNous";
 
 const queryClient = new QueryClient();
 
