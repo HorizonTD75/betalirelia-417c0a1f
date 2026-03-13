@@ -74,7 +74,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-3 rounded-lg hover:bg-muted"
+            className="xl:hidden p-3 rounded-lg hover:bg-muted"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}>
@@ -85,7 +85,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen &&
-        <nav className="lg:hidden py-6 border-t-2 border-border animate-slide-up" aria-label="Menu mobile">
+        <nav className="xl:hidden py-6 border-t-2 border-border animate-slide-up" aria-label="Menu mobile">
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) =>
             <li key={link.href}>
