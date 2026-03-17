@@ -55,25 +55,16 @@ const ContactConseil = () => {
     }
   }, [searchParams]);
 
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const { errors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
-
-  const validateForm = () => {
-    const errs: Record<string, string> = {};
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      errs.email = "Veuillez entrer une adresse e-mail valide.";
-    }
-    if (telephone && !/^[\d\s\+\-\.\(\)]{6,20}$/.test(telephone.trim())) {
-      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
-    }
-    setErrors(errs);
-    return Object.keys(errs).length === 0;
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (honeypot) return; // anti-spam honeypot
-    if (!validateForm()) return;
+    if (honeypot) return;
+    if (!validateAll([
+      { field: "email", value: email },
+      { field: "telephone", value: telephone },
+    ])) return;
     setLoading(true);
 
     try {
