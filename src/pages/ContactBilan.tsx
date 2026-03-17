@@ -291,11 +291,12 @@ const ContactBilan = () => {
                           id="telephone"
                           type="tel"
                           value={telephone}
-                          onChange={(e) => setTelephone(e.target.value)}
+                          onChange={(e) => { setTelephone(e.target.value); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
                           placeholder="06 12 34 56 78"
-                          className="h-14 text-lg rounded-xl"
+                          className={`h-14 text-lg rounded-xl ${formErrors.telephone ? "border-destructive" : ""}`}
                           required
                         />
+                        {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
                       </div>
                       <div>
                         <Label htmlFor="email" className="text-lg font-semibold mb-2 block">
