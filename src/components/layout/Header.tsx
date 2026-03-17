@@ -58,7 +58,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-2 xl:gap-3 ml-3 shrink-0">
+          <div className="flex items-center gap-2 xl:gap-3 ml-3 shrink-0">
             <Button variant="secondary" size="default" asChild className="hidden xl:inline-flex">
               <Link to="/club">
                 <Users className="w-5 h-5" />
@@ -66,7 +66,7 @@ const Header = () => {
               </Link>
             </Button>
             <CartDrawer />
-            <a href="tel:0768474235" className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
+            <a href="tel:0768474235" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
               <Phone className="w-4 h-4" />
               <span className="hidden xl:inline">07 68 47 42 35</span>
             </a>
