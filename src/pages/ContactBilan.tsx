@@ -315,6 +315,11 @@ const ContactBilan = () => {
                       </div>
                     </div>
 
+                    {/* Honeypot */}
+                    <div className="hidden" aria-hidden="true">
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                    </div>
+
                     {/* RGPD */}
                     <div className="flex items-start gap-3 p-4 rounded-xl bg-muted">
                       <Checkbox

@@ -224,6 +224,10 @@ const ContactConseil = () => {
 
                       <input type="hidden" value={sourceUrl} readOnly />
                       <input type="hidden" value={sourceTag} readOnly />
+                      {/* Honeypot anti-spam */}
+                      <div className="hidden" aria-hidden="true">
+                        <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                      </div>
 
                       <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
                         {loading ?

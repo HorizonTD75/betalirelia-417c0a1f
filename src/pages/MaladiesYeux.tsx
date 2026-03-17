@@ -374,18 +374,36 @@ const MaladiesYeux = () => {
                 </div>
               </div>
               
-              <Accordion type="single" collapsible className="space-y-4">
-                {hereditaryDiseases.map((disease, index) =>
-                <AccordionItem key={index} value={`item-${index}`} className="bg-card rounded-xl border-2 border-border px-6">
-                    <AccordionTrigger className="text-xl font-serif font-bold text-foreground hover:no-underline">
+              <div className="grid md:grid-cols-2 gap-6">
+                {hereditaryDiseases.map((disease, index) => (
+                  <Card key={index} className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                       {disease.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-lg text-muted-foreground leading-relaxed pb-6">
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                       {disease.description}
-                    </AccordionContent>
-                  </AccordionItem>
-                )}
-              </Accordion>
+                    </p>
+                    {disease.link && (
+                      <Button variant="outline" size="sm" asChild>
+                        <Link to={disease.link}>
+                          En savoir plus
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </Button>
+                    )}
+                  </Card>
+                ))}
+              </div>
+
+              <div className="mt-8 text-center">
+                <Button variant="default" size="lg" asChild>
+                  <Link to="/maladies-yeux/maladies-hereditaires">
+                    <Dna className="w-5 h-5" />
+                    Voir toutes les maladies héréditaires
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+              </div>
 
               <Card variant="highlighted" className="mt-8 p-6">
                 <div className="flex items-start gap-4">

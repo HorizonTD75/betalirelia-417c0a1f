@@ -327,6 +327,11 @@ const ClubRegistrationSection = () => {
                 </div>
 
                 {/* Submit Button */}
+                {/* Honeypot */}
+                <div className="hidden" aria-hidden="true">
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                </div>
+
                 <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading}>
                   {loading ? (
                     <><Loader2 className="w-6 h-6 animate-spin" /> Inscription en cours…</>

@@ -359,11 +359,13 @@ const LoupeAmelie = () => {
                     <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
                     <div
                       className="prose prose-lg max-w-none text-foreground
-                        prose-headings:font-serif prose-headings:text-foreground
-                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
-                        prose-li:text-muted-foreground prose-li:text-lg
+                        prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-8 prose-headings:mb-4
+                        prose-h2:text-2xl prose-h3:text-xl
+                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg prose-p:mb-4
+                        prose-li:text-muted-foreground prose-li:text-lg prose-li:leading-relaxed
+                        prose-ul:space-y-2 prose-ol:space-y-2
                         prose-strong:text-foreground"
-                      dangerouslySetInnerHTML={{ __html: descSections.description }}
+                      dangerouslySetInnerHTML={{ __html: descSections.description.replace(/<h2[^>]*>\s*Description\s*<\/h2>/i, "") }}
                     />
                   </div>
                 </div>
@@ -376,14 +378,18 @@ const LoupeAmelie = () => {
                 <div className="container">
                   <div className="max-w-4xl mx-auto">
                     <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Caractéristiques techniques</h2>
-                    <div
-                      className="prose prose-lg max-w-none text-foreground
-                        prose-headings:font-serif prose-headings:text-foreground
-                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
-                        prose-li:text-muted-foreground prose-li:text-lg prose-li:marker:text-primary
-                        prose-strong:text-foreground"
-                      dangerouslySetInnerHTML={{ __html: descSections.specs.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
-                    />
+                    <div className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
+                      <div
+                        className="prose prose-lg max-w-none text-foreground
+                          prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-6 prose-headings:mb-3
+                          prose-h2:hidden prose-h3:text-xl prose-h3:text-primary
+                          prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg prose-p:mb-3
+                          prose-li:text-foreground prose-li:text-lg prose-li:leading-relaxed prose-li:marker:text-primary
+                          prose-ul:space-y-2 prose-ol:space-y-2
+                          prose-strong:text-foreground prose-strong:font-bold"
+                        dangerouslySetInnerHTML={{ __html: descSections.specs.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
+                      />
+                    </div>
                   </div>
                 </div>
               </section>
@@ -395,14 +401,18 @@ const LoupeAmelie = () => {
                 <div className="container">
                   <div className="max-w-4xl mx-auto">
                     <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Pourquoi choisir cette loupe ?</h2>
-                    <div
-                      className="prose prose-lg max-w-none text-foreground
-                        prose-headings:font-serif prose-headings:text-foreground
-                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
-                        prose-li:text-muted-foreground prose-li:text-lg prose-li:marker:text-accent
-                        prose-strong:text-foreground"
-                      dangerouslySetInnerHTML={{ __html: descSections.strengths.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
-                    />
+                    <div className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
+                      <div
+                        className="prose prose-lg max-w-none text-foreground
+                          prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-6 prose-headings:mb-3
+                          prose-h2:hidden prose-h3:text-xl prose-h3:text-accent
+                          prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg prose-p:mb-3
+                          prose-li:text-foreground prose-li:text-lg prose-li:leading-relaxed prose-li:marker:text-accent
+                          prose-ul:space-y-2 prose-ol:space-y-2
+                          prose-strong:text-foreground"
+                        dangerouslySetInnerHTML={{ __html: descSections.strengths.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
+                      />
+                    </div>
                   </div>
                 </div>
               </section>
