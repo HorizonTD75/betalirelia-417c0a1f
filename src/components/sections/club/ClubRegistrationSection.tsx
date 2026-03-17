@@ -209,8 +209,8 @@ const ClubRegistrationSection = () => {
                       type="email"
                       placeholder="votre@email.fr"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-14 text-lg"
+                      onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setFormErrors(prev => ({ ...prev, email: "" })); }}
+                      className={`h-14 text-lg ${formErrors.email ? "border-destructive" : ""}`}
                       required
                     />
                   </div>
