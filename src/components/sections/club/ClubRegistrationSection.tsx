@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { UserPlus, Shield, Loader2, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useFormValidation } from "@/hooks/useFormValidation";
 
 const profiles = [
   { value: "patient", label: "Personne concernée" },
@@ -40,7 +41,7 @@ const ClubRegistrationSection = () => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const { errors: formErrors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
 
@@ -56,18 +57,10 @@ const ClubRegistrationSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return;
-    const errs: Record<string, string> = {};
-    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      errs.email = "Veuillez entrer une adresse e-mail valide.";
-    }
-    if (formData.telephone && !/^[\d\s\+\-\.\(\)]{6,20}$/.test(formData.telephone.trim())) {
-      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
-    }
-    if (Object.keys(errs).length > 0) {
-      setFormErrors(errs);
-      return;
-    }
-    setFormErrors({});
+    if (!validateAll([
+      { field: "email", value: formData.email },
+      { field: "telephone", value: formData.telephone },
+    ])) return;
     setLoading(true);
 
     try {
@@ -209,11 +202,14 @@ const ClubRegistrationSection = () => {
                       type="email"
                       placeholder="votre@email.fr"
                       value={formData.email}
-                      onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setFormErrors(prev => ({ ...prev, email: "" })); }}
+                      onChange={(e) => { setFormData({ ...formData, email: e.target.value }); clearFieldError("email"); }}
+                      onBlur={() => validateField("email", formData.email)}
+                      aria-invalid={!!formErrors.email}
+                      aria-describedby={formErrors.email ? "club-email-error" : undefined}
                       className={`h-14 text-lg ${formErrors.email ? "border-destructive" : ""}`}
                       required
                     />
-                    {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
+                    {formErrors.email && <p id="club-email-error" className="text-sm text-destructive" role="alert">{formErrors.email}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="telephone" className="text-lg font-semibold">
@@ -224,10 +220,13 @@ const ClubRegistrationSection = () => {
                       type="tel"
                       placeholder="06 12 34 56 78"
                       value={formData.telephone}
-                      onChange={(e) => { setFormData({ ...formData, telephone: e.target.value }); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
+                      onChange={(e) => { setFormData({ ...formData, telephone: e.target.value }); clearFieldError("telephone"); }}
+                      onBlur={() => validateField("telephone", formData.telephone)}
+                      aria-invalid={!!formErrors.telephone}
+                      aria-describedby={formErrors.telephone ? "club-tel-error" : undefined}
                       className={`h-14 text-lg ${formErrors.telephone ? "border-destructive" : ""}`}
                     />
-                    {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
+                    {formErrors.telephone && <p id="club-tel-error" className="text-sm text-destructive" role="alert">{formErrors.telephone}</p>}
                   </div>
                 </div>
 

@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Send, ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useFormValidation } from "@/hooks/useFormValidation";
 
 const topicOptions = [
   { value: "", label: "— Aucun sujet en particulier —" },
@@ -55,25 +56,16 @@ const ContactConseil = () => {
     }
   }, [searchParams]);
 
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const { errors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
-
-  const validateForm = () => {
-    const errs: Record<string, string> = {};
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      errs.email = "Veuillez entrer une adresse e-mail valide.";
-    }
-    if (telephone && !/^[\d\s\+\-\.\(\)]{6,20}$/.test(telephone.trim())) {
-      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
-    }
-    setErrors(errs);
-    return Object.keys(errs).length === 0;
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (honeypot) return; // anti-spam honeypot
-    if (!validateForm()) return;
+    if (honeypot) return;
+    if (!validateAll([
+      { field: "email", value: email },
+      { field: "telephone", value: telephone },
+    ])) return;
     setLoading(true);
 
     try {
@@ -191,10 +183,13 @@ const ContactConseil = () => {
                           <Label htmlFor="email" className="text-lg font-semibold">Votre e-mail</Label>
                           <Input
                           type="email" id="email" required value={email}
-                          onChange={(e) => { setEmail(e.target.value); setErrors(prev => ({ ...prev, email: "" })); }} maxLength={255}
+                          onChange={(e) => { setEmail(e.target.value); clearFieldError("email"); }}
+                          onBlur={() => validateField("email", email)}
+                          aria-invalid={!!errors.email}
+                          aria-describedby={errors.email ? "email-error" : undefined}
                           className={`px-4 py-3 text-lg h-auto border-2 rounded-xl ${errors.email ? "border-destructive" : ""}`}
                           placeholder="jean@exemple.fr" />
-                          {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+                          {errors.email && <p id="email-error" className="text-sm text-destructive" role="alert">{errors.email}</p>}
                         </div>
                       </div>
 
@@ -205,10 +200,13 @@ const ContactConseil = () => {
                         </Label>
                         <Input
                         type="tel" id="telephone" value={telephone}
-                        onChange={(e) => { setTelephone(e.target.value); setErrors(prev => ({ ...prev, telephone: "" })); }}
+                        onChange={(e) => { setTelephone(e.target.value); clearFieldError("telephone"); }}
+                        onBlur={() => validateField("telephone", telephone)}
+                        aria-invalid={!!errors.telephone}
+                        aria-describedby={errors.telephone ? "telephone-error" : undefined}
                         className={`px-4 py-3 text-lg h-auto border-2 rounded-xl ${errors.telephone ? "border-destructive" : ""}`}
-                        placeholder="01 56 77 88 99" />
-                        {errors.telephone && <p className="text-sm text-destructive">{errors.telephone}</p>}
+                        placeholder="06 12 34 56 78" />
+                        {errors.telephone && <p id="telephone-error" className="text-sm text-destructive" role="alert">{errors.telephone}</p>}
                       </div>
 
                       {/* Message */}

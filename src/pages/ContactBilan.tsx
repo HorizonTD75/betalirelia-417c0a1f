@@ -12,6 +12,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Calendar, Phone, Send, Check, Shield, Info } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useFormValidation } from "@/hooks/useFormValidation";
 import bilanHeroImage from "@/assets/bilan-hero.jpg";
 
 type BilanType = "essentiel" | "expert" | "suivi";
@@ -52,7 +53,7 @@ const ContactBilan = () => {
   const [email, setEmail] = useState("");
   const [rgpdAccepted, setRgpdAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const { errors: formErrors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
 
   const selectedPrice = bilanOptions.find((b) => b.value === selectedBilan)?.price;
@@ -62,22 +63,14 @@ const ContactBilan = () => {
     e.preventDefault();
     if (honeypot) return;
 
-    const errs: Record<string, string> = {};
     if (!nom.trim() || !prenom.trim() || !email.trim() || !telephone.trim()) {
       toast({ title: "Champs obligatoires", description: "Merci de remplir tous les champs.", variant: "destructive" });
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      errs.email = "Veuillez entrer une adresse e-mail valide.";
-    }
-    if (!/^[\d\s\+\-\.\(\)]{6,20}$/.test(telephone.trim())) {
-      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
-    }
-    if (Object.keys(errs).length > 0) {
-      setFormErrors(errs);
-      return;
-    }
-    setFormErrors({});
+    if (!validateAll([
+      { field: "email", value: email },
+      { field: "telephone", value: telephone },
+    ])) return;
     if (!rgpdAccepted) {
       toast({ title: "RGPD", description: "Veuillez accepter la politique de confidentialité.", variant: "destructive" });
       return;
@@ -291,12 +284,15 @@ const ContactBilan = () => {
                           id="telephone"
                           type="tel"
                           value={telephone}
-                          onChange={(e) => { setTelephone(e.target.value); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
+                          onChange={(e) => { setTelephone(e.target.value); clearFieldError("telephone"); }}
+                          onBlur={() => validateField("telephone", telephone)}
                           placeholder="06 12 34 56 78"
+                          aria-invalid={!!formErrors.telephone}
+                          aria-describedby={formErrors.telephone ? "tel-error" : undefined}
                           className={`h-14 text-lg rounded-xl ${formErrors.telephone ? "border-destructive" : ""}`}
                           required
                         />
-                        {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
+                        {formErrors.telephone && <p id="tel-error" className="text-sm text-destructive mt-1" role="alert">{formErrors.telephone}</p>}
                       </div>
                       <div>
                         <Label htmlFor="email" className="text-lg font-semibold mb-2 block">
@@ -306,12 +302,15 @@ const ContactBilan = () => {
                           id="email"
                           type="email"
                           value={email}
-                          onChange={(e) => { setEmail(e.target.value); setFormErrors(prev => ({ ...prev, email: "" })); }}
+                          onChange={(e) => { setEmail(e.target.value); clearFieldError("email"); }}
+                          onBlur={() => validateField("email", email)}
                           placeholder="jean@exemple.fr"
+                          aria-invalid={!!formErrors.email}
+                          aria-describedby={formErrors.email ? "email-error" : undefined}
                           className={`h-14 text-lg rounded-xl ${formErrors.email ? "border-destructive" : ""}`}
                           required
                         />
-                        {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
+                        {formErrors.email && <p id="email-error" className="text-sm text-destructive mt-1" role="alert">{formErrors.email}</p>}
                       </div>
                     </div>
 
