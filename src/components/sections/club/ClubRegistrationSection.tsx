@@ -224,9 +224,10 @@ const ClubRegistrationSection = () => {
                       type="tel"
                       placeholder="06 12 34 56 78"
                       value={formData.telephone}
-                      onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
-                      className="h-14 text-lg"
+                      onChange={(e) => { setFormData({ ...formData, telephone: e.target.value }); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
+                      className={`h-14 text-lg ${formErrors.telephone ? "border-destructive" : ""}`}
                     />
+                    {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
                   </div>
                 </div>
 
