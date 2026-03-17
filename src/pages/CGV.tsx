@@ -6,7 +6,7 @@ const CGV = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="CGV | LirElia"
+        title="Conditions Générales de Vente (CGV) | LirElia"
         description="Conditions générales de vente LirElia : commandes, paiement, livraison, rétractation, garanties, retours, service client et responsabilités."
         canonicalPath="/cgv"
       />
