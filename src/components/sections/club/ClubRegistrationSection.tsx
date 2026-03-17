@@ -40,6 +40,8 @@ const ClubRegistrationSection = () => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
 
   const handleThemeToggle = (themeId: string) => {
@@ -53,6 +55,19 @@ const ClubRegistrationSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypot) return;
+    const errs: Record<string, string> = {};
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      errs.email = "Veuillez entrer une adresse e-mail valide.";
+    }
+    if (formData.telephone && !/^[\d\s\+\-\.\(\)]{6,20}$/.test(formData.telephone.trim())) {
+      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
+    }
+    if (Object.keys(errs).length > 0) {
+      setFormErrors(errs);
+      return;
+    }
+    setFormErrors({});
     setLoading(true);
 
     try {
@@ -194,10 +209,11 @@ const ClubRegistrationSection = () => {
                       type="email"
                       placeholder="votre@email.fr"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-14 text-lg"
+                      onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setFormErrors(prev => ({ ...prev, email: "" })); }}
+                      className={`h-14 text-lg ${formErrors.email ? "border-destructive" : ""}`}
                       required
                     />
+                    {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="telephone" className="text-lg font-semibold">
@@ -208,9 +224,10 @@ const ClubRegistrationSection = () => {
                       type="tel"
                       placeholder="06 12 34 56 78"
                       value={formData.telephone}
-                      onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
-                      className="h-14 text-lg"
+                      onChange={(e) => { setFormData({ ...formData, telephone: e.target.value }); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
+                      className={`h-14 text-lg ${formErrors.telephone ? "border-destructive" : ""}`}
                     />
+                    {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
                   </div>
                 </div>
 
@@ -310,6 +327,11 @@ const ClubRegistrationSection = () => {
                 </div>
 
                 {/* Submit Button */}
+                {/* Honeypot */}
+                <div className="hidden" aria-hidden="true">
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                </div>
+
                 <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading}>
                   {loading ? (
                     <><Loader2 className="w-6 h-6 animate-spin" /> Inscription en cours…</>

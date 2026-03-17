@@ -14,12 +14,6 @@ import {
   Sun } from
 "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger } from
-"@/components/ui/accordion";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/amsler-grid.jpg";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero.jpg";
@@ -102,24 +96,34 @@ const MaladiesYeux = () => {
 
   const hereditaryDiseases = [
   {
+    title: "La rétinite pigmentaire",
+    description: "Groupe de dystrophies rétiniennes héréditaires provoquant une dégénérescence progressive des photorécepteurs, entraînant une mauvaise vision nocturne puis un rétrécissement du champ visuel.",
+    link: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire",
+  },
+  {
     title: "La maladie de Leber",
-    description: "Maladie génétique rare qui affecte la rétine. Elle provoque une perte progressive de la vision centrale et peut entraîner la cécité. Elle se développe généralement chez les jeunes adultes."
+    description: "Neuropathie optique héréditaire liée à l'ADN mitochondrial. Elle provoque une baisse rapide et indolore de la vision centrale, souvent chez l'adolescent ou l'adulte jeune.",
+    link: "/maladies-yeux/maladies-hereditaires/maladie-de-leber",
   },
   {
     title: "La maladie de Stargardt",
-    description: "Maladie héréditaire de la rétine qui touche la vision centrale à un âge relativement jeune en attaquant la macula. Elle se caractérise par une perte progressive de la vision centrale."
+    description: "Maladie héréditaire de la rétine qui touche la macula et la vision centrale à un âge relativement jeune. Elle se caractérise par une perte progressive de la vision centrale.",
+    link: "/maladies-yeux/maladies-hereditaires/maladie-de-stargardt",
   },
   {
     title: "L'achromatopsie",
-    description: "Maladie héréditaire rare qui affecte la vision des couleurs et la vision de la lumière vive. Elle peut également causer une perte de l'acuité visuelle."
+    description: "Maladie héréditaire rare qui affecte la vision des couleurs et la tolérance à la lumière vive. Elle peut également causer une perte de l'acuité visuelle.",
+    link: "/maladies-yeux/maladies-hereditaires/achromatopsie",
   },
   {
     title: "Le syndrome d'Usher",
-    description: "Maladie génétique rare qui affecte à la fois l'ouïe et la vision. Elle peut causer une perte de la vision périphérique et une perte de l'audition."
+    description: "Maladie génétique rare qui affecte à la fois l'ouïe et la vision. Elle associe surdité et rétinite pigmentaire, entraînant une perte progressive de la vision périphérique.",
+    link: "/maladies-yeux/maladies-hereditaires/syndrome-usher",
   },
   {
     title: "L'Aniridie",
-    description: "Maladie congénitale rare caractérisée par l'absence totale ou partielle de l'iris. La pupille ne peut pas se contracter normalement, entraînant photophobie et vision réduite."
+    description: "Maladie congénitale rare caractérisée par l'absence totale ou partielle de l'iris. La pupille ne peut pas se contracter normalement, entraînant photophobie et vision réduite.",
+    link: "/maladies-yeux/maladies-hereditaires/aniridie",
   }];
 
 
@@ -364,18 +368,36 @@ const MaladiesYeux = () => {
                 </div>
               </div>
               
-              <Accordion type="single" collapsible className="space-y-4">
-                {hereditaryDiseases.map((disease, index) =>
-                <AccordionItem key={index} value={`item-${index}`} className="bg-card rounded-xl border-2 border-border px-6">
-                    <AccordionTrigger className="text-xl font-serif font-bold text-foreground hover:no-underline">
+              <div className="grid md:grid-cols-2 gap-6">
+                {hereditaryDiseases.map((disease, index) => (
+                  <Card key={index} className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                       {disease.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-lg text-muted-foreground leading-relaxed pb-6">
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                       {disease.description}
-                    </AccordionContent>
-                  </AccordionItem>
-                )}
-              </Accordion>
+                    </p>
+                    {disease.link && (
+                      <Button variant="outline" size="sm" asChild>
+                        <Link to={disease.link}>
+                          En savoir plus
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </Button>
+                    )}
+                  </Card>
+                ))}
+              </div>
+
+              <div className="mt-8 text-center">
+                <Button variant="default" size="lg" asChild>
+                  <Link to="/maladies-yeux/maladies-hereditaires">
+                    <Dna className="w-5 h-5" />
+                    Voir toutes les maladies héréditaires
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+              </div>
 
               <Card variant="highlighted" className="mt-8 p-6">
                 <div className="flex items-start gap-4">

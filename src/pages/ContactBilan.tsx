@@ -52,17 +52,32 @@ const ContactBilan = () => {
   const [email, setEmail] = useState("");
   const [rgpdAccepted, setRgpdAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [honeypot, setHoneypot] = useState("");
 
   const selectedPrice = bilanOptions.find((b) => b.value === selectedBilan)?.price;
   const selectedReassurance = bilanOptions.find((b) => b.value === selectedBilan)?.reassurance;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypot) return;
 
+    const errs: Record<string, string> = {};
     if (!nom.trim() || !prenom.trim() || !email.trim() || !telephone.trim()) {
       toast({ title: "Champs obligatoires", description: "Merci de remplir tous les champs.", variant: "destructive" });
       return;
     }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      errs.email = "Veuillez entrer une adresse e-mail valide.";
+    }
+    if (!/^[\d\s\+\-\.\(\)]{6,20}$/.test(telephone.trim())) {
+      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
+    }
+    if (Object.keys(errs).length > 0) {
+      setFormErrors(errs);
+      return;
+    }
+    setFormErrors({});
     if (!rgpdAccepted) {
       toast({ title: "RGPD", description: "Veuillez accepter la politique de confidentialité.", variant: "destructive" });
       return;
@@ -276,11 +291,12 @@ const ContactBilan = () => {
                           id="telephone"
                           type="tel"
                           value={telephone}
-                          onChange={(e) => setTelephone(e.target.value)}
+                          onChange={(e) => { setTelephone(e.target.value); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
                           placeholder="06 12 34 56 78"
-                          className="h-14 text-lg rounded-xl"
+                          className={`h-14 text-lg rounded-xl ${formErrors.telephone ? "border-destructive" : ""}`}
                           required
                         />
+                        {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
                       </div>
                       <div>
                         <Label htmlFor="email" className="text-lg font-semibold mb-2 block">
@@ -290,12 +306,18 @@ const ContactBilan = () => {
                           id="email"
                           type="email"
                           value={email}
-                          onChange={(e) => setEmail(e.target.value)}
+                          onChange={(e) => { setEmail(e.target.value); setFormErrors(prev => ({ ...prev, email: "" })); }}
                           placeholder="jean@exemple.fr"
-                          className="h-14 text-lg rounded-xl"
+                          className={`h-14 text-lg rounded-xl ${formErrors.email ? "border-destructive" : ""}`}
                           required
                         />
+                        {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
                       </div>
+                    </div>
+
+                    {/* Honeypot */}
+                    <div className="hidden" aria-hidden="true">
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
                     </div>
 
                     {/* RGPD */}

@@ -55,8 +55,25 @@ const ContactConseil = () => {
     }
   }, [searchParams]);
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [honeypot, setHoneypot] = useState("");
+
+  const validateForm = () => {
+    const errs: Record<string, string> = {};
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      errs.email = "Veuillez entrer une adresse e-mail valide.";
+    }
+    if (telephone && !/^[\d\s\+\-\.\(\)]{6,20}$/.test(telephone.trim())) {
+      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
+    }
+    setErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypot) return; // anti-spam honeypot
+    if (!validateForm()) return;
     setLoading(true);
 
     try {
@@ -174,10 +191,10 @@ const ContactConseil = () => {
                           <Label htmlFor="email" className="text-lg font-semibold">Votre e-mail</Label>
                           <Input
                           type="email" id="email" required value={email}
-                          onChange={(e) => setEmail(e.target.value)} maxLength={255}
-                          className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
+                          onChange={(e) => { setEmail(e.target.value); setErrors(prev => ({ ...prev, email: "" })); }} maxLength={255}
+                          className={`px-4 py-3 text-lg h-auto border-2 rounded-xl ${errors.email ? "border-destructive" : ""}`}
                           placeholder="jean@exemple.fr" />
-                        
+                          {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                         </div>
                       </div>
 
@@ -188,10 +205,10 @@ const ContactConseil = () => {
                         </Label>
                         <Input
                         type="tel" id="telephone" value={telephone}
-                        onChange={(e) => setTelephone(e.target.value)}
-                        className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
+                        onChange={(e) => { setTelephone(e.target.value); setErrors(prev => ({ ...prev, telephone: "" })); }}
+                        className={`px-4 py-3 text-lg h-auto border-2 rounded-xl ${errors.telephone ? "border-destructive" : ""}`}
                         placeholder="01 56 77 88 99" />
-                      
+                        {errors.telephone && <p className="text-sm text-destructive">{errors.telephone}</p>}
                       </div>
 
                       {/* Message */}
@@ -207,6 +224,10 @@ const ContactConseil = () => {
 
                       <input type="hidden" value={sourceUrl} readOnly />
                       <input type="hidden" value={sourceTag} readOnly />
+                      {/* Honeypot anti-spam */}
+                      <div className="hidden" aria-hidden="true">
+                        <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                      </div>
 
                       <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
                         {loading ?
