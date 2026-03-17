@@ -81,6 +81,13 @@ const App = () => (
           <Route path="/maladies-yeux/hypermetropie" element={<Hypermetropie />} />
           <Route path="/maladies-yeux/astigmatisme" element={<Astigmatisme />} />
           <Route path="/maladies-yeux/presbytie" element={<Presbytie />} />
+          <Route path="/maladies-yeux/maladies-hereditaires" element={<MaladiesHereditaires />} />
+          <Route path="/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" element={<RetinitePigmentaireHereditaire />} />
+          <Route path="/maladies-yeux/maladies-hereditaires/maladie-de-leber" element={<MaladieDeLeber />} />
+          <Route path="/maladies-yeux/maladies-hereditaires/maladie-de-stargardt" element={<MaladieDeStargardt />} />
+          <Route path="/maladies-yeux/maladies-hereditaires/achromatopsie" element={<AchromatopsieHereditaire />} />
+          <Route path="/maladies-yeux/maladies-hereditaires/syndrome-usher" element={<SyndromeUsher />} />
+          <Route path="/maladies-yeux/maladies-hereditaires/aniridie" element={<Aniridie />} />
           <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
           <Route path="/visiopraticien" element={<Visiopraticien />} />
           {/* New primary routes */}
