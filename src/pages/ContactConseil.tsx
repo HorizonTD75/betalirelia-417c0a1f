@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Send, ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useFormValidation } from "@/hooks/useFormValidation";
 
 const topicOptions = [
   { value: "", label: "— Aucun sujet en particulier —" },
