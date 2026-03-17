@@ -41,7 +41,7 @@ const ClubRegistrationSection = () => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const { errors: formErrors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
 
@@ -57,18 +57,10 @@ const ClubRegistrationSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return;
-    const errs: Record<string, string> = {};
-    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      errs.email = "Veuillez entrer une adresse e-mail valide.";
-    }
-    if (formData.telephone && !/^[\d\s\+\-\.\(\)]{6,20}$/.test(formData.telephone.trim())) {
-      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
-    }
-    if (Object.keys(errs).length > 0) {
-      setFormErrors(errs);
-      return;
-    }
-    setFormErrors({});
+    if (!validateAll([
+      { field: "email", value: formData.email },
+      { field: "telephone", value: formData.telephone },
+    ])) return;
     setLoading(true);
 
     try {
