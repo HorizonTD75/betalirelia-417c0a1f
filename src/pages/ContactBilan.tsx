@@ -284,12 +284,15 @@ const ContactBilan = () => {
                           id="telephone"
                           type="tel"
                           value={telephone}
-                          onChange={(e) => { setTelephone(e.target.value); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
+                          onChange={(e) => { setTelephone(e.target.value); clearFieldError("telephone"); }}
+                          onBlur={() => validateField("telephone", telephone)}
                           placeholder="06 12 34 56 78"
+                          aria-invalid={!!formErrors.telephone}
+                          aria-describedby={formErrors.telephone ? "tel-error" : undefined}
                           className={`h-14 text-lg rounded-xl ${formErrors.telephone ? "border-destructive" : ""}`}
                           required
                         />
-                        {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
+                        {formErrors.telephone && <p id="tel-error" className="text-sm text-destructive mt-1" role="alert">{formErrors.telephone}</p>}
                       </div>
                       <div>
                         <Label htmlFor="email" className="text-lg font-semibold mb-2 block">
@@ -299,12 +302,15 @@ const ContactBilan = () => {
                           id="email"
                           type="email"
                           value={email}
-                          onChange={(e) => { setEmail(e.target.value); setFormErrors(prev => ({ ...prev, email: "" })); }}
+                          onChange={(e) => { setEmail(e.target.value); clearFieldError("email"); }}
+                          onBlur={() => validateField("email", email)}
                           placeholder="jean@exemple.fr"
+                          aria-invalid={!!formErrors.email}
+                          aria-describedby={formErrors.email ? "email-error" : undefined}
                           className={`h-14 text-lg rounded-xl ${formErrors.email ? "border-destructive" : ""}`}
                           required
                         />
-                        {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
+                        {formErrors.email && <p id="email-error" className="text-sm text-destructive mt-1" role="alert">{formErrors.email}</p>}
                       </div>
                     </div>
 

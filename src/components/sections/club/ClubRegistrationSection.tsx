@@ -202,11 +202,14 @@ const ClubRegistrationSection = () => {
                       type="email"
                       placeholder="votre@email.fr"
                       value={formData.email}
-                      onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setFormErrors(prev => ({ ...prev, email: "" })); }}
+                      onChange={(e) => { setFormData({ ...formData, email: e.target.value }); clearFieldError("email"); }}
+                      onBlur={() => validateField("email", formData.email)}
+                      aria-invalid={!!formErrors.email}
+                      aria-describedby={formErrors.email ? "club-email-error" : undefined}
                       className={`h-14 text-lg ${formErrors.email ? "border-destructive" : ""}`}
                       required
                     />
-                    {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
+                    {formErrors.email && <p id="club-email-error" className="text-sm text-destructive" role="alert">{formErrors.email}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="telephone" className="text-lg font-semibold">
@@ -217,10 +220,13 @@ const ClubRegistrationSection = () => {
                       type="tel"
                       placeholder="06 12 34 56 78"
                       value={formData.telephone}
-                      onChange={(e) => { setFormData({ ...formData, telephone: e.target.value }); setFormErrors(prev => ({ ...prev, telephone: "" })); }}
+                      onChange={(e) => { setFormData({ ...formData, telephone: e.target.value }); clearFieldError("telephone"); }}
+                      onBlur={() => validateField("telephone", formData.telephone)}
+                      aria-invalid={!!formErrors.telephone}
+                      aria-describedby={formErrors.telephone ? "club-tel-error" : undefined}
                       className={`h-14 text-lg ${formErrors.telephone ? "border-destructive" : ""}`}
                     />
-                    {formErrors.telephone && <p className="text-sm text-destructive">{formErrors.telephone}</p>}
+                    {formErrors.telephone && <p id="club-tel-error" className="text-sm text-destructive" role="alert">{formErrors.telephone}</p>}
                   </div>
                 </div>
 
