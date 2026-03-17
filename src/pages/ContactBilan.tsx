@@ -306,11 +306,12 @@ const ContactBilan = () => {
                           id="email"
                           type="email"
                           value={email}
-                          onChange={(e) => setEmail(e.target.value)}
+                          onChange={(e) => { setEmail(e.target.value); setFormErrors(prev => ({ ...prev, email: "" })); }}
                           placeholder="jean@exemple.fr"
-                          className="h-14 text-lg rounded-xl"
+                          className={`h-14 text-lg rounded-xl ${formErrors.email ? "border-destructive" : ""}`}
                           required
                         />
+                        {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
                       </div>
                     </div>
 
