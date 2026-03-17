@@ -191,10 +191,10 @@ const ContactConseil = () => {
                           <Label htmlFor="email" className="text-lg font-semibold">Votre e-mail</Label>
                           <Input
                           type="email" id="email" required value={email}
-                          onChange={(e) => setEmail(e.target.value)} maxLength={255}
-                          className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
+                          onChange={(e) => { setEmail(e.target.value); setErrors(prev => ({ ...prev, email: "" })); }} maxLength={255}
+                          className={`px-4 py-3 text-lg h-auto border-2 rounded-xl ${errors.email ? "border-destructive" : ""}`}
                           placeholder="jean@exemple.fr" />
-                        
+                          {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                         </div>
                       </div>
 
