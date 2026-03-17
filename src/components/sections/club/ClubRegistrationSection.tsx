@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { UserPlus, Shield, Loader2, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useFormValidation } from "@/hooks/useFormValidation";
 
 const profiles = [
   { value: "patient", label: "Personne concernée" },
