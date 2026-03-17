@@ -52,6 +52,8 @@ const ContactBilan = () => {
   const [email, setEmail] = useState("");
   const [rgpdAccepted, setRgpdAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [honeypot, setHoneypot] = useState("");
 
   const selectedPrice = bilanOptions.find((b) => b.value === selectedBilan)?.price;
   const selectedReassurance = bilanOptions.find((b) => b.value === selectedBilan)?.reassurance;
