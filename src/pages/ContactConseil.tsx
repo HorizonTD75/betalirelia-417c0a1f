@@ -205,10 +205,10 @@ const ContactConseil = () => {
                         </Label>
                         <Input
                         type="tel" id="telephone" value={telephone}
-                        onChange={(e) => setTelephone(e.target.value)}
-                        className="px-4 py-3 text-lg h-auto border-2 rounded-xl"
+                        onChange={(e) => { setTelephone(e.target.value); setErrors(prev => ({ ...prev, telephone: "" })); }}
+                        className={`px-4 py-3 text-lg h-auto border-2 rounded-xl ${errors.telephone ? "border-destructive" : ""}`}
                         placeholder="01 56 77 88 99" />
-                      
+                        {errors.telephone && <p className="text-sm text-destructive">{errors.telephone}</p>}
                       </div>
 
                       {/* Message */}
