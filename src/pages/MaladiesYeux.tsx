@@ -14,12 +14,6 @@ import {
   Sun } from
 "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger } from
-"@/components/ui/accordion";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/amsler-grid.jpg";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero.jpg";
