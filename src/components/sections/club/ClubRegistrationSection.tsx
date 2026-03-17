@@ -40,6 +40,8 @@ const ClubRegistrationSection = () => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
 
   const handleThemeToggle = (themeId: string) => {
