@@ -44,6 +44,13 @@ import CharteClub from "./pages/CharteClub";
 import VisitesDomicile from "./pages/bilans/VisitesDomicile";
 import LoupeAmelie from "./pages/products/LoupeAmelie";
 import QuiSommesNous from "./pages/QuiSommesNous";
+import MaladiesHereditaires from "./pages/maladies/MaladiesHereditaires";
+import RetinitePigmentaireHereditaire from "./pages/maladies/hereditaires/RetinitePigmentaire";
+import MaladieDeLeber from "./pages/maladies/hereditaires/MaladieDeLeber";
+import MaladieDeStargardt from "./pages/maladies/hereditaires/MaladieDeStargardt";
+import AchromatopsieHereditaire from "./pages/maladies/hereditaires/Achromatopsie";
+import SyndromeUsher from "./pages/maladies/hereditaires/SyndromeUsher";
+import Aniridie from "./pages/maladies/hereditaires/Aniridie";
 
 const queryClient = new QueryClient();
 
