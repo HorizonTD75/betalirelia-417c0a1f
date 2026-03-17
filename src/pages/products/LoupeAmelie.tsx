@@ -381,20 +381,58 @@ const LoupeAmelie = () => {
         {descSections && (
           <>
             {/* Description détaillée */}
-            {descSections.description && (
+            {descSections.descriptionBlocks.length > 0 && (
+              <section className="py-12 lg:py-16 bg-muted">
+                <div className="container">
+                  <div className="max-w-4xl mx-auto">
+                    <h2 className="font-serif text-3xl font-bold text-foreground mb-10">Description détaillée</h2>
+
+                    {/* Intro block (paragraphs before first h3) */}
+                    {descSections.descriptionBlocks[0]?.title === "" && (
+                      <div
+                        className="prose prose-lg max-w-none mb-10
+                          prose-p:text-foreground prose-p:leading-relaxed prose-p:text-lg prose-p:mb-4
+                          prose-strong:text-foreground"
+                        dangerouslySetInnerHTML={{ __html: descSections.descriptionBlocks[0].content }}
+                      />
+                    )}
+
+                    {/* Sub-section cards from h3 headings */}
+                    <div className="space-y-6">
+                      {descSections.descriptionBlocks
+                        .filter(block => block.title !== "")
+                        .map((block, i) => (
+                          <div key={i} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
+                            <h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">
+                              {block.title}
+                            </h3>
+                            <div
+                              className="prose prose-lg max-w-none
+                                prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg prose-p:mb-3 prose-p:last:mb-0
+                                prose-strong:text-foreground
+                                prose-li:text-muted-foreground prose-li:text-lg"
+                              dangerouslySetInnerHTML={{ __html: block.content }}
+                            />
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Fallback if no blocks parsed but raw description exists */}
+            {descSections.descriptionBlocks.length === 0 && descSections.description && (
               <section className="py-12 lg:py-16 bg-muted">
                 <div className="container">
                   <div className="max-w-4xl mx-auto">
                     <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
                     <div
                       className="prose prose-lg max-w-none text-foreground
-                        prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-8 prose-headings:mb-4
-                        prose-h2:text-2xl prose-h3:text-xl
-                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg prose-p:mb-4
-                        prose-li:text-muted-foreground prose-li:text-lg prose-li:leading-relaxed
-                        prose-ul:space-y-2 prose-ol:space-y-2
+                        prose-headings:font-serif prose-headings:text-foreground
+                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
                         prose-strong:text-foreground"
-                      dangerouslySetInnerHTML={{ __html: descSections.description.replace(/<h2[^>]*>\s*Description\s*<\/h2>/i, "") }}
+                      dangerouslySetInnerHTML={{ __html: descSections.description }}
                     />
                   </div>
                 </div>
