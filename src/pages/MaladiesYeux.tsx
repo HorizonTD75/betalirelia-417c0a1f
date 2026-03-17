@@ -145,7 +145,7 @@ const MaladiesYeux = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Maladies des Yeux – DMLA, Glaucome, Rétinopathie & Autres"
+        title="Maladies des Yeux et Basse Vision : DMLA, Glaucome, Cataracte | LirElia"
         description="Découvrez les principales maladies oculaires responsables de la basse vision : DMLA, glaucome, rétinopathie diabétique, cataracte et plus encore."
         canonicalPath="/maladies-yeux" />
       
