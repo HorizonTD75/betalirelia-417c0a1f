@@ -55,6 +55,19 @@ const ClubRegistrationSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypot) return;
+    const errs: Record<string, string> = {};
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      errs.email = "Veuillez entrer une adresse e-mail valide.";
+    }
+    if (formData.telephone && !/^[\d\s\+\-\.\(\)]{6,20}$/.test(formData.telephone.trim())) {
+      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
+    }
+    if (Object.keys(errs).length > 0) {
+      setFormErrors(errs);
+      return;
+    }
+    setFormErrors({});
     setLoading(true);
 
     try {
