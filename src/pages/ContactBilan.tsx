@@ -12,6 +12,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Calendar, Phone, Send, Check, Shield, Info } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useFormValidation } from "@/hooks/useFormValidation";
 import bilanHeroImage from "@/assets/bilan-hero.jpg";
 
 type BilanType = "essentiel" | "expert" | "suivi";
