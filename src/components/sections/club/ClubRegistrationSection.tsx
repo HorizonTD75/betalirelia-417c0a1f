@@ -213,6 +213,7 @@ const ClubRegistrationSection = () => {
                       className={`h-14 text-lg ${formErrors.email ? "border-destructive" : ""}`}
                       required
                     />
+                    {formErrors.email && <p className="text-sm text-destructive">{formErrors.email}</p>}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="telephone" className="text-lg font-semibold">
