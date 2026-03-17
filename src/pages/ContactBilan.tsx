@@ -53,7 +53,7 @@ const ContactBilan = () => {
   const [email, setEmail] = useState("");
   const [rgpdAccepted, setRgpdAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const { errors: formErrors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
 
   const selectedPrice = bilanOptions.find((b) => b.value === selectedBilan)?.price;
@@ -63,22 +63,14 @@ const ContactBilan = () => {
     e.preventDefault();
     if (honeypot) return;
 
-    const errs: Record<string, string> = {};
     if (!nom.trim() || !prenom.trim() || !email.trim() || !telephone.trim()) {
       toast({ title: "Champs obligatoires", description: "Merci de remplir tous les champs.", variant: "destructive" });
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      errs.email = "Veuillez entrer une adresse e-mail valide.";
-    }
-    if (!/^[\d\s\+\-\.\(\)]{6,20}$/.test(telephone.trim())) {
-      errs.telephone = "Veuillez entrer un numéro de téléphone valide.";
-    }
-    if (Object.keys(errs).length > 0) {
-      setFormErrors(errs);
-      return;
-    }
-    setFormErrors({});
+    if (!validateAll([
+      { field: "email", value: email },
+      { field: "telephone", value: telephone },
+    ])) return;
     if (!rgpdAccepted) {
       toast({ title: "RGPD", description: "Veuillez accepter la politique de confidentialité.", variant: "destructive" });
       return;
