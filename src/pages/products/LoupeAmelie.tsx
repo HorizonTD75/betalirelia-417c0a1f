@@ -20,9 +20,10 @@ import {
    logical sections for structured display
    ──────────────────────────────────────────── */
 function parseDescriptionSections(html: string) {
-  const sections: { intro: string; description: string; specs: string; strengths: string; faq: { q: string; a: string }[] } = {
+  const sections: { intro: string; description: string; descriptionBlocks: { title: string; content: string }[]; specs: string; strengths: string; faq: { q: string; a: string }[] } = {
     intro: "",
     description: "",
+    descriptionBlocks: [],
     specs: "",
     strengths: "",
     faq: [],
@@ -32,16 +33,51 @@ function parseDescriptionSections(html: string) {
   const parts = html.split(/<hr\s*\/?>/i);
 
   if (parts.length >= 1) sections.intro = parts[0].trim();
-  if (parts.length >= 2) sections.description = parts[1].trim();
+  if (parts.length >= 2) {
+    let descHtml = parts[1].trim();
+    // Remove the "Description" h2 heading since Lovable already labels this section
+    descHtml = descHtml.replace(/<h2[^>]*>\s*Description\s*<\/h2>/i, "");
+    sections.description = descHtml;
+
+    // Parse into blocks: split by h3 headings to create visual sub-sections
+    // First, get any intro paragraphs before the first h3
+    const firstH3Index = descHtml.search(/<h3[^>]*>/i);
+    let introContent = "";
+    let restContent = descHtml;
+    if (firstH3Index > 0) {
+      introContent = descHtml.substring(0, firstH3Index).trim();
+      restContent = descHtml.substring(firstH3Index);
+    } else if (firstH3Index === -1) {
+      introContent = descHtml;
+      restContent = "";
+    }
+
+    if (introContent) {
+      sections.descriptionBlocks.push({ title: "", content: introContent });
+    }
+
+    // Split remaining content by h3 tags
+    if (restContent) {
+      const h3Parts = restContent.split(/<h3[^>]*>/i).filter(Boolean);
+      for (const part of h3Parts) {
+        const closingH3 = part.indexOf("</h3>");
+        if (closingH3 !== -1) {
+          const title = part.substring(0, closingH3).replace(/<[^>]*>/g, "").trim();
+          const content = part.substring(closingH3 + 5).trim();
+          if (title && content) {
+            sections.descriptionBlocks.push({ title, content });
+          }
+        }
+      }
+    }
+  }
   if (parts.length >= 3) sections.specs = parts[2].trim();
   if (parts.length >= 4) sections.strengths = parts[3].trim();
 
-  // Extract FAQ from the last part (or strengths part if it contains FAQ)
-  const faqSource = parts.length >= 5 ? parts[4] : parts[parts.length - 1];
+  // Extract FAQ from the last part
+  const faqSource = parts.length >= 5 ? parts[4] : "";
   if (faqSource && faqSource.includes("FAQ")) {
-    // Extract Q&A pairs: h3 = question, following p = answer
-    const faqHtml = faqSource;
-    const qMatches = faqHtml.match(/<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gs);
+    const qMatches = faqSource.match(/<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gs);
     if (qMatches) {
       for (const match of qMatches) {
         const qMatch = match.match(/<h3[^>]*>(.*?)<\/h3>/s);
@@ -50,13 +86,6 @@ function parseDescriptionSections(html: string) {
           sections.faq.push({ q: qMatch[1].trim(), a: aMatch[1].trim() });
         }
       }
-    }
-    // Remove FAQ heading from the source
-    if (parts.length >= 5) {
-      // FAQ is in its own section, strengths stays separate
-    } else {
-      // FAQ was in last section, remove it from strengths
-      sections.strengths = sections.strengths.replace(/<h2[^>]*>Foire Aux Questions.*$/s, "").trim();
     }
   }
 
