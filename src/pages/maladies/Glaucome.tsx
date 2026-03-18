@@ -33,6 +33,19 @@ const Glaucome = () => {
         title="Le Glaucome – Comprendre, Dépister et Agir | LirElia"
         description="Tout savoir sur le glaucome : formes, symptômes, dépistage, traitements et conseils pour vivre avec cette maladie des yeux."
         canonicalPath="/maladies-yeux/glaucome"
+        ogType="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MedicalWebPage",
+          "name": "Le Glaucome",
+          "description": "Tout savoir sur le glaucome : formes, symptômes, dépistage, traitements et conseils pour vivre avec cette maladie des yeux.",
+          "url": "https://betalirelia.lovable.app/maladies-yeux/glaucome",
+          "about": {
+            "@type": "MedicalCondition",
+            "name": "Glaucome",
+            "description": "Maladie de l'œil caractérisée par une atteinte du nerf optique, souvent liée à une pression intraoculaire élevée."
+          }
+        }}
       />
       <Header />
       <main id="main-content">
