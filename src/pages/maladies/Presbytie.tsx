@@ -95,7 +95,7 @@ const Presbytie = () => {
                 La presbytie est une difficulté croissante à voir nettement les objets proches. Elle apparaît parce que le cristallin, qui aide normalement l'œil à faire la mise au point, devient progressivement plus rigide et moins souple avec l'âge. L'œil perd alors une partie de son pouvoir d'accommodation.
               </p>
               <p className="text-lg text-foreground leading-relaxed mb-6">
-                Contrairement à la myopie, à l'hypermétropie ou à l'astigmatisme, la presbytie est directement liée au vieillissement naturel de l'œil. Elle n'est pas provoquée par une lésion ou une infection, mais par une diminution progressive de la capacité de mise au point de près.
+                Contrairement à la <Link to="/maladies-yeux/myopie" className="text-primary underline hover:text-primary/80">myopie</Link>, à l'<Link to="/maladies-yeux/hypermetropie" className="text-primary underline hover:text-primary/80">hypermétropie</Link> ou à l'<Link to="/maladies-yeux/astigmatisme" className="text-primary underline hover:text-primary/80">astigmatisme</Link>, la presbytie est directement liée au vieillissement naturel de l'œil. Elle n'est pas provoquée par une lésion ou une infection, mais par une diminution progressive de la capacité de mise au point de près.
               </p>
               <Card variant="highlighted" className="p-6">
                 <p className="text-lg">

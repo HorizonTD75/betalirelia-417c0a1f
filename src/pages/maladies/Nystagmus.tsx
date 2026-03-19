@@ -248,9 +248,9 @@ const Nystagmus = () => {
               <Card variant="muted" className="p-6">
                 <div className="flex items-start gap-4">
                   <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Le nystagmus peut également être associé à d'autres pathologies oculaires comme la <strong>DMLA</strong>, le <strong>glaucome</strong> ou des <strong>dystrophies rétiniennes</strong>. Un bilan ophtalmologique complet est indispensable pour en identifier l'origine.
-                  </p>
+                    <p className="text-lg text-foreground leading-relaxed">
+                      Le nystagmus peut également être associé à d'autres pathologies oculaires comme la <strong><Link to="/maladies-yeux/dmla" className="text-primary underline hover:text-primary/80">DMLA</Link></strong>, le <strong><Link to="/maladies-yeux/glaucome" className="text-primary underline hover:text-primary/80">glaucome</Link></strong> ou des <strong>dystrophies rétiniennes</strong>. Un bilan ophtalmologique complet est indispensable pour en identifier l'origine.
+                    </p>
                 </div>
               </Card>
             </div>

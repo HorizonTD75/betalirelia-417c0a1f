@@ -411,7 +411,7 @@ const Cataracte = () => {
                   La cataracte ne touche pas uniquement les personnes âgées. Il existe une forme <strong>congénitale</strong>, présente dès la naissance ou peu après. Elle peut être causée par une maladie contractée par la mère pendant la grossesse (toxoplasmose, rubéole, herpès génital) ou par un trouble génétique comme la trisomie 21.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed mb-4">
-                  Les signes comprennent une vision floue, une sensibilité à la lumière et parfois un nystagmus (mouvement involontaire des yeux). Heureusement, la cataracte congénitale peut être traitée chirurgicalement dans les premiers mois de vie.
+                  Les signes comprennent une vision floue, une sensibilité à la lumière et parfois un <Link to="/maladies-yeux/nystagmus" className="text-primary underline hover:text-primary/80">nystagmus</Link> (mouvement involontaire des yeux). Heureusement, la cataracte congénitale peut être traitée chirurgicalement dans les premiers mois de vie.
                 </p>
                 <Card variant="highlighted" className="p-4">
                   <div className="flex items-start gap-3">

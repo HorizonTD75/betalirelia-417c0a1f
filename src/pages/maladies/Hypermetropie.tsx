@@ -95,7 +95,7 @@ const Hypermetropie = () => {
                 L'hypermétropie est un défaut de réfraction dans lequel l'œil a une forme trop courte ou un cristallin insuffisamment convergent. L'image se forme en arrière de la rétine, ce qui provoque une vision floue de près et, dans les formes importantes, de loin également.
               </p>
               <p className="text-lg text-foreground leading-relaxed">
-                Contrairement à la myopie, l'hypermétropie peut passer inaperçue chez les jeunes grâce à la capacité d'accommodation du cristallin. Avec l'âge, cette compensation devient plus difficile et les symptômes apparaissent.
+                Contrairement à la <Link to="/maladies-yeux/myopie" className="text-primary underline hover:text-primary/80">myopie</Link>, l'hypermétropie peut passer inaperçue chez les jeunes grâce à la capacité d'accommodation du cristallin. Avec l'âge, cette compensation devient plus difficile et les symptômes apparaissent.
               </p>
             </div>
           </div>

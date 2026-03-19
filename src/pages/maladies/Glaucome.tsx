@@ -231,7 +231,7 @@ const Glaucome = () => {
                     Cette forme est plus rare mais constitue une <strong>urgence médicale</strong>. L'angle irido-cornéen se ferme de manière brutale, bloquant l'humeur aqueuse dans sa poche. La pression intra-oculaire monte brutalement, causant des douleurs intenses.
                   </p>
                   <p className="text-lg text-foreground leading-relaxed mb-4">
-                    Il apparaît souvent à cause de prédispositions familiales, de maladies comme l'hypermétropie ou la cataracte, ou encore suite à un stress ou la prise de certains médicaments.
+                    Il apparaît souvent à cause de prédispositions familiales, de maladies comme l'<Link to="/maladies-yeux/hypermetropie" className="text-primary underline hover:text-primary/80">hypermétropie</Link> ou la <Link to="/maladies-yeux/cataracte" className="text-primary underline hover:text-primary/80">cataracte</Link>, ou encore suite à un stress ou la prise de certains médicaments.
                   </p>
                   <Card variant="muted" className="p-4">
                     <div className="flex items-start gap-3">
