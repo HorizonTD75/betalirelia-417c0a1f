@@ -20,7 +20,7 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { interet, email, nom, telephone, message, source_url, source_tag } = body;
+    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok } = body;
 
     // ── 1. Validate required fields
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -43,7 +43,7 @@ serve(async (req) => {
       });
     }
 
-    // ── 2. Insert into contact_Lirelia (status = "received")
+    // ── 2. Insert into contact_lirelia (status = "received")
     const { data: insertedRow, error: dbError } = await supabase
       .from("contact_lirelia")
       .insert({
@@ -69,18 +69,70 @@ serve(async (req) => {
 
     const rowId = insertedRow.id;
 
-    // ── 3. Brevo: upsert contact
+    // ── 3. Brevo: fetch existing contact to get current INTERET and ROLE
+    let existingInteret = "";
+    let existingRole = "";
+
+    try {
+      const getRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.trim())}`, {
+        method: "GET",
+        headers: {
+          "api-key": brevoApiKey,
+          Accept: "application/json",
+        },
+      });
+      if (getRes.ok) {
+        const existing = await getRes.json();
+        existingInteret = existing?.attributes?.INTERET || "";
+        existingRole = existing?.attributes?.ROLE || "";
+      }
+    } catch (e) {
+      console.log("Could not fetch existing Brevo contact (may be new):", e);
+    }
+
+    // ── 4. Build INTERET and ROLE with append logic
+    let finalInteret = existingInteret;
+    if (interet && interet.trim()) {
+      if (finalInteret && finalInteret.trim()) {
+        finalInteret = finalInteret.trimEnd() + "\n" + interet.trim();
+      } else {
+        finalInteret = interet.trim();
+      }
+    }
+
+    let finalRole = existingRole;
+    if (role && role.trim()) {
+      if (finalRole && finalRole.trim()) {
+        finalRole = finalRole.trimEnd() + "\n" + role.trim();
+      } else {
+        finalRole = role.trim();
+      }
+    }
+
+    // ── 5. Brevo: upsert contact
+    const brevoAttributes: Record<string, unknown> = {
+      NOM: nom.trim(),
+      PHONE: telephone?.trim() || "",
+      INTERET: finalInteret,
+      MESSAGE: message.trim(),
+      SOURCE_URL: source_url || "",
+      SOURCE_TAG: source_tag || "",
+    };
+
+    // Add ROLE if provided
+    if (role !== undefined) {
+      brevoAttributes.ROLE = finalRole;
+    }
+
+    // Add RGPD_OK as boolean if provided
+    if (rgpd_ok !== undefined) {
+      brevoAttributes.RGPD_OK = rgpd_ok === true;
+    }
+
     const brevoPayload: Record<string, unknown> = {
       email: email.trim(),
       updateEnabled: true,
-      attributes: {
-        NOM: nom.trim(),
-        PHONE: telephone?.trim() || "",
-        INTERET: interet?.trim() || "",
-        MESSAGE: message.trim(),
-        SOURCE_URL: source_url || "",
-        SOURCE_TAG: source_tag || "",
-      },
+      attributes: brevoAttributes,
     };
 
     const brevoListId = Deno.env.get("BREVO_LIST_ID");
@@ -118,13 +170,13 @@ serve(async (req) => {
       brevoResponse = { error: String(brevoErr) };
     }
 
-    // ── 4. Update status
+    // ── 6. Update status
     await supabase
       .from("contact_lirelia")
       .update({ status: brevoStatus, brevo_response: brevoResponse })
       .eq("id", rowId);
 
-    // ── 5. Return success
+    // ── 7. Return success
     return new Response(JSON.stringify({ success: true, id: rowId }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },

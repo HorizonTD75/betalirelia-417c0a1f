@@ -45,12 +45,12 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-1 ml-6" aria-label="Navigation principale">
+          <nav className="hidden xl:flex items-center gap-0 ml-4" aria-label="Navigation principale">
             {navLinks.map((link) =>
             <a
               key={link.href}
               href={link.href}
-              className="py-2 text-[0.9rem] xl:text-base font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors mx-1 xl:mx-2 px-1 text-left whitespace-nowrap">
+              className="py-2 text-sm font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors mx-0.5 xl:mx-1 px-1.5 xl:px-2 text-left whitespace-nowrap">
 
                 {link.label}
               </a>
