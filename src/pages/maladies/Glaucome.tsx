@@ -151,7 +151,7 @@ const Glaucome = () => {
                     Le glaucome correspond à une <strong>augmentation de la pression à l'intérieur de l'œil</strong> (pression intra-oculaire). Cette hyper-pression comprime progressivement le nerf optique, entraînant des lésions irréversibles au niveau du nerf, de la rétine et de la cornée.
                   </p>
                   <p className="text-lg text-foreground leading-relaxed mb-4">
-                    Il se place en seconde position, juste après la DMLA, parmi les causes de cécité dans les pays développés.
+                    Il se place en seconde position, juste après la <Link to="/maladies-yeux/dmla" className="text-primary underline hover:text-primary/80">DMLA</Link>, parmi les causes de cécité dans les pays développés.
                   </p>
                 </Card>
 
