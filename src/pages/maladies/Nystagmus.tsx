@@ -161,7 +161,7 @@ const Nystagmus = () => {
                     </div>
                   </div>
                   <p className="text-lg text-foreground leading-relaxed mb-4">
-                    Le nystagmus congénital apparaît généralement dans les premiers mois de vie. Il est souvent associé à d'autres anomalies oculaires (albinisme, cataracte congénitale, aniridie) ou à des troubles neurologiques.
+                    Le nystagmus congénital apparaît généralement dans les premiers mois de vie. Il est souvent associé à d'autres anomalies oculaires (albinisme, <Link to="/maladies-yeux/cataracte" className="text-primary underline hover:text-primary/80">cataracte congénitale</Link>, <Link to="/maladies-yeux/maladies-hereditaires/aniridie" className="text-primary underline hover:text-primary/80">aniridie</Link>) ou à des troubles neurologiques.
                   </p>
                   <p className="text-lg text-foreground leading-relaxed">
                     Les personnes atteintes s'adaptent souvent inconsciemment en adoptant une <strong>position de blocage</strong> de la tête, un angle où les oscillations sont réduites et la vision est plus nette.
