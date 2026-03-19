@@ -183,7 +183,7 @@ const Cataracte = () => {
                   <div className="flex items-start gap-4">
                     <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
                     <p className="text-lg text-foreground leading-relaxed">
-                      <strong>À retenir :</strong> la cataracte entraîne également une presbytie (vision floue de près) et une myopie (vision floue de loin), car l'opacification altère la souplesse du cristallin et ses capacités de mise au point.
+                      <strong>À retenir :</strong> la cataracte entraîne également une <Link to="/maladies-yeux/presbytie" className="text-primary underline hover:text-primary/80">presbytie</Link> (vision floue de près) et une <Link to="/maladies-yeux/myopie" className="text-primary underline hover:text-primary/80">myopie</Link> (vision floue de loin), car l'opacification altère la souplesse du cristallin et ses capacités de mise au point.
                     </p>
                   </div>
                 </Card>
