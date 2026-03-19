@@ -37,20 +37,20 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group shrink-0">
-            <img src={logoLirelia} alt="Logo LirElia" className="w-14 h-14 xl:w-20 xl:h-20 object-contain" />
+            <img src={logoLirelia} alt="Logo LirElia" className="w-12 h-12 xl:w-14 xl:h-14 object-contain" />
             <div className="whitespace-nowrap">
-              <span className="font-serif text-xl xl:text-2xl font-bold text-primary">LirElia</span>
-              <span className="block text-xs xl:text-sm text-muted-foreground">Basse Vision</span>
+              <span className="font-serif text-lg xl:text-xl font-bold text-primary">LirElia</span>
+              <span className="block text-xs text-muted-foreground">Basse Vision</span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-0 ml-4" aria-label="Navigation principale">
+          <nav className="hidden xl:flex items-center ml-2" aria-label="Navigation principale">
             {navLinks.map((link) =>
             <a
               key={link.href}
               href={link.href}
-              className="py-2 text-sm font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors mx-0.5 xl:mx-1 px-1.5 xl:px-2 text-left whitespace-nowrap">
+              className="py-2 text-[13px] font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors px-2 text-left whitespace-nowrap">
 
                 {link.label}
               </a>
@@ -58,17 +58,17 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-2 xl:gap-3 ml-3 shrink-0">
-            <Button variant="secondary" size="default" asChild className="hidden xl:inline-flex">
+          <div className="flex items-center gap-2 ml-2 shrink-0">
+            <Button variant="secondary" size="sm" asChild className="hidden xl:inline-flex">
               <Link to="/club">
-                <Users className="w-5 h-5" />
+                <Users className="w-4 h-4" />
                 Le Club
               </Link>
             </Button>
             <CartDrawer />
-            <a href="tel:0768474235" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
+            <a href="tel:0768474235" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80" aria-label="Appelez-nous">
               <Phone className="w-4 h-4" />
-              <span className="hidden xl:inline">07 68 47 42 35</span>
+              <span className="hidden 2xl:inline text-[13px]">07 68 47 42 35</span>
             </a>
           </div>
 
