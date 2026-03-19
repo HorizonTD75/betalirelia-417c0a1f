@@ -292,7 +292,7 @@ const Cataracte = () => {
                 <div className="flex items-start gap-4">
                   <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
                   <p className="text-lg text-foreground leading-relaxed">
-                    Certains troubles visuels préexistants, comme une <strong>forte myopie</strong>, un <strong>glaucome</strong> ou un <strong>décollement de rétine</strong>, peuvent favoriser l'apparition d'une cataracte dite secondaire. Un suivi ophtalmologique régulier est recommandé.
+                    Certains troubles visuels préexistants, comme une <strong><Link to="/maladies-yeux/myopie" className="text-primary underline hover:text-primary/80">forte myopie</Link></strong>, un <strong><Link to="/maladies-yeux/glaucome" className="text-primary underline hover:text-primary/80">glaucome</Link></strong> ou un <strong>décollement de rétine</strong>, peuvent favoriser l'apparition d'une cataracte dite secondaire. Un suivi ophtalmologique régulier est recommandé.
                   </p>
                 </div>
               </Card>
