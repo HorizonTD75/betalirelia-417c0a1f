@@ -161,7 +161,7 @@ const Nystagmus = () => {
                     </div>
                   </div>
                   <p className="text-lg text-foreground leading-relaxed mb-4">
-                    Le nystagmus congénital apparaît généralement dans les premiers mois de vie. Il est souvent associé à d'autres anomalies oculaires (albinisme, cataracte congénitale, aniridie) ou à des troubles neurologiques.
+                    Le nystagmus congénital apparaît généralement dans les premiers mois de vie. Il est souvent associé à d'autres anomalies oculaires (albinisme, <Link to="/maladies-yeux/cataracte" className="text-primary underline hover:text-primary/80">cataracte congénitale</Link>, <Link to="/maladies-yeux/maladies-hereditaires/aniridie" className="text-primary underline hover:text-primary/80">aniridie</Link>) ou à des troubles neurologiques.
                   </p>
                   <p className="text-lg text-foreground leading-relaxed">
                     Les personnes atteintes s'adaptent souvent inconsciemment en adoptant une <strong>position de blocage</strong> de la tête, un angle où les oscillations sont réduites et la vision est plus nette.
@@ -248,9 +248,9 @@ const Nystagmus = () => {
               <Card variant="muted" className="p-6">
                 <div className="flex items-start gap-4">
                   <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Le nystagmus peut également être associé à d'autres pathologies oculaires comme la <strong>DMLA</strong>, le <strong>glaucome</strong> ou des <strong>dystrophies rétiniennes</strong>. Un bilan ophtalmologique complet est indispensable pour en identifier l'origine.
-                  </p>
+                    <p className="text-lg text-foreground leading-relaxed">
+                      Le nystagmus peut également être associé à d'autres pathologies oculaires comme la <strong><Link to="/maladies-yeux/dmla" className="text-primary underline hover:text-primary/80">DMLA</Link></strong>, le <strong><Link to="/maladies-yeux/glaucome" className="text-primary underline hover:text-primary/80">glaucome</Link></strong> ou des <strong>dystrophies rétiniennes</strong>. Un bilan ophtalmologique complet est indispensable pour en identifier l'origine.
+                    </p>
                 </div>
               </Card>
             </div>

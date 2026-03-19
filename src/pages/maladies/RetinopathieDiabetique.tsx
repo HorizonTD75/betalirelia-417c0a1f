@@ -186,7 +186,7 @@ const RetinopathieDiabetique = () => {
                     La rétine est irriguée par de très petits vaisseaux sanguins qui lui apportent oxygène et glucose. Lorsque ces vaisseaux sont fragilisés par le diabète, le sang peut s'infiltrer dans l'œil et les cellules rétiniennes ne sont plus nourries correctement.
                   </p>
                   <p className="text-lg text-foreground leading-relaxed">
-                    Sans traitement, ces lésions progressent et peuvent entraîner un <strong>glaucome</strong>, une <strong>hémorragie vitréenne</strong> ou un <strong>décollement de la rétine</strong>.
+                    Sans traitement, ces lésions progressent et peuvent entraîner un <strong><Link to="/maladies-yeux/glaucome" className="text-primary underline hover:text-primary/80">glaucome</Link></strong>, une <strong>hémorragie vitréenne</strong> ou un <strong>décollement de la rétine</strong>.
                   </p>
                 </Card>
               </div>

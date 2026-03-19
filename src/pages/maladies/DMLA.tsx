@@ -233,7 +233,7 @@ const DMLA = () => {
                     Et la maculopathie diabétique ?
                   </h3>
                   <p className="text-lg text-foreground leading-relaxed">
-                    Le diabète affecte souvent les cellules rétiniennes. La rétinopathie diabétique peut s'étendre à la macula et gêner la vision centrale. Dans la forme œdémateuse de cette maculopathie, une intervention est possible. Un suivi régulier est recommandé pour les personnes diabétiques.
+                    Le diabète affecte souvent les cellules rétiniennes. La <Link to="/maladies-yeux/retinopathie-diabetique" className="text-primary underline hover:text-primary/80">rétinopathie diabétique</Link> peut s'étendre à la macula et gêner la vision centrale. Dans la forme œdémateuse de cette maculopathie, une intervention est possible. Un suivi régulier est recommandé pour les personnes diabétiques.
                   </p>
                 </Card>
               </div>

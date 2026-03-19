@@ -17,22 +17,25 @@ import bilanHeroImage from "@/assets/bilan-hero.jpg";
 
 type BilanType = "essentiel" | "expert" | "suivi";
 
-const bilanOptions: { value: BilanType; label: string; price: number; reassurance: string }[] = [
+const bilanOptions: { value: BilanType; label: string; brevoValue: string; price: number; reassurance: string }[] = [
   {
     value: "essentiel",
     label: "Bilan Essentiel",
+    brevoValue: "Bilan essentiel",
     price: 75,
     reassurance: "Un premier bilan complet pour évaluer votre vision fonctionnelle, tester des aides adaptées et repartir avec un plan d'action concret.",
   },
   {
     value: "expert",
     label: "Bilan Expert",
+    brevoValue: "Bilan expert",
     price: 135,
     reassurance: "Le Bilan Essentiel enrichi d'une consultation opticien-optométriste pour explorer les corrections et lunettes basse vision les plus adaptées.",
   },
   {
     value: "suivi",
     label: "Pack Suivi",
+    brevoValue: "Bilan suivi",
     price: 215,
     reassurance: "Un accompagnement complet sur plusieurs mois : bilan initial, essais, ajustements et suivi pour installer durablement les bonnes habitudes.",
   },
@@ -78,13 +81,20 @@ const ContactBilan = () => {
 
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.functions.invoke("submit-contact", {
+      const selectedOption = bilanOptions.find((b) => b.value === selectedBilan);
+      const roleValue = profil === "aidant" ? "aidant" : "personne concernée";
+
+      const { error } = await supabase.functions.invoke("brevo-upsert-contact", {
         body: {
-          name: `${prenom.trim()} ${nom.trim()}`,
+          nom: `${prenom.trim()} ${nom.trim()}`,
           email: email.trim(),
-          phone: telephone.trim(),
-          selected_product: `Bilan ${selectedBilan} (${profil})`,
-          message: `Demande de rendez-vous pour un ${bilanOptions.find((b) => b.value === selectedBilan)?.label} — Profil : ${profil === "aidant" ? "Aidant" : "Personne malvoyante"} — Téléphone : ${telephone.trim()}`,
+          telephone: telephone.trim(),
+          interet: selectedOption?.brevoValue || "Bilan essentiel",
+          role: roleValue,
+          rgpd_ok: true,
+          message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
+          source_url: window.location.href,
+          source_tag: "rdv-bilan",
         },
       });
 
@@ -231,7 +241,7 @@ const ContactBilan = () => {
                           }`}
                         >
                           <RadioGroupItem value="malvoyant" />
-                          <span className="text-lg font-medium">Personne malvoyante</span>
+                          <span className="text-lg font-medium">Personne concernée</span>
                         </label>
                         <label
                           className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${

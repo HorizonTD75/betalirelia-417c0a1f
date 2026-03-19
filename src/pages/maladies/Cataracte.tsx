@@ -183,7 +183,7 @@ const Cataracte = () => {
                   <div className="flex items-start gap-4">
                     <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
                     <p className="text-lg text-foreground leading-relaxed">
-                      <strong>À retenir :</strong> la cataracte entraîne également une presbytie (vision floue de près) et une myopie (vision floue de loin), car l'opacification altère la souplesse du cristallin et ses capacités de mise au point.
+                      <strong>À retenir :</strong> la cataracte entraîne également une <Link to="/maladies-yeux/presbytie" className="text-primary underline hover:text-primary/80">presbytie</Link> (vision floue de près) et une <Link to="/maladies-yeux/myopie" className="text-primary underline hover:text-primary/80">myopie</Link> (vision floue de loin), car l'opacification altère la souplesse du cristallin et ses capacités de mise au point.
                     </p>
                   </div>
                 </Card>
@@ -292,7 +292,7 @@ const Cataracte = () => {
                 <div className="flex items-start gap-4">
                   <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
                   <p className="text-lg text-foreground leading-relaxed">
-                    Certains troubles visuels préexistants, comme une <strong>forte myopie</strong>, un <strong>glaucome</strong> ou un <strong>décollement de rétine</strong>, peuvent favoriser l'apparition d'une cataracte dite secondaire. Un suivi ophtalmologique régulier est recommandé.
+                    Certains troubles visuels préexistants, comme une <strong><Link to="/maladies-yeux/myopie" className="text-primary underline hover:text-primary/80">forte myopie</Link></strong>, un <strong><Link to="/maladies-yeux/glaucome" className="text-primary underline hover:text-primary/80">glaucome</Link></strong> ou un <strong>décollement de rétine</strong>, peuvent favoriser l'apparition d'une cataracte dite secondaire. Un suivi ophtalmologique régulier est recommandé.
                   </p>
                 </div>
               </Card>
@@ -411,7 +411,7 @@ const Cataracte = () => {
                   La cataracte ne touche pas uniquement les personnes âgées. Il existe une forme <strong>congénitale</strong>, présente dès la naissance ou peu après. Elle peut être causée par une maladie contractée par la mère pendant la grossesse (toxoplasmose, rubéole, herpès génital) ou par un trouble génétique comme la trisomie 21.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed mb-4">
-                  Les signes comprennent une vision floue, une sensibilité à la lumière et parfois un nystagmus (mouvement involontaire des yeux). Heureusement, la cataracte congénitale peut être traitée chirurgicalement dans les premiers mois de vie.
+                  Les signes comprennent une vision floue, une sensibilité à la lumière et parfois un <Link to="/maladies-yeux/nystagmus" className="text-primary underline hover:text-primary/80">nystagmus</Link> (mouvement involontaire des yeux). Heureusement, la cataracte congénitale peut être traitée chirurgicalement dans les premiers mois de vie.
                 </p>
                 <Card variant="highlighted" className="p-4">
                   <div className="flex items-start gap-3">

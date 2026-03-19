@@ -95,7 +95,7 @@ const Astigmatisme = () => {
                 L'astigmatisme est un trouble de la réfraction caractérisé par une forme irrégulière de la cornée ou du cristallin. Au lieu d'être parfaitement ronde, la cornée présente une forme ovale, ce qui empêche la lumière de se concentrer en un seul point sur la rétine.
               </p>
               <p className="text-lg text-foreground leading-relaxed">
-                Le résultat est une vision floue ou déformée, aussi bien de près que de loin. L'astigmatisme est fréquemment associé à une myopie ou une hypermétropie.
+                Le résultat est une vision floue ou déformée, aussi bien de près que de loin. L'astigmatisme est fréquemment associé à une <Link to="/maladies-yeux/myopie" className="text-primary underline hover:text-primary/80">myopie</Link> ou une <Link to="/maladies-yeux/hypermetropie" className="text-primary underline hover:text-primary/80">hypermétropie</Link>.
               </p>
             </div>
           </div>
