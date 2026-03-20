@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { buildBreadcrumbJsonLd } from "@/lib/seo";
 import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -147,7 +148,12 @@ const MaladiesYeux = () => {
       <SEOHead
         title="Maladies des Yeux et Basse Vision : DMLA, Glaucome, Cataracte | LirElia"
         description="Découvrez les principales maladies oculaires responsables de la basse vision : DMLA, glaucome, rétinopathie diabétique, cataracte et plus encore."
-        canonicalPath="/maladies-yeux" />
+        canonicalPath="/maladies-yeux"
+        jsonLd={buildBreadcrumbJsonLd([
+          { name: "Accueil", path: "/" },
+          { name: "Maladies des yeux", path: "/maladies-yeux" },
+        ])}
+      />
       
       <Header />
       <main id="main-content">
