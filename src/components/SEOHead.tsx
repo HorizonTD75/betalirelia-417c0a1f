@@ -1,7 +1,5 @@
-import { useEffect } from "react";
-
-const BASE_URL = "https://betalirelia.lovable.app";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
+import { Helmet } from "react-helmet-async";
+import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 interface SEOHeadProps {
   title: string;
@@ -9,81 +7,58 @@ interface SEOHeadProps {
   canonicalPath?: string;
   ogImage?: string;
   ogType?: string;
-  jsonLd?: Record<string, unknown>;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SEOHead = ({ title, description, canonicalPath, ogImage, ogType = "website", jsonLd }: SEOHeadProps) => {
-  useEffect(() => {
-    document.title = title;
+const SEOHead = ({
+  title,
+  description,
+  canonicalPath,
+  ogImage,
+  ogType = "website",
+  jsonLd,
+}: SEOHeadProps) => {
+  const absoluteUrl = canonicalPath ? `${SITE_URL}${canonicalPath}` : undefined;
+  const imageUrl = ogImage || DEFAULT_OG_IMAGE;
 
-    const setMeta = (name: string, content: string, attr = "name") => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
+  // Support single or array of JSON-LD blocks
+  const jsonLdBlocks = jsonLd
+    ? Array.isArray(jsonLd)
+      ? jsonLd
+      : [jsonLd]
+    : [];
 
-    const absoluteUrl = canonicalPath ? `${BASE_URL}${canonicalPath}` : undefined;
-    const imageUrl = ogImage || DEFAULT_OG_IMAGE;
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content="noindex, nofollow" />
+      <meta name="googlebot" content="noindex, nofollow" />
 
-    // SEO basics
-    setMeta("description", description);
-    setMeta("robots", "noindex, nofollow");
-    setMeta("googlebot", "noindex, nofollow");
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:image" content={imageUrl} />
+      {absoluteUrl && <meta property="og:url" content={absoluteUrl} />}
 
-    // Open Graph
-    setMeta("og:title", title, "property");
-    setMeta("og:description", description, "property");
-    setMeta("og:type", ogType, "property");
-    setMeta("og:image", imageUrl, "property");
-    if (absoluteUrl) {
-      setMeta("og:url", absoluteUrl, "property");
-    }
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageUrl} />
 
-    // Twitter Card
-    setMeta("twitter:card", "summary_large_image");
-    setMeta("twitter:title", title);
-    setMeta("twitter:description", description);
-    setMeta("twitter:image", imageUrl);
+      {/* Canonical */}
+      {absoluteUrl && <link rel="canonical" href={absoluteUrl} />}
 
-    // Canonical
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (absoluteUrl) {
-      if (!canonical) {
-        canonical = document.createElement("link");
-        canonical.setAttribute("rel", "canonical");
-        document.head.appendChild(canonical);
-      }
-      canonical.setAttribute("href", absoluteUrl);
-    } else if (canonical) {
-      canonical.remove();
-    }
-
-    // Manage JSON-LD structured data
-    const existingJsonLd = document.getElementById("seo-jsonld");
-    if (jsonLd) {
-      if (existingJsonLd) {
-        existingJsonLd.textContent = JSON.stringify(jsonLd);
-      } else {
-        const script = document.createElement("script");
-        script.id = "seo-jsonld";
-        script.type = "application/ld+json";
-        script.textContent = JSON.stringify(jsonLd);
-        document.head.appendChild(script);
-      }
-    } else if (existingJsonLd) {
-      existingJsonLd.remove();
-    }
-
-    // Remove any preload/prefetch hints
-    document.querySelectorAll('link[rel="preload"], link[rel="prefetch"], link[rel="dns-prefetch"], link[rel="preconnect"]').forEach(el => el.remove());
-
-  }, [title, description, canonicalPath, ogImage, ogType, jsonLd]);
-
-  return null;
+      {/* JSON-LD structured data */}
+      {jsonLdBlocks.map((block, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(block)}
+        </script>
+      ))}
+    </Helmet>
+  );
 };
 
 export default SEOHead;
