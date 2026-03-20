@@ -125,14 +125,20 @@ const Bilans = () => {
         title="Bilans Basse Vision à Paris : Essentiel, Expert, Suivi | LirElia"
         description="Évaluez vos besoins visuels avec nos bilans personnalisés. Test d'aides à la lecture et plan d'action concret pour la DMLA et le glaucome."
         canonicalPath="/bilans-bassevision"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Bilans Basse Vision LirElia",
-          "description": "Bilans fonctionnels personnalisés pour personnes malvoyantes : Essentiel, Expert et Suivi sur 3 mois.",
-          "provider": { "@type": "Organization", "name": "LirElia" },
-          "serviceType": "Bilan basse vision"
-        }} />
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Bilans Basse Vision LirElia",
+            "description": "Bilans fonctionnels personnalisés pour personnes malvoyantes : Essentiel, Expert et Suivi sur 3 mois.",
+            "provider": { "@type": "Organization", "name": "LirElia" },
+            "serviceType": "Bilan basse vision"
+          },
+          buildBreadcrumbJsonLd([
+            { name: "Accueil", path: "/" },
+            { name: "Bilans basse vision", path: "/bilans-bassevision" },
+          ]),
+        ]} />
       
       <Header />
       <main id="main-content">

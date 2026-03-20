@@ -148,7 +148,12 @@ const MaladiesYeux = () => {
       <SEOHead
         title="Maladies des Yeux et Basse Vision : DMLA, Glaucome, Cataracte | LirElia"
         description="Découvrez les principales maladies oculaires responsables de la basse vision : DMLA, glaucome, rétinopathie diabétique, cataracte et plus encore."
-        canonicalPath="/maladies-yeux" />
+        canonicalPath="/maladies-yeux"
+        jsonLd={buildBreadcrumbJsonLd([
+          { name: "Accueil", path: "/" },
+          { name: "Maladies des yeux", path: "/maladies-yeux" },
+        ])}
+      />
       
       <Header />
       <main id="main-content">
