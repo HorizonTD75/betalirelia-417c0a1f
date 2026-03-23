@@ -2,7 +2,7 @@
 # Switch to "Allow: /" and remove Noindex when moving to production domain
 
 User-agent: 
-Disallow:
+Allow: /
 
 # Sitemap (update domain when moving to production)
 Sitemap: https://www.lirelia.fr/sitemap.xml
