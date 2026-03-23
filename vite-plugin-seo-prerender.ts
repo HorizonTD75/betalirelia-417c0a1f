@@ -12,7 +12,7 @@ interface RouteSEO {
   jsonLd?: Record<string, unknown>;
 }
 
-const BASE_URL = "https://betalirelia.lovable.app";
+const BASE_URL = "https://www.lirelia.fr";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
 
 /**
