@@ -95,8 +95,8 @@ const ComprendreBasseVision = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Comprendre la Basse Vision : Symptômes & Solutions | LirElia"
-        description="Qu'est-ce que la basse vision ? Découvrez les causes (DMLA, glaucome) et le rôle des professionnels (ophtalmo, visiopraticien) pour vous accompagner."
+        title="Comprendre la Basse Vision : Définition, Causes et Repères"
+        description="Votre vue baisse malgré vos lunettes ? Comprenez ce qu'est la basse vision, ses causes (DMLA, glaucome) et les professionnels qui peuvent vous aider."
         canonicalPath="/comprendre-basse-vision" />
       
       <Header />

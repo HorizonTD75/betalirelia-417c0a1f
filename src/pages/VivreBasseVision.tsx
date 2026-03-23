@@ -172,8 +172,8 @@ const VivreBasseVision = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Vivre avec la Basse Vision au Quotidien : Aides & Conseils | LirElia"
-        description="DMLA, glaucome, malvoyance : conseils pratiques pour le quotidien. Aides à la lecture, éclairage adapté, aménagement du domicile et autonomie pour personnes malvoyantes."
+        title="Vivre avec la Basse Vision : Conseils Pratiques au Quotidien"
+        description="Comment continuer à lire, cuisiner et sortir malgré la malvoyance ? Conseils concrets d'un expert pour adapter votre domicile et garder votre autonomie."
         canonicalPath="/vivre-basse-vision"
       />
       <Header />

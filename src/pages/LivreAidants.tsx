@@ -134,8 +134,8 @@ const LivreAidants = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Aider un proche atteint de DMLA : guide aidants | LirElia"
-        description="Guide pratique pour aidants : comprendre la DMLA, soutenir sans infantiliser, préserver l'autonomie et la lecture. Ressources et accompagnements."
+        title="Livre : Aider un Proche Atteint de DMLA | LirElia"
+        description="Le guide indispensable pour les aidants : comprendre la DMLA de votre proche, l'accompagner au quotidien et préserver votre propre équilibre."
         canonicalPath="/livre-aider-proche-dmla"
         jsonLd={{
           "@context": "https://schema.org",

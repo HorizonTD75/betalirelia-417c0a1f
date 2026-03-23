@@ -63,4 +63,5 @@
 
   <!-- AI/GEO readiness -->
   <url><loc>https://www.lirelia.fr/llm.html</loc><priority>0.3</priority></url>
+  <url><loc>https://www.lirelia.fr/llm.txt</loc><priority>0.3</priority></url>
 </urlset>

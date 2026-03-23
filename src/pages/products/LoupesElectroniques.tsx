@@ -118,8 +118,8 @@ const LoupesElectroniques = () => (
     contactSubject="loupe-electronique"
     ctaText="Être orienté(e) vers une loupe électronique adaptée"
     seo={{
-      title: "Loupes électroniques pour malvoyants — Zoom et contraste | LirElia",
-      description: "Loupes électroniques portables, de bureau et de poche. Zoom réglable, contraste renforcé et écran HD pour une lecture confortable malgré la basse vision.",
+      title: "Loupes Électroniques pour Basse Vision | LirElia",
+      description: "Zoom réglable, contraste renforcé et écran HD : découvrez les loupes électroniques qui changent la vie des personnes malvoyantes. Conseil gratuit.",
       canonicalPath: "/aides-lecture-bassevision/loupes-electroniques",
     }}
   />

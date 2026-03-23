@@ -122,8 +122,8 @@ const Bilans = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilans Basse Vision à Paris : Essentiel, Expert, Suivi | LirElia"
-        description="Évaluez vos besoins visuels avec nos bilans personnalisés. Test d'aides à la lecture et plan d'action concret pour la DMLA et le glaucome."
+        title="Bilans Basse Vision à Paris : Essentiel, Expert, Suivi"
+        description="Faites le point sur votre vue avec un bilan personnalisé. Test d'aides à la lecture, plan d'action concret. Dès 75 €, à Paris ou à domicile."
         canonicalPath="/bilans-bassevision"
         jsonLd={[
           {
