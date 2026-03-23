@@ -1,6 +1,7 @@
 import { Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoJaune from "@/assets/logo-lirelia-jaune.png";
+import { openCookiePreferences } from "@/components/CookieConsentBanner";
 
 const Footer = () => {
   return (
@@ -57,6 +58,15 @@ const Footer = () => {
               <li><Link to="/cgv" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">CGV</Link></li>
               <li><Link to="/mentions-legales" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Mentions légales</Link></li>
               <li><Link to="/politique-de-confidentialite" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Politique de confidentialité</Link></li>
+              <li><Link to="/politique-cookies" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Politique de cookies</Link></li>
+              <li>
+                <button
+                  onClick={() => openCookiePreferences()}
+                  className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors cursor-pointer text-left"
+                >
+                  Gérer mes cookies
+                </button>
+              </li>
             </ul>
           </div>
         </div>

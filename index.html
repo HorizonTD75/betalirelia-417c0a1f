@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="3BzY2HAnG0uK+RQzOCQFQw" async></script>
+    <!-- Analytics scripts loaded conditionally via cookie consent manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LirElia | Basse vision &amp; DMLA : bilan, aides à la lecture</title>
     <meta name="robots" content="index, follow" />
@@ -15,10 +15,14 @@
     <meta property="og:url" content="https://www.lirelia.fr/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.lirelia.fr/og-image.png" />
+    <meta property="og:image:alt" content="LirElia — Expert en basse vision, bilans et aides à la lecture" />
+    <meta property="og:site_name" content="LirElia" />
+    <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="LirElia | Basse vision &amp; DMLA : bilan, aides à la lecture" />
     <meta name="twitter:description" content="Solutions pour DMLA et basse vision : bilans, accompagnement visiopraticien, produits et conseils pour gagner en autonomie de lecture." />
     <meta name="twitter:image" content="https://www.lirelia.fr/og-image.png" />
+    <meta name="twitter:image:alt" content="LirElia — Expert en basse vision, bilans et aides à la lecture" />
     <script>
     // Synchronous SEO meta injection — runs before React, visible to Googlebot and social crawlers
     (function(){
@@ -239,6 +243,11 @@
           t: "Charte du Club LirElia | LirElia",
           d: "Charte du Club LirElia : règles de fonctionnement, engagements et valeurs de notre communauté basse vision.",
           og: "website"
+        },
+        "/politique-cookies": {
+          t: "Politique de cookies | LirElia",
+          d: "Politique de cookies de LirElia : types de cookies utilisés, durée de conservation et gestion de vos préférences.",
+          og: "website"
         }
       };
       var p = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -263,8 +272,12 @@
       setM("og:description", r[defined], "property");
       setM("og:url", u, "property");
       setM("og:type", r.og || "website", "property");
+      setM("og:site_name", "LirElia", "property");
+      setM("og:locale", "fr_FR", "property");
+      setM("og:image:alt", "LirElia \u2014 Expert en basse vision, bilans et aides \u00e0 la lecture", "property");
       setM("twitter:title", r.t);
       setM("twitter:description", r[defined]);
+      setM("twitter:image:alt", "LirElia \u2014 Expert en basse vision, bilans et aides \u00e0 la lecture");
       var can = head.querySelector('link[rel="canonical"]');
       if (can) can.setAttribute("href", u);
       else {
