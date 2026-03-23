@@ -117,8 +117,8 @@ const TeleAgrandisseurs = () => (
     contactSubject="tele-agrandisseur"
     ctaText="Découvrir les télé-agrandisseurs"
     seo={{
-      title: "Télé-agrandisseurs pour malvoyants — Grand écran | LirElia",
-      description: "Télé-agrandisseurs de bureau, portables et caméras TV. Grossissement puissant sur grand écran pour lire longtemps avec une basse vision sévère.",
+      title: "Télé-agrandisseurs pour Basse Vision | LirElia",
+      description: "Lisez longtemps et confortablement grâce aux télé-agrandisseurs : grand écran, zoom puissant et mains libres. Idéal pour DMLA et basse vision sévère.",
       canonicalPath: "/aides-lecture-bassevision/tele-agrandisseurs",
     }}
   />
