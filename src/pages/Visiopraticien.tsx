@@ -112,7 +112,7 @@ const Visiopraticien = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Visiopraticien Basse Vision à Paris | LirElia"
-        description="Le Visiopraticien LirElia accompagne les malvoyants (DMLA, glaucome) pour retrouver l'autonomie dans la lecture et le quotidien. À Paris et à domicile."
+        description="Vous n'arrivez plus à lire malgré vos lunettes ? Le Visiopraticien LirElia vous aide à retrouver votre autonomie. 25 ans d'expérience, bilans à Paris et à domicile."
         canonicalPath="/visiopraticien"
         jsonLd={{
           "@context": "https://schema.org",

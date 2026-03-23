@@ -9,7 +9,7 @@ const QuiSommesNous = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Qui sommes-nous ? — LirElia, experts en basse vision"
-        description="Découvrez l'équipe LirElia : un visiopraticien spécialisé en basse vision depuis 25 ans et un ingénieur passionné par les technologies d'assistance. Une approche humaine et concrète."
+        description="25 ans d'expérience en basse vision, un visiopraticien et un ingénieur réunis par une conviction : chacun mérite un accompagnement humain et concret."
         canonicalPath="/qui-sommes-nous"
       />
       <Header />
