@@ -17,7 +17,7 @@ const Hypermetropie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="L'Hypermétropie : Tout Savoir pour une Vision Nette | LirElia"
+        title="Hypermétropie : Causes et Traitements | LirElia"
         description="Tout savoir sur l'hypermétropie : œil trop court, vision floue de près, fatigue oculaire. Causes, diagnostic, traitements optiques et chirurgicaux."
         canonicalPath="/maladies-yeux/hypermetropie"
         jsonLd={{

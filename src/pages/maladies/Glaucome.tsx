@@ -39,7 +39,7 @@ const Glaucome = () => {
           "@type": "MedicalWebPage",
           "name": "Le Glaucome",
           "description": "Tout savoir sur le glaucome : formes, symptômes, dépistage, traitements et conseils pour vivre avec cette maladie des yeux.",
-          "url": "https://www.lirelia.fr/maladies-yeux/glaucome",
+          "url": "https://lirelia.fr/maladies-yeux/glaucome",
           "about": {
             "@type": "MedicalCondition",
             "name": "Glaucome",

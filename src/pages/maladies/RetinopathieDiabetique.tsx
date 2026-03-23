@@ -23,7 +23,7 @@ const RetinopathieDiabetique = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Rétinopathie Diabétique – Maladie des Yeux liée au Diabète | LirElia"
+        title="Rétinopathie Diabétique : Causes et Soins | LirElia"
         description="Comprendre la rétinopathie diabétique : causes, symptômes, diagnostic, traitements et accompagnement basse vision. Première cause de cécité avant 65 ans."
         canonicalPath="/maladies-yeux/retinopathie-diabetique"
         jsonLd={{

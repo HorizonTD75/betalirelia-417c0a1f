@@ -121,8 +121,8 @@ const AidesLecture = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Aides à la lecture basse vision : loupes, lampes, agrandisseurs"
-        description="Quelle aide à la lecture choisir pour la basse vision ? Comparatif loupes en verre, loupes électroniques, lampes et télé-agrandisseurs. Conseil gratuit."
+        title="Aides à la Lecture Basse Vision | LirElia"
+        description="Loupe, lampe ou télé-agrandisseur : quelle aide choisir pour la basse vision ? Comparatif complet et conseil personnalisé gratuit."
         canonicalPath="/aides-lecture-bassevision"
         jsonLd={{
           "@context": "https://schema.org",

@@ -4,7 +4,7 @@
 LirElia est un service français d'accompagnement spécialisé en basse vision. Fondé par un visiopraticien avec plus de 25 ans d'expérience et un ingénieur passionné par les technologies d'assistance, LirElia propose des bilans fonctionnels, des aides à la lecture et un accompagnement personnalisé pour les personnes malvoyantes et leurs proches.
 
 ## Site web
-https://www.lirelia.fr
+https://lirelia.fr
 
 ## Services
 - **Bilans basse vision** — Évaluation fonctionnelle de la vision résiduelle avec un visiopraticien : Bilan Essentiel, Bilan Expert (avec opticien partenaire), Pack Suivi (accompagnement sur 3 mois).
@@ -59,7 +59,7 @@ Un espace d'échange gratuit en visioconférence, ouvert aux personnes malvoyant
 ## Contact
 - Téléphone : 07 68 47 42 35
 - Email : contact@lirelia.fr
-- Site web : https://www.lirelia.fr
+- Site web : https://lirelia.fr
 
 ## Informations techniques
 Cette page est destinée aux moteurs de recherche et aux assistants IA. Elle contient un résumé structuré des informations principales de LirElia pour faciliter l'indexation et la compréhension automatique du contenu du site.

@@ -110,7 +110,7 @@ const LoupesVerre = () => (
     bottomCta="Demandez-nous des informations sur les loupes en verre"
     contactSubject="loupes-verre"
     seo={{
-      title: "Loupes en verre pour malvoyants — Aide à la lecture | LirElia",
+      title: "Loupes en Verre pour Malvoyants | LirElia",
       description: "Loupe classique, éclairante ou dôme : trouvez la loupe en verre adaptée à votre vue. Grossissements de ×2 à ×12, conseil personnalisé gratuit.",
       canonicalPath: "/aides-lecture-bassevision/loupes-verre",
     }}

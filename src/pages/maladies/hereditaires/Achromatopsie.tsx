@@ -94,8 +94,8 @@ const keyPoints = [
 
 const Achromatopsie = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Achromatopsie — Maladie génétique rare de la vision des cônes | LirElia"
-    seoDescription="Comprendre l'achromatopsie : maladie rétinienne héréditaire rare touchant les cônes, photophobie, baisse d'acuité, altération des couleurs, diagnostic et accompagnement."
+    seoTitle="Achromatopsie : Maladie Génétique des Cônes | LirElia"
+    seoDescription="L'achromatopsie est une maladie rétinienne rare touchant les cônes. Photophobie, baisse d'acuité, altération des couleurs : diagnostic et accompagnement."
     canonicalPath="/maladies-yeux/maladies-hereditaires/achromatopsie"
     diseaseName="L'achromatopsie"
     subtitle="Comprendre cette maladie génétique rare de la vision des cônes"

@@ -182,8 +182,8 @@ const LoupeAmelie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Loupe Amélie — Loupe électronique de lecture 3x 6x 9x | LirElia"
-        description="La loupe Amélie est une loupe électronique de lecture ultra-compacte avec 3 grossissements (3x, 6x, 9x). Idéale pour les personnes atteintes de DMLA, glaucome ou cataracte. Achat en ligne."
+        title="Loupe Amélie : Loupe Électronique 3x 6x 9x | LirElia"
+        description="Loupe électronique ultra-compacte avec 3 grossissements (3x, 6x, 9x). Idéale pour DMLA, glaucome ou cataracte. Achat en ligne."
         canonicalPath="/boutique/loupe-amelie"
       />
       <Header />
