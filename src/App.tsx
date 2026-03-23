@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useCartSync } from "@/hooks/useCartSync";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieConsentWrapper from "./components/CookieConsentWrapper";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ComprendreBasseVision from "./pages/ComprendreBasseVision";
