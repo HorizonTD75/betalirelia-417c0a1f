@@ -32,8 +32,8 @@ const SEOHead = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content="noindex, nofollow" />
-      <meta name="googlebot" content="noindex, nofollow" />
+      <meta name="robots" content="index, follow" />
+      <meta name="googlebot" content="index, follow" />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />

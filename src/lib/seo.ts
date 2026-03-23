@@ -4,7 +4,7 @@
  * canonical, OG URL, sitemap reference and structured-data URL will follow.
  */
 
-export const SITE_URL = "https://betalirelia.lovable.app";
+export const SITE_URL = "https://www.lirelia.fr";
 export const SITE_NAME = "LirElia";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
