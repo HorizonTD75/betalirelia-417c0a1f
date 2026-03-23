@@ -52,6 +52,7 @@ import MaladieDeStargardt from "./pages/maladies/hereditaires/MaladieDeStargardt
 import AchromatopsieHereditaire from "./pages/maladies/hereditaires/Achromatopsie";
 import SyndromeUsher from "./pages/maladies/hereditaires/SyndromeUsher";
 import Aniridie from "./pages/maladies/hereditaires/Aniridie";
+import PolitiqueCookies from "./pages/PolitiqueCookies";
 
 const queryClient = new QueryClient();
 
