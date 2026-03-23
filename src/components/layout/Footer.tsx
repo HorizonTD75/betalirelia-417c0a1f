@@ -61,10 +61,7 @@ const Footer = () => {
               <li><Link to="/politique-cookies" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Politique de cookies</Link></li>
               <li>
                 <button
-                  onClick={() => {
-                    const { openCookiePreferences } = require("@/components/CookieConsentBanner");
-                    openCookiePreferences();
-                  }}
+                  onClick={() => openCookiePreferences()}
                   className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors cursor-pointer text-left"
                 >
                   Gérer mes cookies
