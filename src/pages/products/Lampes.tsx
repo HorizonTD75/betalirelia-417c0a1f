@@ -114,7 +114,7 @@ const Lampes = () => (
     contactSubject="eclairage-basse-vision"
     ctaText="Optimiser mon éclairage de lecture"
     seo={{
-      title: "Lampes Adaptées Basse Vision – Éclairage Optimisé | LirElia",
+      title: "Lampes Basse Vision – Éclairage Adapté | LirElia",
       description: "Un bon éclairage change tout. Découvrez nos lampes lumière du jour, orientables et sans éblouissement, conçues pour la lecture en basse vision.",
       canonicalPath: "/aides-lecture-bassevision/lampes",
     }}

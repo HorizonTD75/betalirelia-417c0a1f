@@ -122,7 +122,7 @@ const keyPoints = [
 
 const RetinitePigmentaireHereditaire = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Rétinite pigmentaire — Maladie génétique de la rétine | LirElia"
+    seoTitle="Rétinite Pigmentaire Héréditaire | LirElia"
     seoDescription="Comprendre la rétinite pigmentaire : dystrophie rétinienne héréditaire, symptômes, diagnostic génétique, évolution, traitement et accompagnement basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/retinite-pigmentaire"
     diseaseName="La rétinite pigmentaire"

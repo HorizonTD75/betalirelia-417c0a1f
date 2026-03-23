@@ -95,7 +95,7 @@ const keyPoints = [
 const MaladieDeLeber = () => (
   <HereditaryDiseasePageLayout
     seoTitle="Maladie de Leber — Neuropathie optique héréditaire | LirElia"
-    seoDescription="Comprendre la maladie de Leber (NOHL) : neuropathie optique héréditaire mitochondriale, symptômes, diagnostic génétique, traitement par idébénone et accompagnement basse vision."
+    seoDescription="Neuropathie optique héréditaire de Leber (NOHL) : symptômes, diagnostic génétique, traitement par idébénone et accompagnement basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/maladie-de-leber"
     diseaseName="La maladie de Leber"
     subtitle="Neuropathie optique héréditaire de Leber (NOHL / LHON)"

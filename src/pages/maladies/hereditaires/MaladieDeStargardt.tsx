@@ -96,7 +96,7 @@ const keyPoints = [
 
 const MaladieDeStargardt = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Maladie de Stargardt — Maladie génétique de la macula | LirElia"
+    seoTitle="Maladie de Stargardt : Dystrophie Maculaire | LirElia"
     seoDescription="Comprendre la maladie de Stargardt : dystrophie maculaire héréditaire liée au gène ABCA4, symptômes, diagnostic, évolution et accompagnement basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/maladie-de-stargardt"
     diseaseName="La maladie de Stargardt"

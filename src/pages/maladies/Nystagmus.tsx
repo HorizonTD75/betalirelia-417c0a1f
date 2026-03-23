@@ -24,7 +24,7 @@ const Nystagmus = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Le Nystagmus – Mouvement Involontaire des Yeux | LirElia"
-        description="Comprendre le nystagmus : causes, symptômes, impact sur la vision et le quotidien, traitements possibles et accompagnement basse vision pour mieux vivre avec cette maladie des yeux."
+        description="Comprendre le nystagmus : causes, symptômes, impact sur la vision, traitements possibles et accompagnement basse vision au quotidien."
         canonicalPath="/maladies-yeux/nystagmus"
         jsonLd={{
           "@context": "https://schema.org",

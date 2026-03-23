@@ -90,8 +90,8 @@ const keyPoints = [
 
 const SyndromeUsher = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Syndrome d'Usher — Maladie génétique associant surdité et rétinite | LirElia"
-    seoDescription="Comprendre le syndrome d'Usher : maladie génétique associant surdité, rétinite pigmentaire et troubles de l'équilibre. Types cliniques, diagnostic génétique et accompagnement."
+    seoTitle="Syndrome d'Usher : Surdité et Rétinite | LirElia"
+    seoDescription="Le syndrome d'Usher associe surdité et rétinite pigmentaire. Types cliniques, diagnostic génétique et accompagnement basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/syndrome-usher"
     diseaseName="Le syndrome d'Usher"
     subtitle="Comprendre une maladie génétique associant atteinte auditive, visuelle et parfois de l'équilibre"

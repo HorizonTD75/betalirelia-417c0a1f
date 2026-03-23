@@ -34,7 +34,7 @@ const Cataracte = () => {
     <div className="min-h-screen">
       <SEOHead
         title="La Cataracte – Symptômes, Traitement et Vision | LirElia"
-        description="Tout savoir sur la cataracte : symptômes, diagnostic, opération et conseils pour vivre avec cette maladie des yeux. Aides à la vision et accompagnement basse vision."
+        description="Tout savoir sur la cataracte : symptômes, diagnostic, opération et conseils pour vivre avec. Aides visuelles et accompagnement basse vision."
         canonicalPath="/maladies-yeux/cataracte"
         jsonLd={{
           "@context": "https://schema.org",
