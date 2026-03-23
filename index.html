@@ -272,8 +272,12 @@
       setM("og:description", r[defined], "property");
       setM("og:url", u, "property");
       setM("og:type", r.og || "website", "property");
+      setM("og:site_name", "LirElia", "property");
+      setM("og:locale", "fr_FR", "property");
+      setM("og:image:alt", "LirElia \u2014 Expert en basse vision, bilans et aides \u00e0 la lecture", "property");
       setM("twitter:title", r.t);
       setM("twitter:description", r[defined]);
+      setM("twitter:image:alt", "LirElia \u2014 Expert en basse vision, bilans et aides \u00e0 la lecture");
       var can = head.querySelector('link[rel="canonical"]');
       if (can) can.setAttribute("href", u);
       else {
