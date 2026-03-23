@@ -112,6 +112,9 @@ const ContactConseil = () => {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <div className="max-w-2xl mx-auto">
+              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
+                Demander un conseil personnalisé
+              </h1>
 
               {submitted ?
               <Card variant="highlighted" className="text-center py-12">
