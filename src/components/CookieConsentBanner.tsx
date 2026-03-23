@@ -14,8 +14,8 @@ import {
 const CookieConsentBanner = () => {
   const [visible, setVisible] = useState(false);
   const [showPrefs, setShowPrefs] = useState(false);
-  const [analytics, setAnalytics] = useState(false);
-  const [marketing, setMarketing] = useState(false);
+  const [analytics, setAnalytics] = useState(true);
+  const [marketing, setMarketing] = useState(true);
 
   useEffect(() => {
     if (!getConsent()) setVisible(true);
