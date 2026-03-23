@@ -71,11 +71,11 @@ const CookieConsentBanner = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <Button
                 variant="default"
                 size="lg"
-                className="flex-1 text-base"
+                className="w-full text-base"
                 onClick={handleAccept}
               >
                 Tout accepter
@@ -83,7 +83,7 @@ const CookieConsentBanner = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="flex-1 text-base"
+                className="w-full text-base"
                 onClick={handleRefuse}
               >
                 Tout refuser
@@ -91,7 +91,7 @@ const CookieConsentBanner = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                className="flex-1 text-base"
+                className="w-full text-base"
                 onClick={() => setShowPrefs(true)}
               >
                 <Settings className="w-4 h-4 mr-1" />
