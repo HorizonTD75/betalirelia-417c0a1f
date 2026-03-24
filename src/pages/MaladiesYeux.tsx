@@ -243,7 +243,11 @@ const MaladiesYeux = () => {
                   <img
                     src={comprendreHeroImage}
                     alt="Illustration des différentes maladies des yeux"
-                    className="w-full rounded-2xl shadow-card" />
+                    className="w-full rounded-2xl shadow-card"
+                    loading="lazy"
+                    decoding="async"
+                    width={600}
+                    height={400} />
                   
                 </div>
               </div>

@@ -113,8 +113,11 @@ const ClubHeroSection = () => {
                   loop
                   muted
                   playsInline
+                  preload="none"
                   className="w-full h-full object-cover"
                   aria-label="Aperçu d'une session du Club LirElia en visioconférence"
+                  width={640}
+                  height={480}
                 />
               </div>
             </div>
