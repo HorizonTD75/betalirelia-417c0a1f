@@ -11,7 +11,11 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Illustration aquarelle sur le thème de la vision"
-          className="w-full h-full object-cover opacity-50" />
+          className="w-full h-full object-cover opacity-50"
+          loading="eager"
+          fetchPriority="high"
+          width={1440}
+          height={600} />
         
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
       </div>

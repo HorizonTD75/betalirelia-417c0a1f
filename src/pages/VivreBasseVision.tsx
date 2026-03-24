@@ -181,7 +181,7 @@ const VivreBasseVision = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary text-primary-foreground py-20 pb-32">
           <div className="absolute inset-0">
-            <img src={vivreHeroImage} alt="Personne malvoyante lisant avec une loupe chez elle" className="w-full h-full object-cover opacity-40" />
+            <img src={vivreHeroImage} alt="Personne malvoyante lisant avec une loupe chez elle" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">
@@ -364,8 +364,7 @@ const VivreBasseVision = () => {
                   <img 
                     src={seniorWomanStreetImage} 
                     alt="Personne malvoyante se déplaçant en ville" 
-                    className="w-full h-full object-cover object-center min-h-[280px]"
-                  />
+                    className="w-full h-full object-cover object-center min-h-[280px]" loading="eager" decoding="async" width={1440} height={500} />
                 </div>
 
                 {/* Column 2: Déplacements */}

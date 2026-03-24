@@ -75,6 +75,10 @@ const CategoryPageLayout = ({
               alt=""
               className="w-full h-full object-cover opacity-20"
               aria-hidden="true"
+              loading="eager"
+              width={1440}
+              height={500}
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>

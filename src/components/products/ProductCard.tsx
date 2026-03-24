@@ -29,6 +29,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
           alt={product.imageAlt}
           className="w-full h-56 object-cover"
           loading="lazy"
+          decoding="async"
+          width={400}
+          height={224}
         />
       </div>
       <CardHeader className="pb-4">

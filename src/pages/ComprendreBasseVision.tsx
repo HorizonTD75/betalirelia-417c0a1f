@@ -104,7 +104,7 @@ const ComprendreBasseVision = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={comprendreHeaderImage} alt="Illustration aquarelle évoquant la compréhension de la basse vision" className="w-full h-full object-cover opacity-40" />
+            <img src={comprendreHeaderImage} alt="Illustration aquarelle évoquant la compréhension de la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-20 lg:py-28">

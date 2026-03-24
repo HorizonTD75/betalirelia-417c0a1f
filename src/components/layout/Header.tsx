@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Menu, X, Calendar, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import headerBg from "@/assets/header-bg.jpg";
-const logoLirelia = "/lovable-uploads/163e281e-a5e5-45fa-a757-a39fdd34e5fd.png";
+const logoLirelia = "/images/logo-lirelia-bleu-300.png";
 import { CartDrawer } from "@/components/shop/CartDrawer";
 
 const Header = () => {
@@ -25,7 +25,10 @@ const Header = () => {
           src={headerBg}
           alt=""
           className="w-full h-full object-cover"
-          aria-hidden="true" />
+          aria-hidden="true"
+          loading="eager"
+          width={1440}
+          height={80} />
 
         <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       </div>
@@ -37,7 +40,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group shrink-0">
-            <img src={logoLirelia} alt="Logo LirElia" className="w-12 h-12 xl:w-14 xl:h-14 object-contain" />
+            <img src={logoLirelia} alt="Logo LirElia – Expert en basse vision" className="w-12 h-12 xl:w-14 xl:h-14 object-contain" width={56} height={56} />
             <div className="whitespace-nowrap">
               <span className="font-serif text-lg xl:text-xl font-bold text-primary">LirElia</span>
               <span className="block text-xs text-muted-foreground">Basse Vision</span>

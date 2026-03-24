@@ -1,6 +1,6 @@
 import { Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-const logoJaune = "/lovable-uploads/1579a4e8-b566-4d05-96ad-f0bc3caa5f89.png";
+const logoJaune = "/images/logo-lirelia-jaune-300.png";
 import { openCookiePreferences } from "@/components/CookieConsentBanner";
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-            <img src={logoJaune} alt="Logo LirElia" className="w-20 h-20 object-contain" />
+            <img src={logoJaune} alt="Logo LirElia – Expert en basse vision" className="w-20 h-20 object-contain" width={80} height={80} />
               <span className="font-serif text-2xl font-bold">LirElia</span>
             </Link>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
