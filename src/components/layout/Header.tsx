@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Menu, X, Calendar, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import headerBg from "@/assets/header-bg.jpg";
-import logoLirelia from "@/assets/logo-lirelia.png";
+const logoLirelia = "/lovable-uploads/163e281e-a5e5-45fa-a757-a39fdd34e5fd.png";
 import { CartDrawer } from "@/components/shop/CartDrawer";
 
 const Header = () => {

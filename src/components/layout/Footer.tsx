@@ -1,6 +1,6 @@
 import { Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoJaune from "@/assets/logo-lirelia-jaune.png";
+const logoJaune = "/lovable-uploads/1579a4e8-b566-4d05-96ad-f0bc3caa5f89.png";
 import { openCookiePreferences } from "@/components/CookieConsentBanner";
 
 const Footer = () => {
