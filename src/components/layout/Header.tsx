@@ -25,7 +25,10 @@ const Header = () => {
           src={headerBg}
           alt=""
           className="w-full h-full object-cover"
-          aria-hidden="true" />
+          aria-hidden="true"
+          loading="eager"
+          width={1440}
+          height={80} />
 
         <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       </div>
