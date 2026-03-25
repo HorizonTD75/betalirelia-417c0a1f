@@ -277,8 +277,12 @@ const MaladiesYeux = () => {
                             {diseaseIndex === 0 &&
                         <img
                           src={amslerGridImage}
-                          alt="Grille d'Amsler pour le test de la DMLA"
-                          className="w-24 h-24 rounded-lg object-cover shadow-sm" />
+                          alt="Dessin illustrant la grille d'Amsler, test simple pour détecter la DMLA"
+                          className="w-24 h-24 rounded-lg object-cover shadow-sm"
+                          loading="lazy"
+                          decoding="async"
+                          width={96}
+                          height={96} />
 
                         }
                           </div>

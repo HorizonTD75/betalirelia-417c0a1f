@@ -20,7 +20,7 @@ import {
 "lucide-react";
 import { Link } from "react-router-dom";
 import visiopraticienHeroImage from "@/assets/visiopraticien-hero.jpg";
-import visiopraticienConsultationImage from "@/assets/visiopraticien-consultation.jpg";
+import visiopraticienConsultationImage from "@/assets/visiopraticien-consultation-600.jpg";
 
 const Visiopraticien = () => {
   const targetConditions = [

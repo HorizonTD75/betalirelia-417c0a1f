@@ -20,8 +20,8 @@ import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
 import eyeExamImage from "@/assets/eye-exam.jpg";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import seniorManStreetImage from "@/assets/senior-man-street.png";
-import professionnelsOptiqueImage from "@/assets/professionnels-optique.jpg";
-import comprendreHeaderImage from "@/assets/comprendre-basse-vision-header.jpg";
+import professionnelsOptiqueImage from "@/assets/professionnels-optique-600.jpg";
+import comprendreHeaderImage from "@/assets/comprendre-basse-vision-header-800.jpg";
 
 const ComprendreBasseVision = () => {
   const symptoms = [
