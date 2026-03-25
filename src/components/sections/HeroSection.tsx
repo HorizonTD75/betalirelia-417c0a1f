@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/hero-image-800.jpg";
 
 const HeroSection = () => {
   return (

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Video, ArrowRight, Check, Calendar, Phone, Users, FileText, Clock, Home } from "lucide-react";
 import { Link } from "react-router-dom";
-import bilanHeroImage from "@/assets/bilan-hero.jpg";
+import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanSuiviImage from "@/assets/bilan-suivi-visio-600.jpg";
 
 const BilanSuivi = () => {

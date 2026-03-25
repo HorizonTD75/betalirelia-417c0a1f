@@ -46,7 +46,7 @@ const ContactConseil = () => {
     const tag = "SRC_" + pathname.replace(/\//g, "_").replace(/^_/, "");
     setSourceTag(tag);
 
-    // Support both ?produit= (legacy) and ?sujet= (new)
+    // Support both ?produit= (legacy) and ?sujet= (new) — read once on mount
     const sujet = searchParams.get("sujet");
     const produit = searchParams.get("produit");
     const param = sujet || produit;
@@ -54,7 +54,8 @@ const ContactConseil = () => {
       const found = topicOptions.find((o) => o.value === param);
       if (found) setInteret(param);
     }
-  }, [searchParams]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const { errors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
