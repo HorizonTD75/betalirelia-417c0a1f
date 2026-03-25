@@ -311,11 +311,25 @@ const LivreAidants = () => {
               envers les aidants.
             </p>
             <div className="bg-background rounded-xl shadow-lg overflow-hidden border">
-              <iframe
-                src="/documents/livre-aidants-extrait.pdf"
-                title="Extrait du livre Aider un proche atteint de DMLA"
+              <object
+                data="/documents/livre-aidants-extrait.pdf"
+                type="application/pdf"
                 className="w-full h-[600px] md:h-[750px]"
-              />
+                aria-label="Extrait du livre Aider un proche atteint de DMLA"
+              >
+                <div className="flex flex-col items-center justify-center h-[400px] gap-6 p-8 text-center">
+                  <BookOpen className="w-16 h-16 text-muted-foreground" />
+                  <p className="text-lg text-muted-foreground">
+                    L'aperçu PDF ne peut pas s'afficher dans votre navigateur.
+                  </p>
+                  <Button variant="default" size="lg" asChild>
+                    <a href="/documents/livre-aidants-extrait.pdf" target="_blank" rel="noopener noreferrer">
+                      <BookOpen className="w-5 h-5" />
+                      Ouvrir l'extrait dans un nouvel onglet
+                    </a>
+                  </Button>
+                </div>
+              </object>
             </div>
             <div className="text-center mt-6">
               <Button variant="outline" size="lg" asChild>
