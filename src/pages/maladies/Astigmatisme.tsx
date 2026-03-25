@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import maladiesHeroImage from "@/assets/maladies-yeux-hero.jpg";
+import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
 const Astigmatisme = () => {
   return (

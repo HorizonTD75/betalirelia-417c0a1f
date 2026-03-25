@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dna, ArrowRight, ChevronRight, Lightbulb, Eye, Ear, Sun, Brain, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
-import maladiesHeroImage from "@/assets/maladies-yeux-hero.jpg";
+import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
 const childDiseases = [
   {
