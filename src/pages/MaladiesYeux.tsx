@@ -16,7 +16,7 @@ import {
 "lucide-react";
 import { Link } from "react-router-dom";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
-import amslerGridImage from "@/assets/amsler-grid.jpg";
+import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero.jpg";
 
 const MaladiesYeux = () => {
