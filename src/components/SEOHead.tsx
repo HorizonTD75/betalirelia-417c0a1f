@@ -56,6 +56,10 @@ const SEOHead = ({
       {/* Canonical */}
       {absoluteUrl && <link rel="canonical" href={absoluteUrl} />}
 
+      {/* Hreflang */}
+      {absoluteUrl && <link rel="alternate" hrefLang="fr" href={absoluteUrl} />}
+      {absoluteUrl && <link rel="alternate" hrefLang="x-default" href={absoluteUrl} />}
+
       {/* JSON-LD structured data */}
       {jsonLdBlocks.map((block, i) => (
         <script key={i} type="application/ld+json">

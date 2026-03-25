@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Heart, Eye, Lightbulb, CheckCircle, AlertTriangle, HelpCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import aidantsHero from "@/assets/aidants-hero.jpg";
+import aidantsHero from "@/assets/aidants-hero-600.jpg";
 
 const faqItems = [
   {

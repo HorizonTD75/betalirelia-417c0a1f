@@ -7,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ClipboardCheck, ArrowRight, Check, X, Users, Calendar, Eye, Star, Phone, Glasses, Home, Video } from "lucide-react";
 import { Link } from "react-router-dom";
-import bilanHeroImage from "@/assets/bilan-hero.jpg";
+import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 
 const Bilans = () => {

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ClipboardCheck, ArrowRight, Check, Calendar, Phone, Home, Building, Users, FileText, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
-import bilanHeroImage from "@/assets/bilan-hero.jpg";
+import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 
 const BilanEssentiel = () => {

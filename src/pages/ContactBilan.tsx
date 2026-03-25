@@ -13,7 +13,7 @@ import { Calendar, Phone, Send, Check, Shield, Info } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useFormValidation } from "@/hooks/useFormValidation";
-import bilanHeroImage from "@/assets/bilan-hero.jpg";
+import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 
 type BilanType = "essentiel" | "expert" | "suivi";
 
