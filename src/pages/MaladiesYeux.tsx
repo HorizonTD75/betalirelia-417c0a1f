@@ -17,7 +17,7 @@ import {
 import { Link } from "react-router-dom";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
-import maladiesHeroImage from "@/assets/maladies-yeux-hero.jpg";
+import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
 const MaladiesYeux = () => {
   const mainDiseases = [
