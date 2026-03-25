@@ -28,9 +28,9 @@ import {
 import { Link } from "react-router-dom";
 import readingMagnifierImage from "@/assets/reading-magnifier.jpg";
 import tabletAccessibilityImage from "@/assets/tablet-accessibility.jpg";
-import accessibleKitchenImage from "@/assets/accessible-kitchen.jpg";
+import accessibleKitchenImage from "@/assets/accessible-kitchen-600.jpg";
 import seniorWomanStreetImage from "@/assets/senior-woman-street.png";
-import vivreHeroImage from "@/assets/vivre-basse-vision-hero.jpg";
+import vivreHeroImage from "@/assets/vivre-basse-vision-hero-800.jpg";
 
 const VivreBasseVision = () => {
   const dailyActivities = [

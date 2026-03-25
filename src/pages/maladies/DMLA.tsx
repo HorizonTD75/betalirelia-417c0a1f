@@ -24,7 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import amslerGridImage from "@/assets/amsler-grid.jpg";
+import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
 import bookDmlaImage from "@/assets/book-dmla.jpg";
 
 const DMLA = () => {

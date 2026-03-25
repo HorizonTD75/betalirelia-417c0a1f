@@ -60,8 +60,4 @@
   <url><loc>https://lirelia.fr/politique-de-confidentialite</loc><priority>0.3</priority></url>
   <url><loc>https://lirelia.fr/cgv</loc><priority>0.3</priority></url>
   <url><loc>https://lirelia.fr/politique-cookies</loc><priority>0.3</priority></url>
-
-  <!-- AI/GEO readiness -->
-  <url><loc>https://lirelia.fr/llm.html</loc><priority>0.3</priority></url>
-  <url><loc>https://lirelia.fr/llm.txt</loc><priority>0.3</priority></url>
 </urlset>
