@@ -52,6 +52,7 @@ const SEOHead = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
       <meta name="twitter:image:alt" content={ogImageAlt} />
+      <meta name="twitter:site" content="@lirelia" />
 
       {/* Canonical */}
       {absoluteUrl && <link rel="canonical" href={absoluteUrl} />}

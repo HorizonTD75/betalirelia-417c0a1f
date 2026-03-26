@@ -57,7 +57,7 @@ const RetinitePigmentaire = () => {
             <div className="max-w-4xl">
               <p className="text-primary-foreground/80 font-bold text-lg mb-3">Maladie des yeux</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                La Rétinite Pigmentaire
+                La Rétinite Pigmentaire : symptômes et prise en charge
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
                 La rétinite pigmentaire est une maladie génétique rare qui entraîne une dégénérescence progressive des cellules de la rétine. Elle se manifeste par une perte de la vision nocturne, un rétrécissement du champ visuel et peut évoluer vers une basse vision importante.

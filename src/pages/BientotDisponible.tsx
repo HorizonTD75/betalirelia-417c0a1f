@@ -24,7 +24,7 @@ const BientotDisponible = () => {
 
             {/* Titre */}
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Bientôt disponible
+              Bientôt disponible sur LirElia
             </h1>
 
             {/* Sous-texte */}

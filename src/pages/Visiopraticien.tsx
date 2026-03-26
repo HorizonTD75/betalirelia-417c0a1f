@@ -112,7 +112,7 @@ const Visiopraticien = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Visiopraticien Basse Vision à Paris | LirElia"
-        description="Vous n'arrivez plus à lire malgré vos lunettes ? Le Visiopraticien LirElia vous aide à retrouver votre autonomie. 25 ans d'expérience, bilans à Paris et à domicile."
+        description="Vous n'arrivez plus à lire ? Le Visiopraticien LirElia évalue votre vision et vous aide à retrouver votre autonomie. Bilans à Paris et à domicile."
         canonicalPath="/visiopraticien"
         jsonLd={{
           "@context": "https://schema.org",
@@ -134,7 +134,7 @@ const Visiopraticien = () => {
           <div className="container relative">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Le Visiopraticien LirElia : accompagnement basse vision pour mieux lire et gagner en autonomie
+                Visiopraticien Basse Vision : lire et vivre mieux
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
                 La perte de vision bouleverse bien plus que la capacité à lire. Le Visiopraticien LirElia accompagne les personnes malvoyantes — et leurs proches — vers des solutions concrètes et une autonomie retrouvée.
