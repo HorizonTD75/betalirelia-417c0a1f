@@ -149,7 +149,7 @@ const LivreDmla = () => {
                   <span className="font-semibold text-lg">25 ans d'expertise partagée</span>
                 </div>
                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                  DMLA : votre vie ne s'arrête pas — le livre pour mieux comprendre et retrouver de l'autonomie
+                  DMLA : votre vie ne s'arrête pas — le guide complet
                 </h1>
                 <p className="text-xl md:text-2xl mb-4 opacity-90 leading-relaxed">
                   170 pages de solutions concrètes pour continuer à lire, à vivre et à profiter du quotidien malgré la basse vision.
