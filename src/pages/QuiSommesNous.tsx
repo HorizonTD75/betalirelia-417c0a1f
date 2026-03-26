@@ -23,7 +23,7 @@ const QuiSommesNous = () => {
             <div className="max-w-4xl">
               <p className="text-secondary font-semibold text-lg mb-3">Notre histoire</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Qui sommes-nous ?
+                Qui sommes-nous ? L'expertise LirElia en basse vision
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
                 Deux expertises complémentaires au service de la basse vision. Une conviction commune : face à la malvoyance, chacun mérite un accompagnement humain, expérimenté et concret.

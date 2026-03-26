@@ -29,7 +29,7 @@ import { Link } from "react-router-dom";
 import readingMagnifierImage from "@/assets/reading-magnifier.jpg";
 import tabletAccessibilityImage from "@/assets/tablet-accessibility.jpg";
 import accessibleKitchenImage from "@/assets/accessible-kitchen-600.jpg";
-import seniorWomanStreetImage from "@/assets/senior-woman-street.png";
+import seniorWomanStreetImage from "@/assets/senior-woman-street.jpg";
 import vivreHeroImage from "@/assets/vivre-basse-vision-hero-800.jpg";
 
 const VivreBasseVision = () => {

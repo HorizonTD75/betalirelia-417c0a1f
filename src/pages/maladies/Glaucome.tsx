@@ -71,7 +71,7 @@ const Glaucome = () => {
             <div className="max-w-4xl">
               <p className="text-secondary font-semibold text-lg mb-3">Maladie des yeux</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Le Glaucome
+                Le Glaucome : dépistage, traitement et prévention
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
                 Le glaucome est une maladie silencieuse qui touche le nerf optique. Bien compris et dépisté à temps, il peut être traité efficacement pour préserver votre vision. Voici tout ce que vous devez savoir.

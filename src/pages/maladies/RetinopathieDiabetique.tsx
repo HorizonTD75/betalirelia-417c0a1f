@@ -58,7 +58,7 @@ const RetinopathieDiabetique = () => {
             <div className="max-w-4xl">
               <p className="text-primary-foreground/80 font-bold text-lg mb-3">Maladie des yeux</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                La Rétinopathie Diabétique
+                La Rétinopathie Diabétique : prévenir et traiter
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
                 La rétinopathie diabétique est une complication du diabète qui endommage les vaisseaux sanguins de la rétine. Première cause de cécité avant 65 ans, elle touche plus de 50 % des diabétiques de type 2 et nécessite une surveillance ophtalmologique régulière.

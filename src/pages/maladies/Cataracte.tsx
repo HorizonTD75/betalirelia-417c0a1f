@@ -68,7 +68,7 @@ const Cataracte = () => {
             <div className="max-w-4xl">
               <p className="text-secondary font-semibold text-lg mb-3">Maladie des yeux</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                La Cataracte
+                La Cataracte : causes, symptômes et solutions
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
                 La cataracte est l'une des maladies des yeux les plus fréquentes. Liée au vieillissement du cristallin, elle affecte progressivement la vision mais se traite très efficacement par une opération chirurgicale courante.

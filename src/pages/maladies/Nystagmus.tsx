@@ -58,7 +58,7 @@ const Nystagmus = () => {
             <div className="max-w-4xl">
               <p className="text-primary-foreground/80 font-bold text-lg mb-3">Maladie des yeux</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Le Nystagmus
+                Le Nystagmus : comprendre et vivre avec
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
                 Le nystagmus se caractérise par des mouvements involontaires et incontrôlables des yeux. Ce trouble neurologique affecte la stabilité de la vision et peut avoir un impact important sur la lecture, les déplacements et l'autonomie au quotidien.
