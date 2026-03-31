@@ -325,7 +325,7 @@ const LivreAidants = () => {
                     L'aperçu PDF ne peut pas s'afficher dans votre navigateur.
                   </p>
                   <Button variant="default" size="lg" asChild>
-                    <a href="/documents/livre-aidants-extrait.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href={PDF_AIDANTS_URL} target="_blank" rel="noopener noreferrer">
                       <BookOpen className="w-5 h-5" />
                       Ouvrir l'extrait dans un nouvel onglet
                     </a>
