@@ -335,7 +335,7 @@ const LivreDmla = () => {
             </p>
             <div className="bg-background rounded-xl shadow-lg overflow-hidden border">
               <object
-                data="/documents/livre-dmla-apercu.pdf"
+                data={PDF_DMLA_URL}
                 type="application/pdf"
                 className="w-full h-[600px] md:h-[750px]"
                 aria-label="Aperçu du livre DMLA : Votre vie ne s'arrête pas"
