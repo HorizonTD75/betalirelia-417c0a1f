@@ -335,7 +335,7 @@ const LivreAidants = () => {
             </div>
             <div className="text-center mt-6">
               <Button variant="outline" size="lg" asChild>
-                <a href="/documents/livre-aidants-extrait.pdf" download="Aider-un-proche-DMLA-extrait.pdf">
+                <a href={PDF_AIDANTS_URL} download="Aider-un-proche-DMLA-extrait.pdf">
                   <BookOpen className="w-5 h-5" />
                   Télécharger l'extrait (PDF)
                 </a>
