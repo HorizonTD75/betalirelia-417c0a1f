@@ -356,7 +356,7 @@ const LivreDmla = () => {
             </div>
             <div className="text-center mt-6">
               <Button variant="outline" size="lg" asChild>
-                <a href="/documents/livre-dmla-apercu.pdf" download="DMLA-votre-vie-ne-sarrete-pas-apercu.pdf">
+                <a href={PDF_DMLA_URL} download="DMLA-votre-vie-ne-sarrete-pas-apercu.pdf">
                   <BookOpen className="w-5 h-5" />
                   Télécharger l'aperçu (PDF)
                 </a>
