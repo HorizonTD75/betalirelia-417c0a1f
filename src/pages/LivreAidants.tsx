@@ -19,6 +19,8 @@ import {
 import { Link } from "react-router-dom";
 import bookAidant from "@/assets/book-aidant.jpg";
 
+const PDF_AIDANTS_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-aidants-extrait.pdf`;
+
 const planDuLivre = [
   {
     title: "Comprendre ce que vit vraiment votre proche",
