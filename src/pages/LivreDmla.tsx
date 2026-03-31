@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, ArrowRight, Eye, Home, Heart, HelpCircle, Users, Star, CheckCircle, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const PDF_DMLA_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-dmla-apercu.pdf`;
 import bookDmla from "@/assets/book-dmla.jpg";
 
 const planDuLivre = [
@@ -333,7 +335,7 @@ const LivreDmla = () => {
             </p>
             <div className="bg-background rounded-xl shadow-lg overflow-hidden border">
               <object
-                data="/documents/livre-dmla-apercu.pdf"
+                data={PDF_DMLA_URL}
                 type="application/pdf"
                 className="w-full h-[600px] md:h-[750px]"
                 aria-label="Aperçu du livre DMLA : Votre vie ne s'arrête pas"
@@ -344,7 +346,7 @@ const LivreDmla = () => {
                     L'aperçu PDF ne peut pas s'afficher dans votre navigateur.
                   </p>
                   <Button variant="default" size="lg" asChild>
-                    <a href="/documents/livre-dmla-apercu.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href={PDF_DMLA_URL} target="_blank" rel="noopener noreferrer">
                       <BookOpen className="w-5 h-5" />
                       Ouvrir l'aperçu dans un nouvel onglet
                     </a>
@@ -354,7 +356,7 @@ const LivreDmla = () => {
             </div>
             <div className="text-center mt-6">
               <Button variant="outline" size="lg" asChild>
-                <a href="/documents/livre-dmla-apercu.pdf" download="DMLA-votre-vie-ne-sarrete-pas-apercu.pdf">
+                <a href={PDF_DMLA_URL} download="DMLA-votre-vie-ne-sarrete-pas-apercu.pdf">
                   <BookOpen className="w-5 h-5" />
                   Télécharger l'aperçu (PDF)
                 </a>

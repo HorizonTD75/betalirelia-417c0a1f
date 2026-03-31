@@ -19,6 +19,8 @@ import {
 import { Link } from "react-router-dom";
 import bookAidant from "@/assets/book-aidant.jpg";
 
+const PDF_AIDANTS_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-aidants-extrait.pdf`;
+
 const planDuLivre = [
   {
     title: "Comprendre ce que vit vraiment votre proche",
@@ -312,7 +314,7 @@ const LivreAidants = () => {
             </p>
             <div className="bg-background rounded-xl shadow-lg overflow-hidden border">
               <object
-                data="/documents/livre-aidants-extrait.pdf"
+                data={PDF_AIDANTS_URL}
                 type="application/pdf"
                 className="w-full h-[600px] md:h-[750px]"
                 aria-label="Extrait du livre Aider un proche atteint de DMLA"
@@ -323,7 +325,7 @@ const LivreAidants = () => {
                     L'aperçu PDF ne peut pas s'afficher dans votre navigateur.
                   </p>
                   <Button variant="default" size="lg" asChild>
-                    <a href="/documents/livre-aidants-extrait.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href={PDF_AIDANTS_URL} target="_blank" rel="noopener noreferrer">
                       <BookOpen className="w-5 h-5" />
                       Ouvrir l'extrait dans un nouvel onglet
                     </a>
@@ -333,7 +335,7 @@ const LivreAidants = () => {
             </div>
             <div className="text-center mt-6">
               <Button variant="outline" size="lg" asChild>
-                <a href="/documents/livre-aidants-extrait.pdf" download="Aider-un-proche-DMLA-extrait.pdf">
+                <a href={PDF_AIDANTS_URL} download="Aider-un-proche-DMLA-extrait.pdf">
                   <BookOpen className="w-5 h-5" />
                   Télécharger l'extrait (PDF)
                 </a>
