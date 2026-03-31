@@ -346,7 +346,7 @@ const LivreDmla = () => {
                     L'aperçu PDF ne peut pas s'afficher dans votre navigateur.
                   </p>
                   <Button variant="default" size="lg" asChild>
-                    <a href="/documents/livre-dmla-apercu.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href={PDF_DMLA_URL} target="_blank" rel="noopener noreferrer">
                       <BookOpen className="w-5 h-5" />
                       Ouvrir l'aperçu dans un nouvel onglet
                     </a>
