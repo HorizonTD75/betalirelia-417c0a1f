@@ -314,7 +314,7 @@ const LivreAidants = () => {
             </p>
             <div className="bg-background rounded-xl shadow-lg overflow-hidden border">
               <object
-                data="/documents/livre-aidants-extrait.pdf"
+                data={PDF_AIDANTS_URL}
                 type="application/pdf"
                 className="w-full h-[600px] md:h-[750px]"
                 aria-label="Extrait du livre Aider un proche atteint de DMLA"
