@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, ArrowRight, Eye, Home, Heart, HelpCircle, Users, Star, CheckCircle, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const PDF_DMLA_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-dmla-apercu.pdf`;
 import bookDmla from "@/assets/book-dmla.jpg";
 
 const planDuLivre = [
