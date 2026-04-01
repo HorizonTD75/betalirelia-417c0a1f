@@ -1,73 +1,51 @@
-import { Helmet } from "react-helmet-async";
-import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/seo";
+/**
+ * SEOHead — JSON-LD only.
+ *
+ * All meta tags (title, description, canonical, OG, Twitter) are handled
+ * statically by the synchronous script in index.html.  This component
+ * MUST NOT inject any <title>, <meta>, <link rel="canonical"> or other
+ * SEO-related HTML tags.  It exists solely to render JSON-LD structured
+ * data blocks that cannot be expressed in the static script.
+ *
+ * RULE — PERMANENT:
+ *   • Never add Helmet / react-helmet-async usage here.
+ *   • Never create meta tags via JavaScript in any component.
+ *   • All SEO tags live in index.html as static HTML or in the
+ *     synchronous pre-React script.
+ */
 
 interface SEOHeadProps {
-  title: string;
-  description: string;
+  /** @deprecated Kept for call-site compatibility — value is ignored. */
+  title?: string;
+  /** @deprecated Kept for call-site compatibility — value is ignored. */
+  description?: string;
+  /** @deprecated Kept for call-site compatibility — value is ignored. */
   canonicalPath?: string;
+  /** @deprecated Kept for call-site compatibility — value is ignored. */
   ogImage?: string;
+  /** @deprecated Kept for call-site compatibility — value is ignored. */
   ogImageAlt?: string;
+  /** @deprecated Kept for call-site compatibility — value is ignored. */
   ogType?: string;
+  /** JSON-LD structured data — the only prop that produces output. */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SEOHead = ({
-  title,
-  description,
-  canonicalPath,
-  ogImage,
-  ogImageAlt = "LirElia — Expert en basse vision, bilans et aides à la lecture",
-  ogType = "website",
-  jsonLd,
-}: SEOHeadProps) => {
-  const absoluteUrl = canonicalPath ? `${SITE_URL}${canonicalPath}` : undefined;
-  const imageUrl = ogImage || DEFAULT_OG_IMAGE;
+const SEOHead = ({ jsonLd }: SEOHeadProps) => {
+  if (!jsonLd) return null;
 
-  const jsonLdBlocks = jsonLd
-    ? Array.isArray(jsonLd)
-      ? jsonLd
-      : [jsonLd]
-    : [];
+  const blocks = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 
   return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
-
-      {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:image:alt" content={ogImageAlt} />
-      <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content="fr_FR" />
-      {absoluteUrl && <meta property="og:url" content={absoluteUrl} />}
-
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imageUrl} />
-      <meta name="twitter:image:alt" content={ogImageAlt} />
-      <meta name="twitter:site" content="@lirelia" />
-
-      {/* Canonical */}
-      {absoluteUrl && <link rel="canonical" href={absoluteUrl} />}
-
-      {/* Hreflang */}
-      {absoluteUrl && <link rel="alternate" hrefLang="fr" href={absoluteUrl} />}
-      {absoluteUrl && <link rel="alternate" hrefLang="x-default" href={absoluteUrl} />}
-
-      {/* JSON-LD structured data */}
-      {jsonLdBlocks.map((block, i) => (
-        <script key={i} type="application/ld+json">
-          {JSON.stringify(block)}
-        </script>
+    <>
+      {blocks.map((block, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
+        />
       ))}
-    </Helmet>
+    </>
   );
 };
 

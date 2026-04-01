@@ -25,6 +25,9 @@
     <meta name="twitter:description" content="Solutions pour DMLA et basse vision : bilans, accompagnement visiopraticien, produits et conseils pour gagner en autonomie de lecture." />
     <meta name="twitter:image" content="https://lirelia.fr/og-image.png" />
     <meta name="twitter:image:alt" content="LirElia — Expert en basse vision, bilans et aides à la lecture" />
+    <meta name="twitter:site" content="@lirelia" />
+    <link rel="alternate" hreflang="fr" href="https://lirelia.fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://lirelia.fr/" />
     <script>
     // Synchronous SEO meta injection — runs before React, visible to Googlebot and social crawlers
     (function(){
@@ -288,6 +291,9 @@
         can.setAttribute("href", u);
         head.appendChild(can);
       }
+      // Update hreflang links
+      var hreflangs = head.querySelectorAll('link[hreflang]');
+      for (var i = 0; i < hreflangs.length; i++) hreflangs[i].setAttribute("href", u);
 
       // Pre-render meaningful body content for non-JS crawlers
       var content = {
