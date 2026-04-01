@@ -291,6 +291,9 @@
         can.setAttribute("href", u);
         head.appendChild(can);
       }
+      // Update hreflang links
+      var hreflangs = head.querySelectorAll('link[hreflang]');
+      for (var i = 0; i < hreflangs.length; i++) hreflangs[i].setAttribute("href", u);
 
       // Pre-render meaningful body content for non-JS crawlers
       var content = {
