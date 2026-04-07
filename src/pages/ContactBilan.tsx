@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import SEOHead from const { error } = await supabase.functions.invoke("brevo-upsert-contact", {"@/components/SEOHead";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -78,6 +78,9 @@ const ContactBilan = () => {
       toast({ title: "RGPD", description: "Veuillez accepter la politique de confidentialité.", variant: "destructive" });
       return;
     }
+
+    const selectedOption = bilanOptions.find((b) => b.value === selectedBilan);
+    const roleValue = profil === "malvoyant" ? "Patient malvoyant" : "Aidant / Proche";
 
     setIsSubmitting(true);
     try {
