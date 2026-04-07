@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import SEOHead from "@/components/SEOHead";
+import SEOHead from const { error } = await supabase.functions.invoke("brevo-upsert-contact", {"@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -81,24 +81,22 @@ const ContactBilan = () => {
 
     setIsSubmitting(true);
     try {
-      const selectedOption = bilanOptions.find((b) => b.value === selectedBilan);
-      const roleValue = profil === "aidant" ? "aidant" : "personne concernée";
+      const { data, error } = await supabase.functions.invoke("brevo-upsert-contact", {
+  body: {
+    nom: `${prenom.trim()} ${nom.trim()}`,
+    email: email.trim(),
+    telephone: telephone.trim(),
+    interet: selectedOption?.brevoValue || "Bilan essentiel",
+    role: roleValue,
+    rgpd_ok: true,
+    message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
+    source_url: window.location.href,
+    source_tag: "rdv-bilan",
+  },
+});
 
-      const { error } = await supabase.functions.invoke("brevo-upsert-contact", {
-        body: {
-          nom: `${prenom.trim()} ${nom.trim()}`,
-          email: email.trim(),
-          telephone: telephone.trim(),
-          interet: selectedOption?.brevoValue || "Bilan essentiel",
-          role: roleValue,
-          rgpd_ok: true,
-          message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
-          source_url: window.location.href,
-          source_tag: "rdv-bilan",
-        },
-      });
-
-      if (error) throw error;
+if (error) throw error;
+if (data?.error) throw new Error(data.error);
 
       toast({ title: "Demande envoyée !", description: "Nous vous recontacterons très rapidement par téléphone." });
       setNom("");
