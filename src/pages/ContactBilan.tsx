@@ -81,19 +81,22 @@ const ContactBilan = () => {
 
     setIsSubmitting(true);
     try {
-      const { data, error } = await supabase.functions.invoke("brevo-upsert-contact", {
-  body: {
-    nom: `${prenom.trim()} ${nom.trim()}`,
-    email: email.trim(),
-    telephone: telephone.trim(),
-    interet: selectedOption?.brevoValue || "Bilan essentiel",
-    role: roleValue,
-    rgpd_ok: true,
-    message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
-    source_url: window.location.href,
-    source_tag: "rdv-bilan",
-  },
-});
+      const { data, error } = await supabase.functions.invoke<{ error?: string }>(
+  "brevo-upsert-contact",
+  {
+    body: {
+      nom: `${prenom.trim()} ${nom.trim()}`,
+      email: email.trim(),
+      telephone: telephone.trim(),
+      interet: selectedOption?.brevoValue || "Bilan essentiel",
+      role: roleValue,
+      rgpd_ok: true,
+      message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
+      source_url: window.location.href,
+      source_tag: "rdv-bilan",
+    },
+  }
+);
 
 if (error) throw error;
 if (data?.error) throw new Error(data.error);
