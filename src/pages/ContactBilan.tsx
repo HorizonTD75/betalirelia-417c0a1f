@@ -79,6 +79,9 @@ const ContactBilan = () => {
       return;
     }
 
+    const selectedOption = bilanOptions.find((b) => b.value === selectedBilan);
+    const roleValue = profil === "malvoyant" ? "Patient malvoyant" : "Aidant / Proche";
+
     setIsSubmitting(true);
     try {
       const { data, error } = await supabase.functions.invoke<{ error?: string }>(
