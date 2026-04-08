@@ -83,9 +83,16 @@ const ClubRegistrationSection = () => {
       }
       const message = messageParts.join("\n");
 
-      console.log("CLUB import.meta.env.VITE_SUPABASE_URL =", import.meta.env.VITE_SUPABASE_URL);
-      console.log("CLUB import.meta.env.VITE_SUPABASE_PROJECT_ID =", import.meta.env.VITE_SUPABASE_PROJECT_ID);
-      console.log("CLUB client supabaseUrl =", (supabase as any).supabaseUrl);
+      alert(
+        "VITE_SUPABASE_URL = " +
+          import.meta.env.VITE_SUPABASE_URL +
+          "\n" +
+          "VITE_SUPABASE_PROJECT_ID = " +
+          import.meta.env.VITE_SUPABASE_PROJECT_ID +
+          "\n" +
+          "client supabaseUrl = " +
+          (supabase as any).supabaseUrl,
+      );
 
       const { data, error } = await supabase.functions.invoke("brevo-club-registration", {
         body: {
