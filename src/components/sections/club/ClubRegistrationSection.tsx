@@ -110,6 +110,8 @@ const ClubRegistrationSection = () => {
         },
       });
 
+      alert("FUNCTION RESULT\n" + "error = " + JSON.stringify(error) + "\n\n" + "data = " + JSON.stringify(data));
+
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
 
