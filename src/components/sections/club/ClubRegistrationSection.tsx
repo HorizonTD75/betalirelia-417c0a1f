@@ -46,28 +46,29 @@ const ClubRegistrationSection = () => {
   const { toast } = useToast();
 
   const handleThemeToggle = (themeId: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      themes: prev.themes.includes(themeId)
-        ? prev.themes.filter(t => t !== themeId)
-        : [...prev.themes, themeId]
+      themes: prev.themes.includes(themeId) ? prev.themes.filter((t) => t !== themeId) : [...prev.themes, themeId],
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return;
-    if (!validateAll([
-      { field: "email", value: formData.email },
-      { field: "telephone", value: formData.telephone },
-    ])) return;
+    if (
+      !validateAll([
+        { field: "email", value: formData.email },
+        { field: "telephone", value: formData.telephone },
+      ])
+    )
+      return;
     setLoading(true);
 
     try {
       // Map form values to readable labels
-      const profileLabel = profiles.find(p => p.value === formData.profile)?.label || formData.profile;
-      const sessionLabel = sessions.find(s => s.value === formData.session)?.label || formData.session;
-      const themeLabels = formData.themes.map(t => themes.find(th => th.id === t)?.label || t).join(", ");
+      const profileLabel = profiles.find((p) => p.value === formData.profile)?.label || formData.profile;
+      const sessionLabel = sessions.find((s) => s.value === formData.session)?.label || formData.session;
+      const themeLabels = formData.themes.map((t) => themes.find((th) => th.id === t)?.label || t).join(", ");
 
       // Build MESSAGE field by appending each line
       const messageParts: string[] = [];
@@ -82,6 +83,10 @@ const ClubRegistrationSection = () => {
       }
       const message = messageParts.join("\n");
 
+      console.log("CLUB import.meta.env.VITE_SUPABASE_URL =", import.meta.env.VITE_SUPABASE_URL);
+      console.log("CLUB import.meta.env.VITE_SUPABASE_PROJECT_ID =", import.meta.env.VITE_SUPABASE_PROJECT_ID);
+      console.log("CLUB client supabaseUrl =", (supabase as any).supabaseUrl);
+
       const { data, error } = await supabase.functions.invoke("brevo-club-registration", {
         body: {
           email: formData.email,
@@ -95,7 +100,7 @@ const ClubRegistrationSection = () => {
           message,
           source_url: window.location.href,
           source_tag: "SRC_club",
-        }
+        },
       });
 
       if (error) throw error;
@@ -108,7 +113,7 @@ const ClubRegistrationSection = () => {
       toast({
         title: "Une erreur est survenue",
         description: errorMessage,
-        variant: "destructive"
+        variant: "destructive",
       });
     } finally {
       setLoading(false);
@@ -148,9 +153,7 @@ const ClubRegistrationSection = () => {
                   <UserPlus className="w-7 h-7" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl text-primary-foreground">
-                    Rejoindre le Club LirElia
-                  </CardTitle>
+                  <CardTitle className="text-2xl text-primary-foreground">Rejoindre le Club LirElia</CardTitle>
                   <CardDescription className="text-primary-foreground/80 text-lg">
                     Inscription gratuite, sans engagement
                   </CardDescription>
@@ -202,14 +205,21 @@ const ClubRegistrationSection = () => {
                       type="email"
                       placeholder="votre@email.fr"
                       value={formData.email}
-                      onChange={(e) => { setFormData({ ...formData, email: e.target.value }); clearFieldError("email"); }}
+                      onChange={(e) => {
+                        setFormData({ ...formData, email: e.target.value });
+                        clearFieldError("email");
+                      }}
                       onBlur={() => validateField("email", formData.email)}
                       aria-invalid={!!formErrors.email}
                       aria-describedby={formErrors.email ? "club-email-error" : undefined}
                       className={`h-14 text-lg ${formErrors.email ? "border-destructive" : ""}`}
                       required
                     />
-                    {formErrors.email && <p id="club-email-error" className="text-sm text-destructive" role="alert">{formErrors.email}</p>}
+                    {formErrors.email && (
+                      <p id="club-email-error" className="text-sm text-destructive" role="alert">
+                        {formErrors.email}
+                      </p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="telephone" className="text-lg font-semibold">
@@ -220,13 +230,20 @@ const ClubRegistrationSection = () => {
                       type="tel"
                       placeholder="06 12 34 56 78"
                       value={formData.telephone}
-                      onChange={(e) => { setFormData({ ...formData, telephone: e.target.value }); clearFieldError("telephone"); }}
+                      onChange={(e) => {
+                        setFormData({ ...formData, telephone: e.target.value });
+                        clearFieldError("telephone");
+                      }}
                       onBlur={() => validateField("telephone", formData.telephone)}
                       aria-invalid={!!formErrors.telephone}
                       aria-describedby={formErrors.telephone ? "club-tel-error" : undefined}
                       className={`h-14 text-lg ${formErrors.telephone ? "border-destructive" : ""}`}
                     />
-                    {formErrors.telephone && <p id="club-tel-error" className="text-sm text-destructive" role="alert">{formErrors.telephone}</p>}
+                    {formErrors.telephone && (
+                      <p id="club-tel-error" className="text-sm text-destructive" role="alert">
+                        {formErrors.telephone}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -305,16 +322,12 @@ const ClubRegistrationSection = () => {
                 <div className="space-y-4">
                   <label
                     className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                      formData.needZoomHelp
-                        ? "border-accent bg-accent/10"
-                        : "border-border hover:border-accent/50"
+                      formData.needZoomHelp ? "border-accent bg-accent/10" : "border-border hover:border-accent/50"
                     }`}
                   >
                     <Checkbox
                       checked={formData.needZoomHelp}
-                      onCheckedChange={(checked) => 
-                        setFormData({ ...formData, needZoomHelp: checked as boolean })
-                      }
+                      onCheckedChange={(checked) => setFormData({ ...formData, needZoomHelp: checked as boolean })}
                     />
                     <div>
                       <span className="font-semibold block">Besoin d'aide pour Zoom ?</span>
@@ -328,14 +341,25 @@ const ClubRegistrationSection = () => {
                 {/* Submit Button */}
                 {/* Honeypot */}
                 <div className="hidden" aria-hidden="true">
-                  <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
                 </div>
 
                 <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading}>
                   {loading ? (
-                    <><Loader2 className="w-6 h-6 animate-spin" /> Inscription en cours…</>
+                    <>
+                      <Loader2 className="w-6 h-6 animate-spin" /> Inscription en cours…
+                    </>
                   ) : (
-                    <><UserPlus className="w-6 h-6" /> Je m'inscris</>
+                    <>
+                      <UserPlus className="w-6 h-6" /> Je m'inscris
+                    </>
                   )}
                 </Button>
 
