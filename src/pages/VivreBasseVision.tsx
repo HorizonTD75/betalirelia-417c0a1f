@@ -205,7 +205,7 @@ const VivreBasseVision = () => {
         <section className="py-16 bg-background">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <Card variant="highlighted" className="p-8">
+              <Card variant="highlighted" className="p-4 sm:p-6 lg:p-8">
                 <div className="flex items-start gap-4">
                   <Heart className="w-10 h-10 text-secondary shrink-0" />
                   <div>
@@ -227,7 +227,7 @@ const VivreBasseVision = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               {/* Intro with images */}
-              <div className="grid lg:grid-cols-3 gap-6 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <img 
                     src={readingMagnifierImage} 
@@ -267,9 +267,9 @@ const VivreBasseVision = () => {
                 Des adaptations simples et des aides techniques pour continuer à profiter de vos activités préférées malgré une vision réduite.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {dailyActivities.map((activity, index) => (
-                  <Card key={index} variant="elevated" className="p-8">
+                  <Card key={index} variant="elevated" className="p-4 sm:p-6 lg:p-8">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center">
                         <activity.icon className="w-7 h-7 text-primary-foreground" />
@@ -306,7 +306,7 @@ const VivreBasseVision = () => {
               
               <div className="space-y-8">
                 {homeAdaptations.map((adaptation, index) => (
-                  <Card key={index} className="p-8">
+                  <Card key={index} className="p-4 sm:p-6 lg:p-8">
                     <div className="flex flex-col lg:flex-row gap-8">
                       <div className="lg:w-1/3">
                         <div className="flex items-center gap-4 mb-4">
@@ -322,7 +322,7 @@ const VivreBasseVision = () => {
                         </p>
                       </div>
                       <div className="lg:w-2/3">
-                        <ul className="grid md:grid-cols-2 gap-3">
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {adaptation.tips.map((tip, i) => (
                             <li key={i} className="flex items-start gap-3">
                               <Lightbulb className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -358,7 +358,7 @@ const VivreBasseVision = () => {
               </div>
 
               {/* Row 1: Image + 2 blocks */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                 {/* Column 1: Image */}
                 <div className="rounded-2xl overflow-hidden shadow-card">
                   <img 
@@ -368,7 +368,7 @@ const VivreBasseVision = () => {
                 </div>
 
                 {/* Column 2: Déplacements */}
-                <Card variant="elevated" className="p-6">
+                <Card variant="elevated" className="p-4 sm:p-6">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                     {outdoorTips[0].title}
                   </h3>
@@ -383,7 +383,7 @@ const VivreBasseVision = () => {
                 </Card>
 
                 {/* Column 3: Transports */}
-                <Card variant="elevated" className="p-6">
+                <Card variant="elevated" className="p-4 sm:p-6">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                     {outdoorTips[1].title}
                   </h3>
@@ -399,11 +399,11 @@ const VivreBasseVision = () => {
               </div>
 
               {/* Row 2: Full-width Vie sociale */}
-              <Card variant="elevated" className="p-6">
+              <Card variant="elevated" className="p-4 sm:p-6">
                 <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                   {outdoorTips[2].title}
                 </h3>
-                <ul className="grid md:grid-cols-2 gap-3">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {outdoorTips[2].items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
@@ -427,9 +427,9 @@ const VivreBasseVision = () => {
                 Avec les bonnes aides techniques et adaptations, vous pouvez continuer à profiter de vos passions.
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {leisureActivities.map((activity, index) => (
-                  <Card key={index} className="p-6 text-center">
+                  <Card key={index} className="p-4 sm:p-6 text-center">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                       <activity.icon className="w-8 h-8 text-primary" />
                     </div>
@@ -450,7 +450,7 @@ const VivreBasseVision = () => {
         <section className="py-12 bg-muted">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <Card variant="highlighted" className="p-8">
+              <Card variant="highlighted" className="p-4 sm:p-6 lg:p-8">
                 <div className="flex flex-col md:flex-row items-start gap-6">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
                     <EyeOff className="w-8 h-8 text-primary" />
@@ -490,7 +490,7 @@ const VivreBasseVision = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <Card variant="elevated" className="p-6">
+                <Card variant="elevated" className="p-4 sm:p-6">
                   <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4">
                     <Eye className="w-6 h-6 text-primary-foreground" />
                   </div>
@@ -501,7 +501,7 @@ const VivreBasseVision = () => {
                     Le visiopraticien évalue votre vision fonctionnelle, analyse vos difficultés concrètes et identifie vos priorités pour mieux voir au quotidien.
                   </p>
                 </Card>
-                <Card variant="highlighted" className="p-6">
+                <Card variant="highlighted" className="p-4 sm:p-6">
                   <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
                     <HandHeart className="w-6 h-6 text-secondary-foreground" />
                   </div>
@@ -512,7 +512,7 @@ const VivreBasseVision = () => {
                     Loupes, télé-agrandisseurs, éclairage adapté, filtres… Vous essayez les aides techniques les plus adaptées à vos besoins de lecture et d'autonomie.
                   </p>
                 </Card>
-                <Card variant="elevated" className="p-6">
+                <Card variant="elevated" className="p-4 sm:p-6">
                   <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4">
                     <Lightbulb className="w-6 h-6 text-primary-foreground" />
                   </div>

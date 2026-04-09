@@ -210,7 +210,7 @@ const AidesLecture = () => {
             </div>
 
             {/* Grille des 4 catégories en cartes résumées */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
               {categories.map((cat) => (
                 <Link
                   key={cat.id}
@@ -270,7 +270,7 @@ const AidesLecture = () => {
                 </div>
 
                 {/* Content grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
                   <div>
                     <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                       {cat.id === "lampes" ? "Points forts" : "Usages principaux"}

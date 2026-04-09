@@ -40,9 +40,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group shrink-0">
-            <img src={logoLirelia} alt="Logo LirElia – Expert en basse vision" className="w-12 h-12 xl:w-14 xl:h-14 object-contain" width={56} height={56} />
+            <img src={logoLirelia} alt="Logo LirElia – Expert en basse vision" className="w-10 h-10 sm:w-12 sm:h-12 xl:w-14 xl:h-14 object-contain" width={56} height={56} />
             <div className="whitespace-nowrap">
-              <span className="font-serif text-lg xl:text-xl font-bold text-primary">LirElia</span>
+              <span className="font-serif text-base sm:text-lg xl:text-xl font-bold text-primary">LirElia</span>
               <span className="block text-xs text-muted-foreground">Basse Vision</span>
             </div>
           </a>
@@ -61,7 +61,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-2 ml-2 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2 ml-1 sm:ml-2 shrink-0">
             <Button variant="secondary" size="sm" asChild className="hidden xl:inline-flex">
               <Link to="/club">
                 <Users className="w-4 h-4" />
