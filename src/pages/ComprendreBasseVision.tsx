@@ -169,20 +169,20 @@ const ComprendreBasseVision = () => {
                   </div>
 
                   <div className="flex justify-center mt-8">
-                    <Button variant="outline" size="default" asChild>
+                    <Button variant="outline" size="default" className="whitespace-normal text-center h-auto py-2" asChild>
                       <Link to="/maladies-yeux">
-                        Les maladies entraînant une basse vision
-                        <ArrowRight className="w-4 h-4" />
+                        <span>Les maladies entraînant une basse vision</span>
+                        <ArrowRight className="w-4 h-4 shrink-0" />
                       </Link>
                     </Button>
                   </div>
                 </div>
                 
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden order-first lg:order-last">
                   <img
                     src={comprendreHeroImage}
                     alt="Illustration aquarelle montrant différentes situations de basse vision"
-                    className="w-full rounded-2xl shadow-card" />
+                    className="w-full max-w-full rounded-2xl shadow-card" />
                 </div>
               </div>
             </div>
