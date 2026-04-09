@@ -135,32 +135,32 @@ const ComprendreBasseVision = () => {
                   </h2>
                   
                   <div className="space-y-6">
-                    <Card variant="outline" className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
-                          <Glasses className="w-6 h-6 text-muted-foreground" />
+                    <Card variant="outline" className="p-4 sm:p-6 overflow-hidden">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
+                          <Glasses className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground" />
                         </div>
                         <div>
                           <h3 className="font-serif text-xl font-bold text-foreground mb-2">
                             Baisse de vision « classique »
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-lg text-muted-foreground leading-relaxed">
                             Myopie, hypermétropie, astigmatisme, presbytie. Ces défauts optiques courants se corrigent avec des lunettes ou des lentilles.
                           </p>
                         </div>
                       </div>
                     </Card>
 
-                    <Card variant="highlighted" className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-                          <Eye className="w-6 h-6 text-secondary-foreground" />
+                    <Card variant="highlighted" className="p-4 sm:p-6 overflow-hidden">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                          <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-foreground" />
                         </div>
                         <div>
                           <h3 className="font-serif text-xl font-bold text-foreground mb-2">
                             La basse vision
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-lg text-muted-foreground leading-relaxed">
                             Même avec la meilleure correction possible, la vue reste limitée. Elle est liée à une atteinte plus profonde de l'œil ou du nerf optique.
                           </p>
                         </div>

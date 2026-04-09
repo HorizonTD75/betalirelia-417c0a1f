@@ -27,7 +27,7 @@
     
     /* Muted: Soft blue-gray */
     --muted: 210 20% 92%;
-    --muted-foreground: 215 40% 28%;
+    --muted-foreground: 215 50% 20%;
     
     /* Accent: Teal for actions */
     --accent: 175 60% 35%;
@@ -104,6 +104,8 @@
   }
 
   html {
+    overflow-x: hidden;
+  }
     font-size: 18px; /* Base size larger for accessibility */
   }
 
