@@ -103,7 +103,8 @@
     @apply border-border;
   }
 
-  html {
+  html,
+  body {
     overflow-x: hidden;
     font-size: 18px; /* Base size larger for accessibility */
   }

@@ -178,13 +178,11 @@ const ComprendreBasseVision = () => {
                   </div>
                 </div>
                 
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img
                     src={comprendreHeroImage}
                     alt="Illustration aquarelle montrant différentes situations de basse vision"
                     className="w-full rounded-2xl shadow-card" />
-                  
-                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
                 </div>
               </div>
             </div>
