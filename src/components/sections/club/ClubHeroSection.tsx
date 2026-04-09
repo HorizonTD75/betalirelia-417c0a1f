@@ -47,12 +47,12 @@ const ClubHeroSection = () => {
               <span className="font-semibold">Gratuit</span>
             </div>
 
-            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6">
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 break-words">
               Club LirElia : rencontres & échanges pour{" "}
               <span className="text-secondary">rompre l'isolement</span>
             </h1>
 
-            <p className="text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
               Un espace d'échanges entre personnes concernées et aidants : 
               astuces, retours d'expérience, mini-conférences et moments simples, 
               en visioconférence, avec un animateur.
