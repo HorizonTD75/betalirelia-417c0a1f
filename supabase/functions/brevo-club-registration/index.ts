@@ -16,32 +16,27 @@ function jsonResponse(body: unknown, status = 200) {
   });
 }
 
-function normalizeFrenchPhone(phone?: string | null) {
-  if (!phone || typeof phone !== "string") return null;
+function normalizeFrenchPhone(phone?: string | null): { formatted: string | null; isMobile: boolean } {
+  if (!phone || typeof phone !== "string") return { formatted: null, isMobile: false };
 
   const cleaned = phone.replace(/[^\d+]/g, "").trim();
+  let normalized: string | null = null;
 
-  // Format français classique : 0612345678
   if (/^0\d{9}$/.test(cleaned)) {
-    return `+33${cleaned.slice(1)}`;
+    normalized = `+33${cleaned.slice(1)}`;
+  } else if (/^\+33\d{9}$/.test(cleaned)) {
+    normalized = cleaned;
+  } else if (/^0033\d{9}$/.test(cleaned)) {
+    normalized = `+${cleaned.slice(2)}`;
+  } else if (/^33\d{9}$/.test(cleaned)) {
+    normalized = `+${cleaned}`;
   }
 
-  // Déjà au bon format : +33612345678
-  if (/^\+33\d{9}$/.test(cleaned)) {
-    return cleaned;
-  }
+  if (!normalized) return { formatted: null, isMobile: false };
 
-  // Format 0033XXXXXXXXX
-  if (/^0033\d{9}$/.test(cleaned)) {
-    return `+${cleaned.slice(2)}`;
-  }
-
-  // Format 33XXXXXXXXX
-  if (/^33\d{9}$/.test(cleaned)) {
-    return `+${cleaned}`;
-  }
-
-  return null;
+  // Mobile numbers start with +336 or +337
+  const isMobile = /^\+33[67]/.test(normalized);
+  return { formatted: normalized, isMobile };
 }
 
 serve(async (req) => {
