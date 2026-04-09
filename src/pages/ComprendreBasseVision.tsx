@@ -160,7 +160,7 @@ const ComprendreBasseVision = () => {
                           <h3 className="font-serif text-xl font-bold text-foreground mb-2">
                             La basse vision
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-lg text-muted-foreground leading-relaxed">
                             Même avec la meilleure correction possible, la vue reste limitée. Elle est liée à une atteinte plus profonde de l'œil ou du nerf optique.
                           </p>
                         </div>
