@@ -47,7 +47,7 @@ const CookieConsentBanner = () => {
       <div className="absolute inset-0 bg-foreground/40" />
 
       {/* Panel */}
-      <div className="relative w-full max-w-xl mx-4 mb-4 sm:mb-0 bg-card rounded-2xl shadow-xl border border-border p-6 sm:p-8 animate-in slide-in-from-bottom-4 fade-in duration-300">
+      <div className="relative w-full max-w-xl mx-3 sm:mx-4 mb-3 sm:mb-0 bg-card rounded-2xl shadow-xl border border-border p-4 sm:p-6 md:p-8 animate-in slide-in-from-bottom-4 fade-in duration-300">
         {!showPrefs ? (
           /* ── First level ── */
           <>
