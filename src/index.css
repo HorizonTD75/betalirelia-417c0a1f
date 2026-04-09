@@ -107,7 +107,8 @@
   body,
   #root {
     overflow-x: hidden;
-    max-width: 100vw;
+    max-width: 100%;
+    width: 100%;
     font-size: 18px; /* Base size larger for accessibility */
   }
 
