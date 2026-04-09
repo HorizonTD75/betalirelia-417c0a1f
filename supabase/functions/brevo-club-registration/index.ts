@@ -64,7 +64,7 @@ serve(async (req) => {
       return jsonResponse({ error: "Prénom requis." }, 400);
     }
 
-    const normalizedPhone = normalizeFrenchPhone(telephone);
+    const { formatted: normalizedPhone, isMobile } = normalizeFrenchPhone(telephone);
 
     if (telephone && !normalizedPhone) {
       return jsonResponse({ error: "Numéro de téléphone invalide. Utilisez un numéro français à 10 chiffres." }, 400);
