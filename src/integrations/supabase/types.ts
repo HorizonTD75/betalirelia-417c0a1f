@@ -56,6 +56,42 @@ export type Database = {
         }
         Relationships: []
       }
+      cookie_consents: {
+        Row: {
+          analytics: boolean
+          banner_version: number
+          consent_given: boolean
+          created_at: string
+          id: string
+          marketing: boolean
+          page_url: string | null
+          user_agent: string | null
+          visitor_id: string
+        }
+        Insert: {
+          analytics?: boolean
+          banner_version?: number
+          consent_given: boolean
+          created_at?: string
+          id?: string
+          marketing?: boolean
+          page_url?: string | null
+          user_agent?: string | null
+          visitor_id: string
+        }
+        Update: {
+          analytics?: boolean
+          banner_version?: number
+          consent_given?: boolean
+          created_at?: string
+          id?: string
+          marketing?: boolean
+          page_url?: string | null
+          user_agent?: string | null
+          visitor_id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string

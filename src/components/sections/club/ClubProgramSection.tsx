@@ -106,7 +106,15 @@ const ClubProgramSection = () => {
                     })}
                   </ul>
 
-                  <Button variant="outline" size="default" className="w-full">
+                  <Button
+                    variant="outline"
+                    size="default"
+                    className="w-full"
+                    onClick={() => {
+                      const el = document.getElementById("registration");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
                     <MessageSquare className="w-5 h-5" />
                     Proposer un thème
                   </Button>

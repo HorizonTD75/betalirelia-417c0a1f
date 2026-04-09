@@ -110,14 +110,36 @@ serve(async (req) => {
     }
 
     // ── 5. Brevo: upsert contact
+    // ── 5. Normalize phone and assign to SMS (mobile) or PHONE (landline)
+    let normalizedPhone: string | null = null;
+    let isMobilePhone = false;
+    if (telephone && typeof telephone === "string") {
+      const cleaned = telephone.replace(/[\s\-\.\(\)]/g, "").trim();
+      if (/^0\d{9}$/.test(cleaned)) {
+        normalizedPhone = `+33${cleaned.slice(1)}`;
+      } else if (/^\+33\d{9}$/.test(cleaned)) {
+        normalizedPhone = cleaned;
+      }
+      if (normalizedPhone) {
+        isMobilePhone = /^\+33[67]/.test(normalizedPhone);
+      }
+    }
+
     const brevoAttributes: Record<string, unknown> = {
       NOM: nom.trim(),
-      PHONE: telephone?.trim() || "",
       INTERET: finalInteret,
       MESSAGE: message.trim(),
       SOURCE_URL: source_url || "",
       SOURCE_TAG: source_tag || "",
     };
+
+    if (normalizedPhone) {
+      if (isMobilePhone) {
+        brevoAttributes.SMS = normalizedPhone;
+      } else {
+        brevoAttributes.PHONE = normalizedPhone;
+      }
+    }
 
     // Add ROLE if provided
     if (role !== undefined) {

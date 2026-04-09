@@ -104,8 +104,11 @@
   }
 
   html,
-  body {
+  body,
+  #root {
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
     font-size: 18px; /* Base size larger for accessibility */
   }
 
@@ -114,6 +117,8 @@
     font-family: 'Source Sans 3', system-ui, sans-serif;
     line-height: 1.7;
     letter-spacing: 0.01em;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   h1, h2, h3, h4, h5, h6 {

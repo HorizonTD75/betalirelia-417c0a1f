@@ -51,7 +51,7 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { email, prenom, nom, telephone, type, souhait, themes, needZoomHelp, message, source_url, source_tag } =
+    const { email, prenom, nom, telephone, type, souhait, themes, themePropose, needZoomHelp, message, source_url, source_tag } =
       body;
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -94,6 +94,12 @@ serve(async (req) => {
 
     const rowId = insertedRow.id;
 
+    // Build INTERET: concatenate theme propose with existing "Club" context
+    let finalInteret = "Club";
+    if (themePropose && typeof themePropose === "string" && themePropose.trim()) {
+      finalInteret = `Club\nThème proposé : ${themePropose.trim()}`;
+    }
+
     const brevoAttributes: Record<string, unknown> = {
       PRENOM: prenom.trim(),
       NOM: (nom || "").trim(),
@@ -103,12 +109,17 @@ serve(async (req) => {
       THEMES: themes || "",
       ZOOM_HELP: needZoomHelp ? "Oui" : "Non",
       MESSAGE: message || "",
+      INTERET: finalInteret,
       SOURCE_URL: source_url || "",
       SOURCE_TAG: source_tag || "",
     };
 
-    if (normalizedPhone && isMobile) {
-      brevoAttributes.SMS = normalizedPhone;
+    if (normalizedPhone) {
+      if (isMobile) {
+        brevoAttributes.SMS = normalizedPhone;
+      } else {
+        brevoAttributes.PHONE = normalizedPhone;
+      }
     }
 
     const brevoPayload: Record<string, unknown> = {

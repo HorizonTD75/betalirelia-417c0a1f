@@ -1,7 +1,8 @@
 import { useState, useCallback } from "react";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const PHONE_REGEX = /^[\d\s\+\-\.\(\)]{6,20}$/;
+/** French phone: 10 digits starting with 0, optionally with spaces/dots/dashes */
+const FRENCH_PHONE_REGEX = /^0[1-9](\s?[0-9]{2}){4}$/;
 
 export interface ValidationErrors {
   [key: string]: string;
@@ -20,12 +21,10 @@ export function useFormValidation() {
 
   const validatePhone = useCallback((value: string): string => {
     if (!value.trim()) return "";
-    const cleaned = value.replace(/[\s\-\.\(\)]/g, "");
-    if (cleaned.length < 6) {
-      return "Le numéro semble trop court.";
-    }
-    if (!PHONE_REGEX.test(value.trim())) {
-      return "Veuillez entrer un numéro valide (ex : 06 12 34 56 78).";
+    // Normalize: remove spaces, dots, dashes, parentheses
+    const cleaned = value.trim().replace(/[\s\-\.\(\)]/g, "");
+    if (!FRENCH_PHONE_REGEX.test(value.trim().replace(/[\-\.\(\)]/g, "")) && !/^0[1-9]\d{8}$/.test(cleaned)) {
+      return "Format attendu : 06 12 34 56 78 (10 chiffres commençant par 0).";
     }
     return "";
   }, []);
