@@ -391,7 +391,7 @@ const VivreBasseVision = () => {
                     {outdoorTips[1].items.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                        <span className="text-foreground">{item}</span>
+                        <span className="text-lg text-foreground">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -497,7 +497,7 @@ const VivreBasseVision = () => {
                   <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                     Faire le point sur votre vue
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Le visiopraticien évalue votre vision fonctionnelle, analyse vos difficultés concrètes et identifie vos priorités pour mieux voir au quotidien.
                   </p>
                 </Card>
@@ -508,7 +508,7 @@ const VivreBasseVision = () => {
                   <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                     Tester des aides adaptées
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Loupes, télé-agrandisseurs, éclairage adapté, filtres… Vous essayez les aides techniques les plus adaptées à vos besoins de lecture et d'autonomie.
                   </p>
                 </Card>
@@ -519,7 +519,7 @@ const VivreBasseVision = () => {
                   <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                     Un plan d'action concret
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     Vous repartez avec un compte-rendu précis, des recommandations claires et un plan d'adaptation personnalisé pour améliorer votre quotidien.
                   </p>
                 </Card>
