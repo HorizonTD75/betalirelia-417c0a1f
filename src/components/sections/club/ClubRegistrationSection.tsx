@@ -37,6 +37,7 @@ const ClubRegistrationSection = () => {
     profile: "",
     session: "monthly",
     themes: [] as string[],
+    themePropose: "",
     needZoomHelp: false,
   });
   const [loading, setLoading] = useState(false);
@@ -85,6 +86,10 @@ const ClubRegistrationSection = () => {
         messageParts.push(`Thèmes de discussion préférés : ${themeLabels}`);
       }
 
+      if (formData.themePropose.trim()) {
+        messageParts.push(`Thème proposé : ${formData.themePropose.trim()}`);
+      }
+
       if (formData.needZoomHelp) {
         messageParts.push("J'ai besoin d'aide pour Zoom");
       }
@@ -101,6 +106,7 @@ const ClubRegistrationSection = () => {
             type: profileLabel,
             souhait: sessionLabel,
             themes: themeLabels,
+            themePropose: formData.themePropose.trim(),
             needZoomHelp: formData.needZoomHelp,
             message,
             source_url: window.location.href,
