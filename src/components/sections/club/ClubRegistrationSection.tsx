@@ -83,17 +83,6 @@ const ClubRegistrationSection = () => {
       }
       const message = messageParts.join("\n");
 
-      alert(
-        "VITE_SUPABASE_URL = " +
-          import.meta.env.VITE_SUPABASE_URL +
-          "\n" +
-          "VITE_SUPABASE_PROJECT_ID = " +
-          import.meta.env.VITE_SUPABASE_PROJECT_ID +
-          "\n" +
-          "client supabaseUrl = " +
-          (supabase as any).supabaseUrl,
-      );
-
       const { data, error } = await supabase.functions.invoke("brevo-club-registration", {
         body: {
           email: formData.email,
@@ -109,8 +98,6 @@ const ClubRegistrationSection = () => {
           source_tag: "SRC_club",
         },
       });
-
-      alert("FUNCTION RESULT\n" + "error = " + JSON.stringify(error) + "\n\n" + "data = " + JSON.stringify(data));
 
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
