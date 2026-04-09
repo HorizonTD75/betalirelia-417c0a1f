@@ -358,7 +358,7 @@ const VivreBasseVision = () => {
               </div>
 
               {/* Row 1: Image + 2 blocks */}
-              <div className="grid lg:grid-cols-3 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                 {/* Column 1: Image */}
                 <div className="rounded-2xl overflow-hidden shadow-card">
                   <img 
@@ -376,7 +376,7 @@ const VivreBasseVision = () => {
                     {outdoorTips[0].items.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                        <span className="text-foreground">{item}</span>
+                        <span className="text-lg text-foreground">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -391,7 +391,7 @@ const VivreBasseVision = () => {
                     {outdoorTips[1].items.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                        <span className="text-foreground">{item}</span>
+                        <span className="text-lg text-foreground">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -407,7 +407,7 @@ const VivreBasseVision = () => {
                   {outdoorTips[2].items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                      <span className="text-foreground">{item}</span>
+                      <span className="text-lg text-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -427,7 +427,7 @@ const VivreBasseVision = () => {
                 Avec les bonnes aides techniques et adaptations, vous pouvez continuer à profiter de vos passions.
               </p>
               
-              <div className="grid md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {leisureActivities.map((activity, index) => (
                   <Card key={index} className="p-6 text-center">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -436,7 +436,7 @@ const VivreBasseVision = () => {
                     <h3 className="font-serif text-xl font-bold text-foreground mb-2">
                       {activity.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-lg text-muted-foreground">
                       {activity.description}
                     </p>
                   </Card>
@@ -489,7 +489,7 @@ const VivreBasseVision = () => {
                 Le bilan basse vision est la première étape pour retrouver confort et autonomie dans votre vie de tous les jours.
               </p>
               
-              <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 <Card variant="elevated" className="p-6">
                   <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4">
                     <Eye className="w-6 h-6 text-primary-foreground" />
@@ -497,7 +497,7 @@ const VivreBasseVision = () => {
                   <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                     Faire le point sur votre vue
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Le visiopraticien évalue votre vision fonctionnelle, analyse vos difficultés concrètes et identifie vos priorités pour mieux voir au quotidien.
                   </p>
                 </Card>
@@ -508,7 +508,7 @@ const VivreBasseVision = () => {
                   <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                     Tester des aides adaptées
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Loupes, télé-agrandisseurs, éclairage adapté, filtres… Vous essayez les aides techniques les plus adaptées à vos besoins de lecture et d'autonomie.
                   </p>
                 </Card>
@@ -519,7 +519,7 @@ const VivreBasseVision = () => {
                   <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                     Un plan d'action concret
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     Vous repartez avec un compte-rendu précis, des recommandations claires et un plan d'adaptation personnalisé pour améliorer votre quotidien.
                   </p>
                 </Card>

@@ -147,7 +147,7 @@ const Aidants = () => {
               ].map((item, i) => (
                 <Card key={i} variant="default" className="p-6">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{item.desc}</p>
                 </Card>
               ))}
             </div>
@@ -179,7 +179,7 @@ const Aidants = () => {
                   </div>
                   <div>
                     <h3 className="font-serif text-xl font-bold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -222,7 +222,7 @@ const Aidants = () => {
               ].map((item, i) => (
                 <Card key={i} variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-base">{item.desc}</p>
+                  <p className="text-lg text-muted-foreground">{item.desc}</p>
                 </Card>
               ))}
             </div>
