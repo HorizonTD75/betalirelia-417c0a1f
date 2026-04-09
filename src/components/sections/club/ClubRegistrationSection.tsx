@@ -54,61 +54,91 @@ const ClubRegistrationSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (honeypot) return;
+
     if (
       !validateAll([
         { field: "email", value: formData.email },
         { field: "telephone", value: formData.telephone },
       ])
-    )
+    ) {
       return;
+    }
+
     setLoading(true);
 
     try {
-      // Map form values to readable labels
       const profileLabel = profiles.find((p) => p.value === formData.profile)?.label || formData.profile;
+
       const sessionLabel = sessions.find((s) => s.value === formData.session)?.label || formData.session;
+
       const themeLabels = formData.themes.map((t) => themes.find((th) => th.id === t)?.label || t).join(", ");
 
-      // Build MESSAGE field by appending each line
       const messageParts: string[] = [];
+
       if (sessionLabel) {
         messageParts.push(`Je souhaite ${sessionLabel}`);
       }
+
       if (themeLabels) {
         messageParts.push(`Thèmes de discussion préférés : ${themeLabels}`);
       }
+
       if (formData.needZoomHelp) {
         messageParts.push("J'ai besoin d'aide pour Zoom");
       }
+
       const message = messageParts.join("\n");
 
-      const { data, error } = await supabase.functions.invoke("brevo-club-registration", {
-        body: {
-          email: formData.email,
-          prenom: formData.prenom,
-          nom: formData.nom,
-          telephone: formData.telephone,
-          type: profileLabel,
-          souhait: sessionLabel,
-          themes: themeLabels,
-          needZoomHelp: formData.needZoomHelp,
-          message,
-          source_url: window.location.href,
-          source_tag: "SRC_club",
-        },
-      });
+      const result = await supabase.functions
+        .invoke("brevo-club-registration", {
+          body: {
+            email: formData.email.trim(),
+            prenom: formData.prenom.trim(),
+            nom: formData.nom.trim(),
+            telephone: formData.telephone.trim(),
+            type: profileLabel,
+            souhait: sessionLabel,
+            themes: themeLabels,
+            needZoomHelp: formData.needZoomHelp,
+            message,
+            source_url: window.location.href,
+            source_tag: "SRC_club",
+          },
+        })
+        .catch((err) => {
+          return {
+            data: null,
+            error: err instanceof Error ? err : new Error("Erreur réseau ou serveur."),
+          };
+        });
 
-      if (error) throw error;
-      if (data?.error) throw new Error(data.error);
+      const { data, error } = result ?? { data: null, error: new Error("Réponse invalide.") };
+
+      if (error) {
+        toast({
+          title: "Inscription impossible",
+          description: "Une erreur est survenue. Merci de réessayer un peu plus tard.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (!data || data.success !== true) {
+        toast({
+          title: "Inscription impossible",
+          description: "Votre inscription n'a pas pu être finalisée.",
+          variant: "destructive",
+        });
+        return;
+      }
 
       setSubmitted(true);
-    } catch (err: unknown) {
-      console.error("Submit error:", err);
-      const errorMessage = err instanceof Error ? err.message : "Erreur inconnue";
+    } catch {
       toast({
-        title: "Une erreur est survenue",
-        description: errorMessage,
+        title: "Inscription impossible",
+        description: "Une erreur inattendue est survenue. Merci de réessayer plus tard.",
         variant: "destructive",
       });
     } finally {
