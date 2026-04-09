@@ -107,7 +107,7 @@ serve(async (req) => {
       SOURCE_TAG: source_tag || "",
     };
 
-    if (normalizedPhone) {
+    if (normalizedPhone && isMobile) {
       brevoAttributes.SMS = normalizedPhone;
     }
 
