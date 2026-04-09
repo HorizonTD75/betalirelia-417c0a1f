@@ -71,7 +71,7 @@ const Header = () => {
             <CartDrawer />
             <a href="tel:0768474235" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80" aria-label="Appelez-nous">
               <Phone className="w-4 h-4" />
-              <span className="hidden 2xl:inline text-[13px]">07 68 47 42 35</span>
+              <span className="hidden 2xl:inline text-base font-bold">07 68 47 42 35</span>
             </a>
           </div>
 
