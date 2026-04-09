@@ -348,6 +348,20 @@ const ClubRegistrationSection = () => {
                       </label>
                     ))}
                   </div>
+                  <div className="mt-3 space-y-2">
+                    <Label htmlFor="themePropose" className="text-base font-medium">
+                      Thème proposé (optionnel)
+                    </Label>
+                    <Input
+                      id="themePropose"
+                      type="text"
+                      placeholder="Proposez un thème qui vous intéresse…"
+                      value={formData.themePropose}
+                      onChange={(e) => setFormData({ ...formData, themePropose: e.target.value })}
+                      className="h-14 text-lg"
+                      maxLength={200}
+                    />
+                  </div>
                 </div>
 
                 {/* Zoom Help */}
