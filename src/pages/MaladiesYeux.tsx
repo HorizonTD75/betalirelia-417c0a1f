@@ -178,7 +178,7 @@ const MaladiesYeux = () => {
         {/* Quick Stats */}
         <section className="py-12 bg-muted">
           <div className="container">
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <Card className="p-6 text-center">
                 <p className="font-serif text-3xl font-bold text-primary mb-2">4</p>
                 <p className="text-lg text-foreground">Défauts de réfraction courants</p>
