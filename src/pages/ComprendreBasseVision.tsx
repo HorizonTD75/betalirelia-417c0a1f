@@ -144,7 +144,7 @@ const ComprendreBasseVision = () => {
                           <h3 className="font-serif text-xl font-bold text-foreground mb-2">
                             Baisse de vision « classique »
                           </h3>
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-lg text-muted-foreground leading-relaxed">
                             Myopie, hypermétropie, astigmatisme, presbytie. Ces défauts optiques courants se corrigent avec des lunettes ou des lentilles.
                           </p>
                         </div>
