@@ -266,7 +266,7 @@ const Bilans = () => {
                 Choisissez la formule qui correspond le mieux à votre situation. La participation de votre aidant est fortement recommandée.
               </p>
             </div>
-            <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {bilansComparison.map((bilan) =>
               <Card key={bilan.name} variant={bilan.recommended ? "highlighted" : "elevated"} className="relative flex flex-col">
                   {bilan.recommended &&
