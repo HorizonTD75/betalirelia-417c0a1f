@@ -104,8 +104,10 @@
   }
 
   html,
-  body {
+  body,
+  #root {
     overflow-x: hidden;
+    max-width: 100vw;
     font-size: 18px; /* Base size larger for accessibility */
   }
 
