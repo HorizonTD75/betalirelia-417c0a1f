@@ -1,9 +1,14 @@
 /**
  * Cookie Consent Manager for LirElia
- * Manages user cookie preferences and conditional script loading.
+ * Manages user cookie preferences, conditional script loading,
+ * and server-side consent traceability (RGPD).
  */
 
+import { supabase } from "@/integrations/supabase/client";
+
 const STORAGE_KEY = "lirelia_cookie_consent_v1";
+const VISITOR_ID_KEY = "lirelia_visitor_id";
+const BANNER_VERSION = 1;
 
 export interface CookieConsent {
   version: number;
@@ -11,6 +16,16 @@ export interface CookieConsent {
   necessary: true;
   analytics: boolean;
   marketing: boolean;
+}
+
+/** Get or create a stable anonymous visitor ID (UUIDv4-like). */
+function getOrCreateVisitorId(): string {
+  let id = localStorage.getItem(VISITOR_ID_KEY);
+  if (!id) {
+    id = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    localStorage.setItem(VISITOR_ID_KEY, id);
+  }
+  return id;
 }
 
 /** Read stored consent, or null if none exists. */
@@ -24,10 +39,29 @@ export function getConsent(): CookieConsent | null {
   }
 }
 
+/** Log consent choice to the database (fire-and-forget). */
+function logConsentToDb(analytics: boolean, marketing: boolean) {
+  const visitorId = getOrCreateVisitorId();
+  supabase
+    .from("cookie_consents")
+    .insert({
+      visitor_id: visitorId,
+      consent_given: true,
+      analytics,
+      marketing,
+      banner_version: BANNER_VERSION,
+      page_url: window.location.href,
+      user_agent: navigator.userAgent?.slice(0, 512) || null,
+    })
+    .then(({ error }) => {
+      if (error) console.warn("Cookie consent log failed:", error.message);
+    });
+}
+
 /** Persist consent choices. */
 export function saveConsent(analytics: boolean, marketing: boolean): CookieConsent {
   const consent: CookieConsent = {
-    version: 1,
+    version: BANNER_VERSION,
     date: new Date().toISOString(),
     necessary: true,
     analytics,
@@ -35,6 +69,7 @@ export function saveConsent(analytics: boolean, marketing: boolean): CookieConse
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
   applyConsent(consent);
+  logConsentToDb(analytics, marketing);
   return consent;
 }
 
