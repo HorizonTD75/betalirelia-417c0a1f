@@ -217,8 +217,8 @@ const Bilans = () => {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
                 Que fait le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link> pendant le bilan?
               </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <Card className="p-4 sm:p-6 lg:p-8">
                   <h3 className="font-serif text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center">
                       <Check className="w-6 h-6" />
@@ -234,7 +234,7 @@ const Bilans = () => {
                     )}
                   </ul>
                 </Card>
-                <Card className="p-8 border-destructive/30">
+                <Card className="p-4 sm:p-6 lg:p-8 border-destructive/30">
                   <h3 className="font-serif text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center">
                       <X className="w-6 h-6" />
@@ -327,7 +327,7 @@ const Bilans = () => {
               </p>
               <div className="space-y-6">
                 {steps.map((step, i) =>
-                <Card key={i} variant="elevated" className="p-6">
+                <Card key={i} variant="elevated" className="p-4 sm:p-6">
                     <div className="flex items-start gap-6">
                       <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0 text-xl font-bold">
                         {i + 1}
@@ -351,8 +351,8 @@ const Bilans = () => {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
                 Travailler ensemble avec l'opticien-optométriste partenaire
               </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <Card className="p-4 sm:p-6 lg:p-8">
                   <div className="w-14 h-14 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-4">
                     <Eye className="w-7 h-7" />
                   </div>
@@ -371,7 +371,7 @@ const Bilans = () => {
                     )}
                   </ul>
                 </Card>
-                <Card className="p-8">
+                <Card className="p-4 sm:p-6 lg:p-8">
                   <div className="w-14 h-14 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center mb-4">
                     <Glasses className="w-7 h-7" />
                   </div>

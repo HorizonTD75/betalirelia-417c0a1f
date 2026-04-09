@@ -200,7 +200,7 @@ const ComprendreBasseVision = () => {
                 Il peut s'agir par exemple de zones floues ou manquantes au centre de l'image, d'une vision « en tunnel » avec un champ visuel très réduit, ou d'une sensibilité extrême à la lumière.
               </p>
               
-              <Card className="p-8">
+              <Card className="p-4 sm:p-6 lg:p-8">
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
                   Concrètement, cela peut se traduire par :
                 </h3>
@@ -236,7 +236,7 @@ const ComprendreBasseVision = () => {
                 )}
               </div>
 
-              <Card variant="highlighted" className="mt-10 p-8">
+              <Card variant="highlighted" className="mt-10 p-4 sm:p-6 lg:p-8">
                 <div className="flex items-start gap-4">
                   <Lightbulb className="w-8 h-8 text-secondary shrink-0" />
                   <div>
@@ -275,9 +275,9 @@ const ComprendreBasseVision = () => {
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {professionals.map((pro, index) =>
-                <Card key={index} variant="elevated" className="p-8">
+                <Card key={index} variant="elevated" className="p-4 sm:p-6 lg:p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
                         <pro.icon className="w-7 h-7 text-primary-foreground" />
@@ -316,7 +316,7 @@ const ComprendreBasseVision = () => {
               
               <div className="space-y-8">
                 {whenToConsult.map((item, index) =>
-                <Card key={index} className="p-8">
+                <Card key={index} className="p-4 sm:p-6 lg:p-8">
                     <h3 className="font-serif text-xl font-bold text-foreground mb-4">
                       {item.professional}
                     </h3>

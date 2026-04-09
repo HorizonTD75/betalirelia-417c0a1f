@@ -172,7 +172,7 @@ const Visiopraticien = () => {
               </h2>
 
               {/* Image + intro paragraph - balanced row */}
-              <div className="grid md:grid-cols-5 gap-8 items-start mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-6 sm:gap-8 items-start mb-10">
                 <div className="md:col-span-2 relative">
                   <img src={visiopraticienConsultationImage} alt="Visiopraticien en consultation avec une personne malvoyante autour d'une table avec livre, loupe, lunettes et tablette"
                   className="w-full rounded-2xl shadow-card" />
@@ -194,7 +194,7 @@ const Visiopraticien = () => {
               </div>
 
               {/* Remaining content */}
-              <Card variant="muted" className="p-8">
+              <Card variant="muted" className="p-4 sm:p-6 lg:p-8">
                 <p className="text-lg text-foreground leading-relaxed">
                   Que la cause soit une DMLA, un glaucome, une cataracte ou toute autre atteinte visuelle, l'objectif est le même : vous aider à retrouver du confort et de l'autonomie dans votre quotidien. Le Visiopraticien évalue votre situation concrète et propose des solutions personnalisées, adaptées à votre vision restante et à vos besoins réels.
                 </p>
@@ -213,7 +213,7 @@ const Visiopraticien = () => {
               <p className="text-xl text-muted-foreground mb-10">
                 Un bilan avec le Visiopraticien LirElia permet d'identifier vos difficultés réelles et de trouver des solutions pour mieux voir au quotidien.
               </p>
-              <Card className="p-8">
+              <Card className="p-4 sm:p-6 lg:p-8">
                 <ul className="space-y-4">
                   {whatWeDo.map((item, i) =>
                   <li key={i} className="flex items-start gap-4">
@@ -246,9 +246,9 @@ const Visiopraticien = () => {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
                 Une expertise technique et humaine au service des malvoyants
               </h2>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {expertise.map((item, i) =>
-                <Card key={i} variant="elevated" className="p-8">
+                <Card key={i} variant="elevated" className="p-4 sm:p-6 lg:p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
                         <item.icon className="w-7 h-7 text-primary-foreground" />
@@ -273,7 +273,7 @@ const Visiopraticien = () => {
         <section className="py-16 bg-muted">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <Card variant="highlighted" className="p-8">
+              <Card variant="highlighted" className="p-4 sm:p-6 lg:p-8">
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-6 flex items-center gap-3">
                   <HelpCircle className="w-8 h-8 text-secondary shrink-0" />
                   Le Visiopraticien n'est pas…
@@ -309,8 +309,8 @@ const Visiopraticien = () => {
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
                 Où se passent les rendez-vous ?
               </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card variant="elevated" className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <Card variant="elevated" className="p-4 sm:p-6 lg:p-8">
                   <div className="flex items-start gap-4">
                     <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
                       <MapPin className="w-7 h-7 text-primary-foreground" />
@@ -325,7 +325,7 @@ const Visiopraticien = () => {
                     </div>
                   </div>
                 </Card>
-                <Card variant="elevated" className="p-8">
+                <Card variant="elevated" className="p-4 sm:p-6 lg:p-8">
                   <div className="flex items-start gap-4">
                     <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center shrink-0">
                       <Home className="w-7 h-7 text-secondary-foreground" />

@@ -138,14 +138,14 @@ const Aidants = () => {
               La <strong>basse vision</strong> ne signifie pas « ne plus rien voir ».
               Selon la pathologie (DMLA, glaucome, cataracte…), les difficultés varient :
             </p>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { title: "Lecture difficile", desc: "Le courrier, les étiquettes, les livres deviennent flous ou illisibles. La personne peut avoir un scotome (tache au centre du champ visuel)." },
                 { title: "Éblouissement", desc: "La lumière forte gêne, les contrastes sont mal perçus. La photophobie rend certaines sorties pénibles." },
                 { title: "Déplacements incertains", desc: "Escaliers, trottoirs, obstacles au sol : le champ visuel réduit augmente le risque de chutes." },
                 { title: "Fatigue visuelle", desc: "L'effort pour compenser la baisse d'acuité visuelle est épuisant. La personne renonce souvent à des activités qu'elle aimait." },
               ].map((item, i) => (
-                <Card key={i} variant="default" className="p-6">
+                <Card key={i} variant="default" className="p-4 sm:p-6">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-2">{item.title}</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">{item.desc}</p>
                 </Card>
@@ -186,7 +186,7 @@ const Aidants = () => {
             </div>
 
             {/* À éviter */}
-            <div className="mt-10 bg-destructive/5 border-2 border-destructive/20 rounded-2xl p-8">
+            <div className="mt-10 bg-destructive/5 border-2 border-destructive/20 rounded-2xl p-4 sm:p-6 lg:p-8">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="w-6 h-6 text-destructive" />
                 <h3 className="font-serif text-xl font-bold text-foreground">À éviter pour préserver l'énergie</h3>
@@ -213,14 +213,14 @@ const Aidants = () => {
               aux <strong>aides à la lecture</strong> adaptées. Le bon outil dépend
               de la pathologie, du besoin et du confort de votre proche.
             </p>
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[
                 { title: "Loupes & éclairage", desc: "Loupes grossissantes, loupes éclairantes, lampes de lecture : des solutions simples pour le courrier, les étiquettes, les livres." },
                 { title: "Télé-agrandisseurs", desc: "Vidéo-agrandisseurs de bureau ou portables pour lire confortablement sur un écran agrandi." },
                 { title: "Réglages numériques", desc: "Accessibilité smartphone (iPhone VoiceOver, Android TalkBack), agrandissement de texte, mode sombre, synthèse vocale." },
                 { title: "Organisation & repères", desc: "Pupitres de lecture, repères contrastés, rangement fixe pour retrouver ses documents facilement." },
               ].map((item, i) => (
-                <Card key={i} variant="elevated" className="p-6">
+                <Card key={i} variant="elevated" className="p-4 sm:p-6">
                   <h3 className="font-serif text-lg font-bold text-foreground mb-2">{item.title}</h3>
                   <p className="text-lg text-muted-foreground">{item.desc}</p>
                 </Card>
@@ -247,7 +247,7 @@ const Aidants = () => {
               Certains signaux indiquent qu'un bilan basse vision ou un accompagnement
               professionnel peut faire la différence :
             </p>
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[
                 "Votre proche renonce à des activités qu'il aimait (lecture, cuisine, sorties)",
                 "Vous avez « tout essayé » sans résultat satisfaisant",
@@ -262,7 +262,7 @@ const Aidants = () => {
                 </div>
               ))}
             </div>
-            <div className="bg-primary/5 rounded-2xl p-8 border-2 border-primary/20">
+            <div className="bg-primary/5 rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-primary/20">
               <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                 Un parcours simple, sans jargon
               </h3>
