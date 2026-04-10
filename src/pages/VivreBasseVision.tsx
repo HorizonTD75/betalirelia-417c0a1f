@@ -189,9 +189,16 @@ const VivreBasseVision = () => {
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                   Vivre au quotidien avec une <span className="text-secondary">basse vision</span>
                 </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
+              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
                 Des solutions concrètes et des conseils pratiques pour maintenir votre autonomie et votre qualité de vie malgré une malvoyance.
               </p>
+              <Button variant="secondary" size="lg" asChild>
+                <Link to="/bilans-bassevision">
+                  <Stethoscope className="w-5 h-5" />
+                  Découvrir nos bilans basse vision
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
             </div>
           </div>
           <div className="absolute bottom-0 left-0 right-0">

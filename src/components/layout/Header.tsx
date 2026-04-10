@@ -53,7 +53,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`py-2 text-[17px] font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors px-2 text-left leading-snug ${link.label === "Contact" ? "whitespace-nowrap" : ""}`}>
+              className="py-2 text-xl font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors px-2 text-left leading-snug">
 
                 {link.label}
               </a>
