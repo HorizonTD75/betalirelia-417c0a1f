@@ -112,9 +112,16 @@ const ComprendreBasseVision = () => {
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
                 Comprendre la <span className="text-secondary">Basse Vision</span>
               </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
+              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
                 La basse vision ne veut pas dire « ne plus rien voir ». C'est le terme utilisé quand la vue reste difficile malgré des lunettes bien adaptées et un suivi ophtalmologique correct.
               </p>
+              <Button variant="secondary" size="lg" asChild>
+                <Link to="/bilans-bassevision">
+                  <Stethoscope className="w-5 h-5" />
+                  Découvrir nos bilans basse vision
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
             </div>
           </div>
           <div className="absolute bottom-0 left-0 right-0">
