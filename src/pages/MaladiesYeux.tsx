@@ -166,7 +166,7 @@ const MaladiesYeux = () => {
           <div className="container relative">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Les maladies des yeux entraînant une basse vision
+                Les maladies des yeux entraînant une <span className="text-secondary">basse vision</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
                 Les yeux sont des organes vulnérables à de nombreuses maladies. Bien comprendre les causes et conséquences de ces affections permet de mieux appréhender le domaine de la basse vision.

@@ -12,7 +12,7 @@ import loupeElectronique from "@/assets/loupe-electronique.jpg";
 import lampeLecture from "@/assets/lampe-lecture.jpg";
 import teleAgrandisseur from "@/assets/tele-agrandisseur.jpg";
 
-const CALENDLY_URL = "#calendly-placeholder";
+const CALENDLY_URL = "https://calendly.com/lirelia/bilan_basse_vision";
 
 const categories = [
   {
@@ -148,7 +148,7 @@ const AidesLecture = () => {
           <div className="container relative z-10">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-8 leading-tight">
-                Aides à la lecture pour malvoyants
+                Aides à la lecture pour <span className="text-secondary">malvoyants</span>
               </h1>
               <p className="font-serif text-2xl text-primary-foreground/80 mb-4">
                 Retrouver le plaisir de lire, même en cas de basse vision
@@ -347,7 +347,7 @@ const AidesLecture = () => {
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  <a href={CALENDLY_URL}>
                     RDV pour un appel
                   </a>
                 </Button>

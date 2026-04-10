@@ -67,13 +67,13 @@ const VisitesDomicile = () => {
                 ← Retour aux bilans
               </Link>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-                Visites à domicile : le bilan basse vision dans votre environnement
+                Visites à domicile : le bilan <span className="text-secondary">basse vision</span> dans votre environnement
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
                 Parce qu'il n'est pas toujours simple de se déplacer, LirElia propose des visites à domicile pour réaliser le bilan basse vision dans le confort de votre cadre de vie.
               </p>
               <Button variant="hero" size="lg" asChild>
-                <Link to="/rdv-bilan">
+                <Link to="/rdv-bilan?type=domicile">
                   <Calendar className="w-6 h-6" />
                   Demander une visite à domicile
                 </Link>
@@ -263,7 +263,7 @@ const VisitesDomicile = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
-                  <Link to="/rdv-bilan"><Calendar className="w-6 h-6" /> Prendre rendez-vous</Link>
+                  <Link to="/rdv-bilan?type=domicile"><Calendar className="w-6 h-6" /> Prendre rendez-vous</Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <a href="tel:0768474235"><Phone className="w-5 h-5" /> 07 68 47 42 35</a>

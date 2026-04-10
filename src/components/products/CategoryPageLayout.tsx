@@ -96,7 +96,7 @@ const CategoryPageLayout = ({
                   <Icon className="w-8 h-8" />
                 </div>
                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
-                  {title}
+                  <span className="text-secondary">{title}</span>
                 </h1>
               </div>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6 font-semibold">
@@ -106,7 +106,7 @@ const CategoryPageLayout = ({
                 {intro}
               </p>
               <Button variant="secondary" size="lg" className="text-xl" asChild>
-                <Link to={`/contact-conseil?sujet=${encodeURIComponent(subject)}`}>
+                <Link to={`/contact-conseil?produit=${encodeURIComponent(subject)}`}>
                   {heroCtaText}
                   <ArrowRight className="w-6 h-6" />
                 </Link>
@@ -176,16 +176,16 @@ const CategoryPageLayout = ({
                 Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit 
                 et sans engagement — nous vous aiderons à trouver la solution la plus adaptée.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="default" size="lg" className="text-xl" asChild>
-                  <Link to={`/contact-conseil?sujet=${encodeURIComponent(subject)}`}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
+                <Button variant="default" size="lg" className="text-xl whitespace-normal text-center h-auto py-3" asChild>
+                  <Link to={`/contact-conseil?produit=${encodeURIComponent(subject)}`}>
                     {bottomCtaText}
-                    <ArrowRight className="w-6 h-6" />
+                    <ArrowRight className="w-6 h-6 shrink-0" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="outline" size="lg" className="whitespace-normal text-center h-auto py-3" asChild>
                   <Link to="/aides-lecture-bassevision">
-                    <ArrowLeft className="w-5 h-5" />
+                    <ArrowLeft className="w-5 h-5 shrink-0" />
                     Toutes les aides à la lecture
                   </Link>
                 </Button>

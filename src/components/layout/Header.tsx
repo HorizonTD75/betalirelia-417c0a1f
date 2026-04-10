@@ -53,7 +53,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className="py-2 text-[20px] font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors px-2 text-left leading-snug">
+              className="py-2 text-[20px] font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors px-2 text-left leading-snug whitespace-nowrap">
 
                 {link.label}
               </a>
@@ -102,9 +102,11 @@ const Header = () => {
                 </li>
             )}
               <li className="pt-4 border-t-2 border-border mt-2">
-                <Button variant="secondary" size="lg" className="w-full">
-                  <Calendar className="w-5 h-5" />
-                  Prendre RDV
+                <Button variant="secondary" size="lg" className="w-full" asChild>
+                  <Link to="/rdv-bilan">
+                    <Calendar className="w-5 h-5" />
+                    Prendre RDV
+                  </Link>
                 </Button>
               </li>
               <li>
