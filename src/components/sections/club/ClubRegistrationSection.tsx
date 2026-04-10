@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox as CheckboxUI } from "@/components/ui/checkbox";
 import { Checkbox } from "@/components/ui/checkbox";
 import { UserPlus, Shield, Loader2, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -35,7 +35,7 @@ const ClubRegistrationSection = () => {
     email: "",
     telephone: "",
     profile: "",
-    session: "monthly",
+    sessions: ["monthly"] as string[],
     themes: [] as string[],
     themePropose: "",
     needZoomHelp: false,
@@ -50,6 +50,15 @@ const ClubRegistrationSection = () => {
     setFormData((prev) => ({
       ...prev,
       themes: prev.themes.includes(themeId) ? prev.themes.filter((t) => t !== themeId) : [...prev.themes, themeId],
+    }));
+  };
+
+  const handleSessionToggle = (sessionValue: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      sessions: prev.sessions.includes(sessionValue)
+        ? prev.sessions.filter((s) => s !== sessionValue)
+        : [...prev.sessions, sessionValue],
     }));
   };
 
@@ -72,7 +81,7 @@ const ClubRegistrationSection = () => {
     try {
       const profileLabel = profiles.find((p) => p.value === formData.profile)?.label || formData.profile;
 
-      const sessionLabel = sessions.find((s) => s.value === formData.session)?.label || formData.session;
+      const sessionLabel = formData.sessions.map((s) => sessions.find((sess) => sess.value === s)?.label || s).join(", ");
 
       const themeLabels = formData.themes.map((t) => themes.find((th) => th.id === t)?.label || t).join(", ");
 
@@ -104,7 +113,7 @@ const ClubRegistrationSection = () => {
             nom: formData.nom.trim(),
             telephone: formData.telephone.trim(),
             type: profileLabel,
-            souhait: sessionLabel,
+            souhait: formData.sessions.map((s) => sessions.find((sess) => sess.value === s)?.label || s).join(", "),
             themes: themeLabels,
             themePropose: formData.themePropose.trim(),
             needZoomHelp: formData.needZoomHelp,
@@ -306,25 +315,24 @@ const ClubRegistrationSection = () => {
                 {/* Session Selection */}
                 <div className="space-y-4">
                   <Label className="text-lg font-semibold">Je souhaite</Label>
-                  <RadioGroup
-                    value={formData.session}
-                    onValueChange={(value) => setFormData({ ...formData, session: value })}
-                    className="space-y-3"
-                  >
+                  <div className="space-y-3">
                     {sessions.map((session) => (
                       <label
                         key={session.value}
                         className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                          formData.session === session.value
+                          formData.sessions.includes(session.value)
                             ? "border-primary bg-primary/5"
                             : "border-border hover:border-primary/50"
                         }`}
                       >
-                        <RadioGroupItem value={session.value} id={session.value} />
+                        <Checkbox
+                          checked={formData.sessions.includes(session.value)}
+                          onCheckedChange={() => handleSessionToggle(session.value)}
+                        />
                         <span className="font-semibold">{session.label}</span>
                       </label>
                     ))}
-                  </RadioGroup>
+                  </div>
                 </div>
 
                 {/* Theme Preferences */}
