@@ -102,9 +102,10 @@ const Header = () => {
                 </li>
             )}
               <li className="pt-4 border-t-2 border-border mt-2">
-                <Button variant="secondary" size="lg" className="w-full">
-                  <Calendar className="w-5 h-5" />
-                  Prendre RDV
+                <Button variant="secondary" size="lg" className="w-full" asChild>
+                  <Link to="/rdv-bilan">
+                    <Calendar className="w-5 h-5" />
+                    Prendre RDV
                 </Button>
               </li>
               <li>

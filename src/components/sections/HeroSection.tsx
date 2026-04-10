@@ -53,7 +53,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 animate-slide-up delay-300">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact-conseil">
+              <Link to="/rdv-bilan">
                 <Calendar className="w-6 h-6" />
                 Prendre rendez-vous
               </Link>
