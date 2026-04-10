@@ -119,6 +119,7 @@ const ContactBilan = () => {
           message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
           source_url: window.location.href,
           source_tag: "rdv-bilan",
+          brevo_list_id: 13
         },
       });
 

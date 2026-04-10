@@ -20,7 +20,7 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok } = body;
+    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok, brevo_list_id } = body;
 
     // ── 1. Validate required fields
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -157,9 +157,10 @@ serve(async (req) => {
       attributes: brevoAttributes,
     };
 
-    const brevoListId = Deno.env.get("BREVO_LIST_ID");
-    if (brevoListId) {
-      const listId = parseInt(brevoListId, 10);
+    // Use explicit list ID from request, fallback to env var
+    const listIdRaw = brevo_list_id || Deno.env.get("BREVO_LIST_ID");
+    if (listIdRaw) {
+      const listId = typeof listIdRaw === "number" ? listIdRaw : parseInt(String(listIdRaw), 10);
       if (!isNaN(listId)) {
         brevoPayload.listIds = [listId];
       }
