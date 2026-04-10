@@ -128,16 +128,9 @@ serve(async (req) => {
       attributes: brevoAttributes,
     };
 
-    const brevoClubListId = Deno.env.get("BREVO_CLUB_LIST_ID");
-    const brevoListId = Deno.env.get("BREVO_LIST_ID");
-    const listId = brevoClubListId || brevoListId;
-
-    if (listId) {
-      const parsedId = parseInt(listId, 10);
-      if (!isNaN(parsedId)) {
-        brevoPayload.listIds = [parsedId];
-      }
-    }
+    // Club list = 12 (hardcoded), fallback to env vars
+    const brevoClubListId = 12;
+    brevoPayload.listIds = [brevoClubListId];
 
     const brevoRes = await fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
