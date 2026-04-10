@@ -106,6 +106,7 @@ const Header = () => {
                   <Link to="/rdv-bilan">
                     <Calendar className="w-5 h-5" />
                     Prendre RDV
+                  </Link>
                 </Button>
               </li>
               <li>
