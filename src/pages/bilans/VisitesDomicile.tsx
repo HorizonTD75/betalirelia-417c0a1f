@@ -263,7 +263,7 @@ const VisitesDomicile = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
-                  <Link to="/rdv-bilan"><Calendar className="w-6 h-6" /> Prendre rendez-vous</Link>
+                  <Link to="/rdv-bilan?type=domicile"><Calendar className="w-6 h-6" /> Prendre rendez-vous</Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <a href="tel:0768474235"><Phone className="w-5 h-5" /> 07 68 47 42 35</a>
