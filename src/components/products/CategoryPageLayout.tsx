@@ -96,7 +96,7 @@ const CategoryPageLayout = ({
                   <Icon className="w-8 h-8" />
                 </div>
                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
-                  {title}
+                  <span className="text-secondary">{title}</span>
                 </h1>
               </div>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6 font-semibold">
