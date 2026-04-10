@@ -15,7 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 
-type BilanType = "essentiel" | "expert" | "suivi";
+type BilanType = "essentiel" | "expert" | "suivi" | "domicile";
 
 const bilanOptions: {
   value: BilanType;
@@ -47,6 +47,14 @@ const bilanOptions: {
     price: 215,
     reassurance:
       "Un accompagnement complet sur plusieurs mois : bilan initial, essais, ajustements et suivi pour installer durablement les bonnes habitudes.",
+  },
+  {
+    value: "domicile",
+    label: "Visite à domicile",
+    brevoValue: "Visite à domicile",
+    price: 75,
+    reassurance:
+      "Le Visiopraticien se déplace chez vous pour réaliser votre bilan basse vision dans le confort de votre cadre de vie. Supplément déplacement selon la distance.",
   },
 ];
 

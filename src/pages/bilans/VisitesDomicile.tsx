@@ -73,7 +73,7 @@ const VisitesDomicile = () => {
                 Parce qu'il n'est pas toujours simple de se déplacer, LirElia propose des visites à domicile pour réaliser le bilan basse vision dans le confort de votre cadre de vie.
               </p>
               <Button variant="hero" size="lg" asChild>
-                <Link to="/rdv-bilan">
+                <Link to="/rdv-bilan?type=domicile">
                   <Calendar className="w-6 h-6" />
                   Demander une visite à domicile
                 </Link>

@@ -106,7 +106,7 @@ const CategoryPageLayout = ({
                 {intro}
               </p>
               <Button variant="secondary" size="lg" className="text-xl" asChild>
-                <Link to={`/contact-conseil?sujet=${encodeURIComponent(subject)}`}>
+                <Link to={`/contact-conseil?produit=${encodeURIComponent(subject)}`}>
                   {heroCtaText}
                   <ArrowRight className="w-6 h-6" />
                 </Link>
@@ -178,7 +178,7 @@ const CategoryPageLayout = ({
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="default" size="lg" className="text-xl" asChild>
-                  <Link to={`/contact-conseil?sujet=${encodeURIComponent(subject)}`}>
+                  <Link to={`/contact-conseil?produit=${encodeURIComponent(subject)}`}>
                     {bottomCtaText}
                     <ArrowRight className="w-6 h-6" />
                   </Link>
