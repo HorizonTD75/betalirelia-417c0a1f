@@ -110,7 +110,7 @@ const ComprendreBasseVision = () => {
           <div className="container relative py-20 lg:py-28">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-                Comprendre la Basse Vision
+                Comprendre la <span className="text-secondary">Basse Vision</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
                 La basse vision ne veut pas dire « ne plus rien voir ». C'est le terme utilisé quand la vue reste difficile malgré des lunettes bien adaptées et un suivi ophtalmologique correct.

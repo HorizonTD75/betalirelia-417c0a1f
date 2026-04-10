@@ -186,9 +186,9 @@ const VivreBasseVision = () => {
           </div>
           <div className="container relative">
             <div className="max-w-4xl">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Vivre au quotidien avec une basse vision
-              </h1>
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                  Vivre au quotidien avec une <span className="text-secondary">basse vision</span>
+                </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
                 Des solutions concrètes et des conseils pratiques pour maintenir votre autonomie et votre qualité de vie malgré une malvoyance.
               </p>

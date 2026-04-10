@@ -67,7 +67,7 @@ const VisitesDomicile = () => {
                 ← Retour aux bilans
               </Link>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-                Visites à domicile : le bilan basse vision dans votre environnement
+                Visites à domicile : le bilan <span className="text-secondary">basse vision</span> dans votre environnement
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
                 Parce qu'il n'est pas toujours simple de se déplacer, LirElia propose des visites à domicile pour réaliser le bilan basse vision dans le confort de votre cadre de vie.
