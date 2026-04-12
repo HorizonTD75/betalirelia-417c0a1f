@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams, Link, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -44,7 +44,6 @@ const ContactConseil = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [interet, setInteret] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
