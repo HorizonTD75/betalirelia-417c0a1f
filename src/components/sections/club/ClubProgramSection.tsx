@@ -46,10 +46,10 @@ const ClubProgramSection = () => {
       <div className="container">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
-            Le Programme du Mois
+            Le Programme des Prochains Mois
           </h2>
           <p className="text-xl text-primary-foreground/80 text-center mb-12 max-w-2xl mx-auto">
-            Chaque semaine, un thème différent pour varier les échanges et les découvertes.
+            Chaque mois, un thème différent pour varier les échanges et les découvertes.
           </p>
 
           <div className="grid lg:grid-cols-3 gap-8">
