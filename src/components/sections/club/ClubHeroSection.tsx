@@ -33,15 +33,23 @@ const ClubHeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
-      {/* Background subtle pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
+      {/* Background video */}
+      <div className="absolute inset-0">
+        <video
+          src="/videos/club-lirelia-hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          className="w-full h-full object-cover opacity-15"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/80 to-primary/95" />
       </div>
 
       <div className="container relative px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div>
+        <div className="max-w-4xl mx-auto">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
               <span className="font-semibold">Gratuit</span>
@@ -81,7 +89,7 @@ const ClubHeroSection = () => {
               })}
             </div>
 
-            {/* CTA Button - scroll to program */}
+            {/* CTA Button */}
             <div className="flex flex-wrap gap-4 mb-8">
               <Button variant="heroOutline" size="lg" onClick={scrollToProgram}>
                 Voir le programme du mois
@@ -102,27 +110,6 @@ const ClubHeroSection = () => {
                 ))}
               </ul>
             </div>
-          </div>
-
-          {/* Right Video */}
-          <div className="hidden lg:block">
-            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-3xl p-4 border border-primary-foreground/20">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <video
-                  src="/videos/club-lirelia-hero.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="none"
-                  className="w-full h-full object-cover"
-                  aria-label="Aperçu d'une session du Club LirElia en visioconférence"
-                  width={640}
-                  height={480}
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
