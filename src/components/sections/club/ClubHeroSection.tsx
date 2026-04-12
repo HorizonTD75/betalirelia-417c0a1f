@@ -48,8 +48,9 @@ const ClubHeroSection = () => {
             </div>
 
             <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 break-words overflow-hidden">
-              Club LirElia : rencontres & échanges pour{" "}
-              <span className="text-secondary">rompre l'isolement</span>
+              <span className="whitespace-nowrap">Club LirElia : rencontres & échanges</span>
+              <br />
+              <span className="text-secondary">pour rompre l'isolement</span>
             </h1>
 
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
