@@ -146,6 +146,45 @@ serve(async (req) => {
 
     if (!brevoRes.ok) {
       if (brevoRes.status === 400 && brevoJson?.code === "duplicate_parameter") {
+        const duplicateIds = brevoJson?.metadata?.duplicate_identifiers || [];
+        const isSMSDuplicate = duplicateIds.includes("SMS");
+
+        // If SMS is the duplicate reason, retry without phone first
+        if (isSMSDuplicate) {
+          console.log("SMS duplicate on create, retrying without phone...");
+          const attrsWithoutPhone = { ...brevoAttributes };
+          delete attrsWithoutPhone.SMS;
+          delete attrsWithoutPhone.PHONE;
+          const retryPayload = { ...brevoPayload, attributes: attrsWithoutPhone };
+
+          const retryRes = await fetch("https://api.brevo.com/v3/contacts", {
+            method: "POST",
+            headers: { "api-key": brevoApiKey, "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(retryPayload),
+          });
+
+          if (retryRes.ok) {
+            await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ phone_skipped: true }) }).eq("id", rowId);
+            return jsonResponse({ success: true }, 200);
+          }
+
+          // If retry POST also fails with duplicate_parameter (email exists), do PUT without phone
+          const retryJson = await retryRes.json().catch(() => ({}));
+          if (retryRes.status === 400 && retryJson?.code === "duplicate_parameter") {
+            console.log("Email also exists, doing PUT without phone...");
+            const putRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.trim())}`, {
+              method: "PUT",
+              headers: { "api-key": brevoApiKey, "Content-Type": "application/json", Accept: "application/json" },
+              body: JSON.stringify({ attributes: attrsWithoutPhone, listIds: brevoPayload.listIds || [] }),
+            });
+            if (putRes.ok || putRes.status === 204) {
+              await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ updated: true, phone_skipped: true }) }).eq("id", rowId);
+              return jsonResponse({ success: true }, 200);
+            }
+          }
+        }
+
+        // Standard email duplicate: just update
         console.log("Contact already exists in Brevo, updating attributes...");
 
         const updateRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.trim())}`, {
@@ -165,6 +204,41 @@ serve(async (req) => {
           const updateJson = await updateRes.json().catch(() => ({}));
           console.error("Brevo update error:", updateRes.status, JSON.stringify(updateJson));
 
+          // If SMS duplicate, retry without phone to still register the contact
+          const isSMSDuplicate = updateJson?.message === "Unable to update contact, SMS is already associated with another Contact";
+          const isInvalidPhone = updateJson?.message === "Invalid phone number";
+
+          if (isSMSDuplicate || isInvalidPhone) {
+            console.log("Phone issue detected, retrying without phone...");
+            const attrsWithoutPhone = { ...brevoAttributes };
+            delete attrsWithoutPhone.SMS;
+            delete attrsWithoutPhone.PHONE;
+
+            const retryRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.trim())}`, {
+              method: "PUT",
+              headers: {
+                "api-key": brevoApiKey,
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify({
+                attributes: attrsWithoutPhone,
+                listIds: brevoPayload.listIds || [],
+              }),
+            });
+
+            if (retryRes.ok) {
+              await supabase
+                .from("contact_lirelia")
+                .update({
+                  status: "brevo_ok",
+                  brevo_response: JSON.stringify({ updated: true, phone_skipped: true }),
+                })
+                .eq("id", rowId);
+              return jsonResponse({ success: true }, 200);
+            }
+          }
+
           await supabase
             .from("contact_lirelia")
             .update({
@@ -172,14 +246,6 @@ serve(async (req) => {
               brevo_response: JSON.stringify(updateJson),
             })
             .eq("id", rowId);
-
-          if (updateJson?.message === "Invalid phone number") {
-            return jsonResponse({ error: "Numéro de téléphone invalide." }, 400);
-          }
-
-          if (updateJson?.message === "Unable to update contact, SMS is already associated with another Contact") {
-            return jsonResponse({ error: "Ce numéro de téléphone est déjà utilisé avec une autre adresse e-mail. Veuillez utiliser un autre numéro ou nous contacter directement." }, 400);
-          }
 
           return jsonResponse({ error: "Erreur lors de la mise à jour du contact." }, 500);
         }
@@ -205,8 +271,43 @@ serve(async (req) => {
         })
         .eq("id", rowId);
 
-      if (brevoJson?.message === "Invalid phone number") {
-        return jsonResponse({ error: "Numéro de téléphone invalide." }, 400);
+      // If phone issue on initial create, retry without phone
+      const isSMSDuplicate = brevoJson?.message === "Unable to update contact, SMS is already associated with another Contact";
+      const isInvalidPhone = brevoJson?.message === "Invalid phone number";
+
+      if (isSMSDuplicate || isInvalidPhone) {
+        console.log("Phone issue on create, retrying without phone...");
+        const attrsWithoutPhone = { ...brevoAttributes };
+        delete attrsWithoutPhone.SMS;
+        delete attrsWithoutPhone.PHONE;
+
+        const retryPayload = { ...brevoPayload, attributes: attrsWithoutPhone };
+        const retryRes = await fetch("https://api.brevo.com/v3/contacts", {
+          method: "POST",
+          headers: {
+            "api-key": brevoApiKey,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(retryPayload),
+        });
+
+        if (retryRes.ok || retryRes.status === 400) {
+          // Handle duplicate on retry too
+          if (retryRes.status === 400) {
+            const retryJson = await retryRes.json().catch(() => ({}));
+            if (retryJson?.code === "duplicate_parameter") {
+              // Update existing contact without phone
+              await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.trim())}`, {
+                method: "PUT",
+                headers: { "api-key": brevoApiKey, "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ attributes: attrsWithoutPhone, listIds: brevoPayload.listIds || [] }),
+              });
+            }
+          }
+          await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ phone_skipped: true }) }).eq("id", rowId);
+          return jsonResponse({ success: true }, 200);
+        }
       }
 
       return jsonResponse({ error: "Erreur lors de l'inscription." }, 500);

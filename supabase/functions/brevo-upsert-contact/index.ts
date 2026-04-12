@@ -184,8 +184,45 @@ serve(async (req) => {
       brevoResponse = brevoJson;
 
       if (!brevoRes.ok) {
+        const brevoJson = brevoResponse as any;
         console.error("Brevo API error:", brevoRes.status, JSON.stringify(brevoJson));
-        brevoStatus = "brevo_error";
+        
+        // If SMS duplicate or invalid phone, retry without phone
+        const isSMSDuplicate = brevoJson?.message === "Unable to update contact, SMS is already associated with another Contact";
+        const isInvalidPhone = brevoJson?.message === "Invalid phone number";
+        
+        if (isSMSDuplicate || isInvalidPhone) {
+          console.log("Phone issue, retrying without phone...");
+          const attrsWithoutPhone = { ...brevoAttributes };
+          delete attrsWithoutPhone.SMS;
+          delete attrsWithoutPhone.PHONE;
+          
+          const retryPayload = { ...brevoPayload, attributes: attrsWithoutPhone };
+          try {
+            const retryRes = await fetch("https://api.brevo.com/v3/contacts", {
+              method: "POST",
+              headers: { "api-key": brevoApiKey, "Content-Type": "application/json", Accept: "application/json" },
+              body: JSON.stringify(retryPayload),
+            });
+            const retryJson = await retryRes.json().catch(() => ({}));
+            
+            if (retryRes.status === 400 && retryJson?.code === "duplicate_parameter") {
+              // Update existing contact without phone
+              await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.trim())}`, {
+                method: "PUT",
+                headers: { "api-key": brevoApiKey, "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ attributes: attrsWithoutPhone, listIds: brevoPayload.listIds ? brevoPayload.listIds : [] }),
+              });
+            }
+            brevoStatus = "brevo_ok";
+            brevoResponse = { phone_skipped: true };
+          } catch (retryErr) {
+            console.error("Retry without phone failed:", retryErr);
+            brevoStatus = "brevo_error";
+          }
+        } else {
+          brevoStatus = "brevo_error";
+        }
       }
     } catch (brevoErr) {
       console.error("Brevo fetch failed:", brevoErr);
