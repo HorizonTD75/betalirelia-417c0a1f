@@ -32,26 +32,26 @@ const ClubHeroSection = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-primary py-20 lg:py-28">
       {/* Background subtle pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
       </div>
 
-      <div className="container relative px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
+      <div className="container relative">
+        <div className="max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
             <span className="font-semibold">Gratuit</span>
           </div>
 
-          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
             Club LirElia : rencontres &amp; échanges
             <br />
             <span className="text-secondary">pour rompre l'isolement</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl">
+          <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
             Un espace d'échanges entre personnes concernées et aidants : 
             astuces, retours d'expérience, mini-conférences et moments simples, 
             en visioconférence, avec un animateur.
