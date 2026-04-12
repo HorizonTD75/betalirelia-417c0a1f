@@ -131,25 +131,49 @@ const ClubRegistrationSection = () => {
 
       const { data, error } = result ?? { data: null, error: new Error("Réponse invalide.") };
 
-      // supabase.functions.invoke returns the body in data even on non-2xx
-      // Check for an error message from our edge function
-      const apiError = data?.error;
+      // Extract API error message: on non-2xx, supabase SDK puts a FunctionsHttpError in `error`
+      // We need to parse its response body to get our custom error message
+      let apiErrorMessage: string | null = null;
 
-      if (error && !apiError) {
+      if (error) {
+        // Try to extract JSON body from FunctionsHttpError
+        try {
+          if ('context' in error && (error as any).context?.body) {
+            const body = await new Response((error as any).context.body).json();
+            apiErrorMessage = body?.error || null;
+          } else if ('message' in error) {
+            // Try parsing the error message itself
+            try {
+              const parsed = JSON.parse(error.message);
+              apiErrorMessage = parsed?.error || null;
+            } catch {
+              apiErrorMessage = null;
+            }
+          }
+        } catch {
+          apiErrorMessage = null;
+        }
+      }
+
+      // Also check data.error for older SDK behavior
+      if (!apiErrorMessage && data?.error) {
+        apiErrorMessage = typeof data.error === "string" ? data.error : null;
+      }
+
+      if (apiErrorMessage) {
+        const isPhoneDuplicate = apiErrorMessage.includes("numéro de téléphone");
         toast({
-          title: "Inscription impossible",
-          description: "Une erreur est survenue. Merci de réessayer un peu plus tard.",
+          title: isPhoneDuplicate ? "Numéro de téléphone déjà utilisé" : "Inscription impossible",
+          description: apiErrorMessage,
           variant: "destructive",
         });
         return;
       }
 
-      if (apiError) {
-        const description = typeof apiError === "string" ? apiError : "Votre inscription n'a pas pu être finalisée.";
-        const isPhoneDuplicate = typeof apiError === "string" && apiError.includes("numéro de téléphone");
+      if (error) {
         toast({
-          title: isPhoneDuplicate ? "Numéro de téléphone déjà utilisé" : "Inscription impossible",
-          description,
+          title: "Inscription impossible",
+          description: "Une erreur est survenue. Merci de réessayer un peu plus tard.",
           variant: "destructive",
         });
         return;
