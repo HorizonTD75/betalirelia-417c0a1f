@@ -131,10 +131,23 @@ const ClubRegistrationSection = () => {
 
       const { data, error } = result ?? { data: null, error: new Error("Réponse invalide.") };
 
-      if (error) {
+      // supabase.functions.invoke returns the body in data even on non-2xx
+      // Check for an error message from our edge function
+      const apiError = data?.error;
+
+      if (error && !apiError) {
         toast({
           title: "Inscription impossible",
           description: "Une erreur est survenue. Merci de réessayer un peu plus tard.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (apiError) {
+        toast({
+          title: "Inscription impossible",
+          description: typeof apiError === "string" ? apiError : "Votre inscription n'a pas pu être finalisée.",
           variant: "destructive",
         });
         return;
