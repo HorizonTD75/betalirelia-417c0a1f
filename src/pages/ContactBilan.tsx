@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Phone, Send, Check, Shield, Info } from "lucide-react";
+import { Phone, Send, Check, Info } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useFormValidation } from "@/hooks/useFormValidation";
+import RGPDConsent from "@/components/RGPDConsent";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 
 type BilanType = "essentiel" | "expert" | "suivi" | "domicile";
@@ -60,6 +60,7 @@ const bilanOptions: {
 
 const ContactBilan = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const defaultBilan = (searchParams.get("type") as BilanType) || "essentiel";
   const { toast } = useToast();
 
@@ -116,7 +117,7 @@ const ContactBilan = () => {
       const selectedOption = bilanOptions.find((b) => b.value === selectedBilan);
       const roleValue = profil === "aidant" ? "aidant" : "personne concernée";
 
-      const response = await supabase.functions.invoke("brevo-upsert-contact", {
+      const result = await supabase.functions.invoke("brevo-upsert-contact", {
         body: {
           nom: `${prenom.trim()} ${nom.trim()}`,
           email: email.trim(),
@@ -131,25 +132,42 @@ const ContactBilan = () => {
         },
       });
 
-      if (response.error) {
-        throw response.error;
+      const { data, error } = result;
+
+      // Extract API error message from FunctionsHttpError
+      let apiErrorMessage: string | null = null;
+      if (error) {
+        try {
+          if ('context' in error && (error as any).context?.body) {
+            const body = await new Response((error as any).context.body).json();
+            apiErrorMessage = body?.error || null;
+          }
+        } catch { /* ignore */ }
+      }
+      if (!apiErrorMessage && data?.error) {
+        apiErrorMessage = typeof data.error === "string" ? data.error : null;
       }
 
-      const data = response.data as { error?: string } | null;
-      if (data?.error) {
-        throw new Error(data.error);
+      if (apiErrorMessage) {
+        const isPhoneDuplicate = apiErrorMessage.includes("numéro de téléphone");
+        toast({
+          title: isPhoneDuplicate ? "Numéro de téléphone déjà utilisé" : "Envoi impossible",
+          description: apiErrorMessage,
+          variant: "destructive",
+        });
+        return;
       }
 
-      toast({
-        title: "Demande envoyée !",
-        description: "Nous vous recontacterons très rapidement par téléphone.",
-      });
+      if (error) throw error;
 
-      setNom("");
-      setPrenom("");
-      setTelephone("");
-      setEmail("");
-      setRgpdAccepted(false);
+      // Navigate to the appropriate thank-you page based on selected bilan
+      const thankYouRoutes: Record<BilanType, string> = {
+        essentiel: "/merci-bilan-essentiel",
+        expert: "/merci-bilan-expert",
+        suivi: "/merci-bilan-suivi",
+        domicile: "/merci-visite-domicile",
+      };
+      navigate(thankYouRoutes[selectedBilan]);
     } catch (err) {
       console.error("Erreur ContactBilan:", err);
       toast({
@@ -401,21 +419,11 @@ const ContactBilan = () => {
                       />
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 rounded-xl bg-muted">
-                      <Checkbox
-                        id="rgpd"
-                        checked={rgpdAccepted}
-                        onCheckedChange={(checked) => setRgpdAccepted(checked === true)}
-                        className="mt-1"
-                      />
-                      <label htmlFor="rgpd" className="text-base text-muted-foreground cursor-pointer leading-relaxed">
-                        <Shield className="w-4 h-4 inline mr-1" />
-                        J'accepte que mes données personnelles soient utilisées pour traiter ma demande de rendez-vous
-                        conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong>. Vos
-                        informations ne seront ni vendues ni partagées avec des tiers. Vous pouvez exercer vos droits
-                        d'accès, de rectification et de suppression en nous contactant à tout moment.
-                      </label>
-                    </div>
+                    <RGPDConsent
+                      checked={rgpdAccepted}
+                      onCheckedChange={setRgpdAccepted}
+                      id="bilan-rgpd"
+                    />
 
                     <div className="text-center">
                       <Button type="submit" variant="default" size="lg" disabled={isSubmitting} className="min-w-64">

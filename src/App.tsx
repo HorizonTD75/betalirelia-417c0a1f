@@ -58,6 +58,12 @@ const AchromatopsieHereditaire = lazy(() => import("./pages/maladies/hereditaire
 const SyndromeUsher = lazy(() => import("./pages/maladies/hereditaires/SyndromeUsher"));
 const Aniridie = lazy(() => import("./pages/maladies/hereditaires/Aniridie"));
 const PolitiqueCookies = lazy(() => import("./pages/PolitiqueCookies"));
+const MerciClub = lazy(() => import("./pages/MerciClub"));
+const MerciContact = lazy(() => import("./pages/MerciContact"));
+const MerciBilanEssentiel = lazy(() => import("./pages/MerciBilanEssentiel"));
+const MerciBilanExpert = lazy(() => import("./pages/MerciBilanExpert"));
+const MerciBilanSuivi = lazy(() => import("./pages/MerciBilanSuivi"));
+const MerciVisiteDomicile = lazy(() => import("./pages/MerciVisiteDomicile"));
 
 const queryClient = new QueryClient();
 
@@ -133,6 +139,12 @@ const App = () => (
             <Route path="/charte-club-lirelia" element={<CharteClub />} />
             <Route path="/qui-sommes-nous" element={<QuiSommesNous />} />
             <Route path="/politique-cookies" element={<PolitiqueCookies />} />
+            <Route path="/merci-club" element={<MerciClub />} />
+            <Route path="/merci-contact" element={<MerciContact />} />
+            <Route path="/merci-bilan-essentiel" element={<MerciBilanEssentiel />} />
+            <Route path="/merci-bilan-expert" element={<MerciBilanExpert />} />
+            <Route path="/merci-bilan-suivi" element={<MerciBilanSuivi />} />
+            <Route path="/merci-visite-domicile" element={<MerciVisiteDomicile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

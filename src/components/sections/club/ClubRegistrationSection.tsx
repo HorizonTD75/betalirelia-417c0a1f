@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import { UserPlus, Shield, Loader2, CheckCircle2 } from "lucide-react";
+import { UserPlus, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useFormValidation } from "@/hooks/useFormValidation";
+import RGPDConsent from "@/components/RGPDConsent";
 
 const profiles = [
   { value: "patient", label: "Personne concernée" },
@@ -29,6 +31,7 @@ const themes = [
 ];
 
 const ClubRegistrationSection = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -41,7 +44,7 @@ const ClubRegistrationSection = () => {
     needZoomHelp: false,
   });
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [rgpdAccepted, setRgpdAccepted] = useState(false);
   const { errors: formErrors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
@@ -66,6 +69,15 @@ const ClubRegistrationSection = () => {
     e.preventDefault();
 
     if (honeypot) return;
+
+    if (!rgpdAccepted) {
+      toast({
+        title: "Consentement requis",
+        description: "Veuillez accepter la politique de confidentialité avant de soumettre le formulaire.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     if (
       !validateAll([
@@ -188,7 +200,7 @@ const ClubRegistrationSection = () => {
         return;
       }
 
-      setSubmitted(true);
+      navigate("/merci-club");
     } catch {
       toast({
         title: "Inscription impossible",
@@ -199,28 +211,6 @@ const ClubRegistrationSection = () => {
       setLoading(false);
     }
   };
-
-  if (submitted) {
-    return (
-      <section className="py-20 bg-background" id="registration">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <Card variant="highlighted" className="text-center py-12">
-              <CardContent className="space-y-6">
-                <div className="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-10 h-10 text-accent" />
-                </div>
-                <h2 className="font-serif text-3xl font-bold text-foreground">Merci pour votre inscription !</h2>
-                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
-                  Vous recevrez prochainement un e-mail avec les informations pour la prochaine session du Club.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="py-20 bg-background" id="registration">
@@ -444,7 +434,13 @@ const ClubRegistrationSection = () => {
                   />
                 </div>
 
-                <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading}>
+                <RGPDConsent
+                  checked={rgpdAccepted}
+                  onCheckedChange={setRgpdAccepted}
+                  id="club-rgpd"
+                />
+
+                <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading || !rgpdAccepted}>
                   {loading ? (
                     <>
                       <Loader2 className="w-6 h-6 animate-spin" /> Inscription en cours…
@@ -455,12 +451,6 @@ const ClubRegistrationSection = () => {
                     </>
                   )}
                 </Button>
-
-                {/* Trust Message */}
-                <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                  <Shield className="w-5 h-5" />
-                  <span>Pas de spam. Vous pouvez vous désinscrire à tout moment.</span>
-                </div>
               </form>
             </CardContent>
           </Card>

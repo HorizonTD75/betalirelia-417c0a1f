@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -8,10 +8,11 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useFormValidation } from "@/hooks/useFormValidation";
+import RGPDConsent from "@/components/RGPDConsent";
 
 const topicOptions = [
   { value: "", label: "— Aucun sujet en particulier —" },
@@ -41,8 +42,8 @@ const categories = [...new Set(topicOptions.filter((o) => o.category).map((o) =>
 
 const ContactConseil = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [interet, setInteret] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
@@ -50,6 +51,7 @@ const ContactConseil = () => {
   const [message, setMessage] = useState("");
   const [sourceUrl, setSourceUrl] = useState("");
   const [sourceTag, setSourceTag] = useState("");
+  const [rgpdAccepted, setRgpdAccepted] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -76,6 +78,16 @@ const ContactConseil = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return;
+
+    if (!rgpdAccepted) {
+      toast({
+        title: "Consentement requis",
+        description: "Veuillez accepter la politique de confidentialité.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     if (!validateAll([
       { field: "email", value: email },
       { field: "telephone", value: telephone },
@@ -83,7 +95,7 @@ const ContactConseil = () => {
     setLoading(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("brevo-upsert-contact", {
+      const result = await supabase.functions.invoke("brevo-upsert-contact", {
         body: {
           interet: interet || null,
           email,
@@ -96,19 +108,41 @@ const ContactConseil = () => {
         }
       });
 
-      if (error) throw error;
-      if (data?.error) throw new Error(data.error);
+      const { data, error } = result;
 
-      setSubmitted(true);
+      // Extract API error message from FunctionsHttpError
+      let apiErrorMessage: string | null = null;
+      if (error) {
+        try {
+          if ('context' in error && (error as any).context?.body) {
+            const body = await new Response((error as any).context.body).json();
+            apiErrorMessage = body?.error || null;
+          }
+        } catch { /* ignore */ }
+      }
+      if (!apiErrorMessage && data?.error) {
+        apiErrorMessage = typeof data.error === "string" ? data.error : null;
+      }
+
+      if (apiErrorMessage) {
+        const isPhoneDuplicate = apiErrorMessage.includes("numéro de téléphone");
+        toast({
+          title: isPhoneDuplicate ? "Numéro de téléphone déjà utilisé" : "Envoi impossible",
+          description: apiErrorMessage,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (error) throw error;
+
+      navigate("/merci-contact");
     } catch (err: unknown) {
       console.error("Submit error:", err);
-      const errorMessage = err instanceof Error ? err.message : "Erreur inconnue";
       toast({
         title: "Une erreur est survenue",
-        description: errorMessage.startsWith("Adresse") || errorMessage.startsWith("Nom") || errorMessage.startsWith("Message") ?
-        errorMessage :
-        "Impossible d'envoyer votre demande. Veuillez réessayer.",
-        variant: "destructive"
+        description: "Impossible d'envoyer votre demande. Veuillez réessayer.",
+        variant: "destructive",
       });
     } finally {
       setLoading(false);
@@ -130,25 +164,6 @@ const ContactConseil = () => {
               <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
                 Zone de contact
               </h1>
-
-              {submitted ?
-              <Card variant="highlighted" className="text-center py-12">
-                  <CardContent className="space-y-6">
-                    <div className="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
-                      <CheckCircle2 className="w-10 h-10 text-accent" />
-                    </div>
-                    <h1 className="font-serif text-3xl font-bold text-foreground">Merci !</h1>
-                    <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
-                      Nous revenons vers vous rapidement.
-                    </p>
-                    <Button variant="outline" size="lg" asChild>
-                      <Link to="/aides-lecture-bassevision">
-                        <ArrowLeft className="w-5 h-5" />
-                        Explorer les aides à la lecture
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card> :
 
               <Card variant="highlighted" className="overflow-hidden">
                   <CardHeader className="text-center pb-2">
@@ -245,10 +260,15 @@ const ContactConseil = () => {
                         <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
                       </div>
 
-                      <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
+                      <RGPDConsent
+                        checked={rgpdAccepted}
+                        onCheckedChange={setRgpdAccepted}
+                        id="contact-rgpd"
+                      />
+
+                      <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading || !rgpdAccepted}>
                         {loading ?
                       <><Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours…</> :
-
                       <><Send className="w-5 h-5" /> Envoyer ma demande de conseil</>
                       }
                       </Button>
@@ -260,7 +280,6 @@ const ContactConseil = () => {
                     </form>
                   </CardContent>
                 </Card>
-              }
             </div>
           </div>
         </section>
