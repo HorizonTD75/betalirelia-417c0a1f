@@ -39,26 +39,28 @@ const ClubHeroSection = () => {
       </div>
 
       <div className="container relative px-4 sm:px-6">
+        {/* Title section — full width */}
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
+            <span className="font-semibold">Gratuit</span>
+          </div>
+
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+            Club LirElia : rencontres &amp; échanges
+            <br />
+            <span className="text-secondary">pour rompre l'isolement</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl">
+            Un espace d'échanges entre personnes concernées et aidants : 
+            astuces, retours d'expérience, mini-conférences et moments simples, 
+            en visioconférence, avec un animateur.
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
-              <span className="font-semibold">Gratuit</span>
-            </div>
-
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6">
-              Club LirElia : rencontres &amp; échanges
-              <br />
-              <span className="text-secondary">pour rompre l'isolement</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
-              Un espace d'échanges entre personnes concernées et aidants : 
-              astuces, retours d'expérience, mini-conférences et moments simples, 
-              en visioconférence, avec un animateur.
-            </p>
-
             {/* Benefits Cards */}
             <div className="grid sm:grid-cols-3 gap-4 mb-8">
               {benefits.map((benefit, index) => {
