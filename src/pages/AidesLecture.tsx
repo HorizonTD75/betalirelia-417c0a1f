@@ -148,7 +148,9 @@ const AidesLecture = () => {
           <div className="container relative z-10">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-8 leading-tight">
-                Aides à la lecture pour <span className="text-secondary">malvoyants</span>
+                Aides à la lecture
+                <br />
+                <span className="text-secondary">pour malvoyants</span>
               </h1>
               <p className="font-serif text-2xl text-primary-foreground/80 mb-4">
                 Retrouver le plaisir de lire, même en cas de basse vision
