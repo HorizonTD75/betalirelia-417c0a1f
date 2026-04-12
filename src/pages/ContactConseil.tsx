@@ -136,6 +136,34 @@ const ContactConseil = () => {
 
       if (error) throw error;
 
+      // Send confirmation email to user
+      const emailId = crypto.randomUUID();
+      const selectedTopic = topicOptions.find((o) => o.value === interet)?.label;
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-confirmation",
+          recipientEmail: email.trim(),
+          idempotencyKey: `contact-confirm-${emailId}`,
+          templateData: { name: nom.trim(), subject: selectedTopic || undefined },
+        },
+      });
+
+      // Send admin notification
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "admin-notification",
+          recipientEmail: "bleuhorizon2018@gmail.com",
+          idempotencyKey: `contact-admin-${emailId}`,
+          templateData: {
+            formType: "Contact Conseil",
+            name: nom.trim(),
+            email: email.trim(),
+            phone: telephone.trim() || undefined,
+            details: message,
+          },
+        },
+      });
+
       navigate("/merci-contact");
     } catch (err: unknown) {
       console.error("Submit error:", err);

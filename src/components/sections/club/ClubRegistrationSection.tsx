@@ -200,6 +200,33 @@ const ClubRegistrationSection = () => {
         return;
       }
 
+      // Send confirmation email to user
+      const emailId = crypto.randomUUID();
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "club-registration",
+          recipientEmail: formData.email.trim(),
+          idempotencyKey: `club-confirm-${emailId}`,
+          templateData: { name: formData.prenom.trim() },
+        },
+      });
+
+      // Send admin notification
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "admin-notification",
+          recipientEmail: "bleuhorizon2018@gmail.com",
+          idempotencyKey: `club-admin-${emailId}`,
+          templateData: {
+            formType: "Club",
+            name: `${formData.prenom.trim()} ${formData.nom.trim()}`,
+            email: formData.email.trim(),
+            phone: formData.telephone.trim(),
+            details: message,
+          },
+        },
+      });
+
       navigate("/merci-club");
     } catch {
       toast({

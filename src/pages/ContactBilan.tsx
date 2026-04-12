@@ -160,6 +160,33 @@ const ContactBilan = () => {
 
       if (error) throw error;
 
+      // Send confirmation email to user
+      const emailId = crypto.randomUUID();
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "bilan-confirmation",
+          recipientEmail: email.trim(),
+          idempotencyKey: `bilan-confirm-${emailId}`,
+          templateData: { name: prenom.trim(), bilanType: selectedOption?.label },
+        },
+      });
+
+      // Send admin notification
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "admin-notification",
+          recipientEmail: "bleuhorizon2018@gmail.com",
+          idempotencyKey: `bilan-admin-${emailId}`,
+          templateData: {
+            formType: `RDV ${selectedOption?.label}`,
+            name: `${prenom.trim()} ${nom.trim()}`,
+            email: email.trim(),
+            phone: telephone.trim(),
+            details: `Profil: ${roleValue}`,
+          },
+        },
+      });
+
       // Navigate to the appropriate thank-you page based on selected bilan
       const thankYouRoutes: Record<BilanType, string> = {
         essentiel: "/merci-bilan-essentiel",
