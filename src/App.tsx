@@ -65,6 +65,7 @@ const MerciBilanExpert = lazy(() => import("./pages/MerciBilanExpert"));
 const MerciBilanSuivi = lazy(() => import("./pages/MerciBilanSuivi"));
 const MerciVisiteDomicile = lazy(() => import("./pages/MerciVisiteDomicile"));
 const Admin = lazy(() => import("./pages/Admin"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 
 const queryClient = new QueryClient();
 
@@ -147,6 +148,7 @@ const App = () => (
             <Route path="/merci-bilan-suivi" element={<MerciBilanSuivi />} />
             <Route path="/merci-visite-domicile" element={<MerciVisiteDomicile />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
