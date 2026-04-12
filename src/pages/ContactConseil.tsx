@@ -166,25 +166,6 @@ const ContactConseil = () => {
                 Zone de contact
               </h1>
 
-              {submitted ?
-              <Card variant="highlighted" className="text-center py-12">
-                  <CardContent className="space-y-6">
-                    <div className="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
-                      <CheckCircle2 className="w-10 h-10 text-accent" />
-                    </div>
-                    <h1 className="font-serif text-3xl font-bold text-foreground">Merci !</h1>
-                    <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
-                      Nous revenons vers vous rapidement.
-                    </p>
-                    <Button variant="outline" size="lg" asChild>
-                      <Link to="/aides-lecture-bassevision">
-                        <ArrowLeft className="w-5 h-5" />
-                        Explorer les aides à la lecture
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card> :
-
               <Card variant="highlighted" className="overflow-hidden">
                   <CardHeader className="text-center pb-2">
                     <CardTitle className="font-serif text-2xl md:text-3xl">
@@ -280,10 +261,15 @@ const ContactConseil = () => {
                         <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
                       </div>
 
-                      <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
+                      <RGPDConsent
+                        checked={rgpdAccepted}
+                        onCheckedChange={setRgpdAccepted}
+                        id="contact-rgpd"
+                      />
+
+                      <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading || !rgpdAccepted}>
                         {loading ?
                       <><Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours…</> :
-
                       <><Send className="w-5 h-5" /> Envoyer ma demande de conseil</>
                       }
                       </Button>
@@ -295,7 +281,6 @@ const ContactConseil = () => {
                     </form>
                   </CardContent>
                 </Card>
-              }
             </div>
           </div>
         </section>
