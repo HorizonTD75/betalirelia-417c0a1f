@@ -46,7 +46,7 @@ const Myopie = () => {
         {/* Hero */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={maladiesHeroImage} alt="" className="w-full h-full object-cover opacity-40" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={maladiesHeroImage} alt="" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">

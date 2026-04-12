@@ -128,7 +128,7 @@ const Visiopraticien = () => {
         {/* Hero */}
         <section className="relative bg-primary text-primary-foreground py-20 pb-32 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={visiopraticienHeroImage} alt="" className="w-full h-full object-cover opacity-40" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={visiopraticienHeroImage} alt="" className="w-full h-full object-cover opacity-30" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">

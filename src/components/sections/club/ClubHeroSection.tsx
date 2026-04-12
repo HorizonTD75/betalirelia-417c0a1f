@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Video, Users, ArrowRight } from "lucide-react";
-import clubHeroImage from "@/assets/club-hero.jpg";
+import { MessageCircle, Video, Users, Check, ArrowRight } from "lucide-react";
 
 const benefits = [
   {
@@ -21,70 +20,94 @@ const benefits = [
   },
 ];
 
+const reassurances = [
+  "Ouvert à tous : clients et non-clients",
+  "Animation supervisée (cadre bienveillant)",
+  "Accessible via Zoom (aide à la connexion si besoin)",
+];
+
 const ClubHeroSection = () => {
   const scrollToProgram = () => {
     document.getElementById("program")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative overflow-hidden bg-primary">
-      <div className="absolute inset-0">
-        <img
-          src={clubHeroImage}
-          alt="Session du Club LirElia en visioconférence"
-          className="w-full h-full object-cover opacity-40"
-          loading="eager"
-          decoding="async"
-          width={1440}
-          height={600}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+    <section className="relative overflow-hidden bg-primary py-16 lg:py-24">
+      {/* Background subtle pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
       </div>
-      <div className="container relative py-20 lg:py-28">
-        <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-8">
-            <Users className="w-5 h-5" />
-            <span className="text-lg font-semibold">Gratuit · Ouvert à tous</span>
-          </div>
 
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Club LirElia : rencontres &amp; échanges
-            <br />
-            <span className="text-secondary">pour rompre l'isolement</span>
-          </h1>
+      <div className="container relative px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
+              <span className="font-semibold">Gratuit</span>
+            </div>
 
-          <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-            Un espace d'échanges entre personnes concernées et aidants :
-            astuces, retours d'expérience, mini-conférences et moments simples,
-            en visioconférence, avec un animateur.
-          </p>
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6">
+              Club LirElia : rencontres &amp; échanges
+              <br />
+              <span className="text-secondary">pour rompre l'isolement</span>
+            </h1>
 
-          {/* Benefits Cards */}
-          <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8 max-w-2xl">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <Card key={index} className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm">
-                  <CardContent className="p-3 md:p-4 text-center">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center mx-auto mb-2">
-                      <Icon className="w-5 h-5 md:w-6 md:h-6" />
+            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
+              Un espace d'échanges entre personnes concernées et aidants : 
+              astuces, retours d'expérience, mini-conférences et moments simples, 
+              en visioconférence, avec un animateur.
+            </p>
+
+            {/* Benefits Cards */}
+            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+              {benefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                return (
+                  <Card key={index} className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm">
+                    <CardContent className="p-4 text-center">
+                      <div className="w-12 h-12 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center mx-auto mb-3">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-serif text-lg font-bold text-primary-foreground mb-1">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-sm text-primary-foreground/80">
+                        {benefit.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+
+            {/* CTA Button - scroll to program */}
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Button variant="heroOutline" size="lg" onClick={scrollToProgram}>
+                Voir le programme du mois
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </div>
+
+            {/* Reassurance Block */}
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20">
+              <ul className="space-y-3">
+                {reassurances.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-4 h-4 text-secondary-foreground" />
                     </div>
-                    <h3 className="font-serif text-base md:text-lg font-bold text-primary-foreground mb-0.5">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-xs md:text-sm text-primary-foreground/80">
-                      {benefit.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                    <span className="text-lg text-primary-foreground/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Video capsule */}
-          <div className="max-w-lg mb-8">
-            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-2 border border-primary-foreground/20">
-              <div className="aspect-video rounded-lg overflow-hidden">
+          {/* Right Video */}
+          <div className="hidden lg:block">
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-3xl p-4 border border-primary-foreground/20">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                 <video
                   src="/videos/club-lirelia-hero.mp4"
                   autoPlay
@@ -94,25 +117,16 @@ const ClubHeroSection = () => {
                   preload="none"
                   className="w-full h-full object-cover"
                   aria-label="Aperçu d'une session du Club LirElia en visioconférence"
+                  width={640}
+                  height={480}
                 />
               </div>
             </div>
           </div>
-
-          <div className="flex flex-wrap gap-4">
-            <Button variant="hero" size="lg" onClick={scrollToProgram}>
-              Voir le programme du mois
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <a href="#inscription">
-                Rejoindre le Club
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </Button>
-          </div>
         </div>
       </div>
+
+      {/* Wave decoration */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path

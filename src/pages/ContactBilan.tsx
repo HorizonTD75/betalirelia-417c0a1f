@@ -221,7 +221,7 @@ const ContactBilan = () => {
             <img
               src={bilanHeroImage}
               alt=""
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover opacity-20"
               aria-hidden="true"
               loading="eager"
               decoding="async"
