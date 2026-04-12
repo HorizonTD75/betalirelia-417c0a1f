@@ -6,28 +6,28 @@ const themes = [
   {
     icon: Plane,
     title: "Voyage",
-    week: "Semaine 1",
+    month: "Juillet 2026",
     description: "Récits, astuces, préparation (mobilité, sécurité, applis utiles)",
     color: "bg-blue-100 text-blue-700",
   },
   {
     icon: Cpu,
     title: "Technologie & IA",
-    week: "Semaine 2",
+    month: "Août 2026",
     description: "Outils, nouveautés, démos simples (lecture, reconnaissance, accessibilité)",
     color: "bg-purple-100 text-purple-700",
   },
   {
     icon: BookOpen,
     title: "Livres",
-    week: "Semaine 3",
+    month: "Septembre 2026",
     description: "Lecture autrement : audio, liseuses, grands caractères, loupes, clubs de lecture",
     color: "bg-green-100 text-green-700",
   },
   {
     icon: Music,
     title: "Musiques",
-    week: "Semaine 4",
+    month: "Octobre 2026",
     description: "Découvertes, souvenirs, playlists, instruments, concerts accessibles",
     color: "bg-orange-100 text-orange-700",
   },
@@ -46,10 +46,10 @@ const ClubProgramSection = () => {
       <div className="container">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
-            Le Programme du Mois
+            Le Programme des Prochains Mois
           </h2>
           <p className="text-xl text-primary-foreground/80 text-center mb-12 max-w-2xl mx-auto">
-            Chaque semaine, un thème différent pour varier les échanges et les découvertes.
+            Chaque mois, un thème différent pour varier les échanges et les découvertes.
           </p>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -66,7 +66,7 @@ const ClubProgramSection = () => {
                         </div>
                         <div>
                           <span className="text-sm font-semibold text-secondary mb-1 block">
-                            {theme.week}
+                            {theme.month}
                           </span>
                           <h3 className="font-serif text-xl font-bold text-primary-foreground mb-2">
                             {theme.title}
