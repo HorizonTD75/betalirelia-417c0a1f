@@ -1,6 +1,25 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, ArrowRight } from "lucide-react";
+import { MessageCircle, Video, Users, ArrowRight } from "lucide-react";
 import clubHeroImage from "@/assets/club-hero.jpg";
+
+const benefits = [
+  {
+    icon: MessageCircle,
+    title: "Échanges",
+    description: "Astuces du quotidien",
+  },
+  {
+    icon: Video,
+    title: "Visioconférences",
+    description: "Mini-conférences thématiques",
+  },
+  {
+    icon: Users,
+    title: "Rencontres",
+    description: "Lien social, sans pression",
+  },
+];
 
 const ClubHeroSection = () => {
   const scrollToProgram = () => {
@@ -39,6 +58,46 @@ const ClubHeroSection = () => {
             astuces, retours d'expérience, mini-conférences et moments simples,
             en visioconférence, avec un animateur.
           </p>
+
+          {/* Benefits Cards */}
+          <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8 max-w-2xl">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <Card key={index} className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm">
+                  <CardContent className="p-3 md:p-4 text-center">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center mx-auto mb-2">
+                      <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                    </div>
+                    <h3 className="font-serif text-base md:text-lg font-bold text-primary-foreground mb-0.5">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-primary-foreground/80">
+                      {benefit.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* Video capsule */}
+          <div className="max-w-lg mb-8">
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-2 border border-primary-foreground/20">
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <video
+                  src="/videos/club-lirelia-hero.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="none"
+                  className="w-full h-full object-cover"
+                  aria-label="Aperçu d'une session du Club LirElia en visioconférence"
+                />
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-wrap gap-4">
             <Button variant="hero" size="lg" onClick={scrollToProgram}>
