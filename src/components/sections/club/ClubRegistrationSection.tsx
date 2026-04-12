@@ -145,9 +145,11 @@ const ClubRegistrationSection = () => {
       }
 
       if (apiError) {
+        const description = typeof apiError === "string" ? apiError : "Votre inscription n'a pas pu être finalisée.";
+        const isPhoneDuplicate = typeof apiError === "string" && apiError.includes("numéro de téléphone");
         toast({
-          title: "Inscription impossible",
-          description: typeof apiError === "string" ? apiError : "Votre inscription n'a pas pu être finalisée.",
+          title: isPhoneDuplicate ? "Numéro de téléphone déjà utilisé" : "Inscription impossible",
+          description,
           variant: "destructive",
         });
         return;

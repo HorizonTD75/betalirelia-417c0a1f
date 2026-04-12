@@ -178,7 +178,7 @@ serve(async (req) => {
           }
 
           if (updateJson?.message === "Unable to update contact, SMS is already associated with another Contact") {
-            return jsonResponse({ error: "Ce numéro de téléphone est déjà associé à un autre contact." }, 400);
+            return jsonResponse({ error: "Ce numéro de téléphone est déjà utilisé avec une autre adresse e-mail. Veuillez utiliser un autre numéro ou nous contacter directement." }, 400);
           }
 
           return jsonResponse({ error: "Erreur lors de la mise à jour du contact." }, 500);
