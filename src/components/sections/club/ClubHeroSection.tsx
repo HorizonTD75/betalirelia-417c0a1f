@@ -39,7 +39,7 @@ const ClubHeroSection = () => {
       </div>
 
       <div className="container relative px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
             <span className="font-semibold">Gratuit</span>
@@ -51,14 +51,14 @@ const ClubHeroSection = () => {
             <span className="text-secondary">pour rompre l'isolement</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl">
             Un espace d'échanges entre personnes concernées et aidants : 
             astuces, retours d'expérience, mini-conférences et moments simples, 
             en visioconférence, avec un animateur.
           </p>
 
           {/* Video capsule */}
-          <div className="max-w-2xl mx-auto mb-10">
+          <div className="max-w-2xl mb-10">
             <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-3 border border-primary-foreground/20">
               <div className="aspect-video rounded-xl overflow-hidden">
                 <video
@@ -98,7 +98,7 @@ const ClubHeroSection = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center gap-4 mb-8">
+          <div className="flex gap-4 mb-8">
             <Button variant="heroOutline" size="lg" onClick={scrollToProgram}>
               Voir le programme du mois
               <ArrowRight className="w-5 h-5" />
@@ -106,7 +106,7 @@ const ClubHeroSection = () => {
           </div>
 
           {/* Reassurance Block */}
-          <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20 text-left max-w-2xl mx-auto">
+          <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20 max-w-2xl">
             <ul className="space-y-3">
               {reassurances.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
