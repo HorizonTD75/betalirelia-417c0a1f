@@ -41,12 +41,11 @@ const ClubHeroSection = () => {
       <div className="container relative px-4 sm:px-6">
         {/* Title section — full width */}
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6">
-            <span className="font-semibold">Gratuit</span>
-          </div>
-
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
             Club LirElia : rencontres &amp; échanges
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 align-middle ml-3 text-lg sm:text-xl font-semibold">
+              Gratuit
+            </span>
             <br />
             <span className="text-secondary">pour rompre l'isolement</span>
           </h1>
