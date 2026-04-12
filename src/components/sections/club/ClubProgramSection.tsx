@@ -66,7 +66,7 @@ const ClubProgramSection = () => {
                         </div>
                         <div>
                           <span className="text-sm font-semibold text-secondary mb-1 block">
-                            {theme.week}
+                            {theme.month}
                           </span>
                           <h3 className="font-serif text-xl font-bold text-primary-foreground mb-2">
                             {theme.title}
