@@ -59,7 +59,7 @@ const CookieConsentBanner = () => {
                 <p className="text-base text-muted-foreground leading-relaxed">
                   LirElia utilise des cookies nécessaires au bon fonctionnement du site et, avec votre accord,
                   des cookies de mesure d'audience et de services tiers afin d'améliorer votre expérience.
-                  Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment.
+                  Vous pouvez accepter, refuser ou gérer vos choix à tout moment.
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
                   En savoir plus dans notre{" "}
