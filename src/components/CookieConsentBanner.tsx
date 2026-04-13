@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Shield, Settings, X } from "lucide-react";
+import { Shield, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   getConsent,
@@ -43,8 +43,8 @@ const CookieConsentBanner = () => {
       aria-label="Gestion des cookies"
       aria-modal="true"
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-foreground/40" />
+      {/* Overlay — pointer-events-none so clicks reach the panel */}
+      <div className="absolute inset-0 bg-foreground/40 pointer-events-none" />
 
       {/* Panel */}
       <div className="relative w-full max-w-xl mx-3 sm:mx-4 mb-3 sm:mb-0 bg-card rounded-2xl shadow-xl border border-border p-4 sm:p-6 md:p-8 animate-in slide-in-from-bottom-4 fade-in duration-300">
@@ -94,8 +94,7 @@ const CookieConsentBanner = () => {
                 className="w-full text-base"
                 onClick={() => setShowPrefs(true)}
               >
-                <Settings className="w-4 h-4 mr-1" />
-                Personnaliser
+                Gérer
               </Button>
             </div>
           </>
