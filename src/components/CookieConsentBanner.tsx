@@ -38,16 +38,15 @@ const CookieConsentBanner = () => {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center"
+      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center pointer-events-none"
       role="dialog"
       aria-label="Gestion des cookies"
-      aria-modal="true"
     >
-      {/* Overlay — pointer-events-none so clicks reach the panel */}
-      <div className="absolute inset-0 bg-foreground/40 pointer-events-none" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-foreground/40" />
 
       {/* Panel */}
-      <div className="relative w-full max-w-xl mx-3 sm:mx-4 mb-3 sm:mb-0 bg-card rounded-2xl shadow-xl border border-border p-4 sm:p-6 md:p-8 animate-in slide-in-from-bottom-4 fade-in duration-300">
+      <div className="relative pointer-events-auto w-full max-w-xl mx-3 sm:mx-4 mb-3 sm:mb-0 bg-card rounded-2xl shadow-xl border border-border p-4 sm:p-6 md:p-8 animate-in slide-in-from-bottom-4 fade-in duration-300">
         {!showPrefs ? (
           /* ── First level ── */
           <>
@@ -60,7 +59,7 @@ const CookieConsentBanner = () => {
                 <p className="text-base text-muted-foreground leading-relaxed">
                   LirElia utilise des cookies nécessaires au bon fonctionnement du site et, avec votre accord,
                   des cookies de mesure d'audience et de services tiers afin d'améliorer votre expérience.
-                  Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment.
+                  Vous pouvez accepter, refuser ou gérer vos choix à tout moment.
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
                   En savoir plus dans notre{" "}
