@@ -72,7 +72,7 @@ const ContactBilan = () => {
   const [profil, setProfil] = useState<"malvoyant" | "aidant">("malvoyant");
   const [telephone, setTelephone] = useState("");
   const [email, setEmail] = useState("");
-  const [rgpdAccepted, setRgpdAccepted] = useState(false);
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { errors: formErrors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
@@ -102,14 +102,6 @@ const ContactBilan = () => {
       return;
     }
 
-    if (!rgpdAccepted) {
-      toast({
-        title: "RGPD",
-        description: "Veuillez accepter la politique de confidentialité.",
-        variant: "destructive",
-      });
-      return;
-    }
 
     setIsSubmitting(true);
 
@@ -446,11 +438,7 @@ const ContactBilan = () => {
                       />
                     </div>
 
-                    <RGPDConsent
-                      checked={rgpdAccepted}
-                      onCheckedChange={setRgpdAccepted}
-                      id="bilan-rgpd"
-                    />
+                    <RGPDConsent />
 
                     <div className="text-center">
                       <Button type="submit" variant="default" size="lg" disabled={isSubmitting} className="min-w-64">
