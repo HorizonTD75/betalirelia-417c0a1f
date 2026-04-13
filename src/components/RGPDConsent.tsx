@@ -2,25 +2,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface RGPDConsentProps {
-  checked: boolean;
-  onCheckedChange: (checked: boolean) => void;
-  id?: string;
-}
-
-const RGPDConsent = ({ checked, onCheckedChange, id = "rgpd" }: RGPDConsentProps) => {
+const RGPDConsent = () => {
   return (
-    <div
-      className="flex items-start gap-3 p-4 rounded-xl bg-muted cursor-pointer"
-      onClick={() => onCheckedChange(!checked)}
-      role="group"
-    >
+    <div className="flex items-start gap-3 p-4 rounded-xl bg-muted" role="group">
       <Checkbox
-        id={id}
-        checked={checked}
-        onCheckedChange={(c) => onCheckedChange(c === true)}
+        checked
+        disabled
         className="mt-1 shrink-0"
-        onClick={(e) => e.stopPropagation()}
       />
       <span className="text-base text-muted-foreground leading-relaxed select-text">
         <Shield className="w-4 h-4 inline mr-1" />
@@ -30,7 +18,6 @@ const RGPDConsent = ({ checked, onCheckedChange, id = "rgpd" }: RGPDConsentProps
           to="/politique-de-confidentialite"
           className="underline hover:text-foreground"
           target="_blank"
-          onClick={(e) => e.stopPropagation()}
         >
           politique de confidentialité
         </Link>
