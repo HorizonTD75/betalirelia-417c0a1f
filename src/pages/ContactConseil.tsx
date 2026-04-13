@@ -51,7 +51,7 @@ const ContactConseil = () => {
   const [message, setMessage] = useState("");
   const [sourceUrl, setSourceUrl] = useState("");
   const [sourceTag, setSourceTag] = useState("");
-  const [rgpdAccepted, setRgpdAccepted] = useState(false);
+  
   const { toast } = useToast();
 
   useEffect(() => {
@@ -79,14 +79,6 @@ const ContactConseil = () => {
     e.preventDefault();
     if (honeypot) return;
 
-    if (!rgpdAccepted) {
-      toast({
-        title: "Consentement requis",
-        description: "Veuillez accepter la politique de confidentialité.",
-        variant: "destructive",
-      });
-      return;
-    }
 
     if (!validateAll([
       { field: "email", value: email },
@@ -288,13 +280,9 @@ const ContactConseil = () => {
                         <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
                       </div>
 
-                      <RGPDConsent
-                        checked={rgpdAccepted}
-                        onCheckedChange={setRgpdAccepted}
-                        id="contact-rgpd"
-                      />
+                      <RGPDConsent />
 
-                      <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading || !rgpdAccepted}>
+                      <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
                         {loading ?
                       <><Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours…</> :
                       <><Send className="w-5 h-5" /> Envoyer ma demande de conseil</>

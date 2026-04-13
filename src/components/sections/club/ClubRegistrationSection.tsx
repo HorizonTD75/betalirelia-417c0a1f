@@ -44,7 +44,7 @@ const ClubRegistrationSection = () => {
     needZoomHelp: false,
   });
   const [loading, setLoading] = useState(false);
-  const [rgpdAccepted, setRgpdAccepted] = useState(false);
+  
   const { errors: formErrors, validateField, clearFieldError, validateAll } = useFormValidation();
   const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
@@ -70,14 +70,6 @@ const ClubRegistrationSection = () => {
 
     if (honeypot) return;
 
-    if (!rgpdAccepted) {
-      toast({
-        title: "Consentement requis",
-        description: "Veuillez accepter la politique de confidentialité avant de soumettre le formulaire.",
-        variant: "destructive",
-      });
-      return;
-    }
 
     if (
       !validateAll([
@@ -461,13 +453,9 @@ const ClubRegistrationSection = () => {
                   />
                 </div>
 
-                <RGPDConsent
-                  checked={rgpdAccepted}
-                  onCheckedChange={setRgpdAccepted}
-                  id="club-rgpd"
-                />
+                <RGPDConsent />
 
-                <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading || !rgpdAccepted}>
+                <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading}>
                   {loading ? (
                     <>
                       <Loader2 className="w-6 h-6 animate-spin" /> Inscription en cours…
