@@ -453,8 +453,6 @@ const ClubRegistrationSection = () => {
                   />
                 </div>
 
-                <RGPDConsent />
-
                 <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={loading}>
                   {loading ? (
                     <>
@@ -466,6 +464,7 @@ const ClubRegistrationSection = () => {
                     </>
                   )}
                 </Button>
+                <RGPDConsent />
               </form>
             </CardContent>
           </Card>

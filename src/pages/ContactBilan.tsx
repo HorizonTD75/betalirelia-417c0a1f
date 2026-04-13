@@ -438,13 +438,12 @@ const ContactBilan = () => {
                       />
                     </div>
 
-                    <RGPDConsent />
-
                     <div className="text-center">
                       <Button type="submit" variant="default" size="lg" disabled={isSubmitting} className="min-w-64">
                         <Send className="w-5 h-5" />
                         {isSubmitting ? "Envoi en cours…" : `Demander un rendez-vous — ${selectedPrice} €`}
                       </Button>
+                      <RGPDConsent />
 
                       <p className="text-sm text-muted-foreground mt-3 italic">
                         Un appel téléphonique confirmera votre rendez-vous. Aucun paiement en ligne.
