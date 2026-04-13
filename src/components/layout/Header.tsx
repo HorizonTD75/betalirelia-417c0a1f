@@ -103,7 +103,15 @@ const Header = () => {
             )}
               <li className="pt-4 border-t-2 border-border mt-2">
                 <Button variant="secondary" size="lg" className="w-full" asChild>
-                  <Link to="/rdv-bilan">
+                  <Link to="/club" onClick={() => setIsMenuOpen(false)}>
+                    <Users className="w-5 h-5" />
+                    Le Club
+                  </Link>
+                </Button>
+              </li>
+              <li>
+                <Button variant="default" size="lg" className="w-full" asChild>
+                  <Link to="/rdv-bilan" onClick={() => setIsMenuOpen(false)}>
                     <Calendar className="w-5 h-5" />
                     Prendre RDV
                   </Link>
