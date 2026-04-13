@@ -280,14 +280,13 @@ const ContactConseil = () => {
                         <input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
                       </div>
 
-                      <RGPDConsent />
-
                       <Button type="submit" variant="default" size="lg" className="w-full text-xl" disabled={loading}>
                         {loading ?
                       <><Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours…</> :
                       <><Send className="w-5 h-5" /> Envoyer ma demande de conseil</>
                       }
                       </Button>
+                      <RGPDConsent />
 
                       <p className="text-center text-muted-foreground italic text-base">
                         Astuce aidant : vous pouvez remplir ce formulaire à la place de votre proche,
