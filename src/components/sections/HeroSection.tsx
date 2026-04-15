@@ -29,21 +29,19 @@ const HeroSection = () => {
 
           {/* Main heading */}
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-slide-up">
-            Lire et Voir{" "}
-            <span className="text-secondary">Autrement</span>
+            Basse vision : bilans, conseils et{" "}
+            <span className="text-secondary">aides à la lecture</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl animate-slide-up delay-100">
-            Accompagnement basse vision pour les patients et leurs aidants. Continuer à vivre pleinement avec une DMLA, un glaucome , c'est possible.
-          
+            Accompagnement basse vision pour les patients et leurs aidants. Avec une DMLA, un glaucome ou une autre pathologie visuelle, il est possible de retrouver des repères, de mieux lire et de préserver son autonomie au quotidien.
           </p>
 
           {/* Value proposition */}
           <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 mb-10 border border-primary-foreground/20 animate-slide-up delay-200">
             <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              Ici, vous trouverez une approche pratique : comprendre la basse vision, faire un bilan fonctionnel, choisir des loupes, des lampes, des aides utiles au quotidien.
-            
+              Chez LirElia, vous pouvez comprendre votre situation, faire un bilan basse vision, découvrir des aides à la lecture adaptées et être orienté vers des solutions concrètes, simples et utiles.
             </p>
             <p className="text-base text-primary-foreground/70 mt-3 italic">
               Important : nous ne réalisons pas de diagnostic médical. Le suivi médical reste assuré par votre ophtalmologiste.

@@ -7,7 +7,7 @@ const pathways = [
   {
     icon: Eye,
     title: "Je veux comprendre ma basse vision",
-    description: "Découvrez les causes, les symptômes et les solutions pour mieux vivre avec une DMLA au quotidien.",
+    description: "Découvrez les causes possibles, les symptômes fréquents et les solutions concrètes pour mieux vivre avec une DMLA, un glaucome ou une autre pathologie visuelle.",
     cta: "En savoir plus",
     href: "/comprendre-basse-vision",
     color: "text-accent",
@@ -16,7 +16,7 @@ const pathways = [
   {
     icon: ClipboardList,
     title: "Je veux faire un bilan personnalisé",
-    description: "Évaluez vos besoins avec un visuels visuels bilan fonctionnel adapté à votre situation et à vos objectifs de vie.",
+    description: "Évaluez vos besoins avec un bilan fonctionnel basse vision adapté à votre situation, à votre quotidien et à vos objectifs de vie.",
     cta: "Découvrir les bilans",
     href: "/bilans-bassevision",
     color: "text-primary",
@@ -25,7 +25,7 @@ const pathways = [
   {
     icon: Package,
     title: "Je cherche des matériels adaptés",
-    description: "Loupes électroniques, télé-agrandisseurs, lecteurs vocaux... des appareils concrets lire au quotidien.",
+    description: "Loupes électroniques, téléagrandisseurs, lecteurs vocaux, lampes et aides visuelles : des solutions concrètes pour lire, écrire et mieux vivre au quotidien.",
     cta: "Voir les produits",
     href: "/aides-lecture-bassevision",
     color: "text-secondary",
@@ -34,7 +34,7 @@ const pathways = [
   {
     icon: Heart,
     title: "Je suis aidant(e) : par où commencer ?",
-    description: "Guide pas à pas pour accompagner un proche atteint de basse vision sans s'épuiser.",
+    description: "Un guide pas à pas pour accompagner un proche atteint de basse vision, comprendre les priorités et agir sans s'épuiser.",
     cta: "Guide aidant",
     href: "/aidants",
     color: "text-destructive",
