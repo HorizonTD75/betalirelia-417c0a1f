@@ -67,8 +67,8 @@ const AppointmentSection = () => {
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-2">Cabinet à Paris (75116)</h4>
-                <p className="text-muted-foreground">4-6 rue Pierre Louÿs</p>
+                <h4 className="font-bold text-lg mb-2">Cabinet à Palaiseau</h4>
+                <p className="text-muted-foreground">Dans un environnement calme, avec du matériel dédié à la basse vision.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
