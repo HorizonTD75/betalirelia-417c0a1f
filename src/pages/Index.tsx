@@ -16,8 +16,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="LirElia – Bilans Basse Vision & Aides à la Lecture"
-        description="Vous perdez la vue ? Retrouvez votre autonomie de lecture grâce à nos bilans basse vision et aides adaptées (DMLA, glaucome). 25 ans d'expertise à Paris."
+        title="LirElia – Basse Vision : Bilans, Conseils et Aides à la Lecture"
+        description="Accompagnement basse vision pour patients et aidants : bilans fonctionnels, loupes, téléagrandisseurs et conseils adaptés (DMLA, glaucome). 25 ans d'expertise à Paris."
         canonicalPath="/"
         jsonLd={[
           ORGANIZATION_JSONLD,

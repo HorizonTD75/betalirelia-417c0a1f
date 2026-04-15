@@ -12,8 +12,7 @@ const BilansProduitsSection = () => {
             Bilans & produits : deux aides complémentaires
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Vous pouvez commencer par un bilan basse vision (pour clarifier les priorités), ou par des produits d'aide à la lecture (quand le besoin est évident).
-          
+            Vous pouvez commencer soit par un bilan basse vision pour clarifier vos priorités et vos besoins réels, soit par des aides à la lecture lorsque le besoin est déjà bien identifié.
           </p>
         </div>
 
@@ -99,7 +98,7 @@ const BilansProduitsSection = () => {
         {/* Praticiens info */}
         <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <div className="bg-card rounded-2xl border-2 border-border p-6">
-            <h3 className="font-serif text-xl font-bold mb-3 text-primary">Le visiopraticien (Paris 16e)</h3>
+            <h3 className="font-serif text-xl font-bold mb-3 text-primary">Le visiopraticien (Paris)</h3>
             <p className="text-lg text-muted-foreground">
               Accompagnement, essais d'aides "standard", organisation du quotidien, et plan d'action clair. Bilan au
               cabinet ou à domicile selon la situation.
