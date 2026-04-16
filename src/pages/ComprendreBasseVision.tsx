@@ -45,12 +45,12 @@ const ComprendreBasseVision = () => {
   {
     title: "L'ophtalmologiste",
     icon: Stethoscope,
-    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). \n\n\n\nIl prescrit les traitements médicaux, les injections et la chirurgie si besoin."
+    description: "Médecin spécialiste des yeux. Il diagnostique et surveille les maladies oculaires (DMLA, glaucome, rétinopathie diabétique, etc.). Il prescrit les traitements médicaux, les injections et la chirurgie si besoin."
   },
   {
     title: "L'orthoptiste",
     icon: Eye,
-    description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'oplogiste. \nlogiste. \nlogiste. \n. Il intervient parfois dans des centres basse vision."
+    description: "Il réalise des examens de la vision et des séances de rééducation visuelle, souvent sur prescription de l'ophtalmologiste. Il intervient parfois dans des centres basse vision."
   },
   {
     title: "L'opticien-optométriste",
@@ -60,7 +60,7 @@ const ComprendreBasseVision = () => {
   {
     title: "Le visiopraticien",
     icon: Users,
-    description: "Chez LirElia, il intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés de vision , en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver autonomie dans la lecture et le quotidien.",
+    description: "Chez LirElia, il intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés de vision en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver son autonomie dans la lecture et le quotidien.",
     link: "/visiopraticien"
   }];
 
@@ -110,10 +110,13 @@ const ComprendreBasseVision = () => {
           <div className="container relative py-20 lg:py-28">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-                Comprendre la <span className="text-secondary">Basse Vision</span>
+                Comprendre la <span className="text-secondary">basse vision</span>
               </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
+              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-4">
                 La basse vision ne veut pas dire « ne plus rien voir ». C'est le terme utilisé quand la vue reste difficile malgré des lunettes bien adaptées et un suivi ophtalmologique correct.
+              </p>
+              <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8">
+                Contrairement à une baisse de vue classique (myopie, presbytie…), la basse vision persiste même avec une correction optique adaptée. Elle est liée à une atteinte de l'œil ou du nerf optique que les lunettes seules ne peuvent pas compenser.
               </p>
               <Button variant="secondary" size="lg" asChild>
                 <Link to="/bilans-bassevision">
@@ -128,6 +131,40 @@ const ComprendreBasseVision = () => {
             <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" preserveAspectRatio="none">
               <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120 Z" fill="hsl(var(--background))" />
             </svg>
+          </div>
+        </section>
+
+        {/* À retenir block */}
+        <section className="py-10 bg-background">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <Card variant="highlighted" className="p-6 sm:p-8">
+                <div className="flex items-start gap-4">
+                  <Lightbulb className="w-7 h-7 text-secondary shrink-0 mt-1" />
+                  <div>
+                    <h2 className="font-serif text-2xl font-bold text-foreground mb-4">À retenir</h2>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-lg text-foreground">La basse vision ne se corrige pas complètement avec des lunettes classiques.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-lg text-foreground">Elle peut gêner la lecture, les déplacements, les écrans et les gestes du quotidien.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-lg text-foreground">Elle peut être liée à différentes maladies de l'œil.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-lg text-foreground">Des solutions concrètes existent pour préserver l'autonomie.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
         </section>
 
@@ -229,7 +266,7 @@ const ComprendreBasseVision = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Que ressentez vous au quotidien ?  
+                Que ressentez-vous au quotidien ?
               </h2>
               <p className="text-xl text-muted-foreground mb-10">
                 Vous vous reconnaîtrez peut-être dans certaines de ces situations :
@@ -274,10 +311,10 @@ const ComprendreBasseVision = () => {
                 </div>
                 <div className="lg:col-span-3">
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                    Quels professionnels de l'optique ?
+                    Quels professionnels peuvent vous accompagner ?
                   </h2>
                   <p className="text-xl text-muted-foreground">
-                    Plusieurs professionnels peuvent vous accompagner dans votre parcours basse vision. Chacun a un rôle complémentaire pour vous aider à mieux voir et vivre au quotidien.
+                    Plusieurs professionnels peuvent intervenir dans votre parcours basse vision. Chacun a un rôle complémentaire pour vous aider à mieux voir et vivre au quotidien.
                   </p>
                 </div>
               </div>
