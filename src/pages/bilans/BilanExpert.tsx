@@ -271,19 +271,26 @@ const BilanExpert = () => {
               <p className="text-xl text-muted-foreground mb-8">
                 Après la mise en place de vos nouvelles lunettes, vous pouvez bénéficier d'un accompagnement dans la durée.
               </p>
-              <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="grid sm:grid-cols-3 gap-6">
+                <Card variant="elevated" className="p-6">
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Essentiel</h3>
+                  <p className="text-muted-foreground mb-4">Un premier bilan pour faire le point avant d’aller plus loin.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/bilans-bassevision/essentiel">Découvrir le Bilan Essentiel <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
+                </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Suivi</h3>
                   <p className="text-muted-foreground mb-4">Accompagnement régulier sur plusieurs mois.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/suivi">Découvrir le Pack Suivi <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Club Basse Vision</h3>
-                  <p className="text-muted-foreground mb-4">Rencontres et ateliers collectifs.</p>
+                  <p className="text-muted-foreground mb-4">Rencontres et ateliers collectifs pour échanger.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/club">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/club">Rejoindre le Club <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
               </div>
