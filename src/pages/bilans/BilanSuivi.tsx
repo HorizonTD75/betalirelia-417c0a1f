@@ -228,7 +228,7 @@ const BilanSuivi = () => {
                         "Il peut assister au Bilan Essentiel, aux appels/visios et au bilan final",
                         "Il peut exprimer ses difficultés à aider (organisation, sécurité, déplacements…)",
                         "Il reçoit des repères concrets pour soutenir la personne malvoyante",
-                        "Le rapport final est rédigé de façon compréhensible pour le malade et l'aidant",
+                        "Le rapport final est rédigé de façon compréhensible pour la personne malvoyante et son aidant",
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-lg">
                           <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
