@@ -63,10 +63,10 @@ const BilanEssentiel = () => {
                 Bilan <span className="text-secondary">Essentiel</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                La formule de base pour faire le point sur votre basse vision : comprendre ce qui vous gêne le plus, tester des solutions simples et repartir avec un plan d'action clair.
+                Le Bilan Essentiel est un premier temps d’accompagnement pour mieux comprendre ce qui vous gêne dans la vie quotidienne : lecture, éclairage, contrastes, déplacements, repérage, gestes simples à la maison. Il permet de faire le point, de recevoir des conseils concrets et d’identifier les premières solutions utiles.
               </p>
               <p className="text-lg text-primary-foreground/70 italic mb-8">
-                En cabinet à Paris ou à domicile. Vous pouvez venir accompagné d'un proche.
+                En cabinet à Palaiseau ou à domicile. Vous pouvez venir accompagné d’un proche.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=essentiel">
