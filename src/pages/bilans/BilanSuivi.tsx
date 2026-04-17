@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Video, ArrowRight, Check, Calendar, Phone, Users, FileText, Clock, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
