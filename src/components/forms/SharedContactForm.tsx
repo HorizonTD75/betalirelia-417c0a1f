@@ -162,7 +162,7 @@ const SharedContactForm = () => {
           {/* Sujet d'intérêt */}
           <div className="space-y-2">
             <Label htmlFor="interet" className="text-lg font-semibold">
-              Sujet d'intérêt
+              Sujet de votre demande
             </Label>
             <select
               id="interet"
@@ -170,15 +170,8 @@ const SharedContactForm = () => {
               onChange={(e) => setInteret(e.target.value)}
               className="w-full px-4 py-3 text-lg border-2 border-input rounded-xl bg-background focus:border-primary focus:ring-4 focus:ring-ring/20 transition-all"
             >
-              <option value="">— Aucun sujet en particulier —</option>
-              {categories.map((cat) => (
-                <optgroup key={cat} label={cat}>
-                  {topicOptions
-                    .filter((o) => o.category === cat)
-                    .map((o) => (
-                      <option key={o.value} value={o.value}>{o.label}</option>
-                    ))}
-                </optgroup>
+              {topicOptions.map((o) => (
+                <option key={o.value} value={o.value}>{o.label}</option>
               ))}
             </select>
           </div>
