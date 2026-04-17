@@ -292,24 +292,24 @@ const BilanEssentiel = () => {
               </p>
               <div className="grid sm:grid-cols-3 gap-6">
                 <Card variant="elevated" className="p-6 text-center">
-                  <h3 className="font-serif text-lg font-bold mb-2">Pack Bilan Expert</h3>
-                  <p className="text-muted-foreground mb-4">Consultation coordonnée chez l'opticien-optométriste partenaire.</p>
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Expert</h3>
+                  <p className="text-muted-foreground mb-4">Approche plus complète et coordination avec l’opticien-optométriste partenaire.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/expert">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/expert">Découvrir le Bilan Expert <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6 text-center">
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Suivi</h3>
-                  <p className="text-muted-foreground mb-4">Accompagnement régulier par appels, visios et visites.</p>
+                  <p className="text-muted-foreground mb-4">Accompagnement régulier dans la durée par appels, visios et visites.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/suivi">Découvrir le Pack Suivi <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6 text-center">
                   <h3 className="font-serif text-lg font-bold mb-2">Club Basse Vision</h3>
-                  <p className="text-muted-foreground mb-4">Rencontres et ateliers pour échanger avec d'autres personnes.</p>
+                  <p className="text-muted-foreground mb-4">Rencontres et ateliers pour échanger avec d’autres personnes.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/club">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/club">Rejoindre le Club <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
               </div>
