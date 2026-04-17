@@ -10,8 +10,8 @@ import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 
 const BilanEssentiel = () => {
   const targetAudience = [
-  "Vous avez une pathologie oculaire connue (DMLA, glaucome, rétinopathie diabétique…) et votre vue reste gênante au quotidien",
-  "Vos lunettes sont à jour, mais vous peinez à lire, voir la télévision ou vous déplacer",
+  "Vous avez une pathologie oculaire connue (DMLA, glaucome, rétinopathie diabétique…) et votre vue vous gêne encore au quotidien",
+  "Vos lunettes sont à jour, mais vous peinez à lire, à regarder la télévision ou à vous déplacer",
   "Vous avez dû réduire ou arrêter certaines activités à cause de votre vision",
   "Vous êtes aidant et souhaitez comprendre comment adapter la maison et les habitudes",
   "Vous souhaitez avant tout des solutions simples et concrètes"];
