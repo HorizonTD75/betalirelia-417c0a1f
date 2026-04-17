@@ -256,24 +256,23 @@ const BilanEssentiel = () => {
                 Tarifs & modalités pratiques
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                <Card variant="elevated" className="p-8 text-center">
+                <Card variant="highlighted" className="p-8 text-center">
                   <Building className="w-10 h-10 text-primary mx-auto mb-4" />
                   <h3 className="font-serif text-xl font-bold mb-3">Bilan Essentiel en cabinet</h3>
                   <p className="text-lg text-muted-foreground mb-4">
-                    1h15 à 1h30 dans un environnement calme avec matériel dédié. Entretien, évaluation, essais d'aides et compte-rendu synthétique.
+                    1 h 15 à 1 h 30 dans un environnement calme avec matériel dédié. Entretien, évaluation, essais d’aides et compte-rendu synthétique.
                   </p>
-                  <p className="text-base text-muted-foreground italic">
-                    Tarif indiqué lors de la prise de rendez-vous.
-                  </p>
+                  <p className="text-3xl font-serif font-bold text-primary mb-1">Seulement 75 €</p>
+                  <p className="text-base text-muted-foreground">au cabinet de Palaiseau</p>
                 </Card>
                 <Card variant="elevated" className="p-8 text-center">
                   <Home className="w-10 h-10 text-secondary mx-auto mb-4" />
                   <h3 className="font-serif text-xl font-bold mb-3">Bilan Essentiel à domicile</h3>
                   <p className="text-lg text-muted-foreground mb-4">
-                    Durée comparable. Observation de votre environnement réel, conseils d'aménagement immédiats et recommandations spécifiques.
+                    Durée comparable. Observation de votre environnement réel, conseils d’aménagement immédiats et recommandations spécifiques.
                   </p>
                   <p className="text-base text-muted-foreground italic">
-                    Tarif incluant le déplacement, précisé lors du premier contact.
+                    En cas d’intervention à domicile, le tarif est ajusté selon la situation et précisé lors du premier contact.
                   </p>
                 </Card>
               </div>
