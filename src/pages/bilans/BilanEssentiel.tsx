@@ -325,7 +325,7 @@ const BilanEssentiel = () => {
                 Réserver un Bilan Essentiel
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10">
-                En cabinet à Paris ou à domicile. Contactez-nous pour choisir la formule adaptée.
+                En cabinet à Palaiseau (75 €) ou à domicile. Contactez-nous pour choisir la formule adaptée.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
