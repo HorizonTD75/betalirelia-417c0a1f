@@ -309,6 +309,29 @@ const BilanSuivi = () => {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="py-16 bg-muted">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
+                Questions fréquentes
+              </h2>
+              <Accordion type="single" collapsible className="space-y-4">
+                {[
+                  { q: "Le Pack Suivi est-il réservé aux situations complexes ?", a: "Pas forcément. Il est utile dès lors qu’un accompagnement progressif dans le temps peut aider à mieux mettre en place les adaptations du quotidien." },
+                  { q: "L’aidant peut-il participer ?", a: "Oui. La place de l’aidant peut être précieuse pour mieux comprendre les besoins, faciliter la mise en place des repères, et soutenir la personne concernée dans la durée." },
+                  { q: "Le suivi se fait-il uniquement à distance ?", a: "Le format du suivi dépend de la formule retenue. Selon la situation, des échanges en appel ou en visio permettent déjà de faire des points d’étape très utiles." },
+                ].map((item, i) => (
+                  <AccordionItem key={i} value={`faq-suivi-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
+                    <AccordionTrigger className="text-lg font-semibold text-left py-6">{item.q}</AccordionTrigger>
+                    <AccordionContent className="text-lg text-muted-foreground pb-6">{item.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="container">
