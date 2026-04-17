@@ -107,7 +107,9 @@ const BilanExpert = () => {
                 <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
                   À qui s'adresse le Bilan Expert ?
                 </h2>
-                <p className="text-xl text-muted-foreground mb-6">Il est particulièrement indiqué si :</p>
+                <p className="text-xl text-muted-foreground mb-6">
+                  Le Bilan Expert s’adresse aux personnes pour lesquelles un premier niveau d’adaptation ne suffit pas, ou lorsque la question des lunettes spécialisées, des filtres, de l’éblouissement, de la télévision, de l’ordinateur ou d’usages spécifiques mérite une approche plus poussée. Il est particulièrement indiqué si :
+                </p>
                 <ul className="space-y-4">
                   {targetAudience.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-lg">
