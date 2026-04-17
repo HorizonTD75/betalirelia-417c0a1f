@@ -13,29 +13,14 @@ import RGPDConsent from "@/components/RGPDConsent";
 
 const topicOptions = [
   { value: "", label: "— Aucun sujet en particulier —" },
-  { value: "loupes-verre", label: "Loupes en verre", category: "Aides à la lecture" },
-  { value: "loupe-classique", label: "Loupe de lecture classique", category: "Aides à la lecture" },
-  { value: "loupe-eclairante", label: "Loupe éclairante rectangulaire", category: "Aides à la lecture" },
-  { value: "loupe-dome", label: "Loupe dôme à poser", category: "Aides à la lecture" },
-  { value: "loupe-electronique", label: "Loupe électronique", category: "Aides à la lecture" },
-  { value: "loupe-electronique-portable", label: "Loupe électronique portable", category: "Aides à la lecture" },
-  { value: "loupe-electronique-bureau", label: "Loupe électronique de bureau", category: "Aides à la lecture" },
-  { value: "loupe-electronique-poche", label: "Loupe électronique de poche", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur", label: "Télé-agrandisseur", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur-bureau", label: "Télé-agrandisseur de bureau", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur-portable", label: "Télé-agrandisseur portable", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur-tv", label: "Télé-agrandisseur sur TV", category: "Aides à la lecture" },
-  { value: "eclairage-basse-vision", label: "Éclairage basse vision", category: "Aides à la lecture" },
-  { value: "lampe-bureau-daylight", label: "Lampe de bureau lumière du jour", category: "Aides à la lecture" },
-  { value: "lampe-sur-pied", label: "Lampe sur pied articulée", category: "Aides à la lecture" },
-  { value: "lampe-loupe", label: "Lampe-loupe combinée", category: "Aides à la lecture" },
-  { value: "loupe-amelie", label: "Loupe Amélie", category: "Aides à la lecture" },
-  { value: "aide-choix", label: "Aide pour choisir mon équipement", category: "Conseil" },
-  { value: "bilan-basse-vision", label: "Bilan basse vision", category: "Conseil" },
-  { value: "autre", label: "Autre question", category: "Conseil" },
+  { value: "loupes-verre", label: "Loupes en verre" },
+  { value: "loupes-electroniques", label: "Loupes électroniques" },
+  { value: "tele-agrandisseurs", label: "Télé-agrandisseurs" },
+  { value: "eclairage-basse-vision", label: "Éclairage basse vision" },
+  { value: "aide-choix", label: "Aide pour choisir" },
+  { value: "bilans", label: "Bilans" },
+  { value: "autre", label: "Autres" },
 ];
-
-const categories = [...new Set(topicOptions.filter((o) => o.category).map((o) => o.category))];
 
 const SharedContactForm = () => {
   const [searchParams] = useSearchParams();
@@ -168,8 +153,8 @@ const SharedContactForm = () => {
           Demander un conseil personnalisé
         </CardTitle>
         <CardDescription className="text-lg leading-relaxed">
-          Décrivez votre situation en quelques lignes. Nous vous répondons par e-mail
-          avec nos recommandations adaptées à vos besoins visuels.
+          Décrivez votre besoin en quelques lignes. Nous vous rappellerons rapidement
+          pour échanger sur votre situation et vous orienter au mieux.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -177,7 +162,7 @@ const SharedContactForm = () => {
           {/* Sujet d'intérêt */}
           <div className="space-y-2">
             <Label htmlFor="interet" className="text-lg font-semibold">
-              Sujet d'intérêt
+              Sujet de votre demande
             </Label>
             <select
               id="interet"
@@ -185,15 +170,8 @@ const SharedContactForm = () => {
               onChange={(e) => setInteret(e.target.value)}
               className="w-full px-4 py-3 text-lg border-2 border-input rounded-xl bg-background focus:border-primary focus:ring-4 focus:ring-ring/20 transition-all"
             >
-              <option value="">— Aucun sujet en particulier —</option>
-              {categories.map((cat) => (
-                <optgroup key={cat} label={cat}>
-                  {topicOptions
-                    .filter((o) => o.category === cat)
-                    .map((o) => (
-                      <option key={o.value} value={o.value}>{o.label}</option>
-                    ))}
-                </optgroup>
+              {topicOptions.map((o) => (
+                <option key={o.value} value={o.value}>{o.label}</option>
               ))}
             </select>
           </div>
@@ -268,8 +246,8 @@ const SharedContactForm = () => {
           <RGPDConsent />
 
           <p className="text-center text-muted-foreground italic text-base">
-            Astuce aidant : vous pouvez remplir ce formulaire à la place de votre proche,
-            puis venir au bilan avec lui/elle.
+            Aidant : vous pouvez remplir ce formulaire pour votre proche.
+            Nous pourrons ensuite vous guider au mieux selon sa situation.
           </p>
         </form>
       </CardContent>
