@@ -92,7 +92,7 @@ const BilanExpert = () => {
                 <p className="text-lg text-muted-foreground">Le Bilan Essentiel (étape 1 du parcours Expert) peut être effectué chez vous si le déplacement est difficile.</p>
               </div>
               <Button variant="secondary" size="default" asChild className="shrink-0">
-                <Link to="/bilans-bassevision/visites-domicile">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                <Link to="/bilans-bassevision/visites-domicile">Découvrir les visites à domicile <ArrowRight className="w-4 h-4" /></Link>
               </Button>
             </div>
           </div>
