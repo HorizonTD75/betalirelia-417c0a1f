@@ -149,10 +149,10 @@ const Bilans = () => {
                 <span className="text-lg font-semibold">Un état des lieux fonctionnel, pas un diagnostic</span>
               </div>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-                Bilan <span className="text-secondary">Basse Vision</span>
+                Bilans <span className="text-secondary">basse vision</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                Le bilan basse vision est un temps dédié pour faire le point sur votre vue, vos difficultés dans la vie quotidienne et les solutions possibles.
+                Les bilans basse vision LirElia sont des temps dédiés pour faire le point sur votre vue, comprendre vos difficultés au quotidien et identifier les solutions adaptées à votre situation.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="hero" size="lg" asChild>
