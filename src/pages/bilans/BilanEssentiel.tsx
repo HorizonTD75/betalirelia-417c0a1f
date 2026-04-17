@@ -10,8 +10,8 @@ import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 
 const BilanEssentiel = () => {
   const targetAudience = [
-  "Vous avez une pathologie oculaire connue (DMLA, glaucome, rétinopathie diabétique…) et votre vue reste gênante au quotidien",
-  "Vos lunettes sont à jour, mais vous peinez à lire, voir la télévision ou vous déplacer",
+  "Vous avez une pathologie oculaire connue (DMLA, glaucome, rétinopathie diabétique…) et votre vue vous gêne encore au quotidien",
+  "Vos lunettes sont à jour, mais vous peinez à lire, à regarder la télévision ou à vous déplacer",
   "Vous avez dû réduire ou arrêter certaines activités à cause de votre vision",
   "Vous êtes aidant et souhaitez comprendre comment adapter la maison et les habitudes",
   "Vous souhaitez avant tout des solutions simples et concrètes"];
@@ -25,11 +25,11 @@ const BilanEssentiel = () => {
 
 
   const cabinetSteps = [
-  "Accueil et installation : nous revoyons votre situation, comptes-rendus et lunettes actuelles",
-  "Entretien détaillé : difficultés, ce qui vous manque aujourd'hui",
-  "Évaluation et mises en situation : tests de lecture, observation, gestion de la lumière",
-  "Essais d'aides standard et conseils personnalisés",
-  "Conclusion et plan d'action : priorités, aides à envisager, étapes suivantes"];
+  "Accueil et échange sur votre situation : nous revoyons vos comptes-rendus et vos lunettes actuelles",
+  "Entretien sur vos difficultés visuelles du quotidien : ce qui vous gêne, ce qui vous manque aujourd’hui",
+  "Observation des besoins concrets : tests de lecture, gestion de la lumière, contrastes",
+  "Premiers conseils et essais d’aides standard adaptées à vos usages",
+  "Proposition d’une suite si nécessaire : priorités, aides à envisager, étapes suivantes"];
 
 
   const domicileAdvantages = [
@@ -63,10 +63,10 @@ const BilanEssentiel = () => {
                 Bilan <span className="text-secondary">Essentiel</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                La formule de base pour faire le point sur votre basse vision : comprendre ce qui vous gêne le plus, tester des solutions simples et repartir avec un plan d'action clair.
+                Le Bilan Essentiel est un premier temps d’accompagnement pour mieux comprendre ce qui vous gêne dans la vie quotidienne : lecture, éclairage, contrastes, déplacements, repérage, gestes simples à la maison. Il permet de faire le point, de recevoir des conseils concrets et d’identifier les premières solutions utiles.
               </p>
               <p className="text-lg text-primary-foreground/70 italic mb-8">
-                En cabinet à Paris ou à domicile. Vous pouvez venir accompagné d'un proche.
+                En cabinet à Palaiseau ou à domicile. Vous pouvez venir accompagné d’un proche.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=essentiel">
@@ -95,7 +95,7 @@ const BilanEssentiel = () => {
                 <p className="text-lg text-muted-foreground">Pour les personnes ayant des difficultés de déplacement, le Visiopraticien LirElia se rend chez vous. Le bilan est adapté à votre environnement réel.</p>
               </div>
               <Button variant="secondary" size="default" asChild className="shrink-0">
-                <Link to="/bilans-bassevision/visites-domicile">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                <Link to="/bilans-bassevision/visites-domicile">Découvrir les visites à domicile <ArrowRight className="w-4 h-4" /></Link>
               </Button>
             </div>
           </div>
@@ -119,9 +119,9 @@ const BilanEssentiel = () => {
               </ul>
               <Card variant="highlighted" className="mt-8 p-6">
                 <p className="text-lg">
-                  Si, dès le départ, vous savez que des lunettes spécialisées seront nécessaires, le{" "}
+                  Si ce premier bilan montre qu’un travail plus approfondi sur les lunettes, les filtres ou les aides optiques est nécessaire, le{" "}
                   <Link to="/bilans-bassevision/expert" className="text-primary font-bold underline underline-offset-4">Bilan Expert</Link>{" "}
-                  sera peut-être plus adapté.
+                  peut être envisagé.
                 </p>
               </Card>
             </div>
@@ -170,10 +170,10 @@ const BilanEssentiel = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center">
                       <Building className="w-6 h-6" />
                     </div>
-                    <h3 className="font-serif text-2xl font-bold">En cabinet  </h3>
+                    <h3 className="font-serif text-2xl font-bold">En cabinet</h3>
                   </div>
                   <p className="text-lg text-muted-foreground mb-6">
-                    Séance de 1h15 à 1h30 dans un environnement calme, avec du matériel dédié à la basse vision.
+                    Séance de 1 h 15 à 1 h 30 dans un environnement calme, avec du matériel dédié à la basse vision.
                   </p>
                   <ol className="space-y-3">
                     {cabinetSteps.map((step, i) =>
@@ -256,24 +256,23 @@ const BilanEssentiel = () => {
                 Tarifs & modalités pratiques
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                <Card variant="elevated" className="p-8 text-center">
+                <Card variant="highlighted" className="p-8 text-center">
                   <Building className="w-10 h-10 text-primary mx-auto mb-4" />
                   <h3 className="font-serif text-xl font-bold mb-3">Bilan Essentiel en cabinet</h3>
                   <p className="text-lg text-muted-foreground mb-4">
-                    1h15 à 1h30 dans un environnement calme avec matériel dédié. Entretien, évaluation, essais d'aides et compte-rendu synthétique.
+                    1 h 15 à 1 h 30 dans un environnement calme avec matériel dédié. Entretien, évaluation, essais d’aides et compte-rendu synthétique.
                   </p>
-                  <p className="text-base text-muted-foreground italic">
-                    Tarif indiqué lors de la prise de rendez-vous.
-                  </p>
+                  <p className="text-3xl font-serif font-bold text-primary mb-1">Seulement 75 €</p>
+                  <p className="text-base text-muted-foreground">au cabinet de Palaiseau</p>
                 </Card>
                 <Card variant="elevated" className="p-8 text-center">
                   <Home className="w-10 h-10 text-secondary mx-auto mb-4" />
                   <h3 className="font-serif text-xl font-bold mb-3">Bilan Essentiel à domicile</h3>
                   <p className="text-lg text-muted-foreground mb-4">
-                    Durée comparable. Observation de votre environnement réel, conseils d'aménagement immédiats et recommandations spécifiques.
+                    Durée comparable. Observation de votre environnement réel, conseils d’aménagement immédiats et recommandations spécifiques.
                   </p>
                   <p className="text-base text-muted-foreground italic">
-                    Tarif incluant le déplacement, précisé lors du premier contact.
+                    En cas d’intervention à domicile, le tarif est ajusté selon la situation et précisé lors du premier contact.
                   </p>
                 </Card>
               </div>
@@ -293,24 +292,24 @@ const BilanEssentiel = () => {
               </p>
               <div className="grid sm:grid-cols-3 gap-6">
                 <Card variant="elevated" className="p-6 text-center">
-                  <h3 className="font-serif text-lg font-bold mb-2">Pack Bilan Expert</h3>
-                  <p className="text-muted-foreground mb-4">Consultation coordonnée chez l'opticien-optométriste partenaire.</p>
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Expert</h3>
+                  <p className="text-muted-foreground mb-4">Approche plus complète et coordination avec l’opticien-optométriste partenaire.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/expert">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/expert">Découvrir le Bilan Expert <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6 text-center">
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Suivi</h3>
-                  <p className="text-muted-foreground mb-4">Accompagnement régulier par appels, visios et visites.</p>
+                  <p className="text-muted-foreground mb-4">Accompagnement régulier dans la durée par appels, visios et visites.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/suivi">Découvrir le Pack Suivi <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6 text-center">
                   <h3 className="font-serif text-lg font-bold mb-2">Club Basse Vision</h3>
-                  <p className="text-muted-foreground mb-4">Rencontres et ateliers pour échanger avec d'autres personnes.</p>
+                  <p className="text-muted-foreground mb-4">Rencontres et ateliers pour échanger avec d’autres personnes.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/club">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/club">Rejoindre le Club <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
               </div>
@@ -326,7 +325,7 @@ const BilanEssentiel = () => {
                 Réserver un Bilan Essentiel
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10">
-                En cabinet à Paris ou à domicile. Contactez-nous pour choisir la formule adaptée.
+                En cabinet à Palaiseau (75 €) ou à domicile. Contactez-nous pour choisir la formule adaptée.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>

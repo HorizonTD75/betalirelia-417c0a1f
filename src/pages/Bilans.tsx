@@ -13,55 +13,48 @@ import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
 const Bilans = () => {
   const bilansComparison = [
   {
-    name: "ESSENTIEL",
+    name: "Bilan Essentiel",
     icon: ClipboardCheck,
-    description: "La formule de base pour faire le point sur votre basse vision.",
+    description: "Un premier accompagnement concret pour mieux comprendre vos difficultés visuelles du quotidien.",
     includes: [
-    "Séance individuelle 1h15–1h30",
-    "Évaluation vision fonctionnelle",
-    "Essais d'aides adaptées",
-    "Compte-rendu synthétique",
-    "Plan d'action clair"],
+    "Entretien personnalisé",
+    "Analyse de vos difficultés visuelles au quotidien",
+    "Premiers conseils concrets et pratiques",
+    "Orientation vers les solutions adaptées",
+    "Réalisable au cabinet ou à domicile selon la situation"],
 
-    notIncludes: [
-    "Consultation opticien",
-    "Suivi sur plusieurs mois"],
-
+    notIncludes: [],
     color: "primary",
     link: "/bilans-bassevision/essentiel",
     cta: "Découvrir le Bilan Essentiel"
   },
   {
-    name: "EXPERT",
+    name: "Bilan Expert",
     icon: Glasses,
-    description: "Bilan Essentiel + consultation opticien-optométriste ",
+    description: "Une approche plus complète avec évaluation approfondie et coordination avec l’opticien-optométriste.",
     includes: [
-    "Bilan Essentiel complet",
-    "Compte-rendu détaillé",
-    "Consultation opticien partenaire",
-    "Essais lunettes basse vision",
-    "Pré-sélection corrections",
-    "Coordination médicale"],
+    "Analyse plus poussée des besoins",
+    "Évaluation des aides optiques et visuelles",
+    "Travail coordonné avec l’opticien-optométriste",
+    "Recherche de solutions plus fines selon les usages",
+    "Adapté si les premiers équipements ne suffisent plus"],
 
-    notIncludes: [
-    "Suivi sur plusieurs mois"],
-
+    notIncludes: [],
     color: "secondary",
     link: "/bilans-bassevision/expert",
     cta: "Découvrir le Bilan Expert",
     recommended: true
   },
   {
-    name: "SUIVI",
+    name: "Pack Suivi",
     icon: Video,
-    description: "Un accompagnement sur 3 mois pour mettre en pratique les conseils.",
+    description: "Un accompagnement dans la durée pour aider la personne malvoyante et son entourage à mettre en place les bonnes adaptations.",
     includes: [
-    "Bilan Essentiel (J0)",
-    "1er point d'étape , appel/visio à J+1 mois",
-    "2e point d'étape, appel/visio à J+2 mois",
-    "Bilan final à J+3 mois",
-    "Rapport final complet",
-    "Ajustements continus"],
+    "Accompagnement sur plusieurs mois",
+    "Points d’étape réguliers",
+    "Ajustement progressif des solutions",
+    "Soutien dans la mise en pratique au quotidien",
+    "Place donnée à l’aidant si nécessaire"],
 
     notIncludes: [],
     color: "accent",
@@ -73,50 +66,51 @@ const Bilans = () => {
   const targetAudience = [
   "Vous avez une maladie des yeux connue (DMLA, glaucome, rétinopathie diabétique, etc.)",
   "Malgré des lunettes récentes, vous peinez à lire, à vous déplacer ou à reconnaître les visages",
-  "Vous vous sentez fatigué par l'effort visuel au quotidien",
+  "Vous vous sentez fatigué par l’effort visuel au quotidien",
   "Vous avez dû renoncer à certaines activités (lecture, bricolage, cuisine, sorties)",
   "Vous êtes aidant et souhaitez comprendre comment aider au mieux"];
 
 
   const doList = [
-  "Il ecoute vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
-  "Il analyse l'impact de la basse vision sur votre autonomie",
-  "Il evaluer votre vision fonctionnelle dans des situations concrètes",
+  "Il écoute vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
+  "Il analyse l’impact de la basse vision sur votre autonomie",
+  "Il évalue votre vision fonctionnelle dans des situations concrètes",
   "Il vous fait tester des aides à la lecture : loupes, éclairage, supports",
-  "Il identifier vos priorités : ce qui compte le plus pour vous"];
+  "Il identifie vos priorités : ce qui compte le plus pour vous"];
 
 
   const dontList = [
   "Pas de diagnostic médical ni de prescription de traitement",
-  "Pas de remplacement du suivi chez l'ophtalmologiste",
-  "Pas de promesse de « retrouver sa vue d'avant »",
+  "Pas de remplacement du suivi chez l’ophtalmologiste",
+  "Pas de promesse de « retrouver sa vue d’avant »",
   "Pas de vente forcée : le Visiopraticien réfléchit avec vous"];
 
 
   const steps = [
-  { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu'il est utile d'apporter." },
-  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur votre accuité visuelle, vos activités importantes et ce qui vous pose le plus problème aujourd'hui." },
+  { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu’il est utile d’apporter." },
+  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur votre acuité visuelle, vos activités importantes et ce qui vous pose le plus problème aujourd’hui." },
   { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
   { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
-  { title: "Essai d'aides et d'aménagements", text: "Vous testez différentes aides : loupes, télé-agrandisseurs, lampes, supports, macines à lire, claviers, téléphones grosses touches, aides pour écrire…" },
-  { title: "Plan d'action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." }];
+  { title: "Essai d’aides et d’aménagements", text: "Vous testez différentes aides : loupes, télé-agrandisseurs, lampes, supports, machines à lire, claviers, téléphones à grosses touches, aides pour écrire…" },
+  { title: "Plan d’action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." }];
 
 
   const takeaways = [
   "Un compte-rendu précis des points importants vus ensemble",
-  "Une liste de priorités : ce qu'il est le plus urgent d'améliorer",
-  "Une proposition d'aides standard : loupes, lampes, supports…",
-  "Des conseils d'organisation pour la maison, la cuisine, les écrans",
-  "Si besoin, une recommandation vers l'opticien partenaire",
+  "Une liste de priorités : ce qu’il est le plus urgent d’améliorer",
+  "Une proposition d’aides standard : loupes, lampes, supports…",
+  "Des conseils d’organisation pour la maison, la cuisine, les écrans",
+  "Si besoin, une recommandation vers l’opticien partenaire",
   "La possibilité de mettre en place un Pack Suivi"];
 
 
   const faqItems = [
-  { q: "Dois-je voir mon ophtalmo avant ?", a: "Idéalement oui, car le bilan basse vision s'appuie sur votre diagnostic. Mais si vous n'avez pas de rendez-vous ophtalmo récent, nous pouvons commencer et vous orienter ensuite." },
-  { q: "Est-ce remboursé ?", a: "Le bilan basse vision n'est pas un acte médical et n'est pas remboursé par la Sécurité sociale. Certaines mutuelles proposent un forfait « bien-être » ou « prévention » qui peut couvrir une partie. Renseignez-vous auprès de votre complémentaire santé." },
-  { q: "Puis-je venir avec un proche ?", a: "Oui, c'est fortement recommandé. L'aidant (conjoint, enfant, proche) peut assister à l'ensemble de la séance et recevoir des conseils adaptés." },
-  { q: "Combien de temps dure une séance ?", a: "En moyenne 1h15 à 1h30, toujours à votre rythme. Le Visiopraticien prend le temps nécessaire." },
-  { q: "Quelle est la différence avec un bilan chez l'ophtalmologiste ?", a: "L'ophtalmologiste diagnostique et traite la maladie de l'œil. Le bilan basse vision réalisé par le Visiopraticien LirElia est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie dans la lecture." }];
+  { q: "Dois-je voir mon ophtalmologiste avant ?", a: "Idéalement oui, car le bilan basse vision s’appuie sur votre diagnostic. Mais si vous n’avez pas de rendez-vous ophtalmologique récent, nous pouvons commencer et vous orienter ensuite." },
+  { q: "Le bilan ne sert-il qu’à mieux lire ?", a: "Non. Le bilan basse vision ne concerne pas seulement la lecture. Il aide aussi à mieux comprendre les difficultés rencontrées dans les déplacements, l’éclairage, les contrastes, l’organisation du domicile, l’usage des aides visuelles et, plus largement, l’autonomie au quotidien." },
+  { q: "Est-ce remboursé ?", a: "Le bilan basse vision n’est pas un acte médical et n’est pas remboursé par la Sécurité sociale. Certaines mutuelles proposent un forfait « bien-être » ou « prévention » qui peut couvrir une partie. Renseignez-vous auprès de votre complémentaire santé." },
+  { q: "Puis-je venir avec un proche ?", a: "Oui, c’est fortement recommandé. L’aidant (conjoint, enfant, proche) peut assister à l’ensemble de la séance et recevoir des conseils adaptés." },
+  { q: "Combien de temps dure une séance ?", a: "En moyenne 1 h 15 à 1 h 30, toujours à votre rythme. Le Visiopraticien prend le temps nécessaire." },
+  { q: "Quelle est la différence avec un bilan chez l’ophtalmologiste ?", a: "L’ophtalmologiste diagnostique et traite la maladie de l’œil. Le bilan basse vision réalisé par le Visiopraticien LirElia est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie." }];
 
 
   return (
@@ -155,10 +149,10 @@ const Bilans = () => {
                 <span className="text-lg font-semibold">Un état des lieux fonctionnel, pas un diagnostic</span>
               </div>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-                Bilan <span className="text-secondary">Basse Vision</span>
+                Bilans <span className="text-secondary">basse vision</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                Le bilan basse vision est un temps dédié pour faire le point sur votre vue, vos difficultés dans la vie quotidienne et les solutions possibles.
+                Les bilans basse vision LirElia sont des temps dédiés pour faire le point sur votre vue, comprendre vos difficultés au quotidien et identifier les solutions adaptées à votre situation.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="hero" size="lg" asChild>
@@ -215,7 +209,7 @@ const Bilans = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                Que fait le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link> pendant le bilan?
+                Que fait le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link> pendant le bilan ?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <Card className="p-4 sm:p-6 lg:p-8">
@@ -282,7 +276,7 @@ const Bilans = () => {
                   }>
                       <bilan.icon className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-2xl text-center">Bilan<br />{bilan.name}</CardTitle>
+                    <CardTitle className="text-2xl text-center">{bilan.name}</CardTitle>
                     <p className="text-lg text-muted-foreground mt-2">{bilan.description}</p>
                   </CardHeader>
                   <CardContent className="flex-1">
@@ -295,7 +289,7 @@ const Bilans = () => {
                     )}
                       {bilan.notIncludes.map((item, i) =>
                     <li key={i} className="flex items-start gap-2 text-lg text-muted-foreground">
-                          <X className="w-5 h-5 shrink-0 mt-1 text-red-600" />
+                          <X className="w-5 h-5 shrink-0 mt-1 text-destructive" />
                           <span>{item}</span>
                         </li>
                     )}

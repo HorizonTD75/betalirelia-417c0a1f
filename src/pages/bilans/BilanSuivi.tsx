@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Video, ArrowRight, Check, Calendar, Phone, Users, FileText, Clock, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
@@ -20,22 +21,22 @@ const BilanSuivi = () => {
   const timeline = [
     {
       date: "J0",
-      title: "Bilan Essentiel",
-      description: "Point complet sur vos difficultés, objectifs, capacités visuelles fonctionnelles, premiers essais d'aides et plan d'action initial.",
+      title: "Bilan de départ et premières orientations",
+      description: "Point complet sur vos difficultés, objectifs, capacités visuelles fonctionnelles, premiers essais d’aides et plan d’action initial.",
       details: [
         "Clarifier vos priorités (lecture, déplacements, cuisine, écrans, loisirs…)",
         "Évaluer votre vision fonctionnelle dans des tâches concrètes",
         "Tester des aides standard (loupes, éclairage, supports, repères)",
-        "Définir un premier plan d'action simple à mettre en œuvre",
+        "Définir un premier plan d’action simple à mettre en œuvre",
       ],
       color: "primary",
     },
     {
-      date: "J0 + 1 mois",
-      title: "1er appel / visio de suivi (30 min)",
-      description: "Bilan du premier mois, retours sur les aides, ajustements des priorités.",
+      date: "J+1 mois",
+      title: "Premier point d’étape par appel ou visio (30 min)",
+      description: "Bilan du premier mois, retours sur les aides mises en place et ajustement des priorités.",
       details: [
-        "Bilan de ce qui a été mis en place, ce qui fonctionne",
+        "Bilan de ce qui a été mis en place et ce qui fonctionne",
         "Repérage des freins (fatigue, manque de temps, matériel peu utilisé)",
         "Ajustement des priorités",
         "Recommandations complémentaires si besoin",
@@ -43,9 +44,9 @@ const BilanSuivi = () => {
       color: "secondary",
     },
     {
-      date: "J0 + 2 mois",
-      title: "2e appel / visio de suivi (30 min)",
-      description: "Point sur les progrès, difficultés persistantes, préparation du bilan final.",
+      date: "J+2 mois",
+      title: "Ajustement des solutions mises en place (30 min)",
+      description: "Point sur les progrès, difficultés persistantes et préparation du bilan final.",
       details: [
         "Évolutions depuis le premier appel",
         "Validation des aides réellement utiles",
@@ -55,14 +56,14 @@ const BilanSuivi = () => {
       color: "accent",
     },
     {
-      date: "J0 + 3 mois",
-      title: "Bilan final (cabinet ou domicile)",
-      description: "Mesurer les avancées, traiter les problèmes encore présents et stabiliser votre plan d'adaptation.",
+      date: "J+3 mois",
+      title: "Bilan de suivi et suite à envisager si nécessaire",
+      description: "Mesurer les avancées, traiter les problèmes encore présents et stabiliser votre plan d’adaptation.",
       details: [
         "Revue des progrès réalisés",
         "Identification des problèmes résiduels",
         "Validation des aides et aménagements à long terme",
-        "Remise d'un rapport final complet",
+        "Remise d’un rapport final complet",
       ],
       color: "primary",
     },
@@ -100,7 +101,7 @@ const BilanSuivi = () => {
                 Pack <span className="text-secondary">Suivi</span> Basse Vision
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                Un accompagnement sur 3 mois pour vous aider à mettre en pratique les conseils et ajuster les solutions au fil du temps, sans rester seul face à vos difficultés.
+                Le Pack Suivi est conçu pour accompagner la mise en place réelle des adaptations après un premier bilan. Il permet d’avancer étape par étape, de vérifier ce qui fonctionne, d’ajuster ce qui doit l’être, et de soutenir la personne malvoyante ainsi que son entourage dans la durée.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=suivi"><Calendar className="w-6 h-6" /> Réserver un Pack Suivi</Link>
@@ -126,7 +127,7 @@ const BilanSuivi = () => {
                 <p className="text-lg text-muted-foreground">Le bilan initial et le bilan final peuvent être réalisés chez vous si le déplacement est difficile.</p>
               </div>
               <Button variant="secondary" size="default" asChild className="shrink-0">
-                <Link to="/bilans-bassevision/visites-domicile">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                <Link to="/bilans-bassevision/visites-domicile">Découvrir les visites à domicile <ArrowRight className="w-4 h-4" /></Link>
               </Button>
             </div>
           </div>
@@ -228,7 +229,7 @@ const BilanSuivi = () => {
                         "Il peut assister au Bilan Essentiel, aux appels/visios et au bilan final",
                         "Il peut exprimer ses difficultés à aider (organisation, sécurité, déplacements…)",
                         "Il reçoit des repères concrets pour soutenir la personne malvoyante",
-                        "Le rapport final est rédigé de façon compréhensible pour le malade et l'aidant",
+                        "Le rapport final est rédigé de façon compréhensible pour la personne malvoyante et son aidant",
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-lg">
                           <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
@@ -283,21 +284,50 @@ const BilanSuivi = () => {
               </p>
               <div className="grid sm:grid-cols-3 gap-6">
                 <Card variant="elevated" className="p-6">
-                  <h3 className="font-serif text-lg font-bold mb-2">Suivi ponctuel</h3>
-                  <p className="text-muted-foreground">Rendez-vous à la demande, en cas de changement important.</p>
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Essentiel</h3>
+                  <p className="text-muted-foreground mb-3">Pour un nouveau point ponctuel après le suivi.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/bilans-bassevision/essentiel">Découvrir le Bilan Essentiel <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
-                  <h3 className="font-serif text-lg font-bold mb-2">Orientation spécialisée</h3>
-                  <p className="text-muted-foreground">Centre spécialisé ou rééducation orthoptique basse vision si nécessaire.</p>
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Expert</h3>
+                  <p className="text-muted-foreground mb-3">Approche plus complète avec coordination opticien-optométriste.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/bilans-bassevision/expert">Découvrir le Bilan Expert <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Club Basse Vision</h3>
-                  <p className="text-muted-foreground mb-3">Échanges avec d'autres personnes malvoyantes et leurs aidants.</p>
+                  <p className="text-muted-foreground mb-3">Échanges avec d’autres personnes malvoyantes et leurs aidants.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/club">Découvrir le Club <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/club">Rejoindre le Club <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 bg-muted">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
+                Questions fréquentes
+              </h2>
+              <Accordion type="single" collapsible className="space-y-4">
+                {[
+                  { q: "Le Pack Suivi est-il réservé aux situations complexes ?", a: "Pas forcément. Il est utile dès lors qu’un accompagnement progressif dans le temps peut aider à mieux mettre en place les adaptations du quotidien." },
+                  { q: "L’aidant peut-il participer ?", a: "Oui. La place de l’aidant peut être précieuse pour mieux comprendre les besoins, faciliter la mise en place des repères, et soutenir la personne concernée dans la durée." },
+                  { q: "Le suivi se fait-il uniquement à distance ?", a: "Le format du suivi dépend de la formule retenue. Selon la situation, des échanges en appel ou en visio permettent déjà de faire des points d’étape très utiles." },
+                ].map((item, i) => (
+                  <AccordionItem key={i} value={`faq-suivi-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
+                    <AccordionTrigger className="text-lg font-semibold text-left py-6">{item.q}</AccordionTrigger>
+                    <AccordionContent className="text-lg text-muted-foreground pb-6">{item.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>

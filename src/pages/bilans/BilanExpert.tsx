@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Glasses, ArrowRight, Check, Calendar, Phone, Building, Users, FileText, Eye, Star, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
@@ -66,7 +67,7 @@ const BilanExpert = () => {
                 Bilan <span className="text-secondary">Expert</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                Pour aller au bout de l'optimisation des lunettes et aides optiques, en collaboration avec un opticien-optométriste partenaire reconnu au niveau national.
+                Pour aller plus loin dans l’optimisation de vos lunettes et aides optiques, en collaboration avec un opticien-optométriste partenaire reconnu au niveau national.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=expert"><Calendar className="w-6 h-6" /> Réserver un bilan Expert</Link>
@@ -92,7 +93,7 @@ const BilanExpert = () => {
                 <p className="text-lg text-muted-foreground">Le Bilan Essentiel (étape 1 du parcours Expert) peut être effectué chez vous si le déplacement est difficile.</p>
               </div>
               <Button variant="secondary" size="default" asChild className="shrink-0">
-                <Link to="/bilans-bassevision/visites-domicile">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                <Link to="/bilans-bassevision/visites-domicile">Découvrir les visites à domicile <ArrowRight className="w-4 h-4" /></Link>
               </Button>
             </div>
           </div>
@@ -106,7 +107,9 @@ const BilanExpert = () => {
                 <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
                   À qui s'adresse le Bilan Expert ?
                 </h2>
-                <p className="text-xl text-muted-foreground mb-6">Il est particulièrement indiqué si :</p>
+                <p className="text-xl text-muted-foreground mb-6">
+                  Le Bilan Expert s’adresse aux personnes pour lesquelles un premier niveau d’adaptation ne suffit pas, ou lorsque la question des lunettes spécialisées, des filtres, de l’éblouissement, de la télévision, de l’ordinateur ou d’usages spécifiques mérite une approche plus poussée. Il est particulièrement indiqué si :
+                </p>
                 <ul className="space-y-4">
                   {targetAudience.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-lg">
@@ -236,11 +239,12 @@ const BilanExpert = () => {
                 Tarifs & modalités pratiques
               </h2>
               <Card variant="elevated" className="p-8 text-left">
-                <h3 className="font-serif text-xl font-bold mb-4">Le Pack comprend :</h3>
+                <h3 className="font-serif text-xl font-bold mb-4">Le Bilan Expert comprend :</h3>
                 <ul className="space-y-3 mb-6">
                   {[
+                    "L’analyse approfondie de vos besoins visuels et l’étude de vos usages",
                     "Le Bilan Essentiel (en cabinet ou à domicile)",
-                    "La consultation optométrique spécialisée chez l'opticien partenaire",
+                    "La consultation optométrique spécialisée chez l’opticien-optométriste partenaire",
                     "La rédaction du compte-rendu détaillé et la coordination",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-lg">
@@ -249,8 +253,11 @@ const BilanExpert = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-lg text-muted-foreground italic">
-                  Les équipements optiques (lunettes, filtres, montures) sont facturés séparément par l'opticien. L'ensemble est proposé dans un forfait unique.
+                <p className="text-lg text-muted-foreground">
+                  Les équipements ou solutions optiques éventuellement retenus à l’issue du bilan (lunettes, filtres, montures…) font l’objet d’une facturation séparée par le professionnel concerné.
+                </p>
+                <p className="text-base text-muted-foreground italic mt-4">
+                  Le tarif du Bilan Expert vous est précisé lors du premier contact, en fonction du parcours retenu.
                 </p>
               </Card>
             </div>
@@ -267,22 +274,52 @@ const BilanExpert = () => {
               <p className="text-xl text-muted-foreground mb-8">
                 Après la mise en place de vos nouvelles lunettes, vous pouvez bénéficier d'un accompagnement dans la durée.
               </p>
-              <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="grid sm:grid-cols-3 gap-6">
+                <Card variant="elevated" className="p-6">
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Essentiel</h3>
+                  <p className="text-muted-foreground mb-4">Un premier bilan pour faire le point avant d’aller plus loin.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/bilans-bassevision/essentiel">Découvrir le Bilan Essentiel <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
+                </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Suivi</h3>
                   <p className="text-muted-foreground mb-4">Accompagnement régulier sur plusieurs mois.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/suivi">Découvrir le Pack Suivi <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Club Basse Vision</h3>
-                  <p className="text-muted-foreground mb-4">Rencontres et ateliers collectifs.</p>
+                  <p className="text-muted-foreground mb-4">Rencontres et ateliers collectifs pour échanger.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/club">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/club">Rejoindre le Club <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 bg-background">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
+                Questions fréquentes
+              </h2>
+              <Accordion type="single" collapsible className="space-y-4">
+                {[
+                  { q: "Le Bilan Expert remplace-t-il mon ophtalmologiste ?", a: "Non. Le Bilan Expert ne remplace pas le suivi ophtalmologique. Il vient en complément, pour vous aider à mieux comprendre vos besoins fonctionnels et rechercher des solutions adaptées au quotidien." },
+                  { q: "Les équipements sont-ils inclus dans le bilan ?", a: "Le bilan porte sur l’évaluation, les conseils et la coordination. Les équipements éventuellement recommandés sont distincts et relèvent du professionnel qui les fournit." },
+                  { q: "À qui s’adresse ce bilan ?", a: "Il s’adresse aux personnes qui ont besoin d’une analyse plus poussée de leurs besoins visuels, notamment lorsque les solutions classiques ne suffisent pas ou que plusieurs usages sont concernés." },
+                ].map((item, i) => (
+                  <AccordionItem key={i} value={`faq-expert-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
+                    <AccordionTrigger className="text-lg font-semibold text-left py-6">{item.q}</AccordionTrigger>
+                    <AccordionContent className="text-lg text-muted-foreground pb-6">{item.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>
