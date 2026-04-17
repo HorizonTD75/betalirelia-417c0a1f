@@ -284,18 +284,24 @@ const BilanSuivi = () => {
               </p>
               <div className="grid sm:grid-cols-3 gap-6">
                 <Card variant="elevated" className="p-6">
-                  <h3 className="font-serif text-lg font-bold mb-2">Suivi ponctuel</h3>
-                  <p className="text-muted-foreground">Rendez-vous à la demande, en cas de changement important.</p>
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Essentiel</h3>
+                  <p className="text-muted-foreground mb-3">Pour un nouveau point ponctuel après le suivi.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/bilans-bassevision/essentiel">Découvrir le Bilan Essentiel <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
-                  <h3 className="font-serif text-lg font-bold mb-2">Orientation spécialisée</h3>
-                  <p className="text-muted-foreground">Centre spécialisé ou rééducation orthoptique basse vision si nécessaire.</p>
+                  <h3 className="font-serif text-lg font-bold mb-2">Bilan Expert</h3>
+                  <p className="text-muted-foreground mb-3">Approche plus complète avec coordination opticien-optométriste.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/bilans-bassevision/expert">Découvrir le Bilan Expert <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Club Basse Vision</h3>
-                  <p className="text-muted-foreground mb-3">Échanges avec d'autres personnes malvoyantes et leurs aidants.</p>
+                  <p className="text-muted-foreground mb-3">Échanges avec d’autres personnes malvoyantes et leurs aidants.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/club">Découvrir le Club <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/club">Rejoindre le Club <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
               </div>
