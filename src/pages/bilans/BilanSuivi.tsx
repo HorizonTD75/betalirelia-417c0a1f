@@ -100,7 +100,7 @@ const BilanSuivi = () => {
                 Pack <span className="text-secondary">Suivi</span> Basse Vision
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                Un accompagnement sur 3 mois pour vous aider à mettre en pratique les conseils et ajuster les solutions au fil du temps, sans rester seul face à vos difficultés.
+                Le Pack Suivi est conçu pour accompagner la mise en place réelle des adaptations après un premier bilan. Il permet d’avancer étape par étape, de vérifier ce qui fonctionne, d’ajuster ce qui doit l’être, et de soutenir la personne malvoyante ainsi que son entourage dans la durée.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=suivi"><Calendar className="w-6 h-6" /> Réserver un Pack Suivi</Link>
