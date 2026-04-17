@@ -20,22 +20,22 @@ const BilanSuivi = () => {
   const timeline = [
     {
       date: "J0",
-      title: "Bilan Essentiel",
-      description: "Point complet sur vos difficultés, objectifs, capacités visuelles fonctionnelles, premiers essais d'aides et plan d'action initial.",
+      title: "Bilan de départ et premières orientations",
+      description: "Point complet sur vos difficultés, objectifs, capacités visuelles fonctionnelles, premiers essais d’aides et plan d’action initial.",
       details: [
         "Clarifier vos priorités (lecture, déplacements, cuisine, écrans, loisirs…)",
         "Évaluer votre vision fonctionnelle dans des tâches concrètes",
         "Tester des aides standard (loupes, éclairage, supports, repères)",
-        "Définir un premier plan d'action simple à mettre en œuvre",
+        "Définir un premier plan d’action simple à mettre en œuvre",
       ],
       color: "primary",
     },
     {
-      date: "J0 + 1 mois",
-      title: "1er appel / visio de suivi (30 min)",
-      description: "Bilan du premier mois, retours sur les aides, ajustements des priorités.",
+      date: "J+1 mois",
+      title: "Premier point d’étape par appel ou visio (30 min)",
+      description: "Bilan du premier mois, retours sur les aides mises en place et ajustement des priorités.",
       details: [
-        "Bilan de ce qui a été mis en place, ce qui fonctionne",
+        "Bilan de ce qui a été mis en place et ce qui fonctionne",
         "Repérage des freins (fatigue, manque de temps, matériel peu utilisé)",
         "Ajustement des priorités",
         "Recommandations complémentaires si besoin",
@@ -43,9 +43,9 @@ const BilanSuivi = () => {
       color: "secondary",
     },
     {
-      date: "J0 + 2 mois",
-      title: "2e appel / visio de suivi (30 min)",
-      description: "Point sur les progrès, difficultés persistantes, préparation du bilan final.",
+      date: "J+2 mois",
+      title: "Ajustement des solutions mises en place (30 min)",
+      description: "Point sur les progrès, difficultés persistantes et préparation du bilan final.",
       details: [
         "Évolutions depuis le premier appel",
         "Validation des aides réellement utiles",
@@ -55,14 +55,14 @@ const BilanSuivi = () => {
       color: "accent",
     },
     {
-      date: "J0 + 3 mois",
-      title: "Bilan final (cabinet ou domicile)",
-      description: "Mesurer les avancées, traiter les problèmes encore présents et stabiliser votre plan d'adaptation.",
+      date: "J+3 mois",
+      title: "Bilan de suivi et suite à envisager si nécessaire",
+      description: "Mesurer les avancées, traiter les problèmes encore présents et stabiliser votre plan d’adaptation.",
       details: [
         "Revue des progrès réalisés",
         "Identification des problèmes résiduels",
         "Validation des aides et aménagements à long terme",
-        "Remise d'un rapport final complet",
+        "Remise d’un rapport final complet",
       ],
       color: "primary",
     },
