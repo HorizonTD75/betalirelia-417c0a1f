@@ -276,7 +276,7 @@ const Bilans = () => {
                   }>
                       <bilan.icon className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-2xl text-center">Bilan<br />{bilan.name}</CardTitle>
+                    <CardTitle className="text-2xl text-center">{bilan.name}</CardTitle>
                     <p className="text-lg text-muted-foreground mt-2">{bilan.description}</p>
                   </CardHeader>
                   <CardContent className="flex-1">
@@ -289,7 +289,7 @@ const Bilans = () => {
                     )}
                       {bilan.notIncludes.map((item, i) =>
                     <li key={i} className="flex items-start gap-2 text-lg text-muted-foreground">
-                          <X className="w-5 h-5 shrink-0 mt-1 text-red-600" />
+                          <X className="w-5 h-5 shrink-0 mt-1 text-destructive" />
                           <span>{item}</span>
                         </li>
                     )}
