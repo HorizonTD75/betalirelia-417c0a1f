@@ -153,8 +153,8 @@ const SharedContactForm = () => {
           Demander un conseil personnalisé
         </CardTitle>
         <CardDescription className="text-lg leading-relaxed">
-          Décrivez votre situation en quelques lignes. Nous vous répondons par e-mail
-          avec nos recommandations adaptées à vos besoins visuels.
+          Décrivez votre besoin en quelques lignes. Nous vous rappellerons rapidement
+          pour échanger sur votre situation et vous orienter au mieux.
         </CardDescription>
       </CardHeader>
       <CardContent>
