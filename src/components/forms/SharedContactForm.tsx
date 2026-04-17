@@ -13,29 +13,14 @@ import RGPDConsent from "@/components/RGPDConsent";
 
 const topicOptions = [
   { value: "", label: "— Aucun sujet en particulier —" },
-  { value: "loupes-verre", label: "Loupes en verre", category: "Aides à la lecture" },
-  { value: "loupe-classique", label: "Loupe de lecture classique", category: "Aides à la lecture" },
-  { value: "loupe-eclairante", label: "Loupe éclairante rectangulaire", category: "Aides à la lecture" },
-  { value: "loupe-dome", label: "Loupe dôme à poser", category: "Aides à la lecture" },
-  { value: "loupe-electronique", label: "Loupe électronique", category: "Aides à la lecture" },
-  { value: "loupe-electronique-portable", label: "Loupe électronique portable", category: "Aides à la lecture" },
-  { value: "loupe-electronique-bureau", label: "Loupe électronique de bureau", category: "Aides à la lecture" },
-  { value: "loupe-electronique-poche", label: "Loupe électronique de poche", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur", label: "Télé-agrandisseur", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur-bureau", label: "Télé-agrandisseur de bureau", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur-portable", label: "Télé-agrandisseur portable", category: "Aides à la lecture" },
-  { value: "tele-agrandisseur-tv", label: "Télé-agrandisseur sur TV", category: "Aides à la lecture" },
-  { value: "eclairage-basse-vision", label: "Éclairage basse vision", category: "Aides à la lecture" },
-  { value: "lampe-bureau-daylight", label: "Lampe de bureau lumière du jour", category: "Aides à la lecture" },
-  { value: "lampe-sur-pied", label: "Lampe sur pied articulée", category: "Aides à la lecture" },
-  { value: "lampe-loupe", label: "Lampe-loupe combinée", category: "Aides à la lecture" },
-  { value: "loupe-amelie", label: "Loupe Amélie", category: "Aides à la lecture" },
-  { value: "aide-choix", label: "Aide pour choisir mon équipement", category: "Conseil" },
-  { value: "bilan-basse-vision", label: "Bilan basse vision", category: "Conseil" },
-  { value: "autre", label: "Autre question", category: "Conseil" },
+  { value: "loupes-verre", label: "Loupes en verre" },
+  { value: "loupes-electroniques", label: "Loupes électroniques" },
+  { value: "tele-agrandisseurs", label: "Télé-agrandisseurs" },
+  { value: "eclairage-basse-vision", label: "Éclairage basse vision" },
+  { value: "aide-choix", label: "Aide pour choisir" },
+  { value: "bilans", label: "Bilans" },
+  { value: "autre", label: "Autres" },
 ];
-
-const categories = [...new Set(topicOptions.filter((o) => o.category).map((o) => o.category))];
 
 const SharedContactForm = () => {
   const [searchParams] = useSearchParams();
