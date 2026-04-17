@@ -25,11 +25,11 @@ const BilanEssentiel = () => {
 
 
   const cabinetSteps = [
-  "Accueil et installation : nous revoyons votre situation, comptes-rendus et lunettes actuelles",
-  "Entretien détaillé : difficultés, ce qui vous manque aujourd'hui",
-  "Évaluation et mises en situation : tests de lecture, observation, gestion de la lumière",
-  "Essais d'aides standard et conseils personnalisés",
-  "Conclusion et plan d'action : priorités, aides à envisager, étapes suivantes"];
+  "Accueil et échange sur votre situation : nous revoyons vos comptes-rendus et vos lunettes actuelles",
+  "Entretien sur vos difficultés visuelles du quotidien : ce qui vous gêne, ce qui vous manque aujourd’hui",
+  "Observation des besoins concrets : tests de lecture, gestion de la lumière, contrastes",
+  "Premiers conseils et essais d’aides standard adaptées à vos usages",
+  "Proposition d’une suite si nécessaire : priorités, aides à envisager, étapes suivantes"];
 
 
   const domicileAdvantages = [
