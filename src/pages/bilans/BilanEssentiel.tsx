@@ -119,9 +119,9 @@ const BilanEssentiel = () => {
               </ul>
               <Card variant="highlighted" className="mt-8 p-6">
                 <p className="text-lg">
-                  Si, dès le départ, vous savez que des lunettes spécialisées seront nécessaires, le{" "}
+                  Si ce premier bilan montre qu’un travail plus approfondi sur les lunettes, les filtres ou les aides optiques est nécessaire, le{" "}
                   <Link to="/bilans-bassevision/expert" className="text-primary font-bold underline underline-offset-4">Bilan Expert</Link>{" "}
-                  sera peut-être plus adapté.
+                  peut être envisagé.
                 </p>
               </Card>
             </div>
