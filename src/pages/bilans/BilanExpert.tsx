@@ -301,6 +301,29 @@ const BilanExpert = () => {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="py-16 bg-background">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
+                Questions fréquentes
+              </h2>
+              <Accordion type="single" collapsible className="space-y-4">
+                {[
+                  { q: "Le Bilan Expert remplace-t-il mon ophtalmologiste ?", a: "Non. Le Bilan Expert ne remplace pas le suivi ophtalmologique. Il vient en complément, pour vous aider à mieux comprendre vos besoins fonctionnels et rechercher des solutions adaptées au quotidien." },
+                  { q: "Les équipements sont-ils inclus dans le bilan ?", a: "Le bilan porte sur l’évaluation, les conseils et la coordination. Les équipements éventuellement recommandés sont distincts et relèvent du professionnel qui les fournit." },
+                  { q: "À qui s’adresse ce bilan ?", a: "Il s’adresse aux personnes qui ont besoin d’une analyse plus poussée de leurs besoins visuels, notamment lorsque les solutions classiques ne suffisent pas ou que plusieurs usages sont concernés." },
+                ].map((item, i) => (
+                  <AccordionItem key={i} value={`faq-expert-${i}`} className="bg-card border-2 border-border rounded-2xl px-6">
+                    <AccordionTrigger className="text-lg font-semibold text-left py-6">{item.q}</AccordionTrigger>
+                    <AccordionContent className="text-lg text-muted-foreground pb-6">{item.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="container">
