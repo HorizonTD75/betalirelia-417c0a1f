@@ -246,8 +246,8 @@ const SharedContactForm = () => {
           <RGPDConsent />
 
           <p className="text-center text-muted-foreground italic text-base">
-            Astuce aidant : vous pouvez remplir ce formulaire à la place de votre proche,
-            puis venir au bilan avec lui/elle.
+            Aidant : vous pouvez remplir ce formulaire pour votre proche.
+            Nous pourrons ensuite vous guider au mieux selon sa situation.
           </p>
         </form>
       </CardContent>
