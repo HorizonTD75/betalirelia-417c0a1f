@@ -236,11 +236,12 @@ const BilanExpert = () => {
                 Tarifs & modalités pratiques
               </h2>
               <Card variant="elevated" className="p-8 text-left">
-                <h3 className="font-serif text-xl font-bold mb-4">Le Pack comprend :</h3>
+                <h3 className="font-serif text-xl font-bold mb-4">Le Bilan Expert comprend :</h3>
                 <ul className="space-y-3 mb-6">
                   {[
+                    "L’analyse approfondie de vos besoins visuels et l’étude de vos usages",
                     "Le Bilan Essentiel (en cabinet ou à domicile)",
-                    "La consultation optométrique spécialisée chez l'opticien partenaire",
+                    "La consultation optométrique spécialisée chez l’opticien-optométriste partenaire",
                     "La rédaction du compte-rendu détaillé et la coordination",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-lg">
@@ -249,8 +250,11 @@ const BilanExpert = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-lg text-muted-foreground italic">
-                  Les équipements optiques (lunettes, filtres, montures) sont facturés séparément par l'opticien. L'ensemble est proposé dans un forfait unique.
+                <p className="text-lg text-muted-foreground">
+                  Les équipements ou solutions optiques éventuellement retenus à l’issue du bilan (lunettes, filtres, montures…) font l’objet d’une facturation séparée par le professionnel concerné.
+                </p>
+                <p className="text-base text-muted-foreground italic mt-4">
+                  Le tarif du Bilan Expert vous est précisé lors du premier contact, en fonction du parcours retenu.
                 </p>
               </Card>
             </div>
