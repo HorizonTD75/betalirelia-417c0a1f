@@ -187,7 +187,7 @@ const AidesLecture = () => {
               <p className="font-serif text-2xl text-primary-foreground/80 mb-4">
                 Retrouver le plaisir de lire, même en cas de basse vision
               </p>
-              <p className="text-xl md:text-2xl text-primary-foreghround/90 leading-relaxed mb-6 text-primary-foreground/90">
+              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6">
                 Quand la vue baisse, lire son courrier, parcourir un journal, suivre une notice ou regarder un écran devient parfois difficile, fatigant, voire décourageant.
                 Pourtant, il existe aujourd'hui de nombreuses <strong>aides à la lecture pour malvoyants</strong>
                 — loupes en verre, loupes électroniques, lampes adaptées, télé-agrandisseurs ou lunettes loupes —
