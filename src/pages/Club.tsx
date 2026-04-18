@@ -13,7 +13,7 @@ const Club = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOHead
-        title="Club Basse Vision LirElia : Rencontres Gratuites"
+        title="Club LirElia : visioconférences et échanges gratuits"
         description="Rejoignez le Club LirElia : échanges gratuits entre malvoyants et aidants, mini-conférences et astuces du quotidien. En visioconférence, sans engagement."
         canonicalPath="/club"
       />

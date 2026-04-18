@@ -55,17 +55,16 @@ const ClubAudienceSection = () => {
                     <AlertCircle className="w-6 h-6 text-secondary-foreground" />
                   </div>
                   <span className="inline-flex items-center px-4 py-2 rounded-full bg-secondary text-secondary-foreground font-bold text-lg">
-                    Important
+                    Bon à savoir
                   </span>
                 </div>
 
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
-                  Ce n'est pas un site de rencontre !
+                  Un espace de visio convivial et encadré
                 </h3>
-                
+
                 <p className="text-lg text-foreground/90 leading-relaxed">
-                  C'est un espace d'échanges et de convivialité, animé et modéré, 
-                  centré sur le partage d'expérience autour de la basse vision.
+                  Le Club LirElia est un espace d'échanges en visioconférence, animé et modéré, centré sur le partage d'expérience autour de la basse vision.
                 </p>
               </CardContent>
             </Card>
