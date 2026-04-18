@@ -22,6 +22,7 @@ const LoupesVerre = lazy(() => import("./pages/products/LoupesVerre"));
 const LoupesElectroniques = lazy(() => import("./pages/products/LoupesElectroniques"));
 const Lampes = lazy(() => import("./pages/products/Lampes"));
 const TeleAgrandisseurs = lazy(() => import("./pages/products/TeleAgrandisseurs"));
+const LunettesLoupes = lazy(() => import("./pages/products/LunettesLoupes"));
 const ContactConseil = lazy(() => import("./pages/ContactConseil"));
 const Bilans = lazy(() => import("./pages/Bilans"));
 const BilanEssentiel = lazy(() => import("./pages/bilans/BilanEssentiel"));
@@ -117,6 +118,7 @@ const App = () => (
             <Route path="/aides-lecture-bassevision/loupes-electroniques" element={<LoupesElectroniques />} />
             <Route path="/aides-lecture-bassevision/lampes" element={<Lampes />} />
             <Route path="/aides-lecture-bassevision/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
+            <Route path="/aides-lecture-bassevision/lunettes-loupes" element={<LunettesLoupes />} />
             <Route path="/boutique/loupe-amelie" element={<LoupeAmelie />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
