@@ -16,8 +16,8 @@ const features = [
 },
 {
   icon: Calendar,
-  title: "Rencontres",
-  description: "Moments simples pour rompre l'isolement"
+  title: "Échanges conviviaux",
+  description: "Un moment simple, depuis chez soi"
 }];
 
 
@@ -32,7 +32,7 @@ const ClubSection = () => {
           </div>
 
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Club & Rencontres
+            Club en visio
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
             Un espace d'échanges entre personnes malvoyantes et aidants : astuces, retours d'expérience, mini-conférences, et moments simples pour rompre l'isolement.

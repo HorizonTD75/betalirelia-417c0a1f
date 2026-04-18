@@ -30,7 +30,7 @@ const ClubPricingSection = () => {
                 <div className="w-14 h-14 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center mb-4">
                   <Gift className="w-7 h-7" />
                 </div>
-                <CardTitle className="text-2xl">Rencontre mensuelle</CardTitle>
+                <CardTitle className="text-2xl">Visio mensuelle</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
@@ -64,7 +64,7 @@ const ClubPricingSection = () => {
                 <div className="w-14 h-14 rounded-xl bg-muted text-muted-foreground flex items-center justify-center mb-4">
                   <Clock className="w-7 h-7" />
                 </div>
-                <CardTitle className="text-2xl">Rencontres hebdomadaires</CardTitle>
+                <CardTitle className="text-2xl">Visios hebdomadaires</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">

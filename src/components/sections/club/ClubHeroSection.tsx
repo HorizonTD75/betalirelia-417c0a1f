@@ -15,8 +15,8 @@ const benefits = [
   },
   {
     icon: Users,
-    title: "Rencontres",
-    description: "Lien social, sans pression",
+    title: "Échanges conviviaux",
+    description: "Un moment simple, depuis chez soi",
   },
 ];
 
@@ -42,7 +42,7 @@ const ClubHeroSection = () => {
         {/* Title section — full width */}
         <div className="mb-10">
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Club LirElia : rencontres &amp; échanges
+            Club LirElia : visioconférences &amp; échanges
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 align-middle ml-3 text-lg sm:text-xl font-semibold">
               Gratuit
             </span>
