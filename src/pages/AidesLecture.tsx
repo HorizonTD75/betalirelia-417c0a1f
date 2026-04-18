@@ -4,116 +4,148 @@ import ComparisonSection from "@/components/sections/ComparisonSection";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Check, X, ArrowRight, Search, Lightbulb, Monitor, Eye } from "lucide-react";
+import { Check, X, ArrowRight, Search, Lightbulb, Monitor, Eye, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import aidesLectureHero from "@/assets/aides-lecture-hero.jpg";
 import loupeVerre from "@/assets/loupe-verre.jpg";
 import loupeElectronique from "@/assets/loupe-electronique.jpg";
 import lampeLecture from "@/assets/lampe-lecture.jpg";
 import teleAgrandisseur from "@/assets/tele-agrandisseur.jpg";
+import lunettesLoupes from "@/assets/lunettes-loupes.jpg";
 
 const CALENDLY_URL = "https://calendly.com/lirelia/bilan_basse_vision";
 
 const categories = [
   {
     id: "loupe-verre",
+    shortLabel: "Loupes en verre",
+    shortDesc: "Grossissement optique simple, sans batterie, pour la lecture ponctuelle.",
     link: "/aides-lecture-bassevision/loupes-verre",
     icon: Search,
-    title: "Loupe en verre : grossissement optique simple et immédiat",
+    title: "Loupes en verre : grossissement optique simple et immédiat",
     image: loupeVerre,
     imageAlt: "Illustration aquarelle d'une loupe en verre posée sur un livre ouvert",
-    intro: `La loupe en verre est l'outil d'aide à la lecture le plus connu. Elle permet un grossissement optique direct, sans électronique, grâce à une lentille convergente en verre ou en matériau optique de haute qualité.`,
+    intro: `La loupe en verre reste l'aide à la lecture la plus connue, et souvent la première à laquelle on pense quand la vue baisse. Sa lentille convergente offre un grossissement immédiat, sans électronique, pour relire un courrier, vérifier une étiquette ou suivre quelques lignes d'un livre.`,
     usages: [
-      "Lire des textes imprimés : livres, journaux, courriers",
-      "Consulter des étiquettes, notices ou factures",
-      "Effectuer des tâches de précision en vision rapprochée",
+      "Lire son courrier, ses factures, une notice",
+      "Consulter une étiquette de médicament ou de boîte de conserve",
+      "Faire un repérage rapide sur un document à plat",
     ],
     avantages: [
-      "Vision encore exploitable de près",
-      "Besoin ponctuel de grossissement",
-      "Utilisation simple, sans réglage ni batterie",
+      "Personnes ayant encore une vision exploitable de près",
+      "Besoin ponctuel d'un grossissement d'appoint",
+      "Recherche d'un outil simple, sans batterie ni réglage",
     ],
     limites: [
       "Grossissement fixe, non réglable",
-      "Dépend fortement de la qualité de l'éclairage ambiant",
+      "Confort de lecture très dépendant de l'éclairage",
     ],
-    cta: "Découvrir les loupes de lecture adaptées",
-    semantic: "loupe de lecture, loupe optique, grossissement visuel, lecture rapprochée, vision de près, aide visuelle optique, loupe pour malvoyant, loupe lecture basse vision",
+    cta: "Découvrir les loupes en verre",
   },
   {
     id: "loupe-electronique",
+    shortLabel: "Loupes électroniques",
+    shortDesc: "Zoom réglable et contraste renforcé sur écran, à la maison ou en déplacement.",
     link: "/aides-lecture-bassevision/loupes-electroniques",
     icon: Monitor,
-    title: "Loupe électronique : grossissement variable et contraste renforcé",
+    title: "Loupes électroniques : grossissement variable et contraste renforcé",
     image: loupeElectronique,
     imageAlt: "Illustration aquarelle d'une loupe électronique portable affichant du texte agrandi",
-    intro: `La loupe électronique, aussi appelée loupe numérique, utilise une caméra et un écran pour afficher le texte agrandi. Elle permet un grossissement puissant, réglable, avec des modes de contraste adaptés à la basse vision.`,
+    intro: `La loupe électronique, ou loupe numérique, utilise une caméra et un écran pour afficher le texte agrandi. Elle permet un zoom puissant, des contrastes adaptés à la basse vision et une lecture beaucoup plus longue que ce qu'autorise une loupe optique classique. Elle existe en version de poche, transportable ou de bureau.`,
     usages: [
-      "Zoom variable, souvent de ×2 à ×20",
-      "Inversions de contraste : blanc sur noir, jaune sur noir…",
-      "Lecture prolongée sans fatigue excessive",
+      "Lire un journal, un livre ou un document long sans fatigue excessive",
+      "Consulter prix, menus ou étiquettes en magasin ou au restaurant",
+      "Régler finement zoom et contraste selon le moment de la journée",
     ],
     avantages: [
-      "Vision plus altérée ou déficience centrale",
-      "Besoin de réglages fins (zoom, contraste)",
-      "Lecture régulière ou prolongée, à domicile ou en déplacement",
+      "Vision plus altérée ou atteinte centrale (DMLA, par exemple)",
+      "Besoin de réglages fins et de forts grossissements",
+      "Lecture régulière à domicile ou en déplacement",
     ],
     limites: [
       "Nécessite une batterie ou une alimentation",
-      "Prix plus élevé qu'une loupe optique classique",
+      "Investissement plus élevé qu'une loupe optique",
     ],
-    cta: "Être orienté(e) vers une loupe électronique adaptée",
-    semantic: "loupe électronique malvoyant, loupe numérique, zoom lecture, contraste élevé, aide visuelle électronique, agrandisseur portable basse vision",
+    cta: "Découvrir les loupes électroniques",
   },
   {
     id: "lampes",
+    shortLabel: "Lampes adaptées",
+    shortDesc: "Un éclairage maîtrisé pour réduire l'éblouissement et la fatigue visuelle.",
     link: "/aides-lecture-bassevision/lampes",
     icon: Lightbulb,
     title: "Lampes de lecture : voir mieux grâce à un éclairage maîtrisé",
     image: lampeLecture,
     imageAlt: "Illustration aquarelle d'une lampe de bureau éclairant un livre ouvert",
-    intro: `Un éclairage inadapté est l'une des premières causes de fatigue visuelle chez les personnes malvoyantes. Les lampes de lecture spécifiques basse vision sont conçues pour améliorer la perception du texte sans éblouir.`,
+    intro: `En basse vision, on cherche souvent à voir plus grand alors qu'il faudrait d'abord voir mieux. Un éclairage adapté change radicalement le confort de lecture : il réduit la fatigue, limite l'éblouissement et fait ressortir les contrastes du texte. Une bonne lampe est souvent le complément le plus utile à une loupe ou à un agrandisseur.`,
     usages: [
-      "Température de couleur adaptée à la sensibilité visuelle",
-      "Orientation précise de la lumière sur la zone de lecture",
-      "Intensité réglable pour s'adapter à chaque moment",
+      "Éclairer précisément la zone de lecture sans éblouir",
+      "Régler la température de couleur et l'intensité selon le moment",
+      "Compléter une loupe ou une loupe électronique pour gagner en confort",
     ],
     avantages: [
-      "Complément indispensable aux loupes et agrandisseurs",
-      "Vision sensible à la lumière ou à l'éblouissement",
-      "Lecture prolongée avec un confort accru",
+      "Personnes sensibles à la lumière ou à l'éblouissement",
+      "Lectures prolongées en fauteuil, au bureau ou au lit",
+      "Compagnon indispensable de toute aide visuelle",
     ],
     limites: [
       "Ne corrige pas le grossissement à elle seule",
-      "Nécessite un positionnement adapté pour éviter les reflets",
+      "Demande un bon positionnement pour éviter les reflets",
     ],
-    cta: "Optimiser mon éclairage de lecture",
-    semantic: "lampe de lecture malvoyant, éclairage basse vision, lumière anti-éblouissement, fatigue visuelle, lampe adaptée, éclairage adapté malvoyant",
+    cta: "Découvrir les lampes adaptées",
   },
   {
     id: "tele-agrandisseur",
+    shortLabel: "Télé-agrandisseurs",
+    shortDesc: "Grand écran et confort maximal pour lire, écrire et travailler longtemps.",
     link: "/aides-lecture-bassevision/tele-agrandisseurs",
     icon: Eye,
-    title: "Télé-agrandisseur : confort maximal pour lire longtemps",
+    title: "Télé-agrandisseurs : confort maximal pour lire et écrire longtemps",
     image: teleAgrandisseur,
     imageAlt: "Illustration aquarelle d'une personne utilisant un télé-agrandisseur avec grand écran",
-    intro: `Le télé-agrandisseur est une aide à la lecture avancée permettant d'afficher des documents sur un grand écran, avec un grossissement élevé et très stable. Il est particulièrement recommandé pour la lecture prolongée et les déficiences visuelles sévères.`,
+    intro: `Le télé-agrandisseur est une station de lecture posée sur un bureau, avec un grand écran et un plateau mobile sous une caméra. Il est particulièrement utile pour lire un journal, remplir un formulaire, écrire une lettre ou faire des mots croisés. Sa stabilité, son grand champ de vision et sa posture confortable en font un véritable outil du quotidien pour les déficiences visuelles plus marquées.`,
     usages: [
-      "Lecture prolongée de livres, journaux, documents",
-      "Travail sur documents papier ou écriture manuscrite",
-      "Usage quotidien pour les déficiences visuelles sévères",
+      "Lire longuement journaux, livres, documents administratifs",
+      "Écrire à la main ou remplir un formulaire avec confort",
+      "Faire des mots croisés, suivre une partition, regarder des photos",
     ],
     avantages: [
-      "Grand confort visuel sur écran large",
-      "Posture améliorée, mains libres",
-      "Réduction majeure de la fatigue visuelle",
+      "Lecture quotidienne et prolongée à domicile",
+      "Besoin d'un fort grossissement et d'une grande stabilité",
+      "Recherche d'une posture confortable, mains libres",
     ],
     limites: [
       "Encombrement plus important qu'une loupe portable",
       "Investissement financier conséquent",
     ],
     cta: "Découvrir les télé-agrandisseurs",
-    semantic: "télé agrandisseur malvoyant, vidéo agrandisseur, lecture écran agrandi, basse vision sévère, agrandisseur de documents, aide lecture DMLA",
+  },
+  {
+    id: "lunettes-loupes",
+    shortLabel: "Lunettes loupes",
+    shortDesc: "Un grossissement mains libres pour la lecture, le bricolage ou la vision de loin.",
+    link: "/aides-lecture-bassevision/lunettes-loupes",
+    icon: Glasses,
+    title: "Lunettes loupes : un grossissement mains libres, près ou de loin",
+    image: lunettesLoupes,
+    imageAlt: "Illustration aquarelle d'une paire de lunettes loupes posée sur un livre ouvert",
+    intro: `Les lunettes loupes apportent un grossissement mains libres, à une distance de travail bien définie. Certaines sont conçues pour les activités de près — lecture, couture, bricolage — d'autres pour mieux distinguer une scène, un tableau ou un écran à distance. Leur efficacité dépend très étroitement du choix du modèle et de l'usage prévu.`,
+    usages: [
+      "Lire, coudre, bricoler ou faire de petits travaux minutieux mains libres",
+      "Suivre un cours, une conférence, une scène de théâtre ou de cinéma",
+      "Compléter une autre aide visuelle pour des usages spécifiques",
+    ],
+    avantages: [
+      "Personnes recherchant une solution mains libres",
+      "Activités à distance de travail constante (couture, modélisme)",
+      "Usages ciblés en vision de loin, dans un cadre stable et assis",
+    ],
+    limites: [
+      "Choix très dépendant de la distance d'usage",
+      "Demande souvent un bon conseil avant achat",
+      "Les modèles de vision de loin ne sont pas adaptés à la conduite",
+    ],
+    cta: "Découvrir les lunettes loupes",
   },
 ];
 
@@ -121,14 +153,14 @@ const AidesLecture = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Aides à la Lecture Basse Vision | LirElia"
-        description="Loupe, lampe ou télé-agrandisseur : quelle aide choisir pour la basse vision ? Comparatif complet et conseil personnalisé gratuit."
+        title="Aides à la Lecture Basse Vision : loupes, lampes, lunettes loupes | LirElia"
+        description="Loupes en verre, loupes électroniques, lampes adaptées, télé-agrandisseurs et lunettes loupes : trouvez l'aide à la lecture la mieux adaptée à votre basse vision."
         canonicalPath="/aides-lecture-bassevision"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Aides à la lecture pour malvoyants",
-          "description": "Conseil et accompagnement dans le choix d'aides à la lecture pour personnes malvoyantes : loupes, lampes, télé-agrandisseurs.",
+          "description": "Conseil et accompagnement dans le choix d'aides à la lecture pour personnes malvoyantes : loupes en verre, loupes électroniques, lampes adaptées, télé-agrandisseurs, lunettes loupes.",
           "provider": { "@type": "Organization", "name": "LirElia" },
           "serviceType": "Conseil en aides visuelles basse vision"
         }}
@@ -156,19 +188,19 @@ const AidesLecture = () => {
                 Retrouver le plaisir de lire, même en cas de basse vision
               </p>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6">
-                Lorsque la vision baisse, lire devient difficile, fatigant, parfois décourageant.
-                Pourtant, il existe aujourd'hui de nombreuses <strong>aides à la lecture</strong> permettant 
-                de retrouver un accès confortable au texte — que ce soit pour lire un livre, un courrier, un journal, 
-                une notice ou un écran.
+                Quand la vue baisse, lire son courrier, parcourir un journal, suivre une notice ou regarder un écran devient parfois difficile, fatigant, voire décourageant.
+                Pourtant, il existe aujourd'hui de nombreuses <strong>aides à la lecture pour malvoyants</strong>
+                — loupes en verre, loupes électroniques, lampes adaptées, télé-agrandisseurs ou lunettes loupes —
+                qui permettent de retrouver un accès confortable au texte et de continuer ses activités du quotidien.
               </p>
               <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-8">
-                Les équipements d'aide à la lecture ne remplacent pas les lunettes médicales, mais les complètent. Ils agissent sur :
+                Ces équipements ne remplacent pas vos lunettes médicales : ils les complètent. Ils agissent sur :
               </p>
               <ul className="grid sm:grid-cols-2 gap-4 mb-10">
                 {[
                   "L'agrandissement des caractères",
                   "Le contraste du texte",
-                  "L'éclairage adapté",
+                  "L'éclairage de la zone de lecture",
                   "La réduction de la fatigue visuelle",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-lg text-primary-foreground/90">
@@ -178,8 +210,8 @@ const AidesLecture = () => {
                 ))}
               </ul>
               <p className="text-lg text-primary-foreground/80 mb-8">
-                Chez LirElia, nous sélectionnons et expliquons ces solutions pour vous aider à choisir 
-                l'outil le plus adapté à votre vision, à vos usages et à votre quotidien.
+                Chez LirElia, nous sélectionnons et expliquons ces solutions pour vous aider à choisir
+                l'outil le mieux adapté à votre vision, à vos usages et à votre quotidien.
               </p>
               <Button variant="secondary" size="lg" className="text-xl" asChild>
                 <Link to="/contact-conseil?sujet=aide-choix">
@@ -202,17 +234,17 @@ const AidesLecture = () => {
           <div className="container">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Les grandes catégories d'aides à la lecture
+                Les grandes familles d'aides à la lecture
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Il existe plusieurs familles de dispositifs d'aide à la lecture pour personnes malvoyantes, chacune répondant 
-                à des besoins visuels spécifiques : vision centrale diminuée, besoin de grossissement ponctuel, 
-                lecture prolongée, sensibilité à l'éblouissement…
+                Chaque famille de produits répond à des besoins concrets : lire un courrier au calme,
+                suivre un journal en fauteuil, écrire une lettre, coudre, bricoler, ou suivre une scène
+                à distance. Voici les cinq grandes catégories pour vous y retrouver simplement.
               </p>
             </div>
 
-            {/* Grille des 4 catégories en cartes résumées */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
+            {/* Grille des 5 catégories en cartes résumées */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-20">
               {categories.map((cat) => (
                 <Link
                   key={cat.id}
@@ -224,22 +256,17 @@ const AidesLecture = () => {
                       <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-2 group-hover:bg-primary/20 transition-colors">
                         <cat.icon className="w-8 h-8 text-primary" />
                       </div>
-                      <CardTitle className="text-xl">{cat.id === "loupe-verre" ? "Loupes en verre" : cat.id === "loupe-electronique" ? "Loupes électroniques" : cat.id === "lampes" ? "Lampes adaptées" : "Télé-agrandisseurs"}</CardTitle>
+                      <CardTitle className="text-xl">{cat.shortLabel}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">
-                        {cat.id === "loupe-verre" && "Grossissement optique simple pour la lecture ponctuelle."}
-                        {cat.id === "loupe-electronique" && "Zoom réglable et contraste renforcé sur écran."}
-                        {cat.id === "lampes" && "Éclairage maîtrisé pour réduire la fatigue visuelle."}
-                        {cat.id === "tele-agrandisseur" && "Grand écran et confort maximal pour lire longtemps."}
-                      </p>
+                      <p className="text-muted-foreground">{cat.shortDesc}</p>
                     </CardContent>
                   </Card>
                 </Link>
               ))}
             </div>
 
-            {/* Sections détaillées — layout plus compact */}
+            {/* Sections détaillées */}
             {categories.map((cat, index) => (
               <section
                 key={cat.id}
@@ -275,7 +302,7 @@ const AidesLecture = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
                   <div>
                     <h3 className="font-serif text-xl font-bold text-foreground mb-4">
-                      {cat.id === "lampes" ? "Points forts" : "Usages principaux"}
+                      Usages concrets
                     </h3>
                     <ul className="space-y-3">
                       {cat.usages.map((usage, i) => (
@@ -316,9 +343,6 @@ const AidesLecture = () => {
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
-
-                {/* Mots-clés sémantiques (visually hidden for SEO) */}
-                <p className="sr-only">{cat.semantic}</p>
               </section>
             ))}
           </div>
@@ -334,11 +358,11 @@ const AidesLecture = () => {
                 Une aide à la lecture efficace commence par un bon conseil
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                Il n'existe pas une aide à la lecture universelle, mais une <strong>combinaison adaptée</strong> à 
-                chaque personne, à chaque pathologie visuelle et à chaque usage.
+                Il n'existe pas une aide à la lecture universelle, mais une <strong>combinaison adaptée</strong> à
+                chaque personne, à chaque pathologie visuelle et à chaque usage du quotidien.
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed mb-10">
-                Chez LirElia, nous privilégions l'évaluation des besoins réels, les tests concrets, 
+                Chez LirElia, nous privilégions l'évaluation des besoins réels, les essais concrets,
                 et un accompagnement humain et progressif.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
