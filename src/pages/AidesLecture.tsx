@@ -15,6 +15,25 @@ import lunettesLoupes from "@/assets/lunettes-loupes.jpg";
 
 const CALENDLY_URL = "https://calendly.com/lirelia/bilan_basse_vision";
 
+// Palette rotative inspirée de la home (PathwaysSection) pour redonner
+// de la chaleur visuelle au silo : bleu, jaune, vert/teal, rouge doux, primaire.
+const categoryAccents = [
+  { iconBg: "bg-accent/15", iconColor: "text-accent", border: "border-accent/30", hoverBg: "group-hover:bg-accent/25" },
+  { iconBg: "bg-primary/10", iconColor: "text-primary", border: "border-primary/30", hoverBg: "group-hover:bg-primary/20" },
+  { iconBg: "bg-secondary/25", iconColor: "text-secondary-foreground", border: "border-secondary/40", hoverBg: "group-hover:bg-secondary/40" },
+  { iconBg: "bg-destructive/10", iconColor: "text-destructive", border: "border-destructive/30", hoverBg: "group-hover:bg-destructive/20" },
+  { iconBg: "bg-accent/15", iconColor: "text-accent", border: "border-accent/30", hoverBg: "group-hover:bg-accent/25" },
+];
+
+// Icônes solides pour les blocs détaillés (en-têtes de chaque section catégorie)
+const sectionIconStyles = [
+  "bg-accent text-accent-foreground",
+  "bg-primary text-primary-foreground",
+  "bg-secondary text-secondary-foreground",
+  "bg-destructive text-destructive-foreground",
+  "bg-accent text-accent-foreground",
+];
+
 const categories = [
   {
     id: "loupe-verre",
