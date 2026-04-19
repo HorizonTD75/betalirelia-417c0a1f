@@ -289,85 +289,91 @@ const AidesLecture = () => {
               })}
             </div>
 
-            {/* Sections détaillées */}
-            {categories.map((cat, index) => (
-              <section
-                key={cat.id}
-                id={cat.id}
-                className={`py-16 ${index < categories.length - 1 ? "border-b-2 border-border" : ""}`}
-              >
-                {/* Image + Icon/Title row */}
-                <div className="flex flex-col md:flex-row gap-6 mb-8 items-start">
-                  <div className="w-full md:w-64 lg:w-72 shrink-0 rounded-2xl overflow-hidden shadow-card border-2 border-border">
-                    <img
-                      src={cat.image}
-                      alt={cat.imageAlt}
-                      className="w-full h-auto object-cover aspect-[4/3]"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shrink-0">
-                        <cat.icon className="w-7 h-7" />
-                      </div>
-                      <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
-                        {cat.title}
-                      </h2>
+            {/* Sections détaillées — fond alterné + icône colorée */}
+            {categories.map((cat, index) => {
+              const iconStyle = sectionIconStyles[index % sectionIconStyles.length];
+              const isAlt = index % 2 === 1;
+              return (
+                <section
+                  key={cat.id}
+                  id={cat.id}
+                  className={`py-12 md:py-16 px-4 md:px-8 my-8 rounded-3xl ${
+                    isAlt ? "bg-muted/60" : "bg-card border-2 border-border shadow-card"
+                  }`}
+                >
+                  {/* Image + Icon/Title row */}
+                  <div className="flex flex-col md:flex-row gap-6 mb-8 items-start">
+                    <div className="w-full md:w-64 lg:w-72 shrink-0 rounded-2xl overflow-hidden shadow-card border-2 border-border">
+                      <img
+                        src={cat.image}
+                        alt={cat.imageAlt}
+                        className="w-full h-auto object-cover aspect-[4/3]"
+                        loading="lazy"
+                      />
                     </div>
-                    <p className="text-xl text-muted-foreground leading-relaxed">
-                      {cat.intro}
-                    </p>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className={`w-14 h-14 rounded-2xl ${iconStyle} flex items-center justify-center shrink-0 shadow-card`}>
+                          <cat.icon className="w-7 h-7" />
+                        </div>
+                        <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                          {cat.title}
+                        </h2>
+                      </div>
+                      <p className="text-xl text-muted-foreground leading-relaxed">
+                        {cat.intro}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Content grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
-                      Usages concrets
-                    </h3>
-                    <ul className="space-y-3">
-                      {cat.usages.map((usage, i) => (
-                        <li key={i} className="flex items-start gap-3 text-lg">
-                          <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
-                          <span>{usage}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Content grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
+                    <div className="bg-accent/5 border border-accent/20 rounded-xl p-5">
+                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                        Usages concrets
+                      </h3>
+                      <ul className="space-y-3">
+                        {cat.usages.map((usage, i) => (
+                          <li key={i} className="flex items-start gap-3 text-lg">
+                            <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
+                            <span>{usage}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-5">
+                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">Pour qui ?</h3>
+                      <ul className="space-y-2">
+                        {cat.avantages.map((av, i) => (
+                          <li key={i} className="flex items-start gap-3 text-lg text-foreground">
+                            <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
+                            <span>{av}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-5">
+                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">Limites</h3>
+                      <ul className="space-y-2">
+                        {cat.limites.map((lim, i) => (
+                          <li key={i} className="flex items-start gap-3 text-lg text-muted-foreground">
+                            <X className="w-5 h-5 text-destructive shrink-0 mt-1" />
+                            <span>{lim}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">Pour qui ?</h3>
-                    <ul className="space-y-2">
-                      {cat.avantages.map((av, i) => (
-                        <li key={i} className="flex items-start gap-3 text-lg text-foreground">
-                          <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
-                          <span>{av}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">Limites</h3>
-                    <ul className="space-y-2">
-                      {cat.limites.map((lim, i) => (
-                        <li key={i} className="flex items-start gap-3 text-lg text-muted-foreground">
-                          <X className="w-5 h-5 text-destructive shrink-0 mt-1" />
-                          <span>{lim}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
 
-                <Button variant="outline" size="lg" asChild>
-                  <Link to={cat.link}>
-                    {cat.cta}
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-              </section>
-            ))}
+                  <Button variant="default" size="lg" asChild>
+                    <Link to={cat.link}>
+                      {cat.cta}
+                      <ArrowRight className="w-5 h-5" />
+                    </Link>
+                  </Button>
+                </section>
+              );
+            })}
           </div>
         </section>
 
