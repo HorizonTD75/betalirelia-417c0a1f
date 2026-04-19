@@ -12,17 +12,17 @@ const products = [
     image: loupeClassique,
     imageAlt: "Illustration aquarelle d'une loupe de lecture classique en verre",
     description:
-      "Loupe à main avec lentille en verre optique de haute qualité. Grossissement fixe, idéale pour une utilisation ponctuelle : courrier, étiquettes, notices.",
+      "Loupe à main avec lentille en verre optique de qualité. Grossissement fixe, idéale pour un usage ponctuel : courrier, étiquette de médicament, notice ou ticket de caisse.",
     features: [
-      "Grossissement ×2 à ×5 selon modèle",
+      "Grossissement de ×2 à ×5 selon modèle",
       "Lentille en verre minéral traité anti-reflets",
       "Manche ergonomique antidérapant",
-      "Légère et sans batterie",
+      "Légère, sans batterie ni branchement",
     ],
     idealFor: [
-      "Lecture ponctuelle de textes imprimés",
-      "Consultation d'étiquettes et de notices",
-      "Premier équipement d'aide à la lecture",
+      "Lecture rapide d'un courrier ou d'une étiquette",
+      "Consultation ponctuelle d'une notice ou d'un emballage",
+      "Première aide à la lecture quand la vision de près baisse",
     ],
     priceRange: "À partir de 15 €",
   },
@@ -32,37 +32,38 @@ const products = [
     image: loupeEclairante,
     imageAlt: "Illustration aquarelle d'une loupe rectangulaire avec éclairage LED intégré",
     description:
-      "Loupe grand format avec éclairage LED intégré. Le format rectangulaire suit la ligne de lecture et améliore le confort sur des textes denses.",
+      "Loupe de format rectangulaire, avec éclairage LED intégré. La lentille rectangulaire améliore le confort de lecture sur des textes denses et permet de mieux suivre la ligne.",
     features: [
-      "Format rectangulaire adapté à la lecture de lignes",
-      "Éclairage LED blanc intégré (piles ou rechargeable)",
-      "Grossissement ×2,5 à ×4",
-      "Large champ de vision pour lecture de journaux",
+      "Format rectangulaire améliorant la qualité d'image",
+      "Éclairage LED intégré (piles ou rechargeable)",
+      "Grossissement fixe de ×2,5 à ×6 selon modèle",
+      "Large champ de vision pour la lecture de journaux",
     ],
     idealFor: [
-      "Lecture de journaux et de livres",
-      "Personnes sensibles à l'éclairage ambiant",
-      "Utilisation prolongée sur des textes denses",
+      "Lecture de textes, d'étiquettes, de boîtes de conserve",
+      "Mise en œuvre instantanée, sans réglage",
+      "Besoin d'un grossissement d'appoint à la maison ou en déplacement",
+      "Utilisation prolongée en tous lieux",
     ],
     priceRange: "À partir de 25 €",
   },
   {
-    name: "Loupe dôme à poser",
+    name: "Loupe dôme et règle",
     slug: "loupe-dome",
     image: loupeDome,
-    imageAlt: "Illustration aquarelle d'une loupe dôme posée sur un texte",
+    imageAlt: "Illustration aquarelle d'une loupe dôme posée sur une page de livre",
     description:
-      "Loupe à poser directement sur le texte. Son format dôme permet un positionnement stable et une vision large, sans effort de maintien.",
+      "Loupe à poser directement sur le texte. De format dôme ou règle, elle permet un positionnement naturel au-dessus du texte d'intérêt, sans effort de maintien.",
     features: [
       "Se pose directement sur la page",
       "Pas de tremblement : vision stable",
-      "Grossissement ×3 à ×5",
+      "Grossissement de ×2 à ×5",
       "Idéale pour les mains peu agiles",
     ],
     idealFor: [
-      "Personnes ayant des tremblements",
-      "Lecture prolongée sans fatigue du bras",
-      "Documents à plat : courrier, formulaires",
+      "Personnes ayant des tremblements ou les mains qui fatiguent",
+      "Lecture prolongée sans tenir la loupe à bout de bras",
+      "Documents posés à plat : courrier, formulaire, mots croisés",
     ],
     priceRange: "À partir de 20 €",
   },
@@ -71,27 +72,27 @@ const products = [
 const buyingGuide = {
   title: "Comment choisir sa loupe en verre ?",
   intro:
-    "Le choix d'une loupe optique dépend de votre usage principal, du grossissement nécessaire et de votre confort de prise en main.",
+    "Le choix d'une loupe optique dépend avant tout de votre usage : un appoint rapide, une lecture prolongée, ou un confort sans avoir à tenir la loupe.",
   criteria: [
     {
       title: "Le grossissement",
       description:
-        "Plus le grossissement est élevé, plus le champ de vision est réduit. Un ×2 à ×3 suffit pour la plupart des lectures courantes.",
+        "Plus le grossissement est élevé, plus le champ de vision se réduit. Un ×2 à ×3 suffit pour un courrier ou une notice ; un ×4 à ×6 devient utile pour les petits caractères.",
     },
     {
       title: "Le format",
       description:
-        "Ronde pour un usage ponctuel, rectangulaire pour suivre les lignes, dôme pour poser sur le texte sans effort.",
+        "Ronde pour un usage ponctuel et rapide, rectangulaire pour suivre les lignes d'un journal, dôme ou règle pour poser sur le texte sans avoir à la maintenir en main.",
     },
     {
       title: "L'éclairage intégré",
       description:
-        "Un éclairage LED intégré améliore considérablement le confort, surtout dans les pièces mal éclairées.",
+        "Un éclairage LED intégré change radicalement le confort, surtout dans une pièce mal éclairée ou en fin de journée. Il limite aussi la fatigue visuelle.",
     },
     {
       title: "L'ergonomie",
       description:
-        "Poids, taille du manche, matière antidérapante : essayez avant d'acheter, surtout en cas de tremblements ou de fatigue.",
+        "Poids, taille du manche, matière antidérapante : essayez avant d'acheter, surtout en cas de tremblements ou si la main fatigue rapidement.",
     },
   ],
 };
@@ -101,9 +102,9 @@ const LoupesVerre = () => (
     icon={Search}
     heroImage={heroImage}
     title="Loupes en verre"
-    subtitle="Grossissement optique simple, direct et sans technologie"
-    intro="La loupe en verre reste l'aide à la lecture la plus accessible et intuitive. Avec une lentille convergente de qualité, elle offre un grossissement immédiat pour lire un texte, une étiquette ou un document imprimé. Légère, sans batterie et facile à utiliser, c'est le premier réflexe quand la vision de près diminue."
-    semanticKeywords="loupe de lecture, loupe optique, grossissement visuel, lecture rapprochée, vision de près, aide visuelle optique, loupe à main, loupe éclairante, loupe dôme, loupe malvoyant, loupe pour malvoyant"
+    subtitle="Une aide à la lecture simple, immédiate et sans technologie"
+    intro="La loupe en verre reste l'aide à la lecture la plus simple et la plus accessible. Avec une lentille convergente de qualité, elle offre un grossissement immédiat pour lire un courrier, une étiquette de médicament, une notice ou un document imprimé. Légère, sans batterie et facile à prendre en main, c'est souvent la première solution adoptée quand la vision de près commence à baisser."
+    semanticKeywords=""
     products={products}
     buyingGuide={buyingGuide}
     heroCta="Avoir de l'aide pour le choix d'une loupe en verre"
@@ -111,7 +112,7 @@ const LoupesVerre = () => (
     contactSubject="loupes-verre"
     seo={{
       title: "Loupes en Verre pour Malvoyants | LirElia",
-      description: "Loupe classique, éclairante ou dôme : trouvez la loupe en verre adaptée à votre vue. Grossissements de ×2 à ×12, conseil personnalisé gratuit.",
+      description: "Loupe classique, éclairante ou dôme : trouvez la loupe en verre adaptée à votre vue. Grossissements de ×2 à ×6, conseil personnalisé gratuit.",
       canonicalPath: "/aides-lecture-bassevision/loupes-verre",
     }}
     ctaText="Être conseillé(e) pour choisir ma loupe"
