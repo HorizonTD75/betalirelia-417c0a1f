@@ -22,8 +22,8 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <Card variant="elevated" className="h-full flex flex-col">
-      <div className="rounded-t-2xl overflow-hidden border-b-2 border-border">
+    <Card variant="elevated" className="h-full flex flex-col border-t-4 border-t-secondary overflow-hidden">
+      <div className="rounded-t-2xl overflow-hidden border-b-2 border-border bg-muted/30">
         <img
           src={product.image}
           alt={product.imageAlt}
@@ -37,7 +37,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <CardHeader className="pb-4">
         <CardTitle className="text-xl">{product.name}</CardTitle>
         {product.priceRange && (
-          <span className="text-lg font-semibold text-primary">{product.priceRange}</span>
+          <span className="inline-flex items-center self-start px-3 py-1 rounded-full bg-secondary/25 text-secondary-foreground border border-secondary/40 text-base font-bold">
+            {product.priceRange}
+          </span>
         )}
       </CardHeader>
       <CardContent className="flex-1 space-y-4">

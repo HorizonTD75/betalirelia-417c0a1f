@@ -120,12 +120,15 @@ const CategoryPageLayout = ({
           </div>
         </section>
 
-        {/* PRODUCTS GRID */}
-        <section className="py-16 md:py-20">
+        {/* PRODUCTS GRID — fond crème pour rythmer */}
+        <section className="py-16 md:py-20 bg-muted/40">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-14">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary-foreground border border-secondary/40 text-sm font-semibold mb-4">
                 Notre sélection
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Des produits choisis avec soin
               </h2>
               <p className="text-xl text-muted-foreground">
                 Des produits choisis pour leur qualité, leur ergonomie et leur adaptation aux besoins des personnes malvoyantes.
@@ -139,26 +142,40 @@ const CategoryPageLayout = ({
           </div>
         </section>
 
-        {/* BUYING GUIDE */}
-        <section className="py-16 md:py-20 bg-muted">
+        {/* BUYING GUIDE — fond clair + cartes alternées colorées */}
+        <section className="py-16 md:py-20 bg-background">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-                {buyingGuide.title}
-              </h2>
-              <p className="text-xl text-muted-foreground text-center mb-12 leading-relaxed">
-                {buyingGuide.intro}
-              </p>
+              <div className="text-center mb-12">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-accent/15 text-accent border border-accent/30 text-sm font-semibold mb-4">
+                  Guide d'achat
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {buyingGuide.title}
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  {buyingGuide.intro}
+                </p>
+              </div>
               <div className="grid sm:grid-cols-2 gap-6">
-                {buyingGuide.criteria.map((c, i) => (
-                  <div key={i} className="bg-card rounded-2xl border-2 border-border p-6">
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-3 flex items-start gap-3">
-                      <Check className="w-6 h-6 text-accent shrink-0 mt-1" />
-                      {c.title}
-                    </h3>
-                    <p className="text-lg text-muted-foreground leading-relaxed">{c.description}</p>
-                  </div>
-                ))}
+                {buyingGuide.criteria.map((c, i) => {
+                  const tints = [
+                    "bg-accent/5 border-accent/30",
+                    "bg-secondary/10 border-secondary/40",
+                    "bg-primary/5 border-primary/30",
+                    "bg-muted border-border",
+                  ];
+                  const tint = tints[i % tints.length];
+                  return (
+                    <div key={i} className={`rounded-2xl border-2 p-6 shadow-sm ${tint}`}>
+                      <h3 className="font-serif text-xl font-bold text-foreground mb-3 flex items-start gap-3">
+                        <Check className="w-6 h-6 text-accent shrink-0 mt-1" />
+                        {c.title}
+                      </h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">{c.description}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
