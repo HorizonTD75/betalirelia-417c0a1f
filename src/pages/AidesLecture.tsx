@@ -262,27 +262,31 @@ const AidesLecture = () => {
               </p>
             </div>
 
-            {/* Grille des 5 catégories en cartes résumées */}
+            {/* Grille des 5 catégories en cartes résumées — palette rotative */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-20">
-              {categories.map((cat) => (
-                <Link
-                  key={cat.id}
-                  to={cat.link}
-                  className="group"
-                >
-                  <Card variant="elevated" className="h-full text-center">
-                    <CardHeader className="items-center pb-4">
-                      <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-2 group-hover:bg-primary/20 transition-colors">
-                        <cat.icon className="w-8 h-8 text-primary" />
-                      </div>
-                      <CardTitle className="text-xl">{cat.shortLabel}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{cat.shortDesc}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+              {categories.map((cat, i) => {
+                const accent = categoryAccents[i % categoryAccents.length];
+                return (
+                  <Link key={cat.id} to={cat.link} className="group">
+                    <Card
+                      variant="elevated"
+                      className={`h-full text-center border-2 ${accent.border}`}
+                    >
+                      <CardHeader className="items-center pb-4">
+                        <div
+                          className={`w-16 h-16 rounded-2xl ${accent.iconBg} flex items-center justify-center mb-2 ${accent.hoverBg} transition-colors`}
+                        >
+                          <cat.icon className={`w-8 h-8 ${accent.iconColor}`} />
+                        </div>
+                        <CardTitle className="text-xl">{cat.shortLabel}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground">{cat.shortDesc}</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Sections détaillées */}
