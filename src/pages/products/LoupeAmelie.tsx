@@ -323,13 +323,18 @@ const LoupeAmelie = () => {
               )}
 
               {/* Stripe buy button */}
-              <div className="mb-8">
-                <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1TOh5CKnEgvciwuk1e288Q5Q"
-                  publishable-key="pk_live_GjSYZLVZqusPlzs5qmkBMgbo"
-                ></stripe-buy-button>
-              </div>
+              <div 
+                className="mb-8"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                    <stripe-buy-button
+                      buy-button-id="buy_btn_1TOh5CKnEgvciwuk1e288Q5Q"
+                      publishable-key="pk_live_GjSYZLVZqusPlzs5qmkBMgbo"
+                    ></stripe-buy-button>
+                  `
+                }}
+              />
 
               {/* Reassurance block */}
               <div className="bg-muted rounded-2xl border-2 border-border p-6 space-y-4">
