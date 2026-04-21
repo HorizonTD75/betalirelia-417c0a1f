@@ -108,6 +108,15 @@ const LoupeAmelie = () => {
       .catch(() => setLoading(false));
   }, []);
 
+  // Load Stripe Buy Button script
+  useEffect(() => {
+    if (document.querySelector('script[src="https://js.stripe.com/v3/buy-button.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://js.stripe.com/v3/buy-button.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   if (loading) {
     return (
       <div className="min-h-screen">
@@ -323,18 +332,14 @@ const LoupeAmelie = () => {
               )}
 
               {/* Stripe buy button */}
-              <div 
-                className="mb-8"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-                    <stripe-buy-button
-                      buy-button-id="buy_btn_1TOh5CKnEgvciwuk1e288Q5Q"
-                      publishable-key="pk_live_GjSYZLVZqusPlzs5qmkBMgbo"
-                    ></stripe-buy-button>
-                  `
-                }}
-              />
+              <div className="mb-8" ref={(el) => {
+                if (el && !el.querySelector('stripe-buy-button')) {
+                  const btn = document.createElement('stripe-buy-button');
+                  btn.setAttribute('buy-button-id', 'buy_btn_1TOh5CKnEgvciwuk1e288Q5Q');
+                  btn.setAttribute('publishable-key', 'pk_live_GjSYZLVZqusPlzs5qmkBMgbo');
+                  el.appendChild(btn);
+                }
+              }} />
 
               {/* Reassurance block */}
               <div className="bg-muted rounded-2xl border-2 border-border p-6 space-y-4">
