@@ -322,28 +322,13 @@ const LoupeAmelie = () => {
                 </div>
               )}
 
-              {/* CTA buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="text-xl flex-1"
-                  onClick={handleAddToCart}
-                  disabled={cartLoading || !selectedVariant?.availableForSale}
-                >
-                  {cartLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <ShoppingCart className="w-5 h-5" />}
-                  Ajouter au panier
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="text-xl flex-1"
-                  onClick={handleBuyNow}
-                  disabled={cartLoading || !selectedVariant?.availableForSale}
-                >
-                  Acheter maintenant
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
+              {/* Stripe buy button */}
+              <div className="mb-8">
+                <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1TOh5CKnEgvciwuk1e288Q5Q"
+                  publishable-key="pk_live_GjSYZLVZqusPlzs5qmkBMgbo"
+                ></stripe-buy-button>
               </div>
 
               {/* Reassurance block */}
