@@ -257,11 +257,21 @@ const LoupeAmelie = () => {
                 Loupe de lecture Amélie — Grossissement 3x, 6x et 9x
               </p>
 
-              {price && (
-                <p className="text-3xl font-bold text-primary mb-4">
-                  {formatPrice(price.amount, price.currencyCode)}
-                </p>
-              )}
+              <div className="flex items-center gap-6 mb-4 flex-wrap">
+                {price && (
+                  <p className="text-3xl font-bold text-primary m-0">
+                    {formatPrice(price.amount, price.currencyCode)}
+                  </p>
+                )}
+                <div ref={(el) => {
+                  if (el && !el.querySelector('stripe-buy-button')) {
+                    const btn = document.createElement('stripe-buy-button');
+                    btn.setAttribute('buy-button-id', 'buy_btn_1TOh5CKnEgvciwuk1e288Q5Q');
+                    btn.setAttribute('publishable-key', 'pk_live_GjSYZLVZqusPlzs5qmkBMgbo');
+                    el.appendChild(btn);
+                  }
+                }} />
+              </div>
 
               {/* Key selling points */}
               <div className="mb-6">
