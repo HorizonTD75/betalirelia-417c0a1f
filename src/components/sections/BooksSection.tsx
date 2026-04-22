@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ArrowRight } from "lucide-react";
-import bookDmla from "@/assets/book-dmla.jpg";
+import bookDmla from "@/assets/couverture-ebook-dmla.jpg";
 import bookAidant from "@/assets/book-aidant.jpg";
 import { Link } from "react-router-dom";
 
@@ -44,10 +44,11 @@ const BooksSection = () => {
                   <div className="md:w-1/3 bg-muted p-6 flex items-center justify-center">
                     <img
                       src={book.image}
-                      alt={book.title}
-                      className="w-40 h-auto rounded-lg shadow-lg"
+                      alt={`Couverture du livre ${book.title}`}
+                      className="w-40 h-auto rounded-lg shadow-lg border border-border"
                       width={160}
-                      height={204}
+                      height={226}
+                      loading="lazy"
                     />
                   </div>
                   <div className="md:w-2/3 p-6">
