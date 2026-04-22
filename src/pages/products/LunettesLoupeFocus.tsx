@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, Check, Glasses, Phone, Shield, Truck } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import productImage from "@/assets/products/lunettes-loupes-pres.jpg";
@@ -61,11 +61,7 @@ const LunettesLoupeFocus = () => {
                 </ul>
               </div>
 
-              <div className="bg-muted rounded-2xl border-2 border-border p-6 space-y-4">
-                <div className="flex items-start gap-3"><Truck className="w-6 h-6 text-primary shrink-0 mt-0.5" /><div><p className="font-bold text-foreground">Livraison soignée</p><p className="text-base text-muted-foreground">Expédition sous 48 h en France métropolitaine</p></div></div>
-                <div className="flex items-start gap-3"><Shield className="w-6 h-6 text-primary shrink-0 mt-0.5" /><div><p className="font-bold text-foreground">Paiement sécurisé</p><p className="text-base text-muted-foreground">Transaction protégée via Stripe</p></div></div>
-                <div className="flex items-start gap-3"><Phone className="w-6 h-6 text-primary shrink-0 mt-0.5" /><div><p className="font-bold text-foreground">Besoin d'aide ?</p><p className="text-base text-muted-foreground">Appelez-nous au <a href="tel:0768474235" className="text-primary font-semibold hover:underline">07 68 47 42 35</a></p></div></div>
-              </div>
+              <ProductTrustGrid />
             </div>
           </div>
         </section>
