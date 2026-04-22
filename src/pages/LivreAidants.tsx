@@ -181,7 +181,7 @@ const LivreAidants = () => {
                 </p>
                 <p className="text-lg mb-8 opacity-80">
                   Un guide empathique et concret pour les conjoints, enfants, amis et professionnels qui accompagnent
-                  une personne malvoyante.
+                  une personne malvoyante. Disponible prochainement sur Amazon.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button variant="secondary" size="lg" asChild>
@@ -368,8 +368,7 @@ const LivreAidants = () => {
           <div className="container max-w-3xl text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Aller plus loin dans l'accompagnement</h2>
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
-              Découvrez les bilans basse vision et les aides à la lecture proposés par LirElia pour aider concrètement
-              votre proche malvoyant.
+              Ce livre sera bientôt disponible sur Amazon. En attendant, découvrez les bilans basse vision et les aides à la lecture proposés par LirElia pour aider concrètement votre proche malvoyant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>

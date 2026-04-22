@@ -8,7 +8,8 @@ import { BookOpen, ArrowRight, Eye, Home, Heart, HelpCircle, Users, Star, CheckC
 import { Link } from "react-router-dom";
 
 const PDF_DMLA_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-dmla-apercu.pdf`;
-import bookDmla from "@/assets/book-dmla.jpg";
+import bookDmla from "@/assets/couverture-ebook-dmla.jpg";
+const AMAZON_DMLA_URL = "https://www.amazon.fr/dp/B0GXS47Q9B";
 
 const planDuLivre = [
   {
@@ -157,19 +158,17 @@ const LivreDmla = () => {
                   170 pages de solutions concrètes pour continuer à lire, à vivre et à profiter du quotidien malgré la basse vision.
                 </p>
                 <p className="text-lg mb-8 opacity-80">
-                  Un guide complet, accessible et à jour 2026, pour les personnes malvoyantes et leurs proches aidants.
+                  Disponible dès maintenant sur Amazon au format Kindle. La version papier sera disponible très prochainement.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button variant="secondary" size="lg" asChild>
-                    <a href="#sommaire">
-                      Découvrir le contenu du livre
+                    <a href={AMAZON_DMLA_URL} target="_blank" rel="noopener noreferrer">
+                      Commander la version Kindle
                       <ArrowRight className="w-5 h-5" />
                     </a>
                   </Button>
                   <Button variant="heroOutline" size="lg" asChild>
-                    <Link to="/rdv-bilan">
-                      Prendre rendez-vous
-                    </Link>
+                    <a href="#sommaire">Découvrir le contenu du livre</a>
                   </Button>
                 </div>
               </div>
@@ -369,17 +368,17 @@ const LivreDmla = () => {
         <section className="py-20 bg-primary text-primary-foreground">
           <div className="container max-w-3xl text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
-              Retrouvez votre autonomie dans la lecture
+              Le livre est disponible sur Amazon
             </h2>
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
-              Découvrez les bilans basse vision et les aides à la lecture proposés par LirElia pour compléter les conseils du livre.
+              Vous pouvez acheter dès maintenant la version Kindle. La version papier sera annoncée dès sa mise en ligne.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>
-                <Link to="/bilans-bassevision">
-                  Voir les bilans basse vision
+                <a href={AMAZON_DMLA_URL} target="_blank" rel="noopener noreferrer">
+                  Acheter le livre sur Amazon
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
                 <Link to="/aides-lecture-bassevision">
