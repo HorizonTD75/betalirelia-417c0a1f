@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses, Phone, Shield, Truck } from "lucide-react";
 import { Link } from "react-router-dom";
+import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import productImage from "@/assets/products/lunettes-loupes-pres.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/14A00k0nQ5dJ6lF4Fn2Fa01";
@@ -13,13 +14,6 @@ const keyPoints = ['Grossissement x 2,5 — vision précise pour les tâches de 
 const specs = [{'label': 'Grossissement', 'value': '~2,5×'}, {'label': "Distance d'utilisation", 'value': '25 à 45 cm'}, {'label': 'Distance inter-pupillaire', 'value': '60 à 68 mm'}, {'label': 'Réglage dioptrie', 'value': '±4 dioptries (indépendant par œil)'}, {'label': 'Verrouillage du réglage', 'value': 'Oui (molette noire)'}, {'label': 'Correction cylindres', 'value': 'Non possible'}, {'label': 'Matériaux', 'value': 'Lentilles acrylique, monture ABS'}, {'label': 'Poids', 'value': '70 g'}, {'label': 'Accessoire inclus', 'value': 'Étui rigide'}];
 const descriptionBlocks = [{'title': "À qui s'adressent ces lunettes ?", 'paragraphs': ["Les lunettes loupe FOCUS s'adressent aux personnes malvoyantes, presbytes ou atteintes de DMLA qui souhaitent effectuer des activités de près avec plus de confort. Elles se portent à la place des lunettes de vue habituelles."]}, {'title': 'Quand les utiliser ?', 'paragraphs': ['Ces lunettes sont conçues pour toutes les activités nécessitant une vision nette à courte distance (25 à 45 cm) : lecture de livres, de notices de médicaments, de courrier, consultation du téléphone, mots croisés, couture, bricolage, peinture, philatélie, modélisme.', 'Elles sont aussi pratiques dans un bureau, en classe ou en bibliothèque pour consulter des documents.']}, {'title': 'Comment ça fonctionne ?', 'paragraphs': ['Chaque branche est équipée de deux molettes :', 'Le réglage prend quelques secondes. Après une courte période d’adaptation de quelques heures, la plupart des utilisateurs trouvent ces lunettes très confortables.'], 'items': ['Molette blanche : règle la dioptrie de –4 à +4, indépendamment pour chaque œil', 'Molette noire : verrouille le réglage pour plus de stabilité']}, {'title': 'L’avantage des lunettes loupe vs loupe à main', 'paragraphs': ['Portées sur le nez, les lunettes loupe libèrent les deux mains pour tenir un livre, manipuler un objet ou réaliser un travail de précision — contrairement à une loupe tenue à la main.']}];
 const notes = ['La correction des cylindres (astigmatisme) n’est pas possible. En cas de corrections multiples ou spécifiques, les lunettes FOCUS peuvent ne pas convenir.', 'Pour les écrans d’ordinateur, elles sont utilisables si la distance entre les yeux et l’écran est d’environ 25 cm.'];
-const reassurance = [
-  "Paiement sécurisé — Visa, MasterCard, PayPal",
-  "Paiement en 2×, 3× ou 4× sans frais pour toute commande inférieure à 2 500 €",
-  "Expédition sous 48 h en France métropolitaine",
-  "Livraison gratuite à partir de 100 € d'achat en France métropolitaine",
-  "Retour accepté sous 15 jours si le produit ne convient pas",
-];
 
 const LunettesLoupeFocus = () => {
   return (
@@ -77,10 +71,10 @@ const LunettesLoupeFocus = () => {
         </section>
 
         <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Points clés</h2>
-          <Card variant="elevated"><CardContent className="p-6 md:p-8"><ul className="space-y-3">
-            {keyPoints.map((point) => <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{point}</span></li>)}
-          </ul></CardContent></Card>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
+          <div className="space-y-6">
+            {descriptionBlocks.map((block) => <div key={block.title} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8"><h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>{block.paragraphs.map((paragraph) => <p key={paragraph} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{paragraph}</p>)}{block.items && <ul className="space-y-3 mt-4">{block.items.map((item) => <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul>}</div>)}
+          </div>
         </div></div></section>
 
         <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto">
@@ -91,15 +85,15 @@ const LunettesLoupeFocus = () => {
         </div></div></section>
 
         <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
-          <div className="space-y-6">
-            {descriptionBlocks.map((block) => <div key={block.title} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8"><h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>{block.paragraphs.map((paragraph) => <p key={paragraph} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{paragraph}</p>)}{block.items && <ul className="space-y-3 mt-4">{block.items.map((item) => <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul>}</div>)}
-          </div>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Points clés</h2>
+          <Card variant="elevated"><CardContent className="p-6 md:p-8"><ul className="space-y-3">
+            {keyPoints.map((point) => <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{point}</span></li>)}
+          </ul></CardContent></Card>
         </div></div></section>
 
-        <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto grid gap-6">
           <Card variant="elevated"><CardContent className="p-6 md:p-8"><div className="flex items-center gap-3 mb-5"><div className="p-3 rounded-xl bg-primary/10 text-primary"><Glasses className="w-6 h-6" /></div><h2 className="font-serif text-2xl font-bold text-foreground">À noter</h2></div><ul className="space-y-3">{notes.map((item) => <li key={item} className="flex items-start gap-3 text-lg text-muted-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul></CardContent></Card>
-          <Card variant="elevated"><CardContent className="p-6 md:p-8"><div className="flex items-center gap-3 mb-5"><div className="p-3 rounded-xl bg-primary/10 text-primary"><Shield className="w-6 h-6" /></div><h2 className="font-serif text-2xl font-bold text-foreground">Réassurance & livraison</h2></div><ul className="space-y-3">{reassurance.map((item) => <li key={item} className="flex items-start gap-3 text-lg text-muted-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul></CardContent></Card>
+          <ProductTrustGrid />
         </div></div></section>
 
         <section className="py-16 bg-muted"><div className="container"><div className="max-w-3xl mx-auto text-center">
