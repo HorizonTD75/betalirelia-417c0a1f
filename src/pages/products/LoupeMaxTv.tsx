@@ -3,8 +3,9 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, Check, Glasses, Phone, Shield, Truck } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
+import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import productImage from "@/assets/products/lunettes-loupes-loin.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/bJe00k9Yq21xeSb8VD2Fa02";
@@ -14,13 +15,6 @@ const specs = [{'label': 'Grossissement', 'value': '2,1×'}, {'label': "Distance
 const descriptionBlocks = [{'title': "À qui s'adressent ces lunettes ?", 'paragraphs': ['Les lunettes MAX TV s’adressent aux personnes malvoyantes atteintes de DMLA ou d’autres pathologies visuelles nécessitant un grossissement modéré. Elles permettent de regarder la télévision ou tout écran situé entre 2 et 5 mètres avec un confort visuel considérable.']}, {'title': 'Comment ça fonctionne ?', 'paragraphs': ["Grâce au grossissement de 2,1×, l'écran paraît deux fois plus grand et deux fois plus proche. Chaque branche est équipée d'une molette permettant de régler la dioptrie indépendamment pour chaque œil — le réglage prend quelques secondes.", 'Le modèle Presbytie permet un réglage de 0 à +3 Dioptries par œil.', 'Le modèle Myopie permet un réglage de –3 D à 0 par œil.']}, {'title': 'Usages', 'paragraphs': [], 'items': ['Regarder la télévision depuis son fauteuil', 'Suivre des sous-titres et détails d’images', 'Utilisation en bureau ou salle de réunion (écrans de présentation, collègues éloignés)']}];
 const notes = ['La correction des cylindres (astigmatisme) n’est pas possible. En cas de corrections multiples ou spécifiques, les lunettes MAX TV pourraient ne pas convenir.'];
 const options = [{'label': 'Myopie', 'value': '–3 D à 0'}, {'label': 'Presbytie', 'value': '0 à +3 D'}];
-const reassurance = [
-  "Paiement sécurisé — Visa, MasterCard, PayPal",
-  "Paiement en 2×, 3× ou 4× sans frais pour toute commande inférieure à 2 500 €",
-  "Expédition sous 48 h en France métropolitaine",
-  "Livraison gratuite à partir de 100 € d'achat en France métropolitaine",
-  "Retour accepté sous 15 jours si le produit ne convient pas",
-];
 
 const LoupeMaxTv = () => {
   return (
@@ -68,20 +62,16 @@ const LoupeMaxTv = () => {
                 </ul>
               </div>
 
-              <div className="bg-muted rounded-2xl border-2 border-border p-6 space-y-4">
-                <div className="flex items-start gap-3"><Truck className="w-6 h-6 text-primary shrink-0 mt-0.5" /><div><p className="font-bold text-foreground">Livraison soignée</p><p className="text-base text-muted-foreground">Expédition sous 48 h en France métropolitaine</p></div></div>
-                <div className="flex items-start gap-3"><Shield className="w-6 h-6 text-primary shrink-0 mt-0.5" /><div><p className="font-bold text-foreground">Paiement sécurisé</p><p className="text-base text-muted-foreground">Transaction protégée via Stripe</p></div></div>
-                <div className="flex items-start gap-3"><Phone className="w-6 h-6 text-primary shrink-0 mt-0.5" /><div><p className="font-bold text-foreground">Besoin d'aide ?</p><p className="text-base text-muted-foreground">Appelez-nous au <a href="tel:0768474235" className="text-primary font-semibold hover:underline">07 68 47 42 35</a></p></div></div>
-              </div>
+              <ProductTrustGrid />
             </div>
           </div>
         </section>
 
         <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Points clés</h2>
-          <Card variant="elevated"><CardContent className="p-6 md:p-8"><ul className="space-y-3">
-            {keyPoints.map((point) => <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{point}</span></li>)}
-          </ul></CardContent></Card>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
+          <div className="space-y-6">
+            {descriptionBlocks.map((block) => <div key={block.title} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8"><h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>{block.paragraphs.map((paragraph) => <p key={paragraph} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{paragraph}</p>)}{block.items && <ul className="space-y-3 mt-4">{block.items.map((item) => <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul>}</div>)}
+          </div>
         </div></div></section>
 
         <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto">
@@ -101,15 +91,15 @@ const LoupeMaxTv = () => {
         </div></div></section>
 
         <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
-          <div className="space-y-6">
-            {descriptionBlocks.map((block) => <div key={block.title} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8"><h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>{block.paragraphs.map((paragraph) => <p key={paragraph} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{paragraph}</p>)}{block.items && <ul className="space-y-3 mt-4">{block.items.map((item) => <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul>}</div>)}
-          </div>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Points clés</h2>
+          <Card variant="elevated"><CardContent className="p-6 md:p-8"><ul className="space-y-3">
+            {keyPoints.map((point) => <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{point}</span></li>)}
+          </ul></CardContent></Card>
         </div></div></section>
 
-        <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+        <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto grid gap-6">
           <Card variant="elevated"><CardContent className="p-6 md:p-8"><div className="flex items-center gap-3 mb-5"><div className="p-3 rounded-xl bg-primary/10 text-primary"><Glasses className="w-6 h-6" /></div><h2 className="font-serif text-2xl font-bold text-foreground">À noter</h2></div><ul className="space-y-3">{notes.map((item) => <li key={item} className="flex items-start gap-3 text-lg text-muted-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul></CardContent></Card>
-          <Card variant="elevated"><CardContent className="p-6 md:p-8"><div className="flex items-center gap-3 mb-5"><div className="p-3 rounded-xl bg-primary/10 text-primary"><Shield className="w-6 h-6" /></div><h2 className="font-serif text-2xl font-bold text-foreground">Réassurance & livraison</h2></div><ul className="space-y-3">{reassurance.map((item) => <li key={item} className="flex items-start gap-3 text-lg text-muted-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul></CardContent></Card>
+          <ProductTrustGrid />
         </div></div></section>
 
         <section className="py-16 bg-muted"><div className="container"><div className="max-w-3xl mx-auto text-center">
