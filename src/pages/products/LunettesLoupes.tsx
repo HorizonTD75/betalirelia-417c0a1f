@@ -25,7 +25,6 @@ const products = [
       "Bricolage, modélisme, petits travaux de précision",
       "Lecture d'étiquettes ou de notices à plat",
     ],
-    shopLink: "/bientot-disponible",
     shopLink: "/boutique/lunettes-loupe-focus",
     shopLabel: "Découvrir les lunettes loupe FOCUS",
   },
