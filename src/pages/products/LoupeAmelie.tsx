@@ -3,8 +3,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, ShoppingCart, Check, Shield, Truck, Phone, Loader2, ChevronDown } from "lucide-react";
+import { ArrowLeft, ArrowRight, ShoppingCart, Check, Loader2, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import { fetchProductByHandle, type ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
@@ -342,33 +343,7 @@ const LoupeAmelie = () => {
               )}
 
 
-              {/* Reassurance block */}
-              <div className="bg-muted rounded-2xl border-2 border-border p-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <Truck className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-bold text-foreground">Livraison soignée</p>
-                    <p className="text-base text-muted-foreground">Expédition rapide et emballage protecteur</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-bold text-foreground">Paiement sécurisé</p>
-                    <p className="text-base text-muted-foreground">Transaction protégée par Shopify</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-bold text-foreground">Besoin d'aide ?</p>
-                    <p className="text-base text-muted-foreground">
-                      Appelez-nous au{" "}
-                      <a href="tel:0768474235" className="text-primary font-semibold hover:underline">07 68 47 42 35</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <ProductTrustGrid />
             </div>
           </div>
         </section>
