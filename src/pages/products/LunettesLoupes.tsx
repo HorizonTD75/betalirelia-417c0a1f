@@ -47,8 +47,8 @@ const products = [
       "Suivre une scène ou un écran à distance",
       "Observation à distance dans un cadre statique",
     ],
-    shopLink: "/bientot-disponible",
-    shopLabel: "Découvrir les lunettes Max TV",
+    shopLink: "/boutique/loupe-max-tv",
+    shopLabel: "Découvrir la Loupe Max TV",
   },
 ];
 

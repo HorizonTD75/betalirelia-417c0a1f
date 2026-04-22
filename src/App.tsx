@@ -51,6 +51,7 @@ const CharteClub = lazy(() => import("./pages/CharteClub"));
 const VisitesDomicile = lazy(() => import("./pages/bilans/VisitesDomicile"));
 const LoupeAmelie = lazy(() => import("./pages/products/LoupeAmelie"));
 const LunettesLoupeFocus = lazy(() => import("./pages/products/LunettesLoupeFocus"));
+const LoupeMaxTv = lazy(() => import("./pages/products/LoupeMaxTv"));
 const QuiSommesNous = lazy(() => import("./pages/QuiSommesNous"));
 const MaladiesHereditaires = lazy(() => import("./pages/maladies/MaladiesHereditaires"));
 const RetinitePigmentaireHereditaire = lazy(() => import("./pages/maladies/hereditaires/RetinitePigmentaire"));
@@ -122,6 +123,7 @@ const App = () => (
             <Route path="/aides-lecture-bassevision/lunettes-loupes" element={<LunettesLoupes />} />
             <Route path="/boutique/loupe-amelie" element={<LoupeAmelie />} />
             <Route path="/boutique/lunettes-loupe-focus" element={<LunettesLoupeFocus />} />
+            <Route path="/boutique/loupe-max-tv" element={<LoupeMaxTv />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
             <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />

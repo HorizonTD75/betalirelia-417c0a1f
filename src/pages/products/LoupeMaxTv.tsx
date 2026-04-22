@@ -5,14 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses, Phone, Shield, Truck } from "lucide-react";
 import { Link } from "react-router-dom";
-import productImage from "@/assets/products/lunettes-loupes-pres.jpg";
+import productImage from "@/assets/products/lunettes-loupes-loin.jpg";
 
-const STRIPE_URL = "https://buy.stripe.com/14A00k0nQ5dJ6lF4Fn2Fa01";
-const shortPoints = ['Grossissement modéré de x 2,5', 'Réglage de dioptrie indépendant pour chaque œil', 'Lunettes loupes légères'];
-const keyPoints = ['Grossissement x 2,5 — vision précise pour les tâches de près', 'Conçues pour des distances de 25 à 45 cm', 'Réglage de dioptrie indépendant pour chaque œil via molette blanche sur chaque branche', 'Molette noire de verrouillage pour stabiliser le réglage', 'Mains libres — portées sur le nez comme des lunettes ordinaires', 'Légères et confortables, même sur de longues périodes', 'Fournies avec un étui rigide'];
-const specs = [{'label': 'Grossissement', 'value': '~2,5×'}, {'label': "Distance d'utilisation", 'value': '25 à 45 cm'}, {'label': 'Distance inter-pupillaire', 'value': '60 à 68 mm'}, {'label': 'Réglage dioptrie', 'value': '±4 dioptries (indépendant par œil)'}, {'label': 'Verrouillage du réglage', 'value': 'Oui (molette noire)'}, {'label': 'Correction cylindres', 'value': 'Non possible'}, {'label': 'Matériaux', 'value': 'Lentilles acrylique, monture ABS'}, {'label': 'Poids', 'value': '70 g'}, {'label': 'Accessoire inclus', 'value': 'Étui rigide'}];
-const descriptionBlocks = [{'title': "À qui s'adressent ces lunettes ?", 'paragraphs': ["Les lunettes loupe FOCUS s'adressent aux personnes malvoyantes, presbytes ou atteintes de DMLA qui souhaitent effectuer des activités de près avec plus de confort. Elles se portent à la place des lunettes de vue habituelles."]}, {'title': 'Quand les utiliser ?', 'paragraphs': ['Ces lunettes sont conçues pour toutes les activités nécessitant une vision nette à courte distance (25 à 45 cm) : lecture de livres, de notices de médicaments, de courrier, consultation du téléphone, mots croisés, couture, bricolage, peinture, philatélie, modélisme.', 'Elles sont aussi pratiques dans un bureau, en classe ou en bibliothèque pour consulter des documents.']}, {'title': 'Comment ça fonctionne ?', 'paragraphs': ['Chaque branche est équipée de deux molettes :', 'Le réglage prend quelques secondes. Après une courte période d’adaptation de quelques heures, la plupart des utilisateurs trouvent ces lunettes très confortables.'], 'items': ['Molette blanche : règle la dioptrie de –4 à +4, indépendamment pour chaque œil', 'Molette noire : verrouille le réglage pour plus de stabilité']}, {'title': 'L’avantage des lunettes loupe vs loupe à main', 'paragraphs': ['Portées sur le nez, les lunettes loupe libèrent les deux mains pour tenir un livre, manipuler un objet ou réaliser un travail de précision — contrairement à une loupe tenue à la main.']}];
-const notes = ['La correction des cylindres (astigmatisme) n’est pas possible. En cas de corrections multiples ou spécifiques, les lunettes FOCUS peuvent ne pas convenir.', 'Pour les écrans d’ordinateur, elles sont utilisables si la distance entre les yeux et l’écran est d’environ 25 cm.'];
+const STRIPE_URL = "https://buy.stripe.com/bJe00k9Yq21xeSb8VD2Fa02";
+const shortPoints = ['Facteur de rapprochement / grossissement x 2,1', '2 modèles disponibles, pour myopie et pour presbytie', 'Réglage indépendant de la dioptrie pour chaque œil', 'Lunettes loupes légères et discrètes'];
+const keyPoints = ["Grossissement x 2,1 — l'écran vous semble deux fois plus proche et plus grand", '2 modèles disponibles : Myopie et Presbytie', 'Réglage de dioptrie indépendant pour chaque œil via une molette sur chaque branche', 'Lunettes légères (49 g) et discrètes', 'Remplacent les lunettes de vue habituelles', 'Période d’adaptation courte : quelques heures suffisent'];
+const specs = [{'label': 'Grossissement', 'value': '2,1×'}, {'label': "Distance d'utilisation", 'value': '2 à 5 m'}, {'label': 'Distance inter-pupillaire', 'value': '60 à 68 mm'}, {'label': 'Champ de vision', 'value': '9°'}, {'label': 'Réglage Myopie', 'value': '–3 D à 0 (par œil, indépendant)'}, {'label': 'Réglage Presbytie', 'value': '0 à +3 D (par œil, indépendant)'}, {'label': 'Correction cylindres', 'value': 'Non possible'}, {'label': 'Lentilles', 'value': 'Asphériques PXM®'}, {'label': 'Poids', 'value': '49 g'}];
+const descriptionBlocks = [{'title': "À qui s'adressent ces lunettes ?", 'paragraphs': ['Les lunettes MAX TV s’adressent aux personnes malvoyantes atteintes de DMLA ou d’autres pathologies visuelles nécessitant un grossissement modéré. Elles permettent de regarder la télévision ou tout écran situé entre 2 et 5 mètres avec un confort visuel considérable.']}, {'title': 'Comment ça fonctionne ?', 'paragraphs': ["Grâce au grossissement de 2,1×, l'écran paraît deux fois plus grand et deux fois plus proche. Chaque branche est équipée d'une molette permettant de régler la dioptrie indépendamment pour chaque œil — le réglage prend quelques secondes.", 'Le modèle Presbytie permet un réglage de 0 à +3 Dioptries par œil.', 'Le modèle Myopie permet un réglage de –3 D à 0 par œil.']}, {'title': 'Usages', 'paragraphs': [], 'items': ['Regarder la télévision depuis son fauteuil', 'Suivre des sous-titres et détails d’images', 'Utilisation en bureau ou salle de réunion (écrans de présentation, collègues éloignés)']}];
+const notes = ['La correction des cylindres (astigmatisme) n’est pas possible. En cas de corrections multiples ou spécifiques, les lunettes MAX TV pourraient ne pas convenir.'];
+const options = [{'label': 'Myopie', 'value': '–3 D à 0'}, {'label': 'Presbytie', 'value': '0 à +3 D'}];
 const reassurance = [
   "Paiement sécurisé — Visa, MasterCard, PayPal",
   "Paiement en 2×, 3× ou 4× sans frais pour toute commande inférieure à 2 500 €",
@@ -21,10 +22,10 @@ const reassurance = [
   "Retour accepté sous 15 jours si le produit ne convient pas",
 ];
 
-const LunettesLoupeFocus = () => {
+const LoupeMaxTv = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead title="Lunettes Loupe FOCUS pour Voir de Près | LirElia" description="Lunettes loupe FOCUS : grossissement 2,5x, réglage indépendant et mains libres pour lecture, couture, bricolage et activités de près." canonicalPath="/boutique/lunettes-loupe-focus" />
+      <SEOHead title="Loupe Max TV pour Télévision et Vision de Loin | LirElia" description="Loupe Max TV : lunettes loupe grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant." canonicalPath="/boutique/loupe-max-tv" />
       <Header />
       <main id="main-content">
         <div className="container py-4">
@@ -35,7 +36,7 @@ const LunettesLoupeFocus = () => {
             <span>/</span>
             <Link to="/aides-lecture-bassevision/lunettes-loupes" className="hover:text-primary transition-colors">Lunettes loupes</Link>
             <span>/</span>
-            <span className="text-foreground font-semibold">Lunettes Loupe FOCUS</span>
+            <span className="text-foreground font-semibold">Loupe Max TV</span>
           </nav>
         </div>
 
@@ -43,15 +44,15 @@ const LunettesLoupeFocus = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <div className="rounded-2xl overflow-hidden border-2 border-border bg-card mb-4">
-                <img src={productImage} alt="Lunettes loupe FOCUS pour la lecture et les activités de près" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
+                <img src={productImage} alt="Loupe Max TV pour regarder la télévision avec un grossissement de loin" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
               </div>
             </div>
 
             <div className="flex flex-col">
-              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">Lunettes Loupe FOCUS</h1>
-              <p className="text-lg font-semibold text-muted-foreground mb-4">Lunettes loupes pour la lecture, les travaux manuels, la couture, la philatélie — idéales pour voir de près avec les mains libres.</p>
+              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">Loupe Max TV</h1>
+              <p className="text-lg font-semibold text-muted-foreground mb-4">Des lunettes loupe adaptées pour regarder la télévision — idéales pour les personnes atteintes de DMLA ou de basse vision.</p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">89 €</p>
+                <p className="text-3xl font-bold text-primary m-0">87,00 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Commander ce produit<ArrowRight className="w-5 h-5" /></a>
                 </Button>
@@ -59,7 +60,7 @@ const LunettesLoupeFocus = () => {
               <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× disponible.</p>
 
               <div className="mb-6">
-                <p className="text-xl text-foreground leading-relaxed mb-4">Avec les lunettes loupes FOCUS, les petits travaux manuels, la consultation de boîtes de médicaments, notices, signatures, sont plus faciles avec ces loupes posées sur le nez, plutôt qu'avec une loupe tenue à la main.</p>
+                <p className="text-xl text-foreground leading-relaxed mb-4">Avec un grossissement de x2, ces lunettes MAX TV vous « rapprochent » de votre écran. La télévision vous semble plus grosse, plus proche.</p>
                 <ul className="space-y-2">
                   {shortPoints.map((point) => (
                     <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{point}</span></li>
@@ -88,6 +89,15 @@ const LunettesLoupeFocus = () => {
           <div className="bg-card rounded-2xl border-2 border-border overflow-hidden">
             {specs.map((row) => <div key={row.label} className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] border-b border-border last:border-b-0"><div className="bg-muted px-5 py-4 font-bold text-foreground text-lg">{row.label}</div><div className="px-5 py-4 text-lg text-foreground leading-relaxed">{row.value}</div></div>)}
           </div>
+              <h3 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Options disponibles</h3>
+              <div className="bg-card rounded-2xl border-2 border-border overflow-hidden">
+                {options.map((row) => (
+                  <div key={row.label} className="grid sm:grid-cols-2 border-b border-border last:border-b-0">
+                    <div className="bg-muted px-5 py-4 font-bold text-foreground text-lg">{row.label}</div>
+                    <div className="px-5 py-4 text-lg text-foreground leading-relaxed">{row.value}</div>
+                  </div>
+                ))}
+              </div>
         </div></div></section>
 
         <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
@@ -113,4 +123,4 @@ const LunettesLoupeFocus = () => {
   );
 };
 
-export default LunettesLoupeFocus;
+export default LoupeMaxTv;
