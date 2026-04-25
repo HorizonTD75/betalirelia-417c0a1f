@@ -27,6 +27,7 @@ const Footer = () => {
               <li><Link to="/maladies-yeux" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Les maladies des yeux</Link></li>
               <li><Link to="/vivre-basse-vision" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Vivre au quotidien</Link></li>
               <li><Link to="/bilans-bassevision" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Bilans personnalisés</Link></li>
+              <li><Link to="/catalogue-aides-basse-vision" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Catalogue produits</Link></li>
               <li><Link to="/club" className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors">Club en visio</Link></li>
             </ul>
           </div>
