@@ -220,25 +220,18 @@ const CatalogueAides = () => {
         </nav>
 
         {/* Categories */}
-        <section className="py-12 md:py-16">
-          <div className="container space-y-16 md:space-y-20">
+        <section className="py-8 md:py-10">
+          <div className="container space-y-8 md:space-y-10">
             {categories.map((cat) => (
-              <div key={cat.id} id={cat.id} className="scroll-mt-32 border-t-4 border-secondary/40 pt-10">
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
-                  <div>
-                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-2">{cat.title}</h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl">{cat.usage}</p>
-                  </div>
-                  {cat.products.length > 0 && (
-                    <p className="text-base text-muted-foreground shrink-0">
-                      {cat.products.length} produit{cat.products.length > 1 ? "s" : ""} disponible{cat.products.length > 1 ? "s" : ""}
-                    </p>
-                  )}
+              <div key={cat.id} id={cat.id} className="scroll-mt-32 border-t-4 border-secondary/40 pt-5">
+                <div className="mb-4">
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-1">{cat.title}</h2>
+                  <p className="text-sm md:text-base lg:text-lg text-muted-foreground md:whitespace-nowrap md:overflow-hidden md:text-ellipsis">{cat.usage}</p>
                 </div>
 
-                {/* Horizontal scroll band */}
-                <div className="-mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory">
-                  <div className="flex gap-5 min-w-min">
+                {/* Horizontal scroll band — full bleed pour laisser apparaître la carte suivante */}
+                <div className="-mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 overflow-x-auto pb-3 scroll-smooth snap-x">
+                  <div className="flex gap-4 md:gap-5 min-w-min pr-8">
                     {cat.products.length > 0 ? (
                       cat.products.map((p) => (
                         <div key={p.name} className="snap-start">
