@@ -3,12 +3,13 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Phone, BookOpen } from "lucide-react";
+import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import lunettesPres from "@/assets/products/lunettes-loupes-pres.jpg";
 import lunettesLoin from "@/assets/products/lunettes-loupes-loin.jpg";
 import loupeElectroniqueImg from "@/assets/loupe-electronique.jpg";
+import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 type Product = {
   name: string;
