@@ -15,6 +15,7 @@ const TABLES: { name: TableName; label: string }[] = [
 const Admin = () => {
   const [session, setSession] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState("");
@@ -28,6 +29,7 @@ const Admin = () => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setLoading(false);
+      if (!session) setIsAdmin(null);
     });
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -36,9 +38,25 @@ const Admin = () => {
     return () => subscription.unsubscribe();
   }, []);
 
+  // Server-side role check: prevent non-admin authenticated users from seeing the admin UI.
   useEffect(() => {
-    if (session) fetchTable(selectedTable);
-  }, [session, selectedTable]);
+    if (!session?.user?.id) return;
+    setIsAdmin(null);
+    supabase
+      .rpc("has_role", { _user_id: session.user.id, _role: "admin" })
+      .then(({ data, error }) => {
+        if (error) {
+          console.error("Role check failed:", error);
+          setIsAdmin(false);
+        } else {
+          setIsAdmin(Boolean(data));
+        }
+      });
+  }, [session?.user?.id]);
+
+  useEffect(() => {
+    if (session && isAdmin) fetchTable(selectedTable);
+  }, [session, isAdmin, selectedTable]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,6 +129,37 @@ const Admin = () => {
                 {loginLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : "Se connecter"}
               </Button>
             </form>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Authenticated but role check pending
+  if (isAdmin === null) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  // Authenticated but not an admin: deny access at the UI level (defense in depth on top of RLS)
+  if (isAdmin === false) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-muted/30 p-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <Database className="w-10 h-10 mx-auto text-destructive mb-2" />
+            <CardTitle className="text-2xl">Accès refusé</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <p className="text-muted-foreground">
+              Votre compte n'a pas les droits d'administration nécessaires pour accéder à cette page.
+            </p>
+            <Button variant="outline" onClick={handleLogout}>
+              <LogOut className="w-4 h-4 mr-1" /> Se déconnecter
+            </Button>
           </CardContent>
         </Card>
       </div>
