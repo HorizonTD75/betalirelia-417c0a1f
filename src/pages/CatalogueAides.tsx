@@ -3,12 +3,13 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Phone, BookOpen } from "lucide-react";
+import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import lunettesPres from "@/assets/products/lunettes-loupes-pres.jpg";
 import lunettesLoin from "@/assets/products/lunettes-loupes-loin.jpg";
 import loupeElectroniqueImg from "@/assets/loupe-electronique.jpg";
+import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 type Product = {
   name: string;
@@ -143,35 +144,86 @@ const CatalogueAides = () => {
       />
       <Header />
       <main id="main-content">
-        {/* Breadcrumb */}
-        <div className="container py-4">
-          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-base text-muted-foreground flex-wrap">
-            <Link to="/" className="hover:text-primary transition-colors">Accueil</Link>
-            <span>/</span>
-            <span className="text-foreground font-semibold">Catalogue</span>
-          </nav>
-        </div>
+        {/* Hero visuel */}
+        <section className="relative overflow-hidden bg-primary">
+          <div className="absolute inset-0">
+            <img
+              src={heroBg}
+              alt="Lecture avec une aide visuelle adaptée"
+              className="w-full h-full object-cover opacity-40"
+              loading="eager"
+              fetchPriority="high"
+              width={1440}
+              height={500}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+          </div>
 
-        {/* Hero */}
-        <section className="container pb-8">
-          <div className="max-w-4xl">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Catalogue des <span className="text-secondary">aides basse vision</span>
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Retrouvez ici les aides visuelles proposées par LirElia : lunettes loupes, loupes en verre, loupes électroniques, lampes adaptées et solutions de lecture. Cette page vous permet de parcourir rapidement les produits disponibles ou bientôt disponibles.
-            </p>
+          <div className="container relative py-16 lg:py-20">
+            {/* Breadcrumb */}
+            <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-base text-primary-foreground/80 flex-wrap mb-6">
+              <Link to="/" className="hover:text-secondary transition-colors">Accueil</Link>
+              <span>/</span>
+              <span className="text-primary-foreground font-semibold">Catalogue</span>
+            </nav>
+
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 animate-fade-in">
+                <span className="text-base font-semibold">Aides à la lecture &amp; basse vision</span>
+              </div>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-5 animate-slide-up">
+                Catalogue des <span className="text-secondary">aides basse vision</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl animate-slide-up delay-100">
+                Parcourez rapidement les solutions pour lire, écrire et gagner en autonomie au quotidien.
+              </p>
+              <div className="flex flex-wrap gap-4 animate-slide-up delay-200">
+                <Button variant="hero" size="lg" asChild>
+                  <Link to="/contact-conseil">
+                    <HelpCircle className="w-6 h-6" />
+                    Besoin d'aide pour choisir&nbsp;?
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Wave decoration */}
+          <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+              <path
+                d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+                fill="hsl(var(--background))"
+              />
+            </svg>
           </div>
         </section>
 
+        {/* Navigation rapide vers catégories */}
+        <nav aria-label="Navigation des catégories" className="sticky top-16 z-30 bg-background/95 backdrop-blur border-b border-border shadow-sm">
+          <div className="container py-3">
+            <div className="flex gap-2 overflow-x-auto scroll-smooth snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center">
+              {categories.map((cat) => (
+                <a
+                  key={cat.id}
+                  href={`#${cat.id}`}
+                  className="snap-start shrink-0 inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary border-2 border-primary/20 text-sm sm:text-base font-semibold hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors whitespace-nowrap"
+                >
+                  {cat.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </nav>
+
         {/* Categories */}
-        <section className="py-8">
-          <div className="container space-y-12">
+        <section className="py-12 md:py-16">
+          <div className="container space-y-16 md:space-y-20">
             {categories.map((cat) => (
-              <div key={cat.id} className="border-t-2 border-border pt-8">
+              <div key={cat.id} id={cat.id} className="scroll-mt-32 border-t-4 border-secondary/40 pt-10">
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
                   <div>
-                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">{cat.title}</h2>
+                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-2">{cat.title}</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl">{cat.usage}</p>
                   </div>
                   {cat.products.length > 0 && (
