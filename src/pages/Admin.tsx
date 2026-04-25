@@ -135,6 +135,37 @@ const Admin = () => {
     );
   }
 
+  // Authenticated but role check pending
+  if (isAdmin === null) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  // Authenticated but not an admin: deny access at the UI level (defense in depth on top of RLS)
+  if (isAdmin === false) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-muted/30 p-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <Database className="w-10 h-10 mx-auto text-destructive mb-2" />
+            <CardTitle className="text-2xl">Accès refusé</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <p className="text-muted-foreground">
+              Votre compte n'a pas les droits d'administration nécessaires pour accéder à cette page.
+            </p>
+            <Button variant="outline" onClick={handleLogout}>
+              <LogOut className="w-4 h-4 mr-1" /> Se déconnecter
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   const columns = rows.length > 0 ? Object.keys(rows[0]) : [];
 
   return (
