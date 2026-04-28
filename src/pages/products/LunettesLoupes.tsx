@@ -50,6 +50,29 @@ const products = [
     shopLink: "/boutique/loupe-max-tv",
     shopLabel: "Découvrir la Loupe Max TV",
   },
+  {
+    name: "Lunettes loupes éclairantes",
+    slug: "lunettes-loupes-eclairantes",
+    image: lunettesPres,
+    imageAlt: "Illustration de lunettes loupes avec éclairage intégré pour travaux de précision",
+    description:
+      "Les lunettes loupes éclairantes s'utilisent comme des lunettes loupes de lecture classiques, pour lire, écrire, bricoler, coudre ou réaliser un travail manuel de précision. Elles apportent en plus un éclairage intégré, utile lorsque la lumière ambiante est insuffisante ou mal orientée.",
+    features: [
+      "Grossissement de près mains libres",
+      "Éclairage LED intégré orientable",
+      "Utiles quand la lumière ambiante est insuffisante",
+      "Légères, à porter comme une paire de lunettes",
+      "Idéales pour les travaux de précision prolongés",
+    ],
+    idealFor: [
+      "Lecture en faible luminosité",
+      "Couture, broderie, tricot fin",
+      "Bricolage et modélisme de précision",
+      "Travaux manuels minutieux",
+    ],
+    shopLink: "/boutique/lunettes-loupe-frontale-alva",
+    shopLabel: "Voir les lunettes loupe frontale ALVA",
+  },
 ];
 
 const buyingGuide = {
