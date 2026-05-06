@@ -56,7 +56,7 @@ export const template = {
     `[LirElia] Nouvelle inscription ${data.formType || 'formulaire'}`,
   displayName: 'Notification admin',
   previewData: { formType: 'Club', name: 'Marie Martin', email: 'marie@test.fr', phone: '06 12 34 56 78' },
-  to: 'bleuhorizon2018@gmail.com',
+  to: Deno.env.get('ADMIN_NOTIFICATION_EMAIL') || 'bleuhorizon2018@gmail.com',
 } satisfies TemplateEntry
 
 const main = { backgroundColor: '#ffffff', fontFamily: "'Source Sans 3', Arial, sans-serif" }

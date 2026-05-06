@@ -20,7 +20,13 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok, brevo_list_id } = body;
+    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok, list_key } = body;
+
+    // Server-side allowlist of Brevo list IDs. Callers may only select via a safe key.
+    const BREVO_LIST_IDS: Record<string, number> = {
+      contact: 14,
+      bilan: 13,
+    };
 
     // ── 1. Validate required fields
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -158,12 +164,11 @@ serve(async (req) => {
     };
 
     // Use explicit list ID from request, fallback to env var
-    const listIdRaw = brevo_list_id || Deno.env.get("BREVO_LIST_ID");
-    if (listIdRaw) {
-      const listId = typeof listIdRaw === "number" ? listIdRaw : parseInt(String(listIdRaw), 10);
-      if (!isNaN(listId)) {
-        brevoPayload.listIds = [listId];
-      }
+    const resolvedListId = (typeof list_key === "string" && BREVO_LIST_IDS[list_key]) || null;
+    const fallbackListId = parseInt(Deno.env.get("BREVO_LIST_ID") || "", 10);
+    const finalListId = resolvedListId || (Number.isFinite(fallbackListId) ? fallbackListId : null);
+    if (finalListId) {
+      brevoPayload.listIds = [finalListId];
     }
 
     let brevoStatus: "brevo_ok" | "brevo_error" = "brevo_ok";

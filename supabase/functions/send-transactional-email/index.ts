@@ -30,9 +30,13 @@ function generateToken(): string {
     .join('')
 }
 
-// Auth note: this function uses verify_jwt = true in config.toml, so Supabase's
-// gateway validates the caller's JWT (anon or service_role) before the request
-// reaches this code. No in-function auth check is needed.
+// Templates anonymous (anon-key) callers may invoke — tied to public form flows.
+const PUBLIC_TEMPLATE_ALLOWLIST = new Set([
+  'contact-confirmation',
+  'club-registration',
+  'bilan-confirmation',
+  'admin-notification',
+])
 
 Deno.serve(async (req) => {
   // Handle CORS preflight
@@ -86,6 +90,31 @@ Deno.serve(async (req) => {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       }
+    )
+  }
+
+  // Determine if caller is service_role; otherwise restrict to allowlisted templates.
+  const authHeader = req.headers.get('Authorization') || ''
+  const callerToken = authHeader.replace(/^Bearer\s+/i, '')
+  let isServiceRole = false
+  if (callerToken) {
+    try {
+      const payloadPart = callerToken.split('.')[1]
+      if (payloadPart) {
+        const payload = JSON.parse(
+          atob(payloadPart.replace(/-/g, '+').replace(/_/g, '/'))
+        )
+        isServiceRole = payload?.role === 'service_role'
+      }
+    } catch {
+      isServiceRole = false
+    }
+  }
+
+  if (!isServiceRole && !PUBLIC_TEMPLATE_ALLOWLIST.has(templateName)) {
+    return new Response(
+      JSON.stringify({ error: 'Forbidden' }),
+      { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
   }
 

@@ -207,7 +207,7 @@ const ClubRegistrationSection = () => {
       await supabase.functions.invoke("send-transactional-email", {
         body: {
           templateName: "admin-notification",
-          recipientEmail: "bleuhorizon2018@gmail.com",
+          // recipient resolved server-side from template.to
           idempotencyKey: `club-admin-${emailId}`,
           templateData: {
             formType: "Club",

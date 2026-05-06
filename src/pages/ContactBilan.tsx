@@ -120,7 +120,7 @@ const ContactBilan = () => {
           message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
           source_url: window.location.href,
           source_tag: "rdv-bilan",
-          brevo_list_id: 13
+          list_key: "bilan"
         },
       });
 
@@ -167,7 +167,7 @@ const ContactBilan = () => {
       await supabase.functions.invoke("send-transactional-email", {
         body: {
           templateName: "admin-notification",
-          recipientEmail: "bleuhorizon2018@gmail.com",
+          // recipient resolved server-side from template.to
           idempotencyKey: `bilan-admin-${emailId}`,
           templateData: {
             formType: `RDV ${selectedOption?.label}`,
