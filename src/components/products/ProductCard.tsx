@@ -14,6 +14,8 @@ export interface Product {
   priceRange?: string;
   shopLink?: string;
   shopLabel?: string;
+  secondaryShopLink?: string;
+  secondaryShopLabel?: string;
 }
 
 interface ProductCardProps {
@@ -75,6 +77,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <Link to={product.shopLink}>
               <ShoppingBag className="w-5 h-5" />
               {product.shopLabel || "Voir le produit"}
+            </Link>
+          </Button>
+        )}
+        {product.secondaryShopLink && (
+          <Button variant="secondary" className="w-full" asChild>
+            <Link to={product.secondaryShopLink}>
+              <ShoppingBag className="w-5 h-5" />
+              {product.secondaryShopLabel || "Voir le produit"}
             </Link>
           </Button>
         )}
