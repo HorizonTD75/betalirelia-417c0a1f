@@ -145,7 +145,7 @@ const ClipLunettesLoupe = () => {
                 <p className="text-3xl font-bold text-primary m-0">24,50 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
-                    Commander ce produit
+                    Acheter ce produit
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </Button>
