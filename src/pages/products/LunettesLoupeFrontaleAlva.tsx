@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
+import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import productImage from "@/assets/products/lunette-loupe-frontale-alva-sacoche.jpeg";
 
 const STRIPE_URL = "https://buy.stripe.com/aFadRa8UmbC7bFZdbT2Fa04";
@@ -140,7 +141,7 @@ const LunettesLoupeFrontaleAlva = () => {
                 </ul>
               </div>
 
-              <ProductTrustGrid />
+              <ProductTrustBanner />
             </div>
           </div>
         </section>
