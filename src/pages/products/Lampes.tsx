@@ -31,29 +31,6 @@ const products = [
     shopLabel: "Voir la lampe EIRA",
   },
   {
-    name: "Lampe basse vision EIRA",
-    slug: "lampe-basse-vision-eira",
-    image: lampeEira,
-    imageAlt: "Lampe basse vision EIRA blanche éclairant un livre ouvert",
-    description:
-      "Lampe de lecture pliable et rechargeable, à intensité et température de couleur réglables — conçue pour la basse vision et la DMLA. Disponible en Blanc ou Gris.",
-    features: [
-      "3 températures de couleur : 3000 K / 4000 K / 5000 K",
-      "Variateur d'intensité de 100 à 1600 lux via bouton tactile",
-      "Batterie rechargeable intégrée — autonomie de 4 à 10 h",
-      "Pliable et légère (285 g) — se déplace de pièce en pièce",
-      "Support téléphone intégré pour les appels en visio",
-    ],
-    idealFor: [
-      "Lecture, écriture, mots croisés, courrier, notices",
-      "Personnes atteintes de DMLA ou de basse vision",
-      "Usage à la maison ou en déplacement (batterie)",
-    ],
-    priceRange: "178,00 €",
-    shopLink: "/boutique/lampe-basse-vision-eira",
-    shopLabel: "Voir la lampe EIRA",
-  },
-  {
     name: "Lampe sur pied de lecture",
     slug: "lampe-sur-pied",
     image: lampeSurPied,
