@@ -42,7 +42,7 @@ const categories: Category[] = [
         href: "/boutique/lunettes-loupe-focus",
       },
       {
-        name: "Loupe Max TV",
+        name: "Lunettes loupe Max-TV",
         usage: "Pour mieux voir à distance au théâtre, en conférence ou devant un écran.",
         image: lunettesLoin,
         href: "/boutique/loupe-max-tv",
