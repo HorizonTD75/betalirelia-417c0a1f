@@ -5,10 +5,12 @@ import type { Database } from "./types";
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
-console.log("SUPABASE RUNTIME", {
-  url: SUPABASE_URL,
-  keyStart: SUPABASE_PUBLISHABLE_KEY?.slice(0, 20),
-});
+if (import.meta.env.DEV) {
+  console.log("SUPABASE RUNTIME", {
+    url: SUPABASE_URL,
+    keyStart: SUPABASE_PUBLISHABLE_KEY?.slice(0, 20),
+  });
+}
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
