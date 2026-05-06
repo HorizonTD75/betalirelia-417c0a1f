@@ -26,6 +26,7 @@ const notes = ['La correction des cylindres (astigmatisme) n’est pas possible.
 const options = [{'label': 'Myopie', 'value': '–3 D à 0'}, {'label': 'Presbytie', 'value': '0 à +3 D'}];
 
 const LoupeMaxTv = () => {
+  const [selectedImage, setSelectedImage] = useState(0);
   return (
     <div className="min-h-screen">
       <SEOHead title="Lunettes loupe Max-TV pour Télévision et Vision de Loin | LirElia" description="Lunettes loupe Max-TV : lunettes loupe grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant." canonicalPath="/boutique/loupe-max-tv" />
@@ -47,7 +48,14 @@ const LoupeMaxTv = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <div className="rounded-2xl overflow-hidden border-2 border-border bg-card mb-4">
-                <img src={productImage} alt="Lunettes loupe Max-TV pour regarder la télévision avec un grossissement de loin" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
+                <img src={images[selectedImage].src} alt={images[selectedImage].alt} className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {images.map((img, i) => (
+                  <button key={i} type="button" onClick={() => setSelectedImage(i)} className={`rounded-xl overflow-hidden border-2 ${selectedImage === i ? 'border-primary' : 'border-border'} bg-card`} aria-label={`Voir image ${i + 1}`}>
+                    <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover" loading="lazy" />
+                  </button>
+                ))}
               </div>
             </div>
 
