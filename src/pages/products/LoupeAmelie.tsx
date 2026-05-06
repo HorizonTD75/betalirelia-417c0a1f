@@ -232,15 +232,14 @@ const LoupeAmelie = () => {
                     {formatPrice(price.amount, price.currencyCode)}
                   </p>
                 )}
-                <div ref={(el) => {
-                  if (el && !el.querySelector('stripe-buy-button')) {
-                    const btn = document.createElement('stripe-buy-button');
-                    btn.setAttribute('buy-button-id', 'buy_btn_1TOh5CKnEgvciwuk1e288Q5Q');
-                    btn.setAttribute('publishable-key', 'pk_live_GjSYZLVZqusPlzs5qmkBMgbo');
-                    el.appendChild(btn);
-                  }
-                }} />
+                <Button variant="secondary" size="lg" asChild>
+                  <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
+                    Acheter ce produit
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                </Button>
               </div>
+              <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× disponible.</p>
 
               {/* Key selling points */}
               <div className="mb-6">
@@ -311,7 +310,7 @@ const LoupeAmelie = () => {
               )}
 
 
-              <ProductTrustGrid />
+              <ProductTrustBanner />
             </div>
           </div>
         </section>
