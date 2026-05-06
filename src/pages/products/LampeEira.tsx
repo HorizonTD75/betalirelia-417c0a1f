@@ -159,34 +159,46 @@ const LampeEira = () => {
                   </a>
                 </Button>
               </div>
-              <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× sans frais pour toute commande inférieure à 2 500 €.</p>
-
-              <div className="mb-6">
-                <p className="text-xl text-foreground leading-relaxed mb-4">
-                  Une lampe de lecture compacte proposée en 2 couleurs (Blanc ou Gris) pour s'intégrer harmonieusement dans votre intérieur.
-                </p>
-                <ul className="space-y-2">
-                  {shortPoints.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed">
-                      <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mb-6 rounded-2xl border-2 border-secondary/40 bg-secondary/10 p-5">
-                <h2 className="font-serif text-xl font-bold text-foreground mb-2">Choix de la couleur</h2>
-                <p className="text-lg text-foreground leading-relaxed mb-2">
-                  La lampe EIRA est disponible en <strong>2 coloris</strong> : <strong>Blanc</strong> et <strong>Gris</strong>.
-                </p>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  ⚠️ <strong>Comment passer votre commande ?</strong> Notre site ne gère pas la sélection de variante en ligne. Indiquez simplement la couleur souhaitée dans le champ « Commentaire » lors de votre commande (ex. : <em>« Lampe EIRA — coloris Gris »</em>). Nous traiterons votre demande en priorité.
-                </p>
-              </div>
-
-              <ProductTrustBanner />
+              <p className="text-base font-semibold text-muted-foreground">Paiement en 2×, 3× ou 4× sans frais pour toute commande inférieure à 2 500 €.</p>
             </div>
+          </div>
+        </section>
+
+        {/* Points forts en pleine largeur */}
+        <section className="container pb-10">
+          <div className="max-w-5xl mx-auto rounded-2xl border-2 border-secondary/40 bg-secondary/10 p-6 md:p-8">
+            <h2 className="font-serif text-2xl font-bold text-foreground mb-4">Points forts</h2>
+            <p className="text-xl text-foreground leading-relaxed mb-4">
+              Une lampe de lecture compacte proposée en 2 couleurs (Blanc ou Gris) pour s'intégrer harmonieusement dans votre intérieur.
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-3">
+              {shortPoints.map((point) => (
+                <li key={point} className="flex items-start gap-3 text-lg text-foreground leading-relaxed">
+                  <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Choix de la couleur en pleine largeur */}
+        <section className="container pb-10">
+          <div className="max-w-5xl mx-auto rounded-2xl border-2 border-primary/30 bg-primary/5 p-6 md:p-8">
+            <h2 className="font-serif text-2xl font-bold text-foreground mb-3">Choix de la couleur</h2>
+            <p className="text-lg text-foreground leading-relaxed mb-2">
+              La lampe EIRA est disponible en <strong>2 coloris</strong> : <strong>Blanc</strong> et <strong>Gris</strong>.
+            </p>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              ⚠️ <strong>Comment passer votre commande ?</strong> Notre site ne gère pas la sélection de variante en ligne. Indiquez simplement la couleur souhaitée dans le champ « Commentaire » lors de votre commande (ex. : <em>« Lampe EIRA — coloris Gris »</em>). Nous traiterons votre demande en priorité.
+            </p>
+          </div>
+        </section>
+
+        {/* Bandeau réassurance compact */}
+        <section className="container pb-12">
+          <div className="max-w-5xl mx-auto">
+            <ProductTrustBanner />
           </div>
         </section>
 
