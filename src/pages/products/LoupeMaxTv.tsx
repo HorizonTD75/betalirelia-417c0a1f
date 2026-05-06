@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -6,7 +7,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
-import productImage from "@/assets/products/lunettes-loupes-loin.jpg";
+import imgGrossissement from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
+import imgMolette from "@/assets/products/lunettes-loupe_maxtv-molette_mal_voyant.jpg";
+import imgSenior from "@/assets/products/Senior-television-lunettes-max-tv.jpeg";
+
+const images = [
+  { src: imgGrossissement, alt: "Lunettes loupe Max-TV avec étui de protection MAXTV" },
+  { src: imgMolette, alt: "Détail de la molette de réglage de dioptrie des lunettes Max-TV" },
+  { src: imgSenior, alt: "Senior regardant la télévision avec ses lunettes loupe Max-TV" },
+];
 
 const STRIPE_URL = "https://buy.stripe.com/bJe00k9Yq21xeSb8VD2Fa02";
 const shortPoints = ['Facteur de rapprochement / grossissement x 2,1', '2 modèles disponibles, pour myopie et pour presbytie', 'Réglage indépendant de la dioptrie pour chaque œil', 'Lunettes loupes légères et discrètes'];
@@ -17,6 +26,7 @@ const notes = ['La correction des cylindres (astigmatisme) n’est pas possible.
 const options = [{'label': 'Myopie', 'value': '–3 D à 0'}, {'label': 'Presbytie', 'value': '0 à +3 D'}];
 
 const LoupeMaxTv = () => {
+  const [selectedImage, setSelectedImage] = useState(0);
   return (
     <div className="min-h-screen">
       <SEOHead title="Lunettes loupe Max-TV pour Télévision et Vision de Loin | LirElia" description="Lunettes loupe Max-TV : lunettes loupe grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant." canonicalPath="/boutique/loupe-max-tv" />
@@ -38,7 +48,14 @@ const LoupeMaxTv = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <div className="rounded-2xl overflow-hidden border-2 border-border bg-card mb-4">
-                <img src={productImage} alt="Lunettes loupe Max-TV pour regarder la télévision avec un grossissement de loin" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
+                <img src={images[selectedImage].src} alt={images[selectedImage].alt} className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {images.map((img, i) => (
+                  <button key={i} type="button" onClick={() => setSelectedImage(i)} className={`rounded-xl overflow-hidden border-2 ${selectedImage === i ? 'border-primary' : 'border-border'} bg-card`} aria-label={`Voir image ${i + 1}`}>
+                    <img src={img.src} alt={img.alt} className="w-full aspect-square object-cover" loading="lazy" />
+                  </button>
+                ))}
               </div>
             </div>
 
