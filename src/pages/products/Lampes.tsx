@@ -12,7 +12,7 @@ const products = [
     image: lampeBureau,
     imageAlt: "Illustration aquarelle d'une lampe de bureau LED moderne au-dessus d'un livre",
     description:
-      "Lampe à poser, avec éclairage LED « lumière du jour » ajustable. Reproduit une lumière confortable et bien orientée pour améliorer la lecture sans éblouissement excessif.",
+      "Lampe à poser, avec éclairage LED « lumière du jour » ajustable. Reproduit une lumière confortable et bien orientée pour améliorer la lecture sans éblouissement excessif. Découvrez notamment la lampe basse vision EIRA, pliable et rechargeable.",
     features: [
       "Température de couleur ajustable du blanc chaud au blanc froid",
       "Intensité réglable en continu",
@@ -27,6 +27,8 @@ const products = [
       "Complément à une loupe optique ou électronique",
     ],
     priceRange: "À partir de 45 €",
+    shopLink: "/boutique/lampe-basse-vision-eira",
+    shopLabel: "Voir la lampe EIRA",
   },
   {
     name: "Lampe basse vision EIRA",
