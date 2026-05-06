@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -6,7 +7,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
-import productImage from "@/assets/products/lunettes-loupes-loin.jpg";
+import imgGrossissement from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
+import imgMolette from "@/assets/products/lunettes-loupe_maxtv-molette_mal_voyant.jpg";
+import imgSenior from "@/assets/products/Senior-television-lunettes-max-tv.jpeg";
+
+const images = [
+  { src: imgGrossissement, alt: "Lunettes loupe Max-TV avec étui de protection MAXTV" },
+  { src: imgMolette, alt: "Détail de la molette de réglage de dioptrie des lunettes Max-TV" },
+  { src: imgSenior, alt: "Senior regardant la télévision avec ses lunettes loupe Max-TV" },
+];
 
 const STRIPE_URL = "https://buy.stripe.com/bJe00k9Yq21xeSb8VD2Fa02";
 const shortPoints = ['Facteur de rapprochement / grossissement x 2,1', '2 modèles disponibles, pour myopie et pour presbytie', 'Réglage indépendant de la dioptrie pour chaque œil', 'Lunettes loupes légères et discrètes'];
