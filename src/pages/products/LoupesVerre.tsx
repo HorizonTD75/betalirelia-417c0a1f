@@ -25,8 +25,6 @@ const products = [
       "Première aide à la lecture quand la vision de près baisse",
     ],
     priceRange: "À partir de 15 €",
-    shopLink: "/boutique/loupe-main-nora",
-    shopLabel: "Voir la Loupe à main NORA",
   },
   {
     name: "Loupe éclairante rectangulaire",
@@ -48,6 +46,8 @@ const products = [
       "Utilisation prolongée en tous lieux",
     ],
     priceRange: "À partir de 25 €",
+    shopLink: "/boutique/loupe-main-nora",
+    shopLabel: "Voir la Loupe à main NORA",
   },
   {
     name: "Loupe dôme et règle",
