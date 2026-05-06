@@ -19,7 +19,7 @@ const options = [{'label': 'Myopie', 'value': '–3 D à 0'}, {'label': 'Presbyt
 const LoupeMaxTv = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead title="Loupe Max TV pour Télévision et Vision de Loin | LirElia" description="Loupe Max TV : lunettes loupe grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant." canonicalPath="/boutique/loupe-max-tv" />
+      <SEOHead title="Lunettes loupe Max-TV pour Télévision et Vision de Loin | LirElia" description="Lunettes loupe Max-TV : lunettes loupe grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant." canonicalPath="/boutique/loupe-max-tv" />
       <Header />
       <main id="main-content">
         <div className="container py-4">
@@ -30,7 +30,7 @@ const LoupeMaxTv = () => {
             <span>/</span>
             <Link to="/aides-lecture-bassevision/lunettes-loupes" className="hover:text-primary transition-colors">Lunettes loupes</Link>
             <span>/</span>
-            <span className="text-foreground font-semibold">Loupe Max TV</span>
+            <span className="text-foreground font-semibold">Lunettes loupe Max-TV</span>
           </nav>
         </div>
 
@@ -38,12 +38,12 @@ const LoupeMaxTv = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <div className="rounded-2xl overflow-hidden border-2 border-border bg-card mb-4">
-                <img src={productImage} alt="Loupe Max TV pour regarder la télévision avec un grossissement de loin" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
+                <img src={productImage} alt="Lunettes loupe Max-TV pour regarder la télévision avec un grossissement de loin" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
               </div>
             </div>
 
             <div className="flex flex-col">
-              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">Loupe Max TV</h1>
+              <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">Lunettes loupe Max-TV</h1>
               <p className="text-lg font-semibold text-muted-foreground mb-4">Des lunettes loupe adaptées pour regarder la télévision — idéales pour les personnes atteintes de DMLA ou de basse vision.</p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
                 <p className="text-3xl font-bold text-primary m-0">87,00 €</p>
