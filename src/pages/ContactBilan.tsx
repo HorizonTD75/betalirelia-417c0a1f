@@ -167,7 +167,7 @@ const ContactBilan = () => {
       await supabase.functions.invoke("send-transactional-email", {
         body: {
           templateName: "admin-notification",
-          recipientEmail: "bleuhorizon2018@gmail.com",
+          // recipient resolved server-side from template.to
           idempotencyKey: `bilan-admin-${emailId}`,
           templateData: {
             formType: `RDV ${selectedOption?.label}`,

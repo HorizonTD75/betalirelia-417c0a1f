@@ -121,7 +121,7 @@ const SharedContactForm = () => {
       await supabase.functions.invoke("send-transactional-email", {
         body: {
           templateName: "admin-notification",
-          recipientEmail: "bleuhorizon2018@gmail.com",
+          // recipient resolved server-side from template.to
           idempotencyKey: `contact-admin-${emailId}`,
           templateData: {
             formType: "Contact Conseil",
