@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
+import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import { fetchProductByHandle, type ShopifyProduct } from "@/lib/shopify";
-import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import {
   Accordion,
@@ -93,12 +93,13 @@ function parseDescriptionSections(html: string) {
   return sections;
 }
 
+const STRIPE_URL = "https://buy.stripe.com/dRm28s7QidKfaBVdbT2Fa00";
+
 const LoupeAmelie = () => {
   const [product, setProduct] = useState<ShopifyProduct | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
-  const { addItem, isLoading: cartLoading } = useCartStore();
 
   useEffect(() => {
     fetchProductByHandle("loupe-de-lecture-electronique-amelie")
@@ -107,15 +108,6 @@ const LoupeAmelie = () => {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
-
-  // Load Stripe Buy Button script
-  useEffect(() => {
-    if (document.querySelector('script[src="https://js.stripe.com/v3/buy-button.js"]')) return;
-    const script = document.createElement("script");
-    script.src = "https://js.stripe.com/v3/buy-button.js";
-    script.async = true;
-    document.body.appendChild(script);
   }, []);
 
   if (loading) {
@@ -159,35 +151,11 @@ const LoupeAmelie = () => {
   // Parse description into sections
   const descSections = node.descriptionHtml ? parseDescriptionSections(node.descriptionHtml) : null;
 
-  const handleAddToCart = async () => {
-    if (!selectedVariant) return;
-    await addItem({
-      product,
-      variantId: selectedVariant.id,
-      variantTitle: selectedVariant.title,
-      price: selectedVariant.price,
-      quantity: 1,
-      selectedOptions: selectedVariant.selectedOptions || [],
-    });
-    toast.success("Produit ajouté au panier", { description: node.title });
-  };
-
-  const handleBuyNow = async () => {
-    if (!selectedVariant) return;
-    await addItem({
-      product,
-      variantId: selectedVariant.id,
-      variantTitle: selectedVariant.title,
-      price: selectedVariant.price,
-      quantity: 1,
-      selectedOptions: selectedVariant.selectedOptions || [],
-    });
-    const checkoutUrl = useCartStore.getState().getCheckoutUrl();
-    if (checkoutUrl) window.open(checkoutUrl, "_blank");
-  };
-
   const formatPrice = (amount: string, currency: string) =>
     new Intl.NumberFormat("fr-FR", { style: "currency", currency }).format(parseFloat(amount));
+
+  // Suppress unused variable warning
+  void toast;
 
   return (
     <div className="min-h-screen">
