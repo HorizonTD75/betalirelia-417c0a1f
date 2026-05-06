@@ -50,7 +50,7 @@ const products = [
       "Observation à distance dans un cadre statique",
     ],
     shopLink: "/boutique/loupe-max-tv",
-    shopLabel: "Découvrir la Loupe Max TV",
+    shopLabel: "Découvrir les Lunettes loupe Max-TV",
   },
   {
     name: "Lunettes loupes éclairantes",
