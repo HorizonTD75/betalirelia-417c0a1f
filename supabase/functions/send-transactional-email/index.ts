@@ -93,6 +93,31 @@ Deno.serve(async (req) => {
     )
   }
 
+  // Determine if caller is service_role; otherwise restrict to allowlisted templates.
+  const authHeader = req.headers.get('Authorization') || ''
+  const callerToken = authHeader.replace(/^Bearer\s+/i, '')
+  let isServiceRole = false
+  if (callerToken) {
+    try {
+      const payloadPart = callerToken.split('.')[1]
+      if (payloadPart) {
+        const payload = JSON.parse(
+          atob(payloadPart.replace(/-/g, '+').replace(/_/g, '/'))
+        )
+        isServiceRole = payload?.role === 'service_role'
+      }
+    } catch {
+      isServiceRole = false
+    }
+  }
+
+  if (!isServiceRole && !PUBLIC_TEMPLATE_ALLOWLIST.has(templateName)) {
+    return new Response(
+      JSON.stringify({ error: 'Forbidden' }),
+      { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    )
+  }
+
   // 1. Look up template from registry (early — needed to resolve recipient)
   const template = TEMPLATES[templateName]
 
