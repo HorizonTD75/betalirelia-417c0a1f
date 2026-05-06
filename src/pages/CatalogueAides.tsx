@@ -6,9 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import lunettesPres from "@/assets/products/lunettes-loupes-pres.jpg";
-import lunettesLoin from "@/assets/products/lunettes-loupes-loin.jpg";
-import loupeElectroniqueImg from "@/assets/loupe-electronique.jpg";
+import lunettesFocus from "@/assets/products/lunettes-loupes-focus_DMLA.jpg";
+import lunettesMaxTv from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
+import loupeAmelieImg from "@/assets/products/loupe-amelie-cadrage.jpeg";
+import loupeNoraImg from "@/assets/products/loupe-main-nora-lecture.jpg";
+import clipImg from "@/assets/products/clip-lunette-loupe.jpg";
+import lampeEiraImg from "@/assets/products/lampe-eira-blanche-livre.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 type Product = {
