@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -331,7 +332,7 @@ const LoupeAmelie = () => {
                         className="prose prose-lg max-w-none mb-10
                           prose-p:text-foreground prose-p:leading-loose prose-p:text-xl prose-p:mb-4
                           prose-strong:text-foreground"
-                        dangerouslySetInnerHTML={{ __html: descSections.descriptionBlocks[0].content }}
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.descriptionBlocks[0].content) }}
                       />
                     )}
 
@@ -349,7 +350,7 @@ const LoupeAmelie = () => {
                                 prose-p:text-foreground prose-p:leading-loose prose-p:text-xl prose-p:mb-4 prose-p:last:mb-0
                                 prose-strong:text-foreground
                                 prose-li:text-foreground prose-li:text-xl prose-li:leading-relaxed"
-                              dangerouslySetInnerHTML={{ __html: block.content }}
+                              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.content) }}
                             />
                           </div>
                         ))}
@@ -370,7 +371,7 @@ const LoupeAmelie = () => {
                         prose-headings:font-serif prose-headings:text-foreground
                         prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
                         prose-strong:text-foreground"
-                      dangerouslySetInnerHTML={{ __html: descSections.description }}
+                      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.description) }}
                     />
                   </div>
                 </div>
