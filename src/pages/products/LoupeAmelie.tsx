@@ -393,7 +393,7 @@ const LoupeAmelie = () => {
                           prose-li:text-foreground prose-li:text-xl prose-li:leading-relaxed prose-li:marker:text-primary
                           prose-ul:space-y-3 prose-ol:space-y-3
                           prose-strong:text-foreground prose-strong:font-bold"
-                        dangerouslySetInnerHTML={{ __html: descSections.specs.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.specs.replace(/<h2[^>]*>.*?<\/h2>/i, "")) }}
                       />
                     </div>
                   </div>
@@ -416,7 +416,7 @@ const LoupeAmelie = () => {
                           prose-li:text-foreground prose-li:text-xl prose-li:leading-relaxed prose-li:marker:text-accent
                           prose-ul:space-y-3 prose-ol:space-y-3
                           prose-strong:text-foreground"
-                        dangerouslySetInnerHTML={{ __html: descSections.strengths.replace(/<h2[^>]*>.*?<\/h2>/i, "") }}
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.strengths.replace(/<h2[^>]*>.*?<\/h2>/i, "")) }}
                       />
                     </div>
                   </div>
