@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
+import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgMain from "@/assets/products/clip-lunette-loupe.jpg";
 import imgMontage from "@/assets/products/clip-lunette-loupe-montage.jpeg";
 import imgReleve from "@/assets/products/clip-lunette-loupe-releve.jpeg";
@@ -144,7 +145,7 @@ const ClipLunettesLoupe = () => {
                 <p className="text-3xl font-bold text-primary m-0">24,50 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
-                    Commander ce produit
+                    Acheter ce produit
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </Button>
@@ -174,7 +175,7 @@ const ClipLunettesLoupe = () => {
                 </p>
               </div>
 
-              <ProductTrustGrid />
+              <ProductTrustBanner />
             </div>
           </div>
         </section>

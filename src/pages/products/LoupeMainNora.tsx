@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
+import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgLecture from "@/assets/products/loupe-main-nora-lecture.jpg";
 import imgX6 from "@/assets/products/loupe-main-nora-x6.jpeg";
 
@@ -139,7 +140,7 @@ const LoupeMainNora = () => {
                 <p className="text-3xl font-bold text-primary m-0">87,50 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
-                    Commander ce produit
+                    Acheter ce produit
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </Button>
@@ -160,7 +161,7 @@ const LoupeMainNora = () => {
                 </ul>
               </div>
 
-              <ProductTrustGrid />
+              <ProductTrustBanner />
             </div>
           </div>
         </section>

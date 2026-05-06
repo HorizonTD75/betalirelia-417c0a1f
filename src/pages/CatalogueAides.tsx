@@ -6,9 +6,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import lunettesPres from "@/assets/products/lunettes-loupes-pres.jpg";
-import lunettesLoin from "@/assets/products/lunettes-loupes-loin.jpg";
-import loupeElectroniqueImg from "@/assets/loupe-electronique.jpg";
+import lunettesFocus from "@/assets/products/lunettes-loupes-focus_DMLA.jpg";
+import lunettesMaxTv from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
+import loupeAmelieImg from "@/assets/loupe-electronique.jpg";
+import loupeNoraImg from "@/assets/products/loupe-main-nora-lecture.jpg";
+import clipImg from "@/assets/products/clip-lunette-loupe.jpg";
+import alvaImg from "@/assets/products/lunette-loupe-frontale-alva-sacoche.jpeg";
+import lampeEiraImg from "@/assets/products/lampe-eira-blanche-livre.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 type Product = {
@@ -38,14 +42,29 @@ const categories: Category[] = [
         name: "Lunettes loupe FOCUS",
         usage: "Pour lire, bricoler ou coudre les mains libres.",
         price: "89 €",
-        image: lunettesPres,
+        image: lunettesFocus,
         href: "/boutique/lunettes-loupe-focus",
       },
       {
         name: "Lunettes loupe Max-TV",
         usage: "Pour mieux voir à distance au théâtre, en conférence ou devant un écran.",
-        image: lunettesLoin,
+        price: "87 €",
+        image: lunettesMaxTv,
         href: "/boutique/loupe-max-tv",
+      },
+      {
+        name: "Lunette loupe frontale ALVA",
+        usage: "Lunette loupe à LED, 5 grossissements, mains libres.",
+        price: "94 €",
+        image: alvaImg,
+        href: "/boutique/lunettes-loupe-frontale-alva",
+      },
+      {
+        name: "Clip lunettes loupe",
+        usage: "Surlunette à clipser sur vos lunettes — grossissement d'appoint.",
+        price: "24,50 €",
+        image: clipImg,
+        href: "/boutique/clip-lunettes-loupe",
       },
     ],
   },
@@ -53,7 +72,15 @@ const categories: Category[] = [
     id: "loupes-verre",
     title: "Loupes en verre",
     usage: "Des solutions simples et immédiates pour lire un courrier, une étiquette ou un document posé à plat.",
-    products: [],
+    products: [
+      {
+        name: "Loupe à main NORA",
+        usage: "Loupe rectangulaire éclairante x2 et x6, 50 LED réglables.",
+        price: "87,50 €",
+        image: loupeNoraImg,
+        href: "/boutique/loupe-main-nora",
+      },
+    ],
     emptyMessage: "Une sélection de loupes en verre sera disponible très prochainement.",
   },
   {
@@ -64,7 +91,7 @@ const categories: Category[] = [
       {
         name: "Loupe Amélie",
         usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.",
-        image: loupeElectroniqueImg,
+        image: loupeAmelieImg,
         href: "/boutique/loupe-amelie",
       },
     ],
@@ -73,7 +100,15 @@ const categories: Category[] = [
     id: "lampes",
     title: "Lampes basse vision",
     usage: "Pour améliorer l'éclairage, réduire la fatigue visuelle et mieux lire au quotidien.",
-    products: [],
+    products: [
+      {
+        name: "Lampe basse vision EIRA",
+        usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.",
+        price: "178 €",
+        image: lampeEiraImg,
+        href: "/boutique/lampe-basse-vision-eira",
+      },
+    ],
   },
   {
     id: "tele-agrandisseurs",

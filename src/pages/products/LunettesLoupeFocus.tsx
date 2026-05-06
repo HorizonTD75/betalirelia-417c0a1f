@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
+import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import productImage from "@/assets/products/lunettes-loupes-focus_DMLA.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/14A00k0nQ5dJ6lF4Fn2Fa01";
@@ -47,7 +48,7 @@ const LunettesLoupeFocus = () => {
               <div className="flex items-center gap-6 mb-4 flex-wrap">
                 <p className="text-3xl font-bold text-primary m-0">89 €</p>
                 <Button variant="secondary" size="lg" asChild>
-                  <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Commander ce produit<ArrowRight className="w-5 h-5" /></a>
+                  <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Acheter ce produit<ArrowRight className="w-5 h-5" /></a>
                 </Button>
               </div>
               <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× disponible.</p>
@@ -61,7 +62,7 @@ const LunettesLoupeFocus = () => {
                 </ul>
               </div>
 
-              <ProductTrustGrid />
+              <ProductTrustBanner />
             </div>
           </div>
         </section>
