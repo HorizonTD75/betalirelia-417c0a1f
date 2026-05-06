@@ -27,6 +27,8 @@ const products = [
     ],
     shopLink: "/boutique/lunettes-loupe-focus",
     shopLabel: "Découvrir les lunettes loupe FOCUS",
+    secondaryShopLink: "/boutique/clip-lunettes-loupe",
+    secondaryShopLabel: "Voir le Clip lunettes loupe",
   },
   {
     name: "Lunettes loupes pour voir de loin",
@@ -48,7 +50,7 @@ const products = [
       "Observation à distance dans un cadre statique",
     ],
     shopLink: "/boutique/loupe-max-tv",
-    shopLabel: "Découvrir la Loupe Max TV",
+    shopLabel: "Découvrir les Lunettes loupe Max-TV",
   },
   {
     name: "Lunettes loupes éclairantes",
