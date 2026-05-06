@@ -11,10 +11,8 @@ import lunettesMaxTv from "@/assets/products/lunettes-loupe_max-tv_grossissement
 import loupeAmelieImg from "@/assets/loupe-electronique.jpg";
 import loupeNoraImg from "@/assets/products/loupe-main-nora-lecture.jpg";
 import clipImg from "@/assets/products/clip-lunette-loupe.jpg";
-import loupeClassiqueImg from "@/assets/products/loupe-classique.jpg";
 import alvaImg from "@/assets/products/lunette-loupe-frontale-alva-sacoche.jpeg";
 import lampeEiraImg from "@/assets/products/lampe-eira-blanche-livre.jpg";
-import teleAgrandisseurImg from "@/assets/products/tele-agrandisseur-bureau.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 type Product = {
