@@ -3,7 +3,6 @@ import CategoryPageLayout from "@/components/products/CategoryPageLayout";
 import lampeBureau from "@/assets/products/lampe-bureau-daylight.jpg";
 import lampeSurPied from "@/assets/products/lampe-sur-pied.jpg";
 import lampeLoupe from "@/assets/products/lampe-loupe.jpg";
-import lampeEira from "@/assets/products/lampe-eira-blanche-livre.jpg";
 import heroImage from "@/assets/lampe-lecture.jpg";
 
 const products = [
