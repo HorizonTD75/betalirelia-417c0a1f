@@ -54,6 +54,8 @@ const LunettesLoupeFocus = lazy(() => import("./pages/products/LunettesLoupeFocu
 const LoupeMaxTv = lazy(() => import("./pages/products/LoupeMaxTv"));
 const LunettesLoupeFrontaleAlva = lazy(() => import("./pages/products/LunettesLoupeFrontaleAlva"));
 const CatalogueAides = lazy(() => import("./pages/CatalogueAides"));
+const LoupeMainNora = lazy(() => import("./pages/products/LoupeMainNora"));
+const ClipLunettesLoupe = lazy(() => import("./pages/products/ClipLunettesLoupe"));
 const QuiSommesNous = lazy(() => import("./pages/QuiSommesNous"));
 const MaladiesHereditaires = lazy(() => import("./pages/maladies/MaladiesHereditaires"));
 const RetinitePigmentaireHereditaire = lazy(() => import("./pages/maladies/hereditaires/RetinitePigmentaire"));
@@ -127,6 +129,8 @@ const App = () => (
             <Route path="/boutique/lunettes-loupe-focus" element={<LunettesLoupeFocus />} />
             <Route path="/boutique/loupe-max-tv" element={<LoupeMaxTv />} />
             <Route path="/boutique/lunettes-loupe-frontale-alva" element={<LunettesLoupeFrontaleAlva />} />
+            <Route path="/boutique/loupe-main-nora" element={<LoupeMainNora />} />
+            <Route path="/boutique/clip-lunettes-loupe" element={<ClipLunettesLoupe />} />
             <Route path="/catalogue-aides-basse-vision" element={<CatalogueAides />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
