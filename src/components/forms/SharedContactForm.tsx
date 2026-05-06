@@ -76,7 +76,7 @@ const SharedContactForm = () => {
           message,
           source_url: sourceUrl,
           source_tag: sourceTag,
-          brevo_list_id: 14
+          list_key: "contact"
         }
       });
 
