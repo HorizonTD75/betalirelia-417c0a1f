@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
-import productImage from "@/assets/products/lunettes-loupes-pres.jpg";
+import productImage from "@/assets/products/lunettes-loupes-focus_DMLA.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/14A00k0nQ5dJ6lF4Fn2Fa01";
 const shortPoints = ['Grossissement modéré de x 2,5', 'Réglage de dioptrie indépendant pour chaque œil', 'Lunettes loupes légères'];
