@@ -174,9 +174,13 @@ const ClipLunettesLoupe = () => {
                   ⚠️ <strong>Comment passer votre commande ?</strong> Notre site ne gère pas la sélection de variante en ligne. Indiquez simplement le grossissement souhaité dans le champ « Commentaire » lors de votre commande (ex. : <em>« Clip lunette loupe — grossissement 1,7x »</em>). Nous traiterons votre demande en priorité.
                 </p>
               </div>
-
-              <ProductTrustBanner />
             </div>
+          </div>
+        </section>
+
+        <section className="container pb-12">
+          <div className="max-w-5xl mx-auto">
+            <ProductTrustBanner />
           </div>
         </section>
 
