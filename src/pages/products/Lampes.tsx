@@ -71,6 +71,8 @@ const products = [
       "Personnes avec tremblements (mains libres)",
     ],
     priceRange: "À partir de 55 €",
+    shopLink: "/boutique/lampe-loupe-astrid",
+    shopLabel: "Voir la lampe loupe ASTRID",
   },
 ];
 

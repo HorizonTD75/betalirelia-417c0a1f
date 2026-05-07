@@ -160,9 +160,13 @@ const LoupeMainNora = () => {
                   ))}
                 </ul>
               </div>
-
-              <ProductTrustBanner />
             </div>
+          </div>
+        </section>
+
+        <section className="container pb-12">
+          <div className="max-w-5xl mx-auto">
+            <ProductTrustBanner />
           </div>
         </section>
 
