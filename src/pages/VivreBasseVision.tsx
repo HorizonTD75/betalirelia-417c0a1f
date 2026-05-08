@@ -27,10 +27,10 @@ import {
   Info
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import readingMagnifierImage from "@/assets/reading-magnifier.jpg";
-import tabletAccessibilityImage from "@/assets/tablet-accessibility.jpg";
-import accessibleKitchenImage from "@/assets/accessible-kitchen-600.jpg";
-import seniorWomanStreetImage from "@/assets/senior-woman-street.jpg";
+import readingMagnifierImage from "@/assets/teleagrandisseur-lecture-dmla.jpg";
+import tabletAccessibilityImage from "@/assets/tablette-accessibilite-malvoyants.jpg";
+import accessibleKitchenImage from "@/assets/cuisine-adaptee-malvoyants.jpg";
+import seniorWomanStreetImage from "@/assets/femme-malvoyante-deplacements-urbains.jpg";
 import vivreHeroImage from "@/assets/vivre-basse-vision-hero-800.jpg";
 
 const VivreBasseVision = () => {
@@ -191,7 +191,7 @@ const VivreBasseVision = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary text-primary-foreground py-20 pb-32">
           <div className="absolute inset-0">
-            <img src={vivreHeroImage} alt="Personne malvoyante lisant avec une loupe chez elle" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={vivreHeroImage} alt="Vivre au quotidien avec une basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">
@@ -279,7 +279,7 @@ const VivreBasseVision = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <img 
                     src={readingMagnifierImage} 
-                    alt="Personne malvoyante utilisant une loupe pour lire" 
+                    alt="Téléagrandisseur pour lecture facilitée en DMLA" 
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
@@ -289,7 +289,7 @@ const VivreBasseVision = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-card">
                   <img 
                     src={tabletAccessibilityImage} 
-                    alt="Utilisation d'une tablette avec accessibilité visuelle" 
+                    alt="Tablette avec options d'accessibilité pour malvoyants" 
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
@@ -423,7 +423,7 @@ const VivreBasseVision = () => {
                 <div className="rounded-2xl overflow-hidden shadow-card">
                   <img 
                     src={seniorWomanStreetImage} 
-                    alt="Personne malvoyante se déplaçant en ville" 
+                    alt="Personne malvoyante se déplaçant en autonomie dans la rue" 
                     className="w-full h-full object-cover object-center min-h-[280px]" loading="eager" decoding="async" width={1440} height={500} />
                 </div>
 

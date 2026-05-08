@@ -53,7 +53,7 @@ const DMLA = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={bookDmlaImage} alt="" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={bookDmlaImage} alt="Guide patient sur la DMLA et les solutions de basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -417,7 +417,7 @@ const DMLA = () => {
                   <div className="flex flex-col md:flex-row items-start gap-6">
                     <img
                       src={amslerGridImage}
-                      alt="Grille d'Amsler pour l'auto-surveillance de la DMLA"
+                      alt="Grille d'Amsler pour détecter la DMLA"
                       className="w-32 h-32 rounded-lg object-cover shadow-sm shrink-0"
                     />
                     <div>

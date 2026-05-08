@@ -13,9 +13,9 @@ import imgMolette from "@/assets/products/lunettes-loupe_maxtv-molette_mal_voyan
 import imgSenior from "@/assets/products/Senior-television-lunettes-max-tv.jpeg";
 
 const images = [
-  { src: imgGrossissement, alt: "Lunettes loupe Max-TV avec étui de protection MAXTV" },
-  { src: imgMolette, alt: "Détail de la molette de réglage de dioptrie des lunettes Max-TV" },
-  { src: imgSenior, alt: "Senior regardant la télévision avec ses lunettes loupe Max-TV" },
+  { src: imgGrossissement, alt: "Lunettes loupes Max TV pour télévision en basse vision" },
+  { src: imgMolette, alt: "Lunettes loupes Max TV avec molette de réglage du grossissement" },
+  { src: imgSenior, alt: "Senior utilisant les lunettes loupes Max TV pour regarder la télévision" },
 ];
 
 const STRIPE_URL = "https://buy.stripe.com/bJe00k9Yq21xeSb8VD2Fa02";

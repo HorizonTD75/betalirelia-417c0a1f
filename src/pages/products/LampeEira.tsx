@@ -18,12 +18,12 @@ import imgTemperatures from "@/assets/products/lampe-eira-temperatures.jpg";
 const STRIPE_URL = "https://buy.stripe.com/6oU4gA0nQbC711l9ZH2Fa07";
 
 const images = [
-  { src: imgBlancheLivre, alt: "Lampe basse vision EIRA blanche éclairant un livre ouvert" },
-  { src: imgBlanchePliee, alt: "Lampe basse vision EIRA blanche pliée sur sa base" },
-  { src: imgNoirePliee, alt: "Lampe basse vision EIRA grise pliée sur sa base" },
-  { src: imgNoireLivre, alt: "Lampe basse vision EIRA grise éclairant un magazine de mots croisés" },
-  { src: imgOrdinateur, alt: "Lampe basse vision EIRA grise utilisée à côté d'un ordinateur portable" },
-  { src: imgTemperatures, alt: "Trois températures de couleur de la lampe EIRA : 6000K, 4000K et 3000K" },
+  { src: imgBlancheLivre, alt: "Lampe de lecture Eira blanche pour malvoyants" },
+  { src: imgBlanchePliee, alt: "Lampe Eira blanche pliable pour basse vision" },
+  { src: imgNoirePliee, alt: "Lampe Eira noire pliable et réglable" },
+  { src: imgNoireLivre, alt: "Lampe de lecture Eira noire pour éclairage optimal" },
+  { src: imgOrdinateur, alt: "Lampe Eira pour travail sur ordinateur et lecture" },
+  { src: imgTemperatures, alt: "Lampe Eira avec choix de température de couleur" },
 ];
 
 const shortPoints = [

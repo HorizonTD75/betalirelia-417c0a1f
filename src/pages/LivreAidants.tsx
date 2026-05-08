@@ -163,7 +163,7 @@ const LivreAidants = () => {
               <div className="lg:w-1/3 flex justify-center">
                 <img
                   src={bookAidant}
-                  alt="Couverture du livre Aider un proche atteint de DMLA"
+                  alt="Guide pratique pour les aidants de personnes en basse vision"
                   className="w-56 md:w-64 rounded-xl shadow-2xl"
                 />
               </div>

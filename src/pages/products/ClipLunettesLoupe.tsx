@@ -16,10 +16,10 @@ import imgBaisse from "@/assets/products/clip-lunette-loupe-baisse.jpeg";
 const STRIPE_URL = "https://buy.stripe.com/7sY3cwc6y5dJaBVfk12Fa06";
 
 const images = [
-  { src: imgMain, alt: "Clip lunettes loupe — vue d'ensemble" },
-  { src: imgMontage, alt: "Montage du clip lunettes loupe sur une monture" },
-  { src: imgReleve, alt: "Clip lunettes loupe en position relevée" },
-  { src: imgBaisse, alt: "Clip lunettes loupe en position abaissée" },
+  { src: imgMain, alt: "Clip lunette loupe grossissant pour adapter vos lunettes" },
+  { src: imgMontage, alt: "Montage du clip lunette loupe sur lunettes de vue" },
+  { src: imgReleve, alt: "Clip lunette loupe relevé en position repos" },
+  { src: imgBaisse, alt: "Clip lunette loupe en position basse pour lecture" },
 ];
 
 const shortPoints = [

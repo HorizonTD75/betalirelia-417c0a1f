@@ -142,7 +142,7 @@ const LivreDmla = () => {
               <div className="lg:w-1/3 flex justify-center">
                 <img
                   src={bookDmla}
-                  alt="Couverture du livre DMLA : Votre vie ne s'arrête pas"
+                  alt="Guide patient sur la DMLA et les solutions de basse vision"
                   className="w-56 md:w-64 rounded-xl shadow-2xl"
                 />
               </div>
