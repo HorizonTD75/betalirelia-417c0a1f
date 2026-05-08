@@ -58,7 +58,7 @@ const Aidants = () => {
           <div className="absolute inset-0">
             <img
               src={aidantsHero}
-              alt="Une aidante accompagne un proche malvoyant dans la lecture à domicile"
+              alt="Accompagnement des aidants de personnes malvoyantes"
               className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>

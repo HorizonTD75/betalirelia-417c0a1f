@@ -62,7 +62,7 @@ const Cataracte = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={cataracteHeroImage} alt="" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={cataracteHeroImage} alt="Comprendre la cataracte et ses traitements" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -160,7 +160,7 @@ const Cataracte = () => {
                   <Card variant="elevated" className="p-6">
                     <img
                       src={cataracteSchemaImage}
-                      alt="Illustration d'un œil atteint de cataracte montrant l'opacification du cristallin"
+                      alt="Schéma explicatif de la cataracte dans l'œil"
                       className="w-full rounded-xl mb-4"
                     />
                     <p className="text-foreground text-center font-semibold">
@@ -170,7 +170,7 @@ const Cataracte = () => {
                   <Card variant="elevated" className="p-6">
                     <img
                       src={cataracteVisionImage}
-                      alt="Comparaison entre une vision normale et une vision affectée par la cataracte"
+                      alt="Comparaison vision normale et vision avec cataracte"
                       className="w-full rounded-xl mb-4"
                     />
                     <p className="text-foreground text-center font-semibold">

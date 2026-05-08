@@ -212,7 +212,7 @@ const ContactBilan = () => {
           <div className="absolute inset-0">
             <img
               src={bilanHeroImage}
-              alt=""
+              alt="Professionnel réalisant un bilan basse vision personnalisé"
               className="w-full h-full object-cover opacity-20"
               aria-hidden="true"
               loading="eager"

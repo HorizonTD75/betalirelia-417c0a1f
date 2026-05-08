@@ -89,7 +89,7 @@ const BilanSuivi = () => {
         {/* HERO */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={bilanHeroImage} alt="Suivi basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={bilanHeroImage} alt="Professionnel réalisant un bilan basse vision personnalisé" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-20 lg:py-28">
@@ -152,7 +152,7 @@ const BilanSuivi = () => {
                 </ul>
               </div>
               <div className="relative">
-                <img src={bilanSuiviImage} alt="Suivi en visioconférence" className="w-full rounded-2xl shadow-card" />
+                <img src={bilanSuiviImage} alt="Suivi personnalisé par visiopraticien en basse vision" className="w-full rounded-2xl shadow-card" />
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-2xl -z-10" />
               </div>
             </div>

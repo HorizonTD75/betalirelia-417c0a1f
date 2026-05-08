@@ -160,7 +160,7 @@ const MaladiesYeux = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary text-primary-foreground py-20">
           <div className="absolute inset-0">
-            <img src={maladiesHeroImage} alt="Examen ophtalmologique pour la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={maladiesHeroImage} alt="Les principales maladies des yeux causant la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">
@@ -242,7 +242,7 @@ const MaladiesYeux = () => {
                 <div className="relative">
                   <img
                     src={comprendreHeroImage}
-                    alt="Illustration des différentes maladies des yeux"
+                    alt="Comprendre la basse vision et ses impacts au quotidien"
                     className="w-full rounded-2xl shadow-card"
                     loading="lazy"
                     decoding="async"
@@ -277,7 +277,7 @@ const MaladiesYeux = () => {
                             {diseaseIndex === 0 &&
                         <img
                           src={amslerGridImage}
-                          alt="Dessin illustrant la grille d'Amsler, test simple pour détecter la DMLA"
+                          alt="Grille d'Amsler pour détecter la DMLA"
                           className="w-24 h-24 rounded-lg object-cover shadow-sm"
                           loading="lazy"
                           decoding="async"

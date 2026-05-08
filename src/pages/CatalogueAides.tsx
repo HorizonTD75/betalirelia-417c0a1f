@@ -223,7 +223,7 @@ const CatalogueAides = () => {
         {/* Hero */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={heroBg} alt="Lecture avec une aide visuelle adaptée" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" width={1440} height={500} />
+            <img src={heroBg} alt="Solutions et aides techniques pour la lecture en basse vision" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-16 lg:py-20">

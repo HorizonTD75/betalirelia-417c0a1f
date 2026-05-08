@@ -16,10 +16,10 @@ import {
   Lightbulb } from
 "lucide-react";
 import { Link } from "react-router-dom";
-import eyeAnatomyImage from "@/assets/eye-anatomy.jpg";
-import eyeExamImage from "@/assets/eye-exam.jpg";
+import eyeAnatomyImage from "@/assets/anatomie-oeil-schema.jpg";
+import eyeExamImage from "@/assets/examen-ophtalmologique-bilan.jpg";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
-import seniorManStreetImage from "@/assets/senior-man-street.png";
+import seniorManStreetImage from "@/assets/personne-malvoyante-autonomie-rue.jpg";
 import professionnelsOptiqueImage from "@/assets/professionnels-optique-600.jpg";
 import comprendreHeaderImage from "@/assets/comprendre-basse-vision-header-800.jpg";
 
@@ -104,7 +104,7 @@ const ComprendreBasseVision = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={comprendreHeaderImage} alt="Illustration aquarelle évoquant la compréhension de la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={comprendreHeaderImage} alt="Comprendre la basse vision et ses impacts au quotidien" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-20 lg:py-28">
@@ -225,7 +225,7 @@ const ComprendreBasseVision = () => {
                 <div className="relative overflow-hidden order-first lg:order-last">
                   <img
                     src={comprendreHeroImage}
-                    alt="Illustration aquarelle montrant différentes situations de basse vision"
+                    alt="Comprendre la basse vision et ses impacts au quotidien"
                     className="w-full max-w-full rounded-2xl shadow-card" />
                 </div>
               </div>
@@ -305,7 +305,7 @@ const ComprendreBasseVision = () => {
                 <div className="lg:col-span-2">
                   <img
                     src={professionnelsOptiqueImage}
-                    alt="Illustration aquarelle d'un professionnel de l'optique réalisant un examen visuel"
+                    alt="Professionnels de l'optique spécialisés en basse vision"
                     className="w-full rounded-2xl shadow-card" />
                   
                 </div>

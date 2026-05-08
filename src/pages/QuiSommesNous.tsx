@@ -17,7 +17,7 @@ const QuiSommesNous = () => {
         {/* Hero Banner */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImage} alt="" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={heroImage} alt="L'équipe Lirelia, 25 ans d'expertise en basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -93,7 +93,7 @@ const QuiSommesNous = () => {
               <div className="rounded-2xl overflow-hidden border-2 border-border shadow-lg mb-6">
                 <img
                   src={fondateursImage}
-                  alt="Les deux fondateurs de LirElia : un visiopraticien expérimenté et un ingénieur passionné"
+                  alt="Les fondateurs de Lirelia, experts en basse vision"
                   className="w-full h-auto"
                 />
               </div>
