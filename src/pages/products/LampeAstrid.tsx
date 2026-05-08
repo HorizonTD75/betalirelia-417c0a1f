@@ -16,10 +16,10 @@ import imgLivre from "@/assets/products/lampe-loupe-astrid-livre.jpg";
 const STRIPE_URL = "https://buy.stripe.com/5kQ5kEc6yfSn5hBfk12Fa08";
 
 const images = [
-  { src: imgNoire, alt: "Lampe loupe ASTRID noire avec bras articulé et fixation par pince" },
-  { src: imgBlanche, alt: "Lampe loupe ASTRID blanche avec ses 3 températures de couleur" },
-  { src: imgTemperatures, alt: "Démonstration des 3 températures de couleur de la lampe loupe ASTRID" },
-  { src: imgLivre, alt: "Lampe loupe ASTRID grossissant un texte de livre ouvert" },
+  { src: imgNoire, alt: "Lampe loupe Astrid noire pour malvoyants" },
+  { src: imgBlanche, alt: "Lampe loupe Astrid blanche avec grossissement pour lecture" },
+  { src: imgTemperatures, alt: "Lampe loupe Astrid avec réglage de température de lumière" },
+  { src: imgLivre, alt: "Lampe loupe Astrid en utilisation pour la lecture" },
 ];
 
 const shortPoints = [

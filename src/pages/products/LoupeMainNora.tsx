@@ -14,8 +14,8 @@ import imgX6 from "@/assets/products/loupe-main-nora-x6.jpeg";
 const STRIPE_URL = "https://buy.stripe.com/6oU3cw0nQ6hNbFZefX2Fa05";
 
 const images = [
-  { src: imgLecture, alt: "Loupe à main NORA rectangulaire éclairante posée sur un livre" },
-  { src: imgX6, alt: "Détail de la petite lentille x6 de la loupe NORA agrandissant des informations nutritionnelles" },
+  { src: imgLecture, alt: "Loupe à main Nora en utilisation pour lecture" },
+  { src: imgX6, alt: "Loupe à main Nora grossissement x6 pour malvoyants" },
 ];
 
 const shortPoints = [
