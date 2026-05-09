@@ -366,32 +366,33 @@ const AidesLecture = () => {
 
         <ComparisonSection />
 
-        {/* ACCOMPAGNEMENT FINAL */}
-        <section className="py-20 bg-muted">
+        {/* ACCOMPAGNEMENT FINAL — pleine largeur, fond bleu profond */}
+        <section className="py-14 md:py-20 bg-primary text-primary-foreground">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
                 Une aide à la lecture efficace commence par un bon conseil
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                Il n'existe pas une aide à la lecture universelle, mais une <strong>combinaison adaptée</strong> à
-                chaque personne, à chaque pathologie visuelle et à chaque usage du quotidien.
+              <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-4">
+                Chaque personne malvoyante a des besoins différents. Avant de choisir une loupe, une lampe
+                ou un téléagrandisseur, il est souvent utile d'être conseillé selon votre vision,
+                vos habitudes et vos usages réels.
               </p>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-10">
-                Chez LirElia, nous privilégions l'évaluation des besoins réels, les essais concrets,
+              <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-8">
+                Chez LirElia, nous privilégions l'évaluation des besoins réels, les essais concrets
                 et un accompagnement humain et progressif.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="default" size="lg" className="text-xl" asChild>
+                <Button variant="secondary" size="lg" asChild>
                   <Link to="/contact-conseil?sujet=aide-choix">
-                    Faire le point sur mes besoins de lecture
+                    Demander un conseil personnalisé
                     <ArrowRight className="w-6 h-6" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <a href={CALENDLY_URL}>
-                    RDV pour un appel
-                  </a>
+                <Button variant="heroOutline" size="lg" asChild>
+                  <Link to="/bilans-bassevision">
+                    Découvrir les bilans basse vision
+                  </Link>
                 </Button>
               </div>
             </div>
