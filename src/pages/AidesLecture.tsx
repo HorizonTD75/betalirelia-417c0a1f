@@ -284,13 +284,13 @@ const AidesLecture = () => {
                 <section
                   key={cat.id}
                   id={cat.id}
-                  className={`py-12 md:py-16 px-4 md:px-8 my-8 rounded-3xl ${
-                    isAlt ? "bg-muted/60" : "bg-card border-2 border-border shadow-card"
+                  className={`py-8 md:py-10 px-4 md:px-6 my-6 rounded-2xl ${
+                    isAlt ? "bg-muted/50" : "bg-card border-2 border-border shadow-card"
                   }`}
                 >
                   {/* Image + Icon/Title row */}
-                  <div className="flex flex-col md:flex-row gap-6 mb-8 items-start">
-                    <div className="w-full md:w-64 lg:w-72 shrink-0 rounded-2xl overflow-hidden shadow-card border-2 border-border">
+                  <div className="flex flex-col md:flex-row gap-5 mb-6 items-start">
+                    <div className="w-full md:w-56 lg:w-64 shrink-0 rounded-xl overflow-hidden shadow-card border-2 border-border">
                       <img
                         src={cat.image}
                         alt={cat.imageAlt}
@@ -299,52 +299,52 @@ const AidesLecture = () => {
                       />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className={`w-14 h-14 rounded-2xl ${iconStyle} flex items-center justify-center shrink-0 shadow-card`}>
-                          <cat.icon className="w-7 h-7" />
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className={`w-12 h-12 rounded-xl ${iconStyle} flex items-center justify-center shrink-0 shadow-card`}>
+                          <cat.icon className="w-6 h-6" aria-hidden="true" />
                         </div>
-                        <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                        <h2 className="font-serif text-xl md:text-2xl font-bold text-foreground">
                           {cat.title}
                         </h2>
                       </div>
-                      <p className="text-xl text-muted-foreground leading-relaxed">
+                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                         {cat.intro}
                       </p>
                     </div>
                   </div>
 
                   {/* Content grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
-                    <div className="bg-accent/5 border border-accent/20 rounded-xl p-5">
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                    <div className="bg-accent/5 border border-accent/20 rounded-xl p-4">
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">
                         Usages concrets
                       </h3>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2">
                         {cat.usages.map((usage, i) => (
-                          <li key={i} className="flex items-start gap-3 text-lg">
-                            <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
+                          <li key={i} className="flex items-start gap-2 text-base">
+                            <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                             <span>{usage}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-5">
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">Pour qui ?</h3>
+                    <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-4">
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">Pour qui ?</h3>
                       <ul className="space-y-2">
                         {cat.avantages.map((av, i) => (
-                          <li key={i} className="flex items-start gap-3 text-lg text-foreground">
-                            <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
+                          <li key={i} className="flex items-start gap-2 text-base text-foreground">
+                            <Check className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                             <span>{av}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-5">
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">Limites</h3>
+                    <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">Limites</h3>
                       <ul className="space-y-2">
                         {cat.limites.map((lim, i) => (
-                          <li key={i} className="flex items-start gap-3 text-lg text-muted-foreground">
-                            <X className="w-5 h-5 text-destructive shrink-0 mt-1" />
+                          <li key={i} className="flex items-start gap-2 text-base text-muted-foreground">
+                            <X className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
                             <span>{lim}</span>
                           </li>
                         ))}
