@@ -236,10 +236,13 @@ const AidesLecture = () => {
           </div>
         </section>
 
-        {/* PANORAMA — fond teinté + cartes compactes */}
-        <section className="py-10 md:py-14 bg-gradient-to-b from-muted/40 to-background">
+        {/* PANORAMA — fond bleu pâle/crème + cartes ancrées vers les sections */}
+        <section className="py-10 md:py-14 bg-gradient-to-b from-secondary/10 via-muted/40 to-background">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/25 text-secondary-foreground text-sm font-bold uppercase tracking-wide mb-4">
+                5 catégories
+              </span>
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
                 Les grandes familles d'aides à la lecture
               </h2>
@@ -249,118 +252,137 @@ const AidesLecture = () => {
               </p>
             </div>
 
-            {/* Grille des 5 catégories en cartes résumées — palette rotative */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            {/* Grille des 5 catégories en cartes compactes avec bandeau coloré */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-12">
               {categories.map((cat, i) => {
                 const accent = categoryAccents[i % categoryAccents.length];
+                const stripe = sectionIconStyles[i % sectionIconStyles.length];
                 return (
-                  <Link key={cat.id} to={cat.link} className="group">
+                  <a
+                    key={cat.id}
+                    href={`#${cat.id}`}
+                    className="group block focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl"
+                  >
                     <Card
                       variant="elevated"
-                      className={`h-full text-center border-2 ${accent.border} hover:-translate-y-1 transition-transform`}
+                      className={`h-full overflow-hidden border-2 ${accent.border} group-hover:-translate-y-1 group-hover:shadow-card-hover transition-all`}
                     >
-                      <CardHeader className="items-center pb-2 p-4 sm:p-5">
+                      <div className={`h-1.5 w-full ${stripe}`} aria-hidden="true" />
+                      <div className="flex items-start gap-4 p-4 sm:p-5">
                         <div
-                          className={`w-14 h-14 rounded-xl ${accent.iconBg} flex items-center justify-center mb-2 ${accent.hoverBg} transition-colors`}
+                          className={`w-12 h-12 rounded-xl ${accent.iconBg} flex items-center justify-center shrink-0 ${accent.hoverBg} transition-colors`}
                         >
-                          <cat.icon className={`w-7 h-7 ${accent.iconColor}`} aria-hidden="true" />
+                          <cat.icon className={`w-6 h-6 ${accent.iconColor}`} aria-hidden="true" />
                         </div>
-                        <CardTitle className="text-lg md:text-xl">{cat.shortLabel}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-4 sm:p-5 pt-0">
-                        <p className="text-base text-muted-foreground">{cat.shortDesc}</p>
-                      </CardContent>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-serif text-lg md:text-xl font-bold text-foreground mb-1 leading-snug">
+                            {cat.shortLabel}
+                          </h3>
+                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                            {cat.shortDesc}
+                          </p>
+                          <span className="inline-flex items-center gap-1 mt-2 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                            En savoir plus
+                            <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </div>
+                      </div>
                     </Card>
-                  </Link>
+                  </a>
                 );
               })}
             </div>
 
-            {/* Sections détaillées — fond alterné + icône colorée */}
-            {categories.map((cat, index) => {
-              const iconStyle = sectionIconStyles[index % sectionIconStyles.length];
-              const isAlt = index % 2 === 1;
-              return (
-                <section
-                  key={cat.id}
-                  id={cat.id}
-                  className={`py-8 md:py-10 px-4 md:px-6 my-6 rounded-2xl ${
-                    isAlt ? "bg-muted/50" : "bg-card border-2 border-border shadow-card"
-                  }`}
-                >
-                  {/* Image + Icon/Title row */}
-                  <div className="flex flex-col md:flex-row gap-5 mb-6 items-start">
-                    <div className="w-full md:w-56 lg:w-64 shrink-0 rounded-xl overflow-hidden shadow-card border-2 border-border">
-                      <img
-                        src={cat.image}
-                        alt={cat.imageAlt}
-                        className="w-full h-auto object-cover aspect-[4/3]"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
+            {/* Sections détaillées — bandeau coloré + layout horizontal compact, image alternée */}
+            <div className="space-y-6 md:space-y-8">
+              {categories.map((cat, index) => {
+                const iconStyle = sectionIconStyles[index % sectionIconStyles.length];
+                const accent = categoryAccents[index % categoryAccents.length];
+                const imageRight = index % 2 === 1;
+                return (
+                  <section
+                    key={cat.id}
+                    id={cat.id}
+                    className={`scroll-mt-24 bg-card rounded-2xl border-2 border-border shadow-card overflow-hidden`}
+                  >
+                    <div className={`h-2 w-full ${iconStyle}`} aria-hidden="true" />
+                    <div className="p-5 md:p-7">
+                      {/* En-tête avec icône et titre */}
+                      <div className="flex items-center gap-3 mb-5">
                         <div className={`w-12 h-12 rounded-xl ${iconStyle} flex items-center justify-center shrink-0 shadow-card`}>
                           <cat.icon className="w-6 h-6" aria-hidden="true" />
                         </div>
-                        <h2 className="font-serif text-xl md:text-2xl font-bold text-foreground">
+                        <h2 className="font-serif text-xl md:text-2xl font-bold text-foreground leading-tight">
                           {cat.title}
                         </h2>
                       </div>
-                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                        {cat.intro}
-                      </p>
-                    </div>
-                  </div>
 
-                  {/* Content grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                    <div className="bg-accent/5 border border-accent/20 rounded-xl p-4">
-                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">
-                        Usages concrets
-                      </h3>
-                      <ul className="space-y-2">
-                        {cat.usages.map((usage, i) => (
-                          <li key={i} className="flex items-start gap-2 text-base">
-                            <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                            <span>{usage}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-4">
-                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">Pour qui ?</h3>
-                      <ul className="space-y-2">
-                        {cat.avantages.map((av, i) => (
-                          <li key={i} className="flex items-start gap-2 text-base text-foreground">
-                            <Check className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                            <span>{av}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
-                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">Limites</h3>
-                      <ul className="space-y-2">
-                        {cat.limites.map((lim, i) => (
-                          <li key={i} className="flex items-start gap-2 text-base text-muted-foreground">
-                            <X className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
-                            <span>{lim}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                      {/* Image + intro côte à côte, image alternée */}
+                      <div className={`flex flex-col ${imageRight ? "md:flex-row-reverse" : "md:flex-row"} gap-5 md:gap-7 mb-5`}>
+                        <div className="w-full md:w-2/5 lg:w-[42%] shrink-0 rounded-xl overflow-hidden border-2 border-border">
+                          <img
+                            src={cat.image}
+                            alt={cat.imageAlt}
+                            className="w-full h-full object-cover aspect-[4/3]"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-base md:text-lg text-foreground/85 leading-relaxed mb-4">
+                            {cat.intro}
+                          </p>
+                          <Button variant="default" size="default" asChild>
+                            <Link to={cat.link}>
+                              {cat.cta}
+                              <ArrowRight className="w-5 h-5" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </div>
 
-                  <Button variant="default" size="lg" asChild>
-                    <Link to={cat.link}>
-                      {cat.cta}
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
-                  </Button>
-                </section>
-              );
-            })}
+                      {/* Bénéfices : 3 colonnes compactes */}
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 pt-5 border-t border-border">
+                        <div className={`${accent.iconBg} rounded-xl p-4`}>
+                          <h3 className="font-serif text-base font-bold text-foreground mb-2">
+                            Usages concrets
+                          </h3>
+                          <ul className="space-y-1.5">
+                            {cat.usages.map((usage, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm md:text-base">
+                                <Check className={`w-4 h-4 ${accent.iconColor} shrink-0 mt-1`} />
+                                <span>{usage}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="bg-secondary/15 rounded-xl p-4">
+                          <h3 className="font-serif text-base font-bold text-foreground mb-2">Pour qui ?</h3>
+                          <ul className="space-y-1.5">
+                            {cat.avantages.map((av, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm md:text-base text-foreground">
+                                <Check className="w-4 h-4 text-secondary-foreground shrink-0 mt-1" />
+                                <span>{av}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="bg-muted/70 rounded-xl p-4">
+                          <h3 className="font-serif text-base font-bold text-foreground mb-2">Limites</h3>
+                          <ul className="space-y-1.5">
+                            {cat.limites.map((lim, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm md:text-base text-muted-foreground">
+                                <X className="w-4 h-4 text-destructive shrink-0 mt-1" />
+                                <span>{lim}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                );
+              })}
+            </div>
           </div>
         </section>
 
