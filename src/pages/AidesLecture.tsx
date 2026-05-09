@@ -254,7 +254,7 @@ const AidesLecture = () => {
               {categories.map((cat, i) => {
                 const accent = categoryAccents[i % categoryAccents.length];
                 return (
-                  <Link key={cat.id} to={`#${cat.id}`} className="group">
+                  <Link key={cat.id} to={cat.link} className="group">
                     <Card
                       variant="elevated"
                       className={`h-full text-center border-2 ${accent.border} hover:-translate-y-1 transition-transform`}
