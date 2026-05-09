@@ -186,53 +186,41 @@ const AidesLecture = () => {
       />
       <Header />
       <main id="main-content">
-        {/* HERO */}
-        <section className="relative py-20 md:py-28 overflow-hidden">
+        {/* HERO — version compacte */}
+        <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={aidesLectureHero}
               alt="Solutions et aides techniques pour la lecture en basse vision"
-              className="w-full h-full object-cover opacity-20"
-              aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+              className="w-full h-full object-cover opacity-15"
+              aria-hidden="true" loading="eager" decoding="async" width={1440} height={400} />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
           </div>
           <div className="container relative z-10">
-            <div className="max-w-4xl">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-8 leading-tight">
-                Aides à la lecture
-                <br />
-                <span className="text-secondary">pour malvoyants</span>
+            <div className="max-w-3xl">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
+                Aides à la lecture <span className="text-secondary">pour malvoyants</span>
               </h1>
-              <p className="font-serif text-2xl text-primary-foreground/80 mb-4">
-                Retrouver le plaisir de lire, même en cas de basse vision
+              <p className="font-serif text-xl md:text-2xl text-primary-foreground/90 mb-5">
+                Retrouver le confort de lire, même en cas de basse vision
               </p>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6">
-                Quand la vue baisse, lire son courrier, parcourir un journal, suivre une notice ou regarder un écran devient parfois difficile, fatigant, voire décourageant.
-                Pourtant, il existe aujourd'hui de nombreuses <strong>aides à la lecture pour malvoyants</strong>
-                — loupes en verre, loupes électroniques, lampes adaptées, télé-agrandisseurs ou lunettes loupes —
-                qui permettent de retrouver un accès confortable au texte et de continuer ses activités du quotidien.
+              <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-6">
+                Loupes, lampes, télé-agrandisseurs ou lunettes loupes : chaque aide répond à un besoin différent.
+                L'objectif est simple : lire plus facilement, avec moins de fatigue.
               </p>
-              <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-8">
-                Ces équipements ne remplacent pas vos lunettes médicales : ils les complètent. Ils agissent sur :
-              </p>
-              <ul className="grid sm:grid-cols-2 gap-4 mb-10">
+              <ul className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
                 {[
-                  "L'agrandissement des caractères",
-                  "Le contraste du texte",
-                  "L'éclairage de la zone de lecture",
-                  "La réduction de la fatigue visuelle",
+                  "Agrandir les caractères",
+                  "Améliorer le contraste",
+                  "Réduire la fatigue visuelle",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-lg text-primary-foreground/90">
-                    <Check className="w-6 h-6 text-secondary shrink-0" />
+                  <li key={i} className="flex items-center gap-2 text-base md:text-lg text-primary-foreground">
+                    <Check className="w-5 h-5 text-secondary shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-lg text-primary-foreground/80 mb-8">
-                Chez LirElia, nous sélectionnons et expliquons ces solutions pour vous aider à choisir
-                l'outil le mieux adapté à votre vision, à vos usages et à votre quotidien.
-              </p>
-              <Button variant="secondary" size="lg" className="text-xl" asChild>
+              <Button variant="secondary" size="lg" asChild>
                 <Link to="/contact-conseil?sujet=aide-choix">
                   Être conseillé(e) pour choisir mon aide
                   <ArrowRight className="w-6 h-6" />
