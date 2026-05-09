@@ -186,53 +186,41 @@ const AidesLecture = () => {
       />
       <Header />
       <main id="main-content">
-        {/* HERO */}
-        <section className="relative py-20 md:py-28 overflow-hidden">
+        {/* HERO — version compacte */}
+        <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={aidesLectureHero}
               alt="Solutions et aides techniques pour la lecture en basse vision"
-              className="w-full h-full object-cover opacity-20"
-              aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+              className="w-full h-full object-cover opacity-15"
+              aria-hidden="true" loading="eager" decoding="async" width={1440} height={400} />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
           </div>
           <div className="container relative z-10">
-            <div className="max-w-4xl">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-8 leading-tight">
-                Aides à la lecture
-                <br />
-                <span className="text-secondary">pour malvoyants</span>
+            <div className="max-w-3xl">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
+                Aides à la lecture <span className="text-secondary">pour malvoyants</span>
               </h1>
-              <p className="font-serif text-2xl text-primary-foreground/80 mb-4">
-                Retrouver le plaisir de lire, même en cas de basse vision
+              <p className="font-serif text-xl md:text-2xl text-primary-foreground/90 mb-5">
+                Retrouver le confort de lire, même en cas de basse vision
               </p>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6">
-                Quand la vue baisse, lire son courrier, parcourir un journal, suivre une notice ou regarder un écran devient parfois difficile, fatigant, voire décourageant.
-                Pourtant, il existe aujourd'hui de nombreuses <strong>aides à la lecture pour malvoyants</strong>
-                — loupes en verre, loupes électroniques, lampes adaptées, télé-agrandisseurs ou lunettes loupes —
-                qui permettent de retrouver un accès confortable au texte et de continuer ses activités du quotidien.
+              <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-6">
+                Loupes, lampes, télé-agrandisseurs ou lunettes loupes : chaque aide répond à un besoin différent.
+                L'objectif est simple : lire plus facilement, avec moins de fatigue.
               </p>
-              <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-8">
-                Ces équipements ne remplacent pas vos lunettes médicales : ils les complètent. Ils agissent sur :
-              </p>
-              <ul className="grid sm:grid-cols-2 gap-4 mb-10">
+              <ul className="flex flex-wrap gap-x-6 gap-y-3 mb-8">
                 {[
-                  "L'agrandissement des caractères",
-                  "Le contraste du texte",
-                  "L'éclairage de la zone de lecture",
-                  "La réduction de la fatigue visuelle",
+                  "Agrandir les caractères",
+                  "Améliorer le contraste",
+                  "Réduire la fatigue visuelle",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-lg text-primary-foreground/90">
-                    <Check className="w-6 h-6 text-secondary shrink-0" />
+                  <li key={i} className="flex items-center gap-2 text-base md:text-lg text-primary-foreground">
+                    <Check className="w-5 h-5 text-secondary shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-lg text-primary-foreground/80 mb-8">
-                Chez LirElia, nous sélectionnons et expliquons ces solutions pour vous aider à choisir
-                l'outil le mieux adapté à votre vision, à vos usages et à votre quotidien.
-              </p>
-              <Button variant="secondary" size="lg" className="text-xl" asChild>
+              <Button variant="secondary" size="lg" asChild>
                 <Link to="/contact-conseil?sujet=aide-choix">
                   Être conseillé(e) pour choisir mon aide
                   <ArrowRight className="w-6 h-6" />
@@ -248,40 +236,39 @@ const AidesLecture = () => {
           </div>
         </section>
 
-        {/* PANORAMA */}
-        <section className="py-16 md:py-20">
+        {/* PANORAMA — fond teinté + cartes compactes */}
+        <section className="py-10 md:py-14 bg-gradient-to-b from-muted/40 to-background">
           <div className="container">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
                 Les grandes familles d'aides à la lecture
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Chaque famille de produits répond à des besoins concrets : lire un courrier au calme,
-                suivre un journal en fauteuil, écrire une lettre, coudre, bricoler, ou suivre une scène
-                à distance. Voici les cinq grandes catégories pour vous y retrouver simplement.
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                Chaque aide répond à un usage précis : lire quelques lignes, travailler longtemps,
+                mieux éclairer une page ou garder les mains libres.
               </p>
             </div>
 
             {/* Grille des 5 catégories en cartes résumées — palette rotative */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
               {categories.map((cat, i) => {
                 const accent = categoryAccents[i % categoryAccents.length];
                 return (
                   <Link key={cat.id} to={cat.link} className="group">
                     <Card
                       variant="elevated"
-                      className={`h-full text-center border-2 ${accent.border}`}
+                      className={`h-full text-center border-2 ${accent.border} hover:-translate-y-1 transition-transform`}
                     >
-                      <CardHeader className="items-center pb-4">
+                      <CardHeader className="items-center pb-2 p-4 sm:p-5">
                         <div
-                          className={`w-16 h-16 rounded-2xl ${accent.iconBg} flex items-center justify-center mb-2 ${accent.hoverBg} transition-colors`}
+                          className={`w-14 h-14 rounded-xl ${accent.iconBg} flex items-center justify-center mb-2 ${accent.hoverBg} transition-colors`}
                         >
-                          <cat.icon className={`w-8 h-8 ${accent.iconColor}`} />
+                          <cat.icon className={`w-7 h-7 ${accent.iconColor}`} aria-hidden="true" />
                         </div>
-                        <CardTitle className="text-xl">{cat.shortLabel}</CardTitle>
+                        <CardTitle className="text-lg md:text-xl">{cat.shortLabel}</CardTitle>
                       </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground">{cat.shortDesc}</p>
+                      <CardContent className="p-4 sm:p-5 pt-0">
+                        <p className="text-base text-muted-foreground">{cat.shortDesc}</p>
                       </CardContent>
                     </Card>
                   </Link>
@@ -297,13 +284,13 @@ const AidesLecture = () => {
                 <section
                   key={cat.id}
                   id={cat.id}
-                  className={`py-12 md:py-16 px-4 md:px-8 my-8 rounded-3xl ${
-                    isAlt ? "bg-muted/60" : "bg-card border-2 border-border shadow-card"
+                  className={`py-8 md:py-10 px-4 md:px-6 my-6 rounded-2xl ${
+                    isAlt ? "bg-muted/50" : "bg-card border-2 border-border shadow-card"
                   }`}
                 >
                   {/* Image + Icon/Title row */}
-                  <div className="flex flex-col md:flex-row gap-6 mb-8 items-start">
-                    <div className="w-full md:w-64 lg:w-72 shrink-0 rounded-2xl overflow-hidden shadow-card border-2 border-border">
+                  <div className="flex flex-col md:flex-row gap-5 mb-6 items-start">
+                    <div className="w-full md:w-56 lg:w-64 shrink-0 rounded-xl overflow-hidden shadow-card border-2 border-border">
                       <img
                         src={cat.image}
                         alt={cat.imageAlt}
@@ -312,52 +299,52 @@ const AidesLecture = () => {
                       />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className={`w-14 h-14 rounded-2xl ${iconStyle} flex items-center justify-center shrink-0 shadow-card`}>
-                          <cat.icon className="w-7 h-7" />
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className={`w-12 h-12 rounded-xl ${iconStyle} flex items-center justify-center shrink-0 shadow-card`}>
+                          <cat.icon className="w-6 h-6" aria-hidden="true" />
                         </div>
-                        <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                        <h2 className="font-serif text-xl md:text-2xl font-bold text-foreground">
                           {cat.title}
                         </h2>
                       </div>
-                      <p className="text-xl text-muted-foreground leading-relaxed">
+                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                         {cat.intro}
                       </p>
                     </div>
                   </div>
 
                   {/* Content grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
-                    <div className="bg-accent/5 border border-accent/20 rounded-xl p-5">
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                    <div className="bg-accent/5 border border-accent/20 rounded-xl p-4">
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">
                         Usages concrets
                       </h3>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2">
                         {cat.usages.map((usage, i) => (
-                          <li key={i} className="flex items-start gap-3 text-lg">
-                            <Check className="w-6 h-6 text-accent shrink-0 mt-0.5" />
+                          <li key={i} className="flex items-start gap-2 text-base">
+                            <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                             <span>{usage}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-5">
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">Pour qui ?</h3>
+                    <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-4">
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">Pour qui ?</h3>
                       <ul className="space-y-2">
                         {cat.avantages.map((av, i) => (
-                          <li key={i} className="flex items-start gap-3 text-lg text-foreground">
-                            <Check className="w-5 h-5 text-secondary shrink-0 mt-1" />
+                          <li key={i} className="flex items-start gap-2 text-base text-foreground">
+                            <Check className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                             <span>{av}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-5">
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-4">Limites</h3>
+                    <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+                      <h3 className="font-serif text-lg font-bold text-foreground mb-3">Limites</h3>
                       <ul className="space-y-2">
                         {cat.limites.map((lim, i) => (
-                          <li key={i} className="flex items-start gap-3 text-lg text-muted-foreground">
-                            <X className="w-5 h-5 text-destructive shrink-0 mt-1" />
+                          <li key={i} className="flex items-start gap-2 text-base text-muted-foreground">
+                            <X className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
                             <span>{lim}</span>
                           </li>
                         ))}
@@ -379,32 +366,33 @@ const AidesLecture = () => {
 
         <ComparisonSection />
 
-        {/* ACCOMPAGNEMENT FINAL */}
-        <section className="py-20 bg-muted">
+        {/* ACCOMPAGNEMENT FINAL — pleine largeur, fond bleu profond */}
+        <section className="py-14 md:py-20 bg-primary text-primary-foreground">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
                 Une aide à la lecture efficace commence par un bon conseil
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                Il n'existe pas une aide à la lecture universelle, mais une <strong>combinaison adaptée</strong> à
-                chaque personne, à chaque pathologie visuelle et à chaque usage du quotidien.
+              <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-4">
+                Chaque personne malvoyante a des besoins différents. Avant de choisir une loupe, une lampe
+                ou un téléagrandisseur, il est souvent utile d'être conseillé selon votre vision,
+                vos habitudes et vos usages réels.
               </p>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-10">
-                Chez LirElia, nous privilégions l'évaluation des besoins réels, les essais concrets,
+              <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-8">
+                Chez LirElia, nous privilégions l'évaluation des besoins réels, les essais concrets
                 et un accompagnement humain et progressif.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="default" size="lg" className="text-xl" asChild>
+                <Button variant="secondary" size="lg" asChild>
                   <Link to="/contact-conseil?sujet=aide-choix">
-                    Faire le point sur mes besoins de lecture
+                    Demander un conseil personnalisé
                     <ArrowRight className="w-6 h-6" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <a href={CALENDLY_URL}>
-                    RDV pour un appel
-                  </a>
+                <Button variant="heroOutline" size="lg" asChild>
+                  <Link to="/bilans-bassevision">
+                    Découvrir les bilans basse vision
+                  </Link>
                 </Button>
               </div>
             </div>
