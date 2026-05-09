@@ -31,12 +31,12 @@ const products = [
     shopLabel: "Voir la lampe EIRA",
   },
   {
-    name: "Lampe sur pied de lecture",
+    name: "Lampadaire de lecture",
     slug: "lampe-sur-pied",
     image: lampeSurPied,
     imageAlt: "Illustration aquarelle d'un lampadaire sur pied à côté d'un fauteuil",
     description:
-      "Lampadaire sur pied avec tête orientable, conçu pour éclairer une zone de lecture depuis le fauteuil. Position haute pour un éclairage ciblé sans ombre portée.",
+      "Lampadaire sur pied avec tête orientable, conçu pour éclairer une zone de lecture depuis le fauteuil. Position haute pour un éclairage ciblé sans ombre portée. Découvrez notamment le lampadaire SOLVEIG, léger, à hauteur réglable et avec télécommande.",
     features: [
       "Hauteur ajustable (1,20 m à 1,70 m)",
       "Tête orientable à 360°",
@@ -50,6 +50,8 @@ const products = [
       "Salon ou chambre avec un éclairage général insuffisant",
     ],
     priceRange: "À partir de 80 €",
+    shopLink: "/boutique/lampadaire-solveig",
+    shopLabel: "Voir le lampadaire SOLVEIG",
   },
   {
     name: "Lampe-loupe à pince",
