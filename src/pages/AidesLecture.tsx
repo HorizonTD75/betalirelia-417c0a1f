@@ -236,40 +236,39 @@ const AidesLecture = () => {
           </div>
         </section>
 
-        {/* PANORAMA */}
-        <section className="py-16 md:py-20">
+        {/* PANORAMA — fond teinté + cartes compactes */}
+        <section className="py-10 md:py-14 bg-gradient-to-b from-muted/40 to-background">
           <div className="container">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
                 Les grandes familles d'aides à la lecture
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Chaque famille de produits répond à des besoins concrets : lire un courrier au calme,
-                suivre un journal en fauteuil, écrire une lettre, coudre, bricoler, ou suivre une scène
-                à distance. Voici les cinq grandes catégories pour vous y retrouver simplement.
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                Chaque aide répond à un usage précis : lire quelques lignes, travailler longtemps,
+                mieux éclairer une page ou garder les mains libres.
               </p>
             </div>
 
             {/* Grille des 5 catégories en cartes résumées — palette rotative */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
               {categories.map((cat, i) => {
                 const accent = categoryAccents[i % categoryAccents.length];
                 return (
-                  <Link key={cat.id} to={cat.link} className="group">
+                  <Link key={cat.id} to={`#${cat.id}`} className="group">
                     <Card
                       variant="elevated"
-                      className={`h-full text-center border-2 ${accent.border}`}
+                      className={`h-full text-center border-2 ${accent.border} hover:-translate-y-1 transition-transform`}
                     >
-                      <CardHeader className="items-center pb-4">
+                      <CardHeader className="items-center pb-2 p-4 sm:p-5">
                         <div
-                          className={`w-16 h-16 rounded-2xl ${accent.iconBg} flex items-center justify-center mb-2 ${accent.hoverBg} transition-colors`}
+                          className={`w-14 h-14 rounded-xl ${accent.iconBg} flex items-center justify-center mb-2 ${accent.hoverBg} transition-colors`}
                         >
-                          <cat.icon className={`w-8 h-8 ${accent.iconColor}`} />
+                          <cat.icon className={`w-7 h-7 ${accent.iconColor}`} aria-hidden="true" />
                         </div>
-                        <CardTitle className="text-xl">{cat.shortLabel}</CardTitle>
+                        <CardTitle className="text-lg md:text-xl">{cat.shortLabel}</CardTitle>
                       </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground">{cat.shortDesc}</p>
+                      <CardContent className="p-4 sm:p-5 pt-0">
+                        <p className="text-base text-muted-foreground">{cat.shortDesc}</p>
                       </CardContent>
                     </Card>
                   </Link>
