@@ -26,6 +26,7 @@ type Product = {
   usage: string;
   price?: string;
   image: string;
+  imageAlt?: string;
   href: string;
 };
 
