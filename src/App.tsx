@@ -59,6 +59,7 @@ const ClipLunettesLoupe = lazy(() => import("./pages/products/ClipLunettesLoupe"
 const LampeEira = lazy(() => import("./pages/products/LampeEira"));
 const LampeAstrid = lazy(() => import("./pages/products/LampeAstrid"));
 const LampadaireSolveig = lazy(() => import("./pages/products/LampadaireSolveig"));
+const LoupeElectroniqueClover5 = lazy(() => import("./pages/products/LoupeElectroniqueClover5"));
 const QuiSommesNous = lazy(() => import("./pages/QuiSommesNous"));
 const MaladiesHereditaires = lazy(() => import("./pages/maladies/MaladiesHereditaires"));
 const RetinitePigmentaireHereditaire = lazy(() => import("./pages/maladies/hereditaires/RetinitePigmentaire"));
