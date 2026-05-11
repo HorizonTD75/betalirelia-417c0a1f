@@ -97,7 +97,7 @@ const ProductCard = ({ product }: { product: Product }) => (
     <div className="aspect-[4/3] bg-muted overflow-hidden">
       <img
         src={product.image}
-        alt={`Photo du produit ${product.name}`}
+        alt={product.imageAlt ?? `Photo du produit ${product.name}`}
         className="w-full h-full object-cover transition-transform group-hover:scale-105"
         loading="lazy"
         width={400}
