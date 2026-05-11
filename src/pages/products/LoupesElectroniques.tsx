@@ -1,7 +1,7 @@
 import { Monitor } from "lucide-react";
 import CategoryPageLayout from "@/components/products/CategoryPageLayout";
 import loupePoche from "@/assets/products/loupe-electronique-poche.jpg";
-import loupePortable from "@/assets/products/loupe-electronique-portable.jpg";
+import loupePortable from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
 import loupeBureau from "@/assets/products/loupe-electronique-bureau.jpg";
 import heroImage from "@/assets/loupe-electronique.jpg";
 
