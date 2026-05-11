@@ -14,6 +14,8 @@ import clipImg from "@/assets/products/clip-lunette-loupe.jpg";
 import alvaImg from "@/assets/products/lunette-loupe-frontale-alva-sacoche.jpeg";
 import lampeEiraImg from "@/assets/products/lampe-eira-blanche-livre.jpg";
 import lampeAstridImg from "@/assets/products/lampe-loupe-astrid-noire.jpg";
+import lampadaireSolveigImg from "@/assets/products/lampadaire-solveig-noir.jpg";
+import clover5Img from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
