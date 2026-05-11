@@ -197,14 +197,14 @@ const AidesLecture = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
           </div>
           <div className="container relative z-10">
-            <div className="max-w-3xl">
+            <div className="max-w-5xl">
               <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
                 Aides à la lecture <span className="text-secondary">pour malvoyants</span>
               </h1>
               <p className="font-serif text-xl md:text-2xl text-primary-foreground/90 mb-5">
                 Retrouver le confort de lire, même en cas de basse vision
               </p>
-              <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-6">
+              <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-6 max-w-3xl">
                 Loupes, lampes, télé-agrandisseurs ou lunettes loupes : chaque aide répond à un besoin différent.
                 L'objectif est simple : lire plus facilement, avec moins de fatigue.
               </p>

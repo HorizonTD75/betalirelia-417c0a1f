@@ -1,7 +1,7 @@
 import { Monitor } from "lucide-react";
 import CategoryPageLayout from "@/components/products/CategoryPageLayout";
 import loupePoche from "@/assets/products/loupe-electronique-poche.jpg";
-import loupePortable from "@/assets/products/loupe-electronique-portable.jpg";
+import loupePortable from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
 import loupeBureau from "@/assets/products/loupe-electronique-bureau.jpg";
 import heroImage from "@/assets/loupe-electronique.jpg";
 
@@ -35,9 +35,9 @@ const products = [
     name: "Loupe électronique transportable",
     slug: "loupe-electronique-portable",
     image: loupePortable,
-    imageAlt: "Illustration aquarelle d'une loupe électronique transportable de 7 pouces",
+    imageAlt: "loupe électronique de lecture avec poignée CLOVER 5",
     description:
-      "Loupe numérique compacte avec écran intégré de 5 à 7 pouces. Zoom continu, multiples modes de contraste, fonctions avancées et autonomie de plusieurs heures. Se glisse dans un sac.",
+      "Loupe numérique compacte avec écran intégré de 5 à 7 pouces. Zoom continu, multiples modes de contraste, fonctions avancées et autonomie de plusieurs heures. Se glisse dans un sac. Découvrez notamment la loupe électronique CLOVER 5, légère, transportable et à grossissement 4x à 20x.",
     features: [
       "Zoom continu de ×2 à ×20",
       "Modes de contraste : blanc/noir, jaune/noir, inversé, etc.",
@@ -51,6 +51,8 @@ const products = [
       "Personnes ayant besoin de grossissements élevés",
     ],
     priceRange: "À partir de 250 €",
+    shopLink: "/boutique/loupe-electronique-clover-5",
+    shopLabel: "Voir la loupe électronique CLOVER 5",
   },
   {
     name: "Loupe électronique de bureau",

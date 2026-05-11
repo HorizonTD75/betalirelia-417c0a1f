@@ -59,6 +59,7 @@ const ClipLunettesLoupe = lazy(() => import("./pages/products/ClipLunettesLoupe"
 const LampeEira = lazy(() => import("./pages/products/LampeEira"));
 const LampeAstrid = lazy(() => import("./pages/products/LampeAstrid"));
 const LampadaireSolveig = lazy(() => import("./pages/products/LampadaireSolveig"));
+const LoupeElectroniqueClover5 = lazy(() => import("./pages/products/LoupeElectroniqueClover5"));
 const QuiSommesNous = lazy(() => import("./pages/QuiSommesNous"));
 const MaladiesHereditaires = lazy(() => import("./pages/maladies/MaladiesHereditaires"));
 const RetinitePigmentaireHereditaire = lazy(() => import("./pages/maladies/hereditaires/RetinitePigmentaire"));
@@ -137,6 +138,7 @@ const App = () => (
             <Route path="/boutique/lampe-basse-vision-eira" element={<LampeEira />} />
             <Route path="/boutique/lampe-loupe-astrid" element={<LampeAstrid />} />
             <Route path="/boutique/lampadaire-solveig" element={<LampadaireSolveig />} />
+            <Route path="/boutique/loupe-electronique-clover-5" element={<LoupeElectroniqueClover5 />} />
             <Route path="/catalogue-aides-basse-vision" element={<CatalogueAides />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
