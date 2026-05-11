@@ -65,6 +65,7 @@ const categories: Category[] = [
     usage: "Pour agrandir fortement les textes, améliorer le contraste et retrouver du confort de lecture.",
     products: [
       { name: "Loupe Amélie", usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.", image: loupeAmelieImg, href: "/boutique/loupe-amelie" },
+      { name: "Loupe électronique CLOVER 5", usage: "Une loupe électronique transportable légère et simple d'utilisation — conçue pour les personnes malvoyantes atteintes de DMLA, glaucome ou basse vision, utilisable partout au quotidien.", price: "539 €", image: clover5Img, imageAlt: "loupe électronique de lecture avec poignée CLOVER 5", href: "/boutique/loupe-electronique-clover-5" },
     ],
   },
   {
@@ -74,6 +75,7 @@ const categories: Category[] = [
     products: [
       { name: "Lampe basse vision EIRA", usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.", price: "178 €", image: lampeEiraImg, href: "/boutique/lampe-basse-vision-eira" },
       { name: "Lampe loupe ASTRID", usage: "Lampe loupe à pince, lentille 10,5 cm, x3, LED 6000 lux, 3 températures.", price: "148 €", image: lampeAstridImg, href: "/boutique/lampe-loupe-astrid" },
+      { name: "Lampadaire SOLVEIG", usage: "Lampadaire de lecture léger, hauteur réglable, 5 000 lux, 3 températures et télécommande.", price: "179 €", image: lampadaireSolveigImg, imageAlt: "Lampadaire SOLVEIG noir pour lecture basse vision", href: "/boutique/lampadaire-solveig" },
     ],
   },
   { id: "tele-agrandisseurs", title: "Télé-agrandisseurs", usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.", products: [] },
