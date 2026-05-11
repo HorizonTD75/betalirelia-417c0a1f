@@ -204,7 +204,7 @@ const AidesLecture = () => {
               <p className="font-serif text-xl md:text-2xl text-primary-foreground/90 mb-5">
                 Retrouver le confort de lire, même en cas de basse vision
               </p>
-              <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-6">
+              <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-6 max-w-3xl">
                 Loupes, lampes, télé-agrandisseurs ou lunettes loupes : chaque aide répond à un besoin différent.
                 L'objectif est simple : lire plus facilement, avec moins de fatigue.
               </p>
