@@ -453,6 +453,10 @@ const LoupeAmelie = () => {
           </>
         )}
 
+        <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto">
+          <ProductTrustGrid />
+        </div></div></section>
+
         {/* Back CTA */}
         <section className="py-16 bg-muted">
           <div className="container">
