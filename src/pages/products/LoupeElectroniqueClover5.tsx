@@ -210,12 +210,12 @@ const LoupeElectroniqueClover5 = () => {
               <div key={block.title} className="bg-card rounded-2xl border-2 border-primary/30 p-6 md:p-8">
                 <h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>
                 {block.paragraphs.map((p) => (
-                  <p key={p} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{p}</p>
+                  <p key={p} className="text-base md:text-lg text-foreground leading-relaxed mb-4 last:mb-0">{p}</p>
                 ))}
                 {block.items && (
                   <ul className="space-y-3 mt-4">
                     {block.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed">
+                      <li key={item} className="flex items-start gap-3 text-base md:text-lg text-foreground leading-relaxed">
                         <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
                         <span>{item}</span>
                       </li>
@@ -232,8 +232,8 @@ const LoupeElectroniqueClover5 = () => {
           <div className="bg-card rounded-2xl border-2 border-primary/30 overflow-hidden">
             {specs.map((row) => (
               <div key={row.label} className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] border-b border-border last:border-b-0">
-                <div className="bg-muted px-5 py-4 font-bold text-foreground text-lg">{row.label}</div>
-                <div className="px-5 py-4 text-lg text-foreground leading-relaxed">{row.value}</div>
+                <div className="bg-muted px-5 py-4 font-bold text-foreground text-base md:text-lg">{row.label}</div>
+                <div className="px-5 py-4 text-base md:text-lg text-foreground leading-relaxed">{row.value}</div>
               </div>
             ))}
           </div>
@@ -243,7 +243,7 @@ const LoupeElectroniqueClover5 = () => {
           <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Points clés</h2>
           <Card variant="elevated" className="border-l-8 border-l-secondary"><CardContent className="p-6 md:p-8"><ul className="space-y-3">
             {keyPoints.map((point) => (
-              <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed">
+              <li key={point} className="flex items-start gap-3 text-base md:text-lg text-foreground leading-relaxed">
                 <Lightbulb className="w-5 h-5 text-secondary shrink-0 mt-1" />
                 <span>{point}</span>
               </li>
