@@ -244,7 +244,7 @@ const LoupeAmelie = () => {
 
               {/* Key selling points */}
               <div className="mb-6">
-                <p className="text-xl text-foreground leading-relaxed mb-4">
+                <p className="text-base md:text-lg text-foreground leading-relaxed mb-3">
                   <strong>Idéale pour les personnes âgées souffrant de DMLA, glaucome, ou cataracte</strong>, la Loupe de lecture Amélie facilite grandement et simplement la lecture.
                 </p>
                 <ul className="space-y-2">
@@ -254,7 +254,7 @@ const LoupeAmelie = () => {
                     "S'utilise tenue à la main par sa poignée comme une loupe en verre.",
                     "Éclairage et batterie rechargeable intégrés.",
                   ].map((point, i) => (
-                    <li key={i} className="flex items-start gap-3 text-xl text-foreground leading-relaxed">
+                    <li key={i} className="flex items-start gap-3 text-base md:text-lg text-foreground leading-relaxed">
                       <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
                       <span>{point}</span>
                     </li>
@@ -334,7 +334,7 @@ const LoupeAmelie = () => {
                     {descSections.descriptionBlocks[0]?.title === "" && (
                       <div
                         className="prose prose-lg max-w-none mb-10
-                          prose-p:text-foreground prose-p:leading-loose prose-p:text-xl prose-p:mb-4
+                          prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4
                           prose-strong:text-foreground"
                         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.descriptionBlocks[0].content) }}
                       />
@@ -350,10 +350,10 @@ const LoupeAmelie = () => {
                               {block.title}
                             </h3>
                             <div
-                              className="prose prose-xl max-w-none
-                                prose-p:text-foreground prose-p:leading-loose prose-p:text-xl prose-p:mb-4 prose-p:last:mb-0
+                              className="prose prose-lg max-w-none
+                                prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4 prose-p:last:mb-0
                                 prose-strong:text-foreground
-                                prose-li:text-foreground prose-li:text-xl prose-li:leading-relaxed"
+                                prose-li:text-foreground prose-li:text-base md:prose-li:text-lg prose-li:leading-relaxed"
                               dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.content) }}
                             />
                           </div>
@@ -390,11 +390,11 @@ const LoupeAmelie = () => {
                     <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Caractéristiques techniques</h2>
                     <div className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
                       <div
-                        className="prose prose-xl max-w-none text-foreground
+                        className="prose prose-lg max-w-none text-foreground
                           prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-6 prose-headings:mb-3
                           prose-h2:hidden prose-h3:text-xl prose-h3:text-primary
-                          prose-p:text-foreground prose-p:leading-loose prose-p:text-xl prose-p:mb-4
-                          prose-li:text-foreground prose-li:text-xl prose-li:leading-relaxed prose-li:marker:text-primary
+                          prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4
+                          prose-li:text-foreground prose-li:text-base md:prose-li:text-lg prose-li:leading-relaxed prose-li:marker:text-primary
                           prose-ul:space-y-3 prose-ol:space-y-3
                           prose-strong:text-foreground prose-strong:font-bold"
                         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.specs.replace(/<h2[^>]*>.*?<\/h2>/i, "")) }}
@@ -413,11 +413,11 @@ const LoupeAmelie = () => {
                     <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Pourquoi choisir cette loupe ?</h2>
                     <div className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
                       <div
-                        className="prose prose-xl max-w-none text-foreground
+                        className="prose prose-lg max-w-none text-foreground
                           prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-6 prose-headings:mb-3
                           prose-h2:hidden prose-h3:text-xl prose-h3:text-accent
-                          prose-p:text-foreground prose-p:leading-loose prose-p:text-xl prose-p:mb-4
-                          prose-li:text-foreground prose-li:text-xl prose-li:leading-relaxed prose-li:marker:text-accent
+                          prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4
+                          prose-li:text-foreground prose-li:text-base md:prose-li:text-lg prose-li:leading-relaxed prose-li:marker:text-accent
                           prose-ul:space-y-3 prose-ol:space-y-3
                           prose-strong:text-foreground"
                         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.strengths.replace(/<h2[^>]*>.*?<\/h2>/i, "")) }}
@@ -440,7 +440,7 @@ const LoupeAmelie = () => {
                           <AccordionTrigger className="text-xl font-bold text-foreground text-left py-5 hover:no-underline">
                             {item.q}
                           </AccordionTrigger>
-                          <AccordionContent className="text-xl text-foreground leading-relaxed pb-5">
+                          <AccordionContent className="text-base md:text-lg text-foreground leading-relaxed pb-5">
                             {item.a}
                           </AccordionContent>
                         </AccordionItem>
@@ -453,6 +453,10 @@ const LoupeAmelie = () => {
           </>
         )}
 
+        <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto">
+          <ProductTrustGrid />
+        </div></div></section>
+
         {/* Back CTA */}
         <section className="py-16 bg-muted">
           <div className="container">
@@ -460,7 +464,7 @@ const LoupeAmelie = () => {
               <h2 className="font-serif text-3xl font-bold text-foreground mb-6">
                 Besoin d'un conseil personnalisé ?
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit et sans engagement.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

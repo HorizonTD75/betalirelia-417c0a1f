@@ -16,6 +16,7 @@ import lampeEiraImg from "@/assets/products/lampe-eira-blanche-livre.jpg";
 import lampeAstridImg from "@/assets/products/lampe-loupe-astrid-noire.jpg";
 import lampadaireSolveigImg from "@/assets/products/lampadaire-solveig-noir.jpg";
 import clover5Img from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
+import oskarImg from "@/assets/products/horloge-reveil-gros-chiffres-oskar.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
@@ -38,7 +39,7 @@ type Category = {
   emptyMessage?: string;
 };
 
-const categories: Category[] = [
+const rawCategories: Category[] = [
   {
     id: "lunettes-loupes",
     title: "Lunettes loupes",
@@ -64,7 +65,7 @@ const categories: Category[] = [
     title: "Loupes électroniques",
     usage: "Pour agrandir fortement les textes, améliorer le contraste et retrouver du confort de lecture.",
     products: [
-      { name: "Loupe Amélie", usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.", image: loupeAmelieImg, href: "/boutique/loupe-amelie" },
+      { name: "Loupe Amélie", usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.", price: "188 €", image: loupeAmelieImg, href: "/boutique/loupe-amelie" },
       { name: "Loupe électronique CLOVER 5", usage: "Une loupe électronique transportable légère et simple d'utilisation — conçue pour les personnes malvoyantes atteintes de DMLA, glaucome ou basse vision, utilisable partout au quotidien.", price: "539 €", image: clover5Img, imageAlt: "loupe électronique de lecture avec poignée CLOVER 5", href: "/boutique/loupe-electronique-clover-5" },
     ],
   },
@@ -79,8 +80,28 @@ const categories: Category[] = [
     ],
   },
   { id: "tele-agrandisseurs", title: "Télé-agrandisseurs", usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.", products: [] },
-  { id: "accessoires", title: "Accessoires utiles", usage: "Petits équipements et compléments pour faciliter la lecture, l'organisation et le confort visuel.", products: [] },
+  {
+    id: "accessoires",
+    title: "Accessoires utiles",
+    usage: "Petits équipements et compléments pour faciliter la lecture, l'organisation et le confort visuel.",
+    products: [
+      { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "une horloge avec de gros caractères lumineux très visibles", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
+    ],
+  },
 ];
+
+// Parse price like "188 €" or "24,50 €" into a number for sorting; missing prices go last.
+const parsePrice = (p?: string): number => {
+  if (!p) return Number.POSITIVE_INFINITY;
+  const cleaned = p.replace(/[^0-9,.\s]/g, "").replace(/\s/g, "").replace(",", ".");
+  const n = parseFloat(cleaned);
+  return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+};
+
+const categories: Category[] = rawCategories.map((c) => ({
+  ...c,
+  products: [...c.products].sort((a, b) => parsePrice(a.price) - parsePrice(b.price)),
+}));
 
 const CARD_WIDTH = "w-[78vw] sm:w-[320px] md:w-[340px] lg:w-[360px]";
 
@@ -108,7 +129,7 @@ const ProductCard = ({ product }: { product: Product }) => (
     </div>
     <CardContent className="p-4 flex flex-col flex-1">
       <h3 className="font-serif text-lg md:text-xl font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{product.name}</h3>
-      <p className="text-sm md:text-base text-muted-foreground leading-snug mb-4 flex-1">{product.usage}</p>
+      <p className="text-sm md:text-base text-muted-foreground leading-snug mb-4 flex-1 line-clamp-3">{product.usage}</p>
       <div className="flex items-center justify-between gap-3 flex-wrap">
         {product.price ? (
           <p className="text-lg md:text-xl font-bold text-primary m-0">{product.price}</p>

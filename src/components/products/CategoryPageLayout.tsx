@@ -68,7 +68,7 @@ const CategoryPageLayout = ({
       <Header />
       <main id="main-content">
         {/* HERO */}
-        <section className="relative py-20 md:py-28 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={heroImage}
@@ -83,29 +83,29 @@ const CategoryPageLayout = ({
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative z-10">
-            <div className="max-w-4xl">
+            <div className="max-w-5xl">
               <Link
                 to="/aides-lecture-bassevision"
-                className="inline-flex items-center gap-2 text-lg text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors"
+                className="inline-flex items-center gap-2 text-base text-primary-foreground/80 hover:text-primary-foreground mb-5 transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Retour aux aides à la lecture
               </Link>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-secondary text-secondary-foreground flex items-center justify-center">
-                  <Icon className="w-8 h-8" />
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-secondary text-secondary-foreground flex items-center justify-center shrink-0">
+                  <Icon className="w-7 h-7" />
                 </div>
                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
                   <span className="text-secondary">{title}</span>
                 </h1>
               </div>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-6 font-semibold">
+              <p className="font-serif text-xl md:text-2xl text-primary-foreground/90 mb-5 font-semibold">
                 {subtitle}
               </p>
-              <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-6 max-w-3xl">
                 {intro}
               </p>
-              <Button variant="secondary" size="lg" className="text-xl" asChild>
+              <Button variant="secondary" size="lg" asChild>
                 <Link to={`/contact-conseil?produit=${encodeURIComponent(subject)}`}>
                   {heroCtaText}
                   <ArrowRight className="w-6 h-6" />

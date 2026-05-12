@@ -189,17 +189,17 @@ const VivreBasseVision = () => {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-primary text-primary-foreground py-20 pb-32">
+        <section className="relative overflow-hidden bg-primary text-primary-foreground py-12 md:py-16 pb-24">
           <div className="absolute inset-0">
-            <img src={vivreHeroImage} alt="Vivre au quotidien avec une basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+            <img src={vivreHeroImage} alt="Vivre au quotidien avec une basse vision" className="w-full h-full object-cover opacity-15" loading="eager" decoding="async" width={1440} height={500} />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
           </div>
-          <div className="container relative">
-            <div className="max-w-4xl">
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Vivre au quotidien avec une <span className="text-secondary">basse vision</span>
-                </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
+          <div className="container relative z-10">
+            <div className="max-w-5xl">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                Vivre au quotidien avec une <span className="text-secondary">basse vision</span>
+              </h1>
+              <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-6 max-w-3xl">
                 Des solutions concrètes et des conseils pratiques pour maintenir votre autonomie et votre qualité de vie, même lorsque la malvoyance touche la lecture, les déplacements ou les gestes du quotidien.
               </p>
               <Button variant="secondary" size="lg" asChild>
