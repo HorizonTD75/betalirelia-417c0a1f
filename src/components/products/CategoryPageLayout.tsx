@@ -68,7 +68,7 @@ const CategoryPageLayout = ({
       <Header />
       <main id="main-content">
         {/* HERO */}
-        <section className="relative py-20 md:py-28 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={heroImage}
