@@ -129,7 +129,7 @@ const ProductCard = ({ product }: { product: Product }) => (
     </div>
     <CardContent className="p-4 flex flex-col flex-1">
       <h3 className="font-serif text-lg md:text-xl font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{product.name}</h3>
-      <p className="text-sm md:text-base text-muted-foreground leading-snug mb-4 flex-1">{product.usage}</p>
+      <p className="text-sm md:text-base text-muted-foreground leading-snug mb-4 flex-1 line-clamp-3">{product.usage}</p>
       <div className="flex items-center justify-between gap-3 flex-wrap">
         {product.price ? (
           <p className="text-lg md:text-xl font-bold text-primary m-0">{product.price}</p>
