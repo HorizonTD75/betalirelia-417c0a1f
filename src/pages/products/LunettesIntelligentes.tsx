@@ -12,7 +12,7 @@ const LunettesIntelligentes = () => {
         title="Lunettes intelligentes basse vision | Lirelia"
         description="Découvrez prochainement les lunettes intelligentes pour basse vision : usages, limites, conseils et solutions sélectionnées par Lirelia."
         canonicalPath="/aides-lecture-bassevision/lunettes-intelligentes"
-        noindex
+        
       />
       <Header />
       <main id="main-content">
