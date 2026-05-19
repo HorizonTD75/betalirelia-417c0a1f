@@ -414,6 +414,15 @@ const AidesLecture = () => {
                           </ul>
                         </div>
                       </div>
+
+                      {/* Note éditoriale */}
+                      {(cat as { editorialNote?: string }).editorialNote && (
+                        <div className="mt-4 p-4 rounded-xl bg-primary/5 border-l-4 border-primary">
+                          <p className="text-sm md:text-base text-foreground/90 leading-relaxed italic">
+                            {(cat as { editorialNote?: string }).editorialNote}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </section>
                 );
