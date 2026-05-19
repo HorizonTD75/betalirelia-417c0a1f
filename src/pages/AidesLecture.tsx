@@ -12,6 +12,7 @@ import loupeElectronique from "@/assets/loupe-electronique.jpg";
 import lampeLecture from "@/assets/lampe-lecture.jpg";
 import teleAgrandisseur from "@/assets/tele-agrandisseur.jpg";
 import lunettesLoupes from "@/assets/lunettes-loupes.jpg";
+import lunettesIntelligentes from "@/assets/lunettes-intelligentes.jpg";
 
 const CALENDLY_URL = "https://calendly.com/lirelia/bilan_basse_vision";
 
