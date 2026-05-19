@@ -61,6 +61,8 @@ const LampeAstrid = lazy(() => import("./pages/products/LampeAstrid"));
 const LampadaireSolveig = lazy(() => import("./pages/products/LampadaireSolveig"));
 const LoupeElectroniqueClover5 = lazy(() => import("./pages/products/LoupeElectroniqueClover5"));
 const HorlogeReveilOskar = lazy(() => import("./pages/products/HorlogeReveilOskar"));
+const ReveilGrosChiffresIvar = lazy(() => import("./pages/products/ReveilGrosChiffresIvar"));
+const LunettesIntelligentes = lazy(() => import("./pages/products/LunettesIntelligentes"));
 const QuiSommesNous = lazy(() => import("./pages/QuiSommesNous"));
 const MaladiesHereditaires = lazy(() => import("./pages/maladies/MaladiesHereditaires"));
 const RetinitePigmentaireHereditaire = lazy(() => import("./pages/maladies/hereditaires/RetinitePigmentaire"));
@@ -130,6 +132,7 @@ const App = () => (
             <Route path="/aides-lecture-bassevision/lampes" element={<Lampes />} />
             <Route path="/aides-lecture-bassevision/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
             <Route path="/aides-lecture-bassevision/lunettes-loupes" element={<LunettesLoupes />} />
+            <Route path="/aides-lecture-bassevision/lunettes-intelligentes" element={<LunettesIntelligentes />} />
             <Route path="/boutique/loupe-amelie" element={<LoupeAmelie />} />
             <Route path="/boutique/lunettes-loupe-focus" element={<LunettesLoupeFocus />} />
             <Route path="/boutique/loupe-max-tv" element={<LoupeMaxTv />} />
@@ -141,6 +144,7 @@ const App = () => (
             <Route path="/boutique/lampadaire-solveig" element={<LampadaireSolveig />} />
             <Route path="/boutique/loupe-electronique-clover-5" element={<LoupeElectroniqueClover5 />} />
             <Route path="/boutique/horloge-reveil-gros-chiffres-oskar" element={<HorlogeReveilOskar />} />
+            <Route path="/boutique/reveil-gros-chiffres-ivar" element={<ReveilGrosChiffresIvar />} />
             <Route path="/catalogue-aides-basse-vision" element={<CatalogueAides />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />

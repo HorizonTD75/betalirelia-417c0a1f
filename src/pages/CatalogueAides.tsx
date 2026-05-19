@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import lunettesFocus from "@/assets/products/lunettes-loupes-focus_DMLA.jpg";
@@ -17,6 +16,7 @@ import lampeAstridImg from "@/assets/products/lampe-loupe-astrid-noire.jpg";
 import lampadaireSolveigImg from "@/assets/products/lampadaire-solveig-noir.jpg";
 import clover5Img from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
 import oskarImg from "@/assets/products/horloge-reveil-gros-chiffres-oskar.jpg";
+import ivarImg from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
@@ -86,6 +86,7 @@ const rawCategories: Category[] = [
     usage: "Petits équipements et compléments pour faciliter la lecture, l'organisation et le confort visuel.",
     products: [
       { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "une horloge avec de gros caractères lumineux très visibles", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
+      { name: "Réveil gros chiffres IVAR", usage: "Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.", price: "26,40 €", image: ivarImg, imageAlt: "un réveil discret avec de gros caractères lumineux très visibles", href: "/boutique/reveil-gros-chiffres-ivar" },
     ],
   },
 ];
@@ -103,16 +104,14 @@ const categories: Category[] = rawCategories.map((c) => ({
   products: [...c.products].sort((a, b) => parsePrice(a.price) - parsePrice(b.price)),
 }));
 
-const CARD_WIDTH = "w-[78vw] sm:w-[320px] md:w-[340px] lg:w-[360px]";
-
 const ProductCard = ({ product }: { product: Product }) => (
   <Card
     variant="elevated"
-    className={`${CARD_WIDTH} shrink-0 overflow-hidden flex flex-col group relative transition-all hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-primary`}
+    className="h-full overflow-hidden flex flex-col group relative transition-all hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-primary"
   >
     <Link
       to={product.href}
-      className="absolute inset-0 z-10 focus:outline-none"
+      className="absolute inset-0 z-10 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 rounded-2xl"
       aria-label={`Voir le produit ${product.name}`}
     >
       <span className="sr-only">{product.name}</span>
@@ -129,8 +128,8 @@ const ProductCard = ({ product }: { product: Product }) => (
     </div>
     <CardContent className="p-4 flex flex-col flex-1">
       <h3 className="font-serif text-lg md:text-xl font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{product.name}</h3>
-      <p className="text-sm md:text-base text-muted-foreground leading-snug mb-4 flex-1 line-clamp-3">{product.usage}</p>
-      <div className="flex items-center justify-between gap-3 flex-wrap">
+      <p className="text-base text-muted-foreground leading-snug mb-4 flex-1 line-clamp-3">{product.usage}</p>
+      <div className="flex items-center justify-between gap-3 flex-wrap mt-auto">
         {product.price ? (
           <p className="text-lg md:text-xl font-bold text-primary m-0">{product.price}</p>
         ) : <span />}
@@ -146,13 +145,13 @@ const ProductCard = ({ product }: { product: Product }) => (
 );
 
 const EmptyCard = ({ message }: { message?: string }) => (
-  <Card variant="outline" className={`${CARD_WIDTH} shrink-0 border-dashed flex flex-col`}>
+  <Card variant="outline" className="h-full border-dashed flex flex-col">
     <CardContent className="p-5 flex flex-col items-center text-center h-full justify-center min-h-[280px]">
       <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-3">
         <Sparkles className="w-6 h-6 text-secondary-foreground" />
       </div>
       <h3 className="font-serif text-lg font-bold text-foreground mb-2">Produits bientôt disponibles</h3>
-      <p className="text-sm md:text-base text-muted-foreground leading-snug mb-4">
+      <p className="text-base text-muted-foreground leading-snug mb-4">
         {message ?? "Cette catégorie sera complétée prochainement avec une sélection de produits testés et utiles pour la basse vision."}
       </p>
       <Button asChild variant="outline" size="sm">
@@ -162,76 +161,19 @@ const EmptyCard = ({ message }: { message?: string }) => (
   </Card>
 );
 
-const CategoryCarousel = ({ cat }: { cat: Category }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canLeft, setCanLeft] = useState(false);
-  const [canRight, setCanRight] = useState(false);
-
-  const updateArrows = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setCanLeft(el.scrollLeft > 4);
-    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
-  };
-
-  useEffect(() => {
-    updateArrows();
-    const el = scrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", updateArrows, { passive: true });
-    window.addEventListener("resize", updateArrows);
-    return () => {
-      el.removeEventListener("scroll", updateArrows);
-      window.removeEventListener("resize", updateArrows);
-    };
-  }, []);
-
-  const scrollBy = (dir: 1 | -1) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.scrollBy({ left: dir * Math.round(el.clientWidth * 0.8), behavior: "smooth" });
-  };
-
-  return (
-    <div className="relative">
-      {canLeft && (
-        <button
-          type="button"
-          onClick={() => scrollBy(-1)}
-          aria-label="Faire défiler vers la gauche"
-          className="hidden sm:flex absolute left-1 top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/30"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-      )}
-      {canRight && (
-        <button
-          type="button"
-          onClick={() => scrollBy(1)}
-          aria-label="Faire défiler vers la droite"
-          className="hidden sm:flex absolute right-1 top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/30"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-      )}
-      <div
-        ref={scrollRef}
-        className="-mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 overflow-x-auto pb-3 scroll-smooth snap-x"
-      >
-        <div className="flex gap-4 md:gap-5 min-w-min pr-8">
-          {cat.products.length > 0 ? (
-            cat.products.map((p) => (
-              <div key={p.name} className="snap-start">
-                <ProductCard product={p} />
-              </div>
-            ))
-          ) : (
-            <div className="snap-start">
-              <EmptyCard message={cat.emptyMessage} />
-            </div>
-          )}
-        </div>
+const CategoryGrid = ({ cat }: { cat: Category }) => {
+  if (cat.products.length === 0) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <EmptyCard message={cat.emptyMessage} />
       </div>
+    );
+  }
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+      {cat.products.map((p) => (
+        <ProductCard key={p.name} product={p} />
+      ))}
     </div>
   );
 };
@@ -307,7 +249,7 @@ const CatalogueAides = () => {
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-1">{cat.title}</h2>
                   <p className="text-sm md:text-base lg:text-lg text-muted-foreground">{cat.usage}</p>
                 </div>
-                <CategoryCarousel cat={cat} />
+                <CategoryGrid cat={cat} />
               </div>
             ))}
           </div>
