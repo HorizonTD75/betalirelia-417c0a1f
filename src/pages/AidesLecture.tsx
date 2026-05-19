@@ -167,6 +167,14 @@ const categories = [
     ],
     cta: "Découvrir les lunettes loupes",
   },
+  {
+    id: "lunettes-intelligentes",
+    shortLabel: "Lunettes intelligentes",
+    shortDesc: "Des solutions numériques portées sur le visage pour aider à lire, reconnaître ou mieux percevoir certains détails.",
+    link: "/aides-lecture-bassevision/lunettes-intelligentes",
+    icon: Sparkles,
+    placeholder: true,
+  },
 ];
 
 const AidesLecture = () => {
@@ -242,7 +250,7 @@ const AidesLecture = () => {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
               <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/25 text-secondary-foreground text-sm font-bold uppercase tracking-wide mb-4">
-                5 catégories
+                6 catégories
               </span>
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
                 Les grandes familles d'aides à la lecture
@@ -296,7 +304,7 @@ const AidesLecture = () => {
 
             {/* Sections détaillées — bandeau coloré + layout horizontal compact, image alternée */}
             <div className="space-y-6 md:space-y-8">
-              {categories.map((cat, index) => {
+              {categories.filter((c) => !(c as { placeholder?: boolean }).placeholder).map((cat, index) => {
                 const iconStyle = sectionIconStyles[index % sectionIconStyles.length];
                 const accent = categoryAccents[index % categoryAccents.length];
                 const imageRight = index % 2 === 1;
