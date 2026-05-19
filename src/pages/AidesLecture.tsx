@@ -12,6 +12,7 @@ import loupeElectronique from "@/assets/loupe-electronique.jpg";
 import lampeLecture from "@/assets/lampe-lecture.jpg";
 import teleAgrandisseur from "@/assets/tele-agrandisseur.jpg";
 import lunettesLoupes from "@/assets/lunettes-loupes.jpg";
+import lunettesIntelligentes from "@/assets/lunettes-intelligentes.jpg";
 
 const CALENDLY_URL = "https://calendly.com/lirelia/bilan_basse_vision";
 
@@ -170,10 +171,36 @@ const categories = [
   {
     id: "lunettes-intelligentes",
     shortLabel: "Lunettes intelligentes",
-    shortDesc: "Des solutions numériques portées sur le visage pour aider à lire, reconnaître ou mieux percevoir certains détails.",
-    link: "/aides-lecture-bassevision/lunettes-intelligentes",
+    shortDesc: "Lire, reconnaître et obtenir une aide vocale en gardant les mains libres.",
+    link: "/blog/lunettes-intelligentes-basse-vision",
     icon: Sparkles,
-    placeholder: true,
+    title: "Lunettes intelligentes : lire, reconnaître et obtenir une aide vocale, les mains libres",
+    image: lunettesIntelligentes,
+    imageAlt: "Illustration aquarelle de lunettes intelligentes posées sur un livre ouvert",
+    intro: `Les lunettes intelligentes sont des lunettes portées sur le visage qui intègrent une caméra, un micro et une synthèse vocale. Elles permettent à une personne malvoyante d'obtenir une aide sans tenir son téléphone : lire une étiquette, reconnaître un objet, décrire une scène ou appeler un proche. Il en existe deux familles très différentes — les lunettes IA grand public (Ray-Ban Meta, Oakley Meta) et les aides électroniques spécialisées basse vision (OrCam MyEye, Arc-Vision, eSight…) — qui ne répondent pas aux mêmes besoins ni aux mêmes budgets.`,
+    usages: [
+      "Lire une étiquette, un menu ou un courrier court à voix haute",
+      "Reconnaître un objet, une couleur ou un emballage",
+      "Décrire rapidement une scène ou une pièce",
+      "Appeler un proche ou lancer Be My Eyes mains libres",
+      "Regarder la télévision ou travailler sur écran (casques agrandisseurs)",
+    ],
+    avantages: [
+      "Personnes recherchant une aide vocale discrète et mains libres",
+      "Besoin de lire des textes courts dans la vie quotidienne",
+      "Personnes à l'aise avec les commandes vocales et le smartphone",
+      "Déficience visuelle modérée à sévère avec vision résiduelle exploitable",
+      "Personnes souhaitant éviter de sortir leur téléphone en permanence",
+    ],
+    limites: [
+      "Ne remplace pas une loupe électronique pour la lecture longue et confortable",
+      "Ne corrige pas la vision — ne supprime pas un scotome central (DMLA)",
+      "Ne remplace pas une canne blanche ni une formation en locomotion",
+      "Prix élevés pour les aides spécialisées (1 500 € à plus de 4 500 €)",
+      "Essai indispensable avant achat : deux personnes avec la même pathologie peuvent avoir des résultats très différents",
+    ],
+    cta: "Découvrir les lunettes intelligentes",
+    editorialNote: "Ces lunettes sont des assistants visuels, pas des dispositifs médicaux. Elles doivent être choisies selon un usage précis et testées dans les conditions réelles du quotidien.",
   },
 ];
 
@@ -387,6 +414,15 @@ const AidesLecture = () => {
                           </ul>
                         </div>
                       </div>
+
+                      {/* Note éditoriale */}
+                      {(cat as { editorialNote?: string }).editorialNote && (
+                        <div className="mt-4 p-4 rounded-xl bg-primary/5 border-l-4 border-primary">
+                          <p className="text-sm md:text-base text-foreground/90 leading-relaxed italic">
+                            {(cat as { editorialNote?: string }).editorialNote}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </section>
                 );
