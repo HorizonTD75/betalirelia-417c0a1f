@@ -86,6 +86,7 @@ const rawCategories: Category[] = [
     usage: "Petits équipements et compléments pour faciliter la lecture, l'organisation et le confort visuel.",
     products: [
       { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "une horloge avec de gros caractères lumineux très visibles", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
+      { name: "Réveil gros chiffres IVAR", usage: "Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.", price: "26,40 €", image: ivarImg, imageAlt: "un réveil discret avec de gros caractères lumineux très visibles", href: "/boutique/reveil-gros-chiffres-ivar" },
     ],
   },
 ];
