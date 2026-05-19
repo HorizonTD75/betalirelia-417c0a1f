@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import lunettesFocus from "@/assets/products/lunettes-loupes-focus_DMLA.jpg";
@@ -17,6 +16,7 @@ import lampeAstridImg from "@/assets/products/lampe-loupe-astrid-noire.jpg";
 import lampadaireSolveigImg from "@/assets/products/lampadaire-solveig-noir.jpg";
 import clover5Img from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
 import oskarImg from "@/assets/products/horloge-reveil-gros-chiffres-oskar.jpg";
+import ivarImg from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
