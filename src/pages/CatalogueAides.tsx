@@ -249,7 +249,7 @@ const CatalogueAides = () => {
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-1">{cat.title}</h2>
                   <p className="text-sm md:text-base lg:text-lg text-muted-foreground">{cat.usage}</p>
                 </div>
-                <CategoryCarousel cat={cat} />
+                <CategoryGrid cat={cat} />
               </div>
             ))}
           </div>
