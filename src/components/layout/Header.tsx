@@ -117,6 +117,13 @@ const Header = () => {
                 </Button>
               </li>
               <li>
+                <Button variant="outline" size="lg" className="w-full" asChild>
+                  <Link to="/catalogue-aides-basse-vision" onClick={() => setIsMenuOpen(false)}>
+                    Catalogue
+                  </Link>
+                </Button>
+              </li>
+              <li>
                 <Button variant="default" size="lg" className="w-full" asChild>
                   <Link to="/rdv-bilan" onClick={() => setIsMenuOpen(false)}>
                     <Calendar className="w-5 h-5" />
