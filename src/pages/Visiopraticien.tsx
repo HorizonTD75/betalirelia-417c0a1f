@@ -111,16 +111,16 @@ const Visiopraticien = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Visiopraticien Basse Vision à Paris | LirElia"
-        description="Vous n'arrivez plus à lire ? Le Visiopraticien LirElia évalue votre vision et vous aide à retrouver votre autonomie. Bilans à Paris et à domicile."
-        canonicalPath="/visiopraticien"
+        title="Visiopraticien expert basse vision | Lire et vivre mieux"
+        description="Découvrez le rôle du visiopraticien, expert basse vision, pour mieux lire, s'équiper et préserver son autonomie au quotidien malgré la malvoyance."
+        canonicalPath="/expert-basse-vision-visiopraticien"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Visiopraticien LirElia",
+          "name": "Visiopraticien LirElia — expert basse vision",
           "description": "Accompagnement basse vision pour mieux lire et gagner en autonomie. Bilans fonctionnels, aides visuelles, conseils personnalisés.",
           "provider": { "@type": "Organization", "name": "LirElia" },
-          "serviceType": "Accompagnement basse vision"
+          "serviceType": "Expertise basse vision"
         }} />
       
       <Header />
@@ -134,7 +134,7 @@ const Visiopraticien = () => {
           <div className="container relative">
             <div className="max-w-4xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Visiopraticien <span className="text-secondary">Basse Vision</span> : lire et vivre mieux
+                Visiopraticien, l'<span className="text-secondary">expert basse vision</span> pour lire et vivre mieux
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
                 La perte de vision bouleverse bien plus que la capacité à lire. Le Visiopraticien LirElia accompagne les personnes malvoyantes — et leurs proches — vers des solutions concrètes et une autonomie retrouvée.
