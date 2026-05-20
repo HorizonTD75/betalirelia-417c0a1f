@@ -62,12 +62,19 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-1 sm:gap-2 ml-1 sm:ml-2 shrink-0">
-            <Button variant="secondary" size="sm" asChild className="hidden xl:inline-flex">
-              <Link to="/club">
-                <Users className="w-4 h-4" />
-                Le Club
-              </Link>
-            </Button>
+            <div className="hidden xl:flex flex-col gap-1.5">
+              <Button variant="secondary" size="sm" asChild>
+                <Link to="/club">
+                  <Users className="w-4 h-4" />
+                  Le Club
+                </Link>
+              </Button>
+              <Button variant="outline" size="sm" asChild>
+                <Link to="/catalogue-aides-basse-vision">
+                  Catalogue
+                </Link>
+              </Button>
+            </div>
             <CartDrawer />
             <a href="tel:0768474235" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80" aria-label="Appelez-nous">
               <Phone className="w-4 h-4" />
