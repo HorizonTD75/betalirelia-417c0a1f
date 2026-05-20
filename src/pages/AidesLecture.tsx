@@ -294,9 +294,9 @@ const AidesLecture = () => {
                 const accent = categoryAccents[i % categoryAccents.length];
                 const stripe = sectionIconStyles[i % sectionIconStyles.length];
                 return (
-                  <a
+                  <Link
                     key={cat.id}
-                    href={`#${cat.id}`}
+                    to={cat.link}
                     className="group block focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl"
                   >
                     <Card
