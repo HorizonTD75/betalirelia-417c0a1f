@@ -432,7 +432,7 @@ const RetinitePigmentaire = () => {
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/visiopraticien">
+                  <Link to="/expert-basse-vision-visiopraticien">
                     Le Visiopraticien LirElia
                     <ArrowRight className="w-5 h-5" />
                   </Link>

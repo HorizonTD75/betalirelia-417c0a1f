@@ -87,7 +87,7 @@ const AppointmentSection = () => {
         {/* Lien secondaire */}
         <div className="mt-8 text-center">
           <Button variant="outline" asChild>
-            <Link to="/visiopraticien">
+            <Link to="/expert-basse-vision-visiopraticien">
               Découvrir le Visiopraticien
               <ArrowRight className="w-4 h-4" />
             </Link>

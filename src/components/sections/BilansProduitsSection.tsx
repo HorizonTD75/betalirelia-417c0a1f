@@ -115,7 +115,7 @@ const BilansProduitsSection = () => {
 
         <div className="mt-10 text-center">
           <Button variant="link" size="lg" className="text-xl" asChild>
-            <Link to="/visiopraticien">
+            <Link to="/expert-basse-vision-visiopraticien">
               Découvrez votre visiopraticien
               <ArrowRight className="w-5 h-5" />
             </Link>
