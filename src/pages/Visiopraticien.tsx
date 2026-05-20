@@ -46,8 +46,8 @@ const Visiopraticien = () => {
   const expertise = [
   {
     icon: Eye,
-    title: "Expertise technique",
-    text: "25 ans d'expérience dans les aides visuelles pour malvoyants, avec une connaissance approfondie des dispositifs optiques et électroniques."
+    title: "Expertise basse vision",
+    text: "25 ans d'expérience d'expert basse vision, avec une connaissance approfondie des aides visuelles, optiques et électroniques, qui permet de relier les besoins réels, les aides techniques et les habitudes de vie."
   },
   {
     icon: Heart,
