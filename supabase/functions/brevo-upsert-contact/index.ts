@@ -49,6 +49,25 @@ serve(async (req) => {
       });
     }
 
+    // ── 1b. Server-side length limits (defense against client maxLength bypass)
+    const tooLong = (v: unknown, max: number) =>
+      typeof v === "string" && v.length > max;
+    if (
+      tooLong(nom, 150) ||
+      tooLong(email, 254) ||
+      tooLong(message, 5000) ||
+      tooLong(interet, 200) ||
+      tooLong(telephone, 30) ||
+      tooLong(source_url, 2048) ||
+      tooLong(source_tag, 100) ||
+      tooLong(role, 100)
+    ) {
+      return new Response(JSON.stringify({ error: "Champ trop long." }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     // ── 2. Insert into contact_lirelia (status = "received")
     const { data: insertedRow, error: dbError } = await supabase
       .from("contact_lirelia")

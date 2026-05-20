@@ -64,6 +64,24 @@ serve(async (req) => {
       return jsonResponse({ error: "Prénom requis." }, 400);
     }
 
+    // Server-side length limits
+    const tooLong = (v: unknown, max: number) => typeof v === "string" && v.length > max;
+    if (
+      tooLong(prenom, 100) ||
+      tooLong(nom, 150) ||
+      tooLong(email, 254) ||
+      tooLong(message, 5000) ||
+      tooLong(themePropose, 500) ||
+      tooLong(souhait, 500) ||
+      tooLong(themes, 500) ||
+      tooLong(type, 100) ||
+      tooLong(telephone, 30) ||
+      tooLong(source_url, 2048) ||
+      tooLong(source_tag, 100)
+    ) {
+      return jsonResponse({ error: "Champ trop long." }, 400);
+    }
+
     const { formatted: normalizedPhone, isMobile } = normalizeFrenchPhone(telephone);
 
     if (telephone && !normalizedPhone) {
