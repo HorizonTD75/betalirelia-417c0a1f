@@ -211,7 +211,7 @@ const Visiopraticien = () => {
                 Ce que fait le Visiopraticien : évaluation, conseils et autonomie dans la lecture
               </h2>
               <p className="text-xl text-muted-foreground mb-10">
-                Un bilan avec le Visiopraticien LirElia permet d'identifier vos difficultés réelles et de trouver des solutions pour mieux voir au quotidien.
+                Le visiopraticien apporte une expertise basse vision concrète, centrée sur les gestes du quotidien : un bilan avec le Visiopraticien LirElia permet d'identifier vos difficultés réelles et de trouver des solutions pour mieux voir au quotidien.
               </p>
               <Card className="p-4 sm:p-6 lg:p-8">
                 <ul className="space-y-4">
