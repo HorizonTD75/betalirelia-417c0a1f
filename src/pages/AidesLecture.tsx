@@ -324,7 +324,7 @@ const AidesLecture = () => {
                         </div>
                       </div>
                     </Card>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
