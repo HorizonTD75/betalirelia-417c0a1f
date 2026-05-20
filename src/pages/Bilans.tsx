@@ -209,7 +209,7 @@ const Bilans = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
-                Que fait le <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link> pendant le bilan ?
+                Que fait le <Link to="/expert-basse-vision-visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link> pendant le bilan ?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <Card className="p-4 sm:p-6 lg:p-8">
@@ -350,7 +350,7 @@ const Bilans = () => {
                   <div className="w-14 h-14 rounded-xl bg-primary text-primary-foreground flex items-center justify-center mb-4">
                     <Eye className="w-7 h-7" />
                   </div>
-                  <h3 className="font-serif text-xl font-bold mb-4">Le rôle du <Link to="/visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link></h3>
+                  <h3 className="font-serif text-xl font-bold mb-4">Le rôle du <Link to="/expert-basse-vision-visiopraticien" className="text-primary underline underline-offset-4 hover:text-primary/80">Visiopraticien</Link></h3>
                   <ul className="space-y-3">
                     {[
                     "Identifier vos besoins fonctionnels",
@@ -441,7 +441,7 @@ const Bilans = () => {
                 Prêt à faire le point sur votre vue ?
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10 leading-relaxed">
-                Contactez notre <Link to="/visiopraticien" className="underline underline-offset-4 hover:text-primary-foreground/80">Visiopraticien</Link> pour choisir le bilan adapté à votre situation de basse vision.
+                Contactez notre <Link to="/expert-basse-vision-visiopraticien" className="underline underline-offset-4 hover:text-primary-foreground/80">Visiopraticien</Link> pour choisir le bilan adapté à votre situation de basse vision.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>

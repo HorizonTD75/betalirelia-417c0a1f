@@ -61,7 +61,7 @@ const ComprendreBasseVision = () => {
     title: "Le visiopraticien",
     icon: Users,
     description: "Chez LirElia, il intervient à côté de ces professionnels. Son rôle est de traduire vos difficultés de vision en solutions concrètes : aides techniques, organisation du domicile, habitudes de lecture, loisirs, déplacements. Spécialiste de l'accompagnement basse vision, il aide chaque personne malvoyante à retrouver son autonomie dans la lecture et le quotidien.",
-    link: "/visiopraticien"
+    link: "/expert-basse-vision-visiopraticien"
   }];
 
 

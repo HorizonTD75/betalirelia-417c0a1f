@@ -52,6 +52,13 @@ const rawCategories: Category[] = [
     ],
   },
   {
+    id: "lunettes-intelligentes",
+    title: "Lunettes intelligentes",
+    usage: "Lunettes connectées avec aide vocale, lecture et reconnaissance d'objet — pour gagner en autonomie au quotidien.",
+    products: [],
+    emptyMessage: "Une sélection de lunettes intelligentes adaptées à la basse vision sera proposée très prochainement.",
+  },
+  {
     id: "loupes-verre",
     title: "Loupes en verre",
     usage: "Des solutions simples et immédiates pour lire un courrier, une étiquette ou un document posé à plat.",

@@ -455,7 +455,7 @@ const Nystagmus = () => {
                         </Link>
                       </Button>
                       <Button variant="outline" asChild>
-                        <Link to="/visiopraticien">
+                        <Link to="/expert-basse-vision-visiopraticien">
                           Le Visiopraticien LirElia
                           <ArrowRight className="w-4 h-4" />
                         </Link>

@@ -14,9 +14,15 @@ const Footer = () => {
             <img src={logoJaune} alt="Lirelia, solutions pour la malvoyance" className="w-20 h-20 object-contain" width={80} height={80} loading="lazy" decoding="async" />
               <span className="font-serif text-2xl font-bold">LirElia</span>
             </Link>
-            <p className="text-lg text-primary-foreground/80 leading-relaxed">
+            <p className="text-lg text-primary-foreground/80 leading-relaxed mb-3">
               Expert en basse vision depuis 25 ans. Accompagnement, bilans et solutions adaptées.
             </p>
+            <Link
+              to="/expert-basse-vision-visiopraticien"
+              className="inline-block text-lg text-secondary hover:text-secondary/80 underline underline-offset-4 transition-colors"
+            >
+              Votre visiopraticien
+            </Link>
           </div>
 
           {/* Liens */}
