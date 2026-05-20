@@ -172,7 +172,7 @@ const categories = [
     id: "lunettes-intelligentes",
     shortLabel: "Lunettes intelligentes",
     shortDesc: "Lire, reconnaître et obtenir une aide vocale en gardant les mains libres.",
-    link: "/blog/lunettes-intelligentes-basse-vision",
+    link: "/aides-lecture-bassevision/lunettes-intelligentes",
     icon: Sparkles,
     title: "Lunettes intelligentes : lire, reconnaître et obtenir une aide vocale, les mains libres",
     image: lunettesIntelligentes,
@@ -277,7 +277,7 @@ const AidesLecture = () => {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
               <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/25 text-secondary-foreground text-sm font-bold uppercase tracking-wide mb-4">
-                6 catégories
+                7 catégories
               </span>
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
                 Les grandes familles d'aides à la lecture
