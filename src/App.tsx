@@ -125,7 +125,8 @@ const App = () => (
             <Route path="/maladies-yeux/maladies-hereditaires/syndrome-usher" element={<SyndromeUsher />} />
             <Route path="/maladies-yeux/maladies-hereditaires/aniridie" element={<Aniridie />} />
             <Route path="/vivre-basse-vision" element={<VivreBasseVision />} />
-            <Route path="/visiopraticien" element={<Visiopraticien />} />
+            <Route path="/expert-basse-vision-visiopraticien" element={<Visiopraticien />} />
+            <Route path="/visiopraticien" element={<Navigate to="/expert-basse-vision-visiopraticien" replace />} />
             <Route path="/aides-lecture-bassevision" element={<AidesLecture />} />
             <Route path="/aides-lecture-bassevision/loupes-verre" element={<LoupesVerre />} />
             <Route path="/aides-lecture-bassevision/loupes-electroniques" element={<LoupesElectroniques />} />
