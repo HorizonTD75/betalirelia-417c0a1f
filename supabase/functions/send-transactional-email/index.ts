@@ -114,7 +114,7 @@ Deno.serve(async (req) => {
     )
   }
 
-  }
+
 
   // 1. Look up template from registry (early — needed to resolve recipient)
   const template = TEMPLATES[templateName]
