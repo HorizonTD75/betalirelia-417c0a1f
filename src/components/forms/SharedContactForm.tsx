@@ -130,31 +130,6 @@ const SharedContactForm = () => {
 
       if (error) throw error;
 
-      const emailId = crypto.randomUUID();
-      const selectedTopic = topicOptions.find((o) => o.value === interet)?.label;
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "contact-confirmation",
-          recipientEmail: email.trim(),
-          idempotencyKey: `contact-confirm-${emailId}`,
-          templateData: { name: nom.trim(), subject: selectedTopic || undefined },
-        },
-      });
-
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "admin-notification",
-          // recipient resolved server-side from template.to
-          idempotencyKey: `contact-admin-${emailId}`,
-          templateData: {
-            formType: "Contact Conseil",
-            name: nom.trim(),
-            email: email.trim(),
-            phone: telephone.trim() || undefined,
-            details: message,
-          },
-        },
-      });
 
       navigate("/merci-contact");
     } catch (err: unknown) {
