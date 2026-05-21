@@ -22,7 +22,8 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok, list_key } = body;
+    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok, list_key, emails } = body as Record<string, unknown> & { emails?: FormEmailsPayload };
+
 
     // Server-side allowlist of Brevo list IDs. Callers may only select via a safe key.
     const BREVO_LIST_IDS: Record<string, number> = {
