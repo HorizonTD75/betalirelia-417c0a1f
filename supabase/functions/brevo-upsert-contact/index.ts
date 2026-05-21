@@ -263,8 +263,14 @@ serve(async (req) => {
       .update({ status: brevoStatus, brevo_response: brevoResponse })
       .eq("id", rowId);
 
-    // ── 7. Return success
+    // ── 7. Fire confirmation / admin emails server-side (service-role auth)
+    if (brevoStatus === "brevo_ok") {
+      await sendFormEmails(emails);
+    }
+
+    // ── 8. Return success
     return new Response(JSON.stringify({ success: true, id: rowId }), {
+
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
