@@ -107,11 +107,13 @@ Deno.serve(async (req) => {
     }
   }
 
-  if (!isServiceRole && !PUBLIC_TEMPLATE_ALLOWLIST.has(templateName)) {
+  if (!isServiceRole) {
     return new Response(
       JSON.stringify({ error: 'Forbidden' }),
       { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
+  }
+
   }
 
   // 1. Look up template from registry (early — needed to resolve recipient)
