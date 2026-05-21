@@ -67,6 +67,9 @@ const SharedContactForm = () => {
     setLoading(true);
 
     try {
+      const emailId = crypto.randomUUID();
+      const selectedTopic = topicOptions.find((o) => o.value === interet)?.label;
+
       const result = await supabase.functions.invoke("brevo-upsert-contact", {
         body: {
           interet: interet || null,
@@ -76,9 +79,29 @@ const SharedContactForm = () => {
           message,
           source_url: sourceUrl,
           source_tag: sourceTag,
-          list_key: "contact"
+          list_key: "contact",
+          emails: {
+            confirmation: {
+              templateName: "contact-confirmation",
+              recipientEmail: email.trim(),
+              idempotencyKey: `contact-confirm-${emailId}`,
+              templateData: { name: nom.trim(), subject: selectedTopic || undefined },
+            },
+            admin: {
+              templateName: "admin-notification",
+              idempotencyKey: `contact-admin-${emailId}`,
+              templateData: {
+                formType: "Contact Conseil",
+                name: nom.trim(),
+                email: email.trim(),
+                phone: telephone.trim() || undefined,
+                details: message,
+              },
+            },
+          },
         }
       });
+
 
       const { data, error } = result;
 
