@@ -53,8 +53,14 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { email, prenom, nom, telephone, type, souhait, themes, themePropose, needZoomHelp, message, source_url, source_tag } =
-      body;
+    const { email, prenom, nom, telephone, type, souhait, themes, themePropose, needZoomHelp, message, source_url, source_tag, emails } =
+      body as Record<string, unknown> & { emails?: FormEmailsPayload };
+
+    const okResponse = async () => {
+      await sendFormEmails(emails);
+      return jsonResponse({ success: true }, 200);
+    };
+
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
