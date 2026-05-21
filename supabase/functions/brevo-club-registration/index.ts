@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { sendFormEmails, type FormEmailsPayload } from "../_shared/send-form-emails.ts";
+
 
 const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 
@@ -51,8 +53,15 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { email, prenom, nom, telephone, type, souhait, themes, themePropose, needZoomHelp, message, source_url, source_tag } =
-      body;
+    const { email, prenom, nom, telephone, type, souhait, themes, themePropose, needZoomHelp, message, source_url, source_tag, emails } =
+      body as Record<string, unknown> & { emails?: FormEmailsPayload };
+
+    const okResponse = async () => {
+      await sendFormEmails(emails);
+      return jsonResponse({ success: true }, 200);
+    };
+
+
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -183,7 +192,7 @@ serve(async (req) => {
 
           if (retryRes.ok) {
             await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ phone_skipped: true }) }).eq("id", rowId);
-            return jsonResponse({ success: true }, 200);
+            return await okResponse();
           }
 
           // If retry POST also fails with duplicate_parameter (email exists), do PUT without phone
@@ -197,7 +206,7 @@ serve(async (req) => {
             });
             if (putRes.ok || putRes.status === 204) {
               await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ updated: true, phone_skipped: true }) }).eq("id", rowId);
-              return jsonResponse({ success: true }, 200);
+              return await okResponse();
             }
           }
         }
@@ -253,7 +262,7 @@ serve(async (req) => {
                   brevo_response: JSON.stringify({ updated: true, phone_skipped: true }),
                 })
                 .eq("id", rowId);
-              return jsonResponse({ success: true }, 200);
+              return await okResponse();
             }
           }
 
@@ -276,7 +285,7 @@ serve(async (req) => {
           })
           .eq("id", rowId);
 
-        return jsonResponse({ success: true }, 200);
+        return await okResponse();
       }
 
       console.error("Brevo API error:", brevoRes.status, JSON.stringify(brevoJson));
@@ -324,7 +333,7 @@ serve(async (req) => {
             }
           }
           await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ phone_skipped: true }) }).eq("id", rowId);
-          return jsonResponse({ success: true }, 200);
+          return await okResponse();
         }
       }
 
@@ -339,7 +348,7 @@ serve(async (req) => {
       })
       .eq("id", rowId);
 
-    return jsonResponse({ success: true }, 200);
+    return await okResponse();
   } catch (err) {
     console.error("Unexpected error:", err);
     return jsonResponse({ error: "Erreur serveur inattendue." }, 500);

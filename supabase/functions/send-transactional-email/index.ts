@@ -30,13 +30,9 @@ function generateToken(): string {
     .join('')
 }
 
-// Templates anonymous (anon-key) callers may invoke — tied to public form flows.
-const PUBLIC_TEMPLATE_ALLOWLIST = new Set([
-  'contact-confirmation',
-  'club-registration',
-  'bilan-confirmation',
-  'admin-notification',
-])
+// All transactional emails must be triggered server-side (service_role).
+// Anonymous callers are rejected to prevent abuse (arbitrary recipient sends, admin spam).
+
 
 Deno.serve(async (req) => {
   // Handle CORS preflight
@@ -111,12 +107,14 @@ Deno.serve(async (req) => {
     }
   }
 
-  if (!isServiceRole && !PUBLIC_TEMPLATE_ALLOWLIST.has(templateName)) {
+  if (!isServiceRole) {
     return new Response(
       JSON.stringify({ error: 'Forbidden' }),
       { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
   }
+
+
 
   // 1. Look up template from registry (early — needed to resolve recipient)
   const template = TEMPLATES[templateName]

@@ -108,6 +108,7 @@ const ContactBilan = () => {
     try {
       const selectedOption = bilanOptions.find((b) => b.value === selectedBilan);
       const roleValue = profil === "aidant" ? "aidant" : "personne concernée";
+      const emailId = crypto.randomUUID();
 
       const result = await supabase.functions.invoke("brevo-upsert-contact", {
         body: {
@@ -120,9 +121,29 @@ const ContactBilan = () => {
           message: `Demande de rendez-vous pour un ${selectedOption?.label} — Profil : ${roleValue} — Téléphone : ${telephone.trim()}`,
           source_url: window.location.href,
           source_tag: "rdv-bilan",
-          list_key: "bilan"
+          list_key: "bilan",
+          emails: {
+            confirmation: {
+              templateName: "bilan-confirmation",
+              recipientEmail: email.trim(),
+              idempotencyKey: `bilan-confirm-${emailId}`,
+              templateData: { name: prenom.trim(), bilanType: selectedOption?.label },
+            },
+            admin: {
+              templateName: "admin-notification",
+              idempotencyKey: `bilan-admin-${emailId}`,
+              templateData: {
+                formType: `RDV ${selectedOption?.label}`,
+                name: `${prenom.trim()} ${nom.trim()}`,
+                email: email.trim(),
+                phone: telephone.trim(),
+                details: `Profil: ${roleValue}`,
+              },
+            },
+          },
         },
       });
+
 
       const { data, error } = result;
 
@@ -152,32 +173,6 @@ const ContactBilan = () => {
 
       if (error) throw error;
 
-      // Send confirmation email to user
-      const emailId = crypto.randomUUID();
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "bilan-confirmation",
-          recipientEmail: email.trim(),
-          idempotencyKey: `bilan-confirm-${emailId}`,
-          templateData: { name: prenom.trim(), bilanType: selectedOption?.label },
-        },
-      });
-
-      // Send admin notification
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "admin-notification",
-          // recipient resolved server-side from template.to
-          idempotencyKey: `bilan-admin-${emailId}`,
-          templateData: {
-            formType: `RDV ${selectedOption?.label}`,
-            name: `${prenom.trim()} ${nom.trim()}`,
-            email: email.trim(),
-            phone: telephone.trim(),
-            details: `Profil: ${roleValue}`,
-          },
-        },
-      });
 
       // Navigate to the appropriate thank-you page based on selected bilan
       const thankYouRoutes: Record<BilanType, string> = {

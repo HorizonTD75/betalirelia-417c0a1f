@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { sendFormEmails, type FormEmailsPayload } from "../_shared/send-form-emails.ts";
+
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -20,7 +22,8 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok, list_key } = body;
+    const { interet, email, nom, telephone, message, source_url, source_tag, role, rgpd_ok, list_key, emails } = body as Record<string, unknown> & { emails?: FormEmailsPayload };
+
 
     // Server-side allowlist of Brevo list IDs. Callers may only select via a safe key.
     const BREVO_LIST_IDS: Record<string, number> = {
@@ -260,8 +263,14 @@ serve(async (req) => {
       .update({ status: brevoStatus, brevo_response: brevoResponse })
       .eq("id", rowId);
 
-    // ── 7. Return success
+    // ── 7. Fire confirmation / admin emails server-side (service-role auth)
+    if (brevoStatus === "brevo_ok") {
+      await sendFormEmails(emails);
+    }
+
+    // ── 8. Return success
     return new Response(JSON.stringify({ success: true, id: rowId }), {
+
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
