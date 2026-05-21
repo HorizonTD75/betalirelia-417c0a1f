@@ -17,6 +17,7 @@ import lampadaireSolveigImg from "@/assets/products/lampadaire-solveig-noir.jpg"
 import clover5Img from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
 import oskarImg from "@/assets/products/horloge-reveil-gros-chiffres-oskar.jpg";
 import ivarImg from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
+import lampeAinaImg from "@/assets/products/lampe-tour-cou-aina-noir-blanche.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
@@ -84,6 +85,7 @@ const rawCategories: Category[] = [
       { name: "Lampe basse vision EIRA", usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.", price: "178 €", image: lampeEiraImg, href: "/boutique/lampe-basse-vision-eira" },
       { name: "Lampe loupe ASTRID", usage: "Lampe loupe à pince, lentille 10,5 cm, x3, LED 6000 lux, 3 températures.", price: "148 €", image: lampeAstridImg, href: "/boutique/lampe-loupe-astrid" },
       { name: "Lampadaire SOLVEIG", usage: "Lampadaire de lecture léger, hauteur réglable, 5 000 lux, 3 températures et télécommande.", price: "179 €", image: lampadaireSolveigImg, imageAlt: "Lampadaire SOLVEIG noir pour lecture basse vision", href: "/boutique/lampadaire-solveig" },
+      { name: "Lampe tour de cou AINA", usage: "Lampe de lecture mains libres, portée autour du cou ou posée sur la table — 2 modes, 3 températures, 10 h d'autonomie.", price: "49,20 €", image: lampeAinaImg, imageAlt: "Lampe de lecture tour de cou AINA, en noir et en blanc", href: "/produits/lampe-tour-cou-aina" },
     ],
   },
   { id: "tele-agrandisseurs", title: "Télé-agrandisseurs", usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.", products: [] },
