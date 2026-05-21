@@ -108,6 +108,7 @@ const ClubRegistrationSection = () => {
       }
 
       const message = messageParts.join("\n");
+      const emailId = crypto.randomUUID();
 
       const result = await supabase.functions
         .invoke("brevo-club-registration", {
@@ -124,8 +125,28 @@ const ClubRegistrationSection = () => {
             message,
             source_url: window.location.href,
             source_tag: "SRC_club",
+            emails: {
+              confirmation: {
+                templateName: "club-registration",
+                recipientEmail: formData.email.trim(),
+                idempotencyKey: `club-confirm-${emailId}`,
+                templateData: { name: formData.prenom.trim() },
+              },
+              admin: {
+                templateName: "admin-notification",
+                idempotencyKey: `club-admin-${emailId}`,
+                templateData: {
+                  formType: "Club",
+                  name: `${formData.prenom.trim()} ${formData.nom.trim()}`,
+                  email: formData.email.trim(),
+                  phone: formData.telephone.trim(),
+                  details: message,
+                },
+              },
+            },
           },
         })
+
         .catch((err) => {
           return {
             data: null,
