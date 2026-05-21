@@ -29,6 +29,8 @@ const products = [
     priceRange: "À partir de 45 €",
     shopLink: "/boutique/lampe-basse-vision-eira",
     shopLabel: "Voir la lampe EIRA",
+    secondaryShopLink: "/produits/lampe-tour-cou-aina",
+    secondaryShopLabel: "Voir la lampe tour de cou AINA",
   },
   {
     name: "Lampadaire de lecture",
