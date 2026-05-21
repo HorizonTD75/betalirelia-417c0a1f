@@ -58,7 +58,7 @@ serve(async (req) => {
 
     const okResponse = async () => {
       await sendFormEmails(emails);
-      return jsonResponse({ success: true }, 200);
+      return await okResponse();
     };
 
 
@@ -191,7 +191,7 @@ serve(async (req) => {
 
           if (retryRes.ok) {
             await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ phone_skipped: true }) }).eq("id", rowId);
-            return jsonResponse({ success: true }, 200);
+            return await okResponse();
           }
 
           // If retry POST also fails with duplicate_parameter (email exists), do PUT without phone
@@ -205,7 +205,7 @@ serve(async (req) => {
             });
             if (putRes.ok || putRes.status === 204) {
               await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ updated: true, phone_skipped: true }) }).eq("id", rowId);
-              return jsonResponse({ success: true }, 200);
+              return await okResponse();
             }
           }
         }
@@ -261,7 +261,7 @@ serve(async (req) => {
                   brevo_response: JSON.stringify({ updated: true, phone_skipped: true }),
                 })
                 .eq("id", rowId);
-              return jsonResponse({ success: true }, 200);
+              return await okResponse();
             }
           }
 
@@ -284,7 +284,7 @@ serve(async (req) => {
           })
           .eq("id", rowId);
 
-        return jsonResponse({ success: true }, 200);
+        return await okResponse();
       }
 
       console.error("Brevo API error:", brevoRes.status, JSON.stringify(brevoJson));
@@ -332,7 +332,7 @@ serve(async (req) => {
             }
           }
           await supabase.from("contact_lirelia").update({ status: "brevo_ok", brevo_response: JSON.stringify({ phone_skipped: true }) }).eq("id", rowId);
-          return jsonResponse({ success: true }, 200);
+          return await okResponse();
         }
       }
 
@@ -347,7 +347,7 @@ serve(async (req) => {
       })
       .eq("id", rowId);
 
-    return jsonResponse({ success: true }, 200);
+    return await okResponse();
   } catch (err) {
     console.error("Unexpected error:", err);
     return jsonResponse({ error: "Erreur serveur inattendue." }, 500);
