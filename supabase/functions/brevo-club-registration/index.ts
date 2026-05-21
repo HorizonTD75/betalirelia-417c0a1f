@@ -58,8 +58,9 @@ serve(async (req) => {
 
     const okResponse = async () => {
       await sendFormEmails(emails);
-      return await okResponse();
+      return jsonResponse({ success: true }, 200);
     };
+
 
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
