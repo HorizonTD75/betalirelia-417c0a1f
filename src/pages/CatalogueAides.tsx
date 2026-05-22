@@ -18,6 +18,7 @@ import clover5Img from "@/assets/products/loupe-electronique-clover-5-poignee.jp
 import oskarImg from "@/assets/products/horloge-reveil-gros-chiffres-oskar.jpg";
 import ivarImg from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
 import lampeAinaImg from "@/assets/products/lampe-tour-cou-aina-noir-blanche.jpg";
+import sourisVeraImg from "@/assets/products/souris-loupe-electronique-VERA-journal.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
@@ -88,7 +89,14 @@ const rawCategories: Category[] = [
       { name: "Lampe tour de cou AINA", usage: "Lampe de lecture mains libres, portée autour du cou ou posée sur la table — 2 modes, 3 températures, 10 h d'autonomie.", price: "49,20 €", image: lampeAinaImg, imageAlt: "Lampe de lecture tour de cou AINA, en noir et en blanc", href: "/produits/lampe-tour-cou-aina" },
     ],
   },
-  { id: "tele-agrandisseurs", title: "Télé-agrandisseurs", usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.", products: [] },
+  {
+    id: "tele-agrandisseurs",
+    title: "Télé-agrandisseurs",
+    usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.",
+    products: [
+      { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "Souris loupe électronique VERA connectée sur une télévision", href: "/produits/souris-loupe-electronique-vera" },
+    ],
+  },
   {
     id: "accessoires",
     title: "Accessoires utiles",
