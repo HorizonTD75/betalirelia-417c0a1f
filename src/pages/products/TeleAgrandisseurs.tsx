@@ -71,7 +71,9 @@ const products = [
       "Budget limité pour un premier équipement",
       "Lecture installée dans le salon ou la chambre",
     ],
-    priceRange: "À partir de 400 €",
+    priceRange: "À partir de 158 €",
+    secondaryShopLink: "/produits/souris-loupe-electronique-vera",
+    secondaryShopLabel: "Voir la souris loupe électronique VERA",
   },
 ];
 
