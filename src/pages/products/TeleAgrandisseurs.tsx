@@ -28,6 +28,8 @@ const products = [
       "Déficiences visuelles sévères (DMLA avancée, rétinopathie)",
     ],
     priceRange: "À partir de 1 500 €",
+    shopLink: "/produits/teleagrandisseur-mezzo-focus",
+    shopLabel: "Voir le téléagrandisseur Mezzo Focus",
   },
   {
     name: "Télé-agrandisseur portable",
