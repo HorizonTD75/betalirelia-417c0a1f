@@ -61,6 +61,7 @@ const LampeAstrid = lazy(() => import("./pages/products/LampeAstrid"));
 const LampadaireSolveig = lazy(() => import("./pages/products/LampadaireSolveig"));
 const LampeAina = lazy(() => import("./pages/products/LampeAina"));
 const SourisLoupeVera = lazy(() => import("./pages/products/SourisLoupeVera"));
+const TeleagrandisseurMezzoFocus = lazy(() => import("./pages/products/TeleagrandisseurMezzoFocus"));
 const LoupeElectroniqueClover5 = lazy(() => import("./pages/products/LoupeElectroniqueClover5"));
 const HorlogeReveilOskar = lazy(() => import("./pages/products/HorlogeReveilOskar"));
 const ReveilGrosChiffresIvar = lazy(() => import("./pages/products/ReveilGrosChiffresIvar"));
@@ -147,6 +148,7 @@ const App = () => (
             <Route path="/boutique/lampadaire-solveig" element={<LampadaireSolveig />} />
             <Route path="/produits/lampe-tour-cou-aina" element={<LampeAina />} />
             <Route path="/produits/souris-loupe-electronique-vera" element={<SourisLoupeVera />} />
+            <Route path="/produits/teleagrandisseur-mezzo-focus" element={<TeleagrandisseurMezzoFocus />} />
             <Route path="/boutique/loupe-electronique-clover-5" element={<LoupeElectroniqueClover5 />} />
             <Route path="/boutique/horloge-reveil-gros-chiffres-oskar" element={<HorlogeReveilOskar />} />
             <Route path="/boutique/reveil-gros-chiffres-ivar" element={<ReveilGrosChiffresIvar />} />

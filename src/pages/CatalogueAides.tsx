@@ -19,6 +19,7 @@ import oskarImg from "@/assets/products/horloge-reveil-gros-chiffres-oskar.jpg";
 import ivarImg from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
 import lampeAinaImg from "@/assets/products/lampe-tour-cou-aina-noir-blanche.jpg";
 import sourisVeraImg from "@/assets/products/souris-loupe-electronique-VERA-journal.jpg";
+import mezzoFocusImg from "@/assets/products/teleagrandisseur-Mezzo-basse-vision.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
@@ -95,6 +96,7 @@ const rawCategories: Category[] = [
     usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.",
     products: [
       { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "Souris loupe électronique VERA connectée sur une télévision", href: "/produits/souris-loupe-electronique-vera" },
+      { name: "Téléagrandisseur Mezzo Focus", usage: "Téléagrandisseur de bureau compact et pliable, Full HD, grossissement jusqu'à 43× — pour lire et écrire confortablement à domicile en cas de DMLA ou basse vision.", price: "À partir de 2 582 €", image: mezzoFocusImg, imageAlt: "Téléagrandisseur pour la basse vision et la DMLA, MEZZO Focus", href: "/produits/teleagrandisseur-mezzo-focus" },
     ],
   },
   {
