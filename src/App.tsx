@@ -143,6 +143,7 @@ const App = () => (
             <Route path="/boutique/loupe-max-tv" element={<LoupeMaxTv />} />
             <Route path="/boutique/lunettes-loupe-frontale-alva" element={<LunettesLoupeFrontaleAlva />} />
             <Route path="/boutique/loupe-main-nora" element={<LoupeMainNora />} />
+            <Route path="/boutique/loupe-dome-eclairante-lina" element={<LoupeDomeLina />} />
             <Route path="/boutique/clip-lunettes-loupe" element={<ClipLunettesLoupe />} />
             <Route path="/boutique/lampe-basse-vision-eira" element={<LampeEira />} />
             <Route path="/boutique/lampe-loupe-astrid" element={<LampeAstrid />} />
