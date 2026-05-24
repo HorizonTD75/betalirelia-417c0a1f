@@ -20,6 +20,7 @@ import ivarImg from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
 import lampeAinaImg from "@/assets/products/lampe-tour-cou-aina-noir-blanche.jpg";
 import sourisVeraImg from "@/assets/products/souris-loupe-electronique-VERA-journal.jpg";
 import mezzoFocusImg from "@/assets/products/teleagrandisseur-Mezzo-basse-vision.jpg";
+import loupeDomeLinaImg from "@/assets/products/loupe-dome-eclairante-LINA.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
