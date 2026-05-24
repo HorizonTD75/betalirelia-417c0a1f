@@ -68,6 +68,8 @@ const products = [
       "Documents posés à plat : courrier, formulaire, mots croisés",
     ],
     priceRange: "À partir de 20 €",
+    shopLink: "/boutique/loupe-dome-eclairante-lina",
+    shopLabel: "Découvrir la loupe LINA",
   },
 ];
 
