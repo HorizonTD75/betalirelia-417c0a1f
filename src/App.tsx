@@ -55,6 +55,7 @@ const LoupeMaxTv = lazy(() => import("./pages/products/LoupeMaxTv"));
 const LunettesLoupeFrontaleAlva = lazy(() => import("./pages/products/LunettesLoupeFrontaleAlva"));
 const CatalogueAides = lazy(() => import("./pages/CatalogueAides"));
 const LoupeMainNora = lazy(() => import("./pages/products/LoupeMainNora"));
+const LoupeDomeLina = lazy(() => import("./pages/products/LoupeDomeLina"));
 const ClipLunettesLoupe = lazy(() => import("./pages/products/ClipLunettesLoupe"));
 const LampeEira = lazy(() => import("./pages/products/LampeEira"));
 const LampeAstrid = lazy(() => import("./pages/products/LampeAstrid"));
