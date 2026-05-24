@@ -55,6 +55,7 @@ const LoupeMaxTv = lazy(() => import("./pages/products/LoupeMaxTv"));
 const LunettesLoupeFrontaleAlva = lazy(() => import("./pages/products/LunettesLoupeFrontaleAlva"));
 const CatalogueAides = lazy(() => import("./pages/CatalogueAides"));
 const LoupeMainNora = lazy(() => import("./pages/products/LoupeMainNora"));
+const LoupeDomeLina = lazy(() => import("./pages/products/LoupeDomeLina"));
 const ClipLunettesLoupe = lazy(() => import("./pages/products/ClipLunettesLoupe"));
 const LampeEira = lazy(() => import("./pages/products/LampeEira"));
 const LampeAstrid = lazy(() => import("./pages/products/LampeAstrid"));
@@ -142,6 +143,7 @@ const App = () => (
             <Route path="/boutique/loupe-max-tv" element={<LoupeMaxTv />} />
             <Route path="/boutique/lunettes-loupe-frontale-alva" element={<LunettesLoupeFrontaleAlva />} />
             <Route path="/boutique/loupe-main-nora" element={<LoupeMainNora />} />
+            <Route path="/boutique/loupe-dome-eclairante-lina" element={<LoupeDomeLina />} />
             <Route path="/boutique/clip-lunettes-loupe" element={<ClipLunettesLoupe />} />
             <Route path="/boutique/lampe-basse-vision-eira" element={<LampeEira />} />
             <Route path="/boutique/lampe-loupe-astrid" element={<LampeAstrid />} />
