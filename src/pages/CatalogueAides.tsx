@@ -68,6 +68,7 @@ const rawCategories: Category[] = [
     usage: "Des solutions simples et immédiates pour lire un courrier, une étiquette ou un document posé à plat.",
     products: [
       { name: "Loupe à main NORA", usage: "Loupe rectangulaire éclairante x2 et x6, 50 LED réglables.", price: "87,50 €", image: loupeNoraImg, href: "/boutique/loupe-main-nora" },
+      { name: "Loupe dôme LINA", usage: "Loupe à poser éclairante et rechargeable, grossissement x2 à x3.", price: "86,20 €", image: loupeDomeLinaImg, imageAlt: "Loupe dôme éclairante rechargeable LINA pour lire les petits caractères avec une basse vision", href: "/boutique/loupe-dome-eclairante-lina" },
     ],
     emptyMessage: "Une sélection de loupes en verre sera disponible très prochainement.",
   },
