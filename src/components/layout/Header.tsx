@@ -69,7 +69,11 @@ const Header = () => {
                   Le Club
                 </Link>
               </Button>
-              <Button variant="outline" size="sm" asChild>
+              <Button
+                size="sm"
+                asChild
+                className="bg-primary text-primary-foreground border-2 border-primary hover:bg-background hover:text-primary hover:border-primary focus-visible:bg-background focus-visible:text-primary focus-visible:border-primary"
+              >
                 <Link to="/catalogue-aides-basse-vision">
                   Catalogue
                 </Link>
@@ -117,7 +121,11 @@ const Header = () => {
                 </Button>
               </li>
               <li>
-                <Button variant="outline" size="lg" className="w-full" asChild>
+                <Button
+                  size="lg"
+                  asChild
+                  className="w-full bg-primary text-primary-foreground border-2 border-primary hover:bg-background hover:text-primary hover:border-primary focus-visible:bg-background focus-visible:text-primary focus-visible:border-primary"
+                >
                   <Link to="/catalogue-aides-basse-vision" onClick={() => setIsMenuOpen(false)}>
                     Catalogue
                   </Link>

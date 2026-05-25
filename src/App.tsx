@@ -66,6 +66,7 @@ const TeleagrandisseurMezzoFocus = lazy(() => import("./pages/products/Teleagran
 const LoupeElectroniqueClover5 = lazy(() => import("./pages/products/LoupeElectroniqueClover5"));
 const HorlogeReveilOskar = lazy(() => import("./pages/products/HorlogeReveilOskar"));
 const ReveilGrosChiffresIvar = lazy(() => import("./pages/products/ReveilGrosChiffresIvar"));
+const HorlogeReveilFrida = lazy(() => import("./pages/products/HorlogeReveilFrida"));
 const LunettesIntelligentes = lazy(() => import("./pages/products/LunettesIntelligentes"));
 const QuiSommesNous = lazy(() => import("./pages/QuiSommesNous"));
 const MaladiesHereditaires = lazy(() => import("./pages/maladies/MaladiesHereditaires"));
@@ -154,6 +155,7 @@ const App = () => (
             <Route path="/boutique/loupe-electronique-clover-5" element={<LoupeElectroniqueClover5 />} />
             <Route path="/boutique/horloge-reveil-gros-chiffres-oskar" element={<HorlogeReveilOskar />} />
             <Route path="/boutique/reveil-gros-chiffres-ivar" element={<ReveilGrosChiffresIvar />} />
+            <Route path="/boutique/horloge-gros-chiffres-frida" element={<HorlogeReveilFrida />} />
             <Route path="/catalogue-aides-basse-vision" element={<CatalogueAides />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
