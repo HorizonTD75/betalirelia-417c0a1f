@@ -17,6 +17,7 @@ import lampadaireSolveigImg from "@/assets/products/lampadaire-solveig-noir.jpg"
 import clover5Img from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
 import oskarImg from "@/assets/products/horloge-reveil-gros-chiffres-oskar.jpg";
 import ivarImg from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
+import fridaImg from "@/assets/products/horloge-reveil-pour-malvoyant-FRIDA.jpg";
 import lampeAinaImg from "@/assets/products/lampe-tour-cou-aina-noir-blanche.jpg";
 import sourisVeraImg from "@/assets/products/souris-loupe-electronique-VERA-journal.jpg";
 import mezzoFocusImg from "@/assets/products/teleagrandisseur-Mezzo-basse-vision.jpg";
@@ -108,6 +109,7 @@ const rawCategories: Category[] = [
     products: [
       { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "une horloge avec de gros caractères lumineux très visibles", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
       { name: "Réveil gros chiffres IVAR", usage: "Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.", price: "26,40 €", image: ivarImg, imageAlt: "un réveil discret avec de gros caractères lumineux très visibles", href: "/boutique/reveil-gros-chiffres-ivar" },
+      { name: "Horloge gros chiffres FRIDA", usage: "Horloge réveil moderne à très gros chiffres lumineux de 52 mm, disponible en 5 couleurs au choix sur fond noir — pour seniors et basse vision.", price: "37,00 €", image: fridaImg, imageAlt: "Horloge FRIDA avec de gros caractères lumineux pour malvoyants", href: "/boutique/horloge-gros-chiffres-frida" },
     ],
   },
 ];
