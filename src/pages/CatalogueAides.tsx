@@ -22,6 +22,7 @@ import lampeAinaImg from "@/assets/products/lampe-tour-cou-aina-noir-blanche.jpg
 import sourisVeraImg from "@/assets/products/souris-loupe-electronique-VERA-journal.jpg";
 import mezzoFocusImg from "@/assets/products/teleagrandisseur-Mezzo-basse-vision.jpg";
 import loupeDomeLinaImg from "@/assets/products/loupe-dome-eclairante-LINA.jpg";
+import rayBanMetaImg from "@/assets/products/ray-ban-meta-marron.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 // Loupe Amélie : main image from Shopify (real product picture)
@@ -60,8 +61,9 @@ const rawCategories: Category[] = [
     id: "lunettes-intelligentes",
     title: "Lunettes intelligentes",
     usage: "Lunettes connectées avec aide vocale, lecture et reconnaissance d'objet — pour gagner en autonomie au quotidien.",
-    products: [],
-    emptyMessage: "Une sélection de lunettes intelligentes adaptées à la basse vision sera proposée très prochainement.",
+    products: [
+      { name: "Ray-Ban Meta", usage: "Produit en évaluation — aide vocale ponctuelle, lecture courte, description de scène et identification d'objets.", image: rayBanMetaImg, imageAlt: "lunettes intelligentes Ray-Ban Meta utilisables par un malvoyant pour la lecture ponctuelle", href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" },
+    ],
   },
   {
     id: "loupes-verre",
