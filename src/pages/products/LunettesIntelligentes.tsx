@@ -252,7 +252,15 @@ const LunettesIntelligentes = () => {
                       </p>
                     </div>
                   </CardContent>
-                  <CardFooter>
+                  <CardFooter className="flex flex-col gap-2">
+                    {f.slug === "lunettes-ia-grand-public" && (
+                      <Button variant="default" className="w-full" asChild>
+                        <Link to="/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta">
+                          Découvrir les Ray-Ban Meta
+                          <ArrowRight className="w-5 h-5" />
+                        </Link>
+                      </Button>
+                    )}
                     <Button variant="outline" className="w-full" asChild>
                       <Link to={`/contact-conseil?produit=${f.slug}`}>
                         Être conseillé(e)

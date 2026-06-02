@@ -68,6 +68,7 @@ const HorlogeReveilOskar = lazy(() => import("./pages/products/HorlogeReveilOska
 const ReveilGrosChiffresIvar = lazy(() => import("./pages/products/ReveilGrosChiffresIvar"));
 const HorlogeReveilFrida = lazy(() => import("./pages/products/HorlogeReveilFrida"));
 const LunettesIntelligentes = lazy(() => import("./pages/products/LunettesIntelligentes"));
+const RayBanMeta = lazy(() => import("./pages/products/RayBanMeta"));
 const QuiSommesNous = lazy(() => import("./pages/QuiSommesNous"));
 const MaladiesHereditaires = lazy(() => import("./pages/maladies/MaladiesHereditaires"));
 const RetinitePigmentaireHereditaire = lazy(() => import("./pages/maladies/hereditaires/RetinitePigmentaire"));
@@ -139,6 +140,7 @@ const App = () => (
             <Route path="/aides-lecture-bassevision/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
             <Route path="/aides-lecture-bassevision/lunettes-loupes" element={<LunettesLoupes />} />
             <Route path="/aides-lecture-bassevision/lunettes-intelligentes" element={<LunettesIntelligentes />} />
+            <Route path="/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" element={<RayBanMeta />} />
             <Route path="/boutique/loupe-amelie" element={<LoupeAmelie />} />
             <Route path="/boutique/lunettes-loupe-focus" element={<LunettesLoupeFocus />} />
             <Route path="/boutique/loupe-max-tv" element={<LoupeMaxTv />} />
