@@ -1,173 +1,108 @@
-import DOMPurify from "dompurify";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, ArrowRight, Check, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
-import { fetchProductByHandle, type ShopifyProduct } from "@/lib/shopify";
-import { toast } from "sonner";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
-/* ────────────────────────────────────────────
-   Parse the Shopify HTML description into
-   logical sections for structured display
-   ──────────────────────────────────────────── */
-function parseDescriptionSections(html: string) {
-  const sections: { intro: string; description: string; descriptionBlocks: { title: string; content: string }[]; specs: string; strengths: string; faq: { q: string; a: string }[] } = {
-    intro: "",
-    description: "",
-    descriptionBlocks: [],
-    specs: "",
-    strengths: "",
-    faq: [],
-  };
-
-  // Split by <hr> which separates major sections in the Shopify description
-  const parts = html.split(/<hr\s*\/?>/i);
-
-  if (parts.length >= 1) sections.intro = parts[0].trim();
-  if (parts.length >= 2) {
-    let descHtml = parts[1].trim();
-    // Remove the "Description" h2 heading since Lovable already labels this section
-    descHtml = descHtml.replace(/<h2[^>]*>\s*Description\s*<\/h2>/i, "");
-    sections.description = descHtml;
-
-    // Parse into blocks: split by h3 headings to create visual sub-sections
-    // First, get any intro paragraphs before the first h3
-    const firstH3Index = descHtml.search(/<h3[^>]*>/i);
-    let introContent = "";
-    let restContent = descHtml;
-    if (firstH3Index > 0) {
-      introContent = descHtml.substring(0, firstH3Index).trim();
-      restContent = descHtml.substring(firstH3Index);
-    } else if (firstH3Index === -1) {
-      introContent = descHtml;
-      restContent = "";
-    }
-
-    if (introContent) {
-      sections.descriptionBlocks.push({ title: "", content: introContent });
-    }
-
-    // Split remaining content by h3 tags
-    if (restContent) {
-      const h3Parts = restContent.split(/<h3[^>]*>/i).filter(Boolean);
-      for (const part of h3Parts) {
-        const closingH3 = part.indexOf("</h3>");
-        if (closingH3 !== -1) {
-          const title = part.substring(0, closingH3).replace(/<[^>]*>/g, "").trim();
-          const content = part.substring(closingH3 + 5).trim();
-          if (title && content) {
-            sections.descriptionBlocks.push({ title, content });
-          }
-        }
-      }
-    }
-  }
-  if (parts.length >= 3) sections.specs = parts[2].trim();
-  if (parts.length >= 4) sections.strengths = parts[3].trim();
-
-  // Extract FAQ from the last part
-  const faqSource = parts.length >= 5 ? parts[4] : "";
-  if (faqSource && faqSource.includes("FAQ")) {
-    const qMatches = faqSource.match(/<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gs);
-    if (qMatches) {
-      for (const match of qMatches) {
-        const qMatch = match.match(/<h3[^>]*>(.*?)<\/h3>/s);
-        const aMatch = match.match(/<h3[^>]*>.*?<\/h3>\s*<p[^>]*>(.*?)<\/p>/s);
-        if (qMatch && aMatch) {
-          sections.faq.push({ q: qMatch[1].trim(), a: aMatch[1].trim() });
-        }
-      }
-    }
-  }
-
-  return sections;
-}
+import imgAmelie from "@/assets/products/loupe-electronique-amelie.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/dRm28s7QidKfaBVdbT2Fa00";
 
+const images = [
+  {
+    src: imgAmelie,
+    alt: "Loupe électronique Amélie avec écran lumineux de 11 cm pour la lecture en cas de DMLA",
+  },
+];
+
+const shortPoints = [
+  "Un seul bouton pour choisir entre les grossissements 3×, 6× et 9×",
+  "Écran lumineux de 11 cm, léger et ergonomique",
+  "S'utilise tenue à la main comme une loupe en verre classique",
+  "Éclairage et batterie rechargeable intégrés",
+];
+
+const keyPoints = [
+  "Trois grossissements optiques : 3×, 6× et 9×",
+  "Écran LCD couleur de 11 cm pour une lecture confortable",
+  "Mode haute lisibilité : possibilité d'inverser les contrastes (texte clair sur fond foncé)",
+  "Éclairage LED intégré, idéal en cas de DMLA, glaucome ou cataracte",
+  "Batterie rechargeable — autonomie pensée pour la lecture quotidienne",
+  "Poignée ergonomique, prise en main simple et rassurante",
+  "Format compact, facile à poser sur un livre, un journal ou du courrier",
+];
+
+const specs = [
+  { label: "Grossissements", value: "3× / 6× / 9× (commutés par un seul bouton)" },
+  { label: "Écran", value: "LCD couleur de 11 cm (4,3 pouces)" },
+  { label: "Modes d'affichage", value: "Couleurs réelles et contrastes inversés (texte clair sur fond foncé)" },
+  { label: "Éclairage", value: "LED intégrées autour de la caméra" },
+  { label: "Alimentation", value: "Batterie rechargeable intégrée (câble fourni)" },
+  { label: "Utilisation", value: "Tenue à la main par sa poignée ergonomique" },
+  { label: "Usage recommandé", value: "Lecture du courrier, notices, journaux, étiquettes, livres" },
+];
+
+const descriptionBlocks = [
+  {
+    title: "À qui s'adresse cette loupe ?",
+    paragraphs: [
+      "La loupe électronique Amélie a été pensée pour les personnes malvoyantes — notamment celles qui vivent avec une DMLA, un glaucome ou une cataracte — qui souhaitent continuer à lire confortablement leur courrier, leurs notices de médicaments, leurs livres ou leur journal.",
+      "Elle convient aussi aux proches aidants qui cherchent une aide à la lecture simple à utiliser, sans réglages compliqués, pour la personne qu'ils accompagnent.",
+    ],
+  },
+  {
+    title: "Quand l'utiliser ?",
+    paragraphs: [
+      "Amélie est idéale pour toutes les situations du quotidien qui demandent d'agrandir un texte : lecture du courrier, des étiquettes alimentaires, des notices de médicaments, des mots croisés, des partitions ou de petits caractères dans un livre.",
+      "Son éclairage intégré et le mode contrastes inversés apportent un vrai confort de lecture en cas de basse vision, lorsque l'éclairage de la pièce ne suffit pas.",
+    ],
+  },
+  {
+    title: "Comment ça fonctionne ?",
+    paragraphs: [
+      "Vous posez la loupe sur le texte, vous l'allumez, et l'image s'affiche en grand sur l'écran lumineux de 11 cm. Un seul bouton permet de passer du grossissement 3× au 6× puis au 9× : pas de menus, pas de paramètres à mémoriser.",
+    ],
+    items: [
+      "Grossissement 3× — pour suivre un texte long, comme un livre ou un journal.",
+      "Grossissement 6× — pour les caractères plus petits, étiquettes et notices.",
+      "Grossissement 9× — pour les détails fins : numéros, dates, mentions légales.",
+    ],
+  },
+];
+
+const notes = [
+  "La loupe Amélie est une aide à la lecture électronique : elle ne remplace pas un téléagrandisseur de bureau ni un bilan en basse vision. Plus le grossissement utilisé est élevé, plus la zone visible à l'écran est réduite. Pour choisir le grossissement adapté à votre vision, n'hésitez pas à demander conseil.",
+];
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Loupe électronique Amélie",
+  image: ["https://lirelia.fr/og-image.png"],
+  description:
+    "Loupe de lecture électronique ultra-compacte avec trois grossissements (3×, 6×, 9×), écran lumineux de 11 cm et éclairage LED intégré. Idéale pour DMLA, glaucome ou cataracte.",
+  brand: { "@type": "Brand", name: "LirElia" },
+  offers: {
+    "@type": "Offer",
+    url: "https://lirelia.fr/boutique/loupe-amelie",
+    priceCurrency: "EUR",
+    price: "188.00",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 const LoupeAmelie = () => {
-  const [product, setProduct] = useState<ShopifyProduct | null>(null);
-  const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
-
-  useEffect(() => {
-    fetchProductByHandle("loupe-de-lecture-electronique-amelie")
-      .then((p) => {
-        setProduct(p);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen">
-        <Header />
-        <main id="main-content" className="flex items-center justify-center py-32">
-          <Loader2 className="w-10 h-10 animate-spin text-primary" />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (!product) {
-    return (
-      <div className="min-h-screen">
-        <Header />
-        <main id="main-content" className="container py-20 text-center">
-          <h1 className="font-serif text-3xl font-bold text-foreground mb-4">Produit introuvable</h1>
-          <p className="text-lg text-muted-foreground mb-8">Ce produit n'est pas disponible pour le moment.</p>
-          <Button asChild>
-            <Link to="/aides-lecture-bassevision/loupes-electroniques">
-              <ArrowLeft className="w-5 h-5" />
-              Retour aux loupes électroniques
-            </Link>
-          </Button>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  const { node } = product;
-  const images = node.images.edges;
-  const variants = node.variants.edges;
-  const selectedVariant = variants[selectedVariantIndex]?.node;
-  const hasMultipleVariants = variants.length > 1 && !(variants.length === 1 && variants[0].node.title === "Default Title");
-  const price = selectedVariant?.price;
-
-  // Parse description into sections
-  const descSections = node.descriptionHtml ? parseDescriptionSections(node.descriptionHtml) : null;
-
-  const formatPrice = (amount: string, currency: string) =>
-    new Intl.NumberFormat("fr-FR", { style: "currency", currency }).format(parseFloat(amount));
-
-  // Suppress unused variable warning
-  void toast;
 
   return (
     <div className="min-h-screen">
-      <SEOHead
-        title="Loupe Amélie : Loupe Électronique 3x 6x 9x | LirElia"
-        description="Loupe électronique ultra-compacte avec 3 grossissements (3x, 6x, 9x). Idéale pour DMLA, glaucome ou cataracte. Achat en ligne."
-        canonicalPath="/boutique/loupe-amelie"
-      />
+      <SEOHead jsonLd={productJsonLd} />
       <Header />
       <main id="main-content">
-        {/* Breadcrumb */}
         <div className="container py-4">
           <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-base text-muted-foreground flex-wrap">
             <Link to="/" className="hover:text-primary transition-colors">Accueil</Link>
@@ -176,27 +111,22 @@ const LoupeAmelie = () => {
             <span>/</span>
             <Link to="/aides-lecture-bassevision/loupes-electroniques" className="hover:text-primary transition-colors">Loupes électroniques</Link>
             <span>/</span>
-            <span className="text-foreground font-semibold">{node.title}</span>
+            <span className="text-foreground font-semibold">Loupe Amélie</span>
           </nav>
         </div>
 
-        {/* Product top section */}
         <section className="container pb-12">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
-            {/* Image gallery */}
             <div>
               <div className="rounded-2xl overflow-hidden border-2 border-border bg-card mb-4">
-                {images[selectedImage] ? (
-                  <img
-                    src={images[selectedImage].node.url}
-                    alt={images[selectedImage].node.altText || node.title}
-                    className="w-full aspect-square object-contain bg-white"
-                  />
-                ) : (
-                  <div className="w-full aspect-square bg-muted flex items-center justify-center">
-                    <p className="text-muted-foreground">Image non disponible</p>
-                  </div>
-                )}
+                <img
+                  src={images[selectedImage].src}
+                  alt={images[selectedImage].alt}
+                  className="w-full aspect-square object-contain bg-white"
+                  loading="eager"
+                  width={720}
+                  height={720}
+                />
               </div>
               {images.length > 1 && (
                 <div className="flex gap-3 overflow-x-auto pb-2">
@@ -209,30 +139,22 @@ const LoupeAmelie = () => {
                       }`}
                       aria-label={`Voir image ${i + 1}`}
                     >
-                      <img src={img.node.url} alt={img.node.altText || ""} className="w-full h-full object-cover" />
+                      <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Product info */}
             <div className="flex flex-col">
               <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">
-                {node.title}
+                Loupe électronique Amélie
               </h1>
-
-              {/* Subtitle */}
               <p className="text-lg font-semibold text-muted-foreground mb-4">
-                Loupe de lecture Amélie — Grossissement 3x, 6x et 9x
+                Loupe de lecture électronique avec grossissements 3×, 6× et 9× — pensée pour la basse vision, la DMLA et la lecture du quotidien.
               </p>
-
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                {price && (
-                  <p className="text-3xl font-bold text-primary m-0">
-                    {formatPrice(price.amount, price.currencyCode)}
-                  </p>
-                )}
+                <p className="text-3xl font-bold text-primary m-0">188,00 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit
@@ -242,74 +164,19 @@ const LoupeAmelie = () => {
               </div>
               <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× disponible.</p>
 
-              {/* Key selling points */}
               <div className="mb-6">
-                <p className="text-base md:text-lg text-foreground leading-relaxed mb-3">
-                  <strong>Idéale pour les personnes âgées souffrant de DMLA, glaucome, ou cataracte</strong>, la Loupe de lecture Amélie facilite grandement et simplement la lecture.
+                <p className="text-xl text-foreground leading-relaxed mb-4">
+                  <strong>Idéale pour les personnes vivant avec une DMLA, un glaucome ou une cataracte</strong>, la loupe Amélie facilite la lecture du courrier, des notices et des journaux grâce à un écran lumineux et trois grossissements simples à utiliser.
                 </p>
                 <ul className="space-y-2">
-                  {[
-                    "Un seul bouton pour choisir entre les grossissements 3x, 6x, 9x.",
-                    "Légère, ergonomique et dotée d'un écran de 11 cm lumineux.",
-                    "S'utilise tenue à la main par sa poignée comme une loupe en verre.",
-                    "Éclairage et batterie rechargeable intégrés.",
-                  ].map((point, i) => (
-                    <li key={i} className="flex items-start gap-3 text-base md:text-lg text-foreground leading-relaxed">
+                  {shortPoints.map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed">
                       <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-
-              {/* Variant selector */}
-              {hasMultipleVariants && node.options.length > 0 && (
-                <div className="mb-6">
-                  {node.options.map((option) => (
-                    <div key={option.name} className="mb-4">
-                      <label className="block text-lg font-bold text-foreground mb-2">{option.name}</label>
-                      <div className="flex flex-wrap gap-2">
-                        {option.values.map((value) => {
-                          const variantIndex = variants.findIndex(
-                            (v) => v.node.selectedOptions.some((o) => o.name === option.name && o.value === value)
-                          );
-                          const isSelected = selectedVariant?.selectedOptions.some(
-                            (o) => o.name === option.name && o.value === value
-                          );
-                          return (
-                            <button
-                              key={value}
-                              onClick={() => variantIndex >= 0 && setSelectedVariantIndex(variantIndex)}
-                              className={`px-5 py-3 rounded-xl text-lg font-semibold border-2 transition-all ${
-                                isSelected
-                                  ? "border-primary bg-primary text-primary-foreground"
-                                  : "border-border bg-card text-foreground hover:border-primary/50"
-                              }`}
-                            >
-                              {value}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Availability */}
-              {selectedVariant && (
-                <div className="mb-6">
-                  {selectedVariant.availableForSale ? (
-                    <span className="inline-flex items-center gap-2 text-lg font-semibold text-accent">
-                      <Check className="w-5 h-5" />
-                      En stock
-                    </span>
-                  ) : (
-                    <span className="text-lg font-semibold text-destructive">Rupture de stock</span>
-                  )}
-                </div>
-              )}
-
             </div>
           </div>
         </section>
@@ -320,170 +187,84 @@ const LoupeAmelie = () => {
           </div>
         </section>
 
-        {/* Structured content sections from Shopify description */}
-        {descSections && (
-          <>
-            {/* Description détaillée */}
-            {descSections.descriptionBlocks.length > 0 && (
-              <section className="py-12 lg:py-16 bg-muted">
-                <div className="container">
-                  <div className="max-w-4xl mx-auto">
-                    <h2 className="font-serif text-3xl font-bold text-foreground mb-10">Description détaillée</h2>
-
-                    {/* Intro block (paragraphs before first h3) */}
-                    {descSections.descriptionBlocks[0]?.title === "" && (
-                      <div
-                        className="prose prose-lg max-w-none mb-10
-                          prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4
-                          prose-strong:text-foreground"
-                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.descriptionBlocks[0].content) }}
-                      />
-                    )}
-
-                    {/* Sub-section cards from h3 headings */}
-                    <div className="space-y-6">
-                      {descSections.descriptionBlocks
-                        .filter(block => block.title !== "")
-                        .map((block, i) => (
-                          <div key={i} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
-                            <h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">
-                              {block.title}
-                            </h3>
-                            <div
-                              className="prose prose-lg max-w-none
-                                prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4 prose-p:last:mb-0
-                                prose-strong:text-foreground
-                                prose-li:text-foreground prose-li:text-base md:prose-li:text-lg prose-li:leading-relaxed"
-                              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.content) }}
-                            />
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* Fallback if no blocks parsed but raw description exists */}
-            {descSections.descriptionBlocks.length === 0 && descSections.description && (
-              <section className="py-12 lg:py-16 bg-muted">
-                <div className="container">
-                  <div className="max-w-4xl mx-auto">
-                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
-                    <div
-                      className="prose prose-lg max-w-none text-foreground
-                        prose-headings:font-serif prose-headings:text-foreground
-                        prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
-                        prose-strong:text-foreground"
-                      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.description) }}
-                    />
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* Caractéristiques techniques */}
-            {descSections.specs && (
-              <section className="py-12 lg:py-16">
-                <div className="container">
-                  <div className="max-w-4xl mx-auto">
-                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Caractéristiques techniques</h2>
-                    <div className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
-                      <div
-                        className="prose prose-lg max-w-none text-foreground
-                          prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-6 prose-headings:mb-3
-                          prose-h2:hidden prose-h3:text-xl prose-h3:text-primary
-                          prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4
-                          prose-li:text-foreground prose-li:text-base md:prose-li:text-lg prose-li:leading-relaxed prose-li:marker:text-primary
-                          prose-ul:space-y-3 prose-ol:space-y-3
-                          prose-strong:text-foreground prose-strong:font-bold"
-                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.specs.replace(/<h2[^>]*>.*?<\/h2>/i, "")) }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* Points forts */}
-            {descSections.strengths && (
-              <section className="py-12 lg:py-16 bg-muted">
-                <div className="container">
-                  <div className="max-w-4xl mx-auto">
-                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Pourquoi choisir cette loupe ?</h2>
-                    <div className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
-                      <div
-                        className="prose prose-lg max-w-none text-foreground
-                          prose-headings:font-serif prose-headings:text-foreground prose-headings:mt-6 prose-headings:mb-3
-                          prose-h2:hidden prose-h3:text-xl prose-h3:text-accent
-                          prose-p:text-foreground prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-p:mb-4
-                          prose-li:text-foreground prose-li:text-base md:prose-li:text-lg prose-li:leading-relaxed prose-li:marker:text-accent
-                          prose-ul:space-y-3 prose-ol:space-y-3
-                          prose-strong:text-foreground"
-                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(descSections.strengths.replace(/<h2[^>]*>.*?<\/h2>/i, "")) }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* FAQ */}
-            {descSections.faq.length > 0 && (
-              <section className="py-12 lg:py-16">
-                <div className="container">
-                  <div className="max-w-4xl mx-auto">
-                    <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Foire aux questions</h2>
-                    <Accordion type="single" collapsible className="space-y-3">
-                      {descSections.faq.map((item, i) => (
-                        <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-2xl border-2 border-border px-6">
-                          <AccordionTrigger className="text-xl font-bold text-foreground text-left py-5 hover:no-underline">
-                            {item.q}
-                          </AccordionTrigger>
-                          <AccordionContent className="text-base md:text-lg text-foreground leading-relaxed pb-5">
-                            {item.a}
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
-                </div>
-              </section>
-            )}
-          </>
-        )}
+        <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
+          <div className="space-y-6">
+            {descriptionBlocks.map((block) => (
+              <div key={block.title} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8">
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>
+                {block.paragraphs.map((p) => (
+                  <p key={p} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{p}</p>
+                ))}
+                {block.items && (
+                  <ul className="space-y-3 mt-4">
+                    {block.items.map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed">
+                        <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div></div></section>
 
         <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto">
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Caractéristiques techniques</h2>
+          <div className="bg-card rounded-2xl border-2 border-border overflow-hidden">
+            {specs.map((row) => (
+              <div key={row.label} className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] border-b border-border last:border-b-0">
+                <div className="bg-muted px-5 py-4 font-bold text-foreground text-lg">{row.label}</div>
+                <div className="px-5 py-4 text-lg text-foreground leading-relaxed">{row.value}</div>
+              </div>
+            ))}
+          </div>
+        </div></div></section>
+
+        <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Points clés</h2>
+          <Card variant="elevated"><CardContent className="p-6 md:p-8"><ul className="space-y-3">
+            {keyPoints.map((point) => (
+              <li key={point} className="flex items-start gap-3 text-xl text-foreground leading-relaxed">
+                <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul></CardContent></Card>
+        </div></div></section>
+
+        <section className="py-12 lg:py-16"><div className="container"><div className="max-w-4xl mx-auto grid gap-6">
+          <Card variant="elevated"><CardContent className="p-6 md:p-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="p-3 rounded-xl bg-primary/10 text-primary"><Search className="w-6 h-6" /></div>
+              <h2 className="font-serif text-2xl font-bold text-foreground">À noter</h2>
+            </div>
+            <ul className="space-y-3">
+              {notes.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-lg text-muted-foreground leading-relaxed">
+                  <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent></Card>
           <ProductTrustGrid />
         </div></div></section>
 
-        {/* Back CTA */}
-        <section className="py-16 bg-muted">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-6">
-                Besoin d'un conseil personnalisé ?
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit et sans engagement.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="default" size="lg" asChild>
-                  <Link to="/contact-conseil?sujet=loupe-electronique">
-                    Demander un conseil
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link to="/aides-lecture-bassevision/loupes-electroniques">
-                    <ArrowLeft className="w-5 h-5" />
-                    Toutes les loupes électroniques
-                  </Link>
-                </Button>
-              </div>
-            </div>
+        <section className="py-16 bg-muted"><div className="container"><div className="max-w-3xl mx-auto text-center">
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-6">Besoin d'un conseil personnalisé ?</h2>
+          <p className="text-xl text-muted-foreground leading-relaxed mb-8">Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit et sans engagement.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="default" size="lg" asChild>
+              <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Accéder au paiement sécurisé<ArrowRight className="w-5 h-5" /></a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/aides-lecture-bassevision/loupes-electroniques"><ArrowLeft className="w-5 h-5" />Toutes les loupes électroniques</Link>
+            </Button>
           </div>
-        </section>
+        </div></div></section>
       </main>
       <Footer />
     </div>
