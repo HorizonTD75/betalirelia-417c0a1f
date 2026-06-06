@@ -9,15 +9,26 @@ import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgAmelie from "@/assets/products/loupe-electronique-amelie.jpg";
+import imgAmelieProduct from "@/assets/products/loupe-electronique-amelie-product.jpeg";
+import imgAmelieGrossissements from "@/assets/products/loupe-electronique-amelie-grossissements.jpeg";
 
 const STRIPE_URL = "https://buy.stripe.com/dRm28s7QidKfaBVdbT2Fa00";
 
 const images = [
   {
     src: imgAmelie,
-    alt: "Loupe électronique Amélie avec écran lumineux de 11 cm pour la lecture en cas de DMLA",
+    alt: "Loupe électronique Amélie tenue à la main pour la lecture en cas de DMLA",
+  },
+  {
+    src: imgAmelieProduct,
+    alt: "Loupe de lecture électronique Amélie — vue de face avec écran de 11 cm",
+  },
+  {
+    src: imgAmelieGrossissements,
+    alt: "Loupe Amélie : illustration des 3 grossissements 3×, 6× et 9× pour la basse vision",
   },
 ];
+
 
 const shortPoints = [
   "Un seul bouton pour choisir entre les grossissements 3×, 6× et 9×",
