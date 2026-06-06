@@ -23,10 +23,9 @@ import sourisVeraImg from "@/assets/products/souris-loupe-electronique-VERA-jour
 import mezzoFocusImg from "@/assets/products/teleagrandisseur-Mezzo-basse-vision.jpg";
 import loupeDomeLinaImg from "@/assets/products/loupe-dome-eclairante-LINA.jpg";
 import rayBanMetaImg from "@/assets/products/ray-ban-meta-marron.jpg";
+import loupeAmelieImg from "@/assets/products/loupe-electronique-amelie.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
-// Loupe Amélie : main image from Shopify (real product picture)
-const loupeAmelieImg = "https://cdn.shopify.com/s/files/1/0963/4621/0631/files/amelie-main.jpg?v=1773242145";
 
 type Product = {
   name: string;
