@@ -189,7 +189,7 @@ const VivreBasseVision = () => {
       <Header />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-primary text-primary-foreground py-12 md:py-16 pb-24">
+        <section className="relative overflow-hidden bg-primary text-primary-foreground py-12 md:py-16">
           <div className="absolute inset-0">
             <img src={vivreHeroImage} alt="Vivre au quotidien avec une basse vision" className="w-full h-full object-cover opacity-15" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
