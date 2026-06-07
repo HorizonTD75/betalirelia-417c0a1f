@@ -126,13 +126,13 @@ const Visiopraticien = () => {
       <Header />
       <main id="main-content">
         {/* Hero */}
-        <section className="relative bg-primary text-primary-foreground py-20 pb-32 overflow-hidden">
+        <section className="relative bg-primary text-primary-foreground py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <img src={visiopraticienHeroImage} alt="Visiopraticien expert en basse vision et réadaptation visuelle" className="w-full h-full object-cover opacity-30" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">
-            <div className="max-w-4xl">
+            <div className="max-w-5xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Visiopraticien, l'<span className="text-secondary">expert basse vision</span> pour lire et vivre mieux
               </h1>

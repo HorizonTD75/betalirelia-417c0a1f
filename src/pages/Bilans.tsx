@@ -142,8 +142,8 @@ const Bilans = () => {
             <img src={bilanHeroImage} alt="Professionnel réalisant un bilan basse vision personnalisé" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
-          <div className="container relative py-20 lg:py-28">
-            <div className="max-w-4xl">
+          <div className="container relative py-12 md:py-16">
+            <div className="max-w-5xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-8">
                 <ClipboardCheck className="w-5 h-5" />
                 <span className="text-lg font-semibold">Un état des lieux fonctionnel, pas un diagnostic</span>
