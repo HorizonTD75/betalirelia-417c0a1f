@@ -159,7 +159,7 @@ const LoupeAmelie = () => {
 
             <div className="flex flex-col">
               <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">
-                Loupe électronique Amélie
+                Loupe électronique Amélie pour lire avec une basse vision
               </h1>
               <p className="text-lg font-semibold text-muted-foreground mb-4">
                 Loupe de lecture électronique avec grossissements 3×, 6× et 9× — pensée pour la basse vision, la DMLA et la lecture du quotidien.

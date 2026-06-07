@@ -152,7 +152,7 @@ const LunettesIntelligentes = () => {
                   <Sparkles className="w-7 h-7" />
                 </div>
                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
-                  <span className="text-secondary">Lunettes intelligentes</span> pour malvoyants
+                  <span className="text-secondary">Lunettes intelligentes</span> pour basse vision et malvoyance
                 </h1>
               </div>
               <p className="font-serif text-xl md:text-2xl text-primary-foreground/90 mb-5 font-semibold">

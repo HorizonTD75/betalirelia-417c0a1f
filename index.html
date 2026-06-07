@@ -202,9 +202,55 @@
           og: "article"
         },
         "/boutique/loupe-amelie": {
-          t: "Loupe Amélie – Loupe de Lecture Élégante | LirElia",
-          d: "Découvrez la loupe Amélie par LirElia : loupe de lecture design, légère et performante pour la basse vision.",
+          t: "Loupe électronique Amélie pour DMLA et basse vision | LirElia",
+          d: "Loupe électronique Amélie pour lire courriers, étiquettes et petits caractères avec zoom, contrastes renforcés et usage simple au quotidien.",
           og: "product"
+        },
+        "/aides-lecture-bassevision/lunettes-intelligentes": {
+          t: "Lunettes intelligentes basse vision : IA, lecture et autonomie | LirElia",
+          d: "Découvrez les lunettes intelligentes pour malvoyants : IA grand public, lecture ponctuelle, reconnaissance visuelle et aides spécialisées basse vision.",
+          og: "article"
+        },
+        "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta": {
+          t: "Ray-Ban Meta et basse vision : usages possibles pour malvoyants | LirElia",
+          d: "Présentation factuelle des Ray-Ban Meta pour la basse vision : lecture ponctuelle, IA vocale, limites actuelles et potentiel pour les personnes malvoyantes.",
+          og: "article"
+        },
+        "/merci-contact": {
+          t: "Demande de contact envoyée | LirElia",
+          d: "Votre demande de contact a bien été envoyée à LirElia.",
+          og: "website",
+          noindex: true
+        },
+        "/merci-bilan-expert": {
+          t: "Demande de bilan expert envoyée | LirElia",
+          d: "Votre demande de bilan expert basse vision a bien été envoyée à LirElia.",
+          og: "website",
+          noindex: true
+        },
+        "/merci-bilan-suivi": {
+          t: "Demande de pack suivi envoyée | LirElia",
+          d: "Votre demande de pack suivi basse vision a bien été envoyée à LirElia.",
+          og: "website",
+          noindex: true
+        },
+        "/merci-bilan-essentiel": {
+          t: "Demande de bilan essentiel envoyée | LirElia",
+          d: "Votre demande de bilan essentiel basse vision a bien été envoyée à LirElia.",
+          og: "website",
+          noindex: true
+        },
+        "/merci-visite-domicile": {
+          t: "Demande de visite à domicile envoyée | LirElia",
+          d: "Votre demande de visite à domicile basse vision a bien été envoyée à LirElia.",
+          og: "website",
+          noindex: true
+        },
+        "/merci-club": {
+          t: "Inscription au Club LirElia confirmée | LirElia",
+          d: "Votre inscription au Club LirElia pour personnes malvoyantes et aidants a bien été prise en compte.",
+          og: "website",
+          noindex: true
         },
         "/club": {
           t: "Club Basse Vision LirElia : Rencontres Gratuites",
@@ -280,6 +326,9 @@
       }
       var u = B + (p === "/" ? "/" : p);
       setM("description", r[defined]);
+      var robotsValue = r.noindex ? "noindex, follow" : "index, follow";
+      setM("robots", robotsValue);
+      setM("googlebot", robotsValue);
       setM("og:title", r.t, "property");
       setM("og:description", r[defined], "property");
       setM("og:url", u, "property");
