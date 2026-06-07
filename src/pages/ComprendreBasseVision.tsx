@@ -107,8 +107,8 @@ const ComprendreBasseVision = () => {
             <img src={comprendreHeaderImage} alt="Comprendre la basse vision et ses impacts au quotidien" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
-          <div className="container relative py-20 lg:py-28">
-            <div className="max-w-4xl">
+          <div className="container relative py-12 md:py-16">
+            <div className="max-w-5xl">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
                 Comprendre la <span className="text-secondary">basse vision</span>
               </h1>

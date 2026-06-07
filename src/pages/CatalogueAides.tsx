@@ -218,13 +218,13 @@ const CatalogueAides = () => {
             <img src={heroBg} alt="Solutions et aides techniques pour la lecture en basse vision" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" width={1440} height={500} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
-          <div className="container relative py-16 lg:py-20">
+          <div className="container relative py-12 md:py-16">
             <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-base text-primary-foreground/80 flex-wrap mb-6">
               <Link to="/" className="hover:text-secondary transition-colors">Accueil</Link>
               <span>/</span>
               <span className="text-primary-foreground font-semibold">Catalogue</span>
             </nav>
-            <div className="max-w-3xl">
+            <div className="max-w-5xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 animate-fade-in">
                 <span className="text-base font-semibold">Aides à la lecture &amp; basse vision</span>
               </div>

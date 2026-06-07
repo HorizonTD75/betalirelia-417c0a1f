@@ -9,25 +9,25 @@
 
 @layer base {
   :root {
-    /* Primary: Deep trust blue - professional, calming */
-    --primary: 215 80% 25%;
+    /* Primary: Lirelia deep blue #1E356F — official header colour */
+    --primary: 223 57% 28%;
     --primary-foreground: 45 100% 96%;
     
     /* Secondary: Warm gold - high visibility, welcoming */
     --secondary: 42 90% 55%;
-    --secondary-foreground: 215 80% 15%;
+    --secondary-foreground: 223 57% 15%;
     
     /* Background: Warm cream - easier on eyes than pure white */
     --background: 45 40% 97%;
-    --foreground: 215 60% 15%;
+    --foreground: 223 50% 15%;
     
     /* Cards: Slightly warmer for distinction */
     --card: 45 30% 99%;
-    --card-foreground: 215 60% 15%;
+    --card-foreground: 223 50% 15%;
     
     /* Muted: Soft blue-gray */
     --muted: 210 20% 92%;
-    --muted-foreground: 215 50% 20%;
+    --muted-foreground: 223 40% 22%;
     
     /* Accent: Teal for actions */
     --accent: 175 60% 35%;
@@ -35,35 +35,35 @@
     
     /* Popover */
     --popover: 45 30% 99%;
-    --popover-foreground: 215 60% 15%;
+    --popover-foreground: 223 50% 15%;
     
     /* Destructive */
     --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
     
     /* Borders - visible but not harsh */
-    --border: 215 30% 80%;
-    --input: 215 30% 85%;
-    --ring: 215 80% 35%;
+    --border: 223 30% 80%;
+    --input: 223 30% 85%;
+    --ring: 223 57% 35%;
     
     --radius: 0.75rem;
     
     /* Custom tokens for LirElia */
-    --hero-gradient: linear-gradient(135deg, hsl(215 80% 25%) 0%, hsl(215 70% 35%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(215 60% 15% / 0.15);
-    --card-shadow-hover: 0 8px 30px -4px hsl(215 60% 15% / 0.2);
+    --hero-gradient: linear-gradient(135deg, hsl(223 57% 28%) 0%, hsl(223 50% 36%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(223 50% 15% / 0.15);
+    --card-shadow-hover: 0 8px 30px -4px hsl(223 50% 15% / 0.2);
     --highlight: 42 90% 55%;
     --success: 145 60% 35%;
     --success-foreground: 0 0% 100%;
     
     /* Sidebar tokens */
-    --sidebar-background: 215 80% 20%;
+    --sidebar-background: 223 57% 22%;
     --sidebar-foreground: 45 100% 96%;
     --sidebar-primary: 42 90% 55%;
-    --sidebar-primary-foreground: 215 80% 15%;
-    --sidebar-accent: 215 70% 30%;
+    --sidebar-primary-foreground: 223 57% 15%;
+    --sidebar-accent: 223 50% 32%;
     --sidebar-accent-foreground: 45 100% 96%;
-    --sidebar-border: 215 60% 35%;
+    --sidebar-border: 223 45% 36%;
     --sidebar-ring: 42 90% 55%;
   }
 

@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
       </div>
 
-      <div className="container relative py-20 lg:py-28">
+      <div className="container relative py-14 md:py-20">
         <div className="max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-8 animate-fade-in">
