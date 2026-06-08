@@ -18,7 +18,7 @@ import imgTemperatures from "@/assets/products/lampe-eira-temperatures.jpg";
 const STRIPE_URL = "https://buy.stripe.com/6oU4gA0nQbC711l9ZH2Fa07";
 
 const images = [
-  { src: imgBlancheLivre, alt: "Lampe de lecture Eira blanche pour malvoyants" },
+  { src: imgBlancheLivre, alt: "La lampe de basse vision EIRA posée sur un bureau, à coté d’un livre qu’elle éclaire" },
   { src: imgBlanchePliee, alt: "Lampe Eira blanche pliable pour basse vision" },
   { src: imgNoirePliee, alt: "Lampe Eira noire pliable et réglable" },
   { src: imgNoireLivre, alt: "Lampe de lecture Eira noire pour éclairage optimal" },

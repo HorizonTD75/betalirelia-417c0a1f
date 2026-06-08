@@ -128,7 +128,7 @@ const LunettesIntelligentes = () => {
           <div className="absolute inset-0">
             <img
               src={heroImage}
-              alt=""
+              alt="Illustration d’une paire de lunettes intelligentes connectées posée sur un livre ouvert"
               className="w-full h-full object-cover opacity-20"
               aria-hidden="true"
               loading="eager"

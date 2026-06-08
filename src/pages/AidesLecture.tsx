@@ -45,7 +45,7 @@ const categories = [
     icon: Search,
     title: "Loupes en verre : grossissement optique simple et immédiat",
     image: loupeVerre,
-    imageAlt: "Illustration aquarelle d'une loupe en verre posée sur un livre ouvert",
+    imageAlt: "Illustration d’une loupe en verre tenue à la main pour lire un livre",
     intro: `La loupe en verre reste l'aide à la lecture la plus connue, et souvent la première à laquelle on pense quand la vue baisse. Sa lentille convergente offre un grossissement immédiat, sans électronique, pour relire un courrier, vérifier une étiquette ou suivre quelques lignes d'un livre.`,
     usages: [
       "Lire son courrier, ses factures, une notice",
@@ -71,7 +71,7 @@ const categories = [
     icon: Monitor,
     title: "Loupes électroniques : grossissement variable et contraste renforcé",
     image: loupeElectronique,
-    imageAlt: "Illustration aquarelle d'une loupe électronique portable affichant du texte agrandi",
+    imageAlt: "Illustration d’une loupe électronique tenue à la main.",
     intro: `La loupe électronique, ou loupe numérique, utilise une caméra et un écran pour afficher le texte agrandi. Elle permet un zoom puissant, des contrastes adaptés à la basse vision et une lecture beaucoup plus longue que ce qu'autorise une loupe optique classique. Elle existe en version de poche, transportable ou de bureau.`,
     usages: [
       "Lire un journal, un livre ou un document long sans fatigue excessive",
@@ -97,7 +97,7 @@ const categories = [
     icon: Lightbulb,
     title: "Lampes de lecture : voir mieux grâce à un éclairage maîtrisé",
     image: lampeLecture,
-    imageAlt: "Illustration aquarelle d'une lampe de bureau éclairant un livre ouvert",
+    imageAlt: "Illustration d’une lampe de lecture posée sur un bureau ",
     intro: `En basse vision, on cherche souvent à voir plus grand alors qu'il faudrait d'abord voir mieux. Un éclairage adapté change radicalement le confort de lecture : il réduit la fatigue, limite l'éblouissement et fait ressortir les contrastes du texte. Une bonne lampe est souvent le complément le plus utile à une loupe ou à un agrandisseur.`,
     usages: [
       "Éclairer précisément la zone de lecture sans éblouir",
@@ -123,7 +123,7 @@ const categories = [
     icon: Eye,
     title: "Télé-agrandisseurs : confort maximal pour lire et écrire longtemps",
     image: teleAgrandisseur,
-    imageAlt: "Illustration aquarelle d'une personne utilisant un télé-agrandisseur avec grand écran",
+    imageAlt: "Illustration d’une personne âgée malvoyante devant un téléagrandisseur",
     intro: `Le télé-agrandisseur est une station de lecture posée sur un bureau, avec un grand écran et un plateau mobile sous une caméra. Il est particulièrement utile pour lire un journal, remplir un formulaire, écrire une lettre ou faire des mots croisés. Sa stabilité, son grand champ de vision et sa posture confortable en font un véritable outil du quotidien pour les déficiences visuelles plus marquées.`,
     usages: [
       "Lire longuement journaux, livres, documents administratifs",
@@ -149,7 +149,7 @@ const categories = [
     icon: Glasses,
     title: "Lunettes loupes : un grossissement mains libres, près ou de loin",
     image: lunettesLoupes,
-    imageAlt: "Illustration aquarelle d'une paire de lunettes loupes posée sur un livre ouvert",
+    imageAlt: "Illustration d’une paire de lunettes loupes de lecture pour malvoyants",
     intro: `Les lunettes loupes apportent un grossissement mains libres, à une distance de travail bien définie. Certaines sont conçues pour les activités de près — lecture, couture, bricolage — d'autres pour mieux distinguer une scène, un tableau ou un écran à distance. Leur efficacité dépend très étroitement du choix du modèle et de l'usage prévu.`,
     usages: [
       "Lire, coudre, bricoler ou faire de petits travaux minutieux mains libres",
@@ -176,7 +176,7 @@ const categories = [
     icon: Sparkles,
     title: "Lunettes intelligentes : lire, reconnaître et obtenir une aide vocale, les mains libres",
     image: lunettesIntelligentes,
-    imageAlt: "Illustration aquarelle de lunettes intelligentes posées sur un livre ouvert",
+    imageAlt: "Illustration d’une paire de lunettes intelligentes connectées posée sur un livre ouvert",
     intro: `Les lunettes intelligentes sont des lunettes portées sur le visage qui intègrent une caméra, un micro et une synthèse vocale. Elles permettent à une personne malvoyante d'obtenir une aide sans tenir son téléphone : lire une étiquette, reconnaître un objet, décrire une scène ou appeler un proche. Il en existe deux familles très différentes — les lunettes IA grand public (Ray-Ban Meta, Oakley Meta) et les aides électroniques spécialisées basse vision (OrCam MyEye, Arc-Vision, eSight…) — qui ne répondent pas aux mêmes besoins ni aux mêmes budgets.`,
     usages: [
       "Lire une étiquette, un menu ou un courrier court à voix haute",

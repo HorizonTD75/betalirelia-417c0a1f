@@ -50,10 +50,10 @@ const rawCategories: Category[] = [
     title: "Lunettes loupes",
     usage: "Pour lire, bricoler, coudre ou mieux voir à distance selon le modèle.",
     products: [
-      { name: "Lunettes loupe FOCUS", usage: "Pour lire, bricoler ou coudre les mains libres.", price: "89 €", image: lunettesFocus, href: "/boutique/lunettes-loupe-focus" },
-      { name: "Lunettes loupe Max-TV", usage: "Pour mieux voir à distance au théâtre, en conférence ou devant un écran.", price: "87 €", image: lunettesMaxTv, href: "/boutique/loupe-max-tv" },
-      { name: "Lunette loupe frontale ALVA", usage: "Lunette loupe à LED, 5 grossissements, mains libres.", price: "94 €", image: alvaImg, href: "/boutique/lunettes-loupe-frontale-alva" },
-      { name: "Clip lunettes loupe", usage: "Surlunette à clipser sur vos lunettes — grossissement d'appoint.", price: "24,50 €", image: clipImg, href: "/boutique/clip-lunettes-loupe" },
+      { name: "Lunettes loupe FOCUS", usage: "Pour lire, bricoler ou coudre les mains libres.", price: "89 €", image: lunettesFocus, href: "/boutique/lunettes-loupe-focus", imageAlt: "Lunettes loupe Focus de lecture dans sa pochette" },
+      { name: "Lunettes loupe Max-TV", usage: "Pour mieux voir à distance au théâtre, en conférence ou devant un écran.", price: "87 €", image: lunettesMaxTv, href: "/boutique/loupe-max-tv", imageAlt: "Lunette loupe MAX-TV avec sa housse, pour regarder la TV, aller au cinéma" },
+      { name: "Lunette loupe frontale ALVA", usage: "Lunette loupe à LED, 5 grossissements, mains libres.", price: "94 €", image: alvaImg, href: "/boutique/lunettes-loupe-frontale-alva", imageAlt: "Sacoche des lunettes loupe ALVA, avec plusieurs lentilles, sangle, chiffonette." },
+      { name: "Clip lunettes loupe", usage: "Surlunette à clipser sur vos lunettes — grossissement d'appoint.", price: "24,50 €", image: clipImg, href: "/boutique/clip-lunettes-loupe", imageAlt: "Un clip lunettes loupe posé sur le bureau" },
     ],
   },
   {
@@ -61,7 +61,7 @@ const rawCategories: Category[] = [
     title: "Lunettes intelligentes",
     usage: "Lunettes connectées avec aide vocale, lecture et reconnaissance d'objet — pour gagner en autonomie au quotidien.",
     products: [
-      { name: "Ray-Ban Meta", usage: "Produit en évaluation — aide vocale ponctuelle, lecture courte, description de scène et identification d'objets.", image: rayBanMetaImg, imageAlt: "lunettes intelligentes Ray-Ban Meta utilisables par un malvoyant pour la lecture ponctuelle", href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" },
+      { name: "Ray-Ban Meta", usage: "Produit en évaluation — aide vocale ponctuelle, lecture courte, description de scène et identification d'objets.", image: rayBanMetaImg, imageAlt: "Lunettes intelligentes Ray-Ban Meta avec monture marron", href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" },
     ],
   },
   {
@@ -69,8 +69,8 @@ const rawCategories: Category[] = [
     title: "Loupes en verre",
     usage: "Des solutions simples et immédiates pour lire un courrier, une étiquette ou un document posé à plat.",
     products: [
-      { name: "Loupe à main NORA", usage: "Loupe rectangulaire éclairante x2 et x6, 50 LED réglables.", price: "87,50 €", image: loupeNoraImg, href: "/boutique/loupe-main-nora" },
-      { name: "Loupe dôme LINA", usage: "Loupe à poser éclairante et rechargeable, grossissement x2 à x3.", price: "86,20 €", image: loupeDomeLinaImg, imageAlt: "Loupe dôme éclairante rechargeable LINA pour lire les petits caractères avec une basse vision", href: "/boutique/loupe-dome-eclairante-lina" },
+      { name: "Loupe à main NORA", usage: "Loupe rectangulaire éclairante x2 et x6, 50 LED réglables.", price: "87,50 €", image: loupeNoraImg, href: "/boutique/loupe-main-nora", imageAlt: "La loupe à man de lecture NORA, pour malvoyants léger, DMLA, glaucome." },
+      { name: "Loupe dôme LINA", usage: "Loupe à poser éclairante et rechargeable, grossissement x2 à x3.", price: "86,20 €", image: loupeDomeLinaImg, imageAlt: "La loupe dome de lecture posée sur une table", href: "/boutique/loupe-dome-eclairante-lina" },
     ],
     emptyMessage: "Une sélection de loupes en verre sera disponible très prochainement.",
   },
@@ -79,8 +79,8 @@ const rawCategories: Category[] = [
     title: "Loupes électroniques",
     usage: "Pour agrandir fortement les textes, améliorer le contraste et retrouver du confort de lecture.",
     products: [
-      { name: "Loupe Amélie", usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.", price: "188 €", image: loupeAmelieImg, href: "/boutique/loupe-amelie" },
-      { name: "Loupe électronique CLOVER 5", usage: "Une loupe électronique transportable légère et simple d'utilisation — conçue pour les personnes malvoyantes atteintes de DMLA, glaucome ou basse vision, utilisable partout au quotidien.", price: "539 €", image: clover5Img, imageAlt: "loupe électronique de lecture avec poignée CLOVER 5", href: "/boutique/loupe-electronique-clover-5" },
+      { name: "Loupe Amélie", usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.", price: "188 €", image: loupeAmelieImg, href: "/boutique/loupe-amelie", imageAlt: "La loupe de lecture AMELIE tenue à la main et positionnée au dessus d’une carte en couleur. " },
+      { name: "Loupe électronique CLOVER 5", usage: "Une loupe électronique transportable légère et simple d'utilisation — conçue pour les personnes malvoyantes atteintes de DMLA, glaucome ou basse vision, utilisable partout au quotidien.", price: "539 €", image: clover5Img, imageAlt: "La loupe électronique CLOVER 5 tenue à la main et grossissant une partie du texte d’un magazine.", href: "/boutique/loupe-electronique-clover-5" },
     ],
   },
   {
@@ -88,10 +88,10 @@ const rawCategories: Category[] = [
     title: "Lampes basse vision",
     usage: "Pour améliorer l'éclairage, réduire la fatigue visuelle et mieux lire au quotidien.",
     products: [
-      { name: "Lampe basse vision EIRA", usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.", price: "178 €", image: lampeEiraImg, href: "/boutique/lampe-basse-vision-eira" },
-      { name: "Lampe loupe ASTRID", usage: "Lampe loupe à pince, lentille 10,5 cm, x3, LED 6000 lux, 3 températures.", price: "148 €", image: lampeAstridImg, href: "/boutique/lampe-loupe-astrid" },
-      { name: "Lampadaire SOLVEIG", usage: "Lampadaire de lecture léger, hauteur réglable, 5 000 lux, 3 températures et télécommande.", price: "179 €", image: lampadaireSolveigImg, imageAlt: "Lampadaire SOLVEIG noir pour lecture basse vision", href: "/boutique/lampadaire-solveig" },
-      { name: "Lampe tour de cou AINA", usage: "Lampe de lecture mains libres, portée autour du cou ou posée sur la table — 2 modes, 3 températures, 10 h d'autonomie.", price: "49,20 €", image: lampeAinaImg, imageAlt: "Lampe de lecture tour de cou AINA, en noir et en blanc", href: "/produits/lampe-tour-cou-aina" },
+      { name: "Lampe basse vision EIRA", usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.", price: "178 €", image: lampeEiraImg, href: "/boutique/lampe-basse-vision-eira", imageAlt: "La lampe de basse vision EIRA posée sur un bureau, à coté d’un livre qu’elle éclaire" },
+      { name: "Lampe loupe ASTRID", usage: "Lampe loupe à pince, lentille 10,5 cm, x3, LED 6000 lux, 3 températures.", price: "148 €", image: lampeAstridImg, href: "/boutique/lampe-loupe-astrid", imageAlt: "La lampe loupe à fixer sur le bord d’un bureau grâce à sa pince" },
+      { name: "Lampadaire SOLVEIG", usage: "Lampadaire de lecture léger, hauteur réglable, 5 000 lux, 3 températures et télécommande.", price: "179 €", image: lampadaireSolveigImg, imageAlt: "Le lampadaire SOLVEIG présenté en version noir et posé sur le sol.", href: "/boutique/lampadaire-solveig" },
+      { name: "Lampe tour de cou AINA", usage: "Lampe de lecture mains libres, portée autour du cou ou posée sur la table — 2 modes, 3 températures, 10 h d'autonomie.", price: "49,20 €", image: lampeAinaImg, imageAlt: "La lampe tour de coup proposée en deux couleurs, Blanc et noir", href: "/produits/lampe-tour-cou-aina" },
     ],
   },
   {
@@ -99,8 +99,8 @@ const rawCategories: Category[] = [
     title: "Télé-agrandisseurs",
     usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.",
     products: [
-      { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "Souris loupe électronique VERA connectée sur une télévision", href: "/produits/souris-loupe-electronique-vera" },
-      { name: "Téléagrandisseur Mezzo Focus", usage: "Téléagrandisseur de bureau compact et pliable, Full HD, grossissement jusqu'à 43× — pour lire et écrire confortablement à domicile en cas de DMLA ou basse vision.", price: "À partir de 2 582 €", image: mezzoFocusImg, imageAlt: "Téléagrandisseur pour la basse vision et la DMLA, MEZZO Focus", href: "/produits/teleagrandisseur-mezzo-focus" },
+      { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "La souris loupe électronique posée sur un magazine avec l’image grossie visible sur l’écran d’un téléviseur.", href: "/produits/souris-loupe-electronique-vera" },
+      { name: "Téléagrandisseur Mezzo Focus", usage: "Téléagrandisseur de bureau compact et pliable, Full HD, grossissement jusqu'à 43× — pour lire et écrire confortablement à domicile en cas de DMLA ou basse vision.", price: "À partir de 2 582 €", image: mezzoFocusImg, imageAlt: "Le téléagrandisseur Mezzo affiche l’image agrandie de la photo d’une murène présente dans le magazine posé sur le plateau de lecture.", href: "/produits/teleagrandisseur-mezzo-focus" },
     ],
   },
   {
@@ -108,9 +108,9 @@ const rawCategories: Category[] = [
     title: "Accessoires utiles",
     usage: "Petits équipements et compléments pour faciliter la lecture, l'organisation et le confort visuel.",
     products: [
-      { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "une horloge avec de gros caractères lumineux très visibles", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
-      { name: "Réveil gros chiffres IVAR", usage: "Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.", price: "26,40 €", image: ivarImg, imageAlt: "un réveil discret avec de gros caractères lumineux très visibles", href: "/boutique/reveil-gros-chiffres-ivar" },
-      { name: "Horloge gros chiffres FRIDA", usage: "Horloge réveil moderne à très gros chiffres lumineux de 52 mm, disponible en 5 couleurs au choix sur fond noir — pour seniors et basse vision.", price: "37,00 €", image: fridaImg, imageAlt: "Horloge FRIDA avec de gros caractères lumineux pour malvoyants", href: "/boutique/horloge-gros-chiffres-frida" },
+      { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir.", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
+      { name: "Réveil gros chiffres IVAR", usage: "Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.", price: "26,40 €", image: ivarImg, imageAlt: "Le réveil gros chiffre IVAR posé sur un meuble et affichant 7h09 en gros caractères.", href: "/boutique/reveil-gros-chiffres-ivar" },
+      { name: "Horloge gros chiffres FRIDA", usage: "Horloge réveil moderne à très gros chiffres lumineux de 52 mm, disponible en 5 couleurs au choix sur fond noir — pour seniors et basse vision.", price: "37,00 €", image: fridaImg, imageAlt: "Le réveil FRIDA affiche 6:00 en gros caractères blanc sur fond noir , très lisible pour les personnes souffrants de basse vision.", href: "/boutique/horloge-gros-chiffres-frida" },
     ],
   },
 ];

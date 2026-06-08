@@ -16,7 +16,7 @@ import imgMalvoyant from "@/assets/products/loupe-electronique-clover-5-malvoyan
 const STRIPE_URL = "https://buy.stripe.com/bJe3cwdaC0XteSb5Jr2Fa0a";
 
 const images = [
-  { src: imgPoignee, alt: "loupe électronique de lecture avec poignée CLOVER 5" },
+  { src: imgPoignee, alt: "La loupe électronique CLOVER 5 tenue à la main et grossissant une partie du texte d’un magazine." },
   { src: imgDMLA, alt: "loupe électronique CLOVER 5 pour lire avec une DMLA" },
   { src: imgLecture, alt: "loupe électronique CLOVER 5 pour lire des livres" },
   { src: imgMalvoyant, alt: "loupe de lecture CLOVER 5 pour malvoyants" },

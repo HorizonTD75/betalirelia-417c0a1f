@@ -17,7 +17,7 @@ const STRIPE_URL = "https://buy.stripe.com/dRm28s7QidKfaBVdbT2Fa00";
 const images = [
   {
     src: imgAmelie,
-    alt: "Loupe électronique Amélie tenue à la main pour la lecture en cas de DMLA",
+    alt: "La loupe de lecture AMELIE tenue à la main et positionnée au dessus d’une carte en couleur. ",
   },
   {
     src: imgAmelieProduct,

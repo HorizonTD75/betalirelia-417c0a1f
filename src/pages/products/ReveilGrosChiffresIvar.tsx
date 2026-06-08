@@ -16,7 +16,7 @@ import imgTemperature from "@/assets/products/reveil-gros-chiffres-IVAR-temperat
 const STRIPE_URL = "https://buy.stripe.com/7sYeVefiKbC77pJb3L2Fa0b";
 
 const images = [
-  { src: imgPrincipale, alt: "un réveil discret avec de gros caractères lumineux très visibles" },
+  { src: imgPrincipale, alt: "Le réveil gros chiffre IVAR posé sur un meuble et affichant 7h09 en gros caractères." },
   { src: imgNoir, alt: "Un réveil pour malvoyant avec de gros caractères lumineux" },
   { src: imgBoutons, alt: "Détail des boutons du réveil IVAR destinés aux personnes atteintes de DMLA ou de basse vision" },
   { src: imgTemperature, alt: "affichage de la température en gros chiffres sur le réveil IVAR" },

@@ -14,7 +14,7 @@ import imgX6 from "@/assets/products/loupe-main-nora-x6.jpeg";
 const STRIPE_URL = "https://buy.stripe.com/6oU3cw0nQ6hNbFZefX2Fa05";
 
 const images = [
-  { src: imgLecture, alt: "Loupe à main Nora en utilisation pour lecture" },
+  { src: imgLecture, alt: "La loupe à man de lecture NORA, pour malvoyants léger, DMLA, glaucome." },
   { src: imgX6, alt: "Loupe à main Nora grossissement x6 pour malvoyants" },
 ];
 

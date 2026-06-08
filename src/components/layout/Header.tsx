@@ -23,7 +23,7 @@ const Header = () => {
       <div className="absolute inset-0">
         <img
           src={headerBg}
-          alt=""
+          alt="Image de fond en dégradé pour le header"
           className="w-full h-full object-cover"
           aria-hidden="true"
           loading="eager"

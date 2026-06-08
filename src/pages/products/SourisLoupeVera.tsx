@@ -16,7 +16,7 @@ import imgVera from "@/assets/products/souris-loupe-electronique-VERA.jpg";
 const STRIPE_URL = "https://buy.stripe.com/6oUdRafiK5dJ7pJgo52Fa0e";
 
 const images = [
-  { src: imgJournal, alt: "Souris loupe électronique VERA connectée sur une télévision" },
+  { src: imgJournal, alt: "La souris loupe électronique posée sur un magazine avec l’image grossie visible sur l’écran d’un téléviseur." },
   { src: imgDmla, alt: "Loupe électronique au format d'une souris pour DMLA" },
   { src: imgJauneGrise, alt: "Loupe électronique de la taille d'une souris d'ordinateur, pour malvoyant" },
   { src: imgVera, alt: "Souris loupe électronique pour basse vision, DMLA, glaucome" },
