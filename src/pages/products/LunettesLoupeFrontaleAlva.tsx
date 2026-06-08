@@ -102,7 +102,7 @@ const LunettesLoupeFrontaleAlva = () => {
               <div className="rounded-2xl overflow-hidden border-2 border-border bg-card mb-4">
                 <img
                   src={productImage}
-                  alt="Lunette loupe frontale Alva avec sa sacoche de transport"
+                  alt="Sacoche des lunettes loupe ALVA, avec plusieurs lentilles, sangle, chiffonette."
                   className="w-full aspect-square object-contain bg-white"
                   loading="eager"
                   width={720}

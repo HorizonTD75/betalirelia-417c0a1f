@@ -38,7 +38,7 @@ const LunettesLoupeFocus = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <div className="rounded-2xl overflow-hidden border-2 border-border bg-card mb-4">
-                <img src={productImage} alt="Lunettes loupes Focus adaptées DMLA et malvoyance" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
+                <img src={productImage} alt="Lunettes loupe Focus de lecture dans sa pochette" className="w-full aspect-square object-contain bg-muted" loading="eager" width={720} height={720} />
               </div>
             </div>
 

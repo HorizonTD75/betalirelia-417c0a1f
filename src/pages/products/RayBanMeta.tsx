@@ -145,7 +145,7 @@ const RayBanMeta = () => {
               <div className="rounded-3xl overflow-hidden bg-background/95 border-4 border-secondary/40 shadow-2xl">
                 <img
                   src={heroImage}
-                  alt="lunettes intelligentes Ray-Ban Meta utilisables par un malvoyant pour la lecture ponctuelle"
+                  alt="Lunettes intelligentes Ray-Ban Meta avec monture marron"
                   className="w-full h-auto object-cover"
                   loading="eager"
                   fetchPriority="high"
