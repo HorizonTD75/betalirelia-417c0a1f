@@ -15,9 +15,9 @@ import imgLumineux from "@/assets/products/horloge-reveil-gros-chiffres-oskar-lu
 const STRIPE_URL = "https://buy.stripe.com/7sYeVefiKbC77pJb3L2Fa0b";
 
 const images = [
-  { src: imgPrincipale, alt: "une horloge avec de gros caractères lumineux très visibles" },
-  { src: imgChevet, alt: "Un réveil posé sur la table de chevet très lisible pour malvoyants" },
-  { src: imgLumineux, alt: "Réveil aux chiffres très lumineux et gros pour une visibilité optimale de nuit" },
+  { src: imgPrincipale, alt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir." },
+  { src: imgChevet, alt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir." },
+  { src: imgLumineux, alt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir." },
 ];
 
 const shortPoints = [

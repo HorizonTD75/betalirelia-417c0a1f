@@ -15,7 +15,7 @@ import imgMagazine from "@/assets/products/loupe-dome-eclairante-rechargeable-DM
 const STRIPE_URL = "https://buy.stripe.com/9B614oc6ycGbh0j2xf2Fa0g";
 
 const images = [
-  { src: imgMain, alt: "Loupe dôme éclairante rechargeable LINA pour lire les petits caractères avec une basse vision" },
+  { src: imgMain, alt: "La loupe dome de lecture posée sur une table" },
   { src: imgMotCroise, alt: "Loupe dôme éclairante rechargeable utilisée sur des mots croisés par une personne malvoyante" },
   { src: imgMagazine, alt: "Loupe dôme éclairante rechargeable posée sur un magazine pour faciliter la lecture en cas de DMLA" },
 ];

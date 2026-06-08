@@ -16,7 +16,7 @@ import imgReglages from "@/assets/products/lampe-tour-cou-aina-reglages.jpg";
 const STRIPE_URL = "https://buy.stripe.com/4gMbJ2fiK5dJ9xRb3L2Fa0d";
 
 const images = [
-  { src: imgNoirBlanche, alt: "Lampe de lecture tour de cou AINA, en noir et en blanc" },
+  { src: imgNoirBlanche, alt: "La lampe tour de coup proposée en deux couleurs, Blanc et noir" },
   { src: imgLecture, alt: "Lampe tour de cou AINA, portée, éclairant un livre pour DMLA" },
   { src: imgChaude, alt: "Lampe de lecture AINA, basse vision, posée sur une table éclairant un livre" },
   { src: imgReglages, alt: "Réglage de l'intensité et de la température de couleur de la lampe tour de cou AINA pour malvoyants" },

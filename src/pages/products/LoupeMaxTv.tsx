@@ -13,7 +13,7 @@ import imgMolette from "@/assets/products/lunettes-loupe_maxtv-molette_mal_voyan
 import imgSenior from "@/assets/products/Senior-television-lunettes-max-tv.jpeg";
 
 const images = [
-  { src: imgGrossissement, alt: "Lunettes loupes Max TV pour télévision en basse vision" },
+  { src: imgGrossissement, alt: "Lunette loupe MAX-TV avec sa housse, pour regarder la TV, aller au cinéma" },
   { src: imgMolette, alt: "Lunettes loupes Max TV avec molette de réglage du grossissement" },
   { src: imgSenior, alt: "Senior utilisant les lunettes loupes Max TV pour regarder la télévision" },
 ];

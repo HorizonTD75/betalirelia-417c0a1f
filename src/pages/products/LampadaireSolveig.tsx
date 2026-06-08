@@ -17,7 +17,7 @@ import imgPiano from "@/assets/products/lampadaire-solveig-piano.jpg";
 const STRIPE_URL = "https://buy.stripe.com/dRm4gAgmO6hNfWf4Fn2Fa09";
 
 const images = [
-  { src: imgNoir, alt: "Lampadaire de lecture SOLVEIG noir pour basse vision" },
+  { src: imgNoir, alt: "Le lampadaire SOLVEIG présenté en version noir et posé sur le sol." },
   { src: imgTemperatures, alt: "Lampadaire SOLVEIG : 3 températures de couleur et intensité réglable" },
   { src: imgDetails, alt: "Lampadaire SOLVEIG : détails de la lampe, du mât, de la base et de la commande" },
   { src: imgSalon, alt: "Lampadaire SOLVEIG installé dans un salon à côté d'un canapé" },
