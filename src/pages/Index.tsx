@@ -19,18 +19,16 @@ const Index = () => {
         title="LirElia – Basse Vision : Bilans, Conseils et Aides à la Lecture"
         description="Accompagnement basse vision pour patients et aidants : bilans fonctionnels, loupes, téléagrandisseurs et conseils adaptés (DMLA, glaucome). 25 ans d'expertise à Paris."
         canonicalPath="/"
-        jsonLd={[
-          ORGANIZATION_JSONLD,
-          WEBSITE_JSONLD,
-          {
-            "@context": "https://schema.org",
-            "@type": "MedicalBusiness",
-            "name": "LirElia",
-            "description": "Accompagnement expert en basse vision, DMLA et glaucome. Bilans fonctionnels et aides à la lecture.",
-            "medicalSpecialty": "Optometry",
-            "knowsAbout": ["Basse vision", "DMLA", "Glaucome", "Aides à la lecture", "Bilans basse vision"]
-          }
-        ]}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          "@id": "https://lirelia.fr/#medicalbusiness",
+          "name": "LirElia",
+          "url": "https://lirelia.fr/",
+          "description": "Accompagnement expert en basse vision, DMLA et glaucome. Bilans fonctionnels et aides à la lecture.",
+          "medicalSpecialty": "Optometry",
+          "knowsAbout": ["Basse vision", "DMLA", "Glaucome", "Aides à la lecture", "Bilans basse vision"]
+        }}
       />
       <Header />
       <main id="main-content">
