@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
-import { ORGANIZATION_JSONLD, WEBSITE_JSONLD } from "@/lib/seo";
+
 import HeroSection from "@/components/sections/HeroSection";
 import PathwaysSection from "@/components/sections/PathwaysSection";
 import AppointmentSection from "@/components/sections/AppointmentSection";
