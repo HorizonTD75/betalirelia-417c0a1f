@@ -120,6 +120,14 @@ const LampeAina = () => {
         description="Découvrez la lampe tour de cou AINA, une lampe de lecture mains libres pour améliorer l'éclairage des livres, documents et activités du quotidien en basse vision."
         canonicalPath="/produits/lampe-tour-cou-aina"
         ogImage={imgNoirBlanche}
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/produits/lampe-tour-cou-aina#product", name: "Lampe tour de cou AINA", description: "Lampe de lecture mains libres AINA, portée autour du cou ou posée sur la table — 2 modes d'éclairage, 3 températures de couleur, batterie rechargeable.", image: [`https://lirelia.fr${imgNoirBlanche}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/produits/lampe-tour-cou-aina", priceCurrency: "EUR", price: "49.20", availability: "https://schema.org/InStock" } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
+            { "@type": "ListItem", position: 3, name: "Lampe tour de cou AINA", item: "https://lirelia.fr/produits/lampe-tour-cou-aina" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">
