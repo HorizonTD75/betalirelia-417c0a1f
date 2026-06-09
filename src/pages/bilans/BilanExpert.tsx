@@ -46,6 +46,14 @@ const BilanExpert = () => {
         title="Bilan Expert basse vision — Avec opticien | LirElia"
         description="Le Pack Bilan Expert combine bilan basse vision et consultation opticien-optométriste partenaire pour optimiser vos lunettes et aides optiques."
         canonicalPath="/bilans-bassevision/expert"
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Service", "@id": "https://lirelia.fr/bilans-bassevision/expert#service", name: "Bilan Expert basse vision", description: "Pack combinant le bilan basse vision LirElia et une consultation avec un opticien-optométriste partenaire pour optimiser lunettes et aides optiques.", provider: { "@id": "https://lirelia.fr/#organization" }, areaServed: { "@type": "Country", name: "France" }, serviceType: "Bilan basse vision approfondi" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Bilans basse vision", item: "https://lirelia.fr/bilans-bassevision" },
+            { "@type": "ListItem", position: 3, name: "Bilan Expert", item: "https://lirelia.fr/bilans-bassevision/expert" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">
