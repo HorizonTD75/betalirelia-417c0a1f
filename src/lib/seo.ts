@@ -50,3 +50,38 @@ export function buildBreadcrumbJsonLd(
     })),
   };
 }
+
+interface ProductSeoInput {
+  name: string;
+  description: string;
+  image: string;
+  path: string;
+  price?: string;
+  brand?: string;
+  availability?: string;
+}
+
+/** Build a Product JSON-LD using only the fields visible on the page. */
+export function buildProductJsonLd(p: ProductSeoInput) {
+  const url = `${SITE_URL}${p.path}`;
+  const node: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${url}#product`,
+    name: p.name,
+    description: p.description,
+    image: [p.image.startsWith("http") ? p.image : `${SITE_URL}${p.image}`],
+    brand: { "@type": "Brand", name: p.brand ?? "LirElia" },
+  };
+  if (p.price) {
+    node.offers = {
+      "@type": "Offer",
+      url,
+      priceCurrency: "EUR",
+      price: p.price,
+      availability: p.availability ?? "https://schema.org/InStock",
+    };
+  }
+  return node;
+}
+

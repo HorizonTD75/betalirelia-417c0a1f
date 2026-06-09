@@ -92,6 +92,14 @@ const ClipLunettesLoupe = () => {
         title="Clip Lunettes Loupe à Clipser sur Monture | LirElia"
         description="Surlunette loupe à clipser : grossissements 1,4x, 1,7x ou 2x. Relevable, vision binoculaire, 14 g. Idéale pour la lecture et travaux de précision."
         canonicalPath="/boutique/clip-lunettes-loupe"
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/clip-lunettes-loupe#product", name: "Clip lunettes loupe", description: "Surlunette loupe à clipser sur monture : grossissements 1,4x, 1,7x ou 2x, relevable, vision binoculaire, 14 g.", image: [`https://lirelia.fr${imgMain}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/clip-lunettes-loupe", priceCurrency: "EUR", price: "24.50", availability: "https://schema.org/InStock" } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
+            { "@type": "ListItem", position: 3, name: "Clip lunettes loupe", item: "https://lirelia.fr/boutique/clip-lunettes-loupe" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">

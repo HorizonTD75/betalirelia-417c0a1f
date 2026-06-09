@@ -117,6 +117,14 @@ const LampadaireSolveig = () => {
         title="Lampadaire SOLVEIG — lampe de lecture basse vision | LirElia"
         description="Lampadaire SOLVEIG : 5 000 lux, 84 LED, 3 températures de couleur, hauteur réglable et télécommande — pour la lecture en fauteuil, la couture et les loisirs en cas de DMLA ou basse vision."
         canonicalPath="/boutique/lampadaire-solveig"
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/lampadaire-solveig#product", name: "Lampadaire SOLVEIG", description: "Lampadaire SOLVEIG pour basse vision : 5 000 lux, 84 LED, 3 températures de couleur, hauteur réglable et télécommande.", image: [`https://lirelia.fr${imgNoir}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/lampadaire-solveig", priceCurrency: "EUR", price: "179.00", availability: "https://schema.org/InStock" } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
+            { "@type": "ListItem", position: 3, name: "Lampadaire SOLVEIG", item: "https://lirelia.fr/boutique/lampadaire-solveig" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">

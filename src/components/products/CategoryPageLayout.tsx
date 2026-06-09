@@ -6,6 +6,7 @@ import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductCard, { type Product } from "./ProductCard";
 import type { LucideIcon } from "lucide-react";
+import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
 
 interface BuyingCriteria {
   title: string;
@@ -58,12 +59,42 @@ const CategoryPageLayout = ({
   const heroCtaText = heroCta || ctaText;
   const bottomCtaText = bottomCta || `Demandez-nous des informations sur les ${title.toLowerCase()}`;
 
+  const pageUrl = seo.canonicalPath ? `${SITE_URL}${seo.canonicalPath}` : SITE_URL;
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: seo.title,
+    description: seo.description,
+    isPartOf: { "@id": "https://lirelia.fr/#website" },
+    publisher: { "@id": "https://lirelia.fr/#organization" },
+    inLanguage: "fr-FR",
+  };
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Accueil", path: "/" },
+    { name: "Aides à la lecture basse vision", path: "/aides-lecture-bassevision" },
+    { name: title, path: seo.canonicalPath ?? "/" },
+  ]);
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: p.name,
+      url: p.shopLink ? `${SITE_URL}${p.shopLink}` : pageUrl,
+      ...(p.image ? { image: p.image.startsWith("http") ? p.image : `${SITE_URL}${p.image}` } : {}),
+    })),
+  };
+
   return (
     <div className="min-h-screen">
       <SEOHead
         title={seo.title}
         description={seo.description}
         canonicalPath={seo.canonicalPath}
+        jsonLd={[collectionJsonLd, breadcrumbJsonLd, itemListJsonLd]}
       />
       <Header />
       <main id="main-content">

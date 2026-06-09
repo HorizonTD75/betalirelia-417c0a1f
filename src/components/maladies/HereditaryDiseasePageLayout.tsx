@@ -39,13 +39,29 @@ const HereditaryDiseasePageLayout = ({
         title={seoTitle}
         description={seoDescription}
         canonicalPath={canonicalPath}
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": diseaseName,
-          "description": seoDescription,
-          "about": { "@type": "MedicalCondition", "name": diseaseName },
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            "@id": `https://lirelia.fr${canonicalPath}#webpage`,
+            "url": `https://lirelia.fr${canonicalPath}`,
+            "name": diseaseName,
+            "description": seoDescription,
+            "inLanguage": "fr-FR",
+            "isPartOf": { "@id": "https://lirelia.fr/#website" },
+            "about": { "@type": "MedicalCondition", "name": diseaseName },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+              { "@type": "ListItem", position: 2, name: "Maladies des yeux", item: "https://lirelia.fr/maladies-yeux" },
+              { "@type": "ListItem", position: 3, name: "Maladies héréditaires", item: "https://lirelia.fr/maladies-yeux/maladies-hereditaires" },
+              { "@type": "ListItem", position: 4, name: diseaseName, item: `https://lirelia.fr${canonicalPath}` },
+            ],
+          },
+        ]}
       />
       <Header />
       <main id="main-content">

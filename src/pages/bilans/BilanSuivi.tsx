@@ -83,6 +83,14 @@ const BilanSuivi = () => {
         title="Pack Suivi basse vision — Accompagnement 3 mois | LirElia"
         description="Le Pack Suivi prolonge votre Bilan Essentiel sur 3 mois avec appels réguliers et bilan final pour ajuster les solutions au quotidien."
         canonicalPath="/bilans-bassevision/suivi"
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Service", "@id": "https://lirelia.fr/bilans-bassevision/suivi#service", name: "Pack Suivi basse vision", description: "Accompagnement de 3 mois après le Bilan Essentiel : appels réguliers, ajustements et bilan final pour adapter les solutions au quotidien.", provider: { "@id": "https://lirelia.fr/#organization" }, areaServed: { "@type": "Country", name: "France" }, serviceType: "Suivi basse vision" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Bilans basse vision", item: "https://lirelia.fr/bilans-bassevision" },
+            { "@type": "ListItem", position: 3, name: "Pack Suivi", item: "https://lirelia.fr/bilans-bassevision/suivi" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">

@@ -44,7 +44,16 @@ const BilanEssentiel = () => {
       <SEOHead
         title="Bilan Essentiel basse vision | LirElia"
         description="Le Bilan Essentiel est la formule de base pour comprendre vos difficultés visuelles, tester des solutions simples et repartir avec un plan d'action clair."
-        canonicalPath="/bilans-bassevision/essentiel" />
+        canonicalPath="/bilans-bassevision/essentiel"
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Service", "@id": "https://lirelia.fr/bilans-bassevision/essentiel#service", name: "Bilan Essentiel basse vision", description: "Formule de base du bilan basse vision LirElia : entretien sur les besoins, évaluation de la vision fonctionnelle, essais d'aides et plan d'action.", provider: { "@id": "https://lirelia.fr/#organization" }, areaServed: { "@type": "Country", name: "France" }, serviceType: "Bilan basse vision" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Bilans basse vision", item: "https://lirelia.fr/bilans-bassevision" },
+            { "@type": "ListItem", position: 3, name: "Bilan Essentiel", item: "https://lirelia.fr/bilans-bassevision/essentiel" },
+          ] },
+        ]}
+      />
       
       <Header />
       <main id="main-content">
