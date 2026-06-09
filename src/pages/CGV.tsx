@@ -19,7 +19,7 @@ const CGV = () => {
             </h1>
 
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Dernière mise à jour : 17/02/2026
+              Dernière mise à jour : 08/06/2026
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">1. Identité du vendeur</h2>
