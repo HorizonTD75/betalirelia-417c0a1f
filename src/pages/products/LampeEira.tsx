@@ -101,6 +101,14 @@ const LampeEira = () => {
         title="Lampe basse vision EIRA — pliable, rechargeable | LirElia"
         description="Lampe de lecture EIRA pour basse vision et DMLA : 3 températures de couleur, 100 à 1600 lux, batterie 6 h, pliable. Disponible en Blanc ou Gris."
         canonicalPath="/boutique/lampe-basse-vision-eira"
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/lampe-basse-vision-eira#product", name: "Lampe basse vision EIRA", description: "Lampe de lecture EIRA pour basse vision et DMLA : 3 températures de couleur, 100 à 1 600 lux, batterie 6 h, pliable.", image: [`https://lirelia.fr${imgBlancheLivre}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/lampe-basse-vision-eira", priceCurrency: "EUR", price: "178.00", availability: "https://schema.org/InStock" } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
+            { "@type": "ListItem", position: 3, name: "Lampe basse vision EIRA", item: "https://lirelia.fr/boutique/lampe-basse-vision-eira" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">
