@@ -1,9 +1,9 @@
 import { Lock, Truck, RotateCcw, Eye } from "lucide-react";
 
 const items = [
-  { icon: Lock, label: "Paiement sécurisé" },
-  { icon: Truck, label: "Expédition 48 h" },
-  { icon: RotateCcw, label: "Retour 15 jours" },
+  { icon: Lock, label: "Paiement sécurisé par Stripe" },
+  { icon: Truck, label: "Livraison France métropolitaine" },
+  { icon: RotateCcw, label: "Retour sous 14 jours" },
   { icon: Eye, label: "Conseil basse vision" },
 ];
 
