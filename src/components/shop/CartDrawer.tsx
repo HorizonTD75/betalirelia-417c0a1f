@@ -122,7 +122,7 @@ export const CartDrawer = () => {
                 </Button>
                 <ul className="text-sm text-muted-foreground leading-snug space-y-1">
                   <li>Paiement sécurisé par Stripe.</li>
-                  <li>Livraison en France métropolitaine.</li>
+                  <li>Livraison gratuite en France métropolitaine.</li>
                   <li>Retour possible sous 14 jours après réception.</li>
                 </ul>
               </div>

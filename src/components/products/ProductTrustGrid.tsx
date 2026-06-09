@@ -16,7 +16,7 @@ const trustItems: Item[] = [
   },
   {
     icon: Truck,
-    title: "Livraison en France métropolitaine",
+    title: "Livraison gratuite en France métropolitaine",
     text: "Préparation et expédition après validation du paiement, environ 5 jours ouvrés.",
     accent: "secondary",
   },
