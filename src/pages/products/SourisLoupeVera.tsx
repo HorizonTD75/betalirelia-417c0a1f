@@ -122,6 +122,14 @@ const SourisLoupeVera = () => {
         description="Découvrez la souris loupe électronique VERA, une caméra de lecture connectée à la télévision pour agrandir textes, journaux et documents en basse vision."
         canonicalPath="/produits/souris-loupe-electronique-vera"
         ogImage={imgJournal}
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/produits/souris-loupe-electronique-vera#product", name: "Souris loupe électronique VERA", description: "Souris loupe électronique VERA : caméra de lecture connectée à la télévision pour agrandir textes, journaux et documents en basse vision.", image: [`https://lirelia.fr${imgJournal}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/produits/souris-loupe-electronique-vera", priceCurrency: "EUR", price: "158.00", availability: "https://schema.org/InStock" } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
+            { "@type": "ListItem", position: 3, name: "Souris loupe électronique VERA", item: "https://lirelia.fr/produits/souris-loupe-electronique-vera" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">
