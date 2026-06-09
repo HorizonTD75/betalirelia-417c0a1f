@@ -194,6 +194,10 @@ const App = () => (
             <Route path="/merci-visite-domicile" element={<MerciVisiteDomicile />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
+            <Route path="/livraison" element={<Livraison />} />
+            <Route path="/retours-remboursements" element={<RetoursRemboursements />} />
+            <Route path="/formulaire-retractation" element={<FormulaireRetractation />} />
+            <Route path="/sav-garanties" element={<SavGaranties />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
