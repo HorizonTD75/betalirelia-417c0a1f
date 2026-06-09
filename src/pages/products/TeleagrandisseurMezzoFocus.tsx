@@ -121,6 +121,14 @@ const TeleagrandisseurMezzoFocus = () => {
         description="Découvrez le téléagrandisseur Mezzo Focus, une solution de lecture pour les personnes atteintes de basse vision, DMLA ou troubles visuels importants."
         canonicalPath="/produits/teleagrandisseur-mezzo-focus"
         ogImage={imgMain}
+        jsonLd={[
+          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/produits/teleagrandisseur-mezzo-focus#product", name: "Téléagrandisseur Mezzo Focus", description: "Téléagrandisseur Mezzo Focus : solution de lecture pour les personnes atteintes de basse vision, DMLA ou troubles visuels importants.", image: [`https://lirelia.fr${imgMain}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/produits/teleagrandisseur-mezzo-focus", priceCurrency: "EUR", price: "2582.00", availability: "https://schema.org/InStock" } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
+            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
+            { "@type": "ListItem", position: 3, name: "Téléagrandisseur Mezzo Focus", item: "https://lirelia.fr/produits/teleagrandisseur-mezzo-focus" },
+          ] },
+        ]}
       />
       <Header />
       <main id="main-content">
