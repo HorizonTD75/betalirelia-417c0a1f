@@ -10,20 +10,20 @@ type Item = {
 const trustItems: Item[] = [
   {
     icon: Lock,
-    title: "Paiement sécurisé",
+    title: "Paiement sécurisé par Stripe",
     text: "Paiement par carte bancaire via Stripe, transaction sécurisée.",
     accent: "primary",
   },
   {
     icon: Truck,
-    title: "Expédition rapide",
-    text: "Préparation et expédition sous 48 h ouvrées selon disponibilité.",
+    title: "Livraison en France métropolitaine",
+    text: "Préparation et expédition après validation du paiement, environ 5 jours ouvrés.",
     accent: "secondary",
   },
   {
     icon: RotateCcw,
-    title: "Retour sous 15 jours",
-    text: "Vous disposez d'un délai de retour si le produit ne vous convient pas.",
+    title: "Retour possible sous 14 jours après réception",
+    text: "Vous disposez d'un délai de 14 jours pour exercer votre droit de rétractation.",
     accent: "primary",
   },
   {

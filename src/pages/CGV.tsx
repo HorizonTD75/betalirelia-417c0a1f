@@ -19,7 +19,7 @@ const CGV = () => {
             </h1>
 
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Dernière mise à jour : 17/02/2026
+              Dernière mise à jour : 08/06/2026
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">1. Identité du vendeur</h2>
@@ -76,8 +76,11 @@ const CGV = () => {
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">6. Paiement</h2>
+            <p className="text-lg text-foreground leading-relaxed mb-4">
+              Le paiement est effectué en ligne par carte bancaire ou tout autre moyen proposé au moment de la commande, via une interface de paiement sécurisée Stripe.
+            </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Le paiement est exigible immédiatement à la commande (sauf mention contraire). Moyens de paiement : CB / Apple Pay / PayPal / autres via Shopify Payments, etc. La commande est réputée acceptée après confirmation du paiement.
+              La commande est considérée comme définitive après validation du paiement et confirmation de la commande.
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">7. Livraison des produits</h2>
@@ -130,62 +133,35 @@ const CGV = () => {
               Lorsque la formation inclut un accès numérique (vidéos, PDF, espace membre), les modalités d'accès sont précisées sur la page de vente : durée d'accès, prérequis, restrictions de partage, etc.
             </p>
 
-            <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">9. Droit de rétractation (Clients consommateurs)</h2>
-
-            <h3 className="font-serif text-xl font-bold text-foreground mt-6 mb-3">9.1 Principe</h3>
-            <p className="text-lg text-foreground leading-relaxed mb-2">
-              Le consommateur dispose d'un délai de 14 jours pour exercer son droit de rétractation d'un contrat conclu à distance, sans avoir à motiver sa décision.
-            </p>
-            <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
-              <li>Vente de biens (produits) : délai de 14 jours à compter de la réception du bien.</li>
-              <li>Prestations de services : délai de 14 jours à compter de la conclusion du contrat.</li>
-            </ul>
-
-            <h3 className="font-serif text-xl font-bold text-foreground mt-6 mb-3">9.2 Exercice</h3>
-            <p className="text-lg text-foreground leading-relaxed mb-2">
-              Pour exercer le droit de rétractation, le Client notifie sa décision au Vendeur :
-            </p>
-            <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
-              <li>par email à contact@lirelia.fr, ou</li>
-              <li>par tout écrit dénué d'ambiguïté.</li>
-            </ul>
-
-            <h3 className="font-serif text-xl font-bold text-foreground mt-6 mb-3">9.3 Effets et remboursement</h3>
+            <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">9. Droit de rétractation et retours</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              En cas de rétractation valable, le Vendeur rembourse les sommes dues (y compris les frais de livraison standard le cas échéant) au plus tard dans les 14 jours à compter de l'information de la décision.
+              Le consommateur dispose d'un délai de 14 jours à compter de la réception du produit pour exercer son droit de rétractation, sans avoir à motiver sa décision.
             </p>
-
-            <h3 className="font-serif text-xl font-bold text-foreground mt-6 mb-3">9.4 Renvoi des produits</h3>
-            <p className="text-lg text-foreground leading-relaxed mb-2">
-              Le Client renvoie les produits au plus tard dans les 14 jours suivant la notification de rétractation. Sauf mention contraire, les frais de retour sont à la charge du Client.
+            <p className="text-lg text-foreground leading-relaxed mb-4">
+              Pour exercer ce droit, le client peut contacter Lirelia par email à <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4 hover:text-primary/80">contact@lirelia.fr</a> ou utiliser le <a href="/formulaire-retractation" className="text-primary underline underline-offset-4 hover:text-primary/80">formulaire de rétractation</a> disponible sur le site.
+            </p>
+            <p className="text-lg text-foreground leading-relaxed mb-4">
+              En cas de rétractation valable, Lirelia rembourse les sommes dues dans un délai maximum de 14 jours à compter de la date à laquelle Lirelia est informé de la décision du client de se rétracter.
+            </p>
+            <p className="text-lg text-foreground leading-relaxed mb-4">
+              Le remboursement peut être différé jusqu'à récupération du produit ou jusqu'à réception d'une preuve d'expédition du produit retourné.
+            </p>
+            <p className="text-lg text-foreground leading-relaxed mb-4">
+              Sauf erreur de Lirelia, produit défectueux ou produit non conforme, les frais de retour sont à la charge du client.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-2">
               Adresse de retour (sauf instruction différente communiquée) :
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              HORIZON TD — Retours LirElia.fr, 4-6 rue Pierre Louÿs, 75116 Paris, France
+              HORIZON TD — Retours Lirelia.fr<br />
+              4-6 rue Pierre Louÿs<br />
+              75116 Paris<br />
+              France
             </p>
-            <p className="text-lg text-foreground leading-relaxed mb-4">
-              Les produits doivent être retournés dans un état permettant leur remise en vente (avec accessoires, notice, emballage si possible). Toute dépréciation résultant de manipulations autres que nécessaires peut engager la responsabilité du Client.
-            </p>
-
-            <h3 className="font-serif text-xl font-bold text-foreground mt-6 mb-3">9.5 Services commencés pendant le délai de rétractation</h3>
-            <p className="text-lg text-foreground leading-relaxed mb-4">
-              Si le Client demande expressément le démarrage d'une prestation avant la fin du délai de rétractation et se rétracte ensuite, il doit payer un montant proportionnel au service fourni jusqu'à la notification de rétractation.
-            </p>
-
-            <h3 className="font-serif text-xl font-bold text-foreground mt-6 mb-3">9.6 Exceptions au droit de rétractation</h3>
-            <p className="text-lg text-foreground leading-relaxed mb-2">
-              Le droit de rétractation ne s'applique notamment pas :
-            </p>
-            <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
-              <li>aux services pleinement exécutés avant la fin du délai, si l'exécution a commencé avec l'accord exprès du Client et reconnaissance de la perte du droit une fois la prestation exécutée ;</li>
-              <li>aux contenus numériques fournis sans support matériel si l'exécution a commencé avec accord exprès et renoncement (le cas échéant) ;</li>
-              <li>aux biens nettement personnalisés, et autres cas prévus par la loi.</li>
-            </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Important (à prévoir dans le tunnel de réservation/paiement) : pour une consultation planifiée dans les 14 jours, ajouter une case « Je demande l'exécution avant la fin du délai de rétractation » + une case de reconnaissance de perte du droit si la prestation est pleinement exécutée.
+              Pour plus de détails, consultez les pages <a href="/retours-remboursements" className="text-primary underline underline-offset-4 hover:text-primary/80">Retours et remboursements</a>, <a href="/formulaire-retractation" className="text-primary underline underline-offset-4 hover:text-primary/80">Formulaire de rétractation</a> et <a href="/sav-garanties" className="text-primary underline underline-offset-4 hover:text-primary/80">SAV et garanties</a>.
             </p>
+
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">10. Garanties légales (produits)</h2>
 
