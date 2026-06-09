@@ -76,8 +76,11 @@ const CGV = () => {
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">6. Paiement</h2>
+            <p className="text-lg text-foreground leading-relaxed mb-4">
+              Le paiement est effectué en ligne par carte bancaire ou tout autre moyen proposé au moment de la commande, via une interface de paiement sécurisée Stripe.
+            </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Le paiement est exigible immédiatement à la commande (sauf mention contraire). Moyens de paiement : CB / Apple Pay / PayPal / autres via Shopify Payments, etc. La commande est réputée acceptée après confirmation du paiement.
+              La commande est considérée comme définitive après validation du paiement et confirmation de la commande.
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">7. Livraison des produits</h2>
