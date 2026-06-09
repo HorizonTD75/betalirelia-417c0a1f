@@ -86,6 +86,10 @@ const MerciBilanSuivi = lazy(() => import("./pages/MerciBilanSuivi"));
 const MerciVisiteDomicile = lazy(() => import("./pages/MerciVisiteDomicile"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
+const Livraison = lazy(() => import("./pages/Livraison"));
+const RetoursRemboursements = lazy(() => import("./pages/RetoursRemboursements"));
+const FormulaireRetractation = lazy(() => import("./pages/FormulaireRetractation"));
+const SavGaranties = lazy(() => import("./pages/SavGaranties"));
 
 const queryClient = new QueryClient();
 
