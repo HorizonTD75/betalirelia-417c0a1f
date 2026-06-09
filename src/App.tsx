@@ -86,6 +86,10 @@ const MerciBilanSuivi = lazy(() => import("./pages/MerciBilanSuivi"));
 const MerciVisiteDomicile = lazy(() => import("./pages/MerciVisiteDomicile"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
+const Livraison = lazy(() => import("./pages/Livraison"));
+const RetoursRemboursements = lazy(() => import("./pages/RetoursRemboursements"));
+const FormulaireRetractation = lazy(() => import("./pages/FormulaireRetractation"));
+const SavGaranties = lazy(() => import("./pages/SavGaranties"));
 
 const queryClient = new QueryClient();
 
@@ -190,6 +194,10 @@ const App = () => (
             <Route path="/merci-visite-domicile" element={<MerciVisiteDomicile />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
+            <Route path="/livraison" element={<Livraison />} />
+            <Route path="/retours-remboursements" element={<RetoursRemboursements />} />
+            <Route path="/formulaire-retractation" element={<FormulaireRetractation />} />
+            <Route path="/sav-garanties" element={<SavGaranties />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
