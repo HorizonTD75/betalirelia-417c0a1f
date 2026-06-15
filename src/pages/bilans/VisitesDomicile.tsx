@@ -245,7 +245,7 @@ const VisitesDomicile = () => {
                   <h3 className="font-serif text-lg font-bold mb-2">Bilan Expert</h3>
                   <p className="text-muted-foreground mb-4">Optimiser vos lunettes avec un opticien partenaire.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/expert">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/expert">Découvrir le Bilan Expert <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
