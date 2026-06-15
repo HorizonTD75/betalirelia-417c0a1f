@@ -70,9 +70,9 @@ const ClubHeroSection = () => {
                       <div className="w-12 h-12 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center mx-auto mb-3">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <h3 className="font-serif text-lg font-bold text-primary-foreground mb-1">
+                      <h2 className="font-serif text-lg font-bold text-primary-foreground mb-1">
                         {benefit.title}
-                      </h3>
+                      </h2>
                       <p className="text-sm text-primary-foreground/80">
                         {benefit.description}
                       </p>
