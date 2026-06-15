@@ -296,7 +296,7 @@ const MaladiesYeux = () => {
                         {disease.link &&
                       <Button variant="outline" size="sm" asChild className="w-full">
                             <Link to={disease.link}>
-                              En savoir plus
+                              Comprendre cette maladie
                               <ArrowRight className="w-4 h-4" />
                             </Link>
                           </Button>
