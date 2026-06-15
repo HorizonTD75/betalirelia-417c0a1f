@@ -97,7 +97,7 @@ const BilanExpert = () => {
                 <Home className="w-7 h-7" />
               </div>
               <div className="flex-1">
-                <h3 className="font-serif text-xl font-bold text-foreground mb-1">Première étape réalisable à domicile</h3>
+                <h2 className="font-serif text-xl font-bold text-foreground mb-1">Première étape réalisable à domicile</h2>
                 <p className="text-lg text-muted-foreground">Le Bilan Essentiel (étape 1 du parcours Expert) peut être effectué chez vous si le déplacement est difficile.</p>
               </div>
               <Button variant="outline" size="default" asChild className="shrink-0">
