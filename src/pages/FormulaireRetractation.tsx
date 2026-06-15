@@ -6,8 +6,8 @@ const FormulaireRetractation = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Formulaire de rétractation | LirElia"
-        description="Modèle de formulaire de rétractation LirElia : exercez votre droit de rétractation sous 14 jours après réception du produit."
+        title="Formulaire de rétractation sous 14 jours | LirElia"
+        description="Modèle de formulaire de rétractation LirElia : exercez votre droit de rétractation sous 14 jours après réception du produit, en toute simplicité."
         canonicalPath="/formulaire-retractation"
       />
       <Header />

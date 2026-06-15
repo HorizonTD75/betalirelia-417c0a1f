@@ -31,8 +31,8 @@ const DMLA = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="DMLA – Dégénérescence Maculaire Liée à l'Âge | LirElia"
-        description="Tout savoir sur la DMLA : formes sèche et humide, symptômes, diagnostic, traitements et conseils pour vivre avec cette maladie des yeux."
+        title="DMLA : dégénérescence maculaire liée à l'âge | LirElia"
+        description="Tout savoir sur la DMLA : formes sèche et humide, symptômes, diagnostic, traitements et solutions concrètes pour préserver votre vision centrale au quotidien."
         canonicalPath="/maladies-yeux/dmla"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "MedicalWebPage", "@id": "https://lirelia.fr/maladies-yeux/dmla#webpage", "url": "https://lirelia.fr/maladies-yeux/dmla", "name": "La DMLA", "description": "Tout savoir sur la DMLA : formes sèche et humide, symptômes, diagnostic, traitements et conseils pour vivre avec cette maladie des yeux.", "inLanguage": "fr-FR", "isPartOf": { "@id": "https://lirelia.fr/#website" }, "about": { "@type": "MedicalCondition", "name": "Dégénérescence Maculaire Liée à l'Âge (DMLA)" } },

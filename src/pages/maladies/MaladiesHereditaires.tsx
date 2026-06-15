@@ -62,8 +62,8 @@ const MaladiesHereditaires = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Maladies héréditaires et génétiques de la vue | LirElia"
-        description="Rétinite pigmentaire, Leber, Stargardt, achromatopsie, Usher, aniridie : comprendre les maladies génétiques de la vue et l'accompagnement."
+        title="Maladies héréditaires de l'œil : guide complet | LirElia"
+        description="Rétinite pigmentaire, Stargardt, Leber, Usher, achromatopsie, aniridie : comprendre les maladies génétiques de l'œil, leur diagnostic et l'accompagnement."
         canonicalPath="/maladies-yeux/maladies-hereditaires"
         jsonLd={{
           "@context": "https://schema.org",

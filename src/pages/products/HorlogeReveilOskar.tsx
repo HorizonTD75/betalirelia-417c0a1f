@@ -115,8 +115,8 @@ const HorlogeReveilOskar = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Horloge réveil gros chiffres OSKAR — basse vision et DMLA | LirElia"
-        description="Horloge réveil OSKAR : gros chiffres lumineux blancs ou verts sur fond noir, 45 mm de hauteur, thermomètre intégré et double alimentation — pensée pour les seniors et la basse vision."
+        title="Horloge réveil OSKAR gros chiffres pour DMLA | LirElia"
+        description="Horloge réveil OSKAR : gros chiffres lumineux blancs ou verts sur fond noir, 45 mm, thermomètre intégré et double alimentation. Pour seniors et basse vision."
         canonicalPath="/boutique/horloge-reveil-gros-chiffres-oskar"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/horloge-reveil-gros-chiffres-oskar#product", name: "Horloge réveil gros chiffres OSKAR", description: "Horloge réveil OSKAR : gros chiffres lumineux 45 mm sur fond noir, thermomètre intégré et double alimentation, pour la basse vision et la DMLA.", image: [`https://lirelia.fr${imgPrincipale}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/horloge-reveil-gros-chiffres-oskar", priceCurrency: "EUR", price: "38.40", availability: "https://schema.org/InStock" } },

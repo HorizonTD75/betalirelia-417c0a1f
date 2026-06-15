@@ -8,8 +8,8 @@ const QuiSommesNous = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Qui sommes-nous ? — LirElia, experts en basse vision"
-        description="25 ans d'expérience en basse vision, un visiopraticien et un ingénieur réunis par une conviction : chacun mérite un accompagnement humain et concret."
+        title="Qui sommes-nous : LirElia, experts de la basse vision"
+        description="25 ans d'expérience en basse vision : un visiopraticien et un ingénieur réunis par une conviction simple : chacun mérite un accompagnement humain et concret."
         canonicalPath="/qui-sommes-nous"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "AboutPage", "@id": "https://lirelia.fr/qui-sommes-nous#webpage", url: "https://lirelia.fr/qui-sommes-nous", name: "Qui sommes-nous ? — LirElia", description: "25 ans d'expérience en basse vision : un visiopraticien et un ingénieur réunis par une conviction commune.", inLanguage: "fr-FR", isPartOf: { "@id": "https://lirelia.fr/#website" }, about: { "@id": "https://lirelia.fr/#organization" } },

@@ -17,8 +17,8 @@ const Presbytie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="La Presbytie : Vision de Près et Âge | LirElia"
-        description="Tout savoir sur la presbytie : vieillissement du cristallin, vision floue de près, besoin d'éloigner les textes. Causes, symptômes, diagnostic et traitements."
+        title="La presbytie : vision de près après 40 ans | LirElia"
+        description="Comprendre la presbytie : vieillissement du cristallin, vision floue de près, besoin d'éloigner les textes. Causes, symptômes, lunettes et solutions adaptées."
         canonicalPath="/maladies-yeux/presbytie"
         jsonLd={{
           "@context": "https://schema.org",

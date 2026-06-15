@@ -33,8 +33,8 @@ const ContactConseil = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Contact conseil basse vision | LirElia"
-        description="Décrivez votre besoin en quelques lignes : aide visuelle, éclairage, loupe, télé-agrandisseur ou bilan basse vision. Nous vous rappelons rapidement pour vous orienter."
+        title="Conseil basse vision personnalisé gratuit | LirElia"
+        description="Besoin d'aide pour choisir une loupe, une lampe ou un télé-agrandisseur ? Décrivez votre situation et recevez un conseil personnalisé gratuit sous 48 h."
         canonicalPath="/contact-conseil"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "ContactPage", "@id": "https://lirelia.fr/contact-conseil#webpage", url: "https://lirelia.fr/contact-conseil", name: "Contact conseil basse vision", description: "Page de contact LirElia pour un conseil sur les aides visuelles, l'éclairage, les loupes ou un bilan basse vision.", inLanguage: "fr-FR", isPartOf: { "@id": "https://lirelia.fr/#website" } },

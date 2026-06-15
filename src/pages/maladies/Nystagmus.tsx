@@ -23,8 +23,8 @@ const Nystagmus = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Le Nystagmus – Mouvement Involontaire des Yeux | LirElia"
-        description="Comprendre le nystagmus : causes, symptômes, impact sur la vision, traitements possibles et accompagnement basse vision au quotidien."
+        title="Nystagmus : causes, diagnostic et accompagnement | LirElia"
+        description="Comprendre le nystagmus : mouvements involontaires des yeux, causes congénitales ou acquises, diagnostic et solutions basse vision pour gagner en confort."
         canonicalPath="/maladies-yeux/nystagmus"
         jsonLd={{
           "@context": "https://schema.org",

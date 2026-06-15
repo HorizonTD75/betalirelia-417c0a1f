@@ -6,8 +6,8 @@ const Livraison = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Livraison et expédition | LirElia"
-        description="Conditions de livraison LirElia : zones desservies, délais, frais, suivi de commande et vérification du colis à la réception."
+        title="Livraison gratuite en France métropolitaine | LirElia"
+        description="Conditions de livraison LirElia : livraison gratuite en France métropolitaine, délais d'expédition, suivi de commande et vérification du colis à la réception."
         canonicalPath="/livraison"
       />
       <Header />

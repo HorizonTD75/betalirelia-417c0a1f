@@ -117,8 +117,8 @@ const TeleagrandisseurMezzoFocus = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Téléagrandisseur Mezzo Focus pour basse vision"
-        description="Découvrez le téléagrandisseur Mezzo Focus, une solution de lecture pour les personnes atteintes de basse vision, DMLA ou troubles visuels importants."
+        title="Téléagrandisseur Mezzo Focus pour basse vision | LirElia"
+        description="Téléagrandisseur Mezzo Focus : station de lecture HD pour DMLA et basse vision sévère, grand écran, zoom puissant et fortes contrastes pour lire et écrire."
         canonicalPath="/produits/teleagrandisseur-mezzo-focus"
         ogImage={imgMain}
         jsonLd={[

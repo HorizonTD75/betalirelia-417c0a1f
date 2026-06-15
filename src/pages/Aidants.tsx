@@ -47,7 +47,7 @@ const Aidants = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Guide pour les Aidants Basse Vision & DMLA | LirElia"
+        title="Aidants d'un proche malvoyant : guide pratique | LirElia"
         description="Comment aider un proche malvoyant sans l'infantiliser ? Conseils concrets pour l'accompagner au quotidien, adapter la maison et préserver son autonomie."
         canonicalPath="/aidants"
       />

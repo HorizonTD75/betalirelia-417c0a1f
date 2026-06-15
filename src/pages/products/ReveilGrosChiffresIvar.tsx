@@ -119,8 +119,8 @@ const ReveilGrosChiffresIvar = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Réveil gros chiffres IVAR — basse vision et DMLA | LirElia"
-        description="Réveil IVAR : gros chiffres lumineux blancs sur fond noir, format ultra-compact, thermomètre intégré et double alimentation — pensé pour les seniors et la basse vision."
+        title="Réveil gros chiffres IVAR pour basse vision et DMLA"
+        description="Réveil IVAR : gros chiffres lumineux blancs sur fond noir, format ultra-compact, thermomètre intégré et double alimentation. Pensé pour seniors et basse vision."
         canonicalPath="/boutique/reveil-gros-chiffres-ivar"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/reveil-gros-chiffres-ivar#product", name: "Réveil gros chiffres IVAR", description: "Réveil IVAR : gros chiffres lumineux blancs sur fond noir, ultra-compact, thermomètre intégré et double alimentation, pour basse vision et DMLA.", image: [`https://lirelia.fr${imgPrincipale}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/reveil-gros-chiffres-ivar", priceCurrency: "EUR", price: "26.40", availability: "https://schema.org/InStock" } },
