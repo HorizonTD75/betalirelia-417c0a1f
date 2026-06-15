@@ -131,7 +131,7 @@ const BilanSuivi = () => {
                 <Home className="w-7 h-7" />
               </div>
               <div className="flex-1">
-                <h3 className="font-serif text-xl font-bold text-foreground mb-1">Le suivi peut inclure des visites à domicile</h3>
+                <h2 className="font-serif text-xl font-bold text-foreground mb-1">Le suivi peut inclure des visites à domicile</h2>
                 <p className="text-lg text-muted-foreground">Le bilan initial et le bilan final peuvent être réalisés chez vous si le déplacement est difficile.</p>
               </div>
               <Button variant="outline" size="default" asChild className="shrink-0">
