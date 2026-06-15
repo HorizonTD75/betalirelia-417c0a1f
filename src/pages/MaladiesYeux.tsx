@@ -394,7 +394,7 @@ const MaladiesYeux = () => {
                     {disease.link && (
                       <Button variant="outline" size="sm" asChild>
                         <Link to={disease.link}>
-                          En savoir plus
+                          Découvrir cette maladie héréditaire
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </Button>
