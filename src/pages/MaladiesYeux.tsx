@@ -347,7 +347,7 @@ const MaladiesYeux = () => {
                     </p>
                     <Button variant="outline" size="sm" asChild>
                       <Link to={defect.link}>
-                        En savoir plus
+                        Comprendre ce défaut visuel
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </Button>
