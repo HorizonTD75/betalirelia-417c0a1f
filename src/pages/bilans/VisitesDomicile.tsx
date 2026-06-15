@@ -238,21 +238,21 @@ const VisitesDomicile = () => {
                   <h3 className="font-serif text-lg font-bold mb-2">Bilan Essentiel</h3>
                   <p className="text-muted-foreground mb-4">Faire le point, tester des aides simples, obtenir un plan d'action.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/essentiel">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/essentiel">Découvrir le Bilan Essentiel <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Bilan Expert</h3>
                   <p className="text-muted-foreground mb-4">Optimiser vos lunettes avec un opticien partenaire.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/expert">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/expert">Découvrir le Bilan Expert <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
                 <Card variant="elevated" className="p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">Pack Suivi</h3>
                   <p className="text-muted-foreground mb-4">Un accompagnement sur 3 mois avec visites et appels.</p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/bilans-bassevision/suivi">En savoir plus <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to="/bilans-bassevision/suivi">Découvrir le Pack Suivi <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </Card>
               </div>

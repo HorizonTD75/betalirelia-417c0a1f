@@ -296,7 +296,7 @@ const MaladiesYeux = () => {
                         {disease.link &&
                       <Button variant="outline" size="sm" asChild className="w-full">
                             <Link to={disease.link}>
-                              En savoir plus
+                              Comprendre cette maladie
                               <ArrowRight className="w-4 h-4" />
                             </Link>
                           </Button>
@@ -347,7 +347,7 @@ const MaladiesYeux = () => {
                     </p>
                     <Button variant="outline" size="sm" asChild>
                       <Link to={defect.link}>
-                        En savoir plus
+                        Comprendre ce défaut visuel
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </Button>
@@ -394,7 +394,7 @@ const MaladiesYeux = () => {
                     {disease.link && (
                       <Button variant="outline" size="sm" asChild>
                         <Link to={disease.link}>
-                          En savoir plus
+                          Découvrir cette maladie héréditaire
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </Button>
