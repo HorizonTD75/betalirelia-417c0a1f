@@ -7,8 +7,8 @@ const SavGaranties = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="SAV et garanties | LirElia"
-        description="Service après-vente LirElia : aide à l'utilisation, garantie légale de conformité, vices cachés, garantie fabricant et retour sous 14 jours."
+        title="SAV et garanties des produits LirElia basse vision"
+        description="Service après-vente LirElia : aide à l'utilisation, garantie légale de conformité, vices cachés, garantie fabricant et retour sous 14 jours après réception."
         canonicalPath="/sav-garanties"
       />
       <Header />

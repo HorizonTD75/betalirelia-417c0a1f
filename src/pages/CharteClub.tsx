@@ -6,8 +6,8 @@ const CharteClub = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Charte du Club LirElia — Règles de bienveillance | LirElia"
-        description="Charte du Club LirElia : règles de bienveillance, confidentialité et respect pour des échanges sereins entre personnes malvoyantes et aidants."
+        title="Charte du Club LirElia : règles de bienveillance | LirElia"
+        description="Charte du Club LirElia : règles de bienveillance, confidentialité et respect pour des échanges sereins entre personnes malvoyantes, proches et aidants."
         canonicalPath="/charte-club-lirelia"
       />
       <Header />

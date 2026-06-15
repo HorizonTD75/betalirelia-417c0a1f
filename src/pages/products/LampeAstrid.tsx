@@ -104,8 +104,8 @@ const LampeAstrid = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Lampe loupe ASTRID — bras articulé, lentille 10,5 cm | LirElia"
-        description="Lampe loupe ASTRID : grossissement x3, lentille 10,5 cm, éclairage LED 6000 lux, 3 températures de couleur, fixation par pince — pour la lecture et les travaux de précision en basse vision."
+        title="Lampe loupe ASTRID : bras articulé et lentille 10,5 cm"
+        description="Lampe loupe ASTRID : grossissement ×3, lentille 10,5 cm, éclairage LED 6000 lux, 3 températures de couleur, fixation par pince. Pour lecture et travaux fins."
         canonicalPath="/boutique/lampe-loupe-astrid"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/lampe-loupe-astrid#product", name: "Lampe loupe ASTRID", description: "Lampe loupe ASTRID à bras articulé : grossissement x3, lentille 10,5 cm, éclairage LED 6 000 lux, 3 températures de couleur.", image: [`https://lirelia.fr${imgNoire}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/lampe-loupe-astrid", priceCurrency: "EUR", price: "148.00", availability: "https://schema.org/InStock" } },

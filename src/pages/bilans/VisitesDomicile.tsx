@@ -41,8 +41,8 @@ const VisitesDomicile = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilan Basse Vision à Domicile | LirElia"
-        description="Votre visiopraticien se déplace chez vous pour réaliser votre bilan basse vision. Idéal si vous avez des difficultés de déplacement."
+        title="Bilan basse vision à domicile en Île-de-France | LirElia"
+        description="Bilan basse vision à domicile en Île-de-France : votre visiopraticien se déplace chez vous, évalue votre vision et teste les aides dans votre environnement."
         canonicalPath="/bilans-bassevision/visites-domicile"
         jsonLd={[
           {

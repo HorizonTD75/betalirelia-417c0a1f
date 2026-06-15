@@ -23,8 +23,8 @@ const RetinopathieDiabetique = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Rétinopathie Diabétique : Causes et Soins | LirElia"
-        description="Comprendre la rétinopathie diabétique : causes, symptômes, diagnostic, traitements et accompagnement basse vision. Première cause de cécité avant 65 ans."
+        title="Rétinopathie diabétique : prévention et traitement | LirElia"
+        description="Rétinopathie diabétique : facteurs de risque, dépistage par fond d'œil, traitements au laser et accompagnement basse vision en cas de baisse de vision."
         canonicalPath="/maladies-yeux/retinopathie-diabetique"
         jsonLd={{
           "@context": "https://schema.org",

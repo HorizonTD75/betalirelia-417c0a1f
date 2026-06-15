@@ -33,8 +33,8 @@ const Cataracte = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="La Cataracte – Symptômes, Traitement et Vision | LirElia"
-        description="Tout savoir sur la cataracte : symptômes, diagnostic, opération et conseils pour vivre avec. Aides visuelles et accompagnement basse vision."
+        title="Cataracte : symptômes, opération et suivi | LirElia"
+        description="Tout savoir sur la cataracte : causes, vision voilée, choix de l'implant, déroulement de l'opération et conseils pour bien préparer et suivre la chirurgie."
         canonicalPath="/maladies-yeux/cataracte"
         jsonLd={{
           "@context": "https://schema.org",

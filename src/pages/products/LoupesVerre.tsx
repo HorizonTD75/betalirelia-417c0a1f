@@ -105,7 +105,7 @@ const LoupesVerre = () => (
   <CategoryPageLayout
     icon={Search}
     heroImage={heroImage}
-    title="Loupes en verre"
+    title="Loupes en verre pour malvoyants, DMLA et seniors | LirElia"
     subtitle="Une aide à la lecture simple, immédiate et sans technologie"
     intro="La loupe en verre reste l'aide à la lecture la plus simple et la plus accessible. Avec une lentille convergente de qualité, elle offre un grossissement immédiat pour lire un courrier, une étiquette de médicament, une notice ou un document imprimé. Légère, sans batterie et facile à prendre en main, c'est souvent la première solution adoptée quand la vision de près commence à baisser."
     semanticKeywords=""

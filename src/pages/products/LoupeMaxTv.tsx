@@ -30,7 +30,7 @@ const LoupeMaxTv = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   return (
     <div className="min-h-screen">
-      <SEOHead title="Lunettes loupe Max-TV pour Télévision et Vision de Loin | LirElia" description="Lunettes loupe Max-TV : lunettes loupe grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant." canonicalPath="/boutique/loupe-max-tv" jsonLd={[
+      <SEOHead title="Lunettes loupe Max-TV pour télévision et vision de loin" description="Lunettes loupe Max-TV : grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant des deux yeux. Mains libres." canonicalPath="/boutique/loupe-max-tv" jsonLd={[
         { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/loupe-max-tv#product", name: "Lunettes loupe Max-TV", description: "Lunettes loupe Max-TV : grossissement 2,1x pour regarder la télévision ou un écran à 2 à 5 mètres, avec réglage indépendant.", image: [`https://lirelia.fr${imgGrossissement}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/loupe-max-tv", priceCurrency: "EUR", price: "87.00", availability: "https://schema.org/InStock" } },
         { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
           { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },

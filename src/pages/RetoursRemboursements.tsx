@@ -7,8 +7,8 @@ const RetoursRemboursements = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Retours et remboursements | LirElia"
-        description="Politique de retour LirElia : 14 jours de rétractation, modalités de retour, adresse, frais et délais de remboursement."
+        title="Retours et remboursements sous 14 jours chez LirElia"
+        description="Politique de retour LirElia : droit de rétractation 14 jours après réception, modalités de retour, adresse à utiliser, frais et délais de remboursement."
         canonicalPath="/retours-remboursements"
       />
       <Header />

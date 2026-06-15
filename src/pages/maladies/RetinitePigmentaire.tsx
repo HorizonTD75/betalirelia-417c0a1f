@@ -22,8 +22,8 @@ const RetinitePigmentaire = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Rétinite Pigmentaire : Maladie de la Rétine | LirElia"
-        description="Causes génétiques, symptômes et évolution de la rétinite pigmentaire. Conseils pour le quotidien et accompagnement basse vision."
+        title="Rétinite pigmentaire : symptômes et accompagnement | LirElia"
+        description="Rétinite pigmentaire : maladie génétique de la rétine, vision tubulaire, héméralopie. Diagnostic, évolution et aides basse vision pour préserver l'autonomie."
         canonicalPath="/maladies-yeux/retinite-pigmentaire"
         jsonLd={{
           "@context": "https://schema.org",

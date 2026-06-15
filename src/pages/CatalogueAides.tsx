@@ -206,8 +206,8 @@ const CatalogueAides = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Catalogue des aides basse vision | LirElia"
-        description="Parcourez le catalogue LirElia : lunettes loupes, loupes en verre, loupes électroniques, lampes adaptées et solutions de lecture pour la basse vision."
+        title="Catalogue complet des aides à la basse vision | LirElia"
+        description="Parcourez le catalogue LirElia : lunettes loupes, loupes en verre, loupes électroniques, lampes adaptées et télé-agrandisseurs pour la basse vision et la DMLA."
         canonicalPath="/catalogue-aides-basse-vision"
       />
       <Header />

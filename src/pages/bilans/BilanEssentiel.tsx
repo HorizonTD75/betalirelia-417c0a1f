@@ -42,8 +42,8 @@ const BilanEssentiel = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilan Essentiel basse vision | LirElia"
-        description="Le Bilan Essentiel est la formule de base pour comprendre vos difficultés visuelles, tester des solutions simples et repartir avec un plan d'action clair."
+        title="Bilan Essentiel basse vision à Paris dès 75 € | LirElia"
+        description="Bilan Essentiel basse vision : évaluation fonctionnelle, essais d'aides à la lecture et plan d'action personnalisé en 1h30. À Paris ou à domicile, dès 75 €."
         canonicalPath="/bilans-bassevision/essentiel"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "Service", "@id": "https://lirelia.fr/bilans-bassevision/essentiel#service", name: "Bilan Essentiel basse vision", description: "Formule de base du bilan basse vision LirElia : entretien sur les besoins, évaluation de la vision fonctionnelle, essais d'aides et plan d'action.", provider: { "@id": "https://lirelia.fr/#organization" }, areaServed: { "@type": "Country", name: "France" }, serviceType: "Bilan basse vision" },

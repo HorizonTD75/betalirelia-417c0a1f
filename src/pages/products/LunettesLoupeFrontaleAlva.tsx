@@ -78,8 +78,8 @@ const LunettesLoupeFrontaleAlva = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Lunette Loupe Frontale ALVA — LED, 5 grossissements | LirElia"
-        description="Lunette loupe frontale ALVA à LED : 5 grossissements (1x à 3,5x), mains libres, batterie rechargeable. Idéale basse vision, DMLA, travaux de précision."
+        title="Lunette loupe frontale ALVA : LED et 5 grossissements"
+        description="Lunette loupe frontale ALVA à LED : 5 grossissements (1x à 3,5x), vision binoculaire mains libres, batterie rechargeable. Idéale basse vision et DMLA."
         canonicalPath="/boutique/lunettes-loupe-frontale-alva"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/lunettes-loupe-frontale-alva#product", name: "Lunette Loupe Frontale ALVA", description: "Lunette loupe frontale ALVA à LED : 5 grossissements (1x à 3,5x), mains libres, batterie rechargeable.", image: [`https://lirelia.fr${productImage}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/lunettes-loupe-frontale-alva", priceCurrency: "EUR", price: "94.00", availability: "https://schema.org/InStock" } },

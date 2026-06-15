@@ -17,8 +17,8 @@ const Myopie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="La Myopie – Causes, Symptômes et Traitements | LirElia"
-        description="Tout savoir sur la myopie : causes génétiques et environnementales, symptômes, traitements (lunettes, lentilles, chirurgie) et prévention."
+        title="Myopie : causes, correction et myopie forte | LirElia"
+        description="Comprendre la myopie : mécanisme, vision floue de loin, correction optique, chirurgie réfractive et risques de la myopie forte sur la rétine et la macula."
         canonicalPath="/maladies-yeux/myopie"
         jsonLd={{
           "@context": "https://schema.org",

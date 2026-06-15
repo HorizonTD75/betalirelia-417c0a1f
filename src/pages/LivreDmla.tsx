@@ -129,8 +129,8 @@ const LivreDmla = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="DMLA : Votre vie ne s'arrête pas — Livre | LirElia"
-        description="170 pages de solutions concrètes pour vivre avec la DMLA : adapter son quotidien, s'équiper et retrouver l'autonomie. Par un expert de 25 ans."
+        title="DMLA — Votre vie ne s'arrête pas : le livre | LirElia"
+        description="170 pages de solutions concrètes pour vivre avec la DMLA : adapter son quotidien, s'équiper en aides à la lecture et retrouver l'autonomie. Par un expert."
         canonicalPath="/livre-dmla-votre-vie-ne-sarrete-pas"
       />
       <Header />

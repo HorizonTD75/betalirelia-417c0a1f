@@ -182,7 +182,7 @@ const VivreBasseVision = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Vivre avec la Basse Vision : Conseils Pratiques au Quotidien"
+        title="Vivre avec la basse vision : conseils au quotidien"
         description="Comment continuer à lire, cuisiner et sortir malgré la malvoyance ? Conseils concrets d'un expert pour adapter votre domicile et garder votre autonomie."
         canonicalPath="/vivre-basse-vision"
       />

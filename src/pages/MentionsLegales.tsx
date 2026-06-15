@@ -6,8 +6,8 @@ const MentionsLegales = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Mentions légales | LirElia"
-        description="Mentions légales du site LirElia : éditeur, hébergeur, contact, propriété intellectuelle et informations légales."
+        title="Mentions légales du site LirElia | Éditeur et hébergeur"
+        description="Mentions légales du site LirElia : éditeur, hébergeur, contact, propriété intellectuelle, conditions d'utilisation et informations légales obligatoires."
         canonicalPath="/mentions-legales"
       />
       <Header />

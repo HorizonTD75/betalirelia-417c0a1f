@@ -146,8 +146,8 @@ const MaladiesYeux = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Maladies des Yeux : DMLA, Glaucome, Cataracte | LirElia"
-        description="DMLA, glaucome, cataracte, rétinite pigmentaire… Comprenez chaque maladie oculaire, ses symptômes et les solutions pour préserver votre autonomie visuelle."
+        title="Maladies des yeux : DMLA, glaucome, cataracte | LirElia"
+        description="DMLA, glaucome, cataracte, rétinite pigmentaire : comprenez chaque maladie oculaire, ses symptômes et les solutions pour préserver votre autonomie visuelle."
         canonicalPath="/maladies-yeux"
         jsonLd={buildBreadcrumbJsonLd([
           { name: "Accueil", path: "/" },

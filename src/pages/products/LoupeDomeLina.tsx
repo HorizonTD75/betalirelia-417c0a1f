@@ -105,8 +105,8 @@ const LoupeDomeLina = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Loupe dôme éclairante rechargeable LINA | Lirelia"
-        description="Loupe dôme éclairante rechargeable avec grossissement x2 à x3. Une loupe à poser stable pour lire courrier, notices, mots croisés et petits caractères en cas de basse vision ou DMLA."
+        title="Loupe dôme éclairante rechargeable LINA x2 à x3 | LirElia"
+        description="Loupe dôme éclairante rechargeable LINA : grossissement ×2 à ×3, à poser pour lire courrier, notices, mots croisés et petits caractères en basse vision."
         canonicalPath="/boutique/loupe-dome-eclairante-lina"
         jsonLd={[
           { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/loupe-dome-eclairante-lina#product", name: "Loupe dôme éclairante rechargeable LINA", description: "Loupe dôme éclairante rechargeable LINA : grossissement x2 à x3, à poser sur le texte pour lire courrier, notices et mots croisés en cas de basse vision ou DMLA.", image: [`https://lirelia.fr${imgMain}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/loupe-dome-eclairante-lina", priceCurrency: "EUR", price: "86.20", availability: "https://schema.org/InStock" } },
