@@ -41,7 +41,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group shrink-0">
-            <img src={logoLirelia} alt="Lirelia, expert en basse vision et aides à la lecture" className="w-10 h-10 sm:w-12 sm:h-12 xl:w-14 xl:h-14 object-contain" width={56} height={56} decoding="async" />
+            <img src={logoLirelia} alt="Lirelia, expert en basse vision et aides à la lecture" className="w-10 h-auto sm:w-12 xl:w-14 object-contain" width={300} height={169} loading="eager" decoding="async" />
             <div className="whitespace-nowrap">
               <span className="font-serif text-base sm:text-lg xl:text-xl font-bold text-primary">LirElia</span>
               <span className="block text-xs text-muted-foreground">Basse Vision</span>
