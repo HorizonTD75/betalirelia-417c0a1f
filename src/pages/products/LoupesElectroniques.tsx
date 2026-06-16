@@ -110,6 +110,8 @@ const LoupesElectroniques = () => (
   <CategoryPageLayout
     icon={Monitor}
     heroImage={heroImage}
+    heroImageWidth={896}
+    heroImageHeight={512}
     title="Loupes électroniques pour basse vision et DMLA | LirElia"
     subtitle="Grossissement variable et contraste renforcé pour lire sans compromis"
     intro="La loupe électronique, ou loupe numérique, utilise une caméra et un écran pour afficher le texte agrandi avec des contrastes optimisés. Avec un zoom réglable de ×2 à ×60 et plusieurs modes de contraste pensés pour la basse vision, elle apporte un confort de lecture incomparable, à la maison comme en déplacement."

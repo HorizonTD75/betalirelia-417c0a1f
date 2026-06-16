@@ -191,7 +191,7 @@ const VivreBasseVision = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary text-primary-foreground py-12 md:py-16">
           <div className="absolute inset-0">
-            <img src={vivreHeroImage} alt="Vivre au quotidien avec une basse vision" className="w-full h-full object-cover opacity-15" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={vivreHeroImage} alt="Vivre au quotidien avec une basse vision" className="w-full h-full object-cover opacity-15" loading="eager" decoding="async" width={800} height={333} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
           </div>
           <div className="container relative z-10">
@@ -280,8 +280,7 @@ const VivreBasseVision = () => {
                   <img 
                     src={readingMagnifierImage} 
                     alt="Téléagrandisseur pour lecture facilitée en DMLA" 
-                    className="w-full h-48 object-cover"
-                  />
+                    className="w-full h-48 object-cover" width={1024} height={768} loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
                     <span className="text-primary-foreground font-semibold">Aides à la lecture</span>
                   </div>
@@ -290,8 +289,7 @@ const VivreBasseVision = () => {
                   <img 
                     src={tabletAccessibilityImage} 
                     alt="Tablette avec options d'accessibilité pour malvoyants" 
-                    className="w-full h-48 object-cover"
-                  />
+                    className="w-full h-48 object-cover" width={1024} height={768} loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
                     <span className="text-primary-foreground font-semibold">Écrans accessibles</span>
                   </div>
@@ -300,8 +298,7 @@ const VivreBasseVision = () => {
                   <img 
                     src={accessibleKitchenImage} 
                     alt="Cuisine adaptée pour personne malvoyante" 
-                    className="w-full h-48 object-cover"
-                  />
+                    className="w-full h-48 object-cover" width={600} height={450} loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
                     <span className="text-primary-foreground font-semibold">Maison sécurisée</span>
                   </div>
@@ -424,7 +421,7 @@ const VivreBasseVision = () => {
                   <img 
                     src={seniorWomanStreetImage} 
                     alt="Personne malvoyante se déplaçant en autonomie dans la rue" 
-                    className="w-full h-full object-cover object-center min-h-[280px]" loading="eager" decoding="async" width={1440} height={500} />
+                    className="w-full h-full object-cover object-center min-h-[280px]" loading="eager" decoding="async" width={600} height={1075} />
                 </div>
 
                 {/* Column 2: Déplacements */}

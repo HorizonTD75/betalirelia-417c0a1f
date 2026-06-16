@@ -8,9 +8,9 @@ import { ArrowLeft, ArrowRight, Check, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
-import imgMain from "@/assets/products/loupe-dome-eclairante-LINA.jpg";
-import imgMotCroise from "@/assets/products/loupe-dome-eclairante-rechargeable-DMLA-mot-croise.jpeg";
-import imgMagazine from "@/assets/products/loupe-dome-eclairante-rechargeable-DMLA.jpeg";
+import imgMain from "@/assets/products/loupe-dome-eclairante-lina.jpg";
+import imgMotCroise from "@/assets/products/loupe-dome-eclairante-rechargeable-dmla-mot-croise.jpeg";
+import imgMagazine from "@/assets/products/loupe-dome-eclairante-rechargeable-dmla.jpeg";
 
 const STRIPE_URL = "https://buy.stripe.com/9B614oc6ycGbh0j2xf2Fa0g";
 

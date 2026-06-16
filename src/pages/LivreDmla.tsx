@@ -143,8 +143,7 @@ const LivreDmla = () => {
                 <img
                   src={bookDmla}
                   alt="Guide patient sur la DMLA et les solutions de basse vision"
-                  className="w-56 md:w-64 rounded-xl shadow-2xl"
-                />
+                  className="w-56 md:w-64 rounded-xl shadow-2xl" width={600} height={960} loading="lazy" decoding="async" />
               </div>
               <div className="lg:w-2/3 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 mb-6">

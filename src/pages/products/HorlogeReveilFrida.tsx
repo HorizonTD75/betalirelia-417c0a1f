@@ -8,12 +8,12 @@ import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
-import imgPrincipale from "@/assets/products/horloge-reveil-pour-malvoyant-FRIDA.jpg";
-import imgBlanc from "@/assets/products/horloge-reveil-FRIDA-basse-vision-chiffres-blanc.jpg";
-import imgVert from "@/assets/products/horloge-reveil-FRIDA-chiffres-vert.jpg";
-import imgOrange from "@/assets/products/horloge-pour-malvoyant-FRIDA-orange-DMLA.jpg";
-import imgRouge from "@/assets/products/horloge-reveil-malvoyant-FRIDA-rouge.jpg";
-import imgBleu from "@/assets/products/horloge-pour-malvoyant-FRIDA-chiffres-bleu.jpg";
+import imgPrincipale from "@/assets/products/horloge-reveil-pour-malvoyant-frida.jpg";
+import imgBlanc from "@/assets/products/horloge-reveil-frida-basse-vision-chiffres-blanc.jpg";
+import imgVert from "@/assets/products/horloge-reveil-frida-chiffres-vert.jpg";
+import imgOrange from "@/assets/products/horloge-pour-malvoyant-frida-orange-dmla.jpg";
+import imgRouge from "@/assets/products/horloge-reveil-malvoyant-frida-rouge.jpg";
+import imgBleu from "@/assets/products/horloge-pour-malvoyant-frida-chiffres-bleu.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h";
 

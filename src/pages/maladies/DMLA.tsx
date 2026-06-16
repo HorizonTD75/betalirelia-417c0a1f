@@ -61,7 +61,7 @@ const DMLA = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={bookDmlaImage} alt="Guide patient sur la DMLA et les solutions de basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={bookDmlaImage} alt="Guide patient sur la DMLA et les solutions de basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={800} height={1024} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -426,8 +426,7 @@ const DMLA = () => {
                     <img
                       src={amslerGridImage}
                       alt="Grille d'Amsler pour détecter la DMLA"
-                      className="w-32 h-32 rounded-lg object-cover shadow-sm shrink-0"
-                    />
+                      className="w-32 h-32 rounded-lg object-cover shadow-sm shrink-0" width={300} height={384} loading="lazy" decoding="async" />
                     <div>
                       <h3 className="font-serif text-xl font-bold text-foreground mb-3">La grille d'Amsler : l'auto-surveillance</h3>
                       <p className="text-lg text-foreground leading-relaxed mb-3">

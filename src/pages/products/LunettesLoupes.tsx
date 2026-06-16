@@ -109,6 +109,8 @@ const LunettesLoupes = () => (
   <CategoryPageLayout
     icon={Glasses}
     heroImage={heroImage}
+    heroImageWidth={1024}
+    heroImageHeight={768}
     title="Lunettes loupes pour malvoyants : près et loin | LirElia"
     subtitle="Un grossissement mains libres pour la lecture, le bricolage, la couture ou la vision à distance"
     intro="Les lunettes loupes permettent d'obtenir un grossissement mains libres pour certaines activités de près ou de loin. Elles peuvent être utiles pour lire, bricoler, coudre, regarder un écran, suivre une conférence ou voir plus confortablement à distance, à condition de bien choisir le modèle selon l'usage et la distance de travail."

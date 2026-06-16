@@ -128,7 +128,7 @@ const Visiopraticien = () => {
         {/* Hero */}
         <section className="relative bg-primary text-primary-foreground py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={visiopraticienHeroImage} alt="Visiopraticien expert en basse vision et réadaptation visuelle" className="w-full h-full object-cover opacity-30" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={visiopraticienHeroImage} alt="Visiopraticien expert en basse vision et réadaptation visuelle" className="w-full h-full object-cover opacity-30" aria-hidden="true" loading="eager" decoding="async" width={1000} height={563} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">
@@ -175,7 +175,7 @@ const Visiopraticien = () => {
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6 sm:gap-8 items-start mb-10">
                 <div className="md:col-span-2 relative">
                   <img src={visiopraticienConsultationImage} alt="Consultation avec un visiopraticien spécialisé"
-                  className="w-full rounded-2xl shadow-card" />
+                  className="w-full rounded-2xl shadow-card" width={600} height={600} loading="lazy" decoding="async" />
                   <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary/20 rounded-2xl -z-10 hidden md:block" />
                 </div>
                 <div className="md:col-span-3">

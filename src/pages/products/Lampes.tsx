@@ -112,6 +112,8 @@ const Lampes = () => (
   <CategoryPageLayout
     icon={Lightbulb}
     heroImage={heroImage}
+    heroImageWidth={896}
+    heroImageHeight={512}
     title="Lampes basse vision : éclairage lumière du jour | LirElia"
     subtitle="Voir mieux grâce à un éclairage maîtrisé, sans éblouissement"
     intro="Un éclairage inadapté est l'une des premières causes de fatigue visuelle chez les personnes malvoyantes. Une bonne lampe de lecture ne se contente pas d'éclairer : elle améliore le contraste, réduit les reflets et permet de lire plus longtemps sans douleur. C'est souvent le premier complément utile à une loupe ou à un agrandisseur électronique."

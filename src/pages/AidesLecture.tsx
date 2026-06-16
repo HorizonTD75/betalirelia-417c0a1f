@@ -229,7 +229,7 @@ const AidesLecture = () => {
               src={aidesLectureHero}
               alt="Solutions et aides techniques pour la lecture en basse vision"
               className="w-full h-full object-cover opacity-15"
-              aria-hidden="true" loading="eager" decoding="async" width={1440} height={400} />
+              aria-hidden="true" loading="eager" decoding="async" width={1920} height={1080} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
           </div>
           <div className="container relative z-10">

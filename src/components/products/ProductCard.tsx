@@ -8,6 +8,10 @@ export interface Product {
   slug: string;
   image: string;
   imageAlt: string;
+  /** Intrinsic image width in pixels. Defaults to 800. */
+  imageWidth?: number;
+  /** Intrinsic image height in pixels. Defaults to 800. */
+  imageHeight?: number;
   description: string;
   features: string[];
   idealFor: string[];
@@ -23,17 +27,19 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const w = product.imageWidth ?? 800;
+  const h = product.imageHeight ?? 800;
   return (
     <Card variant="elevated" className="h-full flex flex-col border-t-4 border-t-secondary overflow-hidden">
-      <div className="rounded-t-2xl overflow-hidden border-b-2 border-border bg-muted/30">
+      <div className="rounded-t-2xl overflow-hidden border-b-2 border-border bg-muted/30 aspect-[400/224]">
         <img
           src={product.image}
           alt={product.imageAlt}
-          className="w-full h-56 object-cover"
+          className="w-full h-full object-cover"
           loading="lazy"
           decoding="async"
-          width={400}
-          height={224}
+          width={w}
+          height={h}
         />
       </div>
       <CardHeader className="pb-4">
