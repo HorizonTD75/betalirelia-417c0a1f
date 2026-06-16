@@ -114,8 +114,7 @@ const LunettesLoupeFrontaleAlva = () => {
                   className="w-full aspect-square object-contain bg-white"
                   loading="eager"
                   width={720}
-                  height={720}
-                />
+                  height={720} decoding="async" />
               </div>
             </div>
 

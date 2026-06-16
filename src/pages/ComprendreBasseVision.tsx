@@ -104,7 +104,7 @@ const ComprendreBasseVision = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={comprendreHeaderImage} alt="Comprendre la basse vision et ses impacts au quotidien" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={comprendreHeaderImage} alt="Comprendre la basse vision et ses impacts au quotidien" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={800} height={450} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-12 md:py-16">
@@ -226,7 +226,7 @@ const ComprendreBasseVision = () => {
                   <img
                     src={comprendreHeroImage}
                     alt="Comprendre la basse vision et ses impacts au quotidien"
-                    className="w-full max-w-full rounded-2xl shadow-card" />
+                    className="w-full max-w-full rounded-2xl shadow-card" width={500} height={750} loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
@@ -306,7 +306,7 @@ const ComprendreBasseVision = () => {
                   <img
                     src={professionnelsOptiqueImage}
                     alt="Professionnels de l'optique spécialisés en basse vision"
-                    className="w-full rounded-2xl shadow-card" />
+                    className="w-full rounded-2xl shadow-card" width={600} height={750} loading="lazy" decoding="async" />
                   
                 </div>
                 <div className="lg:col-span-3">

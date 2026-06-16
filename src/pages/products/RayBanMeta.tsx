@@ -149,8 +149,8 @@ const RayBanMeta = () => {
                   className="w-full h-auto object-cover"
                   loading="eager"
                   fetchPriority="high"
-                  width={1200}
-                  height={800}
+                  width={720}
+                  height={386}
                   decoding="async"
                 />
               </div>

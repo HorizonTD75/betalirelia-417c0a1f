@@ -160,7 +160,7 @@ const MaladiesYeux = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary text-primary-foreground py-20">
           <div className="absolute inset-0">
-            <img src={maladiesHeroImage} alt="Les principales maladies des yeux causant la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={maladiesHeroImage} alt="Les principales maladies des yeux causant la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={800} height={333} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">
@@ -246,8 +246,8 @@ const MaladiesYeux = () => {
                     className="w-full rounded-2xl shadow-card"
                     loading="lazy"
                     decoding="async"
-                    width={600}
-                    height={400} />
+                    width={500}
+                    height={750} />
                   
                 </div>
               </div>
@@ -281,8 +281,8 @@ const MaladiesYeux = () => {
                           className="w-24 h-24 rounded-lg object-cover shadow-sm"
                           loading="lazy"
                           decoding="async"
-                          width={96}
-                          height={96} />
+                          width={300}
+                          height={384} />
 
                         }
                           </div>

@@ -62,7 +62,7 @@ const Cataracte = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={cataracteHeroImage} alt="Comprendre la cataracte et ses traitements" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1440} height={500} />
+            <img src={cataracteHeroImage} alt="Comprendre la cataracte et ses traitements" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1920} height={1080} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -161,8 +161,7 @@ const Cataracte = () => {
                     <img
                       src={cataracteSchemaImage}
                       alt="Schéma explicatif de la cataracte dans l'œil"
-                      className="w-full rounded-xl mb-4"
-                    />
+                      className="w-full rounded-xl mb-4" width={800} height={600} loading="lazy" decoding="async" />
                     <p className="text-foreground text-center font-semibold">
                       Œil atteint de cataracte : le cristallin devient opaque
                     </p>
@@ -171,8 +170,7 @@ const Cataracte = () => {
                     <img
                       src={cataracteVisionImage}
                       alt="Comparaison vision normale et vision avec cataracte"
-                      className="w-full rounded-xl mb-4"
-                    />
+                      className="w-full rounded-xl mb-4" width={800} height={512} loading="lazy" decoding="async" />
                     <p className="text-foreground text-center font-semibold">
                       Vision normale (gauche) vs vision avec cataracte (droite)
                     </p>
