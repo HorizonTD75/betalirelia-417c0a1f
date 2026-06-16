@@ -8,10 +8,10 @@ import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
-import imgJournal from "@/assets/products/souris-loupe-electronique-VERA-journal.jpg";
-import imgDmla from "@/assets/products/souris-loupe-electronique-VERA-DMLA.jpg";
-import imgJauneGrise from "@/assets/products/souris-loupe-electronique-VERA-jaune-grise.jpg";
-import imgVera from "@/assets/products/souris-loupe-electronique-VERA.jpg";
+import imgJournal from "@/assets/products/souris-loupe-electronique-vera-journal.jpg";
+import imgDmla from "@/assets/products/souris-loupe-electronique-vera-dmla.jpg";
+import imgJauneGrise from "@/assets/products/souris-loupe-electronique-vera-jaune-grise.jpg";
+import imgVera from "@/assets/products/souris-loupe-electronique-vera.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/6oUdRafiK5dJ7pJgo52Fa0e";
 

@@ -8,9 +8,9 @@ import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
-import imgMain from "@/assets/products/teleagrandisseur-Mezzo-basse-vision.jpg";
-import imgLecture from "@/assets/products/teleagrandisseur-DMLA-mezzo-focus-24.jpg";
-import imgPlie from "@/assets/products/teleagrandisseur-mezzo-focus-plie-DMLA.jpg";
+import imgMain from "@/assets/products/teleagrandisseur-mezzo-basse-vision.jpg";
+import imgLecture from "@/assets/products/teleagrandisseur-dmla-mezzo-focus-24.jpg";
+import imgPlie from "@/assets/products/teleagrandisseur-mezzo-focus-plie-dmla.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/9B64gAb2ufSn25p9ZH2Fa0f";
 

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgPoignee from "@/assets/products/loupe-electronique-clover-5-poignee.jpg";
-import imgDMLA from "@/assets/products/loupe-electronique-clover-5-DMLA.jpg";
+import imgDMLA from "@/assets/products/loupe-electronique-clover-5-dmla.jpg";
 import imgLecture from "@/assets/products/loupe-electronique-clover-5-basse-vision-lecture.jpg";
 import imgMalvoyant from "@/assets/products/loupe-electronique-clover-5-malvoyant.jpg";
 

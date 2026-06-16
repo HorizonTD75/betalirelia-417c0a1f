@@ -8,10 +8,10 @@ import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
-import imgPrincipale from "@/assets/products/reveil-gros-chiffres-blanc-IVAR.jpg";
-import imgNoir from "@/assets/products/reveil-gros-chiffres-noir-IVAR.jpg";
-import imgBoutons from "@/assets/products/reveil-gros-chiffres-IVAR-boutons.jpg";
-import imgTemperature from "@/assets/products/reveil-gros-chiffres-IVAR-temperature.jpg";
+import imgPrincipale from "@/assets/products/reveil-gros-chiffres-blanc-ivar.jpg";
+import imgNoir from "@/assets/products/reveil-gros-chiffres-noir-ivar.jpg";
+import imgBoutons from "@/assets/products/reveil-gros-chiffres-ivar-boutons.jpg";
+import imgTemperature from "@/assets/products/reveil-gros-chiffres-ivar-temperature.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/7sYeVefiKbC77pJb3L2Fa0b";
 
