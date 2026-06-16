@@ -12,6 +12,8 @@ const books = [
     subtitle: "Le guide pratique pour continuer à vivre pleinement",
     description: "Ce livre accompagne les personnes atteintes de DMLA et leurs proches, avec des explications claires, des solutions concrètes et des témoignages inspirants.",
     link: "/livre-dmla-votre-vie-ne-sarrete-pas",
+    width: 600,
+    height: 960,
   },
   {
     image: bookAidant,
@@ -19,6 +21,8 @@ const books = [
     subtitle: "Le guide indispensable pour accompagner sans s'épuiser",
     description: "Destiné aux aidants familiaux et professionnels, ce livre vous apprend à soutenir sans étouffer et à préserver votre propre équilibre.",
     link: "/livre-aider-proche-dmla",
+    width: 800,
+    height: 1024,
   },
 ];
 
