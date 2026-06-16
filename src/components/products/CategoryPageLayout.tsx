@@ -16,6 +16,10 @@ interface BuyingCriteria {
 interface CategoryPageProps {
   icon: LucideIcon;
   heroImage: string;
+  /** Intrinsic width of the hero image. Defaults to 1920. */
+  heroImageWidth?: number;
+  /** Intrinsic height of the hero image. Defaults to 1080. */
+  heroImageHeight?: number;
   title: string;
   subtitle: string;
   intro: string;
@@ -43,6 +47,8 @@ interface CategoryPageProps {
 const CategoryPageLayout = ({
   icon: Icon,
   heroImage,
+  heroImageWidth = 1920,
+  heroImageHeight = 1080,
   title,
   subtitle,
   intro,
