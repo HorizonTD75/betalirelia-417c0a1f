@@ -111,6 +111,8 @@ const TeleAgrandisseurs = () => (
   <CategoryPageLayout
     icon={Eye}
     heroImage={heroImage}
+    heroImageWidth={896}
+    heroImageHeight={512}
     title="Télé-agrandisseurs pour basse vision et DMLA | LirElia"
     subtitle="Le confort d'un grand écran pour lire et écrire longtemps, même avec une vision très réduite"
     intro="Le télé-agrandisseur, ou vidéo-agrandisseur, est l'aide à la lecture la plus aboutie pour les personnes atteintes de basse vision modérée à sévère. Avec son grand écran, son zoom puissant et son plateau coulissant, il rend possible la lecture longue, l'écriture, les mots croisés ou la consultation de documents administratifs — là où une simple loupe ou une loupe électronique portable atteint vite ses limites. C'est l'outil qui permet de retrouver une vraie autonomie quotidienne à la maison."
