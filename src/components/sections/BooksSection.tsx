@@ -50,9 +50,10 @@ const BooksSection = () => {
                       src={book.image}
                       alt={`Couverture du livre ${book.title}`}
                       className="w-40 h-auto rounded-lg shadow-lg border border-border"
-                      width={160}
-                      height={226}
+                      width={book.width}
+                      height={book.height}
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="md:w-2/3 p-6">
