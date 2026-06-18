@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ProductCard, { type Product } from "./ProductCard";
 import type { LucideIcon } from "lucide-react";
 import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
+import { getHeroSrcSet } from "@/lib/heroSrcSet";
 
 interface BuyingCriteria {
   title: string;
