@@ -22,8 +22,10 @@ for (const k of Object.keys(grouped)) grouped[k].sort((a, b) => a.width - b.widt
  * Returns { srcSet, src } for a hero image identified by its source basename
  * (e.g. "hero-basse-vision-accueil.jpg"). Returns null if no variants exist.
  */
-export function getHeroSrcSet(sourceFilename: string): { srcSet: string; src: string; widths: number[] } | null {
-  const base = sourceFilename.replace(/\.[^.]+$/, "");
+export function getHeroSrcSet(input: string): { srcSet: string; src: string; widths: number[] } | null {
+  const file = input.split("/").pop() ?? input;
+  const cleaned = file.replace(/-[A-Za-z0-9_-]{8,}\.(jpg|jpeg|png|webp)$/i, ".$1");
+  const base = cleaned.replace(/\.[^.]+$/, "");
   const variants = grouped[base];
   if (!variants || variants.length === 0) return null;
   const srcSet = variants.map((v) => `${v.url} ${v.width}w`).join(", ");
