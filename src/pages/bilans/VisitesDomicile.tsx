@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Home, Check, Phone, Calendar, ArrowRight, Users, MapPin, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const VisitesDomicile = () => {
   const situations = [
@@ -67,7 +68,7 @@ const VisitesDomicile = () => {
         {/* Hero */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={bilanDomicileImage} alt="Bilan basse vision à domicile par visiopraticien" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={600} height={600} />
+            <img src={(__getHeroSrcSet(bilanDomicileImage)?.src) ?? bilanDomicileImage} srcSet={__getHeroSrcSet(bilanDomicileImage)?.srcSet} sizes="100vw" alt="Bilan basse vision à domicile par visiopraticien" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" decoding="async" width={600} height={600} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-20 lg:py-28">

@@ -14,6 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import RGPDConsent from "@/components/RGPDConsent";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 type BilanType = "essentiel" | "expert" | "suivi" | "domicile";
 
@@ -205,12 +206,11 @@ const ContactBilan = () => {
       <main id="main-content">
         <section className="relative bg-primary text-primary-foreground py-20 pb-32 overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src={bilanHeroImage}
+            <img src={(__getHeroSrcSet(bilanHeroImage)?.src) ?? bilanHeroImage} srcSet={__getHeroSrcSet(bilanHeroImage)?.srcSet} sizes="100vw"
               alt="Professionnel réalisant un bilan basse vision personnalisé"
               className="w-full h-full object-cover opacity-20"
               aria-hidden="true"
-              loading="eager"
+              loading="eager" fetchPriority="high"
               decoding="async"
               width={600}
               height={338}

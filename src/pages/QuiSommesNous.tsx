@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import heroImage from "@/assets/qui-sommes-nous-hero.jpg";
 import fondateursImage from "@/assets/fondateurs-lirelia.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const QuiSommesNous = () => {
   return (
@@ -24,7 +25,7 @@ const QuiSommesNous = () => {
         {/* Hero Banner */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImage} alt="L'équipe Lirelia, 25 ans d'expertise en basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1920} height={800} />
+            <img src={(__getHeroSrcSet(heroImage)?.src) ?? heroImage} srcSet={__getHeroSrcSet(heroImage)?.srcSet} sizes="100vw" alt="L'équipe Lirelia, 25 ans d'expertise en basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={1920} height={800} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">

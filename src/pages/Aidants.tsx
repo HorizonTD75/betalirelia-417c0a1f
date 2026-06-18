@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight, Heart, Eye, Lightbulb, CheckCircle, AlertTriangle, HelpCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import aidantsHero from "@/assets/aidants-hero-600.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const faqItems = [
   {
@@ -56,10 +57,9 @@ const Aidants = () => {
         {/* A — HERO */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img
-              src={aidantsHero}
+            <img src={(__getHeroSrcSet(aidantsHero)?.src) ?? aidantsHero} srcSet={__getHeroSrcSet(aidantsHero)?.srcSet} sizes="100vw"
               alt="Accompagnement des aidants de personnes malvoyantes"
-              className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={600} height={338} />
+              className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" decoding="async" width={600} height={338} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-20 lg:py-28">

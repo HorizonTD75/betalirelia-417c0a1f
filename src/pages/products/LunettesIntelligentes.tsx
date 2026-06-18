@@ -9,6 +9,7 @@ import heroImage from "@/assets/lunettes-intelligentes.jpg";
 import imgIA from "@/assets/products/lunettes-ia-grand-public.jpg";
 import imgVocale from "@/assets/products/lunettes-camera-vocale.jpg";
 import imgAgrandisseur from "@/assets/products/casque-lunettes-agrandisseur.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const families = [
   {
@@ -126,12 +127,11 @@ const LunettesIntelligentes = () => {
         {/* HERO */}
         <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src={heroImage}
+            <img src={(__getHeroSrcSet(heroImage)?.src) ?? heroImage} srcSet={__getHeroSrcSet(heroImage)?.srcSet} sizes="100vw"
               alt="Illustration d’une paire de lunettes intelligentes connectées posée sur un livre ouvert"
               className="w-full h-full object-cover opacity-20"
               aria-hidden="true"
-              loading="eager"
+              loading="eager" fetchPriority="high"
               width={800}
               height={600}
               decoding="async"

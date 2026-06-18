@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Eye,
   AlertTriangle,
   ArrowRight,
@@ -62,7 +63,7 @@ const Cataracte = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={cataracteHeroImage} alt="Comprendre la cataracte et ses traitements" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1920} height={1080} />
+            <img src={(__getHeroSrcSet(cataracteHeroImage)?.src) ?? cataracteHeroImage} srcSet={__getHeroSrcSet(cataracteHeroImage)?.srcSet} sizes="100vw" alt="Comprendre la cataracte et ses traitements" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1080} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">

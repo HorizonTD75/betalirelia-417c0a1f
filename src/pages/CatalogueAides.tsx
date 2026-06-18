@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 import lunettesFocus from "@/assets/products/lunettes-loupes-focus-dmla.jpg";
 import lunettesMaxTv from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
@@ -215,7 +216,7 @@ const CatalogueAides = () => {
         {/* Hero */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={heroBg} alt="Solutions et aides techniques pour la lecture en basse vision" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" width={1920} height={1080} decoding="async" />
+            <img src={(__getHeroSrcSet(heroBg)?.src) ?? heroBg} srcSet={__getHeroSrcSet(heroBg)?.srcSet} sizes="100vw" alt="Solutions et aides techniques pour la lecture en basse vision" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" width={1920} height={1080} decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-12 md:py-16">

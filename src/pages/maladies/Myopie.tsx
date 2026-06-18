@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Eye, ChevronRight, ArrowRight, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -46,7 +47,7 @@ const Myopie = () => {
         {/* Hero */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={maladiesHeroImage} alt="Les principales maladies des yeux causant la basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={800} height={333} />
+            <img src={(__getHeroSrcSet(maladiesHeroImage)?.src) ?? maladiesHeroImage} srcSet={__getHeroSrcSet(maladiesHeroImage)?.srcSet} sizes="100vw" alt="Les principales maladies des yeux causant la basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={800} height={333} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">

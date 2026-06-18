@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Eye,
   AlertTriangle,
   ArrowRight,
@@ -61,7 +62,7 @@ const DMLA = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={bookDmlaImage} alt="Guide patient sur la DMLA et les solutions de basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={800} height={1024} />
+            <img src={(__getHeroSrcSet(bookDmlaImage)?.src) ?? bookDmlaImage} srcSet={__getHeroSrcSet(bookDmlaImage)?.srcSet} sizes="100vw" alt="Guide patient sur la DMLA et les solutions de basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={800} height={1024} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
