@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Eye, ChevronRight, ArrowRight, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const Myopie = () => {
   return (

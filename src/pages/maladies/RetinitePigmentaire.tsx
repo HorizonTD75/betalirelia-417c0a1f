@@ -4,7 +4,6 @@ import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Eye,
   AlertTriangle,
   ArrowRight,
@@ -18,6 +17,7 @@ import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/retinite-pigmentaire-hero.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const RetinitePigmentaire = () => {
   return (

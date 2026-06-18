@@ -4,7 +4,6 @@ import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Eye,
   AlertCircle,
   Users,
@@ -15,6 +14,7 @@ import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   CheckCircle,
   HelpCircle,
   Lightbulb } from
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 "lucide-react";
 import { Link } from "react-router-dom";
 import eyeAnatomyImage from "@/assets/anatomie-oeil-schema.jpg";

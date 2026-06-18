@@ -4,7 +4,6 @@ import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Eye,
   AlertTriangle,
   ArrowRight,
@@ -26,6 +25,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import glaucomeHeroImage from "@/assets/glaucome-hero.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const Glaucome = () => {
   return (

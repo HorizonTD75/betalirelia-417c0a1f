@@ -5,7 +5,6 @@ import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Eye,
   AlertTriangle,
   Users,
@@ -14,6 +13,7 @@ import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
   Dna,
   Droplets,
   Sun } from
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 "lucide-react";
 import { Link } from "react-router-dom";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";

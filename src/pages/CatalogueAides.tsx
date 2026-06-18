@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 import lunettesFocus from "@/assets/products/lunettes-loupes-focus-dmla.jpg";
 import lunettesMaxTv from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
@@ -26,6 +25,7 @@ import loupeDomeLinaImg from "@/assets/products/loupe-dome-eclairante-lina.jpg";
 import rayBanMetaImg from "@/assets/products/ray-ban-meta-marron.jpg";
 import loupeAmelieImg from "@/assets/products/loupe-electronique-amelie.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
 
 type Product = {
