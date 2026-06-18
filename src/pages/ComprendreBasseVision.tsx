@@ -23,6 +23,7 @@ import seniorManStreetImage from "@/assets/personne-malvoyante-autonomie-rue.jpg
 import professionnelsOptiqueImage from "@/assets/professionnels-optique-600.jpg";
 import comprendreHeaderImage from "@/assets/comprendre-basse-vision-header-800.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const ComprendreBasseVision = () => {
   const symptoms = [
   "La lecture du journal ou de documents devient très lente, même avec une bonne lumière",
@@ -104,7 +105,7 @@ const ComprendreBasseVision = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={comprendreHeaderImage} alt="Comprendre la basse vision et ses impacts au quotidien" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={800} height={450} />
+            <img src={(__getHeroSrcSet(comprendreHeaderImage)?.src) ?? comprendreHeaderImage} srcSet={__getHeroSrcSet(comprendreHeaderImage)?.srcSet} sizes="100vw" alt="Comprendre la basse vision et ses impacts au quotidien" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" decoding="async" width={800} height={450} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-12 md:py-16">

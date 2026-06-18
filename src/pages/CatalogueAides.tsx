@@ -27,6 +27,7 @@ import loupeAmelieImg from "@/assets/products/loupe-electronique-amelie.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
 
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 type Product = {
   name: string;
   usage: string;
@@ -215,7 +216,7 @@ const CatalogueAides = () => {
         {/* Hero */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={heroBg} alt="Solutions et aides techniques pour la lecture en basse vision" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" width={1920} height={1080} decoding="async" />
+            <img src={(__getHeroSrcSet(heroBg)?.src) ?? heroBg} srcSet={__getHeroSrcSet(heroBg)?.srcSet} sizes="100vw" alt="Solutions et aides techniques pour la lecture en basse vision" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" width={1920} height={1080} decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-12 md:py-16">

@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/accordion";
 import glaucomeHeroImage from "@/assets/glaucome-hero.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const Glaucome = () => {
   return (
     <div className="min-h-screen">
@@ -65,7 +66,7 @@ const Glaucome = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={glaucomeHeroImage} alt="Le glaucome et ses effets sur la vision périphérique" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1920} height={1080} />
+            <img src={(__getHeroSrcSet(glaucomeHeroImage)?.src) ?? glaucomeHeroImage} srcSet={__getHeroSrcSet(glaucomeHeroImage)?.srcSet} sizes="100vw" alt="Le glaucome et ses effets sur la vision périphérique" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1080} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">

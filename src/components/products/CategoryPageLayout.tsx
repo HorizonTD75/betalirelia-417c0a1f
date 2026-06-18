@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ProductCard, { type Product } from "./ProductCard";
 import type { LucideIcon } from "lucide-react";
 import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
+import { getHeroSrcSet } from "@/lib/heroSrcSet";
 
 interface BuyingCriteria {
   title: string;
@@ -107,17 +108,24 @@ const CategoryPageLayout = ({
         {/* HERO */}
         <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0">
-            <img
-              src={heroImage}
-              alt=""
-              className="w-full h-full object-cover opacity-20"
-              aria-hidden="true"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              width={heroImageWidth}
-              height={heroImageHeight}
-            />
+            {(() => {
+              const v = getHeroSrcSet(heroImage);
+              return (
+                <img
+                  src={v?.src ?? heroImage}
+                  srcSet={v?.srcSet}
+                  sizes="100vw"
+                  alt=""
+                  className="w-full h-full object-cover opacity-20"
+                  aria-hidden="true"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={heroImageWidth}
+                  height={heroImageHeight}
+                />
+              );
+            })()}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative z-10">

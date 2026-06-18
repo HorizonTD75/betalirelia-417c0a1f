@@ -18,6 +18,7 @@ import {
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/retinite-pigmentaire-hero.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const RetinitePigmentaire = () => {
   return (
     <div className="min-h-screen">
@@ -51,7 +52,7 @@ const RetinitePigmentaire = () => {
         {/* Hero */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImage} alt="La rétinite pigmentaire et l'adaptation en basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1920} height={1080} />
+            <img src={(__getHeroSrcSet(heroImage)?.src) ?? heroImage} srcSet={__getHeroSrcSet(heroImage)?.srcSet} sizes="100vw" alt="La rétinite pigmentaire et l'adaptation en basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={1920} height={1080} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">

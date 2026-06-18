@@ -19,6 +19,7 @@ import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const MaladiesYeux = () => {
   const mainDiseases = [
   {
@@ -160,7 +161,7 @@ const MaladiesYeux = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary text-primary-foreground py-20">
           <div className="absolute inset-0">
-            <img src={maladiesHeroImage} alt="Les principales maladies des yeux causant la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={800} height={333} />
+            <img src={(__getHeroSrcSet(maladiesHeroImage)?.src) ?? maladiesHeroImage} srcSet={__getHeroSrcSet(maladiesHeroImage)?.srcSet} sizes="100vw" alt="Les principales maladies des yeux causant la basse vision" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" decoding="async" width={800} height={333} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative">

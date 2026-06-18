@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanSuiviImage from "@/assets/bilan-suivi-visio-600.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const BilanSuivi = () => {
   const targetAudience = [
     "Vous avez réalisé ou prévoyez un Bilan Essentiel et vous craignez de ne pas réussir à appliquer seul les conseils",
@@ -97,7 +98,7 @@ const BilanSuivi = () => {
         {/* HERO */}
         <section className="relative overflow-hidden bg-primary">
           <div className="absolute inset-0">
-            <img src={bilanHeroImage} alt="Professionnel réalisant un bilan basse vision personnalisé" className="w-full h-full object-cover opacity-40" loading="eager" decoding="async" width={600} height={338} />
+            <img src={(__getHeroSrcSet(bilanHeroImage)?.src) ?? bilanHeroImage} srcSet={__getHeroSrcSet(bilanHeroImage)?.srcSet} sizes="100vw" alt="Professionnel réalisant un bilan basse vision personnalisé" className="w-full h-full object-cover opacity-40" loading="eager" fetchPriority="high" decoding="async" width={600} height={338} />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
           </div>
           <div className="container relative py-20 lg:py-28">

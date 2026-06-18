@@ -19,6 +19,7 @@ import {
 import { Link } from "react-router-dom";
 import nystagmusHeroImage from "@/assets/nystagmus-hero.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const Nystagmus = () => {
   return (
     <div className="min-h-screen">
@@ -52,7 +53,7 @@ const Nystagmus = () => {
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={nystagmusHeroImage} alt="Le nystagmus et les aides visuelles adaptées" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" decoding="async" width={1024} height={600} />
+            <img src={(__getHeroSrcSet(nystagmusHeroImage)?.src) ?? nystagmusHeroImage} srcSet={__getHeroSrcSet(nystagmusHeroImage)?.srcSet} sizes="100vw" alt="Le nystagmus et les aides visuelles adaptées" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={1024} height={600} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">

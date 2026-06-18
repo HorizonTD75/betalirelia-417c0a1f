@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-basse-vision-accueil.jpg";
+import { getHeroSrcSet } from "@/lib/heroSrcSet";
+
+const heroVariants = getHeroSrcSet("hero-basse-vision-accueil.jpg");
 
 const HeroSection = () => {
   return (
@@ -9,14 +12,17 @@ const HeroSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
-          alt="Illustration aquarelle sur le thème de la vision"
+          src={heroVariants?.src ?? heroImage}
+          srcSet={heroVariants?.srcSet}
+          sizes="100vw"
+          alt=""
           className="w-full h-full object-cover opacity-50"
           loading="eager"
           fetchPriority="high"
           decoding="async"
           width={800}
-          height={450} />
+          height={450}
+          aria-hidden="true" />
         
         
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
