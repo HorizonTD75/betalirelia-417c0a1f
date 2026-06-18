@@ -12,8 +12,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const Presbytie = () => {
   return (
     <div className="min-h-screen">

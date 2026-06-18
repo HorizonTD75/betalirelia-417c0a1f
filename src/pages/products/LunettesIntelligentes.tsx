@@ -9,8 +9,8 @@ import heroImage from "@/assets/lunettes-intelligentes.jpg";
 import imgIA from "@/assets/products/lunettes-ia-grand-public.jpg";
 import imgVocale from "@/assets/products/lunettes-camera-vocale.jpg";
 import imgAgrandisseur from "@/assets/products/casque-lunettes-agrandisseur.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const families = [
   {
     name: "Lunettes IA grand public",

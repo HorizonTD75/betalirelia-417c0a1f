@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import nystagmusHeroImage from "@/assets/nystagmus-hero.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const Nystagmus = () => {
   return (
     <div className="min-h-screen">

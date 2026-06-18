@@ -13,13 +13,13 @@ import {
   Dna,
   Droplets,
   Sun } from
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 "lucide-react";
 import { Link } from "react-router-dom";
 import comprendreHeroImage from "@/assets/comprendre-basse-vision-hero.jpg";
 import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const MaladiesYeux = () => {
   const mainDiseases = [
   {

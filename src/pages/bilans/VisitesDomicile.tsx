@@ -6,8 +6,8 @@ import { Card } from "@/components/ui/card";
 import { Home, Check, Phone, Calendar, ArrowRight, Users, MapPin, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const VisitesDomicile = () => {
   const situations = [
     "Vous vous déplacez avec difficulté ou souffrez de fatigue importante",

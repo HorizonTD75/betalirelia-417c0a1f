@@ -14,8 +14,8 @@ import { useToast } from "@/hooks/use-toast";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import RGPDConsent from "@/components/RGPDConsent";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 type BilanType = "essentiel" | "expert" | "suivi" | "domicile";
 
 const bilanOptions: {

@@ -26,8 +26,8 @@ import {
 } from "@/components/ui/accordion";
 import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
 import bookDmlaImage from "@/assets/book-dmla.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const DMLA = () => {
   return (
     <div className="min-h-screen">

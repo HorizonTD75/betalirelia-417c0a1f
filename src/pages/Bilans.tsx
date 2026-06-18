@@ -9,8 +9,8 @@ import { ClipboardCheck, ArrowRight, Check, X, Users, Calendar, Eye, Star, Phone
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const Bilans = () => {
   const bilansComparison = [
   {

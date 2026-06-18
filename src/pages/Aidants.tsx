@@ -7,8 +7,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight, Heart, Eye, Lightbulb, CheckCircle, AlertTriangle, HelpCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import aidantsHero from "@/assets/aidants-hero-600.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const faqItems = [
   {
     q: "Comment aider un proche malvoyant sans l'infantiliser ?",

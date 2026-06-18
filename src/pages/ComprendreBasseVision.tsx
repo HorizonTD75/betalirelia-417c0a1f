@@ -14,7 +14,6 @@ import {
   CheckCircle,
   HelpCircle,
   Lightbulb } from
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 "lucide-react";
 import { Link } from "react-router-dom";
 import eyeAnatomyImage from "@/assets/anatomie-oeil-schema.jpg";
@@ -24,6 +23,7 @@ import seniorManStreetImage from "@/assets/personne-malvoyante-autonomie-rue.jpg
 import professionnelsOptiqueImage from "@/assets/professionnels-optique-600.jpg";
 import comprendreHeaderImage from "@/assets/comprendre-basse-vision-header-800.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const ComprendreBasseVision = () => {
   const symptoms = [
   "La lecture du journal ou de documents devient très lente, même avec une bonne lumière",

@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/retinopathie-diabetique-hero.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const RetinopathieDiabetique = () => {
   return (
     <div className="min-h-screen">

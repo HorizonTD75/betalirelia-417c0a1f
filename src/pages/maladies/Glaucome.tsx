@@ -25,8 +25,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import glaucomeHeroImage from "@/assets/glaucome-hero.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const Glaucome = () => {
   return (
     <div className="min-h-screen">

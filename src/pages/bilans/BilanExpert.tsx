@@ -8,8 +8,8 @@ import { Glasses, ArrowRight, Check, Calendar, Phone, Building, Users, FileText,
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanExpertImage from "@/assets/bilan-expert-opticien-600.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const BilanExpert = () => {
   const targetAudience = [
     "Vous présentez une basse vision importante (DMLA, glaucome, rétinopathie diabétique…)",

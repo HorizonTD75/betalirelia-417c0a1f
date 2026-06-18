@@ -7,8 +7,8 @@ import { ClipboardCheck, ArrowRight, Check, Calendar, Phone, Home, Building, Use
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanDomicileImage from "@/assets/bilan-domicile.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const BilanEssentiel = () => {
   const targetAudience = [
   "Vous avez une pathologie oculaire connue (DMLA, glaucome, rétinopathie diabétique…) et votre vue vous gêne encore au quotidien",

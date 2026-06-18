@@ -17,7 +17,6 @@ import {
   ShieldCheck,
   Scissors,
   Baby } from
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -30,6 +29,7 @@ import cataracteHeroImage from "@/assets/cataracte-hero.jpg";
 import cataracteSchemaImage from "@/assets/cataracte-schema-oeil.jpg";
 import cataracteVisionImage from "@/assets/cataracte-vision-comparaison.jpg";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const Cataracte = () => {
   return (
     <div className="min-h-screen">

@@ -8,8 +8,8 @@ import { Video, ArrowRight, Check, Calendar, Phone, Users, FileText, Clock, Home
 import { Link } from "react-router-dom";
 import bilanHeroImage from "@/assets/bilan-hero-600-2.jpg";
 import bilanSuiviImage from "@/assets/bilan-suivi-visio-600.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const BilanSuivi = () => {
   const targetAudience = [
     "Vous avez réalisé ou prévoyez un Bilan Essentiel et vous craignez de ne pas réussir à appliquer seul les conseils",

@@ -3,8 +3,8 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import heroImage from "@/assets/qui-sommes-nous-hero.jpg";
 import fondateursImage from "@/assets/fondateurs-lirelia.jpg";
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 
+import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 const QuiSommesNous = () => {
   return (
     <div className="min-h-screen">

@@ -25,9 +25,9 @@ import loupeDomeLinaImg from "@/assets/products/loupe-dome-eclairante-lina.jpg";
 import rayBanMetaImg from "@/assets/products/ray-ban-meta-marron.jpg";
 import loupeAmelieImg from "@/assets/products/loupe-electronique-amelie.jpg";
 import heroBg from "@/assets/aides-lecture-hero.jpg";
+
+
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
-
-
 type Product = {
   name: string;
   usage: string;
