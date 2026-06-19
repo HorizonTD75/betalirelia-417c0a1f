@@ -14,6 +14,7 @@ import {
 import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const Myopie = () => {
   return (
     <div className="min-h-screen">
@@ -263,7 +264,11 @@ const Myopie = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Société Française d'Ophtalmologie", title: "Fiches d'informations patients", url: "https://www.sfo-online.fr/patients/fiches-dinformations-patients" },
+  { institution: "Hôpital national des Quinze-Vingts", title: "Chirurgie réfractive", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/chirurgie-refractive/" }
+]} />
+        </main>
       <Footer />
     </div>
   );

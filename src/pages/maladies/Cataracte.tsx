@@ -30,6 +30,7 @@ import cataracteSchemaImage from "@/assets/cataracte-schema-oeil.jpg";
 import cataracteVisionImage from "@/assets/cataracte-vision-comparaison.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const Cataracte = () => {
   return (
     <div className="min-h-screen">
@@ -546,7 +547,13 @@ const Cataracte = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Assurance Maladie", title: "Cataracte : symptômes et traitement", url: "https://www.ameli.fr/assure/sante/themes/cataracte" },
+  { institution: "Inserm", title: "Cataracte", url: "https://www.inserm.fr/dossier/cataracte/" },
+  { institution: "Haute Autorité de Santé", title: "Chirurgie de la cataracte : la qualité de vie du patient avant tout", url: "https://www.has-sante.fr/jcms/pprd_2974157/fr/chirurgie-de-la-cataracte-la-qualite-de-vie-du-patient-avant-tout" },
+  { institution: "Hôpital national des Quinze-Vingts", title: "Cataracte", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/cataracte/" }
+]} />
+        </main>
       <Footer />
     </div>);
 

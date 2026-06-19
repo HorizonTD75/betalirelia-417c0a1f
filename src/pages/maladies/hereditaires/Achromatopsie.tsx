@@ -104,6 +104,11 @@ const Achromatopsie = () => (
     sections={sections}
     keyPoints={keyPoints}
     siblings={siblings}
+    sources={[
+  { institution: "Orphanet", title: "Achromatopsie", url: "https://www.orpha.net/fr/disease/detail/49382" },
+  { institution: "Institut de la Vision", title: "Maladies rares", url: "https://www.institut-vision.org/maladies-rares" },
+  { institution: "Haute Autorité de Santé", title: "PNDS – Maculopathies génétiques", url: "https://www.has-sante.fr/jcms/p_3280082/fr/maculopathies-genetiques-pnds" }
+]}
   />
 );
 

@@ -104,6 +104,10 @@ const MaladieDeLeber = () => (
     sections={sections}
     keyPoints={keyPoints}
     siblings={siblings}
+    sources={[
+  { institution: "Orphanet", title: "Neuropathie optique héréditaire de Leber", url: "https://www.orpha.net/fr/disease/detail/104" },
+  { institution: "Haute Autorité de Santé", title: "PNDS – Neuropathies optiques héréditaires", url: "https://www.has-sante.fr/jcms/p_3280105/fr/neuropathies-optiques-hereditaires-pnds" }
+]}
   />
 );
 

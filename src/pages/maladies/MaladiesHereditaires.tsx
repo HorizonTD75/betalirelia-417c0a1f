@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const childDiseases = [
   {
     title: "La rétinite pigmentaire",
@@ -336,7 +337,12 @@ const MaladiesHereditaires = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Orphanet", title: "Portail des maladies rares", url: "https://www.orpha.net/fr" },
+  { institution: "Institut de la Vision", title: "Maladies rares", url: "https://www.institut-vision.org/maladies-rares" },
+  { institution: "Hôpital national des Quinze-Vingts", title: "Maladies de l'œil", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/" }
+]} />
+        </main>
       <Footer />
     </div>
   );

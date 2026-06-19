@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import nystagmusHeroImage from "@/assets/nystagmus-hero.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const Nystagmus = () => {
   return (
     <div className="min-h-screen">
@@ -496,7 +497,11 @@ const Nystagmus = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Hôpital national des Quinze-Vingts", title: "Nystagmus", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/nystagmus/" },
+  { institution: "Fondation Adolphe de Rothschild", title: "Neuro-ophtalmologie", url: "https://www.fo-rothschild.fr/patient/actes-medicaux/neuro-ophtalmologie" }
+]} />
+        </main>
       <Footer />
     </div>
   );

@@ -106,6 +106,11 @@ const MaladieDeStargardt = () => (
     sections={sections}
     keyPoints={keyPoints}
     siblings={siblings}
+    sources={[
+  { institution: "Orphanet", title: "Maladie de Stargardt", url: "https://www.orpha.net/fr/disease/detail/827" },
+  { institution: "Institut de la Vision", title: "La maladie de Stargardt", url: "https://www.institut-vision.org/maladies-rares/la-maladie-de-stargardt" },
+  { institution: "Haute Autorité de Santé", title: "PNDS – Maculopathies génétiques", url: "https://www.has-sante.fr/jcms/p_3280082/fr/maculopathies-genetiques-pnds" }
+]}
   />
 );
 

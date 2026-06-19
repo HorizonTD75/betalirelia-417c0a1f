@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/retinopathie-diabetique-hero.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const RetinopathieDiabetique = () => {
   return (
     <div className="min-h-screen">
@@ -486,7 +487,12 @@ const RetinopathieDiabetique = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Assurance Maladie", title: "Complications oculaires du diabète", url: "https://www.ameli.fr/assure/sante/themes/diabete-adulte/diabete-symptomes-evolution/complications-yeux-diabete" },
+  { institution: "Haute Autorité de Santé", title: "Dépistage de la rétinopathie diabétique", url: "https://www.has-sante.fr/jcms/c_1028521/fr/fiche-de-synthese-depistage-de-la-retinopathie-diabetique-par-lecture-differee-de-photographies-du-fond-d-oeil" },
+  { institution: "Hôpital national des Quinze-Vingts", title: "Rétinopathie diabétique", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/retinopathie-diabetique/" }
+]} />
+        </main>
       <Footer />
     </div>
   );
