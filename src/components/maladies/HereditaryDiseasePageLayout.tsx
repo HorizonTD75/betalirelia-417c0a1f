@@ -198,6 +198,7 @@ const HereditaryDiseasePageLayout = ({
             </div>
           </div>
         </section>
+        {sources && sources.length > 0 && <MedicalSources sources={sources} />}
       </main>
       <Footer />
     </div>
