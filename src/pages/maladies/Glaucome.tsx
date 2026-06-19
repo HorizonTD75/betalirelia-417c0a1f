@@ -27,6 +27,7 @@ import {
 import glaucomeHeroImage from "@/assets/glaucome-hero.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const Glaucome = () => {
   return (
     <div className="min-h-screen">
@@ -640,7 +641,13 @@ const Glaucome = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Assurance Maladie", title: "Glaucome : définition et facteurs favorisants", url: "https://www.ameli.fr/assure/sante/themes/glaucome" },
+  { institution: "Inserm", title: "Glaucome", url: "https://www.inserm.fr/dossier/glaucome/" },
+  { institution: "Haute Autorité de Santé", title: "Diagnostic et prise en charge du glaucome primitif à angle ouvert", url: "https://www.has-sante.fr/jcms/p_3321655/fr/diagnostic-et-prise-en-charge-de-l-hypertonie-oculaire-et-du-glaucome-primitif-a-angle-ouvert" },
+  { institution: "Société Française du Glaucome", title: "Site officiel", url: "https://sfglaucome.fr/" }
+]} />
+        </main>
       <Footer />
     </div>
   );

@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
+import MedicalSources, { type MedicalSource } from "@/components/MedicalSources";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ArrowRight, Lightbulb, Eye, AlertTriangle, Stethoscope, ShieldCheck, HeartPulse, BookOpen } from "lucide-react";
@@ -28,10 +29,11 @@ interface HereditaryDiseasePageProps {
   sections: DiseaseSection[];
   keyPoints?: { label: string; value: string }[];
   siblings: SiblingLink[];
+  sources?: MedicalSource[];
 }
 
 const HereditaryDiseasePageLayout = ({
-  seoTitle, seoDescription, canonicalPath, diseaseName, subtitle, heroIntro, keyFact, sections, keyPoints, siblings,
+  seoTitle, seoDescription, canonicalPath, diseaseName, subtitle, heroIntro, keyFact, sections, keyPoints, siblings, sources,
 }: HereditaryDiseasePageProps) => {
   return (
     <div className="min-h-screen">
@@ -196,6 +198,7 @@ const HereditaryDiseasePageLayout = ({
             </div>
           </div>
         </section>
+        {sources && sources.length > 0 && <MedicalSources sources={sources} />}
       </main>
       <Footer />
     </div>

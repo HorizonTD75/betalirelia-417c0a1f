@@ -105,6 +105,11 @@ const Aniridie = () => (
     sections={sections}
     keyPoints={keyPoints}
     siblings={siblings}
+    sources={[
+  { institution: "Orphanet", title: "Aniridie", url: "https://www.orpha.net/fr/disease/detail/250923" },
+  { institution: "Haute Autorité de Santé", title: "PNDS – Aniridie", url: "https://www.has-sante.fr/jcms/c_2963463/fr/aniridie" },
+  { institution: "Fondation Adolphe de Rothschild", title: "Aniridie", url: "https://www.fo-rothschild.fr/patient/loffre-de-soins/aniridie" }
+]}
   />
 );
 

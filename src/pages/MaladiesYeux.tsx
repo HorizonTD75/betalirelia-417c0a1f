@@ -20,6 +20,7 @@ import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
 import maladiesHeroImage from "@/assets/maladies-yeux-hero-800.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const MaladiesYeux = () => {
   const mainDiseases = [
   {
@@ -491,7 +492,12 @@ const MaladiesYeux = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Société Française d'Ophtalmologie", title: "Fiches d'informations patients", url: "https://www.sfo-online.fr/patients/fiches-dinformations-patients" },
+  { institution: "Hôpital national des Quinze-Vingts", title: "Maladies de l'œil", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/" },
+  { institution: "Institut de la Vision", title: "Maladies rares", url: "https://www.institut-vision.org/maladies-rares" }
+]} />
+        </main>
       <Footer />
     </div>);
 

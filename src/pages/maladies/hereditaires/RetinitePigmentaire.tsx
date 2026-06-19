@@ -132,6 +132,11 @@ const RetinitePigmentaireHereditaire = () => (
     sections={sections}
     keyPoints={keyPoints}
     siblings={siblings}
+    sources={[
+  { institution: "Orphanet", title: "Rétinite pigmentaire", url: "https://www.orpha.net/fr/disease/detail/791" },
+  { institution: "Institut de la Vision", title: "La rétinopathie pigmentaire", url: "https://www.institut-vision.org/maladies-rares/la-retinopathie-pigmentaire" },
+  { institution: "Hôpital national des Quinze-Vingts", title: "Rétinopathie pigmentaire", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/retinopathie-pigmentaire/" }
+]}
   />
 );
 

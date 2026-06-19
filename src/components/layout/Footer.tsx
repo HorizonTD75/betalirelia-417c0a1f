@@ -11,7 +11,17 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-            <img src={logoJaune} alt="Lirelia, solutions pour la malvoyance" className="w-20 h-20 object-contain" width={80} height={80} loading="lazy" decoding="async" />
+            <img
+              src="/images/logo-lirelia-jaune-300.png"
+              srcSet="/images/logo-lirelia-jaune-120.png 120w, /images/logo-lirelia-jaune-180.png 180w, /images/logo-lirelia-jaune-300.png 300w"
+              sizes="80px"
+              alt="Lirelia, solutions pour la malvoyance"
+              className="w-20 h-auto object-contain"
+              width={300}
+              height={200}
+              loading="lazy"
+              decoding="async"
+            />
               <span className="font-serif text-2xl font-bold">LirElia</span>
             </Link>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-3">

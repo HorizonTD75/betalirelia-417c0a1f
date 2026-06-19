@@ -28,6 +28,7 @@ import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
 import bookDmlaImage from "@/assets/book-dmla.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
+import MedicalSources from "@/components/MedicalSources";
 const DMLA = () => {
   return (
     <div className="min-h-screen">
@@ -708,7 +709,13 @@ const DMLA = () => {
             </div>
           </div>
         </section>
-      </main>
+      <MedicalSources sources={[
+  { institution: "Assurance Maladie", title: "DMLA : symptômes, diagnostic et traitement", url: "https://www.ameli.fr/assure/sante/themes/dmla" },
+  { institution: "Inserm", title: "Dégénérescence maculaire liée à l'âge (DMLA)", url: "https://www.inserm.fr/dossier/degenerescence-maculaire-liee-age-dmla/" },
+  { institution: "Haute Autorité de Santé", title: "Guide sur la DMLA", url: "https://www.has-sante.fr/jcms/p_3383806/fr/guide-degenerescence-maculaire-liee-a-l-age" },
+  { institution: "Hôpital national des Quinze-Vingts", title: "DMLA", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/dmla/" }
+]} />
+        </main>
       <Footer />
     </div>
   );

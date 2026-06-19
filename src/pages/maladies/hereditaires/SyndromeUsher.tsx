@@ -100,6 +100,10 @@ const SyndromeUsher = () => (
     sections={sections}
     keyPoints={keyPoints}
     siblings={siblings}
+    sources={[
+  { institution: "Orphanet", title: "Syndrome d'Usher", url: "https://www.orpha.net/fr/disease/detail/886" },
+  { institution: "Institut de la Vision", title: "Maladies rares", url: "https://www.institut-vision.org/maladies-rares" }
+]}
   />
 );
 
