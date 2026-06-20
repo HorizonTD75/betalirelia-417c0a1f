@@ -7,7 +7,7 @@ import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react"
 import { Link } from "react-router-dom";
 
 import lunettesFocus from "@/assets/products/lunettes-loupes-focus-dmla.jpg";
-import lunettesMaxTv from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
+import lunettesMaxTv from "@/assets/products/lunettes-loupe-max-tv-grossissement-basse-vision.jpg";
 import loupeNoraImg from "@/assets/products/loupe-main-nora-lecture.jpg";
 import clipImg from "@/assets/products/clip-lunette-loupe.jpg";
 import alvaImg from "@/assets/products/lunette-loupe-frontale-alva-sacoche.jpeg";

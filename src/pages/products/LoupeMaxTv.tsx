@@ -8,8 +8,8 @@ import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
-import imgGrossissement from "@/assets/products/lunettes-loupe_max-tv_grossissement_basse_vision.jpg";
-import imgMolette from "@/assets/products/lunettes-loupe_maxtv-molette_mal_voyant.jpg";
+import imgGrossissement from "@/assets/products/lunettes-loupe-max-tv-grossissement-basse-vision.jpg";
+import imgMolette from "@/assets/products/lunettes-loupe-maxtv-molette-mal-voyant.jpg";
 import imgSenior from "@/assets/products/senior-television-lunettes-max-tv.jpeg";
 
 const images = [
