@@ -88,9 +88,53 @@ export function refuseAll(): CookieConsent {
 let analyticsLoaded = false;
 let marketingLoaded = false;
 
+export const GA4_MEASUREMENT_ID = "G-W8TF25BQ5X";
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+/** Returns true if the visitor has consented to analytics. */
+export function hasAnalyticsConsent(): boolean {
+  const c = getConsent();
+  return !!c?.analytics;
+}
+
+/** Sends a GA4 page_view (no-op if GA4 not yet loaded / no consent). */
+export function trackPageView(path: string, title?: string) {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  window.gtag("event", "page_view", {
+    page_path: path,
+    page_location: window.location.origin + path,
+    page_title: title ?? document.title,
+  });
+}
+
 function loadAnalyticsScripts() {
   if (analyticsLoaded) return;
   analyticsLoaded = true;
+
+  // Google Analytics 4 (gtag.js) — loaded only after analytics consent
+  if (!document.querySelector(`script[src*="googletagmanager.com/gtag/js"]`)) {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: unknown[]) {
+      window.dataLayer!.push(args);
+    }
+    window.gtag = gtag as (...args: unknown[]) => void;
+    gtag("js", new Date());
+    // send_page_view: false — SPA route changes fire page_view manually
+    gtag("config", GA4_MEASUREMENT_ID, { send_page_view: false });
+    // Initial page_view for the entry route
+    trackPageView(window.location.pathname + window.location.search);
+  }
 
   // Ahrefs Analytics
   if (!document.querySelector('script[src*="analytics.ahrefs.com"]')) {
