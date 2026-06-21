@@ -30,11 +30,14 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   const w = product.imageWidth ?? 800;
   const h = product.imageHeight ?? 800;
+  const v = getHeroSrcSet(product.image);
   return (
     <Card variant="elevated" className="h-full flex flex-col border-t-4 border-t-secondary overflow-hidden">
       <div className="rounded-t-2xl overflow-hidden border-b-2 border-border bg-muted/30 aspect-[400/224]">
         <img
-          src={product.image}
+          src={v?.src ?? product.image}
+          srcSet={v?.srcSet}
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           alt={product.imageAlt}
           className="w-full h-full object-cover"
           loading="lazy"
