@@ -4,6 +4,7 @@ import { BookOpen, ArrowRight } from "lucide-react";
 import bookDmla from "@/assets/couverture-ebook-dmla.jpg";
 import bookAidant from "@/assets/book-aidant.jpg";
 import { Link } from "react-router-dom";
+import { getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const books = [
   {
