@@ -4,6 +4,7 @@ import { BookOpen, ArrowRight } from "lucide-react";
 import bookDmla from "@/assets/couverture-ebook-dmla.jpg";
 import bookAidant from "@/assets/book-aidant.jpg";
 import { Link } from "react-router-dom";
+import { getHeroSrcSet } from "@/lib/heroSrcSet";
 
 const books = [
   {
@@ -46,15 +47,22 @@ const BooksSection = () => {
               <CardContent className="p-0">
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/3 bg-muted p-6 flex items-center justify-center">
-                    <img
-                      src={book.image}
-                      alt={`Couverture du livre ${book.title}`}
-                      className="w-40 h-auto rounded-lg shadow-lg border border-border"
-                      width={book.width}
-                      height={book.height}
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    {(() => {
+                      const v = getHeroSrcSet(book.image);
+                      return (
+                        <img
+                          src={v?.src ?? book.image}
+                          srcSet={v?.srcSet}
+                          sizes="(min-width: 768px) 160px, 40vw"
+                          alt={`Couverture du livre ${book.title}`}
+                          className="w-40 h-auto rounded-lg shadow-lg border border-border"
+                          width={book.width}
+                          height={book.height}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      );
+                    })()}
                   </div>
                   <div className="md:w-2/3 p-6">
                     <h3 className="font-serif text-xl font-bold text-foreground mb-2">
