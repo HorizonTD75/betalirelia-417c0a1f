@@ -2,6 +2,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getHeroSrcSet } from "@/lib/heroSrcSet";
 
 export interface Product {
   name: string;
