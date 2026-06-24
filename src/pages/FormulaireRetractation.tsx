@@ -33,11 +33,13 @@ const FormulaireRetractation = () => {
 
             <p className="text-lg text-foreground leading-relaxed mb-2">À l'attention de :</p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              HORIZON TD — Lirelia<br />
-              4-6 rue Pierre Louÿs<br />
-              75116 Paris<br />
+              Lirelia — Service retours<br />
+              4 rue Léon Blum<br />
+              ZAE Les Glaises<br />
+              91120 Palaiseau<br />
               France
             </p>
+
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Email : <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4">contact@lirelia.fr</a>
             </p>
@@ -65,11 +67,13 @@ const FormulaireRetractation = () => {
               <li>ou par courrier à l'adresse suivante :</li>
             </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              HORIZON TD — Retours Lirelia.fr<br />
-              4-6 rue Pierre Louÿs<br />
-              75116 Paris<br />
+              Lirelia — Service retours<br />
+              4 rue Léon Blum<br />
+              ZAE Les Glaises<br />
+              91120 Palaiseau<br />
               France
             </p>
+
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Retour du produit</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">

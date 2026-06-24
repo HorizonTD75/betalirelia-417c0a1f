@@ -144,13 +144,8 @@ function loadAnalyticsScripts() {
     s.async = true;
     document.head.appendChild(s);
   }
+  // Microsoft Clarity is loaded unconditionally from index.html (id: xc2ym1vcsn).
 
-  // Microsoft Clarity
-  if (!document.querySelector('script[src*="clarity.ms"]')) {
-    const s = document.createElement("script");
-    s.textContent = `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "w0a3r6p98n");`;
-    document.head.appendChild(s);
-  }
 }
 
 function loadMarketingScripts() {

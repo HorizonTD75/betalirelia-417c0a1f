@@ -117,11 +117,13 @@ const SavGaranties = () => {
               Sauf instruction différente communiquée par email, les retours doivent être adressés à :
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              HORIZON TD — Retours Lirelia.fr<br />
-              4-6 rue Pierre Louÿs<br />
-              75116 Paris<br />
+              Lirelia — Service retours<br />
+              4 rue Léon Blum<br />
+              ZAE Les Glaises<br />
+              91120 Palaiseau<br />
               France
             </p>
+
             <p className="text-lg text-foreground leading-relaxed">
               Avant tout renvoi, nous vous conseillons de nous contacter à <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4">contact@lirelia.fr</a> afin de faciliter le traitement de votre demande.
             </p>
