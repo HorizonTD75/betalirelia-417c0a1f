@@ -239,9 +239,9 @@ const PolitiqueConfidentialite = () => {
             <P>Chaque communication non indispensable au service comporte un moyen simple de s'opposer aux envois futurs.</P>
 
             <H3>4.7 Mesurer l'audience et améliorer le site</H3>
-            <P>Sous réserve des préférences de cookies, LirElia peut utiliser des outils tels que <strong>Ahrefs Analytics</strong> et <strong>Microsoft Clarity</strong> pour :</P>
+            <P>Le site utilise <strong>Ahrefs Web Analytics</strong> afin de mesurer de manière agrégée sa fréquentation. Cet outil est utilisé dans sa configuration standard sans cookie ni identifiant persistant. Il est chargé indépendamment du choix exprimé dans la bannière de consentement.</P>
+            <P>Sous réserve des préférences de cookies, LirElia peut également utiliser <strong>Microsoft Clarity</strong> pour :</P>
             <UL>
-              <li>mesurer la fréquentation ;</li>
               <li>comprendre les parcours de navigation ;</li>
               <li>détecter des difficultés d'utilisation ;</li>
               <li>améliorer l'ergonomie et l'accessibilité ;</li>
@@ -249,6 +249,7 @@ const PolitiqueConfidentialite = () => {
               <li>évaluer la performance des contenus.</li>
             </UL>
             <P>Lorsque la réglementation l'exige, ces outils ne sont activés qu'après le consentement de l'utilisateur.</P>
+
 
             <H3>4.8 Sécuriser le site</H3>
             <P>Certaines données techniques peuvent être traitées pour prévenir les intrusions, détecter les erreurs, lutter contre les abus et assurer la disponibilité du site.</P>
