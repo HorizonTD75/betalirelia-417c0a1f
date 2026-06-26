@@ -1,0 +1,122 @@
+# LirElia
+
+> LirElia est un site français consacré à la basse vision, à l'autonomie des personnes malvoyantes et à l'accompagnement de leurs proches. Il propose des informations pédagogiques, des bilans fonctionnels, des conseils pratiques et une sélection d'aides à la lecture.
+
+LirElia s'adresse principalement aux personnes vivant avec une basse vision, à leurs proches aidants et aux professionnels qui les accompagnent. Les contenus sont rédigés dans un langage accessible et orientés vers les usages concrets : lecture, éclairage, vie quotidienne, choix d'aides techniques et maintien de l'autonomie.
+
+Les informations relatives aux maladies des yeux sont fournies à titre pédagogique. Elles ne constituent ni un diagnostic, ni une prescription, ni un avis médical personnalisé. Le diagnostic, le traitement et le suivi médical relèvent d'un ophtalmologiste ou d'un autre professionnel de santé habilité.
+
+Les prix, disponibilités des produits, modalités de livraison, créneaux de rendez-vous et programmes du Club peuvent évoluer. Pour ces informations, consulter directement les pages correspondantes du site.
+
+## Pages essentielles
+
+- [Accueil](https://lirelia.fr/) : présentation générale de LirElia, de ses services, de ses ressources et de ses aides pour les personnes malvoyantes.
+- [Comprendre la basse vision](https://lirelia.fr/comprendre-basse-vision/) : définition de la basse vision, conséquences fonctionnelles et premiers repères.
+- [Vivre avec la basse vision](https://lirelia.fr/vivre-basse-vision/) : conseils pratiques pour préserver son autonomie au quotidien.
+- [Guide pour les proches aidants](https://lirelia.fr/aidants/) : conseils pour accompagner une personne malvoyante sans la surprotéger.
+- [Le visiopraticien et l'expertise basse vision](https://lirelia.fr/expert-basse-vision-visiopraticien/) : rôle, méthode et domaines d'intervention du visiopraticien.
+- [Qui sommes-nous ?](https://lirelia.fr/qui-sommes-nous/) : présentation de l'expérience, de la démarche et des valeurs de LirElia.
+- [Contact et conseil](https://lirelia.fr/contact-conseil/) : formulaire et coordonnées pour demander un renseignement ou un conseil.
+
+## Maladies des yeux et déficiences visuelles
+
+- [Les maladies des yeux](https://lirelia.fr/maladies-yeux/) : page d'orientation vers les principales pathologies et anomalies visuelles présentées sur le site.
+- [DMLA](https://lirelia.fr/maladies-yeux/dmla/) : dégénérescence maculaire liée à l'âge, symptômes, conséquences visuelles et accompagnement.
+- [Glaucome](https://lirelia.fr/maladies-yeux/glaucome/) : atteinte progressive du nerf optique et effets possibles sur le champ visuel.
+- [Cataracte](https://lirelia.fr/maladies-yeux/cataracte/) : opacification du cristallin, gêne visuelle et prise en charge.
+- [Rétinopathie diabétique](https://lirelia.fr/maladies-yeux/retinopathie-diabetique/) : atteinte rétinienne liée au diabète et conséquences possibles sur la vision.
+- [Rétinite pigmentaire](https://lirelia.fr/maladies-yeux/retinite-pigmentaire/) : maladie rétinienne héréditaire, réduction du champ visuel et difficultés en faible luminosité.
+- [Nystagmus](https://lirelia.fr/maladies-yeux/nystagmus/) : mouvements involontaires des yeux et conséquences fonctionnelles.
+- [Maladies oculaires héréditaires](https://lirelia.fr/maladies-yeux/maladies-hereditaires/) : introduction aux principales maladies visuelles d'origine génétique.
+
+## Bilans et accompagnement basse vision
+
+- [Bilans basse vision](https://lirelia.fr/bilans-bassevision/) : présentation des bilans fonctionnels proposés et aide au choix de la formule adaptée.
+- [Bilan Essentiel](https://lirelia.fr/bilans-bassevision/essentiel/) : analyse ciblée d'un besoin prioritaire et premières recommandations pratiques.
+- [Bilan Expert](https://lirelia.fr/bilans-bassevision/expert/) : évaluation approfondie des besoins visuels et des solutions adaptées au quotidien.
+- [Bilan Suivi](https://lirelia.fr/bilans-bassevision/suivi/) : accompagnement dans la durée et ajustement des recommandations.
+- [Visites à domicile](https://lirelia.fr/bilans-bassevision/visites-domicile/) : modalités des bilans et conseils réalisés au domicile en Île-de-France.
+- [Prendre rendez-vous](https://lirelia.fr/rdv-bilan/) : choix d'un bilan et demande de rendez-vous.
+
+## Aides à la lecture et guides de choix
+
+- [Aides à la lecture pour la basse vision](https://lirelia.fr/aides-lecture-bassevision/) : panorama des principales familles de solutions pour lire, écrire, observer et mieux voir.
+- [Catalogue des aides basse vision](https://lirelia.fr/catalogue-aides-basse-vision/) : catalogue général des produits et solutions proposés par LirElia.
+- [Loupes optiques](https://lirelia.fr/aides-lecture-bassevision/loupes-verre/) : loupes à main, loupes éclairantes, loupes dôme et autres aides optiques.
+- [Loupes électroniques](https://lirelia.fr/aides-lecture-bassevision/loupes-electroniques/) : appareils avec écran, grossissement réglable et modes de contraste.
+- [Lampes et éclairage adapté](https://lirelia.fr/aides-lecture-bassevision/lampes/) : éclairage de lecture, lampes de bureau, lampes-loupes et lampadaires.
+- [Téléagrandisseurs](https://lirelia.fr/aides-lecture-bassevision/tele-agrandisseurs/) : systèmes d'agrandissement sur écran pour la lecture et les activités de près.
+- [Lunettes-loupes](https://lirelia.fr/aides-lecture-bassevision/lunettes-loupes/) : solutions mains libres pour la vision de près, intermédiaire ou à distance.
+- [Lunettes intelligentes](https://lirelia.fr/aides-lecture-bassevision/lunettes-intelligentes/) : présentation des lunettes connectées grand public et des solutions spécialisées destinées aux personnes malvoyantes.
+
+## Produits et solutions présentés
+
+### Lunettes-loupes
+
+- [Clip lunettes-loupe](https://lirelia.fr/boutique/clip-lunettes-loupe/) : système grossissant relevable à fixer sur une monture.
+- [Lunettes-loupe Max TV](https://lirelia.fr/boutique/loupe-max-tv/) : lunettes télescopiques destinées principalement à la vision à distance.
+- [Lunettes-loupe Focus](https://lirelia.fr/boutique/lunettes-loupe-focus/) : lunettes grossissantes mains libres pour les activités rapprochées.
+- [Lunettes-loupe frontales ALVA](https://lirelia.fr/boutique/lunettes-loupe-frontale-alva/) : solution frontale mains libres pour les travaux de précision.
+
+### Lunettes intelligentes
+
+- [Ray-Ban Meta et basse vision](https://lirelia.fr/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta/) : évaluation de lunettes connectées grand public pour certains usages vocaux et visuels ponctuels ; ce produit n'est pas présenté comme une aide médicale spécialisée.
+
+### Loupes optiques et électroniques
+
+- [Loupe dôme éclairante LINA](https://lirelia.fr/boutique/loupe-dome-eclairante-lina/) : loupe posée sur le document avec éclairage intégré.
+- [Loupe à main NORA](https://lirelia.fr/boutique/loupe-main-nora/) : loupe optique portable pour les besoins ponctuels.
+- [Loupe AMÉLIE](https://lirelia.fr/boutique/loupe-amelie/) : loupe destinée à faciliter la lecture et l'observation de détails.
+- [Loupe électronique Clover 5](https://lirelia.fr/boutique/loupe-electronique-clover-5/) : loupe vidéo portable avec écran et réglages de grossissement.
+
+### Éclairage
+
+- [Lampe tour de cou AINA](https://lirelia.fr/produits/lampe-tour-cou-aina/) : éclairage mains libres portable pour la lecture et les activités de proximité.
+- [Lampe-loupe ASTRID](https://lirelia.fr/boutique/lampe-loupe-astrid/) : lampe associant éclairage et grossissement.
+- [Lampe basse vision EIRA](https://lirelia.fr/boutique/lampe-basse-vision-eira/) : lampe de lecture conçue pour améliorer le confort visuel.
+- [Lampadaire SOLVEIG](https://lirelia.fr/boutique/lampadaire-solveig/) : lampadaire de lecture orientable adapté aux besoins de forte luminosité.
+
+### Agrandissement sur écran
+
+- [Souris-loupe électronique VERA](https://lirelia.fr/produits/souris-loupe-electronique-vera/) : caméra de lecture à connecter à un téléviseur.
+- [Téléagrandisseur Mezzo Focus](https://lirelia.fr/produits/teleagrandisseur-mezzo-focus/) : système d'agrandissement sur écran pour lire et observer des documents.
+
+### Horloges et réveils à grands chiffres
+
+- [Réveil IVAR](https://lirelia.fr/boutique/reveil-gros-chiffres-ivar/) : réveil à affichage agrandi et contrasté.
+- [Horloge FRIDA](https://lirelia.fr/boutique/horloge-gros-chiffres-frida/) : horloge à grands chiffres destinée à une lecture facilitée.
+- [Horloge-réveil OSKAR](https://lirelia.fr/boutique/horloge-reveil-gros-chiffres-oskar/) : horloge-réveil à affichage de grande taille.
+
+## Livres et communauté
+
+- [DMLA : votre vie ne s'arrête pas](https://lirelia.fr/livre-dmla-votre-vie-ne-sarrete-pas/) : guide pratique destiné aux personnes vivant avec une DMLA, à leurs proches et aux professionnels qui les accompagnent.
+- [Aider un proche atteint de DMLA](https://lirelia.fr/livre-aider-proche-dmla/) : présentation du guide consacré aux proches aidants.
+- [Club LirElia](https://lirelia.fr/club/) : rencontres en visioconférence, échanges pratiques et information autour de la basse vision.
+
+## Optional
+
+### Troubles de la réfraction et de l'accommodation
+
+- [Myopie](https://lirelia.fr/maladies-yeux/myopie/) : vision floue de loin liée à un défaut de réfraction.
+- [Hypermétropie](https://lirelia.fr/maladies-yeux/hypermetropie/) : défaut de réfraction pouvant entraîner une gêne de près ou de loin.
+- [Astigmatisme](https://lirelia.fr/maladies-yeux/astigmatisme/) : vision déformée ou imprécise liée à une courbure irrégulière du système optique.
+- [Presbytie](https://lirelia.fr/maladies-yeux/presbytie/) : diminution progressive de la capacité de mise au point de près avec l'âge.
+
+### Maladies oculaires héréditaires
+
+- [Maladie de Leber](https://lirelia.fr/maladies-yeux/maladies-hereditaires/maladie-de-leber/) : présentation d'une neuropathie optique héréditaire.
+- [Maladie de Stargardt](https://lirelia.fr/maladies-yeux/maladies-hereditaires/maladie-de-stargardt/) : dystrophie maculaire héréditaire affectant principalement la vision centrale.
+- [Achromatopsie](https://lirelia.fr/maladies-yeux/maladies-hereditaires/achromatopsie/) : affection génétique touchant la perception des couleurs et la sensibilité à la lumière.
+- [Syndrome d'Usher](https://lirelia.fr/maladies-yeux/maladies-hereditaires/syndrome-usher/) : maladie génétique associant atteintes auditive et visuelle.
+- [Aniridie](https://lirelia.fr/maladies-yeux/maladies-hereditaires/aniridie/) : affection rare caractérisée par l'absence totale ou partielle de l'iris.
+
+### Informations commerciales et juridiques
+
+- [Livraison](https://lirelia.fr/livraison/) : zones desservies, modalités et informations d'expédition.
+- [Retours et remboursements](https://lirelia.fr/retours-remboursements/) : droit de rétractation et modalités de retour.
+- [Formulaire de rétractation](https://lirelia.fr/formulaire-retractation/) : formulaire destiné à exercer le droit de rétractation.
+- [Service après-vente et garanties](https://lirelia.fr/sav-garanties/) : assistance, garanties et traitement des demandes après achat.
+- [Conditions générales de vente](https://lirelia.fr/cgv/) : conditions applicables aux commandes et prestations.
+- [Mentions légales](https://lirelia.fr/mentions-legales/) : éditeur, hébergeur, responsabilité et propriété intellectuelle.
+- [Politique de confidentialité](https://lirelia.fr/politique-de-confidentialite/) : traitement et protection des données personnelles.
+- [Politique de cookies](https://lirelia.fr/politique-cookies/) : cookies, outils de mesure d'audience et gestion du consentement.
