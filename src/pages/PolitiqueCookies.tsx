@@ -44,9 +44,12 @@ const PolitiqueCookies = () => {
               sont les plus consultées et comment améliorer l'expérience. Les données sont anonymisées.
             </p>
             <ul className="text-lg text-foreground leading-relaxed mb-6 list-disc pl-6 space-y-2">
-              <li><strong>Ahrefs Analytics</strong> — Outil d'analyse du trafic et du référencement. Durée : selon le service.</li>
               <li><strong>Microsoft Clarity</strong> — Outil d'analyse du comportement utilisateur (cartes de chaleur, enregistrements anonymisés). Durée : selon le service.</li>
             </ul>
+            <p className="text-lg text-foreground leading-relaxed mb-6">
+              Le site utilise également <strong>Ahrefs Web Analytics</strong> afin de mesurer de manière agrégée sa fréquentation. Cet outil est utilisé dans sa configuration standard sans cookie ni identifiant persistant. Il est chargé indépendamment du choix exprimé dans la bannière de consentement.
+            </p>
+
 
             <h3 className="font-serif text-xl font-bold text-foreground mt-8 mb-3">Cookies de services tiers / marketing</h3>
             <p className="text-lg text-foreground leading-relaxed mb-6">

@@ -136,15 +136,9 @@ function loadAnalyticsScripts() {
     trackPageView(window.location.pathname + window.location.search);
   }
 
-  // Ahrefs Analytics
-  if (!document.querySelector('script[src*="analytics.ahrefs.com"]')) {
-    const s = document.createElement("script");
-    s.src = "https://analytics.ahrefs.com/analytics.js";
-    s.dataset.key = "3BzY2HAnG0uK+RQzOCQFQw";
-    s.async = true;
-    document.head.appendChild(s);
-  }
+  // Ahrefs Web Analytics is loaded unconditionally from index.html (no cookie, no persistent identifier).
   // Microsoft Clarity is loaded unconditionally from index.html (id: xc2ym1vcsn).
+
 
 }
 
