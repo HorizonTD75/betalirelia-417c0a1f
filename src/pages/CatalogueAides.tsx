@@ -68,11 +68,16 @@ const rawCategories: Category[] = [
   {
     id: "loupes-verre",
     title: "Loupes en verre",
+    href: "/catalogue-aides-basse-vision/loupes-verre",
     usage: "Des solutions simples et immédiates pour lire un courrier, une étiquette ou un document posé à plat.",
-    products: [
-      { name: "Loupe à main NORA", usage: "Loupe rectangulaire éclairante x2 et x6, 50 LED réglables.", price: "87,50 €", image: loupeNoraImg, href: "/boutique/loupe-main-nora", imageAlt: "La loupe à man de lecture NORA, pour malvoyants léger, DMLA, glaucome." },
-      { name: "Loupe dôme LINA", usage: "Loupe à poser éclairante et rechargeable, grossissement x2 à x3.", price: "86,20 €", image: loupeDomeLinaImg, imageAlt: "La loupe dome de lecture posée sur une table", href: "/boutique/loupe-dome-eclairante-lina" },
-    ],
+    products: LOUPES_VERRE_PRODUCTS.map((p) => ({
+      name: p.name,
+      usage: p.shortDescription,
+      price: p.price,
+      image: p.mainImage,
+      imageAlt: p.imageAlt,
+      href: p.productUrl,
+    })),
     emptyMessage: "Une sélection de loupes en verre sera disponible très prochainement.",
   },
   {
