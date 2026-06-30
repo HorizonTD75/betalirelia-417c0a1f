@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { LOUPES_VERRE_PRODUCTS } from "@/data/products/loupesVerre";
 
 import lunettesFocus from "@/assets/products/lunettes-loupes-focus-dmla.jpg";
 import lunettesMaxTv from "@/assets/products/lunettes-loupe-max-tv-grossissement-basse-vision.jpg";
