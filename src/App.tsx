@@ -171,6 +171,12 @@ const App = () => (
             <Route path="/boutique/horloge-gros-chiffres-frida" element={<HorlogeReveilFrida />} />
             <Route path="/catalogue-aides-basse-vision" element={<CatalogueAides />} />
             <Route path="/catalogue-aides-basse-vision/loupes-verre" element={<LoupesVerreCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/loupes-electroniques" element={<LoupesElectroniquesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/lampes-basse-vision" element={<LampesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/teleagrandisseurs" element={<TeleagrandisseursCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/lunettes-loupes" element={<LunettesLoupesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/lunettes-intelligentes" element={<LunettesIntelligentesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/accessoires" element={<AccessoiresCategorie />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
             <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
