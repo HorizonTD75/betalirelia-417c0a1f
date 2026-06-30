@@ -52,6 +52,7 @@ const rawCategories: Category[] = [
   {
     id: "lunettes-loupes",
     title: "Lunettes loupes",
+    href: "/catalogue-aides-basse-vision/lunettes-loupes",
     usage: "Pour lire, bricoler, coudre ou mieux voir à distance selon le modèle.",
     products: [
       { name: "Lunettes loupe FOCUS", usage: "Pour lire, bricoler ou coudre les mains libres.", price: "89 €", image: lunettesFocus, href: "/boutique/lunettes-loupe-focus", imageAlt: "Lunettes loupe Focus de lecture dans sa pochette" },
