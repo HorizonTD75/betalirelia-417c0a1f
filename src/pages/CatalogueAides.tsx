@@ -52,6 +52,7 @@ const rawCategories: Category[] = [
   {
     id: "lunettes-loupes",
     title: "Lunettes loupes",
+    href: "/catalogue-aides-basse-vision/lunettes-loupes",
     usage: "Pour lire, bricoler, coudre ou mieux voir à distance selon le modèle.",
     products: [
       { name: "Lunettes loupe FOCUS", usage: "Pour lire, bricoler ou coudre les mains libres.", price: "89 €", image: lunettesFocus, href: "/boutique/lunettes-loupe-focus", imageAlt: "Lunettes loupe Focus de lecture dans sa pochette" },
@@ -63,6 +64,7 @@ const rawCategories: Category[] = [
   {
     id: "lunettes-intelligentes",
     title: "Lunettes intelligentes",
+    href: "/catalogue-aides-basse-vision/lunettes-intelligentes",
     usage: "Lunettes connectées avec aide vocale, lecture et reconnaissance d'objet — pour gagner en autonomie au quotidien.",
     products: [
       { name: "Ray-Ban Meta", usage: "Produit en évaluation — aide vocale ponctuelle, lecture courte, description de scène et identification d'objets.", image: rayBanMetaImg, imageAlt: "Lunettes intelligentes Ray-Ban Meta avec monture marron", href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" },
@@ -86,6 +88,7 @@ const rawCategories: Category[] = [
   {
     id: "loupes-electroniques",
     title: "Loupes électroniques",
+    href: "/catalogue-aides-basse-vision/loupes-electroniques",
     usage: "Pour agrandir fortement les textes, améliorer le contraste et retrouver du confort de lecture.",
     products: [
       { name: "Loupe Amélie", usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.", price: "188 €", image: loupeAmelieImg, href: "/boutique/loupe-amelie", imageAlt: "La loupe de lecture AMELIE tenue à la main et positionnée au dessus d’une carte en couleur. " },
@@ -95,6 +98,7 @@ const rawCategories: Category[] = [
   {
     id: "lampes",
     title: "Lampes basse vision",
+    href: "/catalogue-aides-basse-vision/lampes-basse-vision",
     usage: "Pour améliorer l'éclairage, réduire la fatigue visuelle et mieux lire au quotidien.",
     products: [
       { name: "Lampe basse vision EIRA", usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.", price: "178 €", image: lampeEiraImg, href: "/boutique/lampe-basse-vision-eira", imageAlt: "La lampe de basse vision EIRA posée sur un bureau, à coté d’un livre qu’elle éclaire" },
@@ -106,6 +110,7 @@ const rawCategories: Category[] = [
   {
     id: "tele-agrandisseurs",
     title: "Télé-agrandisseurs",
+    href: "/catalogue-aides-basse-vision/teleagrandisseurs",
     usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.",
     products: [
       { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "La souris loupe électronique posée sur un magazine avec l’image grossie visible sur l’écran d’un téléviseur.", href: "/produits/souris-loupe-electronique-vera" },
@@ -115,6 +120,7 @@ const rawCategories: Category[] = [
   {
     id: "accessoires",
     title: "Accessoires utiles",
+    href: "/catalogue-aides-basse-vision/accessoires",
     usage: "Petits équipements et compléments pour faciliter la lecture, l'organisation et le confort visuel.",
     products: [
       { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir.", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },

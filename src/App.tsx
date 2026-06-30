@@ -55,6 +55,12 @@ const LoupeMaxTv = lazy(() => import("./pages/products/LoupeMaxTv"));
 const LunettesLoupeFrontaleAlva = lazy(() => import("./pages/products/LunettesLoupeFrontaleAlva"));
 const CatalogueAides = lazy(() => import("./pages/CatalogueAides"));
 const LoupesVerreCategorie = lazy(() => import("./pages/catalogue/LoupesVerreCategorie"));
+const LoupesElectroniquesCategorie = lazy(() => import("./pages/catalogue/LoupesElectroniquesCategorie"));
+const LampesCategorie = lazy(() => import("./pages/catalogue/LampesCategorie"));
+const TeleagrandisseursCategorie = lazy(() => import("./pages/catalogue/TeleagrandisseursCategorie"));
+const LunettesLoupesCategorie = lazy(() => import("./pages/catalogue/LunettesLoupesCategorie"));
+const LunettesIntelligentesCategorie = lazy(() => import("./pages/catalogue/LunettesIntelligentesCategorie"));
+const AccessoiresCategorie = lazy(() => import("./pages/catalogue/AccessoiresCategorie"));
 const LoupeMainNora = lazy(() => import("./pages/products/LoupeMainNora"));
 const LoupeDomeLina = lazy(() => import("./pages/products/LoupeDomeLina"));
 const ClipLunettesLoupe = lazy(() => import("./pages/products/ClipLunettesLoupe"));
@@ -165,6 +171,12 @@ const App = () => (
             <Route path="/boutique/horloge-gros-chiffres-frida" element={<HorlogeReveilFrida />} />
             <Route path="/catalogue-aides-basse-vision" element={<CatalogueAides />} />
             <Route path="/catalogue-aides-basse-vision/loupes-verre" element={<LoupesVerreCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/loupes-electroniques" element={<LoupesElectroniquesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/lampes-basse-vision" element={<LampesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/teleagrandisseurs" element={<TeleagrandisseursCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/lunettes-loupes" element={<LunettesLoupesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/lunettes-intelligentes" element={<LunettesIntelligentesCategorie />} />
+            <Route path="/catalogue-aides-basse-vision/accessoires" element={<AccessoiresCategorie />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
             <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
