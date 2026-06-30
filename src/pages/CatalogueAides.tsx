@@ -88,6 +88,7 @@ const rawCategories: Category[] = [
   {
     id: "loupes-electroniques",
     title: "Loupes électroniques",
+    href: "/catalogue-aides-basse-vision/loupes-electroniques",
     usage: "Pour agrandir fortement les textes, améliorer le contraste et retrouver du confort de lecture.",
     products: [
       { name: "Loupe Amélie", usage: "Loupe électronique compacte 3× / 6× / 9× pour la lecture du quotidien.", price: "188 €", image: loupeAmelieImg, href: "/boutique/loupe-amelie", imageAlt: "La loupe de lecture AMELIE tenue à la main et positionnée au dessus d’une carte en couleur. " },
