@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Phone, BookOpen, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { LOUPES_VERRE_PRODUCTS } from "@/data/products/loupesVerre";
 
 import lunettesFocus from "@/assets/products/lunettes-loupes-focus-dmla.jpg";
 import lunettesMaxTv from "@/assets/products/lunettes-loupe-max-tv-grossissement-basse-vision.jpg";
@@ -40,6 +41,8 @@ type Product = {
 type Category = {
   id: string;
   title: string;
+  /** Optional canonical URL for the category — makes the category title a link. */
+  href?: string;
   usage: string;
   products: Product[];
   emptyMessage?: string;
@@ -68,11 +71,16 @@ const rawCategories: Category[] = [
   {
     id: "loupes-verre",
     title: "Loupes en verre",
+    href: "/catalogue-aides-basse-vision/loupes-verre",
     usage: "Des solutions simples et immédiates pour lire un courrier, une étiquette ou un document posé à plat.",
-    products: [
-      { name: "Loupe à main NORA", usage: "Loupe rectangulaire éclairante x2 et x6, 50 LED réglables.", price: "87,50 €", image: loupeNoraImg, href: "/boutique/loupe-main-nora", imageAlt: "La loupe à man de lecture NORA, pour malvoyants léger, DMLA, glaucome." },
-      { name: "Loupe dôme LINA", usage: "Loupe à poser éclairante et rechargeable, grossissement x2 à x3.", price: "86,20 €", image: loupeDomeLinaImg, imageAlt: "La loupe dome de lecture posée sur une table", href: "/boutique/loupe-dome-eclairante-lina" },
-    ],
+    products: LOUPES_VERRE_PRODUCTS.map((p) => ({
+      name: p.name,
+      usage: p.shortDescription,
+      price: p.price,
+      image: p.mainImage,
+      imageAlt: p.imageAlt,
+      href: p.productUrl,
+    })),
     emptyMessage: "Une sélection de loupes en verre sera disponible très prochainement.",
   },
   {
@@ -271,7 +279,20 @@ const CatalogueAides = () => {
             {categories.map((cat) => (
               <div key={cat.id} id={cat.id} className="scroll-mt-32 border-t-4 border-secondary/40 pt-5">
                 <div className="mb-4">
-                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-1">{cat.title}</h2>
+                  {cat.href ? (
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold mb-1">
+                      <Link
+                        to={cat.href}
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 hover:underline focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 rounded-md transition-colors"
+                        aria-label={`Voir la catégorie ${cat.title}`}
+                      >
+                        {cat.title}
+                        <ArrowRight className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
+                      </Link>
+                    </h2>
+                  ) : (
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-1">{cat.title}</h2>
+                  )}
                   <p className="text-sm md:text-base lg:text-lg text-muted-foreground">{cat.usage}</p>
                 </div>
                 <CategoryGrid cat={cat} />

@@ -54,6 +54,7 @@ const LunettesLoupeFocus = lazy(() => import("./pages/products/LunettesLoupeFocu
 const LoupeMaxTv = lazy(() => import("./pages/products/LoupeMaxTv"));
 const LunettesLoupeFrontaleAlva = lazy(() => import("./pages/products/LunettesLoupeFrontaleAlva"));
 const CatalogueAides = lazy(() => import("./pages/CatalogueAides"));
+const LoupesVerreCategorie = lazy(() => import("./pages/catalogue/LoupesVerreCategorie"));
 const LoupeMainNora = lazy(() => import("./pages/products/LoupeMainNora"));
 const LoupeDomeLina = lazy(() => import("./pages/products/LoupeDomeLina"));
 const ClipLunettesLoupe = lazy(() => import("./pages/products/ClipLunettesLoupe"));
@@ -163,6 +164,7 @@ const App = () => (
             <Route path="/boutique/reveil-gros-chiffres-ivar" element={<ReveilGrosChiffresIvar />} />
             <Route path="/boutique/horloge-gros-chiffres-frida" element={<HorlogeReveilFrida />} />
             <Route path="/catalogue-aides-basse-vision" element={<CatalogueAides />} />
+            <Route path="/catalogue-aides-basse-vision/loupes-verre" element={<LoupesVerreCategorie />} />
             <Route path="/bilans-bassevision" element={<Bilans />} />
             <Route path="/bilans-bassevision/essentiel" element={<BilanEssentiel />} />
             <Route path="/bilans-bassevision/expert" element={<BilanExpert />} />
