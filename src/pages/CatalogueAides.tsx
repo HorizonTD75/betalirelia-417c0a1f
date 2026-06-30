@@ -40,6 +40,8 @@ type Product = {
 type Category = {
   id: string;
   title: string;
+  /** Optional canonical URL for the category — makes the category title a link. */
+  href?: string;
   usage: string;
   products: Product[];
   emptyMessage?: string;
