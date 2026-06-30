@@ -279,7 +279,20 @@ const CatalogueAides = () => {
             {categories.map((cat) => (
               <div key={cat.id} id={cat.id} className="scroll-mt-32 border-t-4 border-secondary/40 pt-5">
                 <div className="mb-4">
-                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-1">{cat.title}</h2>
+                  {cat.href ? (
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold mb-1">
+                      <Link
+                        to={cat.href}
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 hover:underline focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 rounded-md transition-colors"
+                        aria-label={`Voir la catégorie ${cat.title}`}
+                      >
+                        {cat.title}
+                        <ArrowRight className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
+                      </Link>
+                    </h2>
+                  ) : (
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mb-1">{cat.title}</h2>
+                  )}
                   <p className="text-sm md:text-base lg:text-lg text-muted-foreground">{cat.usage}</p>
                 </div>
                 <CategoryGrid cat={cat} />
