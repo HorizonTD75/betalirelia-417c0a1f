@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowLeft, Check, Zap, Eye, PackageOpen, Clock, BookOpen, Phone, AlertCircle, ChevronDown } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, Zap, Eye, PackageOpen, Clock, BookOpen, Phone, AlertCircle } from "lucide-react";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
