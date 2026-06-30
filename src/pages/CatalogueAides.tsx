@@ -98,6 +98,7 @@ const rawCategories: Category[] = [
   {
     id: "lampes",
     title: "Lampes basse vision",
+    href: "/catalogue-aides-basse-vision/lampes-basse-vision",
     usage: "Pour améliorer l'éclairage, réduire la fatigue visuelle et mieux lire au quotidien.",
     products: [
       { name: "Lampe basse vision EIRA", usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.", price: "178 €", image: lampeEiraImg, href: "/boutique/lampe-basse-vision-eira", imageAlt: "La lampe de basse vision EIRA posée sur un bureau, à coté d’un livre qu’elle éclaire" },
