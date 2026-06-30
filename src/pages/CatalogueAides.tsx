@@ -120,6 +120,7 @@ const rawCategories: Category[] = [
   {
     id: "accessoires",
     title: "Accessoires utiles",
+    href: "/catalogue-aides-basse-vision/accessoires",
     usage: "Petits équipements et compléments pour faciliter la lecture, l'organisation et le confort visuel.",
     products: [
       { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir.", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
