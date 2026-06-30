@@ -110,6 +110,7 @@ const rawCategories: Category[] = [
   {
     id: "tele-agrandisseurs",
     title: "Télé-agrandisseurs",
+    href: "/catalogue-aides-basse-vision/teleagrandisseurs",
     usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.",
     products: [
       { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "La souris loupe électronique posée sur un magazine avec l’image grossie visible sur l’écran d’un téléviseur.", href: "/produits/souris-loupe-electronique-vera" },
