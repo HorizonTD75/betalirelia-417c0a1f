@@ -64,6 +64,7 @@ const rawCategories: Category[] = [
   {
     id: "lunettes-intelligentes",
     title: "Lunettes intelligentes",
+    href: "/catalogue-aides-basse-vision/lunettes-intelligentes",
     usage: "Lunettes connectées avec aide vocale, lecture et reconnaissance d'objet — pour gagner en autonomie au quotidien.",
     products: [
       { name: "Ray-Ban Meta", usage: "Produit en évaluation — aide vocale ponctuelle, lecture courte, description de scène et identification d'objets.", image: rayBanMetaImg, imageAlt: "Lunettes intelligentes Ray-Ban Meta avec monture marron", href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" },
