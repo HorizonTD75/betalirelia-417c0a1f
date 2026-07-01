@@ -334,7 +334,7 @@ const CommercialCategoryPage = (props: CommercialCategoryPageProps) => {
           </div>
         </section>
 
-        {/* COMPARAISON — cartes verticales accessibles (responsive sans scroll horizontal) */}
+        {/* COMPARAISON — vrai tableau sur desktop/tablette, cartes compactes sur mobile */}
         {comparison && products.length >= 2 ? (
           <section className="py-12 md:py-16 bg-muted/40">
             <div className="container">
@@ -348,33 +348,97 @@ const CommercialCategoryPage = (props: CommercialCategoryPageProps) => {
               ) : (
                 <div className="mb-8" />
               )}
-              <div
-                className={`grid gap-6 ${
-                  products.length === 2
-                    ? "grid-cols-1 md:grid-cols-2"
-                    : products.length === 3
-                    ? "grid-cols-1 md:grid-cols-3"
-                    : "grid-cols-1 md:grid-cols-2"
-                }`}
-              >
+
+              {/* Tableau — tablette large (md) et plus */}
+              <div className="hidden md:block overflow-x-auto rounded-2xl border-2 border-border bg-card shadow-card">
+                <table className="w-full border-collapse text-base md:text-lg">
+                  <caption className="sr-only">{comparisonTitle}</caption>
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        className="text-left align-bottom p-4 bg-primary/5 border-b-2 border-border font-serif font-bold text-foreground w-[180px] lg:w-[220px]"
+                      >
+                        Critère
+                      </th>
+                      {products.map((p) => (
+                        <th
+                          key={p.productUrl}
+                          scope="col"
+                          className="text-left align-bottom p-4 bg-primary/5 border-b-2 border-l border-border font-serif font-bold text-primary"
+                        >
+                          {p.name}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparison.rows.map((row, ri) => (
+                      <tr
+                        key={row.label}
+                        className={ri % 2 === 1 ? "bg-muted/30" : undefined}
+                      >
+                        <th
+                          scope="row"
+                          className="text-left align-top p-4 border-t border-border font-semibold text-foreground bg-primary/[0.03]"
+                        >
+                          {row.label}
+                        </th>
+                        {products.map((p, pi) => (
+                          <td
+                            key={p.productUrl}
+                            className="align-top p-4 border-t border-l border-border text-foreground leading-snug"
+                          >
+                            {row.values[pi] ?? "—"}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                    <tr>
+                      <th
+                        scope="row"
+                        className="text-left p-4 border-t-2 border-border font-semibold text-foreground bg-primary/[0.03]"
+                      >
+                        <span className="sr-only">Fiche produit</span>
+                      </th>
+                      {products.map((p) => (
+                        <td
+                          key={p.productUrl}
+                          className="p-4 border-t-2 border-l border-border"
+                        >
+                          <Button asChild variant="secondary" size="sm">
+                            <Link to={p.productUrl}>
+                              Voir la fiche
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        </td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Cartes compactes — mobile uniquement */}
+              <div className="md:hidden grid gap-4">
                 {products.map((p, idx) => (
                   <article
                     key={p.productUrl}
-                    className="rounded-2xl border-2 border-border bg-card p-6 shadow-card"
+                    className="rounded-xl border-2 border-border bg-card p-4 shadow-card"
                   >
-                    <h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">
+                    <h3 className="font-serif text-lg font-bold text-primary mb-2 leading-tight">
                       {p.name}
                     </h3>
                     <dl className="divide-y divide-border">
                       {comparison.rows.map((row) => (
                         <div
                           key={row.label}
-                          className="py-3 grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1 sm:gap-4"
+                          className="py-2 leading-snug"
                         >
-                          <dt className="text-base font-semibold text-foreground">
+                          <dt className="text-sm font-semibold text-foreground mb-0.5">
                             {row.label}
                           </dt>
-                          <dd className="text-base text-muted-foreground">
+                          <dd className="text-base text-foreground">
                             {row.values[idx] ?? "—"}
                           </dd>
                         </div>
@@ -384,7 +448,7 @@ const CommercialCategoryPage = (props: CommercialCategoryPageProps) => {
                       asChild
                       variant="secondary"
                       size="lg"
-                      className="mt-5 w-full sm:w-auto"
+                      className="mt-3 w-full min-h-11"
                     >
                       <Link to={p.productUrl}>
                         Voir la fiche
