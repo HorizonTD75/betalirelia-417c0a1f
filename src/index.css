@@ -142,6 +142,19 @@
   .skip-link:focus {
     @apply translate-y-0;
   }
+
+  /* Placeholders — clearly lighter than typed text, WCAG-compliant contrast */
+  input::placeholder,
+  textarea::placeholder,
+  select:invalid {
+    color: hsl(223 15% 45%);
+    opacity: 1;
+  }
+  input,
+  textarea,
+  select {
+    color: hsl(var(--foreground));
+  }
 }
 
 @layer components {
