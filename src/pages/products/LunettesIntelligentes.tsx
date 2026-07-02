@@ -255,7 +255,7 @@ const LunettesIntelligentes = () => {
                   <CardFooter className="flex flex-col gap-2">
                     {f.slug === "lunettes-ia-grand-public" && (
                       <Button variant="default" className="w-full" asChild>
-                        <Link to="/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta">
+                        <Link to="/boutique/ray-ban-meta">
                           Découvrir les Ray-Ban Meta
                           <ArrowRight className="w-5 h-5" />
                         </Link>

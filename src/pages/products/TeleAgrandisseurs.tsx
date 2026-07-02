@@ -28,7 +28,7 @@ const products = [
       "Déficiences visuelles sévères (DMLA avancée, rétinopathie)",
     ],
     priceRange: "À partir de 1 500 €",
-    shopLink: "/produits/teleagrandisseur-mezzo-focus",
+    shopLink: "/boutique/teleagrandisseur-mezzo-focus",
     shopLabel: "Voir le téléagrandisseur Mezzo Focus",
   },
   {
@@ -74,7 +74,7 @@ const products = [
       "Lecture installée dans le salon ou la chambre",
     ],
     priceRange: "À partir de 158 €",
-    secondaryShopLink: "/produits/souris-loupe-electronique-vera",
+    secondaryShopLink: "/boutique/souris-loupe-electronique-vera",
     secondaryShopLabel: "Voir la souris loupe électronique VERA",
   },
 ];

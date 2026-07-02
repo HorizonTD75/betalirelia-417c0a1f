@@ -93,7 +93,7 @@ export const LAMPE_AINA: CatalogueProduct = {
     "Batterie USB, jusqu’à 10 h d’autonomie",
   ],
   price: "49,20 €",
-  productUrl: "/produits/lampe-tour-cou-aina",
+  productUrl: "/boutique/lampe-tour-cou-aina",
   ctaLabel: "Découvrir la lampe AINA",
 };
 
@@ -163,7 +163,7 @@ export const SOURIS_VERA: CatalogueProduct = {
     "Connexion Cinch ou HDMI selon la version",
   ],
   price: "158,00 €",
-  productUrl: "/produits/souris-loupe-electronique-vera",
+  productUrl: "/boutique/souris-loupe-electronique-vera",
   ctaLabel: "Découvrir la souris VERA",
 };
 
@@ -180,7 +180,7 @@ export const MEZZO_FOCUS: CatalogueProduct = {
     "Trois commandes principales, plateaux de lecture en option",
   ],
   price: "À partir de 2 582,00 €",
-  productUrl: "/produits/teleagrandisseur-mezzo-focus",
+  productUrl: "/boutique/teleagrandisseur-mezzo-focus",
   ctaLabel: "Découvrir le Mezzo Focus",
 };
 
@@ -269,7 +269,7 @@ export const RAYBAN_META: CatalogueProduct = {
     "Appeler, dicter ou obtenir une information à la voix",
   ],
   status: "Produit présenté et en cours d’évaluation par LirElia — non vendu sur le site.",
-  productUrl: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta",
+  productUrl: "/boutique/ray-ban-meta",
   ctaLabel: "Découvrir l’évaluation des Ray-Ban Meta",
 };
 

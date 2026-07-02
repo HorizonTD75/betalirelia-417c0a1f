@@ -120,14 +120,14 @@ const SourisLoupeVera = () => {
       <SEOHead
         title="Souris loupe électronique VERA pour basse vision | LirElia"
         description="Souris loupe électronique VERA : caméra de lecture connectée au téléviseur pour agrandir textes, journaux et documents en basse vision et DMLA. Conseil gratuit."
-        canonicalPath="/produits/souris-loupe-electronique-vera"
+        canonicalPath="/boutique/souris-loupe-electronique-vera"
         ogImage={imgJournal}
         jsonLd={[
-          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/produits/souris-loupe-electronique-vera#product", name: "Souris loupe électronique VERA", description: "Souris loupe électronique VERA : caméra de lecture connectée à la télévision pour agrandir textes, journaux et documents en basse vision.", image: [`https://lirelia.fr${imgJournal}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/produits/souris-loupe-electronique-vera", priceCurrency: "EUR", price: "158.00", availability: "https://schema.org/InStock" } },
+          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/souris-loupe-electronique-vera#product", name: "Souris loupe électronique VERA", description: "Souris loupe électronique VERA : caméra de lecture connectée à la télévision pour agrandir textes, journaux et documents en basse vision.", image: [`https://lirelia.fr${imgJournal}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/souris-loupe-electronique-vera", priceCurrency: "EUR", price: "158.00", availability: "https://schema.org/InStock" } },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
             { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
             { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
-            { "@type": "ListItem", position: 3, name: "Souris loupe électronique VERA", item: "https://lirelia.fr/produits/souris-loupe-electronique-vera" },
+            { "@type": "ListItem", position: 3, name: "Souris loupe électronique VERA", item: "https://lirelia.fr/boutique/souris-loupe-electronique-vera" },
           ] },
         ]}
       />
