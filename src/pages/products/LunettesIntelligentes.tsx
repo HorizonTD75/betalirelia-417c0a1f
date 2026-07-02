@@ -168,12 +168,6 @@ const LunettesIntelligentes = () => {
                     <ArrowRight className="w-6 h-6" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="bg-transparent text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground/10" asChild>
-                  <Link to="/catalogue-aides-basse-vision/lunettes-intelligentes">
-                    Voir toutes les lunettes intelligentes
-                    <ArrowRight className="w-6 h-6" />
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>
