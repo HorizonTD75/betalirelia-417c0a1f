@@ -38,6 +38,13 @@ interface CategoryPageProps {
   bottomCta?: string;
   /** Subject pre-fill for contact-conseil */
   contactSubject?: string;
+  /** Optional CTA to the matching commercial catalogue category. */
+  catalogueCta?: {
+    title: string;
+    text: string;
+    label: string;
+    href: string;
+  };
   seo: {
     title: string;
     description: string;
