@@ -241,7 +241,7 @@ const LoupesVerreCategorie = () => {
                   </dl>
                   <Button asChild variant="secondary" size="lg" className="mt-5 w-full sm:w-auto">
                     <Link to={p.productUrl}>
-                      Voir la fiche {p.name.includes("NORA") ? "NORA" : "LINA"}
+                      Voir la fiche {p.slug === "loupe-main-nora" ? "NORA" : "LINA"}
                       <ArrowRight className="w-5 h-5" />
                     </Link>
                   </Button>
