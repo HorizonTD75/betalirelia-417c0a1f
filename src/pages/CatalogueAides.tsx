@@ -301,6 +301,28 @@ const CatalogueAides = () => {
                   )}
                   <p className="text-sm md:text-base lg:text-lg text-muted-foreground">{cat.usage}</p>
                 </div>
+                {cat.href ? (
+                  <p className="mb-6">
+                    <Link
+                      to={cat.href}
+                      className="inline-flex items-center gap-1.5 min-h-11 py-2 text-primary font-semibold hover:underline focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 rounded-md"
+                    >
+                      {(() => {
+                        const labels: Record<string, string> = {
+                          "loupes-verre": "Voir toutes les loupes en verre",
+                          "loupes-electroniques": "Voir toutes les loupes électroniques",
+                          "lampes-basse-vision": "Voir toutes les lampes basse vision",
+                          "teleagrandisseurs": "Voir tous les téléagrandisseurs",
+                          "lunettes-loupes": "Voir toutes les lunettes loupes",
+                          "lunettes-intelligentes": "Voir toutes les lunettes intelligentes",
+                          "accessoires": "Voir tous les accessoires",
+                        };
+                        return labels[cat.id] ?? `Voir toute la catégorie ${cat.title}`;
+                      })()}
+                      <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  </p>
+                ) : null}
                 <CategoryGrid cat={cat} />
               </div>
             ))}
