@@ -124,9 +124,9 @@ const TeleAgrandisseurs = () => (
     contactSubject="tele-agrandisseur"
     ctaText="Découvrir les télé-agrandisseurs"
     catalogueCta={{
-      title: "Découvrez les téléagrandisseurs disponibles",
-      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
-      label: "Voir tous les téléagrandisseurs",
+      title: "Vous souhaitez comparer les modèles disponibles ?",
+      text: "Consultez les téléagrandisseurs actuellement proposés par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      label: "Comparer les téléagrandisseurs disponibles",
       href: "/catalogue-aides-basse-vision/teleagrandisseurs",
     }}
     seo={{
