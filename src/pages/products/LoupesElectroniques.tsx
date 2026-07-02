@@ -112,7 +112,7 @@ const LoupesElectroniques = () => (
     heroImage={heroImage}
     heroImageWidth={896}
     heroImageHeight={512}
-    title="Loupes électroniques pour basse vision et DMLA | LirElia"
+    title="Loupes électroniques pour basse vision et DMLA"
     subtitle="Grossissement variable et contraste renforcé pour lire sans compromis"
     intro="La loupe électronique, ou loupe numérique, utilise une caméra et un écran pour afficher le texte agrandi avec des contrastes optimisés. Avec un zoom réglable de ×2 à ×60 et plusieurs modes de contraste pensés pour la basse vision, elle apporte un confort de lecture incomparable, à la maison comme en déplacement."
     semanticKeywords=""
@@ -122,6 +122,12 @@ const LoupesElectroniques = () => (
     bottomCta="Demandez-nous des informations sur les loupes électroniques"
     contactSubject="loupe-electronique"
     ctaText="Être orienté(e) vers une loupe électronique adaptée"
+    catalogueCta={{
+      title: "Découvrez les loupes électroniques disponibles",
+      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
+      label: "Voir toutes les loupes électroniques",
+      href: "/catalogue-aides-basse-vision/loupes-electroniques",
+    }}
     seo={{
       title: "Loupes Électroniques pour Basse Vision | LirElia",
       description: "Zoom réglable, contraste renforcé et écran HD : découvrez les loupes électroniques de poche, transportables ou de bureau. Conseil gratuit personnalisé.",

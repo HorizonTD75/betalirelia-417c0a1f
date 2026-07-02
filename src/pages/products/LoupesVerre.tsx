@@ -107,7 +107,7 @@ const LoupesVerre = () => (
     heroImage={heroImage}
     heroImageWidth={896}
     heroImageHeight={512}
-    title="Loupes en verre pour malvoyants, DMLA et seniors | LirElia"
+    title="Loupes en verre pour malvoyants, DMLA et seniors"
     subtitle="Une aide à la lecture simple, immédiate et sans technologie"
     intro="La loupe en verre reste l'aide à la lecture la plus simple et la plus accessible. Avec une lentille convergente de qualité, elle offre un grossissement immédiat pour lire un courrier, une étiquette de médicament, une notice ou un document imprimé. Légère, sans batterie et facile à prendre en main, c'est souvent la première solution adoptée quand la vision de près commence à baisser."
     semanticKeywords=""
@@ -116,6 +116,12 @@ const LoupesVerre = () => (
     heroCta="Avoir de l'aide pour le choix d'une loupe en verre"
     bottomCta="Demandez-nous des informations sur les loupes en verre"
     contactSubject="loupes-verre"
+    catalogueCta={{
+      title: "Découvrez les loupes en verre disponibles",
+      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
+      label: "Voir toutes les loupes en verre",
+      href: "/catalogue-aides-basse-vision/loupes-verre",
+    }}
     seo={{
       title: "Loupes en Verre pour Malvoyants | LirElia",
       description: "Loupe classique, éclairante ou dôme : trouvez la loupe en verre adaptée à votre vue. Grossissements de ×2 à ×6, conseil personnalisé gratuit.",
