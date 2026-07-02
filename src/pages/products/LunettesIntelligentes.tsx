@@ -323,6 +323,26 @@ const LunettesIntelligentes = () => {
           </div>
         </section>
 
+        {/* CATALOGUE CTA — vers la page commerciale associée */}
+        <section className="py-10 md:py-12 bg-background">
+          <div className="container">
+            <div className="max-w-4xl mx-auto rounded-2xl border-2 border-secondary/40 bg-secondary/5 p-6 md:p-8 text-center">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
+                Découvrir les lunettes intelligentes présentées par LirElia
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
+                Consultez les modèles actuellement étudiés ou présentés par LirElia, leurs usages possibles et leurs limites pour les personnes malvoyantes.
+              </p>
+              <Button variant="secondary" size="lg" asChild>
+                <Link to="/catalogue-aides-basse-vision/lunettes-intelligentes">
+                  Voir les lunettes intelligentes
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CTA */}
         <section className="py-20">
           <div className="container">
