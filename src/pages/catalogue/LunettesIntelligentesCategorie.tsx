@@ -25,19 +25,19 @@ const LunettesIntelligentesCategorie = () => (
         title: "Pour lire un texte court sans tenir le téléphone",
         text: "Les lunettes peuvent être intéressantes pour consulter une étiquette, un prix, une affiche, un emballage ou quelques lignes d’un courrier. Le résultat dépend du cadrage, de la lumière, de la qualité d’impression et de la disponibilité de la fonction dans la langue utilisée.",
         ctaLabel: "Voir l’évaluation Ray-Ban Meta",
-        href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta",
+        href: "/boutique/ray-ban-meta",
       },
       {
         title: "Pour identifier un objet ou obtenir une description",
         text: "Une commande vocale peut demander le nom d’un produit ou une description générale de la scène. Cette aide peut compléter la vision restante, mais les réponses d’une intelligence artificielle doivent être considérées comme indicatives et vérifiées lorsqu’une erreur aurait des conséquences.",
         ctaLabel: "Voir l’évaluation Ray-Ban Meta",
-        href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta",
+        href: "/boutique/ray-ban-meta",
       },
       {
         title: "Pour communiquer les mains libres",
         text: "Les microphones et haut-parleurs permettent d’appeler un proche, dicter un message ou poser une question sans manipuler le smartphone. Cette fonction peut être utile lorsque lire l’écran ou viser une petite icône est difficile.",
         ctaLabel: "Voir l’évaluation Ray-Ban Meta",
-        href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta",
+        href: "/boutique/ray-ban-meta",
       },
     ]}
     benefitsTitle="Pourquoi s’intéresser aux lunettes intelligentes ?"
@@ -114,7 +114,7 @@ const LunettesIntelligentesCategorie = () => (
     finalCtaButtons={[
       {
         label: "Découvrir les Ray-Ban Meta",
-        href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta",
+        href: "/boutique/ray-ban-meta",
       },
     ]}
   />

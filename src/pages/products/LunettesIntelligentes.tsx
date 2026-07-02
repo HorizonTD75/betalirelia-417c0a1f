@@ -161,12 +161,20 @@ const LunettesIntelligentes = () => {
               <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-6 max-w-3xl">
                 Les lunettes intelligentes permettent à une personne malvoyante d'obtenir une aide vocale mains libres : lire une étiquette ou un courrier court, reconnaître un objet, décrire une scène, appeler un proche ou utiliser Be My Eyes. Il en existe trois grandes familles qui ne répondent ni aux mêmes besoins, ni aux mêmes budgets. Elles ne rendent pas la vue, mais peuvent compléter utilement le quotidien.
               </p>
-              <Button variant="secondary" size="lg" asChild>
-                <Link to="/contact-conseil?produit=lunettes-intelligentes">
-                  Être conseillé(e) sur les lunettes intelligentes
-                  <ArrowRight className="w-6 h-6" />
-                </Link>
-              </Button>
+              <div className="flex flex-wrap gap-3">
+                <Button variant="secondary" size="lg" asChild>
+                  <Link to="/contact-conseil?produit=lunettes-intelligentes">
+                    Être conseillé(e) sur les lunettes intelligentes
+                    <ArrowRight className="w-6 h-6" />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" className="bg-transparent text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground/10" asChild>
+                  <Link to="/catalogue-aides-basse-vision/lunettes-intelligentes">
+                    Voir toutes les lunettes intelligentes
+                    <ArrowRight className="w-6 h-6" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
           <div className="absolute bottom-0 left-0 right-0 pointer-events-none" aria-hidden="true">
@@ -255,7 +263,7 @@ const LunettesIntelligentes = () => {
                   <CardFooter className="flex flex-col gap-2">
                     {f.slug === "lunettes-ia-grand-public" && (
                       <Button variant="default" className="w-full" asChild>
-                        <Link to="/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta">
+                        <Link to="/boutique/ray-ban-meta">
                           Découvrir les Ray-Ban Meta
                           <ArrowRight className="w-5 h-5" />
                         </Link>

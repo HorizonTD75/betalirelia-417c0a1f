@@ -67,7 +67,7 @@ const LampesCategorie = () => (
         title: "Choisissez AINA pour lire au lit ou garder les mains libres",
         text: "La lampe AINA est la plus mobile de la sélection. Elle suit votre position, n’occupe pas de place sur la table et éclaire directement un livre, une tablette ou un travail manuel. Elle convient aussi lorsque vous changez souvent de pièce.",
         ctaLabel: "Voir la lampe AINA",
-        href: "/produits/lampe-tour-cou-aina",
+        href: "/boutique/lampe-tour-cou-aina",
       },
       {
         title: "Choisissez ASTRID pour grossir et éclairer un travail précis",
@@ -160,7 +160,7 @@ const LampesCategorie = () => (
     finalCtaTitle="Découvrez nos lampes basse vision"
     finalCtaText="Comparez les quatre formats pour choisir une lumière adaptée à votre position, à votre activité et à votre besoin de mobilité."
     finalCtaButtons={[
-      { label: "Voir la lampe AINA", href: "/produits/lampe-tour-cou-aina" },
+      { label: "Voir la lampe AINA", href: "/boutique/lampe-tour-cou-aina" },
       { label: "Voir le lampadaire SOLVEIG", href: "/boutique/lampadaire-solveig" },
     ]}
   />

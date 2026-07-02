@@ -28,7 +28,7 @@ const products = [
       "Déficiences visuelles sévères (DMLA avancée, rétinopathie)",
     ],
     priceRange: "À partir de 1 500 €",
-    shopLink: "/produits/teleagrandisseur-mezzo-focus",
+    shopLink: "/boutique/teleagrandisseur-mezzo-focus",
     shopLabel: "Voir le téléagrandisseur Mezzo Focus",
   },
   {
@@ -74,7 +74,7 @@ const products = [
       "Lecture installée dans le salon ou la chambre",
     ],
     priceRange: "À partir de 158 €",
-    secondaryShopLink: "/produits/souris-loupe-electronique-vera",
+    secondaryShopLink: "/boutique/souris-loupe-electronique-vera",
     secondaryShopLabel: "Voir la souris loupe électronique VERA",
   },
 ];
@@ -113,7 +113,7 @@ const TeleAgrandisseurs = () => (
     heroImage={heroImage}
     heroImageWidth={896}
     heroImageHeight={512}
-    title="Télé-agrandisseurs pour basse vision et DMLA | LirElia"
+    title="Télé-agrandisseurs pour basse vision et DMLA"
     subtitle="Le confort d'un grand écran pour lire et écrire longtemps, même avec une vision très réduite"
     intro="Le télé-agrandisseur, ou vidéo-agrandisseur, est l'aide à la lecture la plus aboutie pour les personnes atteintes de basse vision modérée à sévère. Avec son grand écran, son zoom puissant et son plateau coulissant, il rend possible la lecture longue, l'écriture, les mots croisés ou la consultation de documents administratifs — là où une simple loupe ou une loupe électronique portable atteint vite ses limites. C'est l'outil qui permet de retrouver une vraie autonomie quotidienne à la maison."
     semanticKeywords=""
@@ -123,6 +123,12 @@ const TeleAgrandisseurs = () => (
     bottomCta="Demandez-nous des informations sur les télé-agrandisseurs"
     contactSubject="tele-agrandisseur"
     ctaText="Découvrir les télé-agrandisseurs"
+    catalogueCta={{
+      title: "Découvrez les téléagrandisseurs disponibles",
+      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
+      label: "Voir tous les téléagrandisseurs",
+      href: "/catalogue-aides-basse-vision/teleagrandisseurs",
+    }}
     seo={{
       title: "Télé-agrandisseurs pour Basse Vision | LirElia",
       description: "Lisez et écrivez longtemps, confortablement, grâce aux télé-agrandisseurs : grand écran, zoom puissant, plateau XY. Idéal DMLA et basse vision sévère.",

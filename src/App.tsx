@@ -151,7 +151,8 @@ const App = () => (
             <Route path="/aides-lecture-bassevision/tele-agrandisseurs" element={<TeleAgrandisseurs />} />
             <Route path="/aides-lecture-bassevision/lunettes-loupes" element={<LunettesLoupes />} />
             <Route path="/aides-lecture-bassevision/lunettes-intelligentes" element={<LunettesIntelligentes />} />
-            <Route path="/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" element={<RayBanMeta />} />
+            <Route path="/boutique/ray-ban-meta" element={<RayBanMeta />} />
+            <Route path="/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" element={<Navigate to="/boutique/ray-ban-meta" replace />} />
             <Route path="/boutique/loupe-amelie" element={<LoupeAmelie />} />
             <Route path="/boutique/lunettes-loupe-focus" element={<LunettesLoupeFocus />} />
             <Route path="/boutique/loupe-max-tv" element={<LoupeMaxTv />} />
@@ -162,9 +163,12 @@ const App = () => (
             <Route path="/boutique/lampe-basse-vision-eira" element={<LampeEira />} />
             <Route path="/boutique/lampe-loupe-astrid" element={<LampeAstrid />} />
             <Route path="/boutique/lampadaire-solveig" element={<LampadaireSolveig />} />
-            <Route path="/produits/lampe-tour-cou-aina" element={<LampeAina />} />
-            <Route path="/produits/souris-loupe-electronique-vera" element={<SourisLoupeVera />} />
-            <Route path="/produits/teleagrandisseur-mezzo-focus" element={<TeleagrandisseurMezzoFocus />} />
+            <Route path="/boutique/lampe-tour-cou-aina" element={<LampeAina />} />
+            <Route path="/boutique/souris-loupe-electronique-vera" element={<SourisLoupeVera />} />
+            <Route path="/boutique/teleagrandisseur-mezzo-focus" element={<TeleagrandisseurMezzoFocus />} />
+            <Route path="/produits/lampe-tour-cou-aina" element={<Navigate to="/boutique/lampe-tour-cou-aina" replace />} />
+            <Route path="/produits/souris-loupe-electronique-vera" element={<Navigate to="/boutique/souris-loupe-electronique-vera" replace />} />
+            <Route path="/produits/teleagrandisseur-mezzo-focus" element={<Navigate to="/boutique/teleagrandisseur-mezzo-focus" replace />} />
             <Route path="/boutique/loupe-electronique-clover-5" element={<LoupeElectroniqueClover5 />} />
             <Route path="/boutique/horloge-reveil-gros-chiffres-oskar" element={<HorlogeReveilOskar />} />
             <Route path="/boutique/reveil-gros-chiffres-ivar" element={<ReveilGrosChiffresIvar />} />

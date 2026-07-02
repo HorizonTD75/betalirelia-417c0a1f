@@ -67,7 +67,7 @@ const rawCategories: Category[] = [
     href: "/catalogue-aides-basse-vision/lunettes-intelligentes",
     usage: "Lunettes connectées avec aide vocale, lecture et reconnaissance d'objet — pour gagner en autonomie au quotidien.",
     products: [
-      { name: "Ray-Ban Meta", usage: "Produit en évaluation — aide vocale ponctuelle, lecture courte, description de scène et identification d'objets.", image: rayBanMetaImg, imageAlt: "Lunettes intelligentes Ray-Ban Meta avec monture marron", href: "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta" },
+      { name: "Ray-Ban Meta", usage: "Produit en évaluation — aide vocale ponctuelle, lecture courte, description de scène et identification d'objets.", image: rayBanMetaImg, imageAlt: "Lunettes intelligentes Ray-Ban Meta avec monture marron", href: "/boutique/ray-ban-meta" },
     ],
   },
   {
@@ -104,7 +104,7 @@ const rawCategories: Category[] = [
       { name: "Lampe basse vision EIRA", usage: "Lampe pliable, rechargeable, 3 températures de couleur, 100 à 1600 lux.", price: "178 €", image: lampeEiraImg, href: "/boutique/lampe-basse-vision-eira", imageAlt: "La lampe de basse vision EIRA posée sur un bureau, à coté d’un livre qu’elle éclaire" },
       { name: "Lampe loupe ASTRID", usage: "Lampe loupe à pince, lentille 10,5 cm, x3, LED 6000 lux, 3 températures.", price: "148 €", image: lampeAstridImg, href: "/boutique/lampe-loupe-astrid", imageAlt: "La lampe loupe à fixer sur le bord d’un bureau grâce à sa pince" },
       { name: "Lampadaire SOLVEIG", usage: "Lampadaire de lecture léger, hauteur réglable, 5 000 lux, 3 températures et télécommande.", price: "179 €", image: lampadaireSolveigImg, imageAlt: "Le lampadaire SOLVEIG présenté en version noir et posé sur le sol.", href: "/boutique/lampadaire-solveig" },
-      { name: "Lampe tour de cou AINA", usage: "Lampe de lecture mains libres, portée autour du cou ou posée sur la table — 2 modes, 3 températures, 10 h d'autonomie.", price: "49,20 €", image: lampeAinaImg, imageAlt: "La lampe tour de coup proposée en deux couleurs, Blanc et noir", href: "/produits/lampe-tour-cou-aina" },
+      { name: "Lampe tour de cou AINA", usage: "Lampe de lecture mains libres, portée autour du cou ou posée sur la table — 2 modes, 3 températures, 10 h d'autonomie.", price: "49,20 €", image: lampeAinaImg, imageAlt: "La lampe tour de coup proposée en deux couleurs, Blanc et noir", href: "/boutique/lampe-tour-cou-aina" },
     ],
   },
   {
@@ -113,8 +113,8 @@ const rawCategories: Category[] = [
     href: "/catalogue-aides-basse-vision/teleagrandisseurs",
     usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.",
     products: [
-      { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "La souris loupe électronique posée sur un magazine avec l’image grossie visible sur l’écran d’un téléviseur.", href: "/produits/souris-loupe-electronique-vera" },
-      { name: "Téléagrandisseur Mezzo Focus", usage: "Téléagrandisseur de bureau compact et pliable, Full HD, grossissement jusqu'à 43× — pour lire et écrire confortablement à domicile en cas de DMLA ou basse vision.", price: "À partir de 2 582 €", image: mezzoFocusImg, imageAlt: "Le téléagrandisseur Mezzo affiche l’image agrandie de la photo d’une murène présente dans le magazine posé sur le plateau de lecture.", href: "/produits/teleagrandisseur-mezzo-focus" },
+      { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "La souris loupe électronique posée sur un magazine avec l’image grossie visible sur l’écran d’un téléviseur.", href: "/boutique/souris-loupe-electronique-vera" },
+      { name: "Téléagrandisseur Mezzo Focus", usage: "Téléagrandisseur de bureau compact et pliable, Full HD, grossissement jusqu'à 43× — pour lire et écrire confortablement à domicile en cas de DMLA ou basse vision.", price: "À partir de 2 582 €", image: mezzoFocusImg, imageAlt: "Le téléagrandisseur Mezzo affiche l’image agrandie de la photo d’une murène présente dans le magazine posé sur le plateau de lecture.", href: "/boutique/teleagrandisseur-mezzo-focus" },
     ],
   },
   {
@@ -301,6 +301,28 @@ const CatalogueAides = () => {
                   )}
                   <p className="text-sm md:text-base lg:text-lg text-muted-foreground">{cat.usage}</p>
                 </div>
+                {cat.href ? (
+                  <p className="mb-6">
+                    <Link
+                      to={cat.href}
+                      className="inline-flex items-center gap-1.5 min-h-11 py-2 text-primary font-semibold hover:underline focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 rounded-md"
+                    >
+                      {(() => {
+                        const labels: Record<string, string> = {
+                          "loupes-verre": "Voir toutes les loupes en verre",
+                          "loupes-electroniques": "Voir toutes les loupes électroniques",
+                          "lampes": "Voir toutes les lampes basse vision",
+                          "tele-agrandisseurs": "Voir tous les téléagrandisseurs",
+                          "lunettes-loupes": "Voir toutes les lunettes loupes",
+                          "lunettes-intelligentes": "Voir toutes les lunettes intelligentes",
+                          "accessoires": "Voir tous les accessoires",
+                        };
+                        return labels[cat.id] ?? `Voir toute la catégorie ${cat.title}`;
+                      })()}
+                      <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  </p>
+                ) : null}
                 <CategoryGrid cat={cat} />
               </div>
             ))}

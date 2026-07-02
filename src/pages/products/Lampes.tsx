@@ -29,7 +29,7 @@ const products = [
     priceRange: "À partir de 45 €",
     shopLink: "/boutique/lampe-basse-vision-eira",
     shopLabel: "Voir la lampe EIRA",
-    secondaryShopLink: "/produits/lampe-tour-cou-aina",
+    secondaryShopLink: "/boutique/lampe-tour-cou-aina",
     secondaryShopLabel: "Voir la lampe tour de cou AINA",
   },
   {
@@ -114,7 +114,7 @@ const Lampes = () => (
     heroImage={heroImage}
     heroImageWidth={896}
     heroImageHeight={512}
-    title="Lampes basse vision : éclairage lumière du jour | LirElia"
+    title="Lampes basse vision : éclairage lumière du jour"
     subtitle="Voir mieux grâce à un éclairage maîtrisé, sans éblouissement"
     intro="Un éclairage inadapté est l'une des premières causes de fatigue visuelle chez les personnes malvoyantes. Une bonne lampe de lecture ne se contente pas d'éclairer : elle améliore le contraste, réduit les reflets et permet de lire plus longtemps sans douleur. C'est souvent le premier complément utile à une loupe ou à un agrandisseur électronique."
     semanticKeywords=""
@@ -124,6 +124,12 @@ const Lampes = () => (
     bottomCta="Demandez-nous des informations sur les lampes adaptées"
     contactSubject="eclairage-basse-vision"
     ctaText="Optimiser mon éclairage de lecture"
+    catalogueCta={{
+      title: "Découvrez les lampes basse vision disponibles",
+      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
+      label: "Voir toutes les lampes basse vision",
+      href: "/catalogue-aides-basse-vision/lampes-basse-vision",
+    }}
     seo={{
       title: "Lampes Basse Vision – Éclairage Adapté | LirElia",
       description: "Un bon éclairage change tout. Découvrez nos lampes lumière du jour, orientables et sans éblouissement, conçues pour la lecture en basse vision.",

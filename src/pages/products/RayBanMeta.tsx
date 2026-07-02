@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/products/ray-ban-meta-marron.jpg";
 import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
 
-const CANONICAL = "/aides-lecture-bassevision/lunettes-intelligentes/ray-ban-meta";
+const CANONICAL = "/boutique/ray-ban-meta";
 
 const apports = [
   "Lire une étiquette ou un prix en magasin",

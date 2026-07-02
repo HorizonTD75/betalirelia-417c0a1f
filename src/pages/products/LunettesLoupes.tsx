@@ -111,7 +111,7 @@ const LunettesLoupes = () => (
     heroImage={heroImage}
     heroImageWidth={1024}
     heroImageHeight={768}
-    title="Lunettes loupes pour malvoyants : près et loin | LirElia"
+    title="Lunettes loupes pour malvoyants : près et loin"
     subtitle="Un grossissement mains libres pour la lecture, le bricolage, la couture ou la vision à distance"
     intro="Les lunettes loupes permettent d'obtenir un grossissement mains libres pour certaines activités de près ou de loin. Elles peuvent être utiles pour lire, bricoler, coudre, regarder un écran, suivre une conférence ou voir plus confortablement à distance, à condition de bien choisir le modèle selon l'usage et la distance de travail."
     semanticKeywords="lunettes loupes, lunettes grossissantes, lunettes loupe malvoyant, lunettes loupe lecture, lunettes loupe couture, lunettes loupe bricolage, lunettes télescopiques basse vision, lunettes vision de loin malvoyant, Max TV, Focus"
@@ -121,6 +121,12 @@ const LunettesLoupes = () => (
     bottomCta="Demandez-nous des informations sur les lunettes loupes"
     contactSubject="lunettes-loupes"
     ctaText="Être conseillé(e) sur les lunettes loupes"
+    catalogueCta={{
+      title: "Découvrez les lunettes loupes disponibles",
+      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
+      label: "Voir toutes les lunettes loupes",
+      href: "/catalogue-aides-basse-vision/lunettes-loupes",
+    }}
     seo={{
       title: "Lunettes Loupes pour Malvoyants — Près et Loin | LirElia",
       description: "Lunettes loupes pour lire, coudre, bricoler ou voir de loin (cinéma, conférence). Conseil personnalisé gratuit pour bien choisir selon la distance.",

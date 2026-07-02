@@ -58,28 +58,32 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className="text-lg text-muted-foreground leading-relaxed">
           {product.description}
         </p>
-        <div>
-          <h4 className="font-serif text-lg font-bold text-foreground mb-2">Caractéristiques</h4>
-          <ul className="space-y-2">
-            {product.features.map((feat, i) => (
-              <li key={i} className="flex items-start gap-2 text-base">
-                <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span>{feat}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-serif text-lg font-bold text-foreground mb-2">Idéal pour</h4>
-          <ul className="space-y-1">
-            {product.idealFor.map((item, i) => (
-              <li key={i} className="flex items-start gap-2 text-base text-muted-foreground">
-                <Check className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {product.features.length > 0 && (
+          <div>
+            <h4 className="font-serif text-lg font-bold text-foreground mb-2">Caractéristiques</h4>
+            <ul className="space-y-2">
+              {product.features.map((feat, i) => (
+                <li key={i} className="flex items-start gap-2 text-base">
+                  <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {product.idealFor.length > 0 && (
+          <div>
+            <h4 className="font-serif text-lg font-bold text-foreground mb-2">Idéal pour</h4>
+            <ul className="space-y-1">
+              {product.idealFor.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-base text-muted-foreground">
+                  <Check className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </CardContent>
       <CardFooter className="flex flex-col gap-3">
         {product.shopLink && (

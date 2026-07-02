@@ -69,13 +69,13 @@ const TeleagrandisseursCategorie = () => (
         title: "Choisissez VERA pour utiliser votre téléviseur à moindre coût",
         text: "VERA convient si vous possédez déjà un écran adapté et souhaitez surtout lire des journaux, des courriers, des ordonnances ou regarder des photos. Elle demande de faire glisser la souris sur le document et de disposer d’une connexion compatible avec le téléviseur.",
         ctaLabel: "Voir la souris VERA",
-        href: "/produits/souris-loupe-electronique-vera",
+        href: "/boutique/souris-loupe-electronique-vera",
       },
       {
         title: "Choisissez Mezzo Focus pour lire et écrire régulièrement",
         text: "Le Mezzo Focus est plus adapté à une personne qui souhaite un poste dédié, stable et confortable. Son écran intégré, ses trois commandes et ses plateaux en option facilitent la lecture prolongée, l’écriture, les formulaires et les activités réalisées sur une table.",
         ctaLabel: "Voir le Mezzo Focus",
-        href: "/produits/teleagrandisseur-mezzo-focus",
+        href: "/boutique/teleagrandisseur-mezzo-focus",
       },
     ]}
     benefitsTitle="Pourquoi choisir un téléagrandisseur ?"
@@ -150,10 +150,10 @@ const TeleagrandisseursCategorie = () => (
     finalCtaTitle="Découvrez nos téléagrandisseurs"
     finalCtaText="Comparez la solution compacte VERA et le poste de lecture Mezzo Focus selon votre budget, votre écran et la fréquence de vos lectures."
     finalCtaButtons={[
-      { label: "Découvrir la souris VERA", href: "/produits/souris-loupe-electronique-vera" },
+      { label: "Découvrir la souris VERA", href: "/boutique/souris-loupe-electronique-vera" },
       {
         label: "Découvrir le Mezzo Focus",
-        href: "/produits/teleagrandisseur-mezzo-focus",
+        href: "/boutique/teleagrandisseur-mezzo-focus",
       },
     ]}
   />
