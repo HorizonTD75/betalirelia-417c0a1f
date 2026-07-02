@@ -125,9 +125,9 @@ const Lampes = () => (
     contactSubject="eclairage-basse-vision"
     ctaText="Optimiser mon éclairage de lecture"
     catalogueCta={{
-      title: "Découvrez les lampes basse vision disponibles",
-      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
-      label: "Voir toutes les lampes basse vision",
+      title: "Vous souhaitez comparer les modèles disponibles ?",
+      text: "Consultez les lampes basse vision actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      label: "Comparer les lampes basse vision disponibles",
       href: "/catalogue-aides-basse-vision/lampes-basse-vision",
     }}
     seo={{

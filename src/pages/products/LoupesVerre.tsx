@@ -117,9 +117,9 @@ const LoupesVerre = () => (
     bottomCta="Demandez-nous des informations sur les loupes en verre"
     contactSubject="loupes-verre"
     catalogueCta={{
-      title: "Découvrez les loupes en verre disponibles",
-      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
-      label: "Voir toutes les loupes en verre",
+      title: "Vous souhaitez comparer les modèles disponibles ?",
+      text: "Consultez les loupes en verre actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      label: "Comparer les loupes en verre disponibles",
       href: "/catalogue-aides-basse-vision/loupes-verre",
     }}
     seo={{

@@ -174,27 +174,6 @@ const CategoryPageLayout = ({
           </div>
         </section>
 
-        {/* CATALOGUE CTA — vers la page commerciale associée */}
-        {catalogueCta ? (
-          <section className="py-10 md:py-12 bg-background">
-            <div className="container">
-              <div className="max-w-4xl mx-auto rounded-2xl border-2 border-secondary/40 bg-secondary/5 p-6 md:p-8 text-center">
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
-                  {catalogueCta.title}
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
-                  {catalogueCta.text}
-                </p>
-                <Button variant="secondary" size="lg" asChild>
-                  <Link to={catalogueCta.href}>
-                    {catalogueCta.label}
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-        ) : null}
 
         {/* PRODUCTS GRID — fond crème pour rythmer */}
         <section className="py-16 md:py-20 bg-muted/40">
@@ -258,8 +237,31 @@ const CategoryPageLayout = ({
           </div>
         </section>
 
+        {/* CATALOGUE CTA — vers la page commerciale associée (placé avant le bloc conseil personnalisé) */}
+        {catalogueCta ? (
+          <section className="py-10 md:py-12 bg-background">
+            <div className="container">
+              <div className="max-w-4xl mx-auto rounded-2xl border-2 border-secondary/40 bg-secondary/5 p-6 md:p-8 text-center">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
+                  {catalogueCta.title}
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
+                  {catalogueCta.text}
+                </p>
+                <Button variant="secondary" size="lg" asChild>
+                  <Link to={catalogueCta.href}>
+                    {catalogueCta.label}
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         {/* FINAL CTA */}
         <section className="py-20">
+
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
