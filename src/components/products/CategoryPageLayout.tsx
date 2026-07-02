@@ -67,6 +67,7 @@ const CategoryPageLayout = ({
   heroCta,
   bottomCta,
   contactSubject,
+  catalogueCta,
   seo,
 }: CategoryPageProps) => {
   const subject = contactSubject || title.toLowerCase();
