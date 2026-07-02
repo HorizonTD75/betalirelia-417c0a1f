@@ -123,9 +123,9 @@ const LoupesElectroniques = () => (
     contactSubject="loupe-electronique"
     ctaText="Être orienté(e) vers une loupe électronique adaptée"
     catalogueCta={{
-      title: "Découvrez les loupes électroniques disponibles",
-      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
-      label: "Voir toutes les loupes électroniques",
+      title: "Vous souhaitez comparer les modèles disponibles ?",
+      text: "Consultez les loupes électroniques actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      label: "Comparer les loupes électroniques disponibles",
       href: "/catalogue-aides-basse-vision/loupes-electroniques",
     }}
     seo={{
