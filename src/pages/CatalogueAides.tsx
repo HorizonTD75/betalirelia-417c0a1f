@@ -311,8 +311,8 @@ const CatalogueAides = () => {
                         const labels: Record<string, string> = {
                           "loupes-verre": "Voir toutes les loupes en verre",
                           "loupes-electroniques": "Voir toutes les loupes électroniques",
-                          "lampes-basse-vision": "Voir toutes les lampes basse vision",
-                          "teleagrandisseurs": "Voir tous les téléagrandisseurs",
+                          "lampes": "Voir toutes les lampes basse vision",
+                          "tele-agrandisseurs": "Voir tous les téléagrandisseurs",
                           "lunettes-loupes": "Voir toutes les lunettes loupes",
                           "lunettes-intelligentes": "Voir toutes les lunettes intelligentes",
                           "accessoires": "Voir tous les accessoires",
