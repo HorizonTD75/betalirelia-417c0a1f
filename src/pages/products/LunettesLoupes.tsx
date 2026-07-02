@@ -122,9 +122,9 @@ const LunettesLoupes = () => (
     contactSubject="lunettes-loupes"
     ctaText="Être conseillé(e) sur les lunettes loupes"
     catalogueCta={{
-      title: "Découvrez les lunettes loupes disponibles",
-      text: "Comparez les modèles actuellement proposés par LirElia, leurs principales caractéristiques et leurs prix.",
-      label: "Voir toutes les lunettes loupes",
+      title: "Vous souhaitez comparer les modèles disponibles ?",
+      text: "Consultez les lunettes loupes actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      label: "Comparer les lunettes loupes disponibles",
       href: "/catalogue-aides-basse-vision/lunettes-loupes",
     }}
     seo={{
