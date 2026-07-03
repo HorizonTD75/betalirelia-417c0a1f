@@ -221,7 +221,7 @@ const ContactBilan = () => {
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Prendre <span className="text-secondary">rendez-vous</span>
+                Prendre rendez-vous pour un <span className="text-secondary">bilan basse vision</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
                 Votre bilan sera réalisé par un conseiller en basse vision fort de 25 ans d'expérience, dont l'objectif
