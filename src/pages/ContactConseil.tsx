@@ -51,7 +51,7 @@ const ContactConseil = () => {
             <div className="max-w-2xl mx-auto">
               <header className="text-center mb-10">
                 <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Contact conseil basse vision
+                  Demander un conseil personnalisé en basse vision
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Que votre demande concerne une aide visuelle, un éclairage adapté,
