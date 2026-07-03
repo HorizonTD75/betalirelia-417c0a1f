@@ -19,9 +19,9 @@ const prerenderRoutes = [
   {
     path: "/aides-lecture-bassevision/lunettes-intelligentes",
     canonical: "/aides-lecture-bassevision/lunettes-intelligentes",
-    title: "Lunettes intelligentes pour malvoyants et basse vision | Lirelia",
+    title: "Lunettes intelligentes et basse vision : guide | LirElia",
     description:
-      "Découvrez les lunettes intelligentes pour malvoyants : lecture de textes, reconnaissance visuelle et aides à l’autonomie en cas de basse vision.",
+      "Comment les lunettes intelligentes peuvent-elles aider une personne malvoyante ? Découvrez leurs usages, leurs limites et les différentes familles de solutions.",
     ogType: "article",
   },
 ];
