@@ -41,14 +41,17 @@ const ClubHeroSection = () => {
       <div className="container relative px-4 sm:px-6">
         {/* Title section — full width */}
         <div className="mb-10">
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Club LirElia : visioconférences &amp; échanges
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 align-middle ml-3 text-lg sm:text-xl font-semibold">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
+            Club LirElia : visioconférences et échanges
+          </h1>
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 text-lg sm:text-xl font-semibold">
               Gratuit
             </span>
-            <br />
-            <span className="text-secondary">pour rompre l'isolement</span>
-          </h1>
+            <p className="text-2xl sm:text-3xl font-serif font-semibold text-secondary">
+              pour rompre l'isolement
+            </p>
+          </div>
 
           <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl">
             Un espace d'échanges entre personnes concernées et aidants : 

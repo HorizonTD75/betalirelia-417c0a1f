@@ -15,7 +15,7 @@ const Livraison = () => {
         <div className="container py-16 lg:py-20">
           <div className="max-w-3xl mx-auto prose-lg">
             <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Livraison et expédition
+              Livraison gratuite en France métropolitaine
             </h1>
             <p className="text-base text-muted-foreground mb-10">Dernière mise à jour : 08/06/2026</p>
 

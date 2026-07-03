@@ -74,7 +74,7 @@ const Unsubscribe = () => {
         canonicalPath="/unsubscribe"
       />
       <Header />
-      <main id="main-content" className="py-20">
+      <main id="main-content" className="py-20"><div className="container mx-auto"><h1 className="sr-only">Gérer vos préférences e-mail</h1></div>
         <div className="container max-w-lg mx-auto">
           <Card>
             <CardContent className="p-8 text-center space-y-6">
@@ -88,9 +88,9 @@ const Unsubscribe = () => {
               {status === "valid" && (
                 <>
                   <AlertTriangle className="w-12 h-12 text-secondary mx-auto" />
-                  <h1 className="font-serif text-2xl font-bold text-foreground">
+                  <h2 className="font-serif text-2xl font-bold text-foreground">
                     Confirmer la désinscription
-                  </h1>
+                  </h2>
                   <p className="text-lg text-muted-foreground">
                     Vous ne recevrez plus d'e-mails de LirElia.
                   </p>
@@ -112,9 +112,9 @@ const Unsubscribe = () => {
               {status === "success" && (
                 <>
                   <CheckCircle className="w-12 h-12 text-accent mx-auto" />
-                  <h1 className="font-serif text-2xl font-bold text-foreground">
+                  <h2 className="font-serif text-2xl font-bold text-foreground">
                     Désinscription confirmée
-                  </h1>
+                  </h2>
                   <p className="text-lg text-muted-foreground">
                     Vous avez été désinscrit(e) avec succès.
                   </p>
@@ -124,9 +124,9 @@ const Unsubscribe = () => {
               {status === "already" && (
                 <>
                   <CheckCircle className="w-12 h-12 text-muted-foreground mx-auto" />
-                  <h1 className="font-serif text-2xl font-bold text-foreground">
+                  <h2 className="font-serif text-2xl font-bold text-foreground">
                     Déjà désinscrit(e)
-                  </h1>
+                  </h2>
                   <p className="text-lg text-muted-foreground">
                     Vous êtes déjà désinscrit(e) de nos e-mails.
                   </p>
@@ -136,9 +136,9 @@ const Unsubscribe = () => {
               {status === "invalid" && (
                 <>
                   <XCircle className="w-12 h-12 text-destructive mx-auto" />
-                  <h1 className="font-serif text-2xl font-bold text-foreground">
+                  <h2 className="font-serif text-2xl font-bold text-foreground">
                     Lien invalide
-                  </h1>
+                  </h2>
                   <p className="text-lg text-muted-foreground">
                     Ce lien de désinscription est invalide ou a expiré.
                   </p>
@@ -148,9 +148,9 @@ const Unsubscribe = () => {
               {status === "error" && (
                 <>
                   <XCircle className="w-12 h-12 text-destructive mx-auto" />
-                  <h1 className="font-serif text-2xl font-bold text-foreground">
+                  <h2 className="font-serif text-2xl font-bold text-foreground">
                     Une erreur est survenue
-                  </h1>
+                  </h2>
                   <p className="text-lg text-muted-foreground">
                     Veuillez réessayer plus tard.
                   </p>
