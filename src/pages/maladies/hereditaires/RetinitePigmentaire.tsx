@@ -122,12 +122,12 @@ const keyPoints = [
 
 const RetinitePigmentaireHereditaire = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Rétinite Pigmentaire Héréditaire | LirElia"
-    seoDescription="Comprendre la rétinite pigmentaire : dystrophie rétinienne héréditaire, symptômes, diagnostic génétique, évolution, traitement et accompagnement basse vision."
+    seoTitle="Rétinite pigmentaire héréditaire : génétique | LirElia"
+    seoDescription="Comprendre la rétinite pigmentaire héréditaire : transmission génétique, symptômes, diagnostic, évolution et accompagnement en basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/retinite-pigmentaire"
-    diseaseName="La rétinite pigmentaire"
-    subtitle="Comprendre cette maladie génétique de la rétine"
-    heroIntro="La rétinite pigmentaire désigne un groupe de maladies génétiques de la rétine responsables d'une dégénérescence progressive des photorécepteurs. Elle se manifeste par une perte de la vision nocturne, un rétrécissement du champ visuel et peut évoluer vers une basse vision importante."
+    diseaseName="Rétinite pigmentaire héréditaire : génétique et transmission"
+    subtitle="Transmission génétique, diagnostic moléculaire et conseil aux apparentés"
+    heroIntro="Cette page se concentre sur la dimension héréditaire de la rétinite pigmentaire : formes de transmission, gènes impliqués, diagnostic moléculaire et implications familiales. Pour les symptômes, l'évolution et les aides basse vision, consultez la page générale rétinite pigmentaire."
     keyFact="La rétinite pigmentaire touche environ 1 personne sur 4 000 en Europe. Le diagnostic repose sur l'examen ophtalmologique, l'ERG, l'imagerie rétinienne et surtout l'analyse génétique. Certaines formes ciblées, notamment liées à RPE65, disposent d'une option thérapeutique spécifique."
     sections={sections}
     keyPoints={keyPoints}
