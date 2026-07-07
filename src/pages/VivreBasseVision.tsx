@@ -640,6 +640,28 @@ const VivreBasseVision = () => {
             </div>
           </div>
         </section>
+
+        {/* Bloc Aides financières et démarches */}
+        <section className="py-12 md:py-16 bg-background">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <Card variant="highlighted" className="p-6 sm:p-8">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
+                  Aides financières et démarches
+                </h2>
+                <p className="text-lg text-foreground leading-relaxed mb-6">
+                  Financer une aide visuelle, préparer un dossier MDPH, adapter son logement ou rechercher une aide professionnelle : découvrez les principaux dispositifs et les étapes à suivre.
+                </p>
+                <Button variant="secondary" size="lg" asChild>
+                  <Link to="/aides-financieres-basse-vision">
+                    Découvrir les aides possibles
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+              </Card>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
