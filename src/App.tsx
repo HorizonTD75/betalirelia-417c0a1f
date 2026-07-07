@@ -97,6 +97,7 @@ const Livraison = lazy(() => import("./pages/Livraison"));
 const RetoursRemboursements = lazy(() => import("./pages/RetoursRemboursements"));
 const FormulaireRetractation = lazy(() => import("./pages/FormulaireRetractation"));
 const SavGaranties = lazy(() => import("./pages/SavGaranties"));
+const AidesFinancieres = lazy(() => import("./pages/AidesFinancieres"));
 
 const queryClient = new QueryClient();
 
@@ -216,6 +217,7 @@ const App = () => (
             <Route path="/retours-remboursements" element={<RetoursRemboursements />} />
             <Route path="/formulaire-retractation" element={<FormulaireRetractation />} />
             <Route path="/sav-garanties" element={<SavGaranties />} />
+            <Route path="/aides-financieres-basse-vision" element={<AidesFinancieres />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
