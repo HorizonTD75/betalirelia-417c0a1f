@@ -49,14 +49,6 @@ const bilanOptions: {
     reassurance:
       "Un accompagnement complet sur plusieurs mois : bilan initial, essais, ajustements et suivi pour installer durablement les bonnes habitudes.",
   },
-  {
-    value: "domicile",
-    label: "Visite à domicile",
-    brevoValue: "Visite à domicile",
-    price: 75,
-    reassurance:
-      "Le Visiopraticien se déplace chez vous pour réaliser votre bilan basse vision dans le confort de votre cadre de vie. Supplément déplacement selon la distance.",
-  },
 ];
 
 const ContactBilan = () => {
