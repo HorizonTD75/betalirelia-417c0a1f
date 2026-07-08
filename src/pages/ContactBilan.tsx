@@ -172,7 +172,6 @@ const ContactBilan = () => {
         essentiel: "/merci-bilan-essentiel",
         expert: "/merci-bilan-expert",
         suivi: "/merci-bilan-suivi",
-        domicile: "/merci-visite-domicile",
       };
       navigate(thankYouRoutes[selectedBilan]);
     } catch (err) {
