@@ -168,7 +168,7 @@ const LampeAstrid = () => {
                 Une lampe loupe de bureau à bras articulé, grande lentille et éclairage réglable — conçue pour la lecture, la couture, le bricolage et tous les travaux de précision en basse vision et DMLA.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">148,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">148 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit

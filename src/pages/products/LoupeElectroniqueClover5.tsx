@@ -180,7 +180,7 @@ const LoupeElectroniqueClover5 = () => {
                 Une loupe électronique pour DMLA qui remplace avantageusement une loupe en verre. Pratique avec la poignée, simple d'utilisation, complète et légère, la CLOVER 5 s'utilise partout (magasin, maison, école, loisir, etc.). La lecture sur l'écran est plus rapide et confortable que sur une loupe optique.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">539,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">539 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit

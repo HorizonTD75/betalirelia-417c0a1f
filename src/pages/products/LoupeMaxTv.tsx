@@ -71,7 +71,7 @@ const LoupeMaxTv = () => {
               <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">Lunettes loupe Max-TV</h1>
               <p className="text-lg font-semibold text-muted-foreground mb-4">Des lunettes loupe adaptées pour regarder la télévision — idéales pour les personnes atteintes de DMLA ou de basse vision.</p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">87,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">87 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Acheter ce produit<ArrowRight className="w-5 h-5" /></a>
                 </Button>

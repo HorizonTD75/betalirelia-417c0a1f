@@ -179,7 +179,7 @@ const TeleagrandisseurMezzoFocus = () => {
                 Un téléagrandisseur de bureau compact, pliable et simple à utiliser — qualité d'image Full HD, grossissement jusqu'à 43×, conçu pour une utilisation quotidienne en cas de DMLA, glaucome, rétinopathie ou basse vision.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">À partir de 2 582,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">À partir de 2 582 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter le Mezzo Focus

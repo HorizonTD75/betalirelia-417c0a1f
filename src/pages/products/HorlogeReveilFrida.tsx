@@ -185,7 +185,7 @@ const HorlogeReveilFrida = () => {
                 Une horloge discrète, moderne, avec de gros chiffres lumineux très bien contrastés. La lecture de l'heure est agréable à tout moment de la journée et de la nuit.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">37,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">37 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit

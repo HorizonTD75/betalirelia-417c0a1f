@@ -168,7 +168,7 @@ const LoupeDomeLina = () => {
                 Une loupe à poser stable, lumineuse et rechargeable pour lire plus facilement les petits caractères du quotidien.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">86,20 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">86,20 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter la loupe LINA

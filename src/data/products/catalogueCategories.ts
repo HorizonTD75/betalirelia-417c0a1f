@@ -56,7 +56,7 @@ export const LOUPE_AMELIE: CatalogueProduct = {
     "Couleurs réelles ou contrastes inversés",
     "Éclairage LED et batterie rechargeable",
   ],
-  price: "188,00 €",
+  price: "188 €",
   productUrl: "/boutique/loupe-amelie",
   ctaLabel: "Découvrir la loupe Amélie",
 };
@@ -73,7 +73,7 @@ export const LOUPE_CLOVER5: CatalogueProduct = {
     "Couleurs naturelles et modes de forts contrastes",
     "Poignée repliable, ~4 h d’autonomie, housse incluse",
   ],
-  price: "539,00 €",
+  price: "539 €",
   productUrl: "/boutique/loupe-electronique-clover-5",
   ctaLabel: "Découvrir la CLOVER 5",
 };
@@ -109,7 +109,7 @@ export const LAMPE_ASTRID: CatalogueProduct = {
     "10 niveaux d’intensité, 3 températures",
     "Fixation par pince et double bras articulé",
   ],
-  price: "148,00 €",
+  price: "148 €",
   productUrl: "/boutique/lampe-loupe-astrid",
   ctaLabel: "Découvrir la lampe ASTRID",
 };
@@ -126,7 +126,7 @@ export const LAMPE_EIRA: CatalogueProduct = {
     "Batterie rechargeable, 4 à 10 h d’autonomie",
     "Format pliable, 285 g",
   ],
-  price: "178,00 €",
+  price: "178 €",
   productUrl: "/boutique/lampe-basse-vision-eira",
   ctaLabel: "Découvrir la lampe EIRA",
 };
@@ -143,7 +143,7 @@ export const LAMPADAIRE_SOLVEIG: CatalogueProduct = {
     "Hauteur et tête d’éclairage réglables",
     "Alimentation secteur et télécommande",
   ],
-  price: "179,00 €",
+  price: "179 €",
   productUrl: "/boutique/lampadaire-solveig",
   ctaLabel: "Découvrir le lampadaire SOLVEIG",
 };
@@ -162,7 +162,7 @@ export const SOURIS_VERA: CatalogueProduct = {
     "4 boutons et roulettes pour suivre les lignes",
     "Connexion Cinch ou HDMI selon la version",
   ],
-  price: "158,00 €",
+  price: "158 €",
   productUrl: "/boutique/souris-loupe-electronique-vera",
   ctaLabel: "Découvrir la souris VERA",
 };
@@ -179,7 +179,7 @@ export const MEZZO_FOCUS: CatalogueProduct = {
     "Caméra Full HD, autofocus, forts contrastes",
     "Trois commandes principales, plateaux de lecture en option",
   ],
-  price: "À partir de 2 582,00 €",
+  price: "À partir de 2 582 €",
   productUrl: "/boutique/teleagrandisseur-mezzo-focus",
   ctaLabel: "Découvrir le Mezzo Focus",
 };
@@ -215,7 +215,7 @@ export const LUNETTES_MAXTV: CatalogueProduct = {
     "Réglage indépendant pour chaque œil",
     "Poids : 49 g",
   ],
-  price: "87,00 €",
+  price: "87 €",
   productUrl: "/boutique/loupe-max-tv",
   ctaLabel: "Découvrir les Max-TV",
 };
@@ -232,7 +232,7 @@ export const LUNETTES_FOCUS: CatalogueProduct = {
     "Réglage indépendant et verrouillable par œil",
     "Étui rigide inclus",
   ],
-  price: "89,00 €",
+  price: "89 €",
   productUrl: "/boutique/lunettes-loupe-focus",
   ctaLabel: "Découvrir les lunettes FOCUS",
 };
@@ -249,7 +249,7 @@ export const LUNETTES_ALVA: CatalogueProduct = {
     "Branches ou bandeau élastique",
     "Batterie rechargeable, 75 g",
   ],
-  price: "94,00 €",
+  price: "94 €",
   productUrl: "/boutique/lunettes-loupe-frontale-alva",
   ctaLabel: "Découvrir la lunette ALVA",
 };
@@ -304,7 +304,7 @@ export const HORLOGE_FRIDA: CatalogueProduct = {
     "3 niveaux de luminosité, diminution nocturne",
     "Heure, date, température, alarme, piles de secours",
   ],
-  price: "37,00 €",
+  price: "37 €",
   productUrl: "/boutique/horloge-gros-chiffres-frida",
   ctaLabel: "Découvrir l’horloge FRIDA",
 };

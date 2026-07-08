@@ -125,7 +125,7 @@ const rawCategories: Category[] = [
     products: [
       { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir.", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
       { name: "Réveil gros chiffres IVAR", usage: "Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.", price: "26,40 €", image: ivarImg, imageAlt: "Le réveil gros chiffre IVAR posé sur un meuble et affichant 7h09 en gros caractères.", href: "/boutique/reveil-gros-chiffres-ivar" },
-      { name: "Horloge gros chiffres FRIDA", usage: "Horloge réveil moderne à très gros chiffres lumineux de 52 mm, disponible en 5 couleurs au choix sur fond noir — pour seniors et basse vision.", price: "37,00 €", image: fridaImg, imageAlt: "Le réveil FRIDA affiche 6:00 en gros caractères blanc sur fond noir , très lisible pour les personnes souffrants de basse vision.", href: "/boutique/horloge-gros-chiffres-frida" },
+      { name: "Horloge gros chiffres FRIDA", usage: "Horloge réveil moderne à très gros chiffres lumineux de 52 mm, disponible en 5 couleurs au choix sur fond noir — pour seniors et basse vision.", price: "37 €", image: fridaImg, imageAlt: "Le réveil FRIDA affiche 6:00 en gros caractères blanc sur fond noir , très lisible pour les personnes souffrants de basse vision.", href: "/boutique/horloge-gros-chiffres-frida" },
     ],
   },
 ];

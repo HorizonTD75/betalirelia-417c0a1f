@@ -183,7 +183,7 @@ const ReveilGrosChiffresIvar = () => {
                 Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">26,40 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">26,40 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit

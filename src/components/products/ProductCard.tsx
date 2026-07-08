@@ -49,7 +49,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <CardHeader className="pb-4">
         <CardTitle className="text-xl">{product.name}</CardTitle>
         {product.priceRange && (
-          <span className="inline-flex items-center self-start px-3 py-1 rounded-full bg-secondary/25 text-secondary-foreground border border-secondary/40 text-base font-bold">
+          <span className="inline-flex items-center self-start px-3 py-1 rounded-full bg-secondary/25 text-secondary-foreground border border-secondary/40 text-base font-bold whitespace-nowrap">
             {product.priceRange}
           </span>
         )}
