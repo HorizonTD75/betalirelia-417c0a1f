@@ -99,7 +99,7 @@ const LoupeMaxTv = () => {
         <section className="py-12 lg:py-16 bg-muted"><div className="container"><div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Description détaillée</h2>
           <div className="space-y-6">
-            {descriptionBlocks.map((block) => <div key={block.title} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8"><h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>{block.paragraphs.map((paragraph) => <p key={paragraph} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{paragraph}</p>)}{block.items && <ul className="space-y-3 mt-4">{block.items.map((item) => <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul>}</div>)}
+            {descriptionBlocks.map((block) => <div key={block.title} className="bg-card rounded-2xl border-2 border-border p-6 md:p-8"><h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>{block.paragraphs.map((paragraph) => <p key={paragraph} className="text-lg text-foreground leading-relaxed mb-4 last:mb-0">{paragraph}</p>)}{block.items && <ul className="space-y-3 mt-4">{block.items.map((item) => <li key={item} className="flex items-start gap-3 text-xl text-foreground leading-relaxed"><Check className="w-5 h-5 text-accent shrink-0 mt-1" /><span>{item}</span></li>)}</ul>}</div>)}
           </div>
         </div></div></section>
 

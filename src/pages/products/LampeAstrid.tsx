@@ -222,7 +222,7 @@ const LampeAstrid = () => {
               <div key={block.title} className="bg-card rounded-2xl border-2 border-primary/30 p-6 md:p-8">
                 <h3 className="font-serif text-xl md:text-2xl font-bold text-primary mb-4">{block.title}</h3>
                 {block.paragraphs.map((p) => (
-                  <p key={p} className="text-xl text-foreground leading-loose mb-4 last:mb-0">{p}</p>
+                  <p key={p} className="text-lg text-foreground leading-relaxed mb-4 last:mb-0">{p}</p>
                 ))}
                 {block.items && (
                   <ul className="space-y-3 mt-4">
