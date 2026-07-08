@@ -126,9 +126,9 @@ const CategoryPageLayout = ({
                   src={v?.src ?? heroImage}
                   srcSet={v?.srcSet}
                   sizes="100vw"
-                  alt=""
+                  alt={heroImageAlt ?? ""}
                   className="w-full h-full object-cover opacity-20"
-                  aria-hidden="true"
+                  {...(heroImageAlt ? {} : { "aria-hidden": true })}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
