@@ -23,13 +23,14 @@ const Header = () => {
       <div className="absolute inset-0">
         <img
           src={headerBg}
-          alt="Image de fond en dégradé pour le header"
+          alt=""
           className="w-full h-full object-cover"
           aria-hidden="true"
           loading="eager"
           decoding="async"
           width={1920}
           height={512} />
+
 
         <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       </div>
