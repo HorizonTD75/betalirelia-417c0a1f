@@ -178,7 +178,7 @@ const LampeAina = () => {
                 Une lampe de lecture légère et flexible qui se porte autour du cou ou se pose sur la table — mains libres, éclairage réglable, 10 h d'autonomie — idéale pour la lecture au lit, en fauteuil, la couture, le bricolage et les déplacements nocturnes.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">49,20 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">49,20 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter la lampe AINA

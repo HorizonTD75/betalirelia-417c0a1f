@@ -17,6 +17,8 @@ interface BuyingCriteria {
 interface CategoryPageProps {
   icon: LucideIcon;
   heroImage: string;
+  /** Optional descriptive alt for the hero image (accessibility). */
+  heroImageAlt?: string;
   /** Intrinsic width of the hero image. Defaults to 1920. */
   heroImageWidth?: number;
   /** Intrinsic height of the hero image. Defaults to 1080. */
@@ -55,6 +57,7 @@ interface CategoryPageProps {
 const CategoryPageLayout = ({
   icon: Icon,
   heroImage,
+  heroImageAlt,
   heroImageWidth = 1920,
   heroImageHeight = 1080,
   title,
@@ -123,9 +126,9 @@ const CategoryPageLayout = ({
                   src={v?.src ?? heroImage}
                   srcSet={v?.srcSet}
                   sizes="100vw"
-                  alt=""
+                  alt={heroImageAlt ?? ""}
                   className="w-full h-full object-cover opacity-20"
-                  aria-hidden="true"
+                  aria-hidden={heroImageAlt ? undefined : true}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"

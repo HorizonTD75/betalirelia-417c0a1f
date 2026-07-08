@@ -150,7 +150,7 @@ const ClipLunettesLoupe = () => {
                 Une surlunette loupe à clipser sur vos lunettes de vue — grossissement d'appoint léger pour la lecture, les travaux manuels et les activités du quotidien.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">24,50 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">24,50 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit

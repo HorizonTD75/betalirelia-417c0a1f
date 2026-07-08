@@ -180,7 +180,7 @@ const SourisLoupeVera = () => {
                 Une loupe électronique en forme de souris qui se connecte directement sur votre téléviseur — grossissement jusqu'à 60× sur grand écran, simple à utiliser, idéale pour lire depuis son fauteuil en cas de DMLA ou de basse vision.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">158,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">158 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter la souris loupe VERA

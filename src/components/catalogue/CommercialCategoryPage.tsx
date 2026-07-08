@@ -132,7 +132,7 @@ const ProductCardCommercial = ({
       <div className="mt-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         {showPrice && product.price ? (
           <p
-            className="text-2xl font-bold text-primary m-0"
+            className="text-2xl font-bold text-primary m-0 whitespace-nowrap"
             aria-label={`Prix : ${product.price} TTC`}
           >
             {product.price}

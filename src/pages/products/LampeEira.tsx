@@ -159,7 +159,7 @@ const LampeEira = () => {
                 Une lampe de lecture pliable et rechargeable, à intensité et température de couleur réglables — conçue pour la basse vision et la DMLA.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">178,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">178 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit

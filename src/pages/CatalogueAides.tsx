@@ -114,7 +114,7 @@ const rawCategories: Category[] = [
     usage: "Pour lire longtemps, écrire, remplir des formulaires et travailler confortablement à domicile.",
     products: [
       { name: "Souris loupe électronique VERA", usage: "Souris vidéo loupe à brancher sur le téléviseur — grossissement jusqu'à 60× pour lire journaux et courriers depuis son fauteuil.", price: "158 €", image: sourisVeraImg, imageAlt: "La souris loupe électronique posée sur un magazine avec l’image grossie visible sur l’écran d’un téléviseur.", href: "/boutique/souris-loupe-electronique-vera" },
-      { name: "Téléagrandisseur Mezzo Focus", usage: "Téléagrandisseur de bureau compact et pliable, Full HD, grossissement jusqu'à 43× — pour lire et écrire confortablement à domicile en cas de DMLA ou basse vision.", price: "À partir de 2 582 €", image: mezzoFocusImg, imageAlt: "Le téléagrandisseur Mezzo affiche l’image agrandie de la photo d’une murène présente dans le magazine posé sur le plateau de lecture.", href: "/boutique/teleagrandisseur-mezzo-focus" },
+      { name: "Téléagrandisseur Mezzo Focus", usage: "Téléagrandisseur de bureau compact et pliable, Full HD, grossissement jusqu'à 43× — pour lire et écrire confortablement à domicile en cas de DMLA ou basse vision.", price: "À partir de 2 582 €", image: mezzoFocusImg, imageAlt: "Le téléagrandisseur Mezzo affiche l’image agrandie d’une photo d’une murène", href: "/boutique/teleagrandisseur-mezzo-focus" },
     ],
   },
   {
@@ -125,7 +125,7 @@ const rawCategories: Category[] = [
     products: [
       { name: "Horloge réveil gros chiffres OSKAR", usage: "Horloge réveil à gros chiffres lumineux blancs ou verts sur fond noir, pour seniors et basse vision.", price: "38,40 €", image: oskarImg, imageAlt: "Le réveil gros chiffres OSKAR affiche 10:40 en chiffres blanc sur fond noir.", href: "/boutique/horloge-reveil-gros-chiffres-oskar" },
       { name: "Réveil gros chiffres IVAR", usage: "Un réveil discret avec de gros chiffres lumineux blanc bien contrastés. Facilite la lecture de l'heure à tout moment de la journée et de la nuit.", price: "26,40 €", image: ivarImg, imageAlt: "Le réveil gros chiffre IVAR posé sur un meuble et affichant 7h09 en gros caractères.", href: "/boutique/reveil-gros-chiffres-ivar" },
-      { name: "Horloge gros chiffres FRIDA", usage: "Horloge réveil moderne à très gros chiffres lumineux de 52 mm, disponible en 5 couleurs au choix sur fond noir — pour seniors et basse vision.", price: "37,00 €", image: fridaImg, imageAlt: "Le réveil FRIDA affiche 6:00 en gros caractères blanc sur fond noir , très lisible pour les personnes souffrants de basse vision.", href: "/boutique/horloge-gros-chiffres-frida" },
+      { name: "Horloge gros chiffres FRIDA", usage: "Horloge réveil moderne à très gros chiffres lumineux de 52 mm, disponible en 5 couleurs au choix sur fond noir — pour seniors et basse vision.", price: "37 €", image: fridaImg, imageAlt: "Le réveil FRIDA affiche 6:00 en gros caractères blancs sur fond noir", href: "/boutique/horloge-gros-chiffres-frida" },
     ],
   },
 ];

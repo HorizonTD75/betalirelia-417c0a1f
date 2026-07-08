@@ -23,13 +23,14 @@ const Header = () => {
       <div className="absolute inset-0">
         <img
           src={headerBg}
-          alt="Image de fond en dégradé pour le header"
+          alt=""
           className="w-full h-full object-cover"
           aria-hidden="true"
           loading="eager"
           decoding="async"
           width={1920}
           height={512} />
+
 
         <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       </div>
@@ -71,30 +72,17 @@ const Header = () => {
             )}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* Top-right controls */}
           <div className="flex items-center gap-1 sm:gap-2 ml-1 sm:ml-2 shrink-0">
-            <div className="hidden xl:flex flex-col gap-1.5">
+            <div className="hidden xl:flex">
               <Button variant="secondary" size="sm" asChild>
                 <Link to="/club">
                   <Users className="w-4 h-4" />
                   Le Club
                 </Link>
               </Button>
-              <Button
-                size="sm"
-                asChild
-                className="bg-primary text-primary-foreground border-2 border-primary hover:bg-background hover:text-primary hover:border-primary focus-visible:bg-background focus-visible:text-primary focus-visible:border-primary"
-              >
-                <Link to="/catalogue-aides-basse-vision">
-                  Catalogue
-                </Link>
-              </Button>
             </div>
             <CartDrawer />
-            <a href="tel:0768474235" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80" aria-label="Appelez-nous">
-              <Phone className="w-4 h-4" />
-              <span className="hidden 2xl:inline text-base font-bold">07 68 47 42 35</span>
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,6 +95,28 @@ const Header = () => {
             {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
+
+        {/* Second row — always visible : téléphone + bouton Catalogue */}
+        <div className="flex items-center justify-between gap-3 py-2 border-t border-border/60">
+          <a
+            href="tel:0768474235"
+            className="flex items-center gap-2 text-primary hover:text-primary/80 font-bold"
+            aria-label="Appelez-nous au 07 68 47 42 35"
+          >
+            <Phone className="w-5 h-5 shrink-0" aria-hidden="true" />
+            <span className="text-base sm:text-lg whitespace-nowrap">07 68 47 42 35</span>
+          </a>
+          <Button
+            size="sm"
+            asChild
+            className="bg-primary text-primary-foreground border-2 border-primary hover:bg-background hover:text-primary hover:border-primary focus-visible:bg-background focus-visible:text-primary focus-visible:border-primary whitespace-nowrap"
+          >
+            <Link to="/catalogue-aides-basse-vision">
+              Catalogue
+            </Link>
+          </Button>
+        </div>
+
 
         {/* Mobile Menu */}
         {isMenuOpen &&

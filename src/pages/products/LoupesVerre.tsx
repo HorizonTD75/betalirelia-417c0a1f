@@ -105,6 +105,7 @@ const LoupesVerre = () => (
   <CategoryPageLayout
     icon={Search}
     heroImage={heroImage}
+    heroImageAlt="loupe ronde en verre tenue à la main pour lire un livre"
     heroImageWidth={896}
     heroImageHeight={512}
     title="Loupes en verre pour malvoyants, DMLA et seniors"

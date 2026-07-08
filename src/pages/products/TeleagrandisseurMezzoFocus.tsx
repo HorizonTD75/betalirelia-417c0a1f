@@ -15,7 +15,7 @@ import imgPlie from "@/assets/products/teleagrandisseur-mezzo-focus-plie-dmla.jp
 const STRIPE_URL = "https://buy.stripe.com/9B64gAb2ufSn25p9ZH2Fa0f";
 
 const images = [
-  { src: imgMain, alt: "Le téléagrandisseur Mezzo affiche l’image agrandie de la photo d’une murène présente dans le magazine posé sur le plateau de lecture." },
+  { src: imgMain, alt: "Le téléagrandisseur Mezzo affiche l’image agrandie d’une photo d’une murène" },
   { src: imgLecture, alt: "Une personne âgée atteinte de basse vision lit grâce au téléagrandisseur MEZZO" },
   { src: imgPlie, alt: "Téléagrandisseur MEZZO plié, facilement transportable" },
 ];
@@ -179,7 +179,7 @@ const TeleagrandisseurMezzoFocus = () => {
                 Un téléagrandisseur de bureau compact, pliable et simple à utiliser — qualité d'image Full HD, grossissement jusqu'à 43×, conçu pour une utilisation quotidienne en cas de DMLA, glaucome, rétinopathie ou basse vision.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">À partir de 2 582,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">À partir de 2 582 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter le Mezzo Focus

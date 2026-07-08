@@ -18,7 +18,7 @@ import imgBleu from "@/assets/products/horloge-pour-malvoyant-frida-chiffres-ble
 const STRIPE_URL = "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h";
 
 const images = [
-  { src: imgPrincipale, alt: "Le réveil FRIDA affiche 6:00 en gros caractères blanc sur fond noir , très lisible pour les personnes souffrants de basse vision." },
+  { src: imgPrincipale, alt: "Le réveil FRIDA affiche 6:00 en gros caractères blancs sur fond noir" },
   { src: imgBlanc, alt: "L'horloge FRIDA en caractères blancs très lisibles pour personnes atteintes de DMLA" },
   { src: imgVert, alt: "Horloge FRIDA, gros caractères verts pour basse vision" },
   { src: imgOrange, alt: "Horloge FRIDA avec gros chiffres orange, basse vision, DMLA" },
@@ -185,7 +185,7 @@ const HorlogeReveilFrida = () => {
                 Une horloge discrète, moderne, avec de gros chiffres lumineux très bien contrastés. La lecture de l'heure est agréable à tout moment de la journée et de la nuit.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">37,00 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">37 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit

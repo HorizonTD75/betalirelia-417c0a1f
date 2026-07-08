@@ -33,6 +33,7 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 — URL inexistante :", location.pathname);
+    document.title = "La page demandée est introuvable et sera bientot accessible | LirElia";
     // Hint static hosts (OVH) that this is a real 404, when possible.
     const meta = document.querySelector('meta[name="prerender-status-code"]');
     if (!meta) {

@@ -179,7 +179,7 @@ const HorlogeReveilOskar = () => {
                 Un réveil moderne, de forme concave, avec de gros chiffres lumineux blanc ou vert bien contrastés. La lecture de l'heure est agréable à tout moment de la journée et de la nuit.
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
-                <p className="text-3xl font-bold text-primary m-0">38,40 €</p>
+                <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">38,40 €</p>
                 <Button variant="secondary" size="lg" asChild>
                   <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
                     Acheter ce produit
