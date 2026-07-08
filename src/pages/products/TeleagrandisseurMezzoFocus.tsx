@@ -15,7 +15,7 @@ import imgPlie from "@/assets/products/teleagrandisseur-mezzo-focus-plie-dmla.jp
 const STRIPE_URL = "https://buy.stripe.com/9B64gAb2ufSn25p9ZH2Fa0f";
 
 const images = [
-  { src: imgMain, alt: "Le téléagrandisseur Mezzo affiche l’image agrandie de la photo d’une murène présente dans le magazine posé sur le plateau de lecture." },
+  { src: imgMain, alt: "Le téléagrandisseur Mezzo affiche l’image agrandie d’une photo d’une murène" },
   { src: imgLecture, alt: "Une personne âgée atteinte de basse vision lit grâce au téléagrandisseur MEZZO" },
   { src: imgPlie, alt: "Téléagrandisseur MEZZO plié, facilement transportable" },
 ];
