@@ -57,6 +57,7 @@ interface CategoryPageProps {
 const CategoryPageLayout = ({
   icon: Icon,
   heroImage,
+  heroImageAlt,
   heroImageWidth = 1920,
   heroImageHeight = 1080,
   title,
