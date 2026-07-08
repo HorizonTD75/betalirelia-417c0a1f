@@ -17,6 +17,8 @@ interface BuyingCriteria {
 interface CategoryPageProps {
   icon: LucideIcon;
   heroImage: string;
+  /** Optional descriptive alt for the hero image (accessibility). */
+  heroImageAlt?: string;
   /** Intrinsic width of the hero image. Defaults to 1920. */
   heroImageWidth?: number;
   /** Intrinsic height of the hero image. Defaults to 1080. */
