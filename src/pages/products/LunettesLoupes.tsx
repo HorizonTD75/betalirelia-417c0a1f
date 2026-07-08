@@ -109,6 +109,7 @@ const LunettesLoupes = () => (
   <CategoryPageLayout
     icon={Glasses}
     heroImage={heroImage}
+    heroImageAlt="une paire de lunettes loupe posée sur un livre ouvert"
     heroImageWidth={1024}
     heroImageHeight={768}
     title="Lunettes loupes pour malvoyants : près et loin"

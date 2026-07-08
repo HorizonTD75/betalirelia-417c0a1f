@@ -112,6 +112,7 @@ const Lampes = () => (
   <CategoryPageLayout
     icon={Lightbulb}
     heroImage={heroImage}
+    heroImageAlt="lampes éclairant un livre ouvert"
     heroImageWidth={896}
     heroImageHeight={512}
     title="Lampes basse vision : éclairage lumière du jour"

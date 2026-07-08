@@ -110,6 +110,7 @@ const LoupesElectroniques = () => (
   <CategoryPageLayout
     icon={Monitor}
     heroImage={heroImage}
+    heroImageAlt="loupe électronique tenue à la main"
     heroImageWidth={896}
     heroImageHeight={512}
     title="Loupes électroniques pour basse vision et DMLA"

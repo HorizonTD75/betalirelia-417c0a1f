@@ -111,6 +111,7 @@ const TeleAgrandisseurs = () => (
   <CategoryPageLayout
     icon={Eye}
     heroImage={heroImage}
+    heroImageAlt="une personne âgée en train de lire avec un téléagrandisseur"
     heroImageWidth={896}
     heroImageHeight={512}
     title="Télé-agrandisseurs pour basse vision et DMLA"
