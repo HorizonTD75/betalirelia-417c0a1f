@@ -220,7 +220,6 @@ const App = () => (
             <Route path="/sav-garanties" element={<SavGaranties />} />
             <Route path="/aides-financieres-basse-vision" element={<AidesFinancieres />} />
             <Route path="/aides-financieres-basse-vision/financer-aide-visuelle" element={<FinancerAideVisuelle />} />
-            <Route path="/aides-financieres-basse-vision/financer-aide-visuelle/" element={<Navigate to="/aides-financieres-basse-vision/financer-aide-visuelle" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
