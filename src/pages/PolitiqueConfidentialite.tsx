@@ -54,7 +54,7 @@ const PolitiqueConfidentialite = () => {
             <P>Le responsable des traitements de données personnelles réalisés au moyen du site est :</P>
             <P>
               <strong>HORIZON TD</strong>, société par actions simplifiée<br />
-              Siège social : <strong>2 rue Pierre Louÿs, 75016 Paris, France</strong><br />
+              Siège social : <strong>2 rue Pierre Louÿs, 75116 Paris, France</strong><br />
               SIREN : <strong>840 698 039</strong><br />
               Adresse électronique : <Mail /><br />
               Téléphone : <strong>07 68 47 42 35</strong>
@@ -387,7 +387,7 @@ const PolitiqueConfidentialite = () => {
             <P>
               <strong>HORIZON TD — LirElia</strong><br />
               2 rue Pierre Louÿs<br />
-              75016 Paris — France
+              75116 Paris — France
             </P>
             <P>La demande doit permettre d'identifier suffisamment son auteur. Un justificatif d'identité ne sera demandé qu'en cas de doute raisonnable sur son identité.</P>
             <P>LirElia répond dans les délais prévus par la réglementation, en principe dans un délai d'un mois à compter de la réception d'une demande complète.</P>

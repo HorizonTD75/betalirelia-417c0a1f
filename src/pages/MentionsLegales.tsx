@@ -27,7 +27,7 @@ const MentionsLegales = () => {
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               <strong>HORIZON TD</strong>, société par actions simplifiée (SAS) au capital de <strong>1 000 euros</strong><br />
-              Siège social : <strong>2 rue Pierre Louÿs, 75016 Paris, France</strong><br />
+              Siège social : <strong>2 rue Pierre Louÿs, 75116 Paris, France</strong><br />
               SIREN : <strong>840 698 039</strong><br />
               SIRET du siège : <strong>840 698 039 00012</strong><br />
               Immatriculation : <strong>RCS Paris 840 698 039</strong><br />
@@ -164,7 +164,7 @@ const MentionsLegales = () => {
             <p className="text-lg text-foreground leading-relaxed">
               <strong>HORIZON TD — LirElia</strong><br />
               2 rue Pierre Louÿs<br />
-              75016 Paris — France<br />
+              75116 Paris — France<br />
               Téléphone : <strong>07 68 47 42 35</strong><br />
               Adresse électronique : <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4 hover:text-primary/80">contact@lirelia.fr</a>
             </p>
