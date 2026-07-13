@@ -98,7 +98,7 @@ const Livraison = () => {
             <p className="text-lg text-foreground leading-relaxed mb-2">Lirelia est édité par :</p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               HORIZON TD — SAS<br />
-              4-6 rue Pierre Louÿs<br />
+              2 rue Pierre Louÿs<br />
               75116 Paris<br />
               France
             </p>

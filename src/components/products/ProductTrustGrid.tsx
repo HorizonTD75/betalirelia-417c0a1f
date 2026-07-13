@@ -1,50 +1,50 @@
-import { Lock, Truck, RotateCcw, Eye } from "lucide-react";
+import { ShieldCheck, Truck, RotateCcw } from "lucide-react";
+import { Link } from "react-router-dom";
 
 type Item = {
-  icon: typeof Lock;
+  icon: typeof ShieldCheck;
   title: string;
   text: string;
+  href: string;
   accent: "primary" | "secondary";
 };
 
 const trustItems: Item[] = [
   {
-    icon: Lock,
-    title: "Paiement sécurisé par Stripe",
-    text: "Paiement par carte bancaire via Stripe, transaction sécurisée.",
+    icon: ShieldCheck,
+    title: "Vos garanties d'achat",
+    text: "Conditions générales de vente claires : paiement sécurisé, garanties et service après-vente.",
+    href: "/cgv",
     accent: "primary",
   },
   {
     icon: Truck,
     title: "Livraison gratuite en France métropolitaine",
     text: "Préparation et expédition après validation du paiement, environ 5 jours ouvrés.",
+    href: "/livraison",
     accent: "secondary",
   },
   {
     icon: RotateCcw,
-    title: "Retour possible sous 14 jours après réception",
+    title: "Retour sous 14 jours et remboursement",
     text: "Vous disposez d'un délai de 14 jours pour exercer votre droit de rétractation.",
+    href: "/retours-remboursements",
     accent: "primary",
-  },
-  {
-    icon: Eye,
-    title: "Conseil basse vision",
-    text: "Des produits sélectionnés pour la lecture, le confort visuel et l'autonomie.",
-    accent: "secondary",
   },
 ];
 
 const ProductTrustGrid = () => (
-  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-    {trustItems.map(({ icon: Icon, title, text, accent }) => {
+  <div className="grid gap-3 sm:grid-cols-3">
+    {trustItems.map(({ icon: Icon, title, text, href, accent }) => {
       const isPrimary = accent === "primary";
       return (
-        <div
+        <Link
           key={title}
-          className={`rounded-xl border-2 p-4 ${
+          to={href}
+          className={`block rounded-xl border-2 p-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
             isPrimary
-              ? "border-primary/30 bg-primary/5"
-              : "border-secondary/40 bg-secondary/10"
+              ? "border-primary/30 bg-primary/5 hover:bg-primary/10"
+              : "border-secondary/40 bg-secondary/10 hover:bg-secondary/20"
           }`}
         >
           <div
@@ -54,9 +54,9 @@ const ProductTrustGrid = () => (
           >
             <Icon className="h-5 w-5" aria-hidden="true" />
           </div>
-          <p className="text-base font-bold leading-snug text-foreground">{title}</p>
+          <p className="text-base font-bold leading-snug text-foreground underline-offset-4 hover:underline">{title}</p>
           <p className="mt-1 text-sm leading-snug text-muted-foreground">{text}</p>
-        </div>
+        </Link>
       );
     })}
   </div>
