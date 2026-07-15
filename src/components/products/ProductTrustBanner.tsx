@@ -24,24 +24,24 @@ const ProductTrustBanner = () => (
   <div className="rounded-xl border-2 border-primary/20 bg-primary/5 p-3 sm:p-4 space-y-3">
     <img
       src={paiementSecurise}
-      alt="Cartes CB, Visa, Mastercard et American Express acceptées — paiement sécurisé via Stripe"
+      alt="Paiement sécurisé par Stripe avec CB, Visa, Mastercard et American Express"
       width={2035}
       height={263}
       loading="lazy"
       decoding="async"
       className="block w-full h-auto max-w-full rounded-md"
     />
-    <ul className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
+    <ul className="flex flex-col gap-1.5">
       {items.map(({ icon: Icon, label, href }) => (
         <li key={label}>
           <Link
             to={href}
-            className="flex items-center gap-2 rounded-lg p-2 -m-2 hover:bg-primary/10 focus-visible:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors"
+            className="flex items-center gap-3 rounded-lg px-2 py-1.5 hover:bg-primary/10 focus-visible:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors"
           >
             <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
               <Icon className="h-4 w-4" aria-hidden="true" />
             </span>
-            <span className="text-sm sm:text-base font-semibold text-foreground leading-tight underline-offset-4 hover:underline">
+            <span className="text-sm sm:text-base font-semibold text-foreground leading-snug underline-offset-4 hover:underline">
               {label}
             </span>
           </Link>
