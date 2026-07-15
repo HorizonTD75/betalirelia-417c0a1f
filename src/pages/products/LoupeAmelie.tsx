@@ -204,7 +204,7 @@ const LoupeAmelie = () => {
         </section>
 
         <section className="container pb-12">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-md lg:ml-auto lg:mr-0">
             <ProductTrustBanner />
           </div>
         </section>
