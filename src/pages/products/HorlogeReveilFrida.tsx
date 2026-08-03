@@ -131,14 +131,6 @@ const HorlogeReveilFrida = () => {
         title="Horloge FRIDA très gros chiffres en 5 couleurs | LirElia"
         description="Horloge réveil FRIDA : très gros chiffres lumineux 52 mm en 5 couleurs, affichage cyclique, thermomètre et double alimentation. Pour seniors et basse vision."
         canonicalPath="/boutique/horloge-gros-chiffres-frida"
-        jsonLd={[
-          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/horloge-gros-chiffres-frida#product", name: "Horloge gros chiffres FRIDA", description: "Horloge réveil FRIDA pour basse vision : très gros chiffres lumineux de 52 mm en 5 couleurs au choix, affichage cyclique, thermomètre et double alimentation.", image: [`https://lirelia.fr${imgPrincipale}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/horloge-gros-chiffres-frida", priceCurrency: "EUR", price: "37.00", availability: "https://schema.org/InStock" } },
-          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
-            { "@type": "ListItem", position: 3, name: "Horloge gros chiffres FRIDA", item: "https://lirelia.fr/boutique/horloge-gros-chiffres-frida" },
-          ] },
-        ]}
       />
       <Header />
       <main id="main-content">

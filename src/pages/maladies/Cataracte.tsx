@@ -37,14 +37,7 @@ const Cataracte = () => {
       <SEOHead
         title="Cataracte : symptômes, opération et suivi | LirElia"
         description="Tout savoir sur la cataracte : causes, vision voilée, choix de l'implant, déroulement de l'opération et conseils pour bien préparer et suivre la chirurgie."
-        canonicalPath="/maladies-yeux/cataracte"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "La Cataracte – Symptômes, Diagnostic et Traitement",
-          "description": "Guide complet sur la cataracte : définition, symptômes, causes, opération et aides visuelles pour mieux vivre avec cette maladie des yeux.",
-          "about": { "@type": "MedicalCondition", "name": "Cataracte" }
-        }} />
+        canonicalPath="/maladies-yeux/cataracte" />
       
       <Header />
       <main id="main-content">

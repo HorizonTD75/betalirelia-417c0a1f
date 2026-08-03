@@ -45,23 +45,6 @@ const VisitesDomicile = () => {
         title="Bilan basse vision à domicile en Île-de-France | LirElia"
         description="Bilan basse vision à domicile en Île-de-France : votre visiopraticien se déplace chez vous, évalue votre vision et teste les aides dans votre environnement."
         canonicalPath="/bilans-bassevision/visites-domicile"
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "@id": "https://lirelia.fr/bilans-bassevision/visites-domicile#service",
-            "name": "Bilan basse vision à domicile – LirElia",
-            "description": "Visite à domicile du Visiopraticien LirElia pour réaliser un bilan basse vision dans l'environnement quotidien du patient.",
-            "provider": { "@id": "https://lirelia.fr/#organization" },
-            "areaServed": { "@type": "Country", "name": "France" },
-            "serviceType": "Bilan basse vision à domicile",
-          },
-          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-            { "@type": "ListItem", position: 2, name: "Bilans basse vision", item: "https://lirelia.fr/bilans-bassevision" },
-            { "@type": "ListItem", position: 3, name: "Visites à domicile", item: "https://lirelia.fr/bilans-bassevision/visites-domicile" },
-          ] },
-        ]}
       />
       <Header />
       <main id="main-content">

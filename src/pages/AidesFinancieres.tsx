@@ -188,7 +188,7 @@ const AidesFinancieres = () => {
 
   return (
     <div className="min-h-screen">
-      <SEOHead jsonLd={jsonLd} />
+      <SEOHead />
       <Header />
       <main id="main-content">
         {/* Hero */}

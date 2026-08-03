@@ -89,40 +89,14 @@ const notes = [
   "La loupe Amélie est une aide à la lecture électronique : elle ne remplace pas un téléagrandisseur de bureau ni un bilan en basse vision. Plus le grossissement utilisé est élevé, plus la zone visible à l'écran est réduite. Pour choisir le grossissement adapté à votre vision, n'hésitez pas à demander conseil.",
 ];
 
-const productJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "@id": "https://lirelia.fr/boutique/loupe-amelie#product",
-  name: "Loupe électronique Amélie",
-  image: ["https://lirelia.fr/og-image.png"],
-  description:
-    "Loupe de lecture électronique ultra-compacte avec trois grossissements (3×, 6×, 9×), écran lumineux de 11 cm et éclairage LED intégré. Idéale pour DMLA, glaucome ou cataracte.",
-  brand: { "@type": "Brand", name: "LirElia" },
-  offers: {
-    "@type": "Offer",
-    url: "https://lirelia.fr/boutique/loupe-amelie",
-    priceCurrency: "EUR",
-    price: "188.00",
-    availability: "https://schema.org/InStock",
-  },
-};
 
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-    { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
-    { "@type": "ListItem", position: 3, name: "Loupe électronique Amélie", item: "https://lirelia.fr/boutique/loupe-amelie" },
-  ],
-};
 
 const LoupeAmelie = () => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
     <div className="min-h-screen">
-      <SEOHead jsonLd={[productJsonLd, breadcrumbJsonLd]} />
+      <SEOHead />
       <Header />
       <main id="main-content">
         <div className="container py-4">

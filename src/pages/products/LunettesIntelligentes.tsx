@@ -113,14 +113,6 @@ const LunettesIntelligentes = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: "Lunettes intelligentes pour malvoyants",
-          description:
-            "Découvrez les lunettes intelligentes pour malvoyants : lunettes IA, caméras vocales spécialisées et casques agrandisseurs pour lire, reconnaître et mieux percevoir.",
-          url: "https://lirelia.fr/aides-lecture-bassevision/lunettes-intelligentes",
-        }}
       />
       <Header />
       <main id="main-content">

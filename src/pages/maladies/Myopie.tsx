@@ -22,13 +22,6 @@ const Myopie = () => {
         title="Myopie : causes, correction et myopie forte | LirElia"
         description="Comprendre la myopie : mécanisme, vision floue de loin, correction optique, chirurgie réfractive et risques de la myopie forte sur la rétine et la macula."
         canonicalPath="/maladies-yeux/myopie"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "La Myopie – Causes, symptômes et traitements",
-          "description": "Guide complet sur la myopie : défaut de réfraction, causes, symptômes, diagnostic et options de traitement.",
-          "about": { "@type": "MedicalCondition", "name": "Myopie" },
-        }}
       />
       <Header />
       <main id="main-content">

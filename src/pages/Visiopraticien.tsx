@@ -113,15 +113,7 @@ const Visiopraticien = () => {
       <SEOHead
         title="Visiopraticien expert basse vision | Lire et vivre mieux"
         description="Découvrez le rôle du visiopraticien, expert basse vision, pour mieux lire, s'équiper et préserver son autonomie au quotidien malgré la malvoyance."
-        canonicalPath="/expert-basse-vision-visiopraticien"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Visiopraticien LirElia — expert basse vision",
-          "description": "Accompagnement basse vision pour mieux lire et gagner en autonomie. Bilans fonctionnels, aides visuelles, conseils personnalisés.",
-          "provider": { "@type": "Organization", "name": "LirElia" },
-          "serviceType": "Expertise basse vision"
-        }} />
+        canonicalPath="/expert-basse-vision-visiopraticien" />
       
       <Header />
       <main id="main-content">

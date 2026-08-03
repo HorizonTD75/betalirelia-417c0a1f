@@ -67,12 +67,6 @@ const MaladiesHereditaires = () => {
         title="Maladies héréditaires de l'œil : guide complet | LirElia"
         description="Rétinite pigmentaire, Stargardt, Leber, Usher, achromatopsie, aniridie : comprendre les maladies génétiques de l'œil, leur diagnostic et l'accompagnement."
         canonicalPath="/maladies-yeux/maladies-hereditaires"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "Maladies héréditaires et génétiques de la vue",
-          "description": "Guide complet sur les maladies héréditaires de la vue : causes génétiques, symptômes, diagnostic et accompagnement en basse vision.",
-        }}
       />
       <Header />
       <main id="main-content">

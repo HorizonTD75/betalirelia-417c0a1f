@@ -119,21 +119,7 @@ const Bilans = () => {
       <SEOHead
         title="Bilans basse vision à Paris : essentiel, expert, suivi"
         description="Faites le point sur votre vue avec un bilan basse vision personnalisé : essais d'aides à la lecture et plan d'action concret. Dès 75 €, Paris ou domicile."
-        canonicalPath="/bilans-bassevision"
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Bilans Basse Vision LirElia",
-            "description": "Bilans fonctionnels personnalisés pour personnes malvoyantes : Essentiel, Expert et Suivi sur 3 mois.",
-            "provider": { "@type": "Organization", "name": "LirElia" },
-            "serviceType": "Bilan basse vision"
-          },
-          buildBreadcrumbJsonLd([
-            { name: "Accueil", path: "/" },
-            { name: "Bilans basse vision", path: "/bilans-bassevision" },
-          ]),
-        ]} />
+        canonicalPath="/bilans-bassevision" />
       
       <Header />
       <main id="main-content">

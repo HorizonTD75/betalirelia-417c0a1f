@@ -139,20 +139,6 @@ const LivreAidants = () => {
         title="Livre pour aider un proche atteint de DMLA | LirElia"
         description="Le guide indispensable pour les aidants : comprendre la DMLA de votre proche, l'accompagner au quotidien et préserver votre propre équilibre émotionnel."
         canonicalPath="/livre-aider-proche-dmla"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Book",
-          name: "Aider un proche atteint de DMLA",
-          description:
-            "Guide pratique pour accompagner un proche malvoyant atteint de DMLA. Conseils concrets pour les aidants familiaux et professionnels.",
-          author: { "@type": "Organization", name: "LirElia" },
-          publisher: { "@type": "Organization", name: "LirElia" },
-          about: ["DMLA", "Aidant", "Basse vision", "Malvoyance", "Autonomie"],
-          audience: {
-            "@type": "Audience",
-            audienceType: "Aidants familiaux et professionnels de personnes malvoyantes",
-          },
-        }}
       />
       <Header />
       <main id="main-content">

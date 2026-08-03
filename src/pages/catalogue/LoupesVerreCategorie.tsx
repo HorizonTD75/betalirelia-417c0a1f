@@ -151,7 +151,6 @@ const LoupesVerreCategorie = () => {
         title="Loupes en verre pour malvoyants et basse vision | LirElia"
         description="Découvrez les loupes en verre LirElia pour agrandir textes, courriers et détails. Comparez nos modèles à main et nos loupes dôme éclairantes."
         canonicalPath={PAGE_PATH}
-        jsonLd={[breadcrumbJsonLd, itemListJsonLd, faqJsonLd]}
       />
       <Header />
       <main id="main-content">

@@ -28,13 +28,6 @@ const RetinopathieDiabetique = () => {
         title="Rétinopathie diabétique : prévention et traitement | LirElia"
         description="Rétinopathie diabétique : facteurs de risque, dépistage par fond d'œil, traitements au laser et accompagnement basse vision en cas de baisse de vision."
         canonicalPath="/maladies-yeux/retinopathie-diabetique"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "Rétinopathie Diabétique – Maladie des Yeux liée au Diabète",
-          "description": "Guide complet sur la rétinopathie diabétique : causes, diagnostic, traitements et aides à la vision pour les personnes diabétiques.",
-          "about": { "@type": "MedicalCondition", "name": "Rétinopathie diabétique" },
-        }}
       />
       <Header />
       <main id="main-content">
