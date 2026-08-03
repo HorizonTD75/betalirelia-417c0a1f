@@ -13,7 +13,40 @@ import imgNoir from "@/assets/products/reveil-gros-chiffres-noir-ivar.jpg";
 import imgBoutons from "@/assets/products/reveil-gros-chiffres-ivar-boutons.jpg";
 import imgTemperature from "@/assets/products/reveil-gros-chiffres-ivar-temperature.jpg";
 
-const STRIPE_URL = "https://buy.stripe.com/7sYeVefiKbC77pJb3L2Fa0b";
+import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
+import AvailabilityBadge from "@/components/products/AvailabilityBadge";
+import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
+
+const colorVariants: ProductVariant[] = [
+  {
+    id: "blanche",
+    label: "IVAR coque blanche",
+    description: "Réveil parlant gros chiffres avec coque blanche.",
+    price: "26,40 €",
+    image: imgPrincipale,
+    imageAlt: "Réveil parlant IVAR avec gros chiffres et coque blanche",
+    buyLabel: "Acheter IVAR blanc",
+    buyAriaLabel: "Acheter le réveil IVAR avec coque blanche",
+    stripeUrl: "https://buy.stripe.com/4gM5kE9Yq9tZfWfc7P2Fa0c",
+    status: "available",
+  },
+  {
+    id: "noire",
+    label: "IVAR coque noire",
+    description: "Réveil parlant gros chiffres avec coque noire.",
+    price: "26,40 €",
+    image: imgNoir,
+    imageAlt: "Réveil parlant IVAR avec gros chiffres et coque noire",
+    buyLabel: "Acheter IVAR noir",
+    buyAriaLabel: "Acheter le réveil IVAR avec coque noire",
+    stripeUrl: "https://buy.stripe.com/5kQ00k7Qi35B7pJdbT2Fa0m",
+    status: "available",
+  },
+];
+
+const productStatus = aggregateStatus(colorVariants);
+const productMeta = AVAILABILITY[productStatus];
+
 
 const images = [
   { src: imgPrincipale, alt: "Le réveil gros chiffre IVAR posé sur un meuble et affichant 7h09 en gros caractères." },
@@ -108,9 +141,10 @@ const descriptionBlocks: Array<{ title: string; paragraphs: string[] }> = [
     title: "Choix du coloris",
     paragraphs: [
       "Le réveil IVAR est disponible en 2 versions : coque Blanche ou coque Noire — dans les deux cas, les chiffres sont blancs sur fond noir.",
-      "Comment passer votre commande ? Notre site ne gère pas la sélection de variante en ligne. Indiquez simplement le coloris souhaité dans le champ « Commentaire » lors de votre commande (ex. : « Réveil IVAR — coque Noire »). Nous traiterons votre demande en priorité.",
+      "Le choix du coloris se fait directement sur cette page : sélectionnez simplement la carte « IVAR coque blanche » ou « IVAR coque noire » pour passer commande.",
     ],
   },
+
 ];
 
 const ReveilGrosChiffresIvar = () => {
@@ -184,14 +218,25 @@ const ReveilGrosChiffresIvar = () => {
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
                 <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">26,40 €</p>
-                <Button variant="secondary" size="lg" asChild>
-                  <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
-                    Acheter ce produit
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
-                </Button>
+                {productMeta.purchasable ? (
+                  <Button variant="secondary" size="lg" asChild>
+                    <a href="#choix-coloris">
+                      Choisir le coloris
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
+                  </Button>
+                ) : (
+                  <>
+                    <AvailabilityBadge status={productStatus} />
+                    <Button variant="secondary" size="lg" disabled>{productMeta.buttonLabel}</Button>
+                  </>
+                )}
               </div>
+              {!productMeta.purchasable && productMeta.message && (
+                <p className="text-base md:text-lg text-foreground leading-relaxed mb-4">{productMeta.message}</p>
+              )}
               <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× disponible.</p>
+
 
               <div className="rounded-2xl border-2 border-secondary/40 bg-secondary/10 p-5 md:p-6">
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">Points forts</h2>
@@ -206,6 +251,15 @@ const ReveilGrosChiffresIvar = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section id="choix-coloris" className="container pb-12 scroll-mt-32">
+          <VariantChoiceGrid
+            title="Choisissez la couleur de votre réveil IVAR"
+            intro="Deux versions au choix, au même prix. Sélectionnez la coque blanche ou la coque noire pour passer commande."
+            variants={colorVariants}
+            columns={2}
+          />
         </section>
 
         <section className="container pb-12">
@@ -261,8 +315,9 @@ const ReveilGrosChiffresIvar = () => {
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit et sans engagement.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg" asChild>
-              <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Acheter ce produit<ArrowRight className="w-5 h-5" /></a>
+              <a href="#choix-coloris">Choisir le coloris<ArrowRight className="w-5 h-5" /></a>
             </Button>
+
             <Button variant="outline" size="lg" asChild>
               <Link to="/catalogue-aides-basse-vision"><ArrowLeft className="w-5 h-5" />Retour au catalogue</Link>
             </Button>

@@ -20,12 +20,13 @@ import AvailabilityBadge from "@/components/products/AvailabilityBadge";
 import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
 
 const colorVariants: ProductVariant[] = [
-  { id: "blanc", label: "Chiffres blancs", swatch: "#ffffff", buyLabel: "Acheter FRIDA chiffres blancs", stripeUrl: "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h", status: "available" },
-  { id: "rouge", label: "Chiffres rouges", swatch: "#e53935", buyLabel: "Acheter FRIDA chiffres rouges", stripeUrl: "https://buy.stripe.com/eVq8wQb2ufSn9xR6Nv2Fa0i", status: "available" },
-  { id: "vert", label: "Chiffres verts", swatch: "#43a047", buyLabel: "Acheter FRIDA chiffres verts", stripeUrl: "https://buy.stripe.com/7sY6oIc6y6hNbFZ2xf2Fa0j", status: "available" },
-  { id: "orange", label: "Chiffres orange", swatch: "#fb8c00", buyLabel: "Acheter FRIDA chiffres orange", stripeUrl: "https://buy.stripe.com/fZufZi5Ia0XtdO77Rz2Fa0l", status: "available" },
-  { id: "bleu", label: "Chiffres bleus", swatch: "#42a5f5", buyLabel: "Acheter FRIDA chiffres bleus", stripeUrl: "https://buy.stripe.com/14A3cw7QicGb6lF2xf2Fa0k", status: "available" },
+  { id: "blanc", label: "FRIDA chiffres blancs", description: "Horloge réveil gros chiffres avec affichage blanc sur fond noir.", price: "37 €", image: imgBlanc, imageAlt: "Horloge réveil FRIDA avec gros chiffres blancs", swatch: "#ffffff", buyLabel: "Acheter FRIDA blanc", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres blancs", stripeUrl: "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h", status: "available" },
+  { id: "rouge", label: "FRIDA chiffres rouges", description: "Horloge réveil gros chiffres avec affichage rouge sur fond noir.", price: "37 €", image: imgRouge, imageAlt: "Horloge réveil FRIDA avec gros chiffres rouges", swatch: "#e53935", buyLabel: "Acheter FRIDA rouge", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres rouges", stripeUrl: "https://buy.stripe.com/eVq8wQb2ufSn9xR6Nv2Fa0i", status: "available" },
+  { id: "vert", label: "FRIDA chiffres verts", description: "Horloge réveil gros chiffres avec affichage vert sur fond noir.", price: "37 €", image: imgVert, imageAlt: "Horloge réveil FRIDA avec gros chiffres verts", swatch: "#43a047", buyLabel: "Acheter FRIDA vert", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres verts", stripeUrl: "https://buy.stripe.com/7sY6oIc6y6hNbFZ2xf2Fa0j", status: "available" },
+  { id: "orange", label: "FRIDA chiffres orange", description: "Horloge réveil gros chiffres avec affichage orange sur fond noir.", price: "37 €", image: imgOrange, imageAlt: "Horloge réveil FRIDA avec gros chiffres orange", swatch: "#fb8c00", buyLabel: "Acheter FRIDA orange", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres orange", stripeUrl: "https://buy.stripe.com/fZufZi5Ia0XtdO77Rz2Fa0l", status: "available" },
+  { id: "bleu", label: "FRIDA chiffres bleus", description: "Horloge réveil gros chiffres avec affichage bleu sur fond noir.", price: "37 €", image: imgBleu, imageAlt: "Horloge réveil FRIDA avec gros chiffres bleus", swatch: "#42a5f5", buyLabel: "Acheter FRIDA bleu", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres bleus", stripeUrl: "https://buy.stripe.com/14A3cw7QicGb6lF2xf2Fa0k", status: "available" },
 ];
+
 
 const productStatus = aggregateStatus(colorVariants);
 const productMeta = AVAILABILITY[productStatus];
