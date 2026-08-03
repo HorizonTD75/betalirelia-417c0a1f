@@ -305,8 +305,9 @@ const ReveilGrosChiffresIvar = () => {
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit et sans engagement.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg" asChild>
-              <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Acheter ce produit<ArrowRight className="w-5 h-5" /></a>
+              <a href="#choix-coloris">Choisir le coloris<ArrowRight className="w-5 h-5" /></a>
             </Button>
+
             <Button variant="outline" size="lg" asChild>
               <Link to="/catalogue-aides-basse-vision"><ArrowLeft className="w-5 h-5" />Retour au catalogue</Link>
             </Button>
