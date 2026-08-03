@@ -9,6 +9,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgPrincipale from "@/assets/products/reveil-gros-chiffres-blanc-ivar.jpg";
+import imgNoir from "@/assets/products/reveil-gros-chiffres-noir-ivar.jpg";
 import imgBoutons from "@/assets/products/reveil-gros-chiffres-ivar-boutons.jpg";
 import imgTemperature from "@/assets/products/reveil-gros-chiffres-ivar-temperature.jpg";
 
