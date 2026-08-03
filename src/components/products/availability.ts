@@ -49,10 +49,21 @@ export interface ProductVariant {
   label: string;
   /** Visual hint (CSS colour token or hex) for the option. */
   swatch?: string;
+  /** Variant photo shown on the variant card. */
+  image?: string;
+  /** Accessible description of the variant photo. */
+  imageAlt?: string;
+  /** Short sentence describing the variant. */
+  description?: string;
+  /** Formatted price, e.g. "26,40 €". */
+  price?: string;
   stripeUrl?: string;
   buyLabel: string;
+  /** Explicit aria-label for the purchase link. */
+  buyAriaLabel?: string;
   status: AvailabilityStatus;
 }
+
 
 /** Aggregate status of a product from its variants. */
 export const aggregateStatus = (variants: ProductVariant[]): AvailabilityStatus => {
