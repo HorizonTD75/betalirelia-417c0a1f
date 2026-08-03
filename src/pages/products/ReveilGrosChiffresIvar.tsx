@@ -253,6 +253,15 @@ const ReveilGrosChiffresIvar = () => {
           </div>
         </section>
 
+        <section id="choix-coloris" className="container pb-12 scroll-mt-32">
+          <VariantChoiceGrid
+            title="Choisissez la couleur de votre réveil IVAR"
+            intro="Deux versions au choix, au même prix. Sélectionnez la coque blanche ou la coque noire pour passer commande."
+            variants={colorVariants}
+            columns={2}
+          />
+        </section>
+
         <section className="container pb-12">
           <div className="max-w-md lg:ml-auto lg:mr-0">
             <ProductTrustBanner />
