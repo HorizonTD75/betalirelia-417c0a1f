@@ -15,7 +15,20 @@ import imgOrange from "@/assets/products/horloge-pour-malvoyant-frida-orange-dml
 import imgRouge from "@/assets/products/horloge-reveil-malvoyant-frida-rouge.jpg";
 import imgBleu from "@/assets/products/horloge-pour-malvoyant-frida-chiffres-bleu.jpg";
 
-const STRIPE_URL = "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h";
+import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
+import AvailabilityBadge from "@/components/products/AvailabilityBadge";
+import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
+
+const colorVariants: ProductVariant[] = [
+  { id: "blanc", label: "Chiffres blancs", swatch: "#ffffff", buyLabel: "Acheter FRIDA chiffres blancs", stripeUrl: "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h", status: "available" },
+  { id: "rouge", label: "Chiffres rouges", swatch: "#e53935", buyLabel: "Acheter FRIDA chiffres rouges", stripeUrl: "https://buy.stripe.com/eVq8wQb2ufSn9xR6Nv2Fa0i", status: "available" },
+  { id: "vert", label: "Chiffres verts", swatch: "#43a047", buyLabel: "Acheter FRIDA chiffres verts", stripeUrl: "https://buy.stripe.com/7sY6oIc6y6hNbFZ2xf2Fa0j", status: "available" },
+  { id: "orange", label: "Chiffres orange", swatch: "#fb8c00", buyLabel: "Acheter FRIDA chiffres orange", stripeUrl: "https://buy.stripe.com/fZufZi5Ia0XtdO77Rz2Fa0l", status: "available" },
+  { id: "bleu", label: "Chiffres bleus", swatch: "#42a5f5", buyLabel: "Acheter FRIDA chiffres bleus", stripeUrl: "https://buy.stripe.com/14A3cw7QicGb6lF2xf2Fa0k", status: "available" },
+];
+
+const productStatus = aggregateStatus(colorVariants);
+const productMeta = AVAILABILITY[productStatus];
 
 const images = [
   { src: imgPrincipale, alt: "Le réveil FRIDA affiche 6:00 en gros caractères blancs sur fond noir" },
