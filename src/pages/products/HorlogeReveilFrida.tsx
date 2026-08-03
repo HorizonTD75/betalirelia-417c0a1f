@@ -192,13 +192,23 @@ const HorlogeReveilFrida = () => {
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
                 <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">37 €</p>
-                <Button variant="secondary" size="lg" asChild>
-                  <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
-                    Acheter ce produit
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
-                </Button>
+                {productMeta.purchasable ? (
+                  <Button variant="secondary" size="lg" asChild>
+                    <a href="#choix-couleur">
+                      Choisir la couleur
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
+                  </Button>
+                ) : (
+                  <>
+                    <AvailabilityBadge status={productStatus} />
+                    <Button variant="secondary" size="lg" disabled>{productMeta.buttonLabel}</Button>
+                  </>
+                )}
               </div>
+              {!productMeta.purchasable && productMeta.message && (
+                <p className="text-base md:text-lg text-foreground leading-relaxed mb-4">{productMeta.message}</p>
+              )}
               <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× disponible.</p>
 
               <div className="rounded-2xl border-2 border-secondary/40 bg-secondary/10 p-5 md:p-6">
