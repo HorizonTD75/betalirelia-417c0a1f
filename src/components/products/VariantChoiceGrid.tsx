@@ -26,10 +26,11 @@ const VariantChoiceGrid = ({ title, intro, variants, columns = 3, className }: V
       {intro && <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 max-w-3xl">{intro}</p>}
 
       {noneAvailable && (
-        <p className="text-base md:text-lg font-semibold text-destructive mb-6">
-          Ce produit est momentanément indisponible dans toutes ses versions.
+        <p className="text-base md:text-lg font-semibold text-foreground mb-6 max-w-3xl">
+          Ce produit est momentanément en rupture de stock. Il sera de nouveau proposé dès réapprovisionnement.
         </p>
       )}
+
 
       <ul
         className={cn(
