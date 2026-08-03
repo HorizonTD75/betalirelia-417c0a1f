@@ -9,6 +9,11 @@ import { Link, useSearchParams } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgPrincipale from "@/assets/products/horloge-reveil-pour-malvoyant-frida.jpg";
+import imgBlanc from "@/assets/products/horloge-reveil-frida-basse-vision-chiffres-blanc.jpg";
+import imgVert from "@/assets/products/horloge-reveil-frida-chiffres-vert.jpg";
+import imgOrange from "@/assets/products/horloge-pour-malvoyant-frida-orange-dmla.jpg";
+import imgRouge from "@/assets/products/horloge-reveil-malvoyant-frida-rouge.jpg";
+import imgBleu from "@/assets/products/horloge-pour-malvoyant-frida-chiffres-bleu.jpg";
 
 import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
 import AvailabilityBadge from "@/components/products/AvailabilityBadge";
