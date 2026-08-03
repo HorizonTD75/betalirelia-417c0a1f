@@ -238,7 +238,6 @@ const CommercialCategoryPage = (props: CommercialCategoryPageProps) => {
         title={seoTitle}
         description={seoDescription}
         canonicalPath={path}
-        jsonLd={jsonLd}
       />
       <Header />
       <main id="main-content">

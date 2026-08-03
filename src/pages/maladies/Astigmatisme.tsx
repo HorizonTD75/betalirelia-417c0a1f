@@ -22,12 +22,6 @@ const Astigmatisme = () => {
         title="Astigmatisme : causes, symptômes et correction | LirElia"
         description="Comprendre l'astigmatisme : courbure irrégulière de la cornée, vision floue ou dédoublée, fatigue oculaire, diagnostic et correction optique adaptée."
         canonicalPath="/maladies-yeux/astigmatisme"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "L'Astigmatisme – Causes, symptômes et traitements",
-          "about": { "@type": "MedicalCondition", "name": "Astigmatisme" },
-        }}
       />
       <Header />
       <main id="main-content">

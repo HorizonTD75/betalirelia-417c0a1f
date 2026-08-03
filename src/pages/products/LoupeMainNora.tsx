@@ -85,14 +85,6 @@ const LoupeMainNora = () => {
         title="Loupe à main NORA rectangulaire éclairante LED | LirElia"
         description="Loupe à main NORA : grande lentille rectangulaire ×2 et petite lentille ×6, 50 LED avec 3 intensités. Idéale DMLA, malvoyance, presbytie et lecture quotidienne."
         canonicalPath="/boutique/loupe-main-nora"
-        jsonLd={[
-          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/loupe-main-nora#product", name: "Loupe à main NORA", description: "Loupe à main NORA rectangulaire éclairante : grande lentille x2 et petite lentille x6, 50 LED avec 3 niveaux d'intensité.", image: [`https://lirelia.fr${imgLecture}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/loupe-main-nora", priceCurrency: "EUR", price: "87.50", availability: "https://schema.org/InStock" } },
-          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
-            { "@type": "ListItem", position: 3, name: "Loupe à main NORA", item: "https://lirelia.fr/boutique/loupe-main-nora" },
-          ] },
-        ]}
       />
       <Header />
       <main id="main-content">

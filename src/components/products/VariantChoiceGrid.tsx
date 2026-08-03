@@ -9,12 +9,14 @@ interface VariantChoiceGridProps {
   /** Optional helper sentence under the title. */
   intro?: string;
   variants: ProductVariant[];
+  /** Variant id pre-selected through the ?couleur= URL parameter. */
+  selectedId?: string | null;
   /** Grid columns on desktop. Mobile is always a single column. */
   columns?: 2 | 3;
   className?: string;
 }
 
-const VariantChoiceGrid = ({ title, intro, variants, columns = 3, className }: VariantChoiceGridProps) => {
+const VariantChoiceGrid = ({ title, intro, variants, selectedId, columns = 3, className }: VariantChoiceGridProps) => {
   const noneAvailable = variants.every((v) => v.status !== "available");
 
   return (
@@ -41,13 +43,17 @@ const VariantChoiceGrid = ({ title, intro, variants, columns = 3, className }: V
         {variants.map((variant) => {
           const meta = AVAILABILITY[variant.status];
           const buyable = meta.purchasable && !!variant.stripeUrl;
+          const isSelected = !!selectedId && selectedId === variant.id;
 
           return (
             <li key={variant.id} className="min-w-0">
               <article
+                id={`variante-${variant.id}`}
+                aria-current={isSelected ? "true" : undefined}
                 className={cn(
                   "flex flex-col h-full gap-4 rounded-2xl border-2 bg-card p-5 md:p-6 transition-shadow",
                   buyable ? "border-primary/30 hover:shadow-lg" : "border-border",
+                  isSelected && "border-primary ring-2 ring-primary/40 shadow-lg",
                 )}
               >
                 {variant.image ? (

@@ -4,15 +4,20 @@
  * All meta tags (title, description, canonical, OG, Twitter) are handled
  * statically by the synchronous script in index.html.  This component
  * MUST NOT inject any <title>, <meta>, <link rel="canonical"> or other
- * SEO-related HTML tags.  It exists solely to render JSON-LD structured
- * data blocks that cannot be expressed in the static script.
+ * SEO-related HTML tags.
+ *
+ * Structured data is NOT written at call sites: it comes from the central
+ * registry (src/lib/structuredData/registry.ts) which emits exactly ONE
+ * @graph per route and nothing at all on noindex routes.
  *
  * RULE — PERMANENT:
  *   • Never add Helmet / react-helmet-async usage here.
  *   • Never create meta tags via JavaScript in any component.
- *   • All SEO tags live in index.html as static HTML or in the
- *     synchronous pre-React script.
+ *   • Never hand-write JSON-LD in a page: extend the registry instead.
  */
+
+import { useLocation } from "react-router-dom";
+import { getPageGraph } from "@/lib/structuredData/registry";
 
 interface SEOHeadProps {
   /** @deprecated Kept for call-site compatibility — value is ignored. */
@@ -27,25 +32,22 @@ interface SEOHeadProps {
   ogImageAlt?: string;
   /** @deprecated Kept for call-site compatibility — value is ignored. */
   ogType?: string;
-  /** JSON-LD structured data — the only prop that produces output. */
+  /** @deprecated Structured data now comes from the central registry. */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SEOHead = ({ jsonLd }: SEOHeadProps) => {
-  if (!jsonLd) return null;
+const SEOHead = (_props: SEOHeadProps = {}) => {
+  const { pathname } = useLocation();
+  const graph = getPageGraph(pathname);
 
-  const blocks = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+  if (!graph) return null;
 
   return (
-    <>
-      {blocks.map((block, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
-        />
-      ))}
-    </>
+    <script
+      type="application/ld+json"
+      data-lirelia-graph="true"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+    />
   );
 };
 

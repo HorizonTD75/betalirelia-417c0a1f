@@ -71,36 +71,47 @@
     <meta name="twitter:site" content="@lirelia" />
     <link rel="alternate" hreflang="fr" href="https://lirelia.fr/" />
     <link rel="alternate" hreflang="x-default" href="https://lirelia.fr/" />
-    <!-- Global JSON-LD: Organization + WebSite (applies to every page) -->
+    <!-- Sitewide JSON-LD — single @graph defining Organization + WebSite once.
+         Page-level nodes (WebPage, Product, Service, BreadcrumbList…) are
+         emitted by src/lib/structuredData/registry.ts and only reference these
+         entities by @id. Never duplicate them elsewhere. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://lirelia.fr/#organization",
-      "name": "LirElia",
-      "url": "https://lirelia.fr/",
-      "logo": "https://lirelia.fr/og-image.png",
-      "description": "LirElia accompagne les personnes malvoyantes, leurs proches et leurs aidants avec des conseils, des aides à la lecture et des solutions adaptées à la basse vision.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+33768474235",
-        "contactType": "customer service",
-        "availableLanguage": "French"
-      },
-      "sameAs": []
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://lirelia.fr/#organization",
+          "name": "LirElia",
+          "url": "https://lirelia.fr/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://lirelia.fr/#logo",
+            "url": "https://lirelia.fr/og-image.png",
+            "caption": "LirElia"
+          },
+          "image": { "@id": "https://lirelia.fr/#logo" },
+          "description": "LirElia accompagne les personnes malvoyantes, leurs proches et leurs aidants avec des conseils, des aides à la lecture et des solutions adaptées à la basse vision.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+33768474235",
+            "contactType": "customer service",
+            "availableLanguage": "French"
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://lirelia.fr/#website",
+          "url": "https://lirelia.fr/",
+          "name": "LirElia",
+          "publisher": { "@id": "https://lirelia.fr/#organization" },
+          "inLanguage": "fr-FR"
+        }
+      ]
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://lirelia.fr/#website",
-      "url": "https://lirelia.fr/",
-      "name": "LirElia",
-      "publisher": { "@id": "https://lirelia.fr/#organization" },
-      "inLanguage": "fr-FR"
-    }
-    </script>
+
     <script>
     // Synchronous SEO meta injection — runs before React, visible to Googlebot and social crawlers
     (function(){
@@ -431,32 +442,38 @@
         "/merci-contact": {
           t: "Demande envoyée – LirElia",
           d: "Votre demande de contact a bien été envoyée à LirElia. Notre équipe vous répondra prochainement pour vous conseiller en basse vision.",
-          og: "website"
+          og: "website",
+          noindex: true
         },
         "/merci-bilan-expert": {
           t: "Demande de Bilan Expert envoyée – LirElia",
           d: "Votre demande de Bilan Expert a bien été envoyée à LirElia. Notre équipe vous recontactera pour préparer ce rendez-vous basse vision.",
-          og: "website"
+          og: "website",
+          noindex: true
         },
         "/merci-bilan-suivi": {
           t: "Demande de Pack Suivi envoyée – LirElia",
           d: "Votre demande de Pack Suivi a bien été envoyée à LirElia. Notre équipe vous recontactera pour organiser votre accompagnement basse vision.",
-          og: "website"
+          og: "website",
+          noindex: true
         },
         "/merci-bilan-essentiel": {
           t: "Demande de Bilan Essentiel envoyée – LirElia",
           d: "Votre demande de Bilan Essentiel a bien été envoyée à LirElia. Notre équipe vous recontactera pour organiser votre bilan basse vision.",
-          og: "website"
+          og: "website",
+          noindex: true
         },
         "/merci-visite-domicile": {
           t: "Demande de Visite à domicile envoyée – LirElia",
           d: "Votre demande de visite à domicile a bien été envoyée à LirElia. Notre équipe vous recontactera pour vérifier les modalités du bilan basse vision.",
-          og: "website"
+          og: "website",
+          noindex: true
         },
         "/merci-club": {
           t: "Inscription confirmée – Club LirElia",
           d: "Votre inscription au Club LirElia est confirmée. Vous recevrez prochainement les informations pratiques pour participer aux visioconférences et échanges.",
-          og: "website"
+          og: "website",
+          noindex: true
         },
         "/merci-commande": {
           t: "Commande confirmée – LirElia",

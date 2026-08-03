@@ -211,14 +211,6 @@ const AidesLecture = () => {
         title="Aides à la lecture basse vision : loupes et lampes"
         description="Quelle aide à la lecture choisir pour la basse vision ? Comparatif loupes en verre, loupes électroniques, lampes et télé-agrandisseurs. Conseil gratuit."
         canonicalPath="/aides-lecture-bassevision"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Aides à la lecture pour malvoyants",
-          "description": "Conseil et accompagnement dans le choix d'aides à la lecture pour personnes malvoyantes : loupes en verre, loupes électroniques, lampes adaptées, télé-agrandisseurs, lunettes loupes.",
-          "provider": { "@type": "Organization", "name": "LirElia" },
-          "serviceType": "Conseil en aides visuelles basse vision"
-        }}
       />
       <Header />
       <main id="main-content">

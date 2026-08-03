@@ -36,18 +36,6 @@ const Glaucome = () => {
         description="Comprenez le glaucome : formes ouvertes et fermées, symptômes, dépistage du nerf optique, traitements et conseils pour préserver votre vision périphérique."
         canonicalPath="/maladies-yeux/glaucome"
         ogType="article"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "Le Glaucome",
-          "description": "Tout savoir sur le glaucome : formes, symptômes, dépistage, traitements et conseils pour vivre avec cette maladie des yeux.",
-          "url": "https://lirelia.fr/maladies-yeux/glaucome",
-          "about": {
-            "@type": "MedicalCondition",
-            "name": "Glaucome",
-            "description": "Maladie de l'œil caractérisée par une atteinte du nerf optique, souvent liée à une pression intraoculaire élevée."
-          }
-        }}
       />
       <Header />
       <main id="main-content">

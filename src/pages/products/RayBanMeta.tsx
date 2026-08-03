@@ -98,7 +98,7 @@ const RayBanMeta = () => {
 
   return (
     <div className="min-h-screen">
-      <SEOHead jsonLd={[webPageJsonLd, breadcrumb]} />
+      <SEOHead />
       <Header />
       <main id="main-content">
         {/* HERO */}

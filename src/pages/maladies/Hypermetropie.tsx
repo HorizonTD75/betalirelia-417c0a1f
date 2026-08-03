@@ -22,12 +22,6 @@ const Hypermetropie = () => {
         title="Hypermétropie : causes, symptômes et traitement | LirElia"
         description="Comprendre l'hypermétropie : œil trop court, vision floue de près, fatigue visuelle. Causes, diagnostic, lunettes, lentilles et chirurgie réfractive."
         canonicalPath="/maladies-yeux/hypermetropie"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "L'Hypermétropie – Causes, symptômes et traitements",
-          "about": { "@type": "MedicalCondition", "name": "Hypermétropie" },
-        }}
       />
       <Header />
       <main id="main-content">

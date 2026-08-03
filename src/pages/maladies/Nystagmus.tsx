@@ -28,13 +28,6 @@ const Nystagmus = () => {
         title="Nystagmus : causes, diagnostic et accompagnement | LirElia"
         description="Comprendre le nystagmus : mouvements involontaires des yeux, causes congénitales ou acquises, diagnostic et solutions basse vision pour gagner en confort."
         canonicalPath="/maladies-yeux/nystagmus"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "Le Nystagmus – Mouvement Involontaire des Yeux",
-          "description": "Guide complet sur le nystagmus : définition, causes, manifestations, impact sur la vie quotidienne, traitements et aides visuelles.",
-          "about": { "@type": "MedicalCondition", "name": "Nystagmus" },
-        }}
       />
       <Header />
       <main id="main-content">

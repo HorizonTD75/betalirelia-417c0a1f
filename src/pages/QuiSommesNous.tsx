@@ -12,13 +12,6 @@ const QuiSommesNous = () => {
         title="Qui sommes-nous : LirElia, experts de la basse vision"
         description="25 ans d'expérience en basse vision : un visiopraticien et un ingénieur réunis par une conviction simple : chacun mérite un accompagnement humain et concret."
         canonicalPath="/qui-sommes-nous"
-        jsonLd={[
-          { "@context": "https://schema.org", "@type": "AboutPage", "@id": "https://lirelia.fr/qui-sommes-nous#webpage", url: "https://lirelia.fr/qui-sommes-nous", name: "Qui sommes-nous ? — LirElia", description: "25 ans d'expérience en basse vision : un visiopraticien et un ingénieur réunis par une conviction commune.", inLanguage: "fr-FR", isPartOf: { "@id": "https://lirelia.fr/#website" }, about: { "@id": "https://lirelia.fr/#organization" } },
-          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-            { "@type": "ListItem", position: 2, name: "Qui sommes-nous", item: "https://lirelia.fr/qui-sommes-nous" },
-          ] },
-        ]}
       />
       <Header />
       <main id="main-content">

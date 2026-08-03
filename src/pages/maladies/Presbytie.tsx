@@ -22,12 +22,6 @@ const Presbytie = () => {
         title="La presbytie : vision de près après 40 ans | LirElia"
         description="Comprendre la presbytie : vieillissement du cristallin, vision floue de près, besoin d'éloigner les textes. Causes, symptômes, lunettes et solutions adaptées."
         canonicalPath="/maladies-yeux/presbytie"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "La Presbytie – Trouble de la vision de près lié à l'âge",
-          "about": { "@type": "MedicalCondition", "name": "Presbytie" },
-        }}
       />
       <Header />
       <main id="main-content">

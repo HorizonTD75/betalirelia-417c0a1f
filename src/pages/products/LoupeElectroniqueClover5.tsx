@@ -117,14 +117,6 @@ const LoupeElectroniqueClover5 = () => {
         title="Loupe électronique CLOVER 5 pour basse vision et DMLA"
         description="Loupe électronique CLOVER 5 : grossissement 4x à 20x, écran HD 5'', forts contrastes et 4 h d'autonomie pour la lecture confortable en basse vision."
         canonicalPath="/boutique/loupe-electronique-clover-5"
-        jsonLd={[
-          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/loupe-electronique-clover-5#product", name: "Loupe électronique CLOVER 5", description: "Loupe électronique CLOVER 5 : grossissement 4x à 20x, écran HD 5'', modes forts contrastes, poignée repliable et 4 h d'autonomie.", image: [`https://lirelia.fr${imgPoignee}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/loupe-electronique-clover-5", priceCurrency: "EUR", price: "539.00", availability: "https://schema.org/InStock" } },
-          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
-            { "@type": "ListItem", position: 3, name: "Loupe électronique CLOVER 5", item: "https://lirelia.fr/boutique/loupe-electronique-clover-5" },
-          ] },
-        ]}
       />
       <Header />
       <main id="main-content">

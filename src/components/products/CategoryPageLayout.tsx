@@ -112,7 +112,6 @@ const CategoryPageLayout = ({
         title={seo.title}
         description={seo.description}
         canonicalPath={seo.canonicalPath}
-        jsonLd={[collectionJsonLd, breadcrumbJsonLd, itemListJsonLd]}
       />
       <Header />
       <main id="main-content">

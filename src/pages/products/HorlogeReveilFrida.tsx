@@ -5,7 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgPrincipale from "@/assets/products/horloge-reveil-pour-malvoyant-frida.jpg";
@@ -18,14 +18,10 @@ import imgBleu from "@/assets/products/horloge-pour-malvoyant-frida-chiffres-ble
 import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
 import AvailabilityBadge from "@/components/products/AvailabilityBadge";
 import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
+import { fridaVariants } from "@/lib/structuredData/variants";
 
-const colorVariants: ProductVariant[] = [
-  { id: "blanc", label: "FRIDA chiffres blancs", description: "Horloge réveil gros chiffres avec affichage blanc sur fond noir.", price: "37 €", image: imgBlanc, imageAlt: "Horloge réveil FRIDA avec gros chiffres blancs", swatch: "#ffffff", buyLabel: "Acheter FRIDA blanc", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres blancs", stripeUrl: "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h", status: "out_of_stock" },
-  { id: "rouge", label: "FRIDA chiffres rouges", description: "Horloge réveil gros chiffres avec affichage rouge sur fond noir.", price: "37 €", image: imgRouge, imageAlt: "Horloge réveil FRIDA avec gros chiffres rouges", swatch: "#e53935", buyLabel: "Acheter FRIDA rouge", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres rouges", stripeUrl: "https://buy.stripe.com/eVq8wQb2ufSn9xR6Nv2Fa0i", status: "available" },
-  { id: "vert", label: "FRIDA chiffres verts", description: "Horloge réveil gros chiffres avec affichage vert sur fond noir.", price: "37 €", image: imgVert, imageAlt: "Horloge réveil FRIDA avec gros chiffres verts", swatch: "#43a047", buyLabel: "Acheter FRIDA vert", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres verts", stripeUrl: "https://buy.stripe.com/7sY6oIc6y6hNbFZ2xf2Fa0j", status: "available" },
-  { id: "orange", label: "FRIDA chiffres orange", description: "Horloge réveil gros chiffres avec affichage orange sur fond noir.", price: "37 €", image: imgOrange, imageAlt: "Horloge réveil FRIDA avec gros chiffres orange", swatch: "#fb8c00", buyLabel: "Acheter FRIDA orange", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres orange", stripeUrl: "https://buy.stripe.com/fZufZi5Ia0XtdO77Rz2Fa0l", status: "available" },
-  { id: "bleu", label: "FRIDA chiffres bleus", description: "Horloge réveil gros chiffres avec affichage bleu sur fond noir.", price: "37 €", image: imgBleu, imageAlt: "Horloge réveil FRIDA avec gros chiffres bleus", swatch: "#42a5f5", buyLabel: "Acheter FRIDA bleu", buyAriaLabel: "Acheter l'horloge FRIDA avec chiffres bleus", stripeUrl: "https://buy.stripe.com/14A3cw7QicGb6lF2xf2Fa0k", status: "available" },
-];
+const colorVariants: ProductVariant[] = fridaVariants;
+
 
 
 const productStatus = aggregateStatus(colorVariants);
@@ -124,6 +120,9 @@ const descriptionBlocks: Array<{ title: string; paragraphs: string[] }> = [
 
 const HorlogeReveilFrida = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  // ?couleur=<id> (used by the ProductGroup variant URLs) pre-selects a colour.
+  const [searchParams] = useSearchParams();
+  const selectedVariant = searchParams.get("couleur");
 
   return (
     <div className="min-h-screen">
@@ -131,14 +130,6 @@ const HorlogeReveilFrida = () => {
         title="Horloge FRIDA très gros chiffres en 5 couleurs | LirElia"
         description="Horloge réveil FRIDA : très gros chiffres lumineux 52 mm en 5 couleurs, affichage cyclique, thermomètre et double alimentation. Pour seniors et basse vision."
         canonicalPath="/boutique/horloge-gros-chiffres-frida"
-        jsonLd={[
-          { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/horloge-gros-chiffres-frida#product", name: "Horloge gros chiffres FRIDA", description: "Horloge réveil FRIDA pour basse vision : très gros chiffres lumineux de 52 mm en 5 couleurs au choix, affichage cyclique, thermomètre et double alimentation.", image: [`https://lirelia.fr${imgPrincipale}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/horloge-gros-chiffres-frida", priceCurrency: "EUR", price: "37.00", availability: "https://schema.org/InStock" } },
-          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-            { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
-            { "@type": "ListItem", position: 3, name: "Horloge gros chiffres FRIDA", item: "https://lirelia.fr/boutique/horloge-gros-chiffres-frida" },
-          ] },
-        ]}
       />
       <Header />
       <main id="main-content">
@@ -228,7 +219,7 @@ const HorlogeReveilFrida = () => {
         </section>
 
         <section id="choix-couleur" className="container pb-12 scroll-mt-32">
-          <VariantChoiceGrid title="Choisissez la couleur des chiffres" variants={colorVariants} />
+          <VariantChoiceGrid title="Choisissez la couleur des chiffres" variants={colorVariants} selectedId={selectedVariant} />
         </section>
 
         <section className="container pb-12">

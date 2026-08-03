@@ -151,10 +151,6 @@ const MaladiesYeux = () => {
         title="Maladies des yeux : DMLA, glaucome, cataracte | LirElia"
         description="DMLA, glaucome, cataracte, rétinite pigmentaire : comprenez chaque maladie oculaire, ses symptômes et les solutions pour préserver votre autonomie visuelle."
         canonicalPath="/maladies-yeux"
-        jsonLd={buildBreadcrumbJsonLd([
-          { name: "Accueil", path: "/" },
-          { name: "Maladies des yeux", path: "/maladies-yeux" },
-        ])}
       />
       
       <Header />

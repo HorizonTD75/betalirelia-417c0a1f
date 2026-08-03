@@ -19,14 +19,7 @@ const notes = ['La correction des cylindres (astigmatisme) n’est pas possible.
 const LunettesLoupeFocus = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead title="Lunettes loupe FOCUS x2,5 pour lecture de près | LirElia" description="Lunettes loupe FOCUS : grossissement 2,5x, réglage indépendant et mains libres pour lecture, couture, bricolage et activités de près en basse vision." canonicalPath="/boutique/lunettes-loupe-focus" jsonLd={[
-        { "@context": "https://schema.org", "@type": "Product", "@id": "https://lirelia.fr/boutique/lunettes-loupe-focus#product", name: "Lunettes Loupe FOCUS", description: "Lunettes loupe FOCUS : grossissement 2,5x, réglage indépendant et mains libres pour lecture, couture et activités de près.", image: [`https://lirelia.fr${productImage}`], brand: { "@type": "Brand", name: "LirElia" }, offers: { "@type": "Offer", url: "https://lirelia.fr/boutique/lunettes-loupe-focus", priceCurrency: "EUR", price: "89.00", availability: "https://schema.org/InStock" } },
-        { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-          { "@type": "ListItem", position: 2, name: "Catalogue aides basse vision", item: "https://lirelia.fr/catalogue-aides-basse-vision" },
-          { "@type": "ListItem", position: 3, name: "Lunettes Loupe FOCUS", item: "https://lirelia.fr/boutique/lunettes-loupe-focus" },
-        ] },
-      ]} />
+      <SEOHead title="Lunettes loupe FOCUS x2,5 pour lecture de près | LirElia" description="Lunettes loupe FOCUS : grossissement 2,5x, réglage indépendant et mains libres pour lecture, couture, bricolage et activités de près en basse vision." canonicalPath="/boutique/lunettes-loupe-focus" />
       <Header />
       <main id="main-content">
         <div className="container py-4">

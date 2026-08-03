@@ -19,16 +19,6 @@ const Index = () => {
         title="LirElia | Basse vision & DMLA : bilans et aides lecture"
         description="Vous perdez la vue ? Retrouvez votre autonomie de lecture grâce à nos bilans basse vision et aides adaptées (DMLA, glaucome). 25 ans d'expertise à Paris."
         canonicalPath="/"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalBusiness",
-          "@id": "https://lirelia.fr/#medicalbusiness",
-          "name": "LirElia",
-          "url": "https://lirelia.fr/",
-          "description": "Accompagnement expert en basse vision, DMLA et glaucome. Bilans fonctionnels et aides à la lecture.",
-          "medicalSpecialty": "Optometry",
-          "knowsAbout": ["Basse vision", "DMLA", "Glaucome", "Aides à la lecture", "Bilans basse vision"]
-        }}
       />
       <Header />
       <main id="main-content">

@@ -27,13 +27,6 @@ const RetinitePigmentaire = () => {
         title="Rétinite pigmentaire : symptômes et accompagnement | LirElia"
         description="Rétinite pigmentaire : maladie génétique de la rétine, vision tubulaire, héméralopie. Diagnostic, évolution et aides basse vision pour préserver l'autonomie."
         canonicalPath="/maladies-yeux/retinite-pigmentaire"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "MedicalWebPage",
-          "name": "La Rétinite Pigmentaire – Maladie Génétique de la Rétine",
-          "description": "Guide complet sur la rétinite pigmentaire : définition, causes, symptômes, évolution, traitements et aides basse vision.",
-          "about": { "@type": "MedicalCondition", "name": "Rétinite pigmentaire" },
-        }}
       />
       <Header />
       <main id="main-content">
