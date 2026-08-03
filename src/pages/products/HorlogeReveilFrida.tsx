@@ -15,7 +15,20 @@ import imgOrange from "@/assets/products/horloge-pour-malvoyant-frida-orange-dml
 import imgRouge from "@/assets/products/horloge-reveil-malvoyant-frida-rouge.jpg";
 import imgBleu from "@/assets/products/horloge-pour-malvoyant-frida-chiffres-bleu.jpg";
 
-const STRIPE_URL = "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h";
+import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
+import AvailabilityBadge from "@/components/products/AvailabilityBadge";
+import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
+
+const colorVariants: ProductVariant[] = [
+  { id: "blanc", label: "Chiffres blancs", swatch: "#ffffff", buyLabel: "Acheter FRIDA chiffres blancs", stripeUrl: "https://buy.stripe.com/aFa5kEeeGbC711lgo52Fa0h", status: "available" },
+  { id: "rouge", label: "Chiffres rouges", swatch: "#e53935", buyLabel: "Acheter FRIDA chiffres rouges", stripeUrl: "https://buy.stripe.com/eVq8wQb2ufSn9xR6Nv2Fa0i", status: "available" },
+  { id: "vert", label: "Chiffres verts", swatch: "#43a047", buyLabel: "Acheter FRIDA chiffres verts", stripeUrl: "https://buy.stripe.com/7sY6oIc6y6hNbFZ2xf2Fa0j", status: "available" },
+  { id: "orange", label: "Chiffres orange", swatch: "#fb8c00", buyLabel: "Acheter FRIDA chiffres orange", stripeUrl: "https://buy.stripe.com/fZufZi5Ia0XtdO77Rz2Fa0l", status: "available" },
+  { id: "bleu", label: "Chiffres bleus", swatch: "#42a5f5", buyLabel: "Acheter FRIDA chiffres bleus", stripeUrl: "https://buy.stripe.com/14A3cw7QicGb6lF2xf2Fa0k", status: "available" },
+];
+
+const productStatus = aggregateStatus(colorVariants);
+const productMeta = AVAILABILITY[productStatus];
 
 const images = [
   { src: imgPrincipale, alt: "Le réveil FRIDA affiche 6:00 en gros caractères blancs sur fond noir" },
@@ -106,13 +119,6 @@ const descriptionBlocks: Array<{ title: string; paragraphs: string[] }> = [
       "Différence avec le réveil IVAR : la FRIDA propose des chiffres plus grands (52 mm vs 27 mm), un écran plus large (160 × 60 mm vs 90 × 45 mm), 5 couleurs d'affichage au choix, un affichage cyclique automatique et 3 niveaux de luminosité — pour un confort visuel supérieur. Le réveil IVAR reste la solution idéale pour un budget plus serré ou un espace très limité.",
     ],
   },
-  {
-    title: "Choix de la couleur d'affichage",
-    paragraphs: [
-      "La FRIDA est disponible en 5 couleurs de chiffres, toujours sur fond noir : Chiffres Blancs / Chiffres Rouges / Chiffres Verts / Chiffres Oranges / Chiffres Bleus.",
-      "Comment passer votre commande ? Notre site ne gère pas la sélection de variante en ligne. Indiquez simplement la couleur souhaitée dans le champ « Commentaire » lors de votre commande (ex. : « Horloge FRIDA — chiffres Rouges »). Nous traiterons votre demande en priorité.",
-    ],
-  },
 ];
 
 const HorlogeReveilFrida = () => {
@@ -186,13 +192,23 @@ const HorlogeReveilFrida = () => {
               </p>
               <div className="flex items-center gap-6 mb-4 flex-wrap">
                 <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">37 €</p>
-                <Button variant="secondary" size="lg" asChild>
-                  <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
-                    Acheter ce produit
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
-                </Button>
+                {productMeta.purchasable ? (
+                  <Button variant="secondary" size="lg" asChild>
+                    <a href="#choix-couleur">
+                      Choisir la couleur
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
+                  </Button>
+                ) : (
+                  <>
+                    <AvailabilityBadge status={productStatus} />
+                    <Button variant="secondary" size="lg" disabled>{productMeta.buttonLabel}</Button>
+                  </>
+                )}
               </div>
+              {!productMeta.purchasable && productMeta.message && (
+                <p className="text-base md:text-lg text-foreground leading-relaxed mb-4">{productMeta.message}</p>
+              )}
               <p className="text-base font-semibold text-muted-foreground mb-6">Paiement en 2×, 3× ou 4× disponible.</p>
 
               <div className="rounded-2xl border-2 border-secondary/40 bg-secondary/10 p-5 md:p-6">
@@ -208,6 +224,10 @@ const HorlogeReveilFrida = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section id="choix-couleur" className="container pb-12 scroll-mt-32">
+          <VariantChoiceGrid title="Choisissez la couleur des chiffres" variants={colorVariants} />
         </section>
 
         <section className="container pb-12">
@@ -262,8 +282,12 @@ const HorlogeReveilFrida = () => {
           <h2 className="font-serif text-3xl font-bold text-foreground mb-6">Besoin d'un conseil personnalisé ?</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit et sans engagement.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg" asChild>
-              <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Acheter ce produit<ArrowRight className="w-5 h-5" /></a>
+            <Button variant="secondary" size="lg" asChild={productMeta.purchasable} disabled={!productMeta.purchasable}>
+              {productMeta.purchasable ? (
+                <a href="#choix-couleur">Choisir la couleur<ArrowRight className="w-5 h-5" /></a>
+              ) : (
+                productMeta.buttonLabel
+              )}
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link to="/catalogue-aides-basse-vision"><ArrowLeft className="w-5 h-5" />Retour au catalogue</Link>
