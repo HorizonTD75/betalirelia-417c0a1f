@@ -13,7 +13,40 @@ import imgNoir from "@/assets/products/reveil-gros-chiffres-noir-ivar.jpg";
 import imgBoutons from "@/assets/products/reveil-gros-chiffres-ivar-boutons.jpg";
 import imgTemperature from "@/assets/products/reveil-gros-chiffres-ivar-temperature.jpg";
 
-const STRIPE_URL = "https://buy.stripe.com/7sYeVefiKbC77pJb3L2Fa0b";
+import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
+import AvailabilityBadge from "@/components/products/AvailabilityBadge";
+import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
+
+const colorVariants: ProductVariant[] = [
+  {
+    id: "blanche",
+    label: "IVAR coque blanche",
+    description: "Réveil parlant gros chiffres avec coque blanche.",
+    price: "26,40 €",
+    image: imgPrincipale,
+    imageAlt: "Réveil parlant IVAR avec gros chiffres et coque blanche",
+    buyLabel: "Acheter IVAR blanc",
+    buyAriaLabel: "Acheter le réveil IVAR avec coque blanche",
+    stripeUrl: "https://buy.stripe.com/4gM5kE9Yq9tZfWfc7P2Fa0c",
+    status: "available",
+  },
+  {
+    id: "noire",
+    label: "IVAR coque noire",
+    description: "Réveil parlant gros chiffres avec coque noire.",
+    price: "26,40 €",
+    image: imgNoir,
+    imageAlt: "Réveil parlant IVAR avec gros chiffres et coque noire",
+    buyLabel: "Acheter IVAR noir",
+    buyAriaLabel: "Acheter le réveil IVAR avec coque noire",
+    stripeUrl: "https://buy.stripe.com/5kQ00k7Qi35B7pJdbT2Fa0m",
+    status: "available",
+  },
+];
+
+const productStatus = aggregateStatus(colorVariants);
+const productMeta = AVAILABILITY[productStatus];
+
 
 const images = [
   { src: imgPrincipale, alt: "Le réveil gros chiffre IVAR posé sur un meuble et affichant 7h09 en gros caractères." },
