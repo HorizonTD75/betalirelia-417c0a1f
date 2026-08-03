@@ -141,9 +141,10 @@ const descriptionBlocks: Array<{ title: string; paragraphs: string[] }> = [
     title: "Choix du coloris",
     paragraphs: [
       "Le réveil IVAR est disponible en 2 versions : coque Blanche ou coque Noire — dans les deux cas, les chiffres sont blancs sur fond noir.",
-      "Comment passer votre commande ? Notre site ne gère pas la sélection de variante en ligne. Indiquez simplement le coloris souhaité dans le champ « Commentaire » lors de votre commande (ex. : « Réveil IVAR — coque Noire »). Nous traiterons votre demande en priorité.",
+      "Le choix du coloris se fait directement sur cette page : sélectionnez simplement la carte « IVAR coque blanche » ou « IVAR coque noire » pour passer commande.",
     ],
   },
+
 ];
 
 const ReveilGrosChiffresIvar = () => {
