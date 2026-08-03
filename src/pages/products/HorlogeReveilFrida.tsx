@@ -119,13 +119,6 @@ const descriptionBlocks: Array<{ title: string; paragraphs: string[] }> = [
       "Différence avec le réveil IVAR : la FRIDA propose des chiffres plus grands (52 mm vs 27 mm), un écran plus large (160 × 60 mm vs 90 × 45 mm), 5 couleurs d'affichage au choix, un affichage cyclique automatique et 3 niveaux de luminosité — pour un confort visuel supérieur. Le réveil IVAR reste la solution idéale pour un budget plus serré ou un espace très limité.",
     ],
   },
-  {
-    title: "Choix de la couleur d'affichage",
-    paragraphs: [
-      "La FRIDA est disponible en 5 couleurs de chiffres, toujours sur fond noir : Chiffres Blancs / Chiffres Rouges / Chiffres Verts / Chiffres Oranges / Chiffres Bleus.",
-      "Comment passer votre commande ? Notre site ne gère pas la sélection de variante en ligne. Indiquez simplement la couleur souhaitée dans le champ « Commentaire » lors de votre commande (ex. : « Horloge FRIDA — chiffres Rouges »). Nous traiterons votre demande en priorité.",
-    ],
-  },
 ];
 
 const HorlogeReveilFrida = () => {
