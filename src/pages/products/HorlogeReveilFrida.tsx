@@ -226,6 +226,10 @@ const HorlogeReveilFrida = () => {
           </div>
         </section>
 
+        <section id="choix-couleur" className="container pb-12 scroll-mt-32">
+          <VariantChoiceGrid title="Choisissez la couleur des chiffres" variants={colorVariants} />
+        </section>
+
         <section className="container pb-12">
           <div className="max-w-md lg:ml-auto lg:mr-0">
             <ProductTrustBanner />
