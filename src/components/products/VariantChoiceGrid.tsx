@@ -57,7 +57,10 @@ const VariantChoiceGrid = ({ title, intro, variants, columns = 3, className }: V
                     height={360}
                     loading="lazy"
                     decoding="async"
-                    className="w-full aspect-[4/3] object-contain rounded-xl bg-white border border-border"
+                    className={cn(
+                      "w-full aspect-[4/3] object-contain rounded-xl bg-white border border-border",
+                      !buyable && "opacity-90",
+                    )}
                   />
                 ) : (
                   <span
@@ -70,22 +73,16 @@ const VariantChoiceGrid = ({ title, intro, variants, columns = 3, className }: V
                   </span>
                 )}
 
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground m-0">{variant.label}</h3>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground m-0">{variant.label}</h3>
+                  {variant.status !== "available" && <AvailabilityBadge status={variant.status} size="sm" />}
+                </div>
 
                 {variant.description && (
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed m-0">{variant.description}</p>
                 )}
 
                 {variant.price && <p className="text-2xl font-bold text-primary m-0">{variant.price}</p>}
-
-                {variant.status !== "available" && (
-                  <>
-                    <AvailabilityBadge status={variant.status} className="self-start" />
-                    {meta.message && (
-                      <p className="text-base text-muted-foreground leading-relaxed m-0">{meta.message}</p>
-                    )}
-                  </>
-                )}
 
                 <div className="mt-auto pt-2">
                   {buyable ? (
@@ -101,14 +98,20 @@ const VariantChoiceGrid = ({ title, intro, variants, columns = 3, className }: V
                       </a>
                     </Button>
                   ) : (
-                    <Button variant="secondary" size="lg" className="w-full" disabled>
-                      {meta.buttonLabel}
-                    </Button>
+                    <button
+                      type="button"
+                      disabled
+                      aria-label={`${variant.label} — indisponible`}
+                      className="w-full rounded-xl border-2 border-border bg-muted px-5 py-3 text-base md:text-lg font-bold text-muted-foreground cursor-not-allowed"
+                    >
+                      Indisponible
+                    </button>
                   )}
                 </div>
               </article>
             </li>
           );
+
         })}
       </ul>
     </section>
