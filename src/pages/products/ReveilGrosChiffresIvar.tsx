@@ -5,44 +5,20 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgPrincipale from "@/assets/products/reveil-gros-chiffres-blanc-ivar.jpg";
-import imgNoir from "@/assets/products/reveil-gros-chiffres-noir-ivar.jpg";
 import imgBoutons from "@/assets/products/reveil-gros-chiffres-ivar-boutons.jpg";
 import imgTemperature from "@/assets/products/reveil-gros-chiffres-ivar-temperature.jpg";
 
 import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
 import AvailabilityBadge from "@/components/products/AvailabilityBadge";
 import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
+import { ivarVariants } from "@/lib/structuredData/variants";
 
-const colorVariants: ProductVariant[] = [
-  {
-    id: "blanche",
-    label: "IVAR coque blanche",
-    description: "Réveil parlant gros chiffres avec coque blanche.",
-    price: "26,40 €",
-    image: imgPrincipale,
-    imageAlt: "Réveil parlant IVAR avec gros chiffres et coque blanche",
-    buyLabel: "Acheter IVAR blanc",
-    buyAriaLabel: "Acheter le réveil IVAR avec coque blanche",
-    stripeUrl: "https://buy.stripe.com/4gM5kE9Yq9tZfWfc7P2Fa0c",
-    status: "available",
-  },
-  {
-    id: "noire",
-    label: "IVAR coque noire",
-    description: "Réveil parlant gros chiffres avec coque noire.",
-    price: "26,40 €",
-    image: imgNoir,
-    imageAlt: "Réveil parlant IVAR avec gros chiffres et coque noire",
-    buyLabel: "Acheter IVAR noir",
-    buyAriaLabel: "Acheter le réveil IVAR avec coque noire",
-    stripeUrl: "https://buy.stripe.com/5kQ00k7Qi35B7pJdbT2Fa0m",
-    status: "available",
-  },
-];
+const colorVariants: ProductVariant[] = ivarVariants;
+
 
 const productStatus = aggregateStatus(colorVariants);
 const productMeta = AVAILABILITY[productStatus];
@@ -149,6 +125,9 @@ const descriptionBlocks: Array<{ title: string; paragraphs: string[] }> = [
 
 const ReveilGrosChiffresIvar = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  // ?couleur=<id> (used by the ProductGroup variant URLs) pre-selects a colour.
+  const [searchParams] = useSearchParams();
+  const selectedVariant = searchParams.get("couleur");
 
   return (
     <div className="min-h-screen">
@@ -247,6 +226,7 @@ const ReveilGrosChiffresIvar = () => {
 
         <section id="choix-coloris" className="container pb-12 scroll-mt-32">
           <VariantChoiceGrid
+            selectedId={selectedVariant}
             title="Choisissez la couleur de votre réveil IVAR"
             intro="Deux versions au choix, au même prix. Sélectionnez la coque blanche ou la coque noire pour passer commande."
             variants={colorVariants}
