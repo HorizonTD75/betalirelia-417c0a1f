@@ -199,4 +199,103 @@ describe("structured data registry", () => {
     }
     expect(structuredDataRoutes().length).toBe(Object.keys(ROUTE_META).length);
   });
+  it("uses canonical trailing-slash URLs, with fragments and params after the slash", () => {
+    for (const path of indexable) {
+      for (const url of collectUrls(getPageGraph(path))) {
+        if (!url.startsWith("https://lirelia.fr")) continue;
+        const [base] = url.split(/[#?]/);
+        // Asset files (images, PDFs) are not canonical page URLs.
+        if (/\.[a-z0-9]{2,4}$/i.test(base)) continue;
+        expect(base.endsWith("/"), `${path} → ${url}`).toBe(true);
+      }
+    }
+  });
+
+  it("declares a customer-paid return policy", () => {
+    const org = nodesOf(getPageGraph("/")).find(
+      (n) => typeOf(n) === "OnlineStore" || typeOf(n) === "Organization",
+    );
+    const policy = org!.hasMerchantReturnPolicy as Node;
+    expect(policy.returnFees).toBe("https://schema.org/ReturnFeesCustomerResponsibility");
+    expect(policy.returnMethod).toBe("https://schema.org/ReturnByMail");
+  });
+
+  it("never invents an MPN", () => {
+    for (const path of indexable) {
+      expect(JSON.stringify(getPageGraph(path)), path).not.toContain('"mpn"');
+    }
+  });
+
+  it("uses the real manufacturer brands", () => {
+    const brandsOf = (path: string) => {
+      const found: string[] = [];
+      const walk = (n: unknown) => {
+        if (Array.isArray(n)) return n.forEach(walk);
+        if (n && typeof n === "object") {
+          const node = n as Node;
+          if (node["@type"] === "Brand") found.push(String(node.name));
+          Object.values(node).forEach(walk);
+        }
+      };
+      walk(nodesOf(getPageGraph(path)));
+      return found;
+    };
+    expect(brandsOf("/boutique/teleagrandisseur-mezzo-focus")).toContain("Reinecker");
+    expect(brandsOf("/boutique/ray-ban-meta")).toContain("Ray-Ban");
+    expect(brandsOf("/boutique/horloge-gros-chiffres-frida")).toEqual(
+      expect.arrayContaining(["LirElia"]),
+    );
+  });
+
+  it("scopes bilan services to Palaiseau / Île-de-France", () => {
+    const areaNames = (path: string) => {
+      const service = nodesOf(getPageGraph(path)).find((n) => typeOf(n) === "Service");
+      return (service!.areaServed as Node[]).map((a) => String(a.name));
+    };
+    for (const path of [
+      "/bilans-bassevision/essentiel",
+      "/bilans-bassevision/expert",
+      "/bilans-bassevision/suivi",
+    ]) {
+      expect(areaNames(path), path).toEqual(["Palaiseau", "Île-de-France"]);
+    }
+    expect(areaNames("/bilans-bassevision/visites-domicile")).toEqual(["Île-de-France"]);
+    expect(areaNames("/expert-basse-vision-visiopraticien")).toEqual([
+      "Palaiseau",
+      "Île-de-France",
+    ]);
+  });
+
+  it("lists only published financial-aid child pages", () => {
+    const list = nodesOf(getPageGraph("/aides-financieres-basse-vision")).find(
+      (n) => typeOf(n) === "ItemList",
+    );
+    const urls = (list!.itemListElement as Node[]).map((i) => String(i.url));
+    expect(urls).toEqual(["https://lirelia.fr/aides-financieres-basse-vision/financer-aide-visuelle/"]);
+    for (const url of urls) expect(indexable).toContain(url.replace("https://lirelia.fr", "").replace(/\/$/, ""));
+  });
+
+  it("credits Thierry DUCROS as book author and never LirElia as publisher", () => {
+    for (const path of ["/livre-dmla-votre-vie-ne-sarrete-pas", "/livre-aider-proche-dmla"]) {
+      const nodes = nodesOf(getPageGraph(path));
+      const book = nodes.find((n) => typeOf(n) === "Book");
+      const person = nodes.find((n) => typeOf(n) === "Person");
+      expect(book, path).toBeTruthy();
+      expect(person!.name, path).toBe("Thierry DUCROS");
+      expect((book!.author as Node)["@id"], path).toBe(person!["@id"]);
+      const publisher = book!.publisher as Node | undefined;
+      if (publisher) expect(publisher["@id"], path).toBe(person!["@id"]);
+    }
+  });
+
+  it("builds working variant URLs (?couleur= after the trailing slash)", () => {
+    for (const [path, ids] of [
+      ["/boutique/horloge-gros-chiffres-frida", ["blanc", "rouge", "vert", "orange", "bleu"]],
+      ["/boutique/reveil-gros-chiffres-ivar", ["blanche", "noire"]],
+    ] as [string, string[]][]) {
+      const group = nodesOf(getPageGraph(path)).find((n) => typeOf(n) === "ProductGroup");
+      const urls = (group!.hasVariant as Node[]).map((v) => String(v.url));
+      expect(urls, path).toEqual(ids.map((id) => `https://lirelia.fr${path}/?couleur=${id}`));
+    }
+  });
 });

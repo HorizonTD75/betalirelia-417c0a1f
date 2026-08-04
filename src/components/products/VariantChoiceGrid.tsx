@@ -18,6 +18,12 @@ interface VariantChoiceGridProps {
 
 const VariantChoiceGrid = ({ title, intro, variants, selectedId, columns = 3, className }: VariantChoiceGridProps) => {
   const noneAvailable = variants.every((v) => v.status !== "available");
+  // ?couleur=<id> pre-selects a variant. When the parameter is missing or
+  // unknown, fall back to the first purchasable variant so the page always
+  // highlights a coherent default.
+  const matched = selectedId ? variants.find((v) => v.id === selectedId) : undefined;
+  const effectiveId =
+    matched?.id ?? variants.find((v) => v.status === "available")?.id ?? variants[0]?.id;
 
   return (
     <section aria-labelledby="variant-choice-title" className={className}>
@@ -43,7 +49,7 @@ const VariantChoiceGrid = ({ title, intro, variants, selectedId, columns = 3, cl
         {variants.map((variant) => {
           const meta = AVAILABILITY[variant.status];
           const buyable = meta.purchasable && !!variant.stripeUrl;
-          const isSelected = !!selectedId && selectedId === variant.id;
+          const isSelected = effectiveId === variant.id;
 
           return (
             <li key={variant.id} className="min-w-0">

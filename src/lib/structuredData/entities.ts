@@ -17,11 +17,17 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const normalizePath = (path: string): string =>
   path.replace(/\/+$/, "") || "/";
 
-/** Absolute canonical URL for a route path. */
+/**
+ * Absolute canonical URL for a route path.
+ * The site canonicalises every URL WITH a trailing slash, so fragments and
+ * query parameters must always come AFTER that slash
+ * (e.g. https://lirelia.fr/boutique/x/#product, .../x/?couleur=bleu).
+ */
 export const absoluteUrl = (path: string): string => {
   const p = normalizePath(path);
-  return p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}`;
+  return p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}/`;
 };
+
 
 /** Absolute URL for a bundled asset (Vite returns a root-relative path). */
 export const absoluteAsset = (asset: string): string =>
@@ -125,6 +131,8 @@ interface ProductNodeInput {
   image: string;
   price: string;
   status: string;
+  /** Real manufacturer brand. Defaults to LirElia for own-label products. */
+  brand?: string;
   /** Optional @id suffix override, used by variant sub-products. */
   id?: string;
   /** Offer URL override (variant URLs carry a ?couleur= parameter). */
@@ -141,6 +149,7 @@ export const productNode = ({
   image,
   price,
   status,
+  brand = "LirElia",
   id,
   offerUrl,
   withOffer = true,
@@ -153,7 +162,7 @@ export const productNode = ({
     name,
     description,
     image: [absoluteAsset(image)],
-    brand: { "@type": "Brand", name: "LirElia" },
+    brand: { "@type": "Brand", name: brand },
     url: offerUrl ?? url,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(withOffer
@@ -169,13 +178,22 @@ export const productNode = ({
   };
 };
 
+/** Areas really served, as published on the site. */
+export const CABINET_AREA: Node[] = [
+  { "@type": "City", name: "Palaiseau" },
+  { "@type": "AdministrativeArea", name: "Île-de-France" },
+];
+
+export const FRANCE_AREA: Node[] = [{ "@type": "Country", name: "France" }];
+
 interface ServiceNodeInput {
   path: string;
   name: string;
   description: string;
   price?: string;
   serviceType?: string;
-  areaServed?: string;
+  /** Geographic areas really covered by the service. */
+  areaServed?: Node[];
 }
 
 export const serviceNode = ({
@@ -184,7 +202,7 @@ export const serviceNode = ({
   description,
   price,
   serviceType = "Bilan basse vision",
-  areaServed = "France",
+  areaServed = CABINET_AREA,
 }: ServiceNodeInput): Node => {
   const url = absoluteUrl(path);
   return {
@@ -194,7 +212,7 @@ export const serviceNode = ({
     description,
     serviceType,
     provider: organizationRef,
-    areaServed: { "@type": "Country", name: areaServed },
+    areaServed,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(price
       ? {
@@ -209,6 +227,7 @@ export const serviceNode = ({
       : {}),
   };
 };
+
 
 export const medicalConditionNode = (path: string, name: string, description: string): Node => ({
   "@type": "MedicalCondition",
@@ -253,6 +272,19 @@ export const faqNode = (path: string, items: { q: string; a: string }[]): Node =
   })),
 });
 
+/** The author of the LirElia books, published under his own name. */
+export const AUTHOR_ID = `${SITE_URL}/#author-thierry-ducros`;
+
+export const authorNode = (): Node => ({
+  "@type": "Person",
+  "@id": AUTHOR_ID,
+  name: "Thierry DUCROS",
+  jobTitle: "Visiopraticien expert basse vision",
+  worksFor: organizationRef,
+});
+
+export const authorRef = { "@id": AUTHOR_ID };
+
 interface BookNodeInput {
   path: string;
   name: string;
@@ -261,6 +293,8 @@ interface BookNodeInput {
   numberOfPages?: number;
   bookFormat?: string;
   sameAs?: string;
+  /** Self-published books have the author as publisher; retailer books none. */
+  selfPublished?: boolean;
 }
 
 export const bookNode = ({
@@ -271,6 +305,7 @@ export const bookNode = ({
   numberOfPages,
   bookFormat,
   sameAs,
+  selfPublished = false,
 }: BookNodeInput): Node => {
   const url = absoluteUrl(path);
   return {
@@ -281,13 +316,15 @@ export const bookNode = ({
     image: [absoluteAsset(image)],
     url,
     inLanguage: "fr-FR",
-    publisher: organizationRef,
+    author: authorRef,
+    ...(selfPublished ? { publisher: authorRef } : {}),
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(numberOfPages ? { numberOfPages } : {}),
     ...(bookFormat ? { bookFormat } : {}),
     ...(sameAs ? { sameAs } : {}),
   };
 };
+
 
 /** Remove undefined values so the graph is always JSON-serialisable as-is. */
 export const prune = <T>(node: T): T =>
