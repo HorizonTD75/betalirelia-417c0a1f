@@ -62,8 +62,8 @@ export const organizationNode = (): Node => ({
     returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
     merchantReturnDays: 14,
     returnMethod: "https://schema.org/ReturnByMail",
-    returnFees: "https://schema.org/ReturnShippingFees",
-    url: `${SITE_URL}/retours-remboursements`,
+    returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
+    url: `${SITE_URL}/retours-remboursements/`,
   },
 });
 
