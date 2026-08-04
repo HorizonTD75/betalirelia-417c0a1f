@@ -272,6 +272,19 @@ export const faqNode = (path: string, items: { q: string; a: string }[]): Node =
   })),
 });
 
+/** The author of the LirElia books, published under his own name. */
+export const AUTHOR_ID = `${SITE_URL}/#author-thierry-ducros`;
+
+export const authorNode = (): Node => ({
+  "@type": "Person",
+  "@id": AUTHOR_ID,
+  name: "Thierry DUCROS",
+  jobTitle: "Visiopraticien expert basse vision",
+  worksFor: organizationRef,
+});
+
+export const authorRef = { "@id": AUTHOR_ID };
+
 interface BookNodeInput {
   path: string;
   name: string;
@@ -280,6 +293,8 @@ interface BookNodeInput {
   numberOfPages?: number;
   bookFormat?: string;
   sameAs?: string;
+  /** Self-published books have the author as publisher; retailer books none. */
+  selfPublished?: boolean;
 }
 
 export const bookNode = ({
@@ -290,6 +305,7 @@ export const bookNode = ({
   numberOfPages,
   bookFormat,
   sameAs,
+  selfPublished = false,
 }: BookNodeInput): Node => {
   const url = absoluteUrl(path);
   return {
@@ -300,13 +316,15 @@ export const bookNode = ({
     image: [absoluteAsset(image)],
     url,
     inLanguage: "fr-FR",
-    publisher: organizationRef,
+    author: authorRef,
+    ...(selfPublished ? { publisher: authorRef } : {}),
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(numberOfPages ? { numberOfPages } : {}),
     ...(bookFormat ? { bookFormat } : {}),
     ...(sameAs ? { sameAs } : {}),
   };
 };
+
 
 /** Remove undefined values so the graph is always JSON-serialisable as-is. */
 export const prune = <T>(node: T): T =>
