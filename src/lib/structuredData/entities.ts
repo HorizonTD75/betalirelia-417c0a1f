@@ -131,6 +131,8 @@ interface ProductNodeInput {
   image: string;
   price: string;
   status: string;
+  /** Real manufacturer brand. Defaults to LirElia for own-label products. */
+  brand?: string;
   /** Optional @id suffix override, used by variant sub-products. */
   id?: string;
   /** Offer URL override (variant URLs carry a ?couleur= parameter). */
@@ -147,6 +149,7 @@ export const productNode = ({
   image,
   price,
   status,
+  brand = "LirElia",
   id,
   offerUrl,
   withOffer = true,
@@ -159,7 +162,7 @@ export const productNode = ({
     name,
     description,
     image: [absoluteAsset(image)],
-    brand: { "@type": "Brand", name: "LirElia" },
+    brand: { "@type": "Brand", name: brand },
     url: offerUrl ?? url,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(withOffer
@@ -175,13 +178,22 @@ export const productNode = ({
   };
 };
 
+/** Areas really served, as published on the site. */
+export const CABINET_AREA: Node[] = [
+  { "@type": "City", name: "Palaiseau" },
+  { "@type": "AdministrativeArea", name: "Île-de-France" },
+];
+
+export const FRANCE_AREA: Node[] = [{ "@type": "Country", name: "France" }];
+
 interface ServiceNodeInput {
   path: string;
   name: string;
   description: string;
   price?: string;
   serviceType?: string;
-  areaServed?: string;
+  /** Geographic areas really covered by the service. */
+  areaServed?: Node[];
 }
 
 export const serviceNode = ({
@@ -190,7 +202,7 @@ export const serviceNode = ({
   description,
   price,
   serviceType = "Bilan basse vision",
-  areaServed = "France",
+  areaServed = CABINET_AREA,
 }: ServiceNodeInput): Node => {
   const url = absoluteUrl(path);
   return {
@@ -200,7 +212,7 @@ export const serviceNode = ({
     description,
     serviceType,
     provider: organizationRef,
-    areaServed: { "@type": "Country", name: areaServed },
+    areaServed,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(price
       ? {
@@ -215,6 +227,7 @@ export const serviceNode = ({
       : {}),
   };
 };
+
 
 export const medicalConditionNode = (path: string, name: string, description: string): Node => ({
   "@type": "MedicalCondition",
