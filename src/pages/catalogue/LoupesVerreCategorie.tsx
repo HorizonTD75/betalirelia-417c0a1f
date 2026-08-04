@@ -100,14 +100,6 @@ const ProductCardCommercial = ({
 const LoupesVerreCategorie = () => {
   const [nora, lina] = LOUPES_VERRE_PRODUCTS;
 
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: "Accueil", path: "/" },
-    { name: "Catalogue des aides basse vision", path: "/catalogue-aides-basse-vision" },
-    { name: "Loupes en verre", path: PAGE_PATH },
-  ]);
-
-
-
   return (
     <div className="min-h-screen">
       <SEOHead

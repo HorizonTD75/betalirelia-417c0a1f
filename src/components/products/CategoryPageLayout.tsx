@@ -76,23 +76,7 @@ const CategoryPageLayout = ({
   const heroCtaText = heroCta || ctaText;
   const bottomCtaText = bottomCta || `Demandez-nous des informations sur les ${title.toLowerCase()}`;
 
-  const pageUrl = seo.canonicalPath ? `${SITE_URL}${seo.canonicalPath}` : SITE_URL;
-  const collectionJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${pageUrl}#webpage`,
-    url: pageUrl,
-    name: seo.title,
-    description: seo.description,
-    isPartOf: { "@id": "https://lirelia.fr/#website" },
-    publisher: { "@id": "https://lirelia.fr/#organization" },
-    inLanguage: "fr-FR",
-  };
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: "Accueil", path: "/" },
-    { name: "Aides à la lecture basse vision", path: "/aides-lecture-bassevision" },
-    { name: title, path: seo.canonicalPath ?? "/" },
-  ]);
+${seo.canonicalPath}` : SITE_URL;
 
   return (
     <div className="min-h-screen">
@@ -164,7 +148,6 @@ const CategoryPageLayout = ({
           </div>
         </section>
 
-
         {/* PRODUCTS GRID — fond crème pour rythmer */}
         <section className="py-16 md:py-20 bg-muted/40">
           <div className="container">
@@ -186,7 +169,6 @@ const CategoryPageLayout = ({
             </div>
           </div>
         </section>
-
 
         {/* BUYING GUIDE — fond clair + cartes alternées colorées */}
         <section className="py-16 md:py-20 bg-background">
