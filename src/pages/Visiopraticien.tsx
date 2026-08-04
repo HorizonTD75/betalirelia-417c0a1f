@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
@@ -73,39 +74,7 @@ const Visiopraticien = () => {
   "Ne promet pas de « retrouver sa vue d'avant »"];
 
 
-  const faqItems = [
-  {
-    q: "Qu'est-ce que la basse vision ?",
-    a: "La basse vision désigne une baisse importante de la vue qui ne peut pas être entièrement corrigée par des lunettes classiques, des lentilles ou un traitement médical. Elle résulte souvent d'une DMLA, d'un glaucome ou d'autres pathologies oculaires."
-  },
-  {
-    q: "Le Visiopraticien remplace-t-il un ophtalmologiste ?",
-    a: "Non. Le suivi médical est indispensable pour diagnostiquer et traiter la pathologie (DMLA, glaucome, cataracte…). Le Visiopraticien LirElia intervient en complément, pour l'adaptation pratique du quotidien et l'autonomie dans la lecture."
-  },
-  {
-    q: "DMLA : quelles solutions pour continuer à lire ?",
-    a: "Dans de nombreux cas, la lecture reste possible avec une DMLA. Avec les bonnes aides — loupes adaptées, télé-agrandisseurs, éclairage optimisé, stratégies de lecture — le Visiopraticien LirElia aide à retrouver un confort de lecture."
-  },
-  {
-    q: "À partir de quel moment consulter un Visiopraticien ?",
-    a: "Dès que la vision ne permet plus de lire confortablement, d'utiliser un téléphone, de reconnaître des visages ou d'effectuer des tâches quotidiennes sans difficulté. Il n'est pas nécessaire d'attendre une perte totale de vision."
-  },
-  {
-    q: "Quelles aides pour retrouver l'autonomie au quotidien ?",
-    a: "Le Visiopraticien évalue votre situation et propose des solutions adaptées : loupes, lampes d'appoint, télé-agrandisseurs, aménagement de l'éclairage et de l'espace, méthodes de lecture adaptées, conseils numériques. L'objectif est de préserver au maximum votre indépendance."
-  },
-  {
-    q: "Le Visiopraticien travaille-t-il avec les aidants ?",
-    a: "Oui. Les proches jouent un rôle essentiel. Le bilan peut inclure des conseils spécifiques pour les aidants familiaux, afin qu'ils comprennent mieux la situation et sachent comment accompagner au quotidien."
-  },
-  {
-    q: "Les aides visuelles sont-elles vraiment efficaces ?",
-    a: "Oui, à condition qu'elles soient adaptées à la situation précise. Une loupe ou un appareil mal choisi peut être inefficace ou abandonné. L'objectif du bilan basse vision est justement d'éviter ces erreurs et de proposer des solutions réellement utiles."
-  },
-  {
-    q: "La cataracte est-elle concernée ?",
-    a: "Lorsque la cataracte est opérée et que des troubles visuels persistent, ou lorsqu'une chirurgie n'est pas possible immédiatement, un accompagnement en basse vision peut être utile pour améliorer le confort visuel."
-  }];
+  const faqItems = FAQ_BY_ROUTE["/expert-basse-vision-visiopraticien"];
 
 
   return (

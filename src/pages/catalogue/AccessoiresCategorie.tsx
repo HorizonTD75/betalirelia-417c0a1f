@@ -1,3 +1,4 @@
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import CommercialCategoryPage from "@/components/catalogue/CommercialCategoryPage";
 import {
   REVEIL_IVAR,
@@ -129,32 +130,7 @@ const AccessoiresCategorie = () => (
       },
     ]}
     faqTitle="Questions fréquentes sur les horloges à gros chiffres"
-    faqItems={[
-      {
-        q: "Quelle hauteur de chiffres choisir ?",
-        a: "IVAR affiche des chiffres de 27 mm et convient surtout à une lecture proche. OSKAR atteint 45 mm et FRIDA 52 mm, plus adaptés à une lecture depuis le lit ou à quelques mètres. La meilleure taille dépend toutefois de votre vision et du contraste choisi.",
-      },
-      {
-        q: "Quelle couleur est la plus lisible en basse vision ?",
-        a: "Le blanc sur fond noir offre un contraste élevé et reste un choix courant. Certaines personnes préfèrent le vert, l’orange ou le rouge. FRIDA permet de choisir parmi cinq couleurs, tandis qu’OSKAR existe en blanc ou vert et IVAR en blanc.",
-      },
-      {
-        q: "L’affichage reste-t-il allumé en cas de coupure de courant ?",
-        a: "Les piles de secours conservent l’heure et les réglages. Selon le modèle, l’affichage peut rester éteint et se rallumer temporairement après un appui afin d’économiser les piles. Le fonctionnement permanent de l’écran nécessite généralement l’alimentation secteur.",
-      },
-      {
-        q: "Ces modèles affichent-ils la date et la température ?",
-        a: "FRIDA et OSKAR peuvent faire défiler l’heure, la date et la température. IVAR affiche principalement l’heure et montre la température à la demande avec le bouton supérieur.",
-      },
-      {
-        q: "La luminosité peut-elle gêner pendant la nuit ?",
-        a: "Les trois modèles permettent de réduire la luminosité. Ils disposent également d’une diminution automatique sur une plage nocturne, ce qui évite un affichage trop intense dans une chambre sombre.",
-      },
-      {
-        q: "Les piles sont-elles fournies ?",
-        a: "Non. Les trois appareils utilisent des piles AAA comme alimentation de secours, mais celles-ci ne sont pas fournies. Le bloc secteur ou le câble d’alimentation indiqué sur la fiche produit est inclus.",
-      },
-    ]}
+    faqItems={FAQ_BY_ROUTE["/catalogue-aides-basse-vision/accessoires"]}
     finalCtaTitle="Découvrez nos accessoires utiles"
     finalCtaText="Comparez IVAR, FRIDA et OSKAR selon la taille des chiffres, la couleur d’affichage et les informations que vous souhaitez consulter."
     finalCtaButtons={[

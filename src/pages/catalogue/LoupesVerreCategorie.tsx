@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ArrowLeft, Check, Zap, Eye, PackageOpen, Clock, BookOpen, Phone, AlertCircle } from "lucide-react";
 
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -20,24 +21,7 @@ import { LOUPES_VERRE_PRODUCTS, type LoupeVerreProduct } from "@/data/products/l
 const PAGE_PATH = "/catalogue-aides-basse-vision/loupes-verre";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const faqItems = [
-  {
-    q: "Peut-on utiliser une loupe avec ses lunettes habituelles ?",
-    a: "Oui, une loupe peut généralement être utilisée avec les lunettes habituelles. Le résultat dépend toutefois de la correction portée, de la vision restante et du grossissement choisi.",
-  },
-  {
-    q: "Quelle est la différence entre une loupe à main et une loupe dôme ?",
-    a: "Une loupe à main se tient au-dessus du document et convient bien aux consultations ponctuelles. Une loupe dôme se pose directement sur le texte, ce qui apporte davantage de stabilité et évite d'avoir à maintenir une distance précise.",
-  },
-  {
-    q: "Faut-il choisir le grossissement le plus élevé ?",
-    a: "Pas nécessairement. Un grossissement plus fort permet de voir des caractères plus petits, mais réduit généralement la largeur de la zone visible. Il faut rechercher un équilibre entre agrandissement et confort de lecture.",
-  },
-  {
-    q: "Quand préférer une loupe électronique ?",
-    a: "Une loupe électronique peut être plus adaptée lorsqu'une loupe en verre ne grossit pas suffisamment ou lorsqu'il devient nécessaire de modifier le contraste, la luminosité ou la taille du texte sur un écran.",
-  },
-];
+const faqItems = FAQ_BY_ROUTE["/catalogue-aides-basse-vision/loupes-verre"];
 
 const benefits = [
   {

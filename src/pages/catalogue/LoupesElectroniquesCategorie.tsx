@@ -1,3 +1,4 @@
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import CommercialCategoryPage from "@/components/catalogue/CommercialCategoryPage";
 import { LOUPE_AMELIE, LOUPE_CLOVER5 } from "@/data/products/catalogueCategories";
 
@@ -103,28 +104,7 @@ const LoupesElectroniquesCategorie = () => (
       },
     ]}
     faqTitle="Questions fréquentes sur les loupes électroniques"
-    faqItems={[
-      {
-        q: "Quelle différence entre une loupe électronique et une loupe en verre ?",
-        a: "Une loupe en verre propose un grossissement fixe. Une loupe électronique utilise une caméra et un écran pour agrandir davantage le texte, modifier les contrastes et parfois figer une image. Elle demande une alimentation ou une batterie, mais offre généralement plus de réglages et de confort lorsque la basse vision est plus marquée.",
-      },
-      {
-        q: "Quel grossissement choisir ?",
-        a: "Le bon grossissement dépend de votre vision et de la taille du texte. Il est préférable de commencer par le niveau le plus faible permettant de lire, afin de conserver un champ de vision assez large. Un grossissement trop fort peut ralentir la lecture en n’affichant que quelques lettres à la fois.",
-      },
-      {
-        q: "Une loupe électronique convient-elle en cas de DMLA ?",
-        a: "Elle peut être utile en cas de DMLA, notamment grâce au grossissement et aux modes de forts contrastes. Son efficacité varie toutefois selon la vision restante, la taille du scotome central et l’usage recherché. Elle ne remplace pas le suivi ophtalmologique ni un bilan basse vision.",
-      },
-      {
-        q: "Peut-on emporter une loupe électronique à l’extérieur ?",
-        a: "Oui. Les deux modèles sont rechargeables et transportables. La CLOVER 5 est particulièrement adaptée aux déplacements grâce à sa poignée repliable, sa housse et ses réglages étendus. Il faut néanmoins penser à recharger l’appareil avant de partir.",
-      },
-      {
-        q: "Peut-on lire un livre entier avec ces modèles ?",
-        a: "Cela dépend du niveau de vision et du confort recherché. Ces loupes peuvent faciliter la lecture de documents courts ou de quelques pages. Pour une lecture longue et quotidienne, un téléagrandisseur ou un écran plus grand peut offrir une posture et un champ de lecture plus confortables.",
-      },
-    ]}
+    faqItems={FAQ_BY_ROUTE["/catalogue-aides-basse-vision/loupes-electroniques"]}
     finalCtaTitle="Découvrez nos loupes électroniques"
     finalCtaText="Comparez la simplicité de la loupe Amélie et les fonctions plus complètes de la CLOVER 5 pour choisir l’aide la plus adaptée à votre lecture."
     finalCtaButtons={[

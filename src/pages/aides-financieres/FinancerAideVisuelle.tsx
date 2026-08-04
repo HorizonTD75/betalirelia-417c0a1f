@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
@@ -33,36 +34,7 @@ const pchBaremes = [
   { type: "Aide ne figurant pas sur la LPP", plein: "75 % du tarif applicable", partiel: "75 % du tarif applicable", plafond: "13 200 € sur 10 ans" },
 ];
 
-const faq = [
-  {
-    q: "Une loupe électronique est-elle remboursée par l’Assurance Maladie ?",
-    a: "Il n’existe pas de remboursement identique pour toutes les loupes électroniques. Il faut vérifier si le modèle possède un code LPP et s’il respecte les conditions prévues. Lorsqu’il n’est pas pris en charge par l’Assurance Maladie, d’autres financements peuvent être recherchés.",
-  },
-  {
-    q: "La PCH peut-elle financer un téléagrandisseur ?",
-    a: "Oui, un téléagrandisseur peut être présenté comme une aide technique lorsqu’il répond à un besoin de compensation clairement établi. L’accord et le montant dépendent toutefois de l’évaluation de la MDPH et du plan de compensation.",
-  },
-  {
-    q: "Puis-je acheter le matériel avant la réponse ?",
-    a: "Il est préférable de ne pas acheter avant d’avoir vérifié les règles de chaque financeur. Certains organismes exigent que la demande soit déposée, voire acceptée, avant l’achat.",
-  },
-  {
-    q: "Une mutuelle rembourse-t-elle les aides basse vision ?",
-    a: "Cela dépend du contrat. Certaines mutuelles prévoient un forfait, un remboursement complémentaire ou un fonds d’action sociale. Demandez une réponse écrite portant sur le modèle précis.",
-  },
-  {
-    q: "Plusieurs aides peuvent-elles être cumulées ?",
-    a: "Oui, plusieurs financements peuvent parfois être associés, mais leur total ne peut pas dépasser le prix réel du matériel. Les organismes doivent être informés des autres aides demandées ou obtenues.",
-  },
-  {
-    q: "Où essayer une aide visuelle avant de demander un financement ?",
-    a: "Vous pouvez vous adresser à un opticien spécialisé en basse vision, un centre de basse vision, un service de réadaptation, une association ou un professionnel disposant de plusieurs matériels d’essai.",
-  },
-  {
-    q: "Combien de temps les démarches prennent-elles ?",
-    a: "Le délai varie selon les organismes. L’évaluation, la recherche des cofinancements, la décision et la commande peuvent prendre plusieurs mois. Il est utile d’anticiper et de prévoir une solution temporaire.",
-  },
-];
+const faq = FAQ_BY_ROUTE["/aides-financieres-basse-vision/financer-aide-visuelle"];
 
 const sources = [
   { label: "Service-Public — Prestation de compensation du handicap", url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F14202" },

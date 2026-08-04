@@ -1,3 +1,4 @@
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import CommercialCategoryPage from "@/components/catalogue/CommercialCategoryPage";
 import { RAYBAN_META } from "@/data/products/catalogueCategories";
 
@@ -83,32 +84,7 @@ const LunettesIntelligentesCategorie = () => (
       },
     ]}
     faqTitle="Questions fréquentes sur les lunettes intelligentes"
-    faqItems={[
-      {
-        q: "Les Ray-Ban Meta peuvent-elles lire un texte à voix haute ?",
-        a: "Elles peuvent utiliser leur caméra et l’assistant Meta AI pour interpréter certains textes courts, comme une étiquette, un menu, une affiche ou quelques lignes. La qualité dépend de la lumière, du cadrage, de la connexion et de la fonction disponible au moment de l’utilisation.",
-      },
-      {
-        q: "Peuvent-elles remplacer une loupe électronique ?",
-        a: "Non. Elles ne grossissent pas directement l’image devant les yeux. Elles peuvent lire ou décrire ponctuellement, mais une loupe électronique reste mieux adaptée pour suivre visuellement un texte, choisir un contraste et lire plusieurs paragraphes.",
-      },
-      {
-        q: "Faut-il un smartphone et Internet ?",
-        a: "Oui, un smartphone compatible, une application et un compte sont nécessaires pour la configuration et l’utilisation de nombreuses fonctions. Plusieurs services d’intelligence artificielle ont également besoin d’une connexion Internet active.",
-      },
-      {
-        q: "Sont-elles adaptées à toutes les personnes malvoyantes ?",
-        a: "Non. Elles sont surtout pertinentes pour une personne à l’aise avec les commandes vocales et recherchant une aide ponctuelle. Elles sont moins prioritaires si le besoin principal est un fort grossissement, une lecture longue ou une solution fonctionnant sans compte ni connexion.",
-      },
-      {
-        q: "Les descriptions de l’intelligence artificielle sont-elles toujours exactes ?",
-        a: "Non. Elles peuvent comporter des erreurs, omettre un élément ou mal interpréter une scène. Les réponses doivent être vérifiées, particulièrement pour un médicament, un danger, une traversée, une orientation ou toute décision importante.",
-      },
-      {
-        q: "LirElia vend-il actuellement les Ray-Ban Meta ?",
-        a: "Non. Le produit est présenté comme une solution prometteuse en cours d’évaluation. La page vise à donner une information factuelle sur ses usages possibles et ses limites pour les personnes malvoyantes.",
-      },
-    ]}
+    faqItems={FAQ_BY_ROUTE["/catalogue-aides-basse-vision/lunettes-intelligentes"]}
     finalCtaTitle="Découvrir notre évaluation des Ray-Ban Meta"
     finalCtaText="Consultez la page détaillée pour comprendre ce que ces lunettes peuvent apporter aujourd’hui, les conditions nécessaires et les situations dans lesquelles une aide spécialisée reste préférable."
     finalCtaButtons={[

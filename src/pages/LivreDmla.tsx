@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -98,32 +99,7 @@ const temoignages = [
   },
 ];
 
-const faqItems = [
-  {
-    q: "Qu'est-ce que la DMLA ?",
-    a: "La dégénérescence maculaire liée à l'âge (DMLA) est une maladie de la rétine qui affecte la vision centrale. Elle touche principalement les personnes de plus de 50 ans et peut rendre la lecture, la conduite ou la reconnaissance des visages difficile.",
-  },
-  {
-    q: "Comment continuer à lire avec une basse vision ?",
-    a: "Plusieurs solutions existent : loupes optiques ou électroniques, téléagrandisseurs, éclairage adapté, livres en gros caractères, liseuses numériques avec taille de police réglable. Ce livre détaille chaque option pour vous aider à choisir.",
-  },
-  {
-    q: "Ce livre est-il adapté aux personnes malvoyantes ?",
-    a: "Oui. Il est imprimé en police agrandie, avec une mise en page aérée et des contrastes élevés. Chaque page est conçue pour être lue confortablement, même avec une basse vision.",
-  },
-  {
-    q: "À qui s'adresse ce livre ?",
-    a: "Aux personnes diagnostiquées DMLA, à leurs proches aidants (conjoints, enfants), et aux professionnels de santé (orthoptistes, ergothérapeutes, opticiens) qui souhaitent un outil à recommander.",
-  },
-  {
-    q: "Quelles aides financières existent pour la basse vision ?",
-    a: "Le livre détaille les aides disponibles en 2026 : PCH, AAH, APA, CMI, MaPrimeAdapt' (jusqu'à 70 % de prise en charge pour adapter le logement), les mutuelles et les caisses de retraite.",
-  },
-  {
-    q: "Où se procurer ce livre ?",
-    a: "Le livre est disponible sur Amazon. Vous pouvez également contacter LirElia pour plus d'informations.",
-  },
-];
+const faqItems = FAQ_BY_ROUTE["/livre-dmla-votre-vie-ne-sarrete-pas"];
 
 const LivreDmla = () => {
   return (

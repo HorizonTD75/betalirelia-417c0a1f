@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -109,28 +110,7 @@ const temoignages = [
   },
 ];
 
-const faqItems = [
-  {
-    q: "Ce livre remplace-t-il un suivi ophtalmologique ?",
-    a: "Non. Ce guide pratique complète le suivi médical de votre proche mais ne s'y substitue pas. Il vous aide à mieux comprendre la DMLA et à accompagner au quotidien, en lien avec les professionnels de santé.",
-  },
-  {
-    q: "Mon proche peut-il aussi lire ce livre ?",
-    a: "Absolument. Ce livre est complémentaire de « DMLA – Votre vie ne s'arrête pas ». Les deux ouvrages partagent le même vocabulaire et les mêmes repères pour construire les solutions ensemble.",
-  },
-  {
-    q: "Je suis aide à domicile, ce livre est-il utile pour moi ?",
-    a: "Oui. Le livre s'adresse à tous les accompagnants : conjoints, enfants, amis, voisins et professionnels (auxiliaire de vie, aide à domicile). Vous y trouverez des conseils concrets de communication et d'accompagnement.",
-  },
-  {
-    q: "Comment accompagner une personne malvoyante sans l'infantiliser ?",
-    a: "Le livre propose des formulations à privilégier, des erreurs fréquentes à éviter et une méthode en trois temps (demander, proposer, vérifier) pour respecter l'autonomie tout en sécurisant le quotidien.",
-  },
-  {
-    q: "Quelles aides financières existent pour aménager le logement ?",
-    a: "Le guide détaille les dispositifs disponibles : PCH, APA, CMI, MaPrimeAdapt' et les démarches MDPH, avec des modèles de courriers prêts à l'emploi pour simplifier vos démarches.",
-  },
-];
+const faqItems = FAQ_BY_ROUTE["/livre-aider-proche-dmla"];
 
 const LivreAidants = () => {
   return (
