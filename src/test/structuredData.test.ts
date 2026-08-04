@@ -204,6 +204,8 @@ describe("structured data registry", () => {
       for (const url of collectUrls(getPageGraph(path))) {
         if (!url.startsWith("https://lirelia.fr")) continue;
         const [base] = url.split(/[#?]/);
+        // Asset files (images, PDFs) are not canonical page URLs.
+        if (/\.[a-z0-9]{2,4}$/i.test(base)) continue;
         expect(base.endsWith("/"), `${path} → ${url}`).toBe(true);
       }
     }
