@@ -20,6 +20,9 @@
 
 import {
   AVAILABILITY_URL,
+  CABINET_AREA,
+  FRANCE_AREA,
+  authorNode,
   BreadcrumbItem,
   Node,
   absoluteAsset,
@@ -53,15 +56,16 @@ const CATALOGUE_PATH = "/catalogue-aides-basse-vision";
 /** Bilans: fixed prices mirror the visible pages. Home visits have none. */
 const BILAN_SERVICES: Record<
   string,
-  { price?: string; serviceType: string; areaServed?: string }
+  { price?: string; serviceType: string; areaServed?: Node[] }
 > = {
+  // Bilans are performed at the Palaiseau practice (Île-de-France).
   "/bilans-bassevision/essentiel": { price: "75", serviceType: "Bilan basse vision" },
   "/bilans-bassevision/expert": { price: "135", serviceType: "Bilan basse vision" },
   "/bilans-bassevision/suivi": { price: "215", serviceType: "Accompagnement basse vision" },
   // Home visits: the travel supplement depends on distance → no fixed offer.
   "/bilans-bassevision/visites-domicile": {
     serviceType: "Bilan basse vision à domicile",
-    areaServed: "Île-de-France",
+    areaServed: [{ "@type": "AdministrativeArea", name: "Île-de-France" }],
   },
 };
 
@@ -70,6 +74,14 @@ const STARTING_PRICE_PRODUCTS = new Set(["/boutique/teleagrandisseur-mezzo-focus
 
 /** Informational product pages: LirElia does not sell them → never an Offer. */
 const INFORMATIONAL_PRODUCTS = new Set(["/boutique/ray-ban-meta"]);
+
+/** Real manufacturer brands. Everything else is sold under the LirElia label. */
+const PRODUCT_BRAND: Record<string, string> = {
+  "/boutique/teleagrandisseur-mezzo-focus": "Reinecker",
+  "/boutique/ray-ban-meta": "Ray-Ban",
+};
+
+const brandOf = (path: string): string => PRODUCT_BRAND[path] ?? "LirElia";
 
 /** Stable variant identifiers required by the catalogue (SKU convention). */
 const VARIANT_SKU: Record<string, string> = {
@@ -112,7 +124,7 @@ const productGroupNode = (product: CatalogProduct): Node => {
     name: product.name,
     description: product.description,
     image: [absoluteAsset(product.image)],
-    brand: { "@type": "Brand", name: "LirElia" },
+    brand: { "@type": "Brand", name: brandOf(product.path) },
     url,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     productGroupID: product.slug,
@@ -126,9 +138,9 @@ const productGroupNode = (product: CatalogProduct): Node => {
         name: variant.label,
         description: variant.description ?? product.description,
         image: [absoluteAsset(variant.image ?? product.image)],
-        ...(sku ? { sku, mpn: sku } : {}),
+        ...(sku ? { sku } : {}),
         color: variant.label,
-        brand: { "@type": "Brand", name: "LirElia" },
+        brand: { "@type": "Brand", name: brandOf(product.path) },
         url: variantUrl,
         isVariantOf: { "@id": `${url}#product-group` },
         offers: {
@@ -176,6 +188,7 @@ const productGraph = (product: CatalogProduct, path: string): Node => {
           image: product.image,
           price: product.price,
           status: productStatus(product),
+          brand: brandOf(path),
           withOffer: false,
         })
       : productNode({
@@ -185,6 +198,7 @@ const productGraph = (product: CatalogProduct, path: string): Node => {
           image: product.image,
           price: product.price,
           status: productStatus(product),
+          brand: brandOf(path),
         });
 
   const nodes: Node[] = [page, item];
@@ -208,6 +222,7 @@ const informationalProductGraph = (path: string): Node => {
     name: product?.name ?? meta.short,
     description: product?.description ?? meta.description,
     ...(product ? { image: [absoluteAsset(product.image)] } : {}),
+    brand: { "@type": "Brand", name: brandOf(path) },
     mainEntityOfPage: { "@id": `${url}#webpage` },
   };
 
@@ -275,6 +290,7 @@ export const getPageGraph = (pathname: string): Node | null => {
         extra: { mainEntity: { "@id": `${absoluteUrl(path)}#book` } },
       }),
       bookNode(book),
+      authorNode(),
     ]);
   }
 
