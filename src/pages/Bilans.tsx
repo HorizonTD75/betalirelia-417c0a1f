@@ -63,12 +63,14 @@ const Bilans = () => {
     cta: "Découvrir le Pack Suivi"
   }];
 
+
   const targetAudience = [
   "Vous avez une maladie des yeux connue (DMLA, glaucome, rétinopathie diabétique, etc.)",
   "Malgré des lunettes récentes, vous peinez à lire, à vous déplacer ou à reconnaître les visages",
   "Vous vous sentez fatigué par l’effort visuel au quotidien",
   "Vous avez dû renoncer à certaines activités (lecture, bricolage, cuisine, sorties)",
   "Vous êtes aidant et souhaitez comprendre comment aider au mieux"];
+
 
   const doList = [
   "Il écoute vos difficultés (lecture, déplacements, écrans, maison, loisirs)",
@@ -77,11 +79,13 @@ const Bilans = () => {
   "Il vous fait tester des aides à la lecture : loupes, éclairage, supports",
   "Il identifie vos priorités : ce qui compte le plus pour vous"];
 
+
   const dontList = [
   "Pas de diagnostic médical ni de prescription de traitement",
   "Pas de remplacement du suivi chez l’ophtalmologiste",
   "Pas de promesse de « retrouver sa vue d’avant »",
   "Pas de vente forcée : le Visiopraticien réfléchit avec vous"];
+
 
   const steps = [
   { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu’il est utile d’apporter." },
@@ -91,6 +95,7 @@ const Bilans = () => {
   { title: "Essai d’aides et d’aménagements", text: "Vous testez différentes aides : loupes, télé-agrandisseurs, lampes, supports, machines à lire, claviers, téléphones à grosses touches, aides pour écrire…" },
   { title: "Plan d’action personnalisé", text: "En fin de séance, le Visiopraticien récapitule les priorités, les aides à envisager et les étapes suivantes." }];
 
+
   const takeaways = [
   "Un compte-rendu précis des points importants vus ensemble",
   "Une liste de priorités : ce qu’il est le plus urgent d’améliorer",
@@ -99,7 +104,9 @@ const Bilans = () => {
   "Si besoin, une recommandation vers l’opticien partenaire",
   "La possibilité de mettre en place un Pack Suivi"];
 
+
   const faqItems = FAQ_BY_ROUTE["/bilans-bassevision"];
+
 
   return (
     <div className="min-h-screen">

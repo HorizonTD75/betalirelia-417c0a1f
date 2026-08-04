@@ -122,6 +122,7 @@ const AidesFinancieres = () => {
     { label: "FIPHFP — Catalogue des interventions", url: "https://www.fiphfp.fr/employeurs/nos-aides-financieres/catalogue-des-interventions" },
   ];
 
+
   return (
     <div className="min-h-screen">
       <SEOHead />

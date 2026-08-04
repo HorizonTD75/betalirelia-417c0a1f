@@ -72,6 +72,7 @@ const MaladiesYeux = () => {
     link: "/maladies-yeux/nystagmus"
   }];
 
+
   const refractionDefects = [
   {
     title: "La Myopie",
@@ -93,6 +94,7 @@ const MaladiesYeux = () => {
     description: "Le cristallin perd de son élasticité avec l'âge, rendant difficile la vision de près. Symptômes : difficulté à lire, fatigue oculaire, maux de tête.",
     link: "/maladies-yeux/presbytie"
   }];
+
 
   const hereditaryDiseases = [
   {
@@ -126,6 +128,7 @@ const MaladiesYeux = () => {
     link: "/maladies-yeux/maladies-hereditaires/aniridie",
   }];
 
+
   const otherDiseases = [
   {
     title: "L'Uvéite",
@@ -139,6 +142,7 @@ const MaladiesYeux = () => {
     title: "Le syndrome de l'œil sec",
     description: "Se produit lorsque les yeux ne produisent pas suffisamment de larmes ou lorsqu'elles s'évaporent trop rapidement. Cause yeux rouges, démangeaisons, brûlures et vision floue."
   }];
+
 
   return (
     <div className="min-h-screen">
