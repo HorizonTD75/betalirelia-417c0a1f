@@ -18,7 +18,6 @@ import {
 import { LOUPES_VERRE_PRODUCTS, type LoupeVerreProduct } from "@/data/products/loupesVerre";
 
 const PAGE_PATH = "/catalogue-aides-basse-vision/loupes-verre";
-const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const faqItems = FAQ_BY_ROUTE["/catalogue-aides-basse-vision/loupes-verre"];
 

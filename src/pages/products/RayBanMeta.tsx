@@ -76,12 +76,6 @@ const pasPrioritaire = [
 ];
 
 const RayBanMeta = () => {
-  const breadcrumb = buildBreadcrumbJsonLd([
-    { name: "Accueil", path: "/" },
-    { name: "Aides à la lecture", path: "/aides-lecture-bassevision" },
-    { name: "Lunettes intelligentes", path: "/aides-lecture-bassevision/lunettes-intelligentes" },
-    { name: "Ray-Ban Meta", path: CANONICAL },
-  ]);
 
 
   return (
