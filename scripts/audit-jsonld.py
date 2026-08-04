@@ -29,11 +29,11 @@ async def main():
         page = await ctx.new_page()
         for path in INDEXABLE:
             raw = await blocks(page, path)
-            if len(raw) != 2:
-                errors.append(f"{path}: expected 2 ld+json blocks (sitewide + page graph), got {len(raw)}")
+            if len(raw) != 1:
+                errors.append(f"{path}: expected exactly 1 ld+json block (the registry graph), got {len(raw)}")
                 continue
             try:
-                site, pg = [json.loads(r) for r in raw]
+                pg = json.loads(raw[0])
             except Exception as e:
                 errors.append(f"{path}: invalid JSON ({e})"); continue
             if "@graph" not in pg:
@@ -49,16 +49,16 @@ async def main():
                 if k in ("url", "item") and isinstance(v, str) and not v.startswith("https://"):
                     errors.append(f"{path}: relative URL in {k}: {v}")
             bc = next((n for n in pg["@graph"] if n.get("@type") == "BreadcrumbList"), None)
-            if not bc:
-                errors.append(f"{path}: missing BreadcrumbList")
-            else:
+            if bc:
                 pos = [i["position"] for i in bc["itemListElement"]]
                 if pos != list(range(1, len(pos) + 1)):
                     errors.append(f"{path}: breadcrumb positions {pos}")
                 if bc["itemListElement"][-1]["item"].rstrip("/") != ("https://lirelia.fr" + path).rstrip("/"):
                     errors.append(f"{path}: breadcrumb leaf {bc['itemListElement'][-1]['item']} != page URL")
-            if "Organization" in types or "WebSite" in types:
-                errors.append(f"{path}: Organization/WebSite redefined at page level")
+            if len([t for t in types if t in ("Organization", "OnlineStore")]) != 1:
+                errors.append(f"{path}: Organization/OnlineStore must appear exactly once, got {types}")
+            if types.count("WebSite") != 1:
+                errors.append(f"{path}: WebSite must appear exactly once, got {types}")
             # price coherence for product pages
             prod = next((n for n in pg["@graph"] if n.get("@type") in ("Product", "ProductGroup")), None)
             if path in PRODUCT_PATHS:
@@ -78,8 +78,8 @@ async def main():
             notes.append(f"{path}: {types}")
         for path in NOINDEX:
             raw = await blocks(page, path)
-            if len(raw) != 1:
-                errors.append(f"{path} (noindex): expected only the sitewide block, got {len(raw)}")
+            if len(raw) != 0:
+                errors.append(f"{path} (noindex): expected no ld+json block, got {len(raw)}")
             robots = await page.get_attribute('meta[name="robots"]', "content")
             if "noindex" not in (robots or ""):
                 errors.append(f"{path}: robots={robots}")
