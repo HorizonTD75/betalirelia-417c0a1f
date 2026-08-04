@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import SharedContactForm from "@/components/forms/SharedContactForm";
@@ -10,24 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqItems = [
-  {
-    q: "À qui s'adresse ce formulaire ?",
-    a: "Ce formulaire s'adresse aux personnes malvoyantes, à leurs proches aidants, et à toute personne qui cherche un premier conseil sur les aides visuelles, l'éclairage, les loupes, les télé-agrandisseurs ou l'intérêt d'un bilan basse vision.",
-  },
-  {
-    q: "Puis-je faire la demande pour un proche ?",
-    a: "Oui. Un aidant peut tout à fait remplir ce formulaire pour une personne malvoyante. Nous adapterons ensuite notre orientation à la situation réelle et aux besoins exprimés.",
-  },
-  {
-    q: "Que se passe-t-il après l'envoi du formulaire ?",
-    a: "Après réception de votre demande, nous vous recontactons rapidement afin d'échanger sur votre situation et de vous orienter de la façon la plus utile : conseil simple, bilan, aide technique, ou autre solution adaptée.",
-  },
-  {
-    q: "Êtes-vous obligés de proposer un produit ou un bilan ?",
-    a: "Non. Notre objectif est d'abord de vous guider de manière utile et honnête. Selon les cas, cela peut conduire vers un bilan, un produit, le Club LirElia, ou simplement vers un conseil ponctuel sans autre démarche.",
-  },
-];
+const faqItems = FAQ_BY_ROUTE["/contact-conseil"];
 
 const ContactConseil = () => {
   return (

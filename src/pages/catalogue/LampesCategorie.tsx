@@ -1,3 +1,4 @@
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import CommercialCategoryPage from "@/components/catalogue/CommercialCategoryPage";
 import {
   LAMPE_AINA,
@@ -131,32 +132,7 @@ const LampesCategorie = () => (
       },
     ]}
     faqTitle="Questions fréquentes sur les lampes basse vision"
-    faqItems={[
-      {
-        q: "Faut-il choisir une lumière chaude ou froide ?",
-        a: "Il n’existe pas une température de couleur idéale pour tout le monde. Une lumière chaude peut être agréable le soir, tandis qu’une lumière neutre ou plus froide peut mieux faire ressortir les détails. Les quatre modèles proposés permettent d’essayer plusieurs teintes et de retenir celle qui convient le mieux.",
-      },
-      {
-        q: "Plus de lumière permet-elle toujours de mieux voir ?",
-        a: "Une lumière plus forte peut améliorer le contraste, mais elle peut aussi augmenter l’éblouissement si elle est mal orientée. La lampe doit éclairer le document et non les yeux. Il est préférable d’utiliser un variateur et d’ajuster progressivement l’intensité.",
-      },
-      {
-        q: "Quelle lampe choisir pour lire dans un fauteuil ?",
-        a: "Le lampadaire SOLVEIG est conçu pour cet usage régulier. La lampe AINA peut aussi convenir si vous souhaitez une solution légère, mobile et portée autour du cou. Le choix dépend de la durée de lecture et de la place disponible autour du fauteuil.",
-      },
-      {
-        q: "Une lampe loupe remplace-t-elle une loupe électronique ?",
-        a: "Non. La lampe ASTRID offre un grossissement optique fixe de 3×, adapté à un besoin léger ou modéré. Une loupe électronique permet généralement un grossissement plus important et des contrastes réglables. Les deux solutions ne répondent pas au même niveau de basse vision.",
-      },
-      {
-        q: "Les lampes rechargeables fonctionnent-elles pendant la charge ?",
-        a: "EIRA peut fonctionner sur batterie ou reliée à son alimentation USB. AINA se recharge par USB et s’utilise sans câble une fois chargée. Pour préserver la batterie, il est conseillé de suivre les indications figurant sur chaque fiche produit.",
-      },
-      {
-        q: "Une lampe adaptée peut-elle supprimer la fatigue visuelle ?",
-        a: "Elle peut améliorer le confort lorsque l’éclairage est insuffisant ou mal orienté, mais elle ne supprime pas toutes les causes de fatigue visuelle. Il reste utile d’adapter la durée de lecture, la posture, la taille des caractères et de faire des pauses régulières.",
-      },
-    ]}
+    faqItems={FAQ_BY_ROUTE["/catalogue-aides-basse-vision/lampes-basse-vision"]}
     finalCtaTitle="Découvrez nos lampes basse vision"
     finalCtaText="Comparez les quatre formats pour choisir une lumière adaptée à votre position, à votre activité et à votre besoin de mobilité."
     finalCtaButtons={[

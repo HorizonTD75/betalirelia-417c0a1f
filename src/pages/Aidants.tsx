@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -9,40 +10,7 @@ import { Link } from "react-router-dom";
 import aidantsHero from "@/assets/aidants-hero-600.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
-const faqItems = [
-  {
-    q: "Comment aider un proche malvoyant sans l'infantiliser ?",
-    a: "Proposez votre aide sans l'imposer. Demandez toujours à la personne ce qu'elle souhaite faire elle-même. Respectez son rythme et valorisez chaque progrès, même petit. L'objectif est de préserver son autonomie, pas de faire à sa place.",
-  },
-  {
-    q: "DMLA : comment continuer à lire au quotidien ?",
-    a: "Plusieurs solutions existent : loupes éclairantes, télé-agrandisseurs, réglages d'accessibilité sur smartphone ou tablette, éclairage adapté. Un bilan basse vision permet de déterminer les aides les plus adaptées à la situation.",
-  },
-  {
-    q: "Quels outils simples mettre en place à la maison ?",
-    a: "Commencez par l'éclairage (lampe de lecture orientable), les contrastes (étiquettes contrastées, repères colorés), et l'organisation (rangement fixe, repères tactiles). Ces gestes simples améliorent le quotidien sans tout bouleverser.",
-  },
-  {
-    q: "Faut-il un diagnostic médical avant un bilan basse vision ?",
-    a: "Idéalement, un suivi ophtalmologique est recommandé. Mais un bilan basse vision peut être réalisé à tout moment pour évaluer les besoins fonctionnels et proposer des solutions concrètes. Il ne remplace pas le suivi médical.",
-  },
-  {
-    q: "L'aidant peut-il assister au bilan basse vision ?",
-    a: "Oui, c'est même fortement recommandé. L'aidant — conjoint, enfant ou proche — reçoit des conseils personnalisés pour accompagner au mieux la personne malvoyante dans son quotidien.",
-  },
-  {
-    q: "Quelles aides financières existent pour les personnes malvoyantes ?",
-    a: "Certaines mutuelles proposent des forfaits « bien-être » ou « prévention ». La MDPH peut intervenir pour le financement d'aides techniques. Renseignez-vous auprès de votre complémentaire santé et de votre mairie.",
-  },
-  {
-    q: "Comment sécuriser le domicile d'une personne malvoyante ?",
-    a: "Améliorez l'éclairage aux endroits stratégiques (escalier, cuisine, entrée), ajoutez des contrastes visuels sur les marches et les interrupteurs, fixez les tapis et éliminez les obstacles au sol. Des repères tactiles aident aussi à se repérer.",
-  },
-  {
-    q: "Comment préserver mon propre équilibre en tant qu'aidant ?",
-    a: "Le rôle d'aidant est exigeant. Accordez-vous des pauses, parlez de vos difficultés à un professionnel ou à une association. Vous n'êtes pas seul(e) : des structures de répit et de soutien existent pour les aidants.",
-  },
-];
+const faqItems = FAQ_BY_ROUTE["/aidants"];
 
 const Aidants = () => {
   return (

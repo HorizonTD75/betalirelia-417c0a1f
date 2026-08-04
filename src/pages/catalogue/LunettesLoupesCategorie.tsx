@@ -1,3 +1,4 @@
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import CommercialCategoryPage from "@/components/catalogue/CommercialCategoryPage";
 import {
   CLIP_LUNETTES,
@@ -129,28 +130,7 @@ const LunettesLoupesCategorie = () => (
       },
     ]}
     faqTitle="Questions fréquentes sur les lunettes loupes"
-    faqItems={[
-      {
-        q: "Quelle différence entre lunettes loupes de près et de loin ?",
-        a: "Les modèles de près sont réglés pour une distance courte, généralement comprise entre 16 et 50 cm. Ils servent à lire ou travailler avec les mains. Les Max-TV sont conçues pour une distance de 2 à 5 mètres afin de regarder un écran ou une scène. Un même modèle ne couvre pas correctement ces deux usages.",
-      },
-      {
-        q: "Peut-on porter des lunettes loupes par-dessus ses lunettes de vue ?",
-        a: "Le clip est précisément conçu pour être fixé sur une monture existante. Les modèles FOCUS et Max-TV se portent à la place des lunettes habituelles. Pour ALVA, le confort dépend de la morphologie et du mode de port choisi.",
-      },
-      {
-        q: "Comment choisir le grossissement ?",
-        a: "Choisissez le plus faible grossissement qui permet d’effectuer l’activité. Un grossissement élevé rapproche la distance de travail et réduit le champ de vision. Pour lire plusieurs lignes ou manipuler un objet, le confort de lecture compte autant que la puissance.",
-      },
-      {
-        q: "Ces lunettes corrigent-elles l’astigmatisme ?",
-        a: "Non. Les modèles Max-TV et FOCUS ne corrigent pas l’astigmatisme. Si votre correction cylindrique est importante, demandez conseil avant tout achat ou privilégiez une aide compatible avec vos lunettes correctrices.",
-      },
-      {
-        q: "Peut-on conduire avec les Max-TV ?",
-        a: "Non. Les Max-TV sont destinées à une utilisation assise ou immobile, pour regarder un écran ou une scène à distance. Elles ne sont jamais conçues pour la conduite ni pour les déplacements.",
-      },
-    ]}
+    faqItems={FAQ_BY_ROUTE["/catalogue-aides-basse-vision/lunettes-loupes"]}
     finalCtaTitle="Découvrez nos lunettes loupes"
     finalCtaText="Comparez les quatre modèles pour choisir une aide adaptée à votre distance d’utilisation et à votre activité."
     finalCtaButtons={[

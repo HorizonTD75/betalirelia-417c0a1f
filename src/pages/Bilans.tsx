@@ -1,6 +1,6 @@
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
-import { buildBreadcrumbJsonLd } from "@/lib/seo";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
@@ -105,13 +105,7 @@ const Bilans = () => {
   "La possibilité de mettre en place un Pack Suivi"];
 
 
-  const faqItems = [
-  { q: "Dois-je voir mon ophtalmologiste avant ?", a: "Idéalement oui, car le bilan basse vision s’appuie sur votre diagnostic. Mais si vous n’avez pas de rendez-vous ophtalmologique récent, nous pouvons commencer et vous orienter ensuite." },
-  { q: "Le bilan ne sert-il qu’à mieux lire ?", a: "Non. Le bilan basse vision ne concerne pas seulement la lecture. Il aide aussi à mieux comprendre les difficultés rencontrées dans les déplacements, l’éclairage, les contrastes, l’organisation du domicile, l’usage des aides visuelles et, plus largement, l’autonomie au quotidien." },
-  { q: "Est-ce remboursé ?", a: "Le bilan basse vision n’est pas un acte médical et n’est pas remboursé par la Sécurité sociale. Certaines mutuelles proposent un forfait « bien-être » ou « prévention » qui peut couvrir une partie. Renseignez-vous auprès de votre complémentaire santé." },
-  { q: "Puis-je venir avec un proche ?", a: "Oui, c’est fortement recommandé. L’aidant (conjoint, enfant, proche) peut assister à l’ensemble de la séance et recevoir des conseils adaptés." },
-  { q: "Combien de temps dure une séance ?", a: "En moyenne 1 h 15 à 1 h 30, toujours à votre rythme. Le Visiopraticien prend le temps nécessaire." },
-  { q: "Quelle est la différence avec un bilan chez l’ophtalmologiste ?", a: "L’ophtalmologiste diagnostique et traite la maladie de l’œil. Le bilan basse vision réalisé par le Visiopraticien LirElia est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie." }];
+  const faqItems = FAQ_BY_ROUTE["/bilans-bassevision"];
 
 
   return (

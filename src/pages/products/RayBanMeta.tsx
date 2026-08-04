@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ArrowLeft, Check, X, AlertTriangle, Info, Sparkles, FlaskConical } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/products/ray-ban-meta-marron.jpg";
-import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
 
 const CANONICAL = "/boutique/ray-ban-meta";
 
@@ -77,24 +76,7 @@ const pasPrioritaire = [
 ];
 
 const RayBanMeta = () => {
-  const breadcrumb = buildBreadcrumbJsonLd([
-    { name: "Accueil", path: "/" },
-    { name: "Aides à la lecture", path: "/aides-lecture-bassevision" },
-    { name: "Lunettes intelligentes", path: "/aides-lecture-bassevision/lunettes-intelligentes" },
-    { name: "Ray-Ban Meta", path: CANONICAL },
-  ]);
 
-  const webPageJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "Ray-Ban Meta et basse vision",
-    description:
-      "Présentation des lunettes connectées Ray-Ban Meta pour la basse vision : usages possibles, limites et avis Lirelia. Produit en évaluation, non vendu sur Lirelia.",
-    url: `${SITE_URL}${CANONICAL}`,
-    inLanguage: "fr-FR",
-    isPartOf: { "@type": "WebSite", name: "LirElia", url: SITE_URL },
-    about: { "@type": "Thing", name: "Ray-Ban Meta — lunettes intelligentes grand public" },
-  };
 
   return (
     <div className="min-h-screen">

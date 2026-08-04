@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import { FAQ_BY_ROUTE } from "@/lib/structuredData/faq";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
@@ -109,32 +110,7 @@ const AidesFinancieres = () => {
     ["Être aidé pour constituer les dossiers", "Travailleur social", "CCAS, MDPH, CPAM, association spécialisée"],
   ];
 
-  const faq = [
-    {
-      q: "Une loupe électronique est-elle remboursée ?",
-      a: "Il n’existe pas un remboursement national identique pour toutes les loupes électroniques. La prise en charge dépend du modèle, de son éventuelle inscription sur la Liste des produits et prestations remboursables, de votre situation et des financeurs sollicités. Une demande de PCH ou d’autres financements peut être étudiée.",
-    },
-    {
-      q: "La PCH peut-elle financer un téléagrandisseur ?",
-      a: "Un téléagrandisseur peut être présenté comme une aide technique dans un dossier de PCH lorsqu’il répond à un besoin de compensation clairement établi. L’accord, le montant et le reste à charge dépendent toutefois de l’évaluation de la MDPH et du plan de compensation.",
-    },
-    {
-      q: "Puis-je acheter le matériel avant la réponse de la MDPH ?",
-      a: "Vérifiez les règles auprès de la MDPH avant tout achat. En pratique, il est recommandé de déposer la demande et d’obtenir une confirmation écrite avant d’acquérir le matériel.",
-    },
-    {
-      q: "Peut-on demander une aide après 60 ans ?",
-      a: "Certaines aides restent accessibles après 60 ans, mais les règles diffèrent selon la PCH, l’APA, les caisses de retraite ou MaPrimeAdapt’. La situation doit être étudiée individuellement, notamment selon l’âge auquel les critères du handicap étaient remplis et le niveau de perte d’autonomie.",
-    },
-    {
-      q: "Combien de temps faut-il pour obtenir une aide ?",
-      a: "Le délai dépend de l’organisme et de la complexité du dossier. L’évaluation, la recherche de cofinancements, la décision puis la commande du matériel peuvent prendre plusieurs mois. Il est préférable d’anticiper et de prévoir une solution temporaire.",
-    },
-    {
-      q: "Qui peut m’aider à remplir un dossier ?",
-      a: "Vous pouvez solliciter la MDPH, un travailleur social, le CCAS de votre commune, une association spécialisée, un centre de basse vision ou, selon le dossier, votre CPAM, votre caisse de retraite, Cap emploi ou le référent handicap de votre établissement.",
-    },
-  ];
+  const faq = FAQ_BY_ROUTE["/aides-financieres-basse-vision"];
 
   const sources = [
     { label: "Service-Public — Prestation de compensation du handicap", url: "https://www.service-public.fr/particuliers/vosdroits/F14202" },
@@ -146,45 +122,6 @@ const AidesFinancieres = () => {
     { label: "FIPHFP — Catalogue des interventions", url: "https://www.fiphfp.fr/employeurs/nos-aides-financieres/catalogue-des-interventions" },
   ];
 
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Aides financières basse vision et malvoyance",
-      url: canonical,
-      inLanguage: "fr-FR",
-      description:
-        "Découvrez les aides financières possibles en cas de malvoyance : matériel basse vision, dossier MDPH, PCH, logement, emploi, études et démarches.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-        { "@type": "ListItem", position: 2, name: "Vivre avec la basse vision", item: "https://lirelia.fr/vivre-basse-vision/" },
-        { "@type": "ListItem", position: 3, name: "Aides financières", item: canonical },
-      ],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      itemListElement: orientationCards.map((c, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: c.title,
-        url: `https://lirelia.fr/aides-financieres-basse-vision/${c.slug}/`,
-      })),
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faq.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
-  ];
 
   return (
     <div className="min-h-screen">
