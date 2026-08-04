@@ -195,29 +195,6 @@ const CommercialCategoryPage = (props: CommercialCategoryPageProps) => {
     finalCtaButtons,
   } = props;
 
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: "Accueil", path: "/" },
-    {
-      name: "Catalogue des aides basse vision",
-      path: "/catalogue-aides-basse-vision",
-    },
-    { name: breadcrumbLabel, path },
-  ]);
-
-
-  const faqJsonLd =
-    faqItems.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqItems.map((item) => ({
-            "@type": "Question",
-            name: item.q,
-            acceptedAnswer: { "@type": "Answer", text: item.a },
-          })),
-        }
-      : null;
-
 
   return (
     <div className="min-h-screen">
