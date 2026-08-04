@@ -27,6 +27,7 @@ const AidesFinancieres = () => {
     {
       icon: Wallet,
       slug: "financer-aide-visuelle",
+      published: true,
       title: "Je veux financer une loupe électronique, un téléagrandisseur ou une aide visuelle",
       body:
         "Vous recherchez une aide pour acheter une loupe électronique, un téléagrandisseur, une machine à lire, un logiciel d’agrandissement ou un autre équipement adapté à la basse vision ? Selon le produit et votre situation, plusieurs pistes peuvent être étudiées : Assurance Maladie lorsque le dispositif répond aux conditions de la LPP (Liste des produits et prestations remboursables), PCH (Prestation de compensation du handicap), mutuelle, aide individuelle de la CPAM, caisse de retraite, Fonds départemental de compensation ou aide locale. Aucun de ces financements ne doit être considéré comme acquis avant l’étude de votre dossier.",
@@ -35,6 +36,7 @@ const AidesFinancieres = () => {
     {
       icon: FileText,
       slug: "dossier-mdph-pch",
+      published: false,
       title: "Je dois préparer un dossier MDPH ou demander la PCH",
       body:
         "La MDPH (Maison départementale des personnes handicapées) est souvent l’interlocuteur central lorsqu’un handicap visuel réduit fortement l’autonomie. Elle peut évaluer vos besoins et ouvrir l’accès à différents droits, notamment à la PCH. Pour une aide technique, le dossier doit expliquer non seulement votre pathologie, mais surtout ce que vous ne pouvez plus faire seul ou ce qui est devenu très difficile : lire votre courrier, gérer vos documents, cuisiner, utiliser un ordinateur ou vous déplacer. Un certificat médical, des comptes rendus, un devis précis et une description concrète de votre vie quotidienne renforcent la compréhension du besoin.",
@@ -43,6 +45,7 @@ const AidesFinancieres = () => {
     {
       icon: Scale,
       slug: "aides-sociales-droits",
+      published: false,
       title: "Je veux comprendre mes droits : AAH, APA, CMI, RQTH",
       body:
         "L’AAH (Allocation aux adultes handicapés), l’APA (Allocation personnalisée d’autonomie), la CMI (Carte mobilité inclusion), la RQTH (Reconnaissance de la qualité de travailleur handicapé) et la PCH ne répondent pas au même besoin. Certaines prestations apportent un revenu minimal. D’autres financent une compensation du handicap, une aide humaine ou un plan d’aide lié à la perte d’autonomie. La CMI facilite certains déplacements, l’accès à des priorités ou le stationnement selon la mention accordée. Ces dispositifs ne constituent pas tous un remboursement direct d’un appareil de lecture.",
@@ -51,6 +54,7 @@ const AidesFinancieres = () => {
     {
       icon: HomeIcon,
       slug: "adapter-logement",
+      published: false,
       title: "Je veux adapter mon logement à la déficience visuelle",
       body:
         "Un logement mieux éclairé, plus contrasté et plus facile à parcourir peut préserver l’autonomie et réduire le risque de chute. Selon la nature du projet, la PCH, MaPrimeAdapt’, l’APA ou certaines aides locales peuvent participer au financement de travaux : sécurisation de la salle de bain, amélioration des circulations, éclairage à détection, installation de barres d’appui ou autres aménagements nécessaires. Les petits équipements mobiles et les travaux importants ne relèvent pas toujours des mêmes dispositifs.",
@@ -59,6 +63,7 @@ const AidesFinancieres = () => {
     {
       icon: Briefcase,
       slug: "travail-etudes",
+      published: false,
       title: "Je cherche une aide pour travailler, étudier ou me former",
       body:
         "Une personne malvoyante peut avoir besoin d’un écran plus grand, d’un logiciel d’agrandissement, d’une synthèse vocale, d’un scanner, d’un éclairage particulier ou d’une organisation différente du poste de travail. Dans le secteur privé, l’employeur, Cap emploi et l’Agefiph peuvent intervenir. Dans la fonction publique, les démarches passent généralement par l’employeur public et le FIPHFP. Pour les études ou une formation, le référent handicap et l’établissement sont les premiers interlocuteurs.",
@@ -71,31 +76,31 @@ const AidesFinancieres = () => {
       besoin: "Acheter une loupe électronique, un téléagrandisseur ou une machine à lire",
       dispositifs: "LPP, PCH, mutuelle, CPAM, caisse de retraite, Fonds départemental",
       vigilance: "Le remboursement dépend du matériel, du dossier et de la décision du financeur",
-      page: { label: "Financer une aide visuelle", href: "/aides-financieres-basse-vision/financer-aide-visuelle/" },
+      page: { label: "Financer une aide visuelle", href: "/aides-financieres-basse-vision/financer-aide-visuelle/", published: true },
     },
     {
       besoin: "Demander une compensation du handicap",
       dispositifs: "PCH via la MDPH",
       vigilance: "La MDPH évalue les conséquences concrètes du handicap, pas seulement le diagnostic",
-      page: { label: "Dossier MDPH et PCH", href: "/aides-financieres-basse-vision/dossier-mdph-pch/" },
+      page: { label: "Dossier MDPH et PCH", href: "/aides-financieres-basse-vision/dossier-mdph-pch/", published: false },
     },
     {
       besoin: "Disposer d’un revenu ou d’un droit social",
       dispositifs: "AAH, APA, CMI, RQTH, aides locales",
       vigilance: "Ces droits ne financent pas tous directement un appareil basse vision",
-      page: { label: "Aides sociales et droits", href: "/aides-financieres-basse-vision/aides-sociales-droits/" },
+      page: { label: "Aides sociales et droits", href: "/aides-financieres-basse-vision/aides-sociales-droits/", published: false },
     },
     {
       besoin: "Adapter le logement",
       dispositifs: "MaPrimeAdapt’, PCH logement, APA, caisses de retraite, aides locales",
       vigilance: "Les travaux doivent souvent être validés avant leur démarrage",
-      page: { label: "Adapter le logement", href: "/aides-financieres-basse-vision/adapter-logement/" },
+      page: { label: "Adapter le logement", href: "/aides-financieres-basse-vision/adapter-logement/", published: false },
     },
     {
       besoin: "Adapter un poste de travail ou une formation",
       dispositifs: "Agefiph, FIPHFP, employeur, Cap emploi, référent handicap",
       vigilance: "L’usage professionnel suit une procédure différente de l’usage personnel",
-      page: { label: "Travail et études", href: "/aides-financieres-basse-vision/travail-etudes/" },
+      page: { label: "Travail et études", href: "/aides-financieres-basse-vision/travail-etudes/", published: false },
     },
   ];
 
@@ -230,12 +235,18 @@ const AidesFinancieres = () => {
                       <h3 className="font-serif text-xl font-bold text-foreground">{card.title}</h3>
                     </div>
                     <p className="text-base text-foreground leading-relaxed mb-6 flex-1">{card.body}</p>
-                    <Button variant="secondary" asChild className="self-start">
-                      <Link to={`/aides-financieres-basse-vision/${card.slug}/`}>
-                        {card.cta}
-                        <ArrowRight className="w-5 h-5" />
-                      </Link>
-                    </Button>
+                    {card.published ? (
+                      <Button variant="secondary" asChild className="self-start">
+                        <Link to={`/aides-financieres-basse-vision/${card.slug}/`}>
+                          {card.cta}
+                          <ArrowRight className="w-5 h-5" />
+                        </Link>
+                      </Button>
+                    ) : (
+                      <p className="self-start text-base font-semibold text-muted-foreground">
+                        Bientôt disponible
+                      </p>
+                    )}
                   </Card>
                 ))}
               </div>
@@ -313,9 +324,15 @@ const AidesFinancieres = () => {
                         <td className="p-4 text-foreground">{row.dispositifs}</td>
                         <td className="p-4 text-foreground">{row.vigilance}</td>
                         <td className="p-4">
-                          <Link to={row.page.href} className="text-primary font-semibold hover:underline">
-                            {row.page.label}
-                          </Link>
+                          {row.page.published ? (
+                            <Link to={row.page.href} className="text-primary font-semibold hover:underline">
+                              {row.page.label}
+                            </Link>
+                          ) : (
+                            <span className="text-foreground font-semibold">
+                              {row.page.label} — bientôt disponible
+                            </span>
+                          )}
                         </td>
                       </tr>
                     ))}
@@ -333,9 +350,15 @@ const AidesFinancieres = () => {
                     <p className="text-base text-foreground mb-3">{row.dispositifs}</p>
                     <p className="text-sm font-bold uppercase tracking-wide text-primary mb-1">Point de vigilance</p>
                     <p className="text-base text-foreground mb-3">{row.vigilance}</p>
-                    <Link to={row.page.href} className="text-primary font-semibold hover:underline inline-flex items-center gap-1">
-                      {row.page.label} <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    {row.page.published ? (
+                      <Link to={row.page.href} className="text-primary font-semibold hover:underline inline-flex items-center gap-1">
+                        {row.page.label} <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    ) : (
+                      <span className="text-foreground font-semibold">
+                        {row.page.label} — bientôt disponible
+                      </span>
+                    )}
                   </Card>
                 ))}
               </div>
@@ -465,12 +488,9 @@ const AidesFinancieres = () => {
                 ))}
               </div>
               <div className="mt-6">
-                <Button variant="outline" asChild>
-                  <Link to="/aides-financieres-basse-vision/dossier-mdph-pch/">
-                    Comprendre en détail le dossier MDPH
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+                <p className="text-base font-semibold text-muted-foreground">
+                  Comprendre en détail le dossier MDPH — bientôt disponible
+                </p>
               </div>
             </div>
           </div>

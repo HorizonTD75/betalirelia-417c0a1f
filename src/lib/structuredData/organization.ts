@@ -18,7 +18,7 @@ export const organizationNode = (): Node => ({
   "@id": ORGANIZATION_ID,
   name: "LirElia",
   legalName: "HORIZON TD",
-  alternateName: "HORIZON TD",
+  alternateName: "LirElia Basse Vision",
   url: `${SITE_URL}/`,
   description:
     "LirElia accompagne les personnes malvoyantes, leurs proches et leurs aidants avec des bilans basse vision, des aides à la lecture et des solutions adaptées à la DMLA, au glaucome et aux autres pathologies visuelles.",
@@ -59,11 +59,14 @@ export const organizationNode = (): Node => ({
     "@type": "MerchantReturnPolicy",
     "@id": `${SITE_URL}/#returnpolicy`,
     applicableCountry: "FR",
+    returnPolicyCountry: "FR",
     returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
     merchantReturnDays: 14,
     returnMethod: "https://schema.org/ReturnByMail",
     returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
-    url: `${SITE_URL}/retours-remboursements/`,
+    returnLabelSource: "https://schema.org/ReturnLabelCustomerResponsibility",
+    refundType: "https://schema.org/FullRefund",
+    merchantReturnLink: `${SITE_URL}/retours-remboursements/`,
   },
 });
 

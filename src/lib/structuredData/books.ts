@@ -19,6 +19,8 @@ export interface BookInfo {
   bookFormat?: "https://schema.org/EBook" | "https://schema.org/Paperback";
   /** External retailer page, when a link is displayed. */
   sameAs?: string;
+  /** Self-published (Amazon KDP): the author is also the publisher. */
+  selfPublished?: boolean;
 }
 
 export const BOOKS: Record<string, BookInfo> = {
@@ -31,6 +33,7 @@ export const BOOKS: Record<string, BookInfo> = {
     numberOfPages: 170,
     bookFormat: "https://schema.org/EBook",
     sameAs: "https://www.amazon.fr/dp/B0GXS47Q9B",
+    selfPublished: true,
   },
   "/livre-aider-proche-dmla": {
     path: "/livre-aider-proche-dmla",

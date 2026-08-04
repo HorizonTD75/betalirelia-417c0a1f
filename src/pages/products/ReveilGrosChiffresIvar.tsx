@@ -16,7 +16,7 @@ import imgTemperature from "@/assets/products/reveil-gros-chiffres-ivar-temperat
 import VariantChoiceGrid from "@/components/products/VariantChoiceGrid";
 import AvailabilityBadge from "@/components/products/AvailabilityBadge";
 import { AVAILABILITY, aggregateStatus, ProductVariant } from "@/components/products/availability";
-import { ivarVariants } from "@/lib/structuredData/variants";
+import { ivarVariants, resolveVariantId } from "@/lib/structuredData/variants";
 
 const colorVariants: ProductVariant[] = ivarVariants;
 
@@ -127,8 +127,9 @@ const descriptionBlocks: Array<{ title: string; paragraphs: string[] }> = [
 const ReveilGrosChiffresIvar = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   // ?couleur=<id> (used by the ProductGroup variant URLs) pre-selects a colour.
+  // "blanc" / "noir" are accepted as aliases of "blanche" / "noire".
   const [searchParams] = useSearchParams();
-  const selectedVariant = searchParams.get("couleur");
+  const selectedVariant = resolveVariantId(colorVariants, searchParams.get("couleur"));
 
   return (
     <div className="min-h-screen">
