@@ -49,3 +49,26 @@ export const ivarVariants: ProductVariant[] = [
     status: "available",
   },
 ];
+
+/**
+ * Accepted aliases for the ?couleur= parameter. The canonical ids used in the
+ * JSON-LD variant URLs stay unchanged ("blanche" / "noire"); the aliases only
+ * make shorter hand-typed URLs work.
+ */
+export const VARIANT_ID_ALIASES: Record<string, string> = {
+  blanc: "blanche",
+  noir: "noire",
+};
+
+/** Resolve a ?couleur= value to a real variant id, or null when unknown. */
+export const resolveVariantId = (
+  variants: ProductVariant[],
+  param: string | null | undefined,
+): string | null => {
+  if (!param) return null;
+  const value = param.trim().toLowerCase();
+  const direct = variants.find((v) => v.id === value);
+  if (direct) return direct.id;
+  const alias = VARIANT_ID_ALIASES[value];
+  return variants.find((v) => v.id === alias)?.id ?? null;
+};
