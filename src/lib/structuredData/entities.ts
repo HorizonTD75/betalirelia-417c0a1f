@@ -215,3 +215,73 @@ export const graph = (nodes: Node[]): Node => ({
   "@context": "https://schema.org",
   "@graph": nodes,
 });
+
+/** ItemList reflecting the visible order of a listing page. */
+export const itemListNode = (
+  path: string,
+  items: { name: string; path: string }[],
+  extra?: Node,
+): Node => ({
+  "@type": "ItemList",
+  "@id": `${absoluteUrl(path)}#itemlist`,
+  numberOfItems: items.length,
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  itemListElement: items.map((item, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: item.name,
+    url: absoluteUrl(item.path),
+  })),
+  ...extra,
+});
+
+/** FAQPage node — only for FAQs entirely visible on the page. */
+export const faqNode = (path: string, items: { q: string; a: string }[]): Node => ({
+  "@type": "FAQPage",
+  "@id": `${absoluteUrl(path)}#faq`,
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+});
+
+interface BookNodeInput {
+  path: string;
+  name: string;
+  description: string;
+  image: string;
+  numberOfPages?: number;
+  bookFormat?: string;
+  sameAs?: string;
+}
+
+export const bookNode = ({
+  path,
+  name,
+  description,
+  image,
+  numberOfPages,
+  bookFormat,
+  sameAs,
+}: BookNodeInput): Node => {
+  const url = absoluteUrl(path);
+  return {
+    "@type": "Book",
+    "@id": `${url}#book`,
+    name,
+    description,
+    image: [absoluteAsset(image)],
+    url,
+    inLanguage: "fr-FR",
+    publisher: organizationRef,
+    mainEntityOfPage: { "@id": `${url}#webpage` },
+    ...(numberOfPages ? { numberOfPages } : {}),
+    ...(bookFormat ? { bookFormat } : {}),
+    ...(sameAs ? { sameAs } : {}),
+  };
+};
+
+/** Remove undefined values so the graph is always JSON-serialisable as-is. */
+export const prune = <T>(node: T): T =>
+  JSON.parse(JSON.stringify(node, (_k, v) => (v === undefined ? undefined : v))) as T;
