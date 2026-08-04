@@ -17,11 +17,17 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const normalizePath = (path: string): string =>
   path.replace(/\/+$/, "") || "/";
 
-/** Absolute canonical URL for a route path. */
+/**
+ * Absolute canonical URL for a route path.
+ * The site canonicalises every URL WITH a trailing slash, so fragments and
+ * query parameters must always come AFTER that slash
+ * (e.g. https://lirelia.fr/boutique/x/#product, .../x/?couleur=bleu).
+ */
 export const absoluteUrl = (path: string): string => {
   const p = normalizePath(path);
-  return p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}`;
+  return p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}/`;
 };
+
 
 /** Absolute URL for a bundled asset (Vite returns a root-relative path). */
 export const absoluteAsset = (asset: string): string =>
