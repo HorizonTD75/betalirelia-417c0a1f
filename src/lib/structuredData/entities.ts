@@ -129,6 +129,8 @@ interface ProductNodeInput {
   id?: string;
   /** Offer URL override (variant URLs carry a ?couleur= parameter). */
   offerUrl?: string;
+  /** Set to false when the visible price is a "à partir de" starting price. */
+  withOffer?: boolean;
   extra?: Node;
 }
 
@@ -141,6 +143,7 @@ export const productNode = ({
   status,
   id,
   offerUrl,
+  withOffer = true,
   extra,
 }: ProductNodeInput): Node => {
   const url = absoluteUrl(path);
@@ -153,11 +156,15 @@ export const productNode = ({
     brand: { "@type": "Brand", name: "LirElia" },
     url: offerUrl ?? url,
     mainEntityOfPage: { "@id": `${url}#webpage` },
-    offers: offerNode({
-      url: offerUrl ?? url,
-      price,
-      availability: AVAILABILITY_URL[status] ?? "https://schema.org/InStock",
-    }),
+    ...(withOffer
+      ? {
+          offers: offerNode({
+            url: offerUrl ?? url,
+            price,
+            availability: AVAILABILITY_URL[status] ?? "https://schema.org/InStock",
+          }),
+        }
+      : {}),
     ...extra,
   };
 };
