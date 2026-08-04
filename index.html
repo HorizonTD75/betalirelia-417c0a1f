@@ -71,46 +71,13 @@
     <meta name="twitter:site" content="@lirelia" />
     <link rel="alternate" hreflang="fr" href="https://lirelia.fr/" />
     <link rel="alternate" hreflang="x-default" href="https://lirelia.fr/" />
-    <!-- Sitewide JSON-LD — single @graph defining Organization + WebSite once.
-         Page-level nodes (WebPage, Product, Service, BreadcrumbList…) are
-         emitted by src/lib/structuredData/registry.ts and only reference these
-         entities by @id. Never duplicate them elsewhere. -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://lirelia.fr/#organization",
-          "name": "LirElia",
-          "url": "https://lirelia.fr/",
-          "logo": {
-            "@type": "ImageObject",
-            "@id": "https://lirelia.fr/#logo",
-            "url": "https://lirelia.fr/og-image.png",
-            "caption": "LirElia"
-          },
-          "image": { "@id": "https://lirelia.fr/#logo" },
-          "description": "LirElia accompagne les personnes malvoyantes, leurs proches et leurs aidants avec des conseils, des aides à la lecture et des solutions adaptées à la basse vision.",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+33768474235",
-            "contactType": "customer service",
-            "availableLanguage": "French"
-          },
-          "sameAs": []
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://lirelia.fr/#website",
-          "url": "https://lirelia.fr/",
-          "name": "LirElia",
-          "publisher": { "@id": "https://lirelia.fr/#organization" },
-          "inLanguage": "fr-FR"
-        }
-      ]
-    }
-    </script>
+    <!-- No static JSON-LD here on purpose.
+         ALL structured data (Organization, WebSite, WebPage, Product,
+         Service, BreadcrumbList, ItemList, FAQPage, Book…) is emitted from
+         the single registry: src/lib/structuredData/registry.ts.
+         Never add a JSON-LD block to this file or to a page component. -->
+
+
 
     <script>
     // Synchronous SEO meta injection — runs before React, visible to Googlebot and social crawlers
