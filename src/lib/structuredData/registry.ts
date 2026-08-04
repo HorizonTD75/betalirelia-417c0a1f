@@ -89,6 +89,13 @@ const VISIOPRACTICIAN_PATH = "/expert-basse-vision-visiopraticien";
 export const isNoIndexRoute = (pathname: string): boolean =>
   ROUTE_META[normalizePath(pathname)]?.noindex === true;
 
+/**
+ * Assemble the final graph: the sitewide entities are always emitted first so
+ * every `@id` reference (#organization, #website) resolves on every page.
+ */
+const assemble = (nodes: Node[]): Node =>
+  prune(graph([organizationNode(), websiteNode(), ...nodes]));
+
 /** Breadcrumb node when — and only when — a visible trail exists. */
 const breadcrumbFor = (path: string): Node | null => {
   const items: BreadcrumbItem[] | undefined = getVisibleBreadcrumb(path);
@@ -185,7 +192,7 @@ const productGraph = (product: CatalogProduct, path: string): Node => {
   if (crumb) nodes.push(crumb);
   const faq = getFaq(path);
   if (faq) nodes.push(faqNode(path, faq));
-  return graph(nodes);
+  return assemble(nodes);
 };
 
 /** Informational product page: `about` a Product, never an Offer. */
@@ -216,7 +223,7 @@ const informationalProductGraph = (path: string): Node => {
   ];
   const crumb = breadcrumbFor(path);
   if (crumb) nodes.push(crumb);
-  return graph(nodes);
+  return assemble(nodes);
 };
 
 /** The single @graph for a route, or null when the route must not be indexed. */
@@ -235,30 +242,26 @@ export const getPageGraph = (pathname: string): Node | null => {
     const all = [...nodes];
     if (crumb) all.push(crumb);
     if (faq) all.push(faqNode(path, faq));
-    return prune(graph(all));
+    return assemble(all);
   };
 
   // ---- Home page: the sitewide entities live here -------------------------
   if (path === "/") {
-    return prune(
-      graph([
-        organizationNode(),
-        websiteNode(),
-        pageNode({
-          path,
-          name: meta.title,
-          description: meta.description,
-          hasBreadcrumb: false,
-          extra: { about: organizationRef, primaryImageOfPage: undefined },
-        }),
-      ]),
-    );
+    return assemble([
+      pageNode({
+        path,
+        name: meta.title,
+        description: meta.description,
+        hasBreadcrumb: false,
+        extra: { about: organizationRef },
+      }),
+    ]);
   }
 
   // ---- Products ----------------------------------------------------------
-  if (INFORMATIONAL_PRODUCTS.has(path)) return prune(informationalProductGraph(path));
+  if (INFORMATIONAL_PRODUCTS.has(path)) return informationalProductGraph(path);
   const product = getCatalogProduct(path);
-  if (product) return prune(productGraph(product, path));
+  if (product) return productGraph(product, path);
 
   // ---- Books -------------------------------------------------------------
   const book = getBook(path);
