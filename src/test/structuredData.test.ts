@@ -6,6 +6,7 @@ import {
   structuredDataRoutes,
 } from "@/lib/structuredData/registry";
 import { ROUTE_META } from "@/lib/structuredData/routeMeta";
+import { ivarVariants, resolveVariantId } from "@/lib/structuredData/variants";
 
 type Node = Record<string, unknown>;
 
@@ -296,6 +297,101 @@ describe("structured data registry", () => {
       const group = nodesOf(getPageGraph(path)).find((n) => typeOf(n) === "ProductGroup");
       const urls = (group!.hasVariant as Node[]).map((v) => String(v.url));
       expect(urls, path).toEqual(ids.map((id) => `https://lirelia.fr${path}/?couleur=${id}`));
+    }
+  });
+  it("completes the MerchantReturnPolicy with merchantReturnLink and no generic url", () => {
+    const org = nodesOf(getPageGraph("/")).find(
+      (n) => typeOf(n) === "OnlineStore" || typeOf(n) === "Organization",
+    );
+    const policy = org!.hasMerchantReturnPolicy as Node;
+    expect(policy.merchantReturnLink).toBe("https://lirelia.fr/retours-remboursements/");
+    expect(policy.url).toBeUndefined();
+    expect(policy.returnPolicyCountry).toBe("FR");
+    expect(policy.applicableCountry).toBe("FR");
+    expect(policy.refundType).toBe("https://schema.org/FullRefund");
+    expect(policy.returnLabelSource).toBe(
+      "https://schema.org/ReturnLabelCustomerResponsibility",
+    );
+    expect(policy.merchantReturnDays).toBe(14);
+  });
+
+  it("uses LirElia Basse Vision as alternateName", () => {
+    const org = nodesOf(getPageGraph("/")).find(
+      (n) => typeOf(n) === "OnlineStore" || typeOf(n) === "Organization",
+    );
+    expect(org!.name).toBe("LirElia");
+    expect(org!.legalName).toBe("HORIZON TD");
+    expect(org!.alternateName).toBe("LirElia Basse Vision");
+  });
+
+  it("credits Thierry DUCROS as author AND publisher of the DMLA book", () => {
+    const nodes = nodesOf(getPageGraph("/livre-dmla-votre-vie-ne-sarrete-pas"));
+    const book = nodes.find((n) => typeOf(n) === "Book")!;
+    const person = nodes.find((n) => typeOf(n) === "Person")!;
+    expect(person["@id"]).toBe("https://lirelia.fr/#author-thierry-ducros");
+    expect(person.name).toBe("Thierry DUCROS");
+    expect((book.author as Node)["@id"]).toBe(person["@id"]);
+    expect((book.publisher as Node)["@id"]).toBe(person["@id"]);
+  });
+
+  it("gives the upcoming caregiver book no publisher, offer, price or availability", () => {
+    const nodes = nodesOf(getPageGraph("/livre-aider-proche-dmla"));
+    const book = nodes.find((n) => typeOf(n) === "Book")!;
+    expect((book.author as Node)["@id"]).toBe("https://lirelia.fr/#author-thierry-ducros");
+    expect(book.publisher).toBeUndefined();
+    expect(book.offers).toBeUndefined();
+    expect(JSON.stringify(book)).not.toContain("priceCurrency");
+    expect(JSON.stringify(book)).not.toContain("availability");
+  });
+
+  it("keeps the IVAR variant ids and supports blanc/noir aliases", () => {
+    const group = nodesOf(getPageGraph("/boutique/reveil-gros-chiffres-ivar")).find(
+      (n) => typeOf(n) === "ProductGroup",
+    )!;
+    const urls = (group.hasVariant as Node[]).map((v) => String(v.url));
+    expect(urls).toEqual([
+      "https://lirelia.fr/boutique/reveil-gros-chiffres-ivar/?couleur=blanche",
+      "https://lirelia.fr/boutique/reveil-gros-chiffres-ivar/?couleur=noire",
+    ]);
+    expect(resolveVariantId(ivarVariants, "blanche")).toBe("blanche");
+    expect(resolveVariantId(ivarVariants, "noire")).toBe("noire");
+    expect(resolveVariantId(ivarVariants, "blanc")).toBe("blanche");
+    expect(resolveVariantId(ivarVariants, "noir")).toBe("noire");
+    expect(resolveVariantId(ivarVariants, "NOIR")).toBe("noire");
+  });
+
+  it("never resolves an unknown colour, so aria-current is never \"undefined\"", () => {
+    for (const bad of [null, undefined, "", "rose", "undefined"]) {
+      expect(resolveVariantId(ivarVariants, bad)).toBeNull();
+    }
+    expect(resolveVariantId(ivarVariants, "blanc")).not.toBe("undefined");
+  });
+
+  it("excludes the four unpublished financial-aid pages everywhere", () => {
+    const future = [
+      "/aides-financieres-basse-vision/dossier-mdph-pch",
+      "/aides-financieres-basse-vision/aides-sociales-droits",
+      "/aides-financieres-basse-vision/adapter-logement",
+      "/aides-financieres-basse-vision/travail-etudes",
+    ];
+    const manifest = getStructuredDataManifest();
+    const list = nodesOf(getPageGraph("/aides-financieres-basse-vision")).find(
+      (n) => typeOf(n) === "ItemList",
+    )!;
+    const urls = (list.itemListElement as Node[]).map((i) => String(i.url));
+    expect(list.numberOfItems).toBe(1);
+    expect(urls.length).toBe(1);
+    for (const route of future) {
+      expect(manifest[route], route).toBeUndefined();
+      expect(indexable, route).not.toContain(route);
+      expect(urls.join(" "), route).not.toContain(route);
+    }
+  });
+
+  it("survives a JSON.stringify → JSON.parse round trip on every route", () => {
+    for (const path of indexable) {
+      const graph = getPageGraph(path);
+      expect(JSON.parse(JSON.stringify(graph)), path).toEqual(graph);
     }
   });
 });
