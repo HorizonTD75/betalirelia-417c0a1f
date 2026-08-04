@@ -10,7 +10,7 @@ import { seoPrerender } from "./vite-plugin-seo-prerender";
 const prerenderRoutes = [
   {
     path: "/boutique/ray-ban-meta",
-    canonical: "/boutique/ray-ban-meta",
+    canonical: "/boutique/ray-ban-meta/",
     title: "Ray-Ban Meta et basse vision : usages et limites | LirElia",
     description:
       "Découvrez les usages possibles des Ray-Ban Meta pour une personne malvoyante, leurs fonctions actuelles, leurs limites et leur potentiel en basse vision.",
@@ -18,7 +18,7 @@ const prerenderRoutes = [
   },
   {
     path: "/aides-lecture-bassevision/lunettes-intelligentes",
-    canonical: "/aides-lecture-bassevision/lunettes-intelligentes",
+    canonical: "/aides-lecture-bassevision/lunettes-intelligentes/",
     title: "Lunettes intelligentes et basse vision : guide | LirElia",
     description:
       "Comment les lunettes intelligentes peuvent-elles aider une personne malvoyante ? Découvrez leurs usages, leurs limites et les différentes familles de solutions.",

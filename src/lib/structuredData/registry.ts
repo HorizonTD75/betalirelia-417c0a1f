@@ -21,7 +21,6 @@
 import {
   AVAILABILITY_URL,
   CABINET_AREA,
-  FRANCE_AREA,
   authorNode,
   BreadcrumbItem,
   Node,
@@ -331,6 +330,7 @@ export const getPageGraph = (pathname: string): Node | null => {
         name: "Accompagnement par un visiopraticien expert basse vision",
         description: meta.description,
         serviceType: "Accompagnement basse vision",
+        areaServed: CABINET_AREA,
       }),
     ]);
   }
