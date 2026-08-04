@@ -122,45 +122,6 @@ const AidesFinancieres = () => {
     { label: "FIPHFP — Catalogue des interventions", url: "https://www.fiphfp.fr/employeurs/nos-aides-financieres/catalogue-des-interventions" },
   ];
 
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Aides financières basse vision et malvoyance",
-      url: canonical,
-      inLanguage: "fr-FR",
-      description:
-        "Découvrez les aides financières possibles en cas de malvoyance : matériel basse vision, dossier MDPH, PCH, logement, emploi, études et démarches.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://lirelia.fr/" },
-        { "@type": "ListItem", position: 2, name: "Vivre avec la basse vision", item: "https://lirelia.fr/vivre-basse-vision/" },
-        { "@type": "ListItem", position: 3, name: "Aides financières", item: canonical },
-      ],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      itemListElement: orientationCards.map((c, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: c.title,
-        url: `https://lirelia.fr/aides-financieres-basse-vision/${c.slug}/`,
-      })),
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faq.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
-  ];
 
   return (
     <div className="min-h-screen">

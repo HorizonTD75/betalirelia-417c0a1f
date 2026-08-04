@@ -15,7 +15,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
 import { LOUPES_VERRE_PRODUCTS, type LoupeVerreProduct } from "@/data/products/loupesVerre";
 
 const PAGE_PATH = "/catalogue-aides-basse-vision/loupes-verre";
@@ -107,27 +106,7 @@ const LoupesVerreCategorie = () => {
     { name: "Loupes en verre", path: PAGE_PATH },
   ]);
 
-  const itemListJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Loupes en verre LirElia",
-    itemListElement: LOUPES_VERRE_PRODUCTS.map((p, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      url: `${SITE_URL}${p.productUrl}`,
-      name: p.name,
-    })),
-  };
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqItems.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
-  };
 
   return (
     <div className="min-h-screen">

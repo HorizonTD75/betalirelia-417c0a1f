@@ -22,7 +22,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
 import type { CatalogueProduct } from "@/data/products/catalogueCategories";
 
 export type ComparisonTable = {
@@ -205,17 +204,6 @@ const CommercialCategoryPage = (props: CommercialCategoryPageProps) => {
     { name: breadcrumbLabel, path },
   ]);
 
-  const itemListJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: breadcrumbLabel,
-    itemListElement: products.map((p, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      url: `${SITE_URL}${p.productUrl}`,
-      name: p.name,
-    })),
-  };
 
   const faqJsonLd =
     faqItems.length > 0
@@ -230,7 +218,6 @@ const CommercialCategoryPage = (props: CommercialCategoryPageProps) => {
         }
       : null;
 
-  const jsonLd = [breadcrumbJsonLd, itemListJsonLd, ...(faqJsonLd ? [faqJsonLd] : [])];
 
   return (
     <div className="min-h-screen">

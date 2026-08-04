@@ -6,7 +6,6 @@ import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductCard, { type Product } from "./ProductCard";
 import type { LucideIcon } from "lucide-react";
-import { SITE_URL, buildBreadcrumbJsonLd } from "@/lib/seo";
 import { getHeroSrcSet } from "@/lib/heroSrcSet";
 
 interface BuyingCriteria {
@@ -94,17 +93,6 @@ const CategoryPageLayout = ({
     { name: "Aides à la lecture basse vision", path: "/aides-lecture-bassevision" },
     { name: title, path: seo.canonicalPath ?? "/" },
   ]);
-  const itemListJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    itemListElement: products.map((p, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: p.name,
-      url: p.shopLink ? `${SITE_URL}${p.shopLink}` : pageUrl,
-      ...(p.image ? { image: p.image.startsWith("http") ? p.image : `${SITE_URL}${p.image}` } : {}),
-    })),
-  };
 
   return (
     <div className="min-h-screen">

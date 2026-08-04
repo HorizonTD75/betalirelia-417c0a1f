@@ -47,36 +47,6 @@ const sources = [
 ];
 
 const FinancerAideVisuelle = () => {
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Comment financer une loupe électronique ou une aide visuelle ?",
-      url: CANONICAL,
-      inLanguage: "fr-FR",
-      description:
-        "PCH, Assurance Maladie, mutuelle ou CPAM : découvrez les financements possibles pour une loupe électronique, un téléagrandisseur ou une machine à lire.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.lirelia.fr/" },
-        { "@type": "ListItem", position: 2, name: "Vivre avec la basse vision", item: "https://www.lirelia.fr/vivre-basse-vision/" },
-        { "@type": "ListItem", position: 3, name: "Aides financières", item: "https://www.lirelia.fr/aides-financieres-basse-vision/" },
-        { "@type": "ListItem", position: 4, name: "Financer une aide visuelle", item: CANONICAL },
-      ],
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faq.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
-  ];
 
   return (
     <div className="min-h-screen">
