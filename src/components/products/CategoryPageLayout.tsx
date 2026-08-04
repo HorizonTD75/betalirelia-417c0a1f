@@ -76,24 +76,6 @@ const CategoryPageLayout = ({
   const heroCtaText = heroCta || ctaText;
   const bottomCtaText = bottomCta || `Demandez-nous des informations sur les ${title.toLowerCase()}`;
 
-  const pageUrl = seo.canonicalPath ? `${SITE_URL}${seo.canonicalPath}` : SITE_URL;
-  const collectionJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${pageUrl}#webpage`,
-    url: pageUrl,
-    name: seo.title,
-    description: seo.description,
-    isPartOf: { "@id": "https://lirelia.fr/#website" },
-    publisher: { "@id": "https://lirelia.fr/#organization" },
-    inLanguage: "fr-FR",
-  };
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: "Accueil", path: "/" },
-    { name: "Aides à la lecture basse vision", path: "/aides-lecture-bassevision" },
-    { name: title, path: seo.canonicalPath ?? "/" },
-  ]);
-
   return (
     <div className="min-h-screen">
       <SEOHead
