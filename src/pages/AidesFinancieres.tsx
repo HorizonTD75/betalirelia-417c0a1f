@@ -488,12 +488,9 @@ const AidesFinancieres = () => {
                 ))}
               </div>
               <div className="mt-6">
-                <Button variant="outline" asChild>
-                  <Link to="/aides-financieres-basse-vision/dossier-mdph-pch/">
-                    Comprendre en détail le dossier MDPH
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+                <p className="text-base font-semibold text-muted-foreground">
+                  Comprendre en détail le dossier MDPH — bientôt disponible
+                </p>
               </div>
             </div>
           </div>

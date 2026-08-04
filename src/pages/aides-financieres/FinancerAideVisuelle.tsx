@@ -417,12 +417,9 @@ const FinancerAideVisuelle = () => {
               </p>
 
               <div className="pt-2">
-                <Button variant="secondary" asChild>
-                  <Link to="/aides-financieres-basse-vision/dossier-mdph-pch">
-                    Préparer un dossier MDPH et PCH
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+                <p className="text-base font-semibold text-muted-foreground">
+                  Préparer un dossier MDPH et PCH — bientôt disponible
+                </p>
               </div>
             </div>
           </div>
@@ -522,12 +519,9 @@ const FinancerAideVisuelle = () => {
                 <p className="mt-3">Il n’existe pas de montant national unique spécifiquement consacré aux loupes électroniques ou aux téléagrandisseurs.</p>
                 <p className="mt-3">Pour une personne de 60 ans ou plus en perte d’autonomie, une aide technique peut également être intégrée dans un plan d’<strong>APA</strong> (Allocation personnalisée d’autonomie). La PCH et l’APA ne se cumulent pas : un accompagnement individualisé peut être utile pour comparer les deux dispositifs.</p>
                 <div className="pt-3">
-                  <Button variant="outline" asChild>
-                    <Link to="/aides-financieres-basse-vision/aides-sociales-droits">
-                      Comprendre les aides sociales et les droits
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
-                  </Button>
+                  <p className="text-base font-semibold text-muted-foreground">
+                    Comprendre les aides sociales et les droits — bientôt disponible
+                  </p>
                 </div>
               </div>
 
@@ -565,12 +559,9 @@ const FinancerAideVisuelle = () => {
                 </ul>
                 <p className="mt-3">Un matériel utilisé personnellement à domicile et une adaptation du poste de travail ne suivent pas nécessairement les mêmes règles.</p>
                 <div className="pt-3">
-                  <Button variant="outline" asChild>
-                    <Link to="/aides-financieres-basse-vision/travail-etudes">
-                      Voir les aides pour travailler ou étudier
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
-                  </Button>
+                  <p className="text-base font-semibold text-muted-foreground">
+                    Voir les aides pour travailler ou étudier — bientôt disponible
+                  </p>
                 </div>
               </div>
             </div>
@@ -789,9 +780,9 @@ const FinancerAideVisuelle = () => {
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-6">À lire aussi</h2>
               <ul className="space-y-3 text-base">
                 <li><Link to="/aides-financieres-basse-vision" className="text-primary font-semibold hover:underline">Aides financières pour les personnes malvoyantes</Link></li>
-                <li><Link to="/aides-financieres-basse-vision/dossier-mdph-pch" className="text-primary font-semibold hover:underline">Préparer un dossier MDPH et PCH</Link></li>
-                <li><Link to="/aides-financieres-basse-vision/aides-sociales-droits" className="text-primary font-semibold hover:underline">Aides sociales et droits des personnes malvoyantes</Link></li>
-                <li><Link to="/aides-financieres-basse-vision/travail-etudes" className="text-primary font-semibold hover:underline">Aides pour travailler ou étudier avec un handicap visuel</Link></li>
+                <li className="text-muted-foreground font-semibold">Préparer un dossier MDPH et PCH — bientôt disponible</li>
+                <li className="text-muted-foreground font-semibold">Aides sociales et droits des personnes malvoyantes — bientôt disponible</li>
+                <li className="text-muted-foreground font-semibold">Aides pour travailler ou étudier avec un handicap visuel — bientôt disponible</li>
                 <li><Link to="/aides-lecture-bassevision" className="text-primary font-semibold hover:underline">Découvrir les aides à la lecture</Link></li>
               </ul>
             </div>
