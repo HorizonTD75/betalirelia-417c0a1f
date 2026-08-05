@@ -18,6 +18,7 @@
  * re-implementing any of these rules.
  */
 
+import { gtinSchema } from "@/lib/gtin";
 import {
   AVAILABILITY_URL,
   CABINET_AREA,
@@ -138,6 +139,7 @@ const productGroupNode = (product: CatalogProduct): Node => {
         description: variant.description ?? product.description,
         image: [absoluteAsset(variant.image ?? product.image)],
         ...(sku ? { sku } : {}),
+        ...gtinSchema(variant.gtin),
         color: variant.label,
         brand: { "@type": "Brand", name: brandOf(product.path) },
         url: variantUrl,
@@ -198,6 +200,7 @@ const productGraph = (product: CatalogProduct, path: string): Node => {
           price: product.price,
           status: productStatus(product),
           brand: brandOf(path),
+          gtin: product.gtin,
         });
 
   const nodes: Node[] = [page, item];

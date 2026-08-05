@@ -9,6 +9,8 @@
  *    index.html) and only REFERENCED here by @id.
  */
 
+import { gtinSchema } from "@/lib/gtin";
+
 export const SITE_URL = "https://lirelia.fr";
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -139,6 +141,8 @@ interface ProductNodeInput {
   offerUrl?: string;
   /** Set to false when the visible price is a "à partir de" starting price. */
   withOffer?: boolean;
+  /** GTIN string; emitted as gtin8/gtin12/gtin13/gtin14 when valid. */
+  gtin?: string;
   extra?: Node;
 }
 
@@ -153,6 +157,7 @@ export const productNode = ({
   id,
   offerUrl,
   withOffer = true,
+  gtin,
   extra,
 }: ProductNodeInput): Node => {
   const url = absoluteUrl(path);
@@ -164,6 +169,7 @@ export const productNode = ({
     image: [absoluteAsset(image)],
     brand: { "@type": "Brand", name: brand },
     url: offerUrl ?? url,
+    ...gtinSchema(gtin),
     mainEntityOfPage: { "@id": `${url}#webpage` },
     ...(withOffer
       ? {
