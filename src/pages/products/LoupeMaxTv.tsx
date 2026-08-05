@@ -1,3 +1,4 @@
+import { GtinSpecRows } from "@/components/products/GtinSpecRows";
 import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -100,6 +101,7 @@ const LoupeMaxTv = () => {
           <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Caractéristiques techniques</h2>
           <div className="bg-card rounded-2xl border-2 border-border overflow-hidden">
             {specs.map((row) => <div key={row.label} className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] border-b border-border last:border-b-0"><div className="bg-muted px-5 py-4 font-bold text-foreground text-lg">{row.label}</div><div className="px-5 py-4 text-lg text-foreground leading-relaxed">{row.value}</div></div>)}
+            <GtinSpecRows />
           </div>
               <h3 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Options disponibles</h3>
               <div className="bg-card rounded-2xl border-2 border-border overflow-hidden">

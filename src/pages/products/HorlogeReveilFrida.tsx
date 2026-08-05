@@ -1,3 +1,4 @@
+import { GtinSpecRows } from "@/components/products/GtinSpecRows";
 import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -251,6 +252,7 @@ const HorlogeReveilFrida = () => {
                 <div className="px-5 py-4 text-base md:text-lg text-foreground leading-relaxed">{row.value}</div>
               </div>
             ))}
+            <GtinSpecRows />
           </div>
         </div></div></section>
 
