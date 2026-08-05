@@ -62,6 +62,11 @@ export interface ProductVariant {
   /** Explicit aria-label for the purchase link. */
   buyAriaLabel?: string;
   status: AvailabilityStatus;
+  /**
+   * GTIN (EAN-13, UPC…) of this exact variant, as a STRING to preserve any
+   * leading zero. Absent when unknown — never "", "0" or a placeholder.
+   */
+  gtin?: string;
 }
 
 

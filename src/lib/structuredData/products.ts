@@ -43,6 +43,12 @@ export interface CatalogProduct {
   status?: AvailabilityStatus;
   /** Colour/option variants when the product is sold in several versions. */
   variants?: ProductVariant[];
+  /**
+   * GTIN (EAN-13, UPC…) as a STRING so leading zeros are preserved.
+   * Absent when unknown — never "", "0" or a placeholder value.
+   * When each variant has its own GTIN, set it on the variants instead.
+   */
+  gtin?: string;
 }
 
 export const CATALOG_PRODUCTS: CatalogProduct[] = [
@@ -125,6 +131,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
     image: imgLoupeAmelie,
     price: "188.00",
     status: "available",
+    gtin: "3760308710472",
   },
   {
     slug: "loupe-dome-eclairante-lina",
