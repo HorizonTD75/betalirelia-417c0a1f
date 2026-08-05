@@ -1,3 +1,4 @@
+import { gtinSchema } from "@/lib/gtin";
 import { describe, expect, it } from "vitest";
 import {
   getPageGraph,
@@ -393,5 +394,32 @@ describe("structured data registry", () => {
       const graph = getPageGraph(path);
       expect(JSON.parse(JSON.stringify(graph)), path).toEqual(graph);
     }
+  });
+  it("emits gtin13 on the Amélie Product and no empty GTIN elsewhere", () => {
+    const amelie = nodesOf(getPageGraph("/boutique/loupe-amelie")).find(
+      (n) => typeOf(n) === "Product",
+    )!;
+    expect(amelie.gtin13).toBe("3760308710472");
+    expect(amelie.offers).toBeDefined();
+
+    for (const path of indexable) {
+      for (const node of nodesOf(getPageGraph(path))) {
+        for (const key of ["gtin", "gtin8", "gtin12", "gtin13", "gtin14"]) {
+          if (key in node) {
+            expect(String(node[key]), `${path} ${key}`).toMatch(/^\d{8,14}$/);
+          }
+        }
+      }
+    }
+  });
+
+  it("maps GTIN length to the right schema.org property", () => {
+    expect(gtinSchema("3760308710472")).toEqual({ gtin13: "3760308710472" });
+    expect(gtinSchema("01234567")).toEqual({ gtin8: "01234567" });
+    expect(gtinSchema("012345678905")).toEqual({ gtin12: "012345678905" });
+    expect(gtinSchema("01234567890128")).toEqual({ gtin14: "01234567890128" });
+    expect(gtinSchema(undefined)).toEqual({});
+    expect(gtinSchema("")).toEqual({});
+    expect(gtinSchema("N/A")).toEqual({});
   });
 });
