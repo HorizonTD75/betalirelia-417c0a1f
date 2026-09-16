@@ -12,6 +12,8 @@ import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgAmelie from "@/assets/products/loupe-electronique-amelie.jpg";
 import imgAmelieProduct from "@/assets/products/loupe-electronique-amelie-product.jpeg";
 import imgAmelieGrossissements from "@/assets/products/loupe-electronique-amelie-grossissements.jpeg";
+import { useMetaViewContent } from "@/hooks/useMetaViewContent";
+import { META_PRODUCTS, trackMetaInitiateCheckout } from "@/lib/metaPixel";
 
 const STRIPE_URL = "https://buy.stripe.com/dRm28s7QidKfaBVdbT2Fa00";
 
@@ -94,6 +96,7 @@ const notes = [
 
 const LoupeAmelie = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  useMetaViewContent(META_PRODUCTS.amelie);
 
   return (
     <div className="min-h-screen">
@@ -153,7 +156,12 @@ const LoupeAmelie = () => {
               <div className="flex items-center gap-6 mb-4 flex-wrap">
                 <p className="text-3xl font-bold text-primary m-0 whitespace-nowrap">188 €</p>
                 <Button variant="secondary" size="lg" asChild>
-                  <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={STRIPE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackMetaInitiateCheckout(META_PRODUCTS.amelie)}
+                  >
                     Acheter ce produit
                     <ArrowRight className="w-5 h-5" />
                   </a>
@@ -256,7 +264,12 @@ const LoupeAmelie = () => {
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">Chaque situation visuelle est unique. Contactez-nous pour un échange gratuit et sans engagement.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="default" size="lg" asChild>
-              <a href={STRIPE_URL} target="_blank" rel="noopener noreferrer">Accéder au paiement sécurisé<ArrowRight className="w-5 h-5" /></a>
+              <a
+                href={STRIPE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackMetaInitiateCheckout(META_PRODUCTS.amelie)}
+              >Accéder au paiement sécurisé<ArrowRight className="w-5 h-5" /></a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link to="/aides-lecture-bassevision/loupes-electroniques"><ArrowLeft className="w-5 h-5" />Toutes les loupes électroniques</Link>

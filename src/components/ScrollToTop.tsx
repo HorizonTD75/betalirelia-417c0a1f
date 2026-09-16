@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { trackPageView } from "@/lib/cookieConsent";
+import { trackMetaPageView } from "@/lib/metaPixel";
 
 const ScrollToTop = () => {
   const { pathname, hash, search } = useLocation();
@@ -28,6 +29,9 @@ const ScrollToTop = () => {
     if (lastTrackedRef.current !== null) {
       // Defer slightly so document.title is updated by the route's meta script.
       setTimeout(() => trackPageView(key), 50);
+      // Meta Pixel : le PageView initial est envoyé par le snippet d'index.html,
+      // on n'envoie donc que les changements de route (une seule fois chacun).
+      trackMetaPageView();
     }
     lastTrackedRef.current = key;
   }, [pathname, search]);
