@@ -12,8 +12,7 @@ import ProductTrustBanner from "@/components/products/ProductTrustBanner";
 import imgAmelie from "@/assets/products/loupe-electronique-amelie.jpg";
 import imgAmelieProduct from "@/assets/products/loupe-electronique-amelie-product.jpeg";
 import imgAmelieGrossissements from "@/assets/products/loupe-electronique-amelie-grossissements.jpeg";
-import { useMetaViewContent } from "@/hooks/useMetaViewContent";
-import { META_PRODUCTS, trackMetaInitiateCheckout } from "@/lib/metaPixel";
+import { getMetaProductForPath, trackMetaInitiateCheckout } from "@/lib/metaPixel";
 
 const STRIPE_URL = "https://buy.stripe.com/dRm28s7QidKfaBVdbT2Fa00";
 
@@ -94,9 +93,10 @@ const notes = [
 
 
 
+const AMELIE_META = getMetaProductForPath("/boutique/loupe-amelie");
+
 const LoupeAmelie = () => {
   const [selectedImage, setSelectedImage] = useState(0);
-  useMetaViewContent(META_PRODUCTS.amelie);
 
   return (
     <div className="min-h-screen">
@@ -160,7 +160,7 @@ const LoupeAmelie = () => {
                     href={STRIPE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackMetaInitiateCheckout(META_PRODUCTS.amelie)}
+                    onClick={() => AMELIE_META && trackMetaInitiateCheckout(AMELIE_META)}
                   >
                     Acheter ce produit
                     <ArrowRight className="w-5 h-5" />
@@ -268,7 +268,7 @@ const LoupeAmelie = () => {
                 href={STRIPE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackMetaInitiateCheckout(META_PRODUCTS.amelie)}
+                onClick={() => AMELIE_META && trackMetaInitiateCheckout(AMELIE_META)}
               >Accéder au paiement sécurisé<ArrowRight className="w-5 h-5" /></a>
             </Button>
             <Button variant="outline" size="lg" asChild>

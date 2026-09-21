@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useCartSync } from "@/hooks/useCartSync";
 import ScrollToTop from "./components/ScrollToTop";
+import MetaViewContentTracker from "./components/MetaViewContentTracker";
 import CookieConsentWrapper from "./components/CookieConsentWrapper";
 
 // Critical: load eagerly for LCP
@@ -122,6 +123,7 @@ const App = () => (
       <BrowserRouter>
         <AppContent />
         <ScrollToTop />
+        <MetaViewContentTracker />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
