@@ -283,11 +283,11 @@ const HubPage = ({ rest, sections }: { rest: string; sections: Section[] }) => {
                 const Icon = iconFor(c.href);
                 return (
                   <li key={c.href} className={`min-w-0 relative flex flex-col rounded-2xl border-2 border-border bg-card p-6 md:p-7 transition-colors hover:border-primary focus-within:border-primary focus-within:ring-4 focus-within:ring-secondary ${i === cards.length - 1 && cards.length % 2 === 1 ? "md:col-span-2" : ""}`}>
-                    <div className="flex items-start gap-4 mb-3">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-3">
                       <span className="w-14 h-14 shrink-0 rounded-full bg-secondary/25 text-primary flex items-center justify-center" aria-hidden="true">
                         <Icon className="w-7 h-7" />
                       </span>
-                      <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground leading-snug pt-2">
+                      <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground leading-snug sm:pt-2 hyphens-auto">
                         <Link to={c.href} className="focus:outline-none after:absolute after:inset-0 after:rounded-2xl">{c.title}</Link>
                       </h3>
                     </div>
@@ -429,7 +429,7 @@ const CoconArticlePage = () => {
   const crumbs = article.breadcrumb;
 
   return (
-    <div className="min-h-screen overflow-x-hidden [&_main]:[word-break:normal] [&_main]:[overflow-wrap:anywhere]">
+    <div className="min-h-screen overflow-x-hidden [&_main]:[word-break:normal] [&_main]:[overflow-wrap:break-word]">
       <SEOHead />
       <Header />
       <main id="main-content">
