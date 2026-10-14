@@ -310,3 +310,13 @@
     scroll-margin-top: 8rem;
   }
 }
+
+/* Cocon « Aides financières » — wide tables become vertical cards on phones */
+@media (max-width: 767px) {
+  .cocon-table table, .cocon-table tbody, .cocon-table tr, .cocon-table td { display: block; width: 100%; }
+  .cocon-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .cocon-table tr { border: 2px solid hsl(var(--border)); border-radius: 0.75rem; margin-bottom: 1rem; overflow: hidden; }
+  .cocon-table td { border: 0 !important; border-bottom: 1px solid hsl(var(--border)) !important; }
+  .cocon-table td:last-child { border-bottom: 0 !important; }
+  .cocon-table td::before { content: attr(data-label); display: block; font-weight: 700; color: hsl(var(--primary)); margin-bottom: 0.25rem; }
+}
