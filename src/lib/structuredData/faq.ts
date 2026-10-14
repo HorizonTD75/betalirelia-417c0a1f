@@ -155,62 +155,6 @@ export const FAQ_BY_ROUTE: Record<string, FaqEntry[]> = {
       a: "Le guide détaille les dispositifs disponibles : PCH, APA, CMI, MaPrimeAdapt' et les démarches MDPH, avec des modèles de courriers prêts à l'emploi pour simplifier vos démarches.",
     },
   ],
-  "/aides-financieres-basse-vision": [
-      {
-        q: "Une loupe électronique est-elle remboursée ?",
-        a: "Il n’existe pas un remboursement national identique pour toutes les loupes électroniques. La prise en charge dépend du modèle, de son éventuelle inscription sur la Liste des produits et prestations remboursables, de votre situation et des financeurs sollicités. Une demande de PCH ou d’autres financements peut être étudiée.",
-      },
-      {
-        q: "La PCH peut-elle financer un téléagrandisseur ?",
-        a: "Un téléagrandisseur peut être présenté comme une aide technique dans un dossier de PCH lorsqu’il répond à un besoin de compensation clairement établi. L’accord, le montant et le reste à charge dépendent toutefois de l’évaluation de la MDPH et du plan de compensation.",
-      },
-      {
-        q: "Puis-je acheter le matériel avant la réponse de la MDPH ?",
-        a: "Vérifiez les règles auprès de la MDPH avant tout achat. En pratique, il est recommandé de déposer la demande et d’obtenir une confirmation écrite avant d’acquérir le matériel.",
-      },
-      {
-        q: "Peut-on demander une aide après 60 ans ?",
-        a: "Certaines aides restent accessibles après 60 ans, mais les règles diffèrent selon la PCH, l’APA, les caisses de retraite ou MaPrimeAdapt’. La situation doit être étudiée individuellement, notamment selon l’âge auquel les critères du handicap étaient remplis et le niveau de perte d’autonomie.",
-      },
-      {
-        q: "Combien de temps faut-il pour obtenir une aide ?",
-        a: "Le délai dépend de l’organisme et de la complexité du dossier. L’évaluation, la recherche de cofinancements, la décision puis la commande du matériel peuvent prendre plusieurs mois. Il est préférable d’anticiper et de prévoir une solution temporaire.",
-      },
-      {
-        q: "Qui peut m’aider à remplir un dossier ?",
-        a: "Vous pouvez solliciter la MDPH, un travailleur social, le CCAS de votre commune, une association spécialisée, un centre de basse vision ou, selon le dossier, votre CPAM, votre caisse de retraite, Cap emploi ou le référent handicap de votre établissement.",
-      },
-    ],
-  "/aides-financieres-basse-vision/financer-aide-visuelle": [
-    {
-      q: "Une loupe électronique est-elle remboursée par l’Assurance Maladie ?",
-      a: "Il n’existe pas de remboursement identique pour toutes les loupes électroniques. Il faut vérifier si le modèle possède un code LPP et s’il respecte les conditions prévues. Lorsqu’il n’est pas pris en charge par l’Assurance Maladie, d’autres financements peuvent être recherchés.",
-    },
-    {
-      q: "La PCH peut-elle financer un téléagrandisseur ?",
-      a: "Oui, un téléagrandisseur peut être présenté comme une aide technique lorsqu’il répond à un besoin de compensation clairement établi. L’accord et le montant dépendent toutefois de l’évaluation de la MDPH et du plan de compensation.",
-    },
-    {
-      q: "Puis-je acheter le matériel avant la réponse ?",
-      a: "Il est préférable de ne pas acheter avant d’avoir vérifié les règles de chaque financeur. Certains organismes exigent que la demande soit déposée, voire acceptée, avant l’achat.",
-    },
-    {
-      q: "Une mutuelle rembourse-t-elle les aides basse vision ?",
-      a: "Cela dépend du contrat. Certaines mutuelles prévoient un forfait, un remboursement complémentaire ou un fonds d’action sociale. Demandez une réponse écrite portant sur le modèle précis.",
-    },
-    {
-      q: "Plusieurs aides peuvent-elles être cumulées ?",
-      a: "Oui, plusieurs financements peuvent parfois être associés, mais leur total ne peut pas dépasser le prix réel du matériel. Les organismes doivent être informés des autres aides demandées ou obtenues.",
-    },
-    {
-      q: "Où essayer une aide visuelle avant de demander un financement ?",
-      a: "Vous pouvez vous adresser à un opticien spécialisé en basse vision, un centre de basse vision, un service de réadaptation, une association ou un professionnel disposant de plusieurs matériels d’essai.",
-    },
-    {
-      q: "Combien de temps les démarches prennent-elles ?",
-      a: "Le délai varie selon les organismes. L’évaluation, la recherche des cofinancements, la décision et la commande peuvent prendre plusieurs mois. Il est utile d’anticiper et de prévoir une solution temporaire.",
-    },
-  ],
   "/catalogue-aides-basse-vision/loupes-verre": [
     {
       q: "Peut-on utiliser une loupe avec ses lunettes habituelles ?",

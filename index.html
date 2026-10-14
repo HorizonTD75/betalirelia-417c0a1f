@@ -206,14 +206,40 @@
           og: "article"
         },
         "/aides-financieres-basse-vision": {
-          t: "Aides financières basse vision et malvoyance | LirElia",
-          d: "Découvrez les aides financières possibles en cas de malvoyance : matériel basse vision, dossier MDPH, PCH, logement, emploi, études et démarches.",
-          og: "website"
+          t: "Aides financières malvoyance : droits et démarches 2026 | LirElia",
+          d: "PCH, MDPH, AAH, MaPrimeAdapt’ : identifiez les aides possibles pour la basse vision et les démarches à effectuer avant d’acheter.",
+          og: "article",
+          noImg: true
         },
         "/aides-financieres-basse-vision/financer-aide-visuelle": {
-          t: "Financer une aide visuelle ou une loupe électronique",
-          d: "PCH, Assurance Maladie, mutuelle ou CPAM : découvrez les financements possibles pour une loupe électronique, un téléagrandisseur ou une machine à lire.",
-          og: "article"
+          t: "Loupe électronique : remboursement et aides 2026 | LirElia",
+          d: "Loupe électronique, téléagrandisseur : vérifiez LPP, PCH, MDPH, mutuelle et aides complémentaires avant d’acheter votre matériel.",
+          og: "article",
+          noImg: true
+        },
+        "/aides-financieres-basse-vision/dossier-mdph-pch": {
+          t: "Dossier MDPH basse vision : PCH et démarches 2026 | LirElia",
+          d: "Comment constituer un dossier MDPH pour une déficience visuelle ? Pièces, projet de vie, devis, PCH, délais et recours.",
+          og: "article",
+          noImg: true
+        },
+        "/aides-financieres-basse-vision/aides-sociales-droits": {
+          t: "AAH, APA, PCH, CMI : droits des malvoyants 2026 | LirElia",
+          d: "AAH, APA, PCH, CMI et RQTH : distinguez les droits, les critères et les démarches pour les personnes malvoyantes.",
+          og: "article",
+          noImg: true
+        },
+        "/aides-financieres-basse-vision/adapter-logement": {
+          t: "MaPrimeAdapt’ et PCH : logement malvoyant 2026 | LirElia",
+          d: "Adapter son logement en cas de malvoyance : MaPrimeAdapt’, PCH, travaux, conditions et démarches à vérifier en 2026.",
+          og: "article",
+          noImg: true
+        },
+        "/aides-financieres-basse-vision/travail-etudes": {
+          t: "Travail et études : aides handicap visuel 2026 | LirElia",
+          d: "Écrans adaptés, synthèse vocale, poste de travail : Agefiph, FIPHFP, Cap emploi et aides pour les étudiants malvoyants.",
+          og: "article",
+          noImg: true
         },
         "/expert-basse-vision-visiopraticien": {
           t: "Visiopraticien expert basse vision | Lire et vivre mieux",
@@ -590,6 +616,11 @@
       setM("twitter:title", ogTitle);
       setM("twitter:description", ogDesc);
       setM("twitter:image:alt", "LirElia \u2014 Expert en basse vision, bilans et aides \u00e0 la lecture");
+      if (r.noImg) {
+        // No real social image exists for these pages yet: never expose a fictive og:image.
+        var imgTags = head.querySelectorAll('meta[property="og:image"],meta[property="og:image:alt"],meta[name="twitter:image"],meta[name="twitter:image:alt"]');
+        for (var k = 0; k < imgTags.length; k++) imgTags[k].parentNode.removeChild(imgTags[k]);
+      }
       var can = head.querySelector('link[rel="canonical"]');
       if (can) can.setAttribute("href", u);
       else {
