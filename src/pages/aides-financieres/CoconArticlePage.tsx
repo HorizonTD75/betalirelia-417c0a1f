@@ -272,7 +272,7 @@ const HubPage = ({ rest, sections }: { rest: string; sections: Section[] }) => {
   return (
     <div className="container py-10 md:py-14">
       <div className="max-w-6xl mx-auto min-w-0">
-        {rest && <div className="max-w-3xl"><Markdown source={rest} /></div>}
+        {rest && <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:gap-10 lg:items-start [&>aside]:lg:my-0 [&>p:last-of-type]:mb-0"><Markdown source={rest} /></div>}
 
         {pathSec && (
           <section id="parcours" aria-labelledby={pathSec.id} className="mt-10">
@@ -380,7 +380,7 @@ const ChildPage = ({ path, rest, sections }: { path: string; rest: string; secti
 
           {mdphSteps.length > 0 && (
             <nav aria-label="Les étapes du dossier" className="my-10">
-              <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 list-none p-0">
+              <ol className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none p-0">
                 {mdphSteps.map((st, i) => (
                   <li key={st.label} className="min-w-0">
                     <a href={`#${st.id}`} className="flex h-full items-start gap-3 min-h-[44px] rounded-xl border-2 border-border bg-card p-4 hover:border-primary">
@@ -429,7 +429,7 @@ const CoconArticlePage = () => {
   const crumbs = article.breadcrumb;
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden [&_main]:[word-break:normal] [&_main]:[overflow-wrap:anywhere]">
       <SEOHead />
       <Header />
       <main id="main-content">
