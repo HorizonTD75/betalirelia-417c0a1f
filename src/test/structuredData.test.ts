@@ -268,13 +268,23 @@ describe("structured data registry", () => {
     ]);
   });
 
-  it("lists only published financial-aid child pages", () => {
-    const list = nodesOf(getPageGraph("/aides-financieres-basse-vision")).find(
-      (n) => typeOf(n) === "ItemList",
-    );
-    const urls = (list!.itemListElement as Node[]).map((i) => String(i.url));
-    expect(urls).toEqual(["https://lirelia.fr/aides-financieres-basse-vision/financer-aide-visuelle/"]);
-    for (const url of urls) expect(indexable).toContain(url.replace("https://lirelia.fr", "").replace(/\/$/, ""));
+  it("financial-aid cocoon: 6 indexable pages with WebPage + BreadcrumbList, no FAQPage/ItemList", () => {
+    const routes = [
+      "/aides-financieres-basse-vision",
+      "/aides-financieres-basse-vision/financer-aide-visuelle",
+      "/aides-financieres-basse-vision/dossier-mdph-pch",
+      "/aides-financieres-basse-vision/aides-sociales-droits",
+      "/aides-financieres-basse-vision/adapter-logement",
+      "/aides-financieres-basse-vision/travail-etudes",
+    ];
+    for (const route of routes) {
+      expect(indexable, route).toContain(route);
+      const types = nodesOf(getPageGraph(route)).map(typeOf);
+      expect(types, route).toContain("WebPage");
+      expect(types, route).toContain("BreadcrumbList");
+      expect(types, route).not.toContain("FAQPage");
+      expect(types, route).not.toContain("ItemList");
+    }
   });
 
   it("credits Thierry DUCROS as book author and never LirElia as publisher", () => {
@@ -366,27 +376,6 @@ describe("structured data registry", () => {
       expect(resolveVariantId(ivarVariants, bad)).toBeNull();
     }
     expect(resolveVariantId(ivarVariants, "blanc")).not.toBe("undefined");
-  });
-
-  it("excludes the four unpublished financial-aid pages everywhere", () => {
-    const future = [
-      "/aides-financieres-basse-vision/dossier-mdph-pch",
-      "/aides-financieres-basse-vision/aides-sociales-droits",
-      "/aides-financieres-basse-vision/adapter-logement",
-      "/aides-financieres-basse-vision/travail-etudes",
-    ];
-    const manifest = getStructuredDataManifest();
-    const list = nodesOf(getPageGraph("/aides-financieres-basse-vision")).find(
-      (n) => typeOf(n) === "ItemList",
-    )!;
-    const urls = (list.itemListElement as Node[]).map((i) => String(i.url));
-    expect(list.numberOfItems).toBe(1);
-    expect(urls.length).toBe(1);
-    for (const route of future) {
-      expect(manifest[route], route).toBeUndefined();
-      expect(indexable, route).not.toContain(route);
-      expect(urls.join(" "), route).not.toContain(route);
-    }
   });
 
   it("survives a JSON.stringify → JSON.parse round trip on every route", () => {
