@@ -121,7 +121,7 @@ L'ouverture du droit à la PCH ne dépend pas d'un plafond de ressources, mais l
 
 ## Quels formulaires et documents préparer ?
 
-Le formulaire de demande de droits est le **Cerfa 15692*01** et le certificat médical MDPH le **Cerfa 15695*01**. Dans la version du dossier examinée, le certificat doit dater de **moins de douze mois**. Vérifiez les versions en vigueur et les exigences de votre MDPH lors du dépôt.
+Le formulaire de demande de droits est le **Cerfa 15692\*01** et le certificat médical MDPH le **Cerfa 15695\*01**. Dans la version du dossier examinée, le certificat doit dater de **moins de douze mois**. Vérifiez les versions en vigueur et les exigences de votre MDPH lors du dépôt.
 
 Pour une déficience visuelle, demandez également si le **compte rendu type ophtalmologique** doit être joint. L'acuité visuelle n'explique pas tout : le champ visuel, l'éblouissement et le contraste peuvent être déterminants dans la vie quotidienne.
 
@@ -185,7 +185,7 @@ Non. Le matériel et le besoin sont évalués dans le cadre du dispositif demand
 ## Sources et actualisation
 
 - [Service-Public — PCH](https://www.service-public.fr/particuliers/vosdroits/F14202)
-- [Service-Public — dossier MDPH (Cerfa 15692*01)](https://www.service-public.fr/particuliers/vosdroits/R19993)
+- [Service-Public — dossier MDPH (Cerfa 15692\*01)](https://www.service-public.fr/particuliers/vosdroits/R19993)
 - [Service-Public — certificat médical MDPH](https://www.service-public.fr/particuliers/vosdroits/R19996)
 - [Mon Parcours Handicap — déposer une demande PCH](https://www.monparcourshandicap.gouv.fr/demarches/demarches-pour-demander-la-pch)
 
