@@ -65,7 +65,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className="py-2 font-sans text-[20px] font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors px-1.5 text-left leading-snug">
+              className="py-2 font-sans text-[18px] 2xl:text-[20px] font-semibold text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors px-1.5 text-left leading-snug [word-break:normal] [overflow-wrap:normal] hyphens-none">
 
                 {link.label}
               </a>

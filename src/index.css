@@ -320,3 +320,17 @@
   .cocon-table td:last-child { border-bottom: 0 !important; }
   .cocon-table td::before { content: attr(data-label); display: block; font-weight: 700; color: hsl(var(--primary)); margin-bottom: 0.25rem; }
 }
+
+/* Cocon « Aides financières » — numbered steps, H2 accent, FAQ, sources */
+.cocon-h2::before { content: ""; display: block; width: 3rem; height: 4px; border-radius: 9999px; background: hsl(var(--secondary)); margin-bottom: 0.75rem; }
+.cocon-steps { list-style: none; padding: 0; counter-reset: step; display: grid; gap: 1rem; }
+.cocon-steps > li { counter-increment: step; position: relative; padding: 1rem 1.25rem 1rem 4.25rem; background: hsl(var(--card)); border: 2px solid hsl(var(--border)); border-radius: 0.75rem; }
+.cocon-steps > li::before { content: counter(step); position: absolute; left: 1rem; top: 0.9rem; width: 2.25rem; height: 2.25rem; border-radius: 9999px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+@media (min-width: 900px) {
+  .cocon-hub-steps .cocon-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cocon-hub-steps .cocon-steps > li { padding: 4rem 1.25rem 1.25rem; }
+  .cocon-hub-steps .cocon-steps > li::before { left: 1.25rem; top: 1.1rem; }
+}
+.cocon-faq h3 { margin-top: 0; padding-top: 1.5rem; border-top: 1px solid hsl(var(--border)); }
+.cocon-faq h3:first-of-type { border-top: 0; padding-top: 0; }
+.cocon-sources ul, .cocon-sources p { font-size: 1.125rem; }
