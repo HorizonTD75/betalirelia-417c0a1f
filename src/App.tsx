@@ -99,8 +99,7 @@ const Livraison = lazy(() => import("./pages/Livraison"));
 const RetoursRemboursements = lazy(() => import("./pages/RetoursRemboursements"));
 const FormulaireRetractation = lazy(() => import("./pages/FormulaireRetractation"));
 const SavGaranties = lazy(() => import("./pages/SavGaranties"));
-const AidesFinancieres = lazy(() => import("./pages/AidesFinancieres"));
-const FinancerAideVisuelle = lazy(() => import("./pages/aides-financieres/FinancerAideVisuelle"));
+const CoconArticlePage = lazy(() => import("./pages/aides-financieres/CoconArticlePage"));
 
 const queryClient = new QueryClient();
 
@@ -222,8 +221,12 @@ const App = () => (
             <Route path="/retours-remboursements" element={<RetoursRemboursements />} />
             <Route path="/formulaire-retractation" element={<FormulaireRetractation />} />
             <Route path="/sav-garanties" element={<SavGaranties />} />
-            <Route path="/aides-financieres-basse-vision" element={<AidesFinancieres />} />
-            <Route path="/aides-financieres-basse-vision/financer-aide-visuelle" element={<FinancerAideVisuelle />} />
+            <Route path="/aides-financieres-basse-vision" element={<CoconArticlePage />} />
+            <Route path="/aides-financieres-basse-vision/financer-aide-visuelle" element={<CoconArticlePage />} />
+            <Route path="/aides-financieres-basse-vision/dossier-mdph-pch" element={<CoconArticlePage />} />
+            <Route path="/aides-financieres-basse-vision/aides-sociales-droits" element={<CoconArticlePage />} />
+            <Route path="/aides-financieres-basse-vision/adapter-logement" element={<CoconArticlePage />} />
+            <Route path="/aides-financieres-basse-vision/travail-etudes" element={<CoconArticlePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

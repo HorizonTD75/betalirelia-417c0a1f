@@ -98,13 +98,6 @@ export const ITEM_LISTS: Record<string, ListEntry[]> = {
     { path: "/maladies-yeux/maladies-hereditaires/aniridie", name: "L'aniridie" },
   ],
 
-  // Financial aid hub → only the child page that really exists.
-  "/aides-financieres-basse-vision": [
-    {
-      path: "/aides-financieres-basse-vision/financer-aide-visuelle",
-      name: "Financer une aide visuelle",
-    },
-  ],
 };
 
 export const getItemList = (path: string): ListEntry[] | undefined => ITEM_LISTS[path];

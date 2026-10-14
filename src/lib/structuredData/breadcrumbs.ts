@@ -95,6 +95,10 @@ export const VISIBLE_BREADCRUMBS: Record<string, BreadcrumbItem[]> = {
   // ---- Aides financières -------------------------------------------------
   "/aides-financieres-basse-vision": leaf([HOME, LIVING], "Aides financières", "/aides-financieres-basse-vision"),
   "/aides-financieres-basse-vision/financer-aide-visuelle": leaf([HOME, LIVING, FINANCIAL], "Financer une aide visuelle", "/aides-financieres-basse-vision/financer-aide-visuelle"),
+  "/aides-financieres-basse-vision/dossier-mdph-pch": leaf([HOME, LIVING, FINANCIAL], "Dossier MDPH et PCH", "/aides-financieres-basse-vision/dossier-mdph-pch"),
+  "/aides-financieres-basse-vision/aides-sociales-droits": leaf([HOME, LIVING, FINANCIAL], "Aides sociales et droits", "/aides-financieres-basse-vision/aides-sociales-droits"),
+  "/aides-financieres-basse-vision/adapter-logement": leaf([HOME, LIVING, FINANCIAL], "Adapter le logement", "/aides-financieres-basse-vision/adapter-logement"),
+  "/aides-financieres-basse-vision/travail-etudes": leaf([HOME, LIVING, FINANCIAL], "Travail et études", "/aides-financieres-basse-vision/travail-etudes"),
 };
 
 export const getVisibleBreadcrumb = (path: string): BreadcrumbItem[] | undefined =>
