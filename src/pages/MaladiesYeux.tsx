@@ -472,7 +472,7 @@ const MaladiesYeux = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="secondary" size="lg" asChild>
-                  <Link to="/#bilans">
+                  <Link to="/bilans-bassevision/">
                     Découvrir nos bilans
                     <ArrowRight className="w-5 h-5" />
                   </Link>

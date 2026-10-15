@@ -165,6 +165,8 @@ Certaines demandes prennent plusieurs mois. Pendant ce temps, il peut être util
 
 Pour un achat important, vérifiez toujours si la procédure impose d'attendre un accord.
 
+Pour découvrir d'autres pistes d'adaptation au quotidien, vous pouvez aussi consulter le livre [*DMLA – Votre vie ne s'arrête pas*](/livre-dmla-votre-vie-ne-sarrete-pas/).
+
 ## Qui peut vous aider ?
 
 Vous n'avez pas à comprendre seul toutes les règles. Le service social de votre commune (**CCAS**), un travailleur social, la **MDPH**, votre caisse de retraite ou votre référent handicap peuvent vous orienter selon votre situation. Pour un équipement visuel, l'avis d'un professionnel de la basse vision et l'essai du matériel sont particulièrement utiles.

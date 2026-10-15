@@ -162,7 +162,7 @@ N'achetez pas uniquement pour « gagner du temps » sans vous être renseigné s
 
 Une lampe de lecture adaptée, un réglage d'agrandissement sur téléphone ou ordinateur, ou une loupe optique testée dans de bonnes conditions peuvent rendre service. Leur intérêt dépend de la vision et de la tâche. Le conseil et l'essai évitent parfois un achat décevant.
 
-Sur LirElia, vous pouvez aussi consulter les [conseils sur les aides à la lecture](/aides-lecture-bassevision/).
+Sur LirElia, vous pouvez aussi consulter les [conseils sur les aides à la lecture](/aides-lecture-bassevision/). Le guide [*DMLA – Votre vie ne s'arrête pas*](/livre-dmla-votre-vie-ne-sarrete-pas/) aborde également les adaptations possibles pour préserver la lecture et l'autonomie.
 
 ## Questions fréquentes
 
