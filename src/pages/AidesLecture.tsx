@@ -359,6 +359,12 @@ const AidesLecture = () => {
                           <p className="text-base md:text-lg text-foreground/85 leading-relaxed mb-4">
                             {cat.intro}
                           </p>
+                          {cat.id === "loupe-electronique" && (
+                            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+                              Selon votre situation, certaines aides peuvent être étudiées :{" "}
+                              <Link to="/aides-financieres-basse-vision/financer-aide-visuelle/" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">comment financer une aide visuelle</Link>.
+                            </p>
+                          )}
                           <Button variant="default" size="default" asChild>
                             <Link to={cat.link}>
                               {cat.cta}

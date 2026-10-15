@@ -230,6 +230,11 @@ const Aidants = () => {
                 </div>
               ))}
             </div>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Vous accompagnez une personne atteinte de DMLA ? Le livre{" "}
+              <Link to="/livre-aider-proche-dmla/" className="text-primary font-semibold underline underline-offset-4 hover:no-underline"><em>Aider un proche atteint de DMLA</em></Link>{" "}
+              propose des repères pour soutenir votre proche tout en préservant votre propre équilibre.
+            </p>
             <div className="bg-primary/5 rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-primary/20">
               <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                 Un parcours simple, sans jargon
@@ -265,6 +270,10 @@ const Aidants = () => {
                 </AccordionItem>
               ))}
             </Accordion>
+            <p className="text-lg text-muted-foreground leading-relaxed mt-6">
+              Pour connaître les démarches et les aides possibles, consultez notre{" "}
+              <Link to="/aides-financieres-basse-vision/" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">guide des aides financières</Link>.
+            </p>
           </div>
         </section>
 

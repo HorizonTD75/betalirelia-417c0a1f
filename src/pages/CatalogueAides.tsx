@@ -340,6 +340,10 @@ const CatalogueAides = () => {
                     <p className="text-lg leading-relaxed text-primary-foreground/90">
                       Chaque situation de basse vision est différente. Si vous hésitez entre plusieurs aides, nous pouvons vous orienter vers la solution la plus adaptée à votre usage : lecture, éclairage, vision de près ou vision de loin.
                     </p>
+                    <p className="text-base leading-relaxed text-primary-foreground/90 mt-3">
+                      Avant un achat important,{" "}
+                      <Link to="/aides-financieres-basse-vision/financer-aide-visuelle/" className="font-semibold underline underline-offset-4 hover:no-underline">renseignez-vous sur le financement d'une aide visuelle</Link>.
+                    </p>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-3 shrink-0">
                     <Button asChild variant="secondary" size="lg">
