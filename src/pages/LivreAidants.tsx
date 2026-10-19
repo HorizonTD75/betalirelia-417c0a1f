@@ -18,7 +18,10 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import bookAidant from "@/assets/book-aidant.jpg";
+import bookAidant from "@/assets/livre-aider-proche.jpg";
+import bookDmla from "@/assets/livre-dmla-votre-vie.jpg";
+
+const AMAZON_AIDANTS_URL = "https://www.amazon.fr/dp/B0HNGMNBQ1";
 
 const PDF_AIDANTS_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-aidants-extrait.pdf`;
 
@@ -116,8 +119,7 @@ const LivreAidants = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Livre pour aider un proche atteint de DMLA | LirElia"
-        description="Le guide indispensable pour les aidants : comprendre la DMLA de votre proche, l'accompagner au quotidien et préserver votre propre équilibre émotionnel."
+        title="DMLA – Aider un proche sans s'épuiser, le livre | LirElia"
         canonicalPath="/livre-aider-proche-dmla"
       />
       <Header />
@@ -129,8 +131,8 @@ const LivreAidants = () => {
               <div className="lg:w-1/3 flex justify-center">
                 <img
                   src={bookAidant}
-                  alt="Guide pratique pour les aidants de personnes en basse vision"
-                  className="w-56 md:w-64 rounded-xl shadow-2xl" width={800} height={1024} loading="lazy" decoding="async" />
+                  alt="Couverture du livre « DMLA – Aider un proche sans s'épuiser » de Thierry DUCROS"
+                  className="w-56 md:w-64 h-auto object-contain rounded-xl shadow-2xl" width={900} height={1379} loading="lazy" decoding="async" />
               </div>
               <div className="lg:w-2/3 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 mb-6">
@@ -138,22 +140,25 @@ const LivreAidants = () => {
                   <span className="font-semibold text-lg">Le guide indispensable pour les aidants</span>
                 </div>
                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                  Aider un proche atteint de DMLA
+                  DMLA – Aider un proche sans s'épuiser
                 </h1>
                 <p className="text-xl md:text-2xl mb-4 opacity-90 leading-relaxed">
-                  Accompagner sans s'épuiser : comprendre la basse vision, soutenir au quotidien et préserver votre
-                  propre équilibre.
+                  Guide pratique des aidants pour comprendre la basse vision et préserver l’autonomie
                 </p>
+                <p className="text-lg mb-2 opacity-90">Par Thierry DUCROS</p>
                 <p className="text-lg mb-8 opacity-80">
                   Un guide empathique et concret pour les conjoints, enfants, amis et professionnels qui accompagnent
-                  une personne malvoyante. Disponible prochainement sur Amazon.
+                  une personne malvoyante. Disponible dès maintenant sur Amazon.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button variant="secondary" size="lg" asChild>
-                    <a href="#plan-du-livre">
-                      Découvrir le plan du livre
+                    <a href={AMAZON_AIDANTS_URL} target="_blank" rel="noopener noreferrer">
+                      Découvrir le livre sur Amazon
                       <ArrowRight className="w-5 h-5" />
                     </a>
+                  </Button>
+                  <Button variant="heroOutline" size="lg" asChild>
+                    <a href="#plan-du-livre">Découvrir le plan du livre</a>
                   </Button>
                   <Button variant="heroOutline" size="lg" asChild>
                     <Link to="/rdv-bilan">Prendre rendez-vous</Link>
@@ -282,7 +287,7 @@ const LivreAidants = () => {
                 data={PDF_AIDANTS_URL}
                 type="application/pdf"
                 className="w-full h-[600px] md:h-[750px]"
-                aria-label="Extrait du livre Aider un proche atteint de DMLA"
+                aria-label="Extrait du livre DMLA – Aider un proche sans s'épuiser"
               >
                 <div className="flex flex-col items-center justify-center h-[400px] gap-6 p-8 text-center">
                   <BookOpen className="w-16 h-16 text-muted-foreground" />
@@ -328,19 +333,39 @@ const LivreAidants = () => {
           </div>
         </section>
 
+
+        {/* Autre ouvrage */}
+        <section className="py-12 bg-background" aria-labelledby="autre-livre">
+          <div className="container max-w-3xl">
+            <Card variant="default" className="p-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <img src={bookDmla} alt="Couverture du livre « DMLA – Votre vie ne s'arrête pas » de Thierry DUCROS" className="w-24 h-auto object-contain rounded-md shadow-md border border-border shrink-0" width={900} height={1356} loading="lazy" decoding="async" />
+                <div className="text-center sm:text-left min-w-0">
+                  <h2 id="autre-livre" className="font-serif text-xl font-bold text-foreground mb-2">Un guide également destiné à la personne concernée</h2>
+                  <p className="text-muted-foreground leading-relaxed mb-3">Découvrez « DMLA – Votre vie ne s'arrête pas », pour mieux comprendre la maladie et trouver des solutions au quotidien.</p>
+                  <Link to="/livre-dmla-votre-vie-ne-sarrete-pas/" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">Voir le livre</Link>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+
         {/* CTA final */}
         <section className="py-20 bg-primary text-primary-foreground">
           <div className="container max-w-3xl text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Aller plus loin dans l'accompagnement</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Le livre est disponible sur Amazon</h2>
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
-              Ce livre sera bientôt disponible sur Amazon. En attendant, découvrez les bilans basse vision et les aides à la lecture proposés par LirElia pour aider concrètement votre proche malvoyant.
+              Disponible dès maintenant sur Amazon. Découvrez aussi les bilans basse vision et les aides à la lecture proposés par LirElia pour aider concrètement votre proche malvoyant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>
-                <Link to="/bilans-bassevision">
-                  Voir les bilans basse vision
+                <a href={AMAZON_AIDANTS_URL} target="_blank" rel="noopener noreferrer">
+                  Acheter le livre sur Amazon
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
+              </Button>
+              <Button variant="heroOutline" size="lg" asChild>
+                <Link to="/bilans-bassevision">Voir les bilans basse vision</Link>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
                 <Link to="/aides-lecture-bassevision">

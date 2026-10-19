@@ -25,7 +25,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
-import bookDmlaImage from "@/assets/book-dmla.jpg";
+import bookDmlaCover from "@/assets/livre-dmla-votre-vie.jpg";
+import bookAidantCover from "@/assets/livre-aider-proche.jpg";
 
 import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
 import MedicalSources from "@/components/MedicalSources";
@@ -54,9 +55,7 @@ const DMLA = () => {
 
         {/* Hero Section */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
-          <div className="absolute inset-0">
-            <img src={(__getHeroSrcSet(bookDmlaImage)?.src) ?? bookDmlaImage} srcSet={__getHeroSrcSet(bookDmlaImage)?.srcSet} sizes="100vw" alt="Guide patient sur la DMLA et les solutions de basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={800} height={1024} />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-foreground/10" aria-hidden="true" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
               <p className="text-secondary font-semibold text-lg mb-3">Maladie des yeux</p>
@@ -698,6 +697,27 @@ const DMLA = () => {
                   </Link>
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+        {/* Livres de l'auteur */}
+        <section className="py-16 bg-muted" aria-labelledby="livres-dmla">
+          <div className="container max-w-5xl">
+            <h2 id="livres-dmla" className="font-serif text-3xl font-bold text-foreground mb-8 text-center">Les livres de Thierry DUCROS sur la DMLA</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                { img: bookDmlaCover, w: 900, h: 1356, title: "DMLA – Votre vie ne s'arrête pas", sub: "Comprendre la DMLA, s’équiper, s’organiser… et garder le moral", to: "/livre-dmla-votre-vie-ne-sarrete-pas/" },
+                { img: bookAidantCover, w: 900, h: 1379, title: "DMLA – Aider un proche sans s'épuiser", sub: "Guide pratique des aidants pour comprendre la basse vision et préserver l’autonomie", to: "/livre-aider-proche-dmla/" },
+              ].map((b) => (
+                <Link key={b.to} to={b.to} className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow min-w-0">
+                  <img src={b.img} alt={`Couverture du livre « ${b.title} » de Thierry DUCROS`} className="w-24 h-auto object-contain rounded-md shadow-md shrink-0" width={b.w} height={b.h} loading="lazy" decoding="async" />
+                  <span className="min-w-0">
+                    <span className="block font-serif text-lg font-bold text-foreground mb-1">{b.title}</span>
+                    <span className="block text-muted-foreground leading-relaxed mb-2">{b.sub}</span>
+                    <span className="text-primary font-semibold underline underline-offset-4">Voir le livre</span>
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

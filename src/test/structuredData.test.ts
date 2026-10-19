@@ -345,6 +345,21 @@ describe("structured data registry", () => {
     expect((book.publisher as Node)["@id"]).toBe(person["@id"]);
   });
 
+  it("links each book to its own Amazon ASIN, never an ISBN", () => {
+    for (const [path, asin] of [
+      ["/livre-dmla-votre-vie-ne-sarrete-pas", "B0GY8312XT"],
+      ["/livre-aider-proche-dmla", "B0HNGMNBQ1"],
+    ]) {
+      const book = nodesOf(getPageGraph(path)).find((n) => typeOf(n) === "Book")!;
+      expect(book.sameAs).toBe(`https://www.amazon.fr/dp/${asin}`);
+      expect((book.identifier as Node).value).toBe(asin);
+      expect((book.identifier as Node).propertyID).toBe("ASIN");
+      expect(book.isbn).toBeUndefined();
+      expect(book.numberOfPages).toBeUndefined();
+      expect(book.bookFormat).toBeUndefined();
+    }
+  });
+
   it("gives the upcoming caregiver book no publisher, offer, price or availability", () => {
     const nodes = nodesOf(getPageGraph("/livre-aider-proche-dmla"));
     const book = nodes.find((n) => typeOf(n) === "Book")!;

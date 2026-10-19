@@ -90,7 +90,7 @@ Les prix, disponibilités des produits, modalités de livraison, créneaux de re
 ## Livres et communauté
 
 - [DMLA : votre vie ne s'arrête pas](https://lirelia.fr/livre-dmla-votre-vie-ne-sarrete-pas/) : guide pratique destiné aux personnes vivant avec une DMLA, à leurs proches et aux professionnels qui les accompagnent.
-- [Aider un proche atteint de DMLA](https://lirelia.fr/livre-aider-proche-dmla/) : présentation du guide consacré aux proches aidants.
+- [DMLA – Aider un proche sans s'épuiser](https://lirelia.fr/livre-aider-proche-dmla/) : présentation du guide consacré aux proches aidants.
 - [Club LirElia](https://lirelia.fr/club/) : rencontres en visioconférence, échanges pratiques et information autour de la basse vision.
 
 ## Optional

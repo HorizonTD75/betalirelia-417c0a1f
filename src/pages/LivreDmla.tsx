@@ -9,8 +9,9 @@ import { BookOpen, ArrowRight, Eye, Home, Heart, HelpCircle, Users, Star, CheckC
 import { Link } from "react-router-dom";
 
 const PDF_DMLA_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-dmla-apercu.pdf`;
-import bookDmla from "@/assets/couverture-ebook-dmla.jpg";
-const AMAZON_DMLA_URL = "https://www.amazon.fr/dp/B0GXS47Q9B";
+import bookDmla from "@/assets/livre-dmla-votre-vie.jpg";
+import bookAidant from "@/assets/livre-aider-proche.jpg";
+const AMAZON_DMLA_URL = "https://www.amazon.fr/dp/B0GY8312XT";
 
 const planDuLivre = [
   {
@@ -105,8 +106,7 @@ const LivreDmla = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="DMLA — Votre vie ne s'arrête pas : le livre | LirElia"
-        description="170 pages de solutions concrètes pour vivre avec la DMLA : adapter son quotidien, s'équiper en aides à la lecture et retrouver l'autonomie. Par un expert."
+        title="DMLA – Votre vie ne s'arrête pas, le livre | LirElia"
         canonicalPath="/livre-dmla-votre-vie-ne-sarrete-pas"
       />
       <Header />
@@ -118,8 +118,8 @@ const LivreDmla = () => {
               <div className="lg:w-1/3 flex justify-center">
                 <img
                   src={bookDmla}
-                  alt="Guide patient sur la DMLA et les solutions de basse vision"
-                  className="w-56 md:w-64 rounded-xl shadow-2xl" width={600} height={960} loading="lazy" decoding="async" />
+                  alt="Couverture du livre « DMLA – Votre vie ne s'arrête pas » de Thierry DUCROS"
+                  className="w-56 md:w-64 h-auto object-contain rounded-xl shadow-2xl" width={900} height={1356} loading="lazy" decoding="async" />
               </div>
               <div className="lg:w-2/3 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 mb-6">
@@ -127,18 +127,19 @@ const LivreDmla = () => {
                   <span className="font-semibold text-lg">25 ans d'expertise partagée</span>
                 </div>
                 <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                  DMLA : votre vie ne s'arrête pas — le guide complet
+                  DMLA – Votre vie ne s'arrête pas
                 </h1>
                 <p className="text-xl md:text-2xl mb-4 opacity-90 leading-relaxed">
-                  170 pages de solutions concrètes pour continuer à lire, à vivre et à profiter du quotidien malgré la basse vision.
+                  Comprendre la DMLA, s’équiper, s’organiser… et garder le moral
                 </p>
+                <p className="text-lg mb-2 opacity-90">Par Thierry DUCROS</p>
                 <p className="text-lg mb-8 opacity-80">
-                  Disponible dès maintenant sur Amazon au format Kindle. La version papier sera disponible très prochainement.
+                  Disponible dès maintenant sur Amazon.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button variant="secondary" size="lg" asChild>
                     <a href={AMAZON_DMLA_URL} target="_blank" rel="noopener noreferrer">
-                      Commander la version Kindle
+                      Découvrir le livre sur Amazon
                       <ArrowRight className="w-5 h-5" />
                     </a>
                   </Button>
@@ -211,7 +212,7 @@ const LivreDmla = () => {
                 },
                 {
                   title: "Complet mais accessible",
-                  desc: "170 pages denses mais jamais ennuyeuses : explications claires, exemples concrets, checklists pratiques, glossaire et annexes avec tous les contacts utiles.",
+                  desc: "Dense mais jamais ennuyeux : explications claires, exemples concrets, checklists pratiques, glossaire et annexes avec tous les contacts utiles.",
                 },
                 {
                   title: "À jour 2026",
@@ -339,6 +340,23 @@ const LivreDmla = () => {
           </div>
         </section>
 
+
+        {/* Autre ouvrage */}
+        <section className="py-12 bg-background" aria-labelledby="autre-livre">
+          <div className="container max-w-3xl">
+            <Card variant="default" className="p-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <img src={bookAidant} alt="Couverture du livre « DMLA – Aider un proche sans s'épuiser » de Thierry DUCROS" className="w-24 h-auto object-contain rounded-md shadow-md border border-border shrink-0" width={900} height={1379} loading="lazy" decoding="async" />
+                <div className="text-center sm:text-left min-w-0">
+                  <h2 id="autre-livre" className="font-serif text-xl font-bold text-foreground mb-2">Vous accompagnez un proche ?</h2>
+                  <p className="text-muted-foreground leading-relaxed mb-3">Découvrez « DMLA – Aider un proche sans s'épuiser », un guide pratique pour comprendre ses difficultés visuelles et l'aider à conserver son autonomie.</p>
+                  <Link to="/livre-aider-proche-dmla/" className="text-primary font-semibold underline underline-offset-4 hover:no-underline">Voir le livre</Link>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+
         {/* CTA final */}
         <section className="py-20 bg-primary text-primary-foreground">
           <div className="container max-w-3xl text-center">
@@ -346,7 +364,7 @@ const LivreDmla = () => {
               Le livre est disponible sur Amazon
             </h2>
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
-              Vous pouvez acheter dès maintenant la version Kindle. La version papier sera annoncée dès sa mise en ligne.
+              Le livre est disponible dès maintenant sur Amazon.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>
