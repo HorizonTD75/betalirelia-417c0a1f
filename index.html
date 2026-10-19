@@ -517,14 +517,18 @@
           og: "article"
         },
         "/livre-dmla-votre-vie-ne-sarrete-pas": {
-          t: "DMLA — Votre vie ne s'arrête pas : le livre | LirElia",
-          d: "170 pages de solutions concrètes pour vivre avec la DMLA : adapter son quotidien, s'équiper en aides à la lecture et retrouver l'autonomie. Par un expert.",
-          og: "product"
+          t: "DMLA – Votre vie ne s'arrête pas, le livre | LirElia",
+          d: "Livre de Thierry DUCROS pour comprendre la DMLA, s’équiper, s’organiser et garder le moral : solutions concrètes au quotidien. Disponible sur Amazon.",
+          og: "book",
+          img: "/images/livre-dmla-votre-vie.jpg",
+          imgAlt: "Couverture du livre DMLA – Votre vie ne s'arrête pas de Thierry DUCROS"
         },
         "/livre-aider-proche-dmla": {
-          t: "Livre pour aider un proche atteint de DMLA | LirElia",
-          d: "Le guide indispensable pour les aidants : comprendre la DMLA de votre proche, l'accompagner au quotidien et préserver votre propre équilibre émotionnel.",
-          og: "product"
+          t: "DMLA – Aider un proche sans s'épuiser, le livre | LirElia",
+          d: "Guide pratique des aidants par Thierry DUCROS : comprendre la basse vision d’un proche atteint de DMLA et préserver son autonomie. Disponible sur Amazon.",
+          og: "book",
+          img: "/images/livre-aider-proche.jpg",
+          imgAlt: "Couverture du livre DMLA – Aider un proche sans s'épuiser de Thierry DUCROS"
         },
         "/qui-sommes-nous": {
           t: "Qui sommes-nous : LirElia, experts de la basse vision",
@@ -616,6 +620,12 @@
       setM("twitter:title", ogTitle);
       setM("twitter:description", ogDesc);
       setM("twitter:image:alt", "LirElia \u2014 Expert en basse vision, bilans et aides \u00e0 la lecture");
+      if (r.img) {
+        setM("og:image", B + r.img, "property");
+        setM("og:image:alt", r.imgAlt || ogTitle, "property");
+        setM("twitter:image", B + r.img);
+        setM("twitter:image:alt", r.imgAlt || ogTitle);
+      }
       if (r.noImg) {
         // No real social image exists for these pages yet: never expose a fictive og:image.
         var imgTags = head.querySelectorAll('meta[property="og:image"],meta[property="og:image:alt"],meta[name="twitter:image"],meta[name="twitter:image:alt"]');
