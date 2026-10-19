@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ArrowRight } from "lucide-react";
-import bookDmla from "@/assets/couverture-ebook-dmla.jpg";
-import bookAidant from "@/assets/book-aidant.jpg";
+import bookDmla from "@/assets/livre-dmla-votre-vie.jpg";
+import bookAidant from "@/assets/livre-aider-proche.jpg";
 import { Link } from "react-router-dom";
 import { getHeroSrcSet } from "@/lib/heroSrcSet";
 
@@ -10,20 +10,20 @@ const books = [
   {
     image: bookDmla,
     title: "DMLA – Votre vie ne s'arrête pas",
-    subtitle: "Le guide pratique pour continuer à vivre pleinement",
+    subtitle: "Comprendre la DMLA, s’équiper, s’organiser… et garder le moral",
     description: "Ce livre accompagne les personnes atteintes de DMLA et leurs proches, avec des explications claires, des solutions concrètes et des témoignages inspirants.",
     link: "/livre-dmla-votre-vie-ne-sarrete-pas",
-    width: 600,
-    height: 960,
+    width: 900,
+    height: 1356,
   },
   {
     image: bookAidant,
-    title: "Aider un proche atteint de DMLA",
-    subtitle: "Le guide indispensable pour accompagner sans s'épuiser",
+    title: "DMLA – Aider un proche sans s'épuiser",
+    subtitle: "Guide pratique des aidants pour comprendre la basse vision et préserver l’autonomie",
     description: "Destiné aux aidants familiaux et professionnels, ce livre vous apprend à soutenir sans étouffer et à préserver votre propre équilibre.",
     link: "/livre-aider-proche-dmla",
-    width: 800,
-    height: 1024,
+    width: 900,
+    height: 1379,
   },
 ];
 
@@ -54,8 +54,8 @@ const BooksSection = () => {
                           src={v?.src ?? book.image}
                           srcSet={v?.srcSet}
                           sizes="(min-width: 768px) 160px, 40vw"
-                          alt={`Couverture du livre ${book.title}`}
-                          className="w-40 h-auto rounded-lg shadow-lg border border-border"
+                          alt={`Couverture du livre « ${book.title} » de Thierry DUCROS`}
+                          className="w-40 h-auto object-contain rounded-lg shadow-lg border border-border"
                           width={book.width}
                           height={book.height}
                           loading="lazy"

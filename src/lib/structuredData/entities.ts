@@ -165,6 +165,7 @@ export const productNode = ({
     "@type": "Product",
     "@id": id ?? `${url}#product`,
     name,
+    ...(alternativeHeadline ? { alternativeHeadline } : {}),
     description,
     image: [absoluteAsset(image)],
     brand: { "@type": "Brand", name: brand },
@@ -299,6 +300,8 @@ interface BookNodeInput {
   numberOfPages?: number;
   bookFormat?: string;
   sameAs?: string;
+  asin?: string;
+  alternativeHeadline?: string;
   /** Self-published books have the author as publisher; retailer books none. */
   selfPublished?: boolean;
 }
@@ -311,6 +314,8 @@ export const bookNode = ({
   numberOfPages,
   bookFormat,
   sameAs,
+  asin,
+  alternativeHeadline,
   selfPublished = false,
 }: BookNodeInput): Node => {
   const url = absoluteUrl(path);
@@ -318,6 +323,7 @@ export const bookNode = ({
     "@type": "Book",
     "@id": `${url}#book`,
     name,
+    ...(alternativeHeadline ? { alternativeHeadline } : {}),
     description,
     image: [absoluteAsset(image)],
     url,
@@ -328,6 +334,9 @@ export const bookNode = ({
     ...(numberOfPages ? { numberOfPages } : {}),
     ...(bookFormat ? { bookFormat } : {}),
     ...(sameAs ? { sameAs } : {}),
+    ...(asin
+      ? { identifier: { "@type": "PropertyValue", propertyID: "ASIN", value: asin } }
+      : {}),
   };
 };
 
