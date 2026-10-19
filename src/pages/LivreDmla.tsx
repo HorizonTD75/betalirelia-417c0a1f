@@ -9,7 +9,8 @@ import { BookOpen, ArrowRight, Eye, Home, Heart, HelpCircle, Users, Star, CheckC
 import { Link } from "react-router-dom";
 
 const PDF_DMLA_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/documents/livre-dmla-apercu.pdf`;
-import bookDmla from "@/assets/couverture-ebook-dmla.jpg";
+import bookDmla from "@/assets/livre-dmla-votre-vie.jpg";
+import bookAidant from "@/assets/livre-aider-proche.jpg";
 const AMAZON_DMLA_URL = "https://www.amazon.fr/dp/B0GY8312XT";
 
 const planDuLivre = [
