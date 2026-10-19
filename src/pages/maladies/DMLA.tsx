@@ -178,6 +178,16 @@ const DMLA = () => {
           <Card variant="muted" className="p-6">
             <p className="text-lg text-foreground leading-relaxed"><strong>Important :</strong> « sèche » ne signifie pas nécessairement bénigne et « humide » ne signifie pas perte inévitable de la vision. Le pronostic dépend du stade, des lésions et du suivi. Une forme peut aussi évoluer ou coexister avec l’autre.</p>
           </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <Link to="/maladies-yeux/dmla/seche/" className="group flex items-center justify-between gap-3 rounded-xl border-2 border-primary/30 bg-card p-5 text-lg font-semibold text-primary hover:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-secondary min-w-0">
+              <span className="min-w-0">Comprendre la DMLA sèche</span>
+              <ArrowRight className="w-5 h-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
+            <Link to="/maladies-yeux/dmla/humide/" className="group flex items-center justify-between gap-3 rounded-xl border-2 border-primary/30 bg-card p-5 text-lg font-semibold text-primary hover:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-secondary min-w-0">
+              <span className="min-w-0">Comprendre la DMLA humide</span>
+              <ArrowRight className="w-5 h-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
+          </div>
         </Section>
 
         <Section id="facteurs" title="Quels facteurs favorisent la DMLA ?">
