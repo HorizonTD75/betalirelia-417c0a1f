@@ -35,7 +35,7 @@ const PolitiqueCookies = () => {
               ne peuvent pas être désactivés.
             </p>
             <ul className="text-lg text-foreground leading-relaxed mb-6 list-disc pl-6 space-y-2">
-              <li><strong>lirelia_cookie_consent_v1</strong> — Stocke votre choix de consentement cookies. Durée : 12 mois.</li>
+              <li><strong>lirelia_cookie_consent_v2</strong> et <strong>lirelia_consent_id</strong> — Mémorisent votre choix de consentement et un identifiant pseudonyme de ce choix. Durée : 12 mois.</li>
             </ul>
 
             <h3 className="font-serif text-xl font-bold text-foreground mt-8 mb-3">Cookies de mesure d'audience</h3>
@@ -44,6 +44,7 @@ const PolitiqueCookies = () => {
               sont les plus consultées et comment améliorer l'expérience. Les données sont anonymisées.
             </p>
             <ul className="text-lg text-foreground leading-relaxed mb-6 list-disc pl-6 space-y-2">
+              <li><strong>Google Analytics 4</strong> — Mesure de fréquentation. Déposé uniquement avec votre accord.</li>
               <li><strong>Microsoft Clarity</strong> — Outil d'analyse du comportement utilisateur (cartes de chaleur, enregistrements anonymisés). Durée : selon le service.</li>
             </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
@@ -54,8 +55,7 @@ const PolitiqueCookies = () => {
             <h3 className="font-serif text-xl font-bold text-foreground mt-8 mb-3">Cookies de services tiers / marketing</h3>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Ces cookies permettent d'activer certains services externes, contenus intégrés ou outils de communication
-              et de suivi. Ils ne sont déposés qu'avec votre consentement explicite. Aucun cookie marketing n'est
-              actuellement actif sur le site LirElia.
+              et de suivi. Ils ne sont déposés qu'avec votre consentement explicite : Meta Pixel (Facebook), HubSpot et Albacross.
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Durée de conservation</h2>
@@ -68,7 +68,7 @@ const PolitiqueCookies = () => {
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Comment modifier votre choix ?</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               Vous pouvez modifier vos préférences de cookies à tout moment en cliquant sur le lien
-              « Gérer mes cookies » situé en bas de chaque page du site.
+              « Gérer les cookies » situé en bas de chaque page du site.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               <button

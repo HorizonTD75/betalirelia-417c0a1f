@@ -3,59 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="lirelia-build" content="2026-09-17" />
-    <!-- Google Analytics 4 (G-CSJL8WM5WM) — Consent Mode v2 : chargé dès l'arrivée, analytics_storage refusé par défaut jusqu'à consentement. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSJL8WM5WM"></script>
+    <!-- LIRELIA CONSENT LOADER (bandeau v2.0) — aucun traceur optionnel n'est chargé avant le choix du visiteur.
+         Statistiques : Google Analytics 4 (G-CSJL8WM5WM) + Microsoft Clarity (xc2ym1vcsn).
+         Marketing : Meta Pixel (2202036963709336), HubSpot (148887306), Albacross (89430325).
+         Ahrefs Web Analytics reste chargé : sans cookie ni identifiant persistant. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.gtag = gtag;
-      // Défauts Consent Mode v2 — refus par défaut, mis à jour par cookieConsent.ts après choix utilisateur
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
         ad_user_data: 'denied',
         ad_personalization: 'denied',
         functionality_storage: 'granted',
-        security_storage: 'granted',
-        wait_for_update: 500
+        security_storage: 'granted'
       });
       gtag('js', new Date());
       gtag('config', 'G-CSJL8WM5WM', { anonymize_ip: true });
+      (function (w, d) {
+        function addScript(src, attrs) {
+          var t = d.createElement('script');
+          t.async = true; t.src = src;
+          if (attrs) for (var k in attrs) t.setAttribute(k, attrs[k]);
+          d.head.appendChild(t);
+        }
+        var statsLoaded = false, marketingLoaded = false;
+        w.lireliaLoadStatistics = function () {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+          if (statsLoaded) { w.clarity && w.clarity('consent', true); return; }
+          statsLoaded = true;
+          addScript('https://www.googletagmanager.com/gtag/js?id=G-CSJL8WM5WM');
+          w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
+          addScript('https://www.clarity.ms/tag/xc2ym1vcsn');
+          w.clarity('consent', true);
+        };
+        w.lireliaLoadMarketing = function () {
+          gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+          if (marketingLoaded) { w.fbq && w.fbq('consent', 'grant'); return; }
+          marketingLoaded = true;
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(w, d,'script','https://connect.facebook.net/en_US/fbevents.js');
+          w.fbq('init', '2202036963709336');
+          w.fbq('track', 'PageView');
+          addScript('https://js-eu1.hs-scripts.com/148887306.js', { id: 'hs-script-loader' });
+          w._nQc = '89430325';
+          addScript('https://serve.albacross.com/track.js');
+        };
+        try {
+          var raw = localStorage.getItem('lirelia_cookie_consent_v2') || localStorage.getItem('lirelia_cookie_consent_v1');
+          var c = raw ? JSON.parse(raw) : null;
+          if (c && c.analytics === true) w.lireliaLoadStatistics();
+          if (c && c.marketing === true) w.lireliaLoadMarketing();
+        } catch (e) { /* aucun consentement lisible : rien n'est chargé */ }
+      })(window, document);
     </script>
-    <!-- Meta Pixel Code (2202036963709336) -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2202036963709336');
-    fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
     <!-- Ahrefs Web Analytics — sans cookie, chargé indépendamment du consentement RGPD -->
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="3BzY2HAnG0uK+RQzOCQFQw" async></script>
-    <!-- Microsoft Clarity (xc2ym1vcsn) — signal de consentement désactivé par défaut, activé après consentement -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "xc2ym1vcsn");
-      // Refus par défaut, mis à jour par cookieConsent.ts après choix utilisateur
-      window.clarity && window.clarity('consent', false);
-    </script>
-
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148887306.js"></script>
-    <!-- End of HubSpot Embed Code -->
-
-    <!-- Albacross -->
-    <script>window._nQc = "89430325";</script>
-    <script async src="https://serve.albacross.com/track.js"></script>
 
 
 
@@ -673,11 +681,7 @@
 </head>
 
   <body>
-    <!-- Meta Pixel noscript fallback -->
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2202036963709336&amp;ev=PageView&amp;noscript=1"
-    alt="" /></noscript>
-    <!-- End Meta Pixel noscript fallback -->
+    <!-- Meta Pixel : pas de repli noscript, il contournerait le consentement. -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
