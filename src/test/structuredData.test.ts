@@ -287,6 +287,14 @@ describe("structured data registry", () => {
     }
   });
 
+  it("DMLA cocoon: sèche and humide pages are indexable with a 4-level breadcrumb", () => {
+    for (const route of ["/maladies-yeux/dmla/seche", "/maladies-yeux/dmla/humide"]) {
+      expect(indexable, route).toContain(route);
+      const crumb = nodesOf(getPageGraph(route)).find((n) => typeOf(n) === "BreadcrumbList");
+      expect((crumb!.itemListElement as Node[]).length, route).toBe(4);
+    }
+  });
+
   it("credits Thierry DUCROS as book author and never LirElia as publisher", () => {
     for (const path of ["/livre-dmla-votre-vie-ne-sarrete-pas", "/livre-aider-proche-dmla"]) {
       const nodes = nodesOf(getPageGraph(path));
