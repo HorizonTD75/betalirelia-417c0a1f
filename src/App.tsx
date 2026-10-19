@@ -99,6 +99,8 @@ const Livraison = lazy(() => import("./pages/Livraison"));
 const RetoursRemboursements = lazy(() => import("./pages/RetoursRemboursements"));
 const FormulaireRetractation = lazy(() => import("./pages/FormulaireRetractation"));
 const SavGaranties = lazy(() => import("./pages/SavGaranties"));
+const DmlaSeche = lazy(() => import("./pages/maladies/dmla/DmlaSeche"));
+const DmlaHumide = lazy(() => import("./pages/maladies/dmla/DmlaHumide"));
 const CoconArticlePage = lazy(() => import("./pages/aides-financieres/CoconArticlePage"));
 
 const queryClient = new QueryClient();
@@ -130,6 +132,8 @@ const App = () => (
             <Route path="/maladies-yeux" element={<MaladiesYeux />} />
             <Route path="/maladies-yeux/glaucome" element={<Glaucome />} />
             <Route path="/maladies-yeux/dmla" element={<DMLA />} />
+            <Route path="/maladies-yeux/dmla/seche" element={<DmlaSeche />} />
+            <Route path="/maladies-yeux/dmla/humide" element={<DmlaHumide />} />
             <Route path="/maladies-yeux/cataracte" element={<Cataracte />} />
             <Route path="/maladies-yeux/nystagmus" element={<Nystagmus />} />
             <Route path="/maladies-yeux/retinite-pigmentaire" element={<RetinitePigmentaire />} />

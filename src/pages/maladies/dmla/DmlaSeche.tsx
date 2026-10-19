@@ -68,7 +68,7 @@ const DmlaSeche = () => (
         </Section>
 
         <Section id="existe-t-il-un-traitement-de-la-dmla-seche" title="Existe-t-il un traitement de la DMLA sèche ?" muted>
-          <Alert><strong>À la date de vérification de cette page (19 octobre 2026), il n'existe pas de traitement médicamenteux curatif approuvé en France pour la DMLA atrophique avancée.</strong> Cela ne signifie pas qu'il n'y a rien à faire : suivi, prise en charge des facteurs de risque, aides visuelles et réadaptation restent utiles.</Alert>
+          <KeyPoint><strong>À la date de vérification de cette page (19 octobre 2026), il n'existe pas de traitement médicamenteux curatif approuvé en France pour la DMLA atrophique avancée.</strong> Cela ne signifie pas qu'il n'y a rien à faire : suivi, prise en charge des facteurs de risque, aides visuelles et réadaptation restent utiles.</KeyPoint>
           <H3>Que faut-il penser des nouveaux traitements annoncés ?</H3>
           <P>Des médicaments visant à ralentir l'extension de l'atrophie géographique ont été autorisés aux États-Unis. Leur statut en Europe est différent : l'Agence européenne des médicaments a confirmé son refus d'autorisation pour <strong>Syfovre (pegcetacoplan)</strong> en 2024 ; la demande concernant <strong>Izelvay (avacincaptad pegol)</strong> a été retirée en 2024.</P>
           <P>Il faut donc distinguer <strong>un essai clinique</strong>, <strong>une autorisation à l'étranger</strong> et <strong>un traitement effectivement autorisé en France</strong>. Les annonces concernant des implants rétiniens ou d'autres technologies expérimentales ne constituent pas des solutions couramment disponibles. Demandez à votre ophtalmologiste ce qui s'applique réellement à votre situation.</P>

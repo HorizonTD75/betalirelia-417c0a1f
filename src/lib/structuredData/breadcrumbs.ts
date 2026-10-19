@@ -75,6 +75,8 @@ export const VISIBLE_BREADCRUMBS: Record<string, BreadcrumbItem[]> = {
 
   // ---- Maladies ----------------------------------------------------------
   "/maladies-yeux/dmla": leaf([HOME, DISEASES], "La DMLA", "/maladies-yeux/dmla"),
+  "/maladies-yeux/dmla/seche": leaf([HOME, DISEASES, { name: "DMLA", path: "/maladies-yeux/dmla" }], "DMLA sèche", "/maladies-yeux/dmla/seche"),
+  "/maladies-yeux/dmla/humide": leaf([HOME, DISEASES, { name: "DMLA", path: "/maladies-yeux/dmla" }], "DMLA humide", "/maladies-yeux/dmla/humide"),
   "/maladies-yeux/glaucome": leaf([HOME, DISEASES], "Le Glaucome", "/maladies-yeux/glaucome"),
   "/maladies-yeux/cataracte": leaf([HOME, DISEASES], "La Cataracte", "/maladies-yeux/cataracte"),
   "/maladies-yeux/nystagmus": leaf([HOME, DISEASES], "Le Nystagmus", "/maladies-yeux/nystagmus"),
