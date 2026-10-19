@@ -339,7 +339,7 @@ const LivreAidants = () => {
           <div className="container max-w-3xl">
             <Card variant="default" className="p-6">
               <div className="flex flex-col sm:flex-row items-center gap-6">
-                <img src={bookDmla} alt="Couverture du livre « DMLA – Votre vie ne s'arrête pas » de Thierry DUCROS" className="w-24 h-auto object-contain rounded-md shadow-md border border-border shrink-0" width={900} height={1356} loading="lazy" decoding="async" />
+                <Link to="/livre-dmla-votre-vie-ne-sarrete-pas/" aria-label="Voir la page du livre « DMLA – Votre vie ne s'arrête pas »" className="shrink-0 rounded-md transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring"><img src={bookDmla} alt="Couverture du livre « DMLA – Votre vie ne s'arrête pas » de Thierry DUCROS" className="w-24 h-auto object-contain rounded-md shadow-md border border-border shrink-0" width={900} height={1356} loading="lazy" decoding="async" /></Link>
                 <div className="text-center sm:text-left min-w-0">
                   <h2 id="autre-livre" className="font-serif text-xl font-bold text-foreground mb-2">Un guide également destiné à la personne concernée</h2>
                   <p className="text-muted-foreground leading-relaxed mb-3">Découvrez « DMLA – Votre vie ne s'arrête pas », pour mieux comprendre la maladie et trouver des solutions au quotidien.</p>
