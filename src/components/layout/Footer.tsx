@@ -85,7 +85,7 @@ const Footer = () => {
                   onClick={() => openCookiePreferences()}
                   className="text-lg text-primary-foreground/80 hover:text-secondary transition-colors cursor-pointer text-left"
                 >
-                  Gérer mes cookies
+                  Gérer les cookies
                 </button>
               </li>
             </ul>
