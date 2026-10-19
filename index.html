@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="lirelia-build" content="2026-09-17" />
     <!-- LIRELIA CONSENT LOADER (bandeau v2.0) — aucun traceur optionnel n'est chargé avant le choix du visiteur.
-         Statistiques : Google Analytics 4 (G-CSJL8WM5WM) + Microsoft Clarity (xc2ym1vcsn).
+         Statistiques : Google Analytics 4 (G-CSJL8WM5WM) + Microsoft Clarity (xc2ym1vcsn) + Ahrefs Web Analytics.
          Marketing : Meta Pixel (2202036963709336), HubSpot (148887306), Albacross (89430325).
-         Ahrefs Web Analytics reste chargé : sans cookie ni identifiant persistant. -->
+         Choix valable 12 mois calendaires après la décision. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -37,6 +37,7 @@
           w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
           addScript('https://www.clarity.ms/tag/xc2ym1vcsn');
           w.clarity('consent', true);
+          addScript('https://analytics.ahrefs.com/analytics.js', { 'data-key': '3BzY2HAnG0uK+RQzOCQFQw' });
         };
         w.lireliaLoadMarketing = function () {
           gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
@@ -57,13 +58,17 @@
         try {
           var raw = localStorage.getItem('lirelia_cookie_consent_v2') || localStorage.getItem('lirelia_cookie_consent_v1');
           var c = raw ? JSON.parse(raw) : null;
+          // Choix valable 12 mois calendaires après la décision ; au-delà, rien n'est chargé.
+          var dt = c && c.date ? new Date(c.date) : null;
+          if (dt && !isNaN(dt.getTime())) {
+            var exp = new Date(dt.getTime()); exp.setMonth(exp.getMonth() + 12);
+            if (new Date() >= exp) c = null;
+          } else { c = null; }
           if (c && c.analytics === true) w.lireliaLoadStatistics();
           if (c && c.marketing === true) w.lireliaLoadMarketing();
         } catch (e) { /* aucun consentement lisible : rien n'est chargé */ }
       })(window, document);
     </script>
-    <!-- Ahrefs Web Analytics — sans cookie, chargé indépendamment du consentement RGPD -->
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="3BzY2HAnG0uK+RQzOCQFQw" async></script>
 
 
 

@@ -46,10 +46,8 @@ const PolitiqueCookies = () => {
             <ul className="text-lg text-foreground leading-relaxed mb-6 list-disc pl-6 space-y-2">
               <li><strong>Google Analytics 4</strong> — Mesure de fréquentation. Déposé uniquement avec votre accord.</li>
               <li><strong>Microsoft Clarity</strong> — Outil d'analyse du comportement utilisateur (cartes de chaleur, enregistrements anonymisés). Durée : selon le service.</li>
+              <li><strong>Ahrefs Web Analytics</strong> — Mesure agrégée de la fréquentation. Chargé uniquement si vous acceptez la mesure d'audience.</li>
             </ul>
-            <p className="text-lg text-foreground leading-relaxed mb-6">
-              Le site utilise également <strong>Ahrefs Web Analytics</strong> afin de mesurer de manière agrégée sa fréquentation. Cet outil est utilisé dans sa configuration standard sans cookie ni identifiant persistant. Il est chargé indépendamment du choix exprimé dans la bannière de consentement.
-            </p>
 
 
             <h3 className="font-serif text-xl font-bold text-foreground mt-8 mb-3">Cookies de services tiers / marketing</h3>
@@ -60,7 +58,9 @@ const PolitiqueCookies = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Durée de conservation</h2>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Votre choix de consentement est conservé pendant 12 mois. Les cookies de mesure d'audience
+              Votre choix de consentement (acceptation, refus ou préférences personnalisées) est conservé pendant
+              12 mois à compter de votre décision, sans être prolongé par vos visites. Passé ce délai, le bandeau
+              s'affiche de nouveau et aucun outil optionnel n'est activé avant votre nouveau choix. Les cookies de mesure d'audience
               ont une durée de vie variable selon les outils utilisés, généralement inférieure à 13 mois
               conformément aux recommandations de la CNIL.
             </p>
