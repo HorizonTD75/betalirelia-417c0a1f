@@ -244,7 +244,7 @@ const DMLA = () => {
         <Section id="livres" title="Deux guides pratiques pour aller plus loin">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {books.map((b) => (
-              <Card key={b.to} variant="elevated" className="p-6 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-6 min-w-0">
+              <Card key={b.to} variant="elevated" className="p-6 flex flex-col sm:flex-row md:flex-col gap-6 min-w-0">
                 <Link to={b.to} aria-label={`Voir la page du livre ${b.title}`} className="shrink-0 self-center rounded-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring">
                   <img src={b.img} srcSet={b.srcSet} sizes="160px" alt={b.alt} width={b.w} height={b.h} loading="lazy" decoding="async"
                     className="w-40 h-auto object-contain rounded-md shadow-lg border border-border" />
