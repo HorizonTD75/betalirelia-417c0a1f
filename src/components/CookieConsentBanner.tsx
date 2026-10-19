@@ -57,7 +57,7 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
   };
 
   const btn =
-    "flex-1 min-h-12 min-w-0 px-4 text-lg font-bold bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2";
+    "flex-1 min-h-11 min-w-0 px-4 text-lg font-bold bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2";
 
   return (
     <div
@@ -75,11 +75,11 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
             <h2 className="text-lg sm:text-xl font-bold text-foreground leading-tight">
               Cookies sur Lirelia
             </h2>
-            <p className="text-base text-foreground leading-snug mt-1">
+            <p className="text-base text-foreground leading-snug mt-0.5">
               Avec votre accord, nous utilisons des cookies pour mesurer la fréquentation du site
               et améliorer nos contenus. À vous de choisir !
             </p>
-            <div className="flex flex-row gap-3 mt-3">
+            <div className="flex flex-row gap-3 mt-2">
               <Button type="button" onClick={() => decide("accepte", true, true)} className={btn}>
                 Accepter
               </Button>
@@ -87,7 +87,7 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
                 Refuser
               </Button>
             </div>
-            <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <div className="mt-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
               <button
                 type="button"
                 onClick={() => setShowPrefs(true)}
@@ -97,7 +97,7 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
               </button>
               <Link
                 to="/politique-cookies"
-                className="text-base text-primary underline underline-offset-4 py-1"
+                className="hidden sm:inline text-base text-primary underline underline-offset-4 py-1"
               >
                 Politique de cookies
               </Link>
@@ -131,7 +131,7 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
                 <Switch id="cc-mkt" checked={marketing} onCheckedChange={setMarketing} />
               </div>
             </div>
-            <div className="flex flex-row gap-3 mt-3">
+            <div className="flex flex-row gap-3 mt-2">
               <Button
                 type="button"
                 onClick={() => decide("personnalise", statistics, marketing)}
