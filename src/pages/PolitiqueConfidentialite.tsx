@@ -239,7 +239,7 @@ const PolitiqueConfidentialite = () => {
             <P>Chaque communication non indispensable au service comporte un moyen simple de s'opposer aux envois futurs.</P>
 
             <H3>4.7 Mesurer l'audience et améliorer le site</H3>
-            <P>Le site utilise <strong>Ahrefs Web Analytics</strong> afin de mesurer de manière agrégée sa fréquentation. Cet outil est utilisé dans sa configuration standard sans cookie ni identifiant persistant. Il est chargé indépendamment du choix exprimé dans la bannière de consentement.</P>
+            <P>Le site utilise <strong>Ahrefs Web Analytics</strong> afin de mesurer de manière agrégée sa fréquentation. Cet outil n'est activé qu'après l'accord du visiteur pour la mesure d'audience, exprimé dans le bandeau de cookies.</P>
             <P>Sous réserve des préférences de cookies, LirElia peut également utiliser <strong>Microsoft Clarity</strong> pour :</P>
             <UL>
               <li>comprendre les parcours de navigation ;</li>
@@ -248,7 +248,25 @@ const PolitiqueConfidentialite = () => {
               <li>corriger des erreurs techniques ;</li>
               <li>évaluer la performance des contenus.</li>
             </UL>
-            <P>Lorsque la réglementation l'exige, ces outils ne sont activés qu'après le consentement de l'utilisateur.</P>
+            <P>Ces outils de mesure d'audience ne sont activés qu'après le consentement de l'utilisateur.</P>
+
+            <H3>Registre des choix de cookies</H3>
+            <P><strong>Finalités :</strong> conserver la trace des décisions relatives aux cookies, gérer les modifications et retraits de consentement et établir des statistiques d'acceptation et de refus.</P>
+            <P><strong>Données enregistrées :</strong></P>
+            <UL>
+              <li>date et heure de l'événement ;</li>
+              <li>acceptation ou refus, et préférences personnalisées ;</li>
+              <li>catégories de cookies autorisées ;</li>
+              <li>identifiants pseudonymes d'événements et de consentement ;</li>
+              <li>adresse IP complète (IPv4 ou IPv6) ;</li>
+              <li>page consultée et provenance ;</li>
+              <li>paramètres UTM admissibles ;</li>
+              <li>type d'appareil et version du bandeau.</li>
+            </UL>
+            <P><strong>Fonctionnement :</strong> les événements sont transmis à un relais hébergé chez OVH, puis enregistrés dans Google Sheets par Google Apps Script. L'adresse IP est récupérée côté serveur.</P>
+            <P><strong>Durées :</strong> votre choix est mémorisé dans votre navigateur pendant <strong>12 mois</strong> à compter de votre décision ; à l'issue de ce délai, le bandeau vous est de nouveau proposé. La durée de conservation des événements et des adresses IP dans le registre (Google Sheets) est distincte : elle sera précisée dans la présente politique dès sa mise en œuvre.</P>
+            <P>Vous pouvez modifier vos préférences à tout moment avec le lien « Gérer les cookies » situé en bas de chaque page.</P>
+
 
 
             <H3>4.8 Sécuriser le site</H3>

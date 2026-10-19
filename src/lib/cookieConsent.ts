@@ -44,7 +44,24 @@ function getOrCreateVisitorId(): string {
   return id;
 }
 
-/** Choix enregistré (clé v2, ou ancienne clé v1 encore valable). */
+/** Durée de validité d'un choix : 12 mois calendaires après la décision. */
+export const CONSENT_VALIDITY_MONTHS = 12;
+
+/**
+ * Vrai si le choix date de moins de 12 mois calendaires. Un choix sans date
+ * lisible n'est pas considéré comme valable (le bandeau est réaffiché).
+ * La date n'est jamais prolongée par une simple visite.
+ */
+export function isConsentValid(consent: { date?: string } | null, now: Date = new Date()): boolean {
+  if (!consent?.date) return false;
+  const decided = new Date(consent.date);
+  if (Number.isNaN(decided.getTime())) return false;
+  const expiry = new Date(decided);
+  expiry.setMonth(expiry.getMonth() + CONSENT_VALIDITY_MONTHS);
+  return now < expiry && decided <= new Date(now.getTime() + 86400000);
+}
+
+/** Choix enregistré et encore valable (clé v2, ou ancienne clé v1). */
 export function getConsent(): CookieConsent | null {
   try {
     const raw =
@@ -52,7 +69,7 @@ export function getConsent(): CookieConsent | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as CookieConsent;
     if (typeof parsed !== "object" || parsed === null) return null;
-    return parsed;
+    return isConsentValid(parsed) ? parsed : null;
   } catch {
     return null;
   }
