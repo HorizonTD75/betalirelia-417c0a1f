@@ -3,731 +3,298 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Eye,
-  AlertTriangle,
-  ArrowRight,
-  ChevronRight,
-  Activity,
-  Clock,
-  Stethoscope,
-  HeartPulse,
-  Lightbulb,
-  Phone,
-  ShieldCheck,
-  Utensils,
-} from "lucide-react";
+import { AlertTriangle, ArrowRight, ChevronRight, Lightbulb, Clock, Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import type { ReactNode } from "react";
 import amslerGridImage from "@/assets/grille-amsler-dessin-300.jpeg";
-import bookDmlaCover from "@/assets/livre-dmla-votre-vie.jpg";
-import bookAidantCover from "@/assets/livre-aider-proche.jpg";
+import coverDmla from "@/assets/couverture-dmla-votre-vie-2026.jpg";
+import coverDmla400 from "@/assets/couverture-dmla-votre-vie-2026-400.webp";
+import coverDmla800 from "@/assets/couverture-dmla-votre-vie-2026-800.webp";
+import coverAidant from "@/assets/couverture-aider-proche-2026.jpg";
+import coverAidant400 from "@/assets/couverture-aider-proche-2026-400.webp";
+import coverAidant800 from "@/assets/couverture-aider-proche-2026-800.webp";
 
-import { getHeroSrcSet as __getHeroSrcSet } from "@/lib/heroSrcSet";
-import MedicalSources from "@/components/MedicalSources";
+const linkCls = "text-primary font-semibold underline underline-offset-4 hover:text-primary/80";
+const P = ({ children }: { children: ReactNode }) => (
+  <p className="text-lg text-foreground leading-relaxed mb-4 last:mb-0">{children}</p>
+);
+const H2 = ({ id, children }: { id: string; children: ReactNode }) => (
+  <h2 id={id} className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6 scroll-mt-28">{children}</h2>
+);
+const H3 = ({ children }: { children: ReactNode }) => (
+  <h3 className="font-serif text-2xl font-bold text-foreground mb-3 mt-8 first:mt-0">{children}</h3>
+);
+const List = ({ items }: { items: ReactNode[] }) => (
+  <ul className="space-y-3 mb-4">
+    {items.map((it, i) => (
+      <li key={i} className="flex items-start gap-3 text-lg text-foreground leading-relaxed">
+        <ChevronRight className="w-5 h-5 text-secondary shrink-0 mt-1" aria-hidden="true" />
+        <span className="min-w-0">{it}</span>
+      </li>
+    ))}
+  </ul>
+);
+const Section = ({ id, title, muted, children }: { id: string; title: string; muted?: boolean; children: ReactNode }) => (
+  <section className={`py-14 ${muted ? "bg-muted" : "bg-background"}`} aria-labelledby={id}>
+    <div className="container">
+      <div className="max-w-4xl mx-auto min-w-0">
+        <H2 id={id}>{title}</H2>
+        {children}
+      </div>
+    </div>
+  </section>
+);
+
+const books = [
+  {
+    img: coverDmla, srcSet: `${coverDmla400} 400w, ${coverDmla800} 800w`, w: 900, h: 1356,
+    title: "DMLA - Votre vie ne s'arrête pas",
+    sub: "Comprendre la DMLA, s’équiper, s’organiser… et garder le moral.",
+    desc: "Un ouvrage consacré aux difficultés du quotidien, aux aides visuelles et à l’autonomie.",
+    alt: "Couverture du livre DMLA - Votre vie ne s'arrête pas, Thierry Ducros",
+    to: "/livre-dmla-votre-vie-ne-sarrete-pas/",
+  },
+  {
+    img: coverAidant, srcSet: `${coverAidant400} 400w, ${coverAidant800} 800w`, w: 900, h: 1379,
+    title: "DMLA, Aider un proche sans s'épuiser",
+    sub: "Guide pratique des aidants pour comprendre la basse vision et préserver l’autonomie.",
+    desc: "Un ouvrage destiné aux proches qui veulent accompagner avec attention, sans négliger leur propre équilibre.",
+    alt: "Couverture du livre DMLA, Aider un proche sans s'épuiser, Thierry Ducros",
+    to: "/livre-aider-proche-dmla/",
+  },
+];
+
+const faq = [
+  { q: "La DMLA rend-elle totalement aveugle ?", a: <>La DMLA atteint essentiellement la vision centrale. La vision périphérique reste généralement utilisable, même lorsque l'atteinte centrale est importante. D'autres maladies oculaires associées peuvent toutefois modifier la situation.</> },
+  { q: "Peut-on avoir une DMLA sur un seul œil ?", a: <>Oui. Un œil peut être atteint avant l'autre. C'est pourquoi il est utile de surveiller chaque œil séparément et de respecter le suivi prescrit.</> },
+  { q: "Peut-on continuer à lire avec une DMLA ?", a: <>Souvent, oui, en adaptant les caractères, l'éclairage ou les aides visuelles. Si la lecture visuelle devient trop pénible, les outils de lecture vocale constituent une autre possibilité.</> },
+  { q: "Les lunettes classiques corrigent-elles la DMLA ?", a: <>Les lunettes corrigent les défauts de réfraction associés, mais ne réparent pas les lésions de la macula. Un accompagnement en basse vision peut aider à choisir des solutions complémentaires.</> },
+  { q: "Quand demander un bilan basse vision ?", a: <>Lorsque les activités comme la lecture, l'écriture ou l'utilisation des écrans deviennent difficiles malgré la correction habituelle. Le bilan d'aides visuelles complète le suivi médical : il ne remplace pas l'examen ophtalmologique. <Link to="/bilans-bassevision/" className={linkCls}>Découvrir les bilans LirElia</Link>.</> },
+];
+
+const sources = [
+  ["Assurance Maladie — Comprendre la DMLA", "https://www.ameli.fr/assure/sante/themes/dmla/comprendre-dmla"],
+  ["Assurance Maladie — Symptômes et diagnostic", "https://www.ameli.fr/assure/sante/themes/dmla/symptomes-diagnostic"],
+  ["Assurance Maladie — Traitement de la DMLA humide", "https://www.ameli.fr/assure/sante/themes/dmla/dmla-humide-traitement"],
+  ["Assurance Maladie — Vivre avec la DMLA", "https://www.ameli.fr/assure/sante/themes/dmla/dmla-vivre-maladie"],
+  ["Inserm — Dégénérescence maculaire liée à l'âge", "https://www.inserm.fr/dossier/degenerescence-maculaire-liee-age-dmla/"],
+  ["Haute Autorité de santé — Repérage précoce de la DMLA", "https://www.has-sante.fr/jcms/p_3383775/fr/des-recommandations-pour-un-reperage-plus-precoce-de-la-dmla"],
+];
+
 const DMLA = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead
-        title="DMLA : dégénérescence maculaire liée à l'âge | LirElia"
-        description="Tout savoir sur la DMLA : formes sèche et humide, symptômes, diagnostic, traitements et solutions concrètes pour préserver votre vision centrale au quotidien."
-        canonicalPath="/maladies-yeux/dmla"
-      />
+      <SEOHead />
       <Header />
       <main id="main-content">
-        {/* Breadcrumb */}
         <nav className="bg-muted py-3 border-b border-border" aria-label="Fil d'Ariane">
           <div className="container">
-            <ol className="flex items-center gap-2 text-lg">
+            <ol className="flex items-center gap-2 text-lg flex-wrap">
               <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Accueil</Link></li>
-              <ChevronRight className="w-4 h-4 text-muted-foreground" />
-              <li><Link to="/maladies-yeux" className="text-muted-foreground hover:text-primary transition-colors">Maladies des yeux</Link></li>
-              <ChevronRight className="w-4 h-4 text-muted-foreground" />
-              <li><span className="text-foreground font-semibold">La DMLA</span></li>
+              <ChevronRight className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
+              <li><Link to="/maladies-yeux/" className="text-muted-foreground hover:text-primary transition-colors">Maladies des yeux</Link></li>
+              <ChevronRight className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
+              <li><span className="text-foreground font-semibold" aria-current="page">La DMLA</span></li>
             </ol>
           </div>
         </nav>
 
-        {/* Hero Section */}
-        <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-foreground/10" aria-hidden="true" />
-          <div className="container relative z-10">
+        {/* Hero */}
+        <section className="bg-primary text-primary-foreground py-14 md:py-16">
+          <div className="container">
             <div className="max-w-4xl">
               <p className="text-secondary font-semibold text-lg mb-3">Maladie des yeux</p>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                La DMLA – Dégénérescence Maculaire Liée à l'Âge
+              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6">
+                DMLA : symptômes, traitements et solutions pour mieux vivre
               </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
-                La DMLA est la première cause de malvoyance chez les personnes de plus de 50 ans. Bien comprendre ses formes, ses symptômes et les solutions existantes est essentiel pour préserver votre autonomie.
-              </p>
+              <nav aria-label="Accès rapide" className="flex flex-wrap gap-3">
+                {[["#symptomes", "Symptômes"], ["#vivre-avec-dmla", "Vivre avec la DMLA"], ["#aider-proche", "Aider un proche"]].map(([href, label]) => (
+                  <a key={href} href={href} className="inline-flex items-center gap-2 rounded-full border-2 border-primary-foreground/60 px-5 py-2 text-lg font-semibold hover:bg-primary-foreground/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-secondary">
+                    {label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
+                ))}
+              </nav>
             </div>
           </div>
         </section>
 
-        {/* Key Stats */}
-        <section className="py-12 bg-muted">
-          <div className="container">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">1M+</p>
-                <p className="text-lg text-foreground">Français vivent avec une forme de DMLA</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">50%</p>
-                <p className="text-lg text-foreground">des plus de 80 ans sont touchés</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">1ère</p>
-                <p className="text-lg text-foreground">cause de handicap visuel après 50 ans</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <p className="font-serif text-3xl font-bold text-primary mb-2">85%</p>
-                <p className="text-lg text-foreground">des cas sont de forme sèche</p>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Table of Contents */}
+        {/* Intro */}
         <section className="py-12 bg-background">
           <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="font-serif text-2xl font-bold text-foreground mb-6">Dans cette page</h2>
-              <Card className="p-6">
-                <ul className="grid md:grid-cols-2 gap-3">
-                  {[
-                    "Qu'est-ce que la DMLA ?",
-                    "Les formes de DMLA : sèche et humide",
-                    "Facteurs de risque",
-                    "Symptômes et signes d'alerte",
-                    "Diagnostic et dépistage",
-                    "Traitements disponibles",
-                    "Solutions pour compenser la DMLA",
-                    "Vivre avec la DMLA au quotidien",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <ChevronRight className="w-5 h-5 text-secondary shrink-0" />
-                      <span className="text-lg text-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* What is DMLA */}
-        <section className="py-16 bg-muted">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                  <Eye className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                  Qu'est-ce que la DMLA ?
-                </h2>
-              </div>
-
-              <div className="space-y-6">
-                <Card variant="elevated" className="p-8">
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    La DMLA signifie <strong>Dégénérescence Maculaire Liée à l'Âge</strong>. C'est une maladie oculaire chronique qui affecte la <strong>macula</strong>, une petite zone de la rétine responsable de la vision centrale nette.
-                  </p>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    La macula est une tache jaunâtre de 2 à 5 millimètres de diamètre, située au milieu de la rétine. Lorsque la dégénérescence atteint la région centrale de la macula (la fovéa), la vision fine est altérée, mais la <strong>vision périphérique reste correcte</strong>.
-                  </p>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Cette affection touche plus d'un million de Français et est particulièrement fréquente chez les fumeurs et les personnes atteintes de diabète. Avec le temps, la DMLA peut entraîner une malvoyance, voire une perte partielle de la vision.
-                  </p>
-                </Card>
-
-                <Card variant="muted" className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                    <p className="text-lg text-foreground leading-relaxed">
-                      <strong>À retenir :</strong> la DMLA atteint la vision centrale (lecture, reconnaissance des visages, conduite) mais ne rend pas totalement aveugle. La vision périphérique reste généralement intacte.
-                    </p>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Forms of DMLA */}
-        <section className="py-16 bg-background">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center">
-                  <Activity className="w-7 h-7 text-foreground" />
-                </div>
-                <div>
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                    Les formes de DMLA
-                  </h2>
-                  <p className="text-lg text-muted-foreground">Deux formes principales aux évolutions très différentes</p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                {/* Forme sèche */}
-                <Card variant="elevated" className="p-8">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <Clock className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-2xl font-bold text-foreground">La DMLA sèche (atrophique)</h3>
-                      <p className="text-secondary font-semibold">85 % des cas – évolution lente</p>
-                    </div>
-                  </div>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    La forme la plus courante. Les cellules rétiniennes vieillissantes n'assurent plus leur renouvellement normal. Au fil des ans, la rétine s'altère et n'assume plus ses fonctions de réception des faisceaux lumineux. Des dépôts jaunâtres appelés <strong>drusen</strong> s'accumulent sous la rétine.
-                  </p>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    Cette forme peut entraîner une vision floue, une difficulté à lire et une altération de la perception des couleurs. Elle évolue lentement et de manière imperceptible, commençant généralement vers 50 ans.
-                  </p>
-                  <Card variant="highlighted" className="p-4">
-                    <p className="text-foreground font-semibold">
-                      💡 Malheureusement, la forme atrophique ne se soigne pas actuellement. Cependant, des <strong>aides à la vision</strong> permettent de soutenir la vue durant de longues années. Dans certains cas, elle peut évoluer vers la forme humide.
-                    </p>
-                  </Card>
-                </Card>
-
-                {/* Forme humide */}
-                <Card variant="elevated" className="p-8">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center shrink-0">
-                      <AlertTriangle className="w-6 h-6 text-destructive" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-2xl font-bold text-foreground">La DMLA humide (exsudative)</h3>
-                      <p className="text-secondary font-semibold">15 % des cas – évolution rapide</p>
-                    </div>
-                  </div>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    La macula est impactée par le saignement de vaisseaux sanguins anormaux (néovaisseaux) situés dans la zone choroïdienne, à l'arrière de la rétine. Cette hémorragie microscopique gêne la vision centrale et peut entraîner une <strong>chute brutale de la vue</strong>.
-                  </p>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    Les cellules nerveuses de la macula peuvent être endommagées de façon irréversible si le traitement n'est pas effectué rapidement. La vision périphérique reste cependant correcte.
-                  </p>
-                  <Card variant="muted" className="p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
-                      <p className="text-foreground">
-                        <strong>Urgence médicale :</strong> si vous constatez une baisse brutale de votre vision, consultez votre ophtalmologiste en urgence. Un traitement existe et donne des résultats spectaculaires si l'on réagit rapidement.
-                      </p>
-                    </div>
-                  </Card>
-                </Card>
-
-                {/* Maculopathie diabétique */}
-                <Card variant="elevated" className="p-8">
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
-                    Et la maculopathie diabétique ?
-                  </h3>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Le diabète affecte souvent les cellules rétiniennes. La <Link to="/maladies-yeux/retinopathie-diabetique" className="text-primary underline hover:text-primary/80">rétinopathie diabétique</Link> peut s'étendre à la macula et gêner la vision centrale. Dans la forme œdémateuse de cette maculopathie, une intervention est possible. Un suivi régulier est recommandé pour les personnes diabétiques.
-                  </p>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Risk Factors */}
-        <section className="py-16 bg-muted">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                  <HeartPulse className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                  Facteurs de risque de la DMLA
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <Card variant="elevated" className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">Facteurs principaux</h3>
-                  <ul className="space-y-3">
-                    {[
-                      { label: "L'âge", detail: "10 à 30 % des seniors de plus de 75 ans sont touchés" },
-                      { label: "Le tabagisme", detail: "Risques doublés après 20 ans de tabac, multipliés par 5 après 40 ans" },
-                      { label: "L'hérédité", detail: "Certains gènes sont identifiés comme facteurs d'apparition" },
-                      { label: "L'hypertension artérielle", detail: "Facteur aggravant confirmé" },
-                    ].map((factor, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <ChevronRight className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                        <div>
-                          <span className="font-bold text-foreground">{factor.label}</span>
-                          <p className="text-muted-foreground">{factor.detail}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-
-                <Card variant="elevated" className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">Autres facteurs</h3>
-                  <ul className="space-y-3">
-                    {[
-                      { label: "Le surpoids et l'obésité", detail: "Doublent le risque de DMLA avancée" },
-                      { label: "L'alimentation", detail: "Carence en antioxydants, oméga 3, lutéine et zéaxanthine" },
-                      { label: "L'exposition aux UV", detail: "Les yeux clairs sont plus exposés" },
-                      { label: "Le sexe", detail: "Les femmes sont deux fois plus exposées que les hommes" },
-                    ].map((factor, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <ChevronRight className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                        <div>
-                          <span className="font-bold text-foreground">{factor.label}</span>
-                          <p className="text-muted-foreground">{factor.detail}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              </div>
-
+            <div className="max-w-4xl mx-auto space-y-6">
+              <P>La <strong>DMLA (dégénérescence maculaire liée à l’âge)</strong> est une maladie de la rétine qui altère la vision centrale, celle qui permet de lire, de distinguer les détails et de reconnaître un visage. Elle survient généralement après 50 ans. Selon son stade et sa forme, son évolution peut être lente ou rapide.</P>
+              <P>Un diagnostic de DMLA soulève de nombreuses questions : peut-on continuer à lire ? Quels traitements existent ? Comment préserver son autonomie ? Cette page vous aide à comprendre les principaux repères médicaux et à découvrir des solutions concrètes pour le quotidien.</P>
               <Card variant="highlighted" className="p-6">
                 <div className="flex items-start gap-4">
-                  <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <p className="text-lg text-foreground leading-relaxed">
-                    <strong>Bonne nouvelle :</strong> bien que l'âge soit le principal facteur, des mesures de prévention (arrêt du tabac, alimentation équilibrée, activité physique) peuvent contribuer à réduire significativement les risques de développer la maladie.
-                  </p>
+                  <Lightbulb className="w-6 h-6 text-primary shrink-0 mt-1" aria-hidden="true" />
+                  <p className="text-lg text-foreground leading-relaxed"><strong>À retenir :</strong> la DMLA affecte surtout la vision centrale. La vision périphérique reste généralement préservée, même lorsque la lecture devient difficile. Des aides visuelles et un accompagnement adapté peuvent faciliter de nombreuses activités.</p>
                 </div>
               </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Symptoms */}
-        <section className="py-16 bg-background">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center">
-                  <AlertTriangle className="w-7 h-7 text-foreground" />
-                </div>
-                <div>
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                    Symptômes et signes d'alerte
-                  </h2>
-                  <p className="text-lg text-muted-foreground">Reconnaître les signaux pour agir à temps</p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <Card variant="elevated" className="p-8">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">Premiers signes à surveiller</h3>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    Dans 85 % des cas, la DMLA évolue lentement et de manière imperceptible. Les deux yeux n'évoluent pas de façon symétrique : l'œil le moins touché compense transitoirement les troubles de l'autre. Les premiers signes qui doivent vous alerter :
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    {[
-                      "Vision floue et assombrie",
-                      "Sensation d'assombrissement, difficulté à lire si l'environnement n'est pas bien éclairé",
-                      "Difficulté à reconnaître les personnes",
-                      "Baisse des contrastes, besoin d'augmenter l'éclairage",
-                      "Difficulté à percevoir les hauteurs et les distances (risque de chute)",
-                    ].map((symptom, i) => (
-                      <li key={i} className="flex items-start gap-2 text-lg text-foreground">
-                        <ChevronRight className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                        {symptom}
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-
-                <Card variant="elevated" className="p-8">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">Stade avancé</h3>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    À un stade plus avancé de DMLA, le patient commence à remarquer :
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    {[
-                      "Les lignes droites sont perçues comme ondulées ou courbes (bord des fenêtres, des portes)",
-                      "Des lettres manquent à la lecture, impression d'une tache sombre au centre du champ visuel (scotome)",
-                      "Besoin d'un éclairage plus franc et plus soutenu",
-                      "Impression d'être dans un brouillard, avec des contrastes insuffisants et des couleurs ternes",
-                      "Baisse globale de l'acuité visuelle",
-                    ].map((symptom, i) => (
-                      <li key={i} className="flex items-start gap-2 text-lg text-foreground">
-                        <ChevronRight className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
-                        {symptom}
-                      </li>
-                    ))}
-                  </ul>
-                  <Card variant="muted" className="p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertTriangle className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
-                      <p className="text-foreground">
-                        <strong>Important :</strong> si la baisse de vision est brutale, demandez un rendez-vous en urgence chez votre ophtalmologiste pour un fond d'œil. Il peut s'agir de la forme humide, à traiter dès les premiers mois.
-                      </p>
-                    </div>
-                  </Card>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Diagnosis */}
-        <section className="py-16 bg-muted">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                  <Stethoscope className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <div>
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                    Diagnostic et dépistage de la DMLA
-                  </h2>
-                  <p className="text-lg text-muted-foreground">Un dépistage précoce est essentiel</p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <Card variant="elevated" className="p-6">
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">Diagnostic de la forme sèche</h3>
-                    <p className="text-lg text-foreground leading-relaxed">
-                      C'est généralement l'ophtalmologiste qui diagnostique la DMLA sèche lors d'un <strong>examen annuel du fond d'œil</strong>. Les dépôts (drusen) sur la rétine sont alors visibles. L'imagerie rétinienne par OCT-SD (optique cohérente en domaine spectral) permet une évaluation précise.
-                    </p>
-                  </Card>
-
-                  <Card variant="elevated" className="p-6">
-                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">Diagnostic de la forme humide</h3>
-                    <p className="text-lg text-foreground leading-relaxed">
-                      La personne peut percevoir elle-même la baisse de vision. Seul l'examen du fond d'œil permet de vérifier la présence de néovaisseaux. Un examen complet sera proposé : <strong>rétinographie, auto-fluorescence, angiographie et OCT</strong>.
-                    </p>
-                  </Card>
-                </div>
-
-                {/* Amsler Grid */}
-                <Card variant="highlighted" className="p-6">
-                  <div className="flex flex-col md:flex-row items-start gap-6">
-                    <img
-                      src={amslerGridImage}
-                      alt="Grille d'Amsler pour détecter la DMLA"
-                      className="w-32 h-32 rounded-lg object-cover shadow-sm shrink-0" width={300} height={384} loading="lazy" decoding="async" />
-                    <div>
-                      <h3 className="font-serif text-xl font-bold text-foreground mb-3">La grille d'Amsler : l'auto-surveillance</h3>
-                      <p className="text-lg text-foreground leading-relaxed mb-3">
-                        À partir de 60 ans, vous pouvez faire ce test simple 1 à 2 fois par an. Portez vos lunettes habituelles, placez la feuille à 25 cm de votre visage et observez la grille en cachant un œil, puis l'autre.
-                      </p>
-                      <p className="text-lg text-foreground leading-relaxed">
-                        Si les lignes semblent onduler, ne forment pas d'angles droits ou si les carrés ne sont pas identiques, <strong>parlez-en à votre ophtalmologiste</strong>. Ce test ne remplace pas un examen du fond d'œil régulier.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Treatments */}
-        <section className="py-16 bg-background">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center">
-                  <HeartPulse className="w-7 h-7 text-foreground" />
-                </div>
-                <div>
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                    Traitements de la DMLA
-                  </h2>
-                  <p className="text-lg text-muted-foreground">La recherche avance, des solutions existent</p>
-                </div>
-              </div>
-
-              <Card variant="muted" className="p-6 mb-8">
-                <p className="text-lg text-foreground leading-relaxed">
-                  Il n'est pas encore possible de contrer définitivement toutes les formes de DMLA. Cependant, dans le cas de la <strong>forme humide</strong>, un traitement permet de récupérer une partie de la vue si la prise en charge est rapide.
-                </p>
-              </Card>
-
-              <Accordion type="single" collapsible className="space-y-4">
-                <AccordionItem value="injection" className="bg-card rounded-xl border-2 border-border px-6">
-                  <AccordionTrigger className="text-xl font-serif font-bold text-foreground hover:no-underline">
-                    Les injections intravitréennes (DMLA humide)
-                  </AccordionTrigger>
-                  <AccordionContent className="text-lg text-muted-foreground leading-relaxed pb-6 space-y-4">
-                    <p>
-                      L'ophtalmologiste procède à une <strong>injection intravitréenne d'agents anti-VEGF</strong> (ranibizumab, aflibercept) visant à cautériser le néovaisseau à l'origine de la gêne visuelle et à inhiber la croissance des vaisseaux sanguins anormaux.
-                    </p>
-                    <p>
-                      Bien qu'une injection dans l'œil puisse sembler impressionnante, elle est <strong>rapide et indolore</strong> (quelques secondes). Seuls des picotements peuvent être ressentis à cause du produit anesthésique.
-                    </p>
-                    <p className="font-semibold text-foreground">
-                      La DMLA étant liée à l'âge, d'autres vaisseaux anormaux peuvent apparaître avec le temps, nécessitant de nouvelles interventions. Un fond d'œil régulier est absolument nécessaire.
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="hygiene" className="bg-card rounded-xl border-2 border-border px-6">
-                  <AccordionTrigger className="text-xl font-serif font-bold text-foreground hover:no-underline">
-                    Hygiène de vie et prévention (DMLA sèche)
-                  </AccordionTrigger>
-                  <AccordionContent className="text-lg text-muted-foreground leading-relaxed pb-6 space-y-4">
-                    <p>
-                      La forme sèche ne peut qu'être contenue grâce à des <strong>habitudes de vie saines</strong> et en minimisant les facteurs de risque. Les patients sont encouragés à :
-                    </p>
-                    <ul className="space-y-2">
-                      {[
-                        "Arrêter de fumer",
-                        "Pratiquer une activité physique douce et régulière",
-                        "Enrichir son alimentation en légumes, antioxydants et oméga 3",
-                        "Prendre des compléments alimentaires spécifiques pour les yeux",
-                        "Porter des lunettes de soleil pour protéger des UV",
-                      ].map((tip, i) => (
-                        <li key={i} className="flex items-start gap-2 text-foreground">
-                          <ChevronRight className="w-4 h-4 text-secondary shrink-0 mt-1" />
-                          {tip}
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="recherche" className="bg-card rounded-xl border-2 border-border px-6">
-                  <AccordionTrigger className="text-xl font-serif font-bold text-foreground hover:no-underline">
-                    Les avancées de la recherche
-                  </AccordionTrigger>
-                  <AccordionContent className="text-lg text-muted-foreground leading-relaxed pb-6 space-y-4">
-                    <p>
-                      La recherche scientifique continue de faire des avancées majeures. Parmi les pistes prometteuses :
-                    </p>
-                    <ul className="space-y-2">
-                      {[
-                        "Implants rétiniens et cellules souches",
-                        "Thérapie génique ciblée",
-                        "Médicaments à administration orale",
-                        "Lentilles de contact correctrices et amplificatrices",
-                        "Nouvelles approches thérapeutiques (agonistes β3-adrénergiques)",
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-foreground">
-                          <ChevronRight className="w-4 h-4 text-accent shrink-0 mt-1" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <p>
-                      Ces solutions promettent de gagner en discrétion et en praticité, sans nécessiter d'interventions chirurgicales lourdes.
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions to compensate */}
-        <section className="py-16 bg-muted">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                  <ShieldCheck className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <div>
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                    Solutions pour compenser la DMLA
-                  </h2>
-                  <p className="text-lg text-muted-foreground">Retrouver son autonomie grâce aux aides visuelles</p>
-                </div>
-              </div>
-
-              <Card variant="elevated" className="p-8 mb-6">
-                <p className="text-lg text-foreground leading-relaxed mb-4">
-                  Des solutions existent pour compenser la DMLA. Les aides grossissantes adaptées et un éclairage Basse Vision de qualité permettent dans la plupart des cas de <strong>pouvoir lire à nouveau</strong> son courrier, ses factures, son journal, et de retrouver une autonomie de lecture.
-                </p>
-                <h3 className="font-serif text-xl font-bold text-foreground mb-3">Ce que ressentent les personnes atteintes :</h3>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "Vision trouble (acuité visuelle diminuée)",
-                    "Perte de la vision centrale",
-                    "Déformations des lettres ou des lignes",
-                    "Lettres ou petits mots non perçus",
-                    "Débuts ou fins de lignes non perçus",
-                    "Difficultés à lire les documents mal contrastés",
-                    "Éclairages habituels totalement insuffisants",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-lg text-foreground">
-                      <ChevronRight className="w-5 h-5 text-destructive shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
-                <Card className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-3">Loupes électroniques & téléagrandisseurs</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Ils grossissent les textes sans déformation avec une grande qualité d'image. Les détails non perçus redeviennent visibles. Tous sont dotés d'un éclairage intégré et proposent différents contrastes (noir/blanc, bleu/jaune, noir/vert…).
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-3">L'éclairage adapté</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    La DMLA entraîne un assombrissement de la vision. L'éclairage doit être repensé aux postes clés : cuisine, salle de bain, espace de lecture. Des lampes spécialement conçues pour la basse vision permettent de diriger la lumière avec précision.
-                  </p>
-                </Card>
-
-                <Card className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-3">Logiciels & téléphones adaptés</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Des logiciels d'agrandissement pour ordinateur et des téléphones adaptés à la malvoyance complètent l'arsenal des aides visuelles. Certains téléagrandisseurs disposent même d'options de lecture vocale.
-                  </p>
-                </Card>
-              </div>
-
-              <Card variant="highlighted" className="p-6">
+              <div role="note" className="rounded-xl border-l-8 border-destructive bg-card border border-border p-6">
                 <div className="flex items-start gap-4">
-                  <Lightbulb className="w-6 h-6 text-secondary shrink-0 mt-1" />
-                  <div>
-                    <p className="text-lg text-foreground leading-relaxed mb-3">
-                      <strong>Le saviez-vous ?</strong> La DMLA est directement liée à l'augmentation du risque de chute chez la personne âgée. Un accompagnement est indispensable : aide humaine permanente ou dispositif de détection de chute.
-                    </p>
-                    <Button variant="outline" size="sm" asChild>
-                      <Link to="/aides-lecture-bassevision">
-                        Découvrir nos aides à la lecture
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </Button>
-                  </div>
+                  <AlertTriangle className="w-6 h-6 text-destructive shrink-0 mt-1" aria-hidden="true" />
+                  <p className="text-lg text-foreground leading-relaxed"><strong>Un changement récent de vision ?</strong> Des lignes qui ondulent soudainement, une nouvelle tache au centre du regard ou une baisse de vision doivent conduire à contacter rapidement un ophtalmologiste, sans attendre une consultation programmée. Devant des symptômes évocateurs de DMLA, l’Assurance Maladie recommande un bilan en moins d’une semaine. En cas de baisse d’acuité chez une personne porteuse de drusen (MLA), elle recommande une consultation dans les 48 heures.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Section id="definition" title="Qu’est-ce que la DMLA ?" muted>
+          <P>La rétine capte la lumière au fond de l’œil. En son centre se trouve la <strong>macula</strong>, une petite zone essentielle à la vision précise. C’est grâce à elle que nous distinguons les lettres d’un livre, les détails d’une photographie ou les traits d’un visage.</P>
+          <P>La DMLA touche cette région. Elle peut provoquer une baisse de netteté, des déformations, une diminution des contrastes et, à un stade avancé, une zone floue ou absente au centre du regard, appelée <em>scotome</em>.</P>
+          <P>La maladie n’atteint généralement pas la vision périphérique : on peut donc continuer à percevoir son environnement tout en ayant de grandes difficultés pour lire ou reconnaître quelqu’un. La gêne varie beaucoup d’une personne à l’autre.</P>
+          <P>Au début, l’ophtalmologiste peut identifier une <strong>maculopathie liée à l’âge (MLA)</strong>, notamment par la présence de dépôts appelés <em>drusen</em>. Ce stade précoce peut rester stable ; il justifie néanmoins une surveillance adaptée.</P>
+        </Section>
+
+        <Section id="symptomes" title="Quels sont les symptômes de la DMLA ?">
+          <P>Les premiers signes peuvent être discrets, parfois présents sur un seul œil. L’autre œil peut alors masquer une partie des difficultés. Soyez attentif notamment à :</P>
+          <List items={[
+            <>des <strong>lignes droites qui paraissent ondulées</strong> ou déformées ;</>,
+            <>une <strong>baisse de la vision centrale</strong>, de près comme de loin ;</>,
+            <>des <strong>lettres qui semblent manquer</strong> ou une tache au centre du texte ;</>,
+            <>une diminution des contrastes, un besoin de plus de lumière ou une gêne à l’éblouissement ;</>,
+            <>une difficulté nouvelle à reconnaître les visages ou à distinguer les détails.</>,
+          ]} />
+          <P>Ces symptômes ne suffisent pas à diagnostiquer une DMLA : d’autres maladies oculaires peuvent aussi les provoquer. <strong>L’apparition ou l’aggravation de tels signes nécessite un avis ophtalmologique rapide.</strong></P>
+        </Section>
+
+        <Section id="formes" title="DMLA sèche et DMLA humide : quelles différences ?" muted>
+          <P>Il existe deux grandes formes de DMLA tardive. Elles n’évoluent pas de la même manière et ne bénéficient pas des mêmes traitements.</P>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+            <Card variant="elevated" className="p-6 min-w-0">
+              <Clock className="w-8 h-8 text-primary mb-3" aria-hidden="true" />
+              <H3>DMLA sèche, ou atrophique</H3>
+              <P>La <strong>DMLA sèche avancée</strong> correspond à une disparition progressive de cellules de la macula. La perte de vision centrale est généralement lente, souvent sur plusieurs années. Les difficultés concernent notamment la lecture, les détails et les contrastes.</P>
+              <P>À ce jour, aucun traitement médicamenteux curatif de cette forme n’est disponible en France. Le suivi ophtalmologique, les conseils de prévention, la réadaptation et les aides visuelles gardent donc une place importante.</P>
+            </Card>
+            <Card variant="elevated" className="p-6 min-w-0">
+              <Droplets className="w-8 h-8 text-primary mb-3" aria-hidden="true" />
+              <H3>DMLA humide, ou exsudative</H3>
+              <P>La <strong>DMLA humide</strong> est liée au développement de vaisseaux sanguins anormaux sous ou dans la rétine. Ces vaisseaux peuvent laisser passer du liquide ou du sang, perturbant rapidement la vision centrale.</P>
+              <P>Cette forme peut évoluer en quelques jours ou semaines. Des injections intraoculaires de médicaments, notamment les <strong>anti-VEGF</strong>, permettent souvent de freiner son évolution et parfois d’améliorer la vision. La rapidité de la prise en charge est déterminante.</P>
+            </Card>
+          </div>
+          <Card variant="muted" className="p-6">
+            <p className="text-lg text-foreground leading-relaxed"><strong>Important :</strong> « sèche » ne signifie pas nécessairement bénigne et « humide » ne signifie pas perte inévitable de la vision. Le pronostic dépend du stade, des lésions et du suivi. Une forme peut aussi évoluer ou coexister avec l’autre.</p>
+          </Card>
+        </Section>
+
+        <Section id="facteurs" title="Quels facteurs favorisent la DMLA ?">
+          <P>La DMLA a plusieurs facteurs de risque. Certains ne peuvent pas être modifiés, notamment <strong>l’âge</strong> et la <strong>prédisposition familiale</strong>. Le <strong>tabagisme</strong> est un facteur de risque majeur sur lequel il est possible d’agir.</P>
+          <P>Une alimentation équilibrée, une activité physique adaptée, l’arrêt du tabac et le suivi des facteurs cardiovasculaires sont des mesures favorables à la santé générale et oculaire. Elles ne permettent toutefois ni de garantir l’absence de DMLA ni de remplacer un traitement.</P>
+          <P>Les compléments alimentaires ne doivent pas être pris systématiquement : leur intérêt dépend notamment du stade de la maladie et de la situation de chaque personne. Demandez conseil à votre ophtalmologiste avant d’en prendre.</P>
+        </Section>
+
+        <Section id="diagnostic" title="Comment la DMLA est-elle diagnostiquée et surveillée ?" muted>
+          <P>Le diagnostic repose sur un examen ophtalmologique. Selon les besoins, le spécialiste réalise notamment un <strong>fond d’œil</strong> et une <strong>tomographie par cohérence optique (OCT)</strong>, examen d’imagerie qui montre les différentes couches de la rétine. D’autres examens peuvent être indiqués pour rechercher des vaisseaux anormaux.</P>
+          <H3>À quoi sert la grille d’Amsler ?</H3>
+          <div className="flex flex-col sm:flex-row items-start gap-6">
+            <figure className="shrink-0">
+              <img src={amslerGridImage} alt="Dessin illustratif d'une grille d'Amsler : quadrillage avec un point central" className="w-32 h-auto rounded-lg border border-border" width={300} height={384} loading="lazy" decoding="async" />
+              <figcaption className="text-base text-muted-foreground mt-2 max-w-[8rem]">Illustration, non utilisable comme test.</figcaption>
+            </figure>
+            <div className="min-w-0">
+              <P>La grille d’Amsler est un quadrillage muni d’un point central. Elle peut aider à repérer l’apparition de déformations dans la vision centrale.</P>
+              <P>Pour l’utiliser, placez-la à environ <strong>25 cm</strong>, avec vos lunettes de lecture si vous en portez. Couvrez un œil, fixez le point central, puis recommencez avec l’autre œil. Vérifiez si certaines lignes paraissent courbes, interrompues ou masquées.</P>
+              <P>Pour une DMLA déjà diagnostiquée, l’Assurance Maladie conseille une <strong>autosurveillance chaque semaine</strong>, selon les recommandations du médecin. Un changement nouveau doit conduire à consulter rapidement. <strong>Le test d’Amsler ne remplace jamais les examens ophtalmologiques.</strong></P>
+            </div>
+          </div>
+        </Section>
+
+        <Section id="traitements" title="Quels traitements existent contre la DMLA ?">
+          <P>Les traitements dépendent de la forme de la maladie et de son activité.</P>
+          <P><strong>Pour la DMLA humide</strong>, le traitement de référence repose principalement sur des injections intravitréennes de médicaments anti-VEGF. Ils limitent le développement et la perméabilité des vaisseaux anormaux. Ils ne « cautérisent » pas la rétine et ne guérissent pas définitivement la maladie. Le rythme des injections et des examens est défini par l’ophtalmologiste.</P>
+          <P><strong>Pour la DMLA sèche avancée</strong>, il n’existe pas actuellement de traitement curatif autorisé en France. Certaines approches sont étudiées à l’international, mais il faut distinguer les résultats de recherche, les autorisations obtenues dans d’autres pays et les soins réellement disponibles en France.</P>
+          <P>Dans tous les cas, un suivi régulier est indispensable. Si une baisse de vision persiste, l’accompagnement en basse vision ne doit pas attendre la fin du parcours médical : il peut aider à retrouver des possibilités concrètes au quotidien.</P>
+        </Section>
+
+        <Section id="vivre-avec-dmla" title="Comment continuer à vivre avec une DMLA ?" muted>
+          <P>La DMLA change parfois la manière de réaliser des gestes ordinaires. Elle ne signifie pas nécessairement devoir renoncer à ses activités préférées. L’objectif est de <strong>repérer les difficultés précises</strong>, puis d’essayer des adaptations appropriées.</P>
+          <H3>Lire, écrire et utiliser ses écrans</H3>
+          <P>Agrandir les caractères, améliorer le contraste, ajuster la lumière et adapter la distance de lecture peuvent aider. Une loupe convient à certaines tâches courtes ; un téléagrandisseur ou une lecture vocale peuvent être plus adaptés à d’autres situations. Le choix dépend de la vision restante et de l’activité, pas seulement du diagnostic.</P>
+          <H3>Rendre son logement plus confortable</H3>
+          <P>Un éclairage orientable, des objets rangés à des places fixes, des repères contrastés sur les commandes et un espace dégagé peuvent faciliter les gestes du quotidien. Il est utile de tester les changements progressivement, en commençant par les activités qui posent le plus de difficultés.</P>
+          <H3>Préserver ses déplacements et ses relations</H3>
+          <P>Sortir, reconnaître des personnes ou suivre une conversation dans un lieu animé peut devenir plus fatigant. Un accompagnement adapté, des stratégies de repérage et, si nécessaire, une rééducation basse vision peuvent aider. Le soutien des proches doit respecter les habitudes et les choix de la personne concernée.</P>
+        </Section>
+
+        <Section id="aides-visuelles" title="Quelles aides visuelles peuvent être utiles ?">
+          <P>Il n’existe pas <strong>une loupe universelle pour toutes les personnes atteintes de DMLA</strong>. Le bon outil dépend de la taille des caractères, de la durée de lecture, de la sensibilité aux contrastes, des gestes à effectuer et du grossissement utile.</P>
+          <P>Parmi les solutions possibles :</P>
+          <List items={[
+            <><strong>Loupes optiques</strong>, avec ou sans éclairage, pour certains besoins ponctuels ;</>,
+            <><strong>Loupes électroniques</strong>, qui permettent d’ajuster le grossissement et parfois les contrastes ;</>,
+            <><strong>Téléagrandisseurs</strong>, pour travailler sur des documents plus grands ou lire longtemps ;</>,
+            <><strong>Lampes adaptées</strong>, utiles pour mieux diriger l’éclairage et limiter les reflets ;</>,
+            <><strong>Lecture vocale et fonctions d’accessibilité</strong>, lorsque la lecture visuelle est trop difficile ou fatigante.</>,
+          ]} />
+          <P>Aucun appareil ne restaure les cellules de la rétine atteintes. Un essai en situation réelle reste la meilleure façon de savoir ce qui vous apporte un bénéfice.</P>
+          <Card variant="highlighted" className="p-6">
+            <p className="text-lg text-foreground leading-relaxed"><strong>À découvrir :</strong> <Link to="/aides-lecture-bassevision/" className={linkCls}>les aides à la lecture en basse vision</Link>, avec les différentes familles de solutions et leurs usages.</p>
+          </Card>
+        </Section>
+
+        <Section id="aider-proche" title="Comment aider un proche atteint de DMLA ?" muted>
+          <P>L'entourage joue souvent un rôle important, mais aider ne signifie pas tout faire à la place de l'autre. Commencez par lui demander <strong>ce qui est devenu difficile</strong> et ce qu'il souhaite continuer à faire seul.</P>
+          <P>Vous pouvez, par exemple, améliorer l'éclairage, agrandir les réglages de son téléphone, rendre les objets plus faciles à repérer ou l'accompagner pour essayer une aide visuelle. Évitez de déplacer ses affaires sans le prévenir ou de décider systématiquement à sa place.</P>
+          <P>Pour approfondir : <Link to="/aidants/" className={linkCls}>nos conseils aux proches aidants</Link>.</P>
+        </Section>
+
+        <Section id="livres" title="Deux guides pratiques pour aller plus loin">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {books.map((b) => (
+              <Card key={b.to} variant="elevated" className="p-6 flex flex-col sm:flex-row md:flex-col gap-6 min-w-0">
+                <Link to={b.to} aria-label={`Voir la page du livre ${b.title}`} className="shrink-0 self-center rounded-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring">
+                  <img src={b.img} srcSet={b.srcSet} sizes="160px" alt={b.alt} width={b.w} height={b.h} loading="lazy" decoding="async"
+                    className="w-40 h-auto object-contain rounded-md shadow-lg border border-border" />
+                </Link>
+                <div className="min-w-0 flex flex-col">
+                  <h3 className="font-serif text-2xl font-bold text-foreground mb-2">{b.title}</h3>
+                  <p className="text-lg italic text-foreground mb-3">{b.sub}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-5">{b.desc}</p>
+                  <Button variant="default" asChild className="mt-auto self-start">
+                    <Link to={b.to}>Découvrir ce livre <ArrowRight className="w-4 h-4" aria-hidden="true" /></Link>
+                  </Button>
                 </div>
               </Card>
-            </div>
+            ))}
           </div>
-        </section>
+        </Section>
 
-        {/* Living with DMLA */}
-        <section className="py-16 bg-background">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
-                  <Utensils className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                  Vivre avec la DMLA au quotidien
-                </h2>
-              </div>
-
-              <div className="space-y-6">
-                <Card variant="elevated" className="p-8">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">Le suivi ophtalmologique</h3>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Un suivi régulier permet de comprendre l'évolution de la maladie et d'ajuster les aides à la vision. La prise en charge par un ophtalmologiste, avec des examens réguliers du fond d'œil, est primordiale. Elle apporte des conseils d'aménagement de l'environnement, des soins et des traitements adaptés. Lorsque la malvoyance est forte, un accompagnement personnalisé doit être organisé.
-                  </p>
-                </Card>
-
-                <Card variant="elevated" className="p-8">
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-4">Prévention au quotidien</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-bold text-foreground text-lg mb-2">Alimentation</h4>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        Privilégiez les aliments riches en antioxydants, oméga 3, lutéine et zéaxanthine (légumes verts, poissons gras, fruits colorés). Des compléments alimentaires spécifiques peuvent soutenir le bon fonctionnement de l'œil.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-foreground text-lg mb-2">Mode de vie</h4>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        Arrêt du tabac, activité physique régulière, protection solaire des yeux et contrôle de la tension artérielle sont les piliers de la prévention. Un dépistage régulier dès 50 ans est recommandé.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card variant="muted" className="p-6">
-                  <p className="text-lg text-foreground leading-relaxed">
-                    <strong>30 % des personnes atteintes de DMLA souffrent de dépression.</strong> L'accompagnement ne se limite pas aux aides visuelles : le soutien psychologique et social est tout aussi important pour maintenir la qualité de vie.
-                  </p>
-                </Card>
-              </div>
-            </div>
+        <Section id="faq" title="Questions fréquentes sur la DMLA" muted>
+          <div className="space-y-4">
+            {faq.map((f) => (
+              <Card key={f.q} className="p-6">
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3">{f.q}</h3>
+                <p className="text-lg text-foreground leading-relaxed">{f.a}</p>
+              </Card>
+            ))}
           </div>
-        </section>
+        </Section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground" aria-labelledby="besoin-aide">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
-                Vous avez des questions sur la DMLA ?
-              </h2>
-              <p className="text-xl text-primary-foreground/90 mb-6 leading-relaxed">
-                Votre ophtalmologiste est votre premier interlocuteur pour le dépistage et le suivi de la DMLA. Si vous souhaitez des conseils sur les aides visuelles adaptées à votre situation, notre équipe est à votre écoute.
-              </p>
-              <p className="text-lg text-primary-foreground/80 mb-10 leading-relaxed">
-                Le bilan basse vision permet de faire le point sur vos capacités visuelles restantes et d'identifier les solutions concrètes pour vous aider au quotidien.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="secondary" size="lg" asChild>
-                  <Link to="/contact-conseil">
-                    <Phone className="w-5 h-5" />
-                    Nous contacter
-                  </Link>
-                </Button>
-                <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/bilans-bassevision">
-                    Découvrir nos bilans
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/aides-lecture-bassevision">
-                    Nos aides à la lecture
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-              </div>
+              <h2 id="besoin-aide" className="font-serif text-3xl md:text-4xl font-bold mb-6">Besoin d’aide pour choisir une solution adaptée ?</h2>
+              <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed">Vous avez déjà un diagnostic ou un suivi ophtalmologique, mais certaines activités restent difficiles ? LirElia peut vous aider à identifier les aides visuelles à essayer selon vos besoins de lecture et votre environnement. Cette démarche est complémentaire de votre prise en charge médicale.</p>
+              <Button variant="secondary" size="lg" asChild>
+                <Link to="/bilans-bassevision/">Découvrir nos bilans basse vision <ArrowRight className="w-5 h-5" aria-hidden="true" /></Link>
+              </Button>
             </div>
           </div>
         </section>
-        {/* Livres de l'auteur */}
-        <section className="py-16 bg-muted" aria-labelledby="livres-dmla">
-          <div className="container max-w-5xl">
-            <h2 id="livres-dmla" className="font-serif text-3xl font-bold text-foreground mb-8 text-center">Les livres de Thierry DUCROS sur la DMLA</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { img: bookDmlaCover, w: 900, h: 1356, title: "DMLA – Votre vie ne s'arrête pas", sub: "Comprendre la DMLA, s’équiper, s’organiser… et garder le moral", to: "/livre-dmla-votre-vie-ne-sarrete-pas/" },
-                { img: bookAidantCover, w: 900, h: 1379, title: "DMLA – Aider un proche sans s'épuiser", sub: "Guide pratique des aidants pour comprendre la basse vision et préserver l’autonomie", to: "/livre-aider-proche-dmla/" },
-              ].map((b) => (
-                <Link key={b.to} to={b.to} className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow min-w-0">
-                  <img src={b.img} alt={`Couverture du livre « ${b.title} » de Thierry DUCROS`} className="w-24 h-auto object-contain rounded-md shadow-md shrink-0" width={b.w} height={b.h} loading="lazy" decoding="async" />
-                  <span className="min-w-0">
-                    <span className="block font-serif text-lg font-bold text-foreground mb-1">{b.title}</span>
-                    <span className="block text-muted-foreground leading-relaxed mb-2">{b.sub}</span>
-                    <span className="text-primary font-semibold underline underline-offset-4">Voir le livre</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      <MedicalSources sources={[
-  { institution: "Assurance Maladie", title: "DMLA : symptômes, diagnostic et traitement", url: "https://www.ameli.fr/assure/sante/themes/dmla" },
-  { institution: "Inserm", title: "Dégénérescence maculaire liée à l'âge (DMLA)", url: "https://www.inserm.fr/dossier/degenerescence-maculaire-liee-age-dmla/" },
-  { institution: "Haute Autorité de Santé", title: "Guide sur la DMLA", url: "https://www.has-sante.fr/jcms/p_3383806/fr/guide-degenerescence-maculaire-liee-a-l-age" },
-  { institution: "Hôpital national des Quinze-Vingts", title: "DMLA", url: "https://www.15-20.fr/offre-de-soins/maladies-de-loeil/dmla/" }
-]} />
-        </main>
+
+        <Section id="sources" title="Sources et informations éditoriales">
+          <P>Cette page propose une information générale et des conseils d'adaptation du quotidien. Elle ne permet pas d'établir un diagnostic et ne remplace ni un traitement ni l'avis d'un professionnel de santé.</P>
+          <ul className="space-y-2 mb-6">
+            {sources.map(([label, url]) => (
+              <li key={url} className="text-lg"><a href={url} target="_blank" rel="noopener noreferrer" className={linkCls}>{label}</a></li>
+            ))}
+          </ul>
+          <p className="text-base italic text-muted-foreground">Contenu éditorial LirElia — informations médicales vérifiées le 19 octobre 2026 à partir des sources ci-dessus ; conseils pratiques dédiés à la basse vision.</p>
+        </Section>
+      </main>
       <Footer />
     </div>
   );
