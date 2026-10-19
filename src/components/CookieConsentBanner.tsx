@@ -67,7 +67,7 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
       className="fixed inset-x-0 bottom-0 z-[9999] flex justify-center pointer-events-none sm:px-4 sm:pb-4"
     >
       <div
-        className="pointer-events-auto w-full sm:max-w-2xl bg-card text-foreground border-t-2 sm:border-2 border-primary sm:rounded-xl shadow-xl overflow-y-auto max-h-[32vh] sm:max-h-[60vh] px-4 pt-3 sm:p-5"
+        className={`pointer-events-auto w-full sm:max-w-2xl bg-card text-foreground border-t-2 sm:border-2 border-primary sm:rounded-xl shadow-xl overflow-y-auto ${showPrefs ? "max-h-[75vh]" : "max-h-[32vh]"} sm:max-h-[70vh] px-4 pt-3 sm:p-5`}
         style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
         {!showPrefs ? (
