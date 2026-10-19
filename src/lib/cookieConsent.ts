@@ -1,9 +1,11 @@
 /**
- * Cookie Consent Manager for LirElia
+ * Cookie Consent Manager for LirElia — bandeau v2.0
  *
- * Consent Mode v2 : GA4 (G-CSJL8WM5WM) et Microsoft Clarity sont chargés dès
- * l'arrivée depuis index.html avec un consentement par défaut refusé.
- * Ce module transmet à ces outils les mises à jour de consentement du visiteur.
+ * Aucun traceur optionnel n'est chargé avant consentement : le chargeur
+ * « LIRELIA CONSENT LOADER » d'index.html expose lireliaLoadStatistics()
+ * (GA4 + Clarity) et lireliaLoadMarketing() (Meta Pixel, HubSpot, Albacross).
+ * Ce module enregistre le choix, appelle ces chargeurs, et coupe ce qui
+ * peut l'être lors d'un refus ou d'un retrait.
  */
 
 import { supabase } from "@/integrations/supabase/client";
@@ -28,10 +30,10 @@ declare global {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
     clarity?: (...args: unknown[]) => void;
+    lireliaLoadStatistics?: () => void;
+    lireliaLoadMarketing?: () => void;
   }
 }
-
-// ── Persisted state ─────────────────────────────────────────────────
 
 function getOrCreateVisitorId(): string {
   let id = localStorage.getItem(VISITOR_ID_KEY);
@@ -42,14 +44,14 @@ function getOrCreateVisitorId(): string {
   return id;
 }
 
-/** Read stored consent, migrating the v1 record if present. */
+/** Choix enregistré (clé v2, ou ancienne clé v1 encore valable). */
 export function getConsent(): CookieConsent | null {
   try {
     const raw =
       localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as CookieConsent;
-    // Silent migration to v2 key on next save
+    if (typeof parsed !== "object" || parsed === null) return null;
     return parsed;
   } catch {
     return null;
@@ -57,10 +59,12 @@ export function getConsent(): CookieConsent | null {
 }
 
 export function hasAnalyticsConsent(): boolean {
-  return !!getConsent()?.analytics;
+  return getConsent()?.analytics === true;
 }
 
-// ── DB logging (fire-and-forget) ────────────────────────────────────
+export function hasMarketingConsent(): boolean {
+  return getConsent()?.marketing === true;
+}
 
 function logConsentToDb(analytics: boolean, marketing: boolean) {
   const visitorId = getOrCreateVisitorId();
@@ -72,7 +76,7 @@ function logConsentToDb(analytics: boolean, marketing: boolean) {
       analytics,
       marketing,
       banner_version: BANNER_VERSION,
-      page_url: window.location.href,
+      page_url: window.location.origin + window.location.pathname,
       user_agent: navigator.userAgent?.slice(0, 512) || null,
     })
     .then(({ error }) => {
@@ -80,47 +84,56 @@ function logConsentToDb(analytics: boolean, marketing: boolean) {
     });
 }
 
-// ── Consent Mode wiring ─────────────────────────────────────────────
+// ── Coupure des traceurs ────────────────────────────────────────────
 
-function updateGtagConsent(analytics: boolean) {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
-  window.gtag("consent", "update", {
-    analytics_storage: analytics ? "granted" : "denied",
-  });
-}
-
-function updateClarityConsent(analytics: boolean) {
-  if (typeof window === "undefined" || typeof window.clarity !== "function") return;
+function denyStatistics() {
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", { analytics_storage: "denied" });
+  }
   try {
-    window.clarity("consent", analytics);
+    window.clarity?.("consent", false);
   } catch {
     /* no-op */
   }
 }
 
-/** Purge known GA4 / Clarity cookies from the current domain when refused. */
-function clearAnalyticsCookies() {
+function denyMarketing() {
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+  }
+  try {
+    window.fbq?.("consent", "revoke");
+  } catch {
+    /* no-op */
+  }
+}
+
+const STAT_PREFIXES = ["_ga", "_gid", "_gat", "_clck", "_clsk", "CLID", "MUID", "ANONCHK", "SM"];
+const MARKETING_PREFIXES = ["_fbp", "_fbc", "hubspotutk", "__hstc", "__hssc", "__hssrc", "__hs", "messagesUtk", "_nQc", "albacross"];
+
+/** Supprime les cookies optionnels accessibles en JavaScript sur ce domaine. */
+function clearCookies(prefixes: string[]) {
   if (typeof document === "undefined") return;
   const host = window.location.hostname;
   const rootDomain = host.split(".").slice(-2).join(".");
   const domains = [host, `.${host}`, `.${rootDomain}`];
-  const kill = (name: string) => {
-    for (const d of domains) {
-      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${d}`;
-    }
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
-  };
-  const analyticsPrefixes = ["_ga", "_gid", "_gat", "_clck", "_clsk", "CLID", "MUID"];
+  const expired = "expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
   document.cookie.split(";").forEach((c) => {
     const name = c.split("=")[0]?.trim();
-    if (!name) return;
-    if (analyticsPrefixes.some((p) => name.startsWith(p))) kill(name);
+    if (!name || !prefixes.some((p) => name.startsWith(p))) return;
+    for (const d of domains) document.cookie = `${name}=; ${expired}; domain=${d}`;
+    document.cookie = `${name}=; ${expired}`;
   });
 }
 
-/** Track a SPA page_view (GA4 drops it when analytics_storage is denied). */
+/** SPA page_view GA4 (sans effet tant que GA4 n'est pas autorisé/chargé). */
 export function trackPageView(path: string, title?: string) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  if (!hasAnalyticsConsent()) return;
   window.gtag("event", "page_view", {
     page_path: path,
     page_location: window.location.origin + path,
@@ -128,7 +141,19 @@ export function trackPageView(path: string, title?: string) {
   });
 }
 
-// ── Public API ──────────────────────────────────────────────────────
+/** Applique un choix : charge les catégories autorisées, coupe les autres. */
+export function applyConsent(consent: CookieConsent) {
+  if (consent.analytics) window.lireliaLoadStatistics?.();
+  else {
+    denyStatistics();
+    clearCookies(STAT_PREFIXES);
+  }
+  if (consent.marketing) window.lireliaLoadMarketing?.();
+  else {
+    denyMarketing();
+    clearCookies(MARKETING_PREFIXES);
+  }
+}
 
 export function saveConsent(analytics: boolean, marketing: boolean): CookieConsent {
   const consent: CookieConsent = {
@@ -138,9 +163,12 @@ export function saveConsent(analytics: boolean, marketing: boolean): CookieConse
     analytics,
     marketing,
   };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
-  // Remove legacy key after successful save
-  localStorage.removeItem(LEGACY_STORAGE_KEY);
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+    localStorage.removeItem(LEGACY_STORAGE_KEY);
+  } catch {
+    /* stockage indisponible : le choix vaut pour la page en cours */
+  }
   applyConsent(consent);
   logConsentToDb(analytics, marketing);
   return consent;
@@ -154,16 +182,8 @@ export function refuseAll(): CookieConsent {
   return saveConsent(false, false);
 }
 
-/** Apply the consent state to GA4, Clarity, and cookie storage. */
-export function applyConsent(consent: CookieConsent) {
-  updateGtagConsent(consent.analytics);
-  updateClarityConsent(consent.analytics);
-  if (!consent.analytics) clearAnalyticsCookies();
-}
-
-/** Called once on app start. */
+/** Au démarrage : le chargeur d'index.html a déjà chargé ce qui est autorisé. */
 export function initConsent() {
   const consent = getConsent();
   if (consent) applyConsent(consent);
-  // Sinon, on laisse les valeurs "denied" du Consent Mode par défaut.
 }
