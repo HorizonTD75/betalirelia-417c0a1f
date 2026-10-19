@@ -165,7 +165,6 @@ export const productNode = ({
     "@type": "Product",
     "@id": id ?? `${url}#product`,
     name,
-    ...(alternativeHeadline ? { alternativeHeadline } : {}),
     description,
     image: [absoluteAsset(image)],
     brand: { "@type": "Brand", name: brand },
