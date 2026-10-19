@@ -50,6 +50,7 @@ const BooksSection = () => {
                     {(() => {
                       const v = getHeroSrcSet(book.image);
                       return (
+                        <Link to={`${book.link}/`} aria-label={`Voir la page du livre « ${book.title} »`} className="rounded-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring">
                         <img
                           src={v?.src ?? book.image}
                           srcSet={v?.srcSet}
@@ -61,6 +62,7 @@ const BooksSection = () => {
                           loading="lazy"
                           decoding="async"
                         />
+                        </Link>
                       );
                     })()}
                   </div>
