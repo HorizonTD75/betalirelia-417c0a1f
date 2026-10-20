@@ -6,11 +6,10 @@ import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import NotFound from "@/pages/NotFound";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, BookOpen, Check, Eye, Hand, Mail, PenLine, Search, Sun, Tag } from "lucide-react";
 import { CHOICE_PRESENTATION, splitChoiceSections } from "@/content/choix-loupes/presentation";
-import { PHOTOS } from "@/components/choix-loupes/ChoiceImages";
-import ChoiceImages from "@/components/choix-loupes/ChoiceImages";
-import { CHOICE_HUB, CHOICE_ARTICLES, getChoiceArticle } from "@/content/choix-loupes/articles";
+import ChoiceImages, { PHOTOS } from "@/components/choix-loupes/ChoiceImages";
+import { CHOICE_HUB, CHOICE_ARTICLES, getChoiceArticle, type ChoiceArticle } from "@/content/choix-loupes/articles";
 import "./choice-article.css";
 
 type HtmlNode = { type: string; tagName?: string; value?: string; children?: HtmlNode[]; properties?: Record<string, unknown> };
@@ -30,31 +29,210 @@ function tableLabels() {
     visit(tree);
   };
 }
+const localHref = (href = "") => href.replace(/^https:\/\/lirelia\.fr(?=\/)/, "");
 const components: Components = {
   p: ({ children }) => <p className="text-xl leading-relaxed mb-5">{children}</p>,
   h2: ({ children }) => <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mt-12 mb-6 leading-snug">{children}</h2>,
   h3: ({ children }) => <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mt-8 mb-4 leading-snug">{children}</h3>,
   ul: ({ children }) => <ul className="list-disc pl-7 space-y-3 text-xl leading-relaxed mb-6 marker:text-primary">{children}</ul>,
   ol: ({ children }) => <ol className="list-decimal pl-7 space-y-3 text-xl leading-relaxed mb-6 marker:font-bold marker:text-primary">{children}</ol>,
-  a: ({ href = "", children }) => <a href={href.replace(/^https:\/\/lirelia\.fr(?=\/)/, "")} className="text-primary font-semibold underline underline-offset-4 decoration-2 hover:decoration-secondary">{children}</a>,
+  a: ({ href = "", children }) => <a href={localHref(href)} className="text-primary font-semibold underline underline-offset-4 decoration-2 hover:decoration-secondary">{children}</a>,
   table: ({ children }) => <div className="choice-table my-8"><table className="w-full border-collapse text-lg bg-card">{children}</table></div>,
   th: ({ children }) => <th scope="col" className="bg-primary text-primary-foreground font-bold p-4 text-left align-top">{children}</th>,
   td: ({ children, ...props }) => <td data-label={(props as Record<string, unknown>)["data-label"] as string} className="p-4 border border-border align-top leading-relaxed">{children}</td>,
 };
 const Markdown = ({ source }: { source: string }) => <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[tableLabels]} components={components}>{source}</ReactMarkdown>;
 
+/** Markdown text with IMAGE_ZONE markers placed at their editorial position. */
+function Content({ article, source }: { article: ChoiceArticle; source: string }) {
+  return <>{source.split(/\[choice-image:([^\]]+)\]/).map((segment, i) => {
+    if (i % 2 === 0) return segment.trim() ? <Markdown key={i} source={segment} /> : null;
+    const zone = article.zones.find((item) => item.id === segment);
+    return zone ? <ChoiceImages key={zone.id} zone={zone} first={false} /> : null;
+  })}</>;
+}
+const splitH3 = (content: string) => {
+  const [intro, ...parts] = content.split(/^### /m);
+  return { intro, items: parts.map((part) => { const nl = part.indexOf("\n"); return { title: part.slice(0, nl).trim(), body: part.slice(nl + 1) }; }) };
+};
+const stripStrong = (s: string) => s.replace(/\*\*/g, "").trim();
+const takeZones = (source: string) => ({ text: source.replace(/\[choice-image:[^\]]+\]/g, ""), ids: [...source.matchAll(/\[choice-image:([^\]]+)\]/g)].map((m) => m[1]) });
+
+const SectionTitle = ({ id, children }: { id?: string; children: React.ReactNode }) => <h2 id={id} className="text-2xl md:text-3xl font-bold text-primary mb-6 leading-snug">{children}</h2>;
+
+const USAGE_LINKS = [
+  { icon: Tag, slug: "loupe-optique-ou-electronique/" },
+  { icon: Mail, slug: "personne-agee/" },
+  { icon: BookOpen, slug: "loupe-portable-ou-grand-ecran/" },
+  { icon: PenLine, slug: "lire-mains-libres/" },
+];
+const FAMILIES = [
+  { photo: PHOTOS.nora, href: "/aides-lecture-bassevision/loupes-verre/", label: "Voir les loupes optiques" },
+  { photo: PHOTOS.lina, href: "/aides-lecture-bassevision/loupes-verre/", label: "Voir les loupes optiques" },
+  { photo: PHOTOS.amelie, href: "/aides-lecture-bassevision/loupes-electroniques/", label: "Voir les loupes électroniques" },
+  { photo: PHOTOS.focus, href: "/aides-lecture-bassevision/lunettes-loupes/", label: "Voir les lunettes loupes" },
+  { photo: PHOTOS.mezzo, href: "/aides-lecture-bassevision/tele-agrandisseurs/", label: "Voir les téléagrandisseurs" },
+];
+
+function HubBody({ article, sections }: { article: ChoiceArticle; sections: ReturnType<typeof splitChoiceSections> }) {
+  const find = (re: RegExp) => sections.find((s) => re.test(s.title));
+  const intro = sections.find((s) => !s.title);
+  const usage = find(/^Quelle loupe pour quel usage/);
+  const compare = find(/^Loupes optiques, électroniques/);
+  const power = find(/^Pourquoi la loupe la plus puissante/);
+  const lowVision = find(/^Loupe pour malvoyant/);
+  const guides = find(/^Nos guides/);
+  const faq = sections.find((s) => s.faq);
+  const advice = find(/^Besoin d’un conseil/);
+  const handled = [intro, usage, compare, power, lowVision, guides, faq, advice];
+  const others = sections.filter((s) => !handled.includes(s));
+
+  const tableLines = compare?.content.split("\n").filter((l) => /^\|/.test(l)) ?? [];
+  const rows = tableLines.slice(2).map((l) => l.split("|").slice(1, -1).map((c) => c.trim()));
+  const compareRest = compare?.content.split("\n").filter((l) => !/^\|/.test(l)).join("\n") ?? "";
+  const guideItems = [...(guides?.content.matchAll(/^- \[([^\]]+)\]\(([^)]+)\)\s*—\s*(.+)$/gm) ?? [])];
+  const guideRest = guides?.content.replace(/^- \[.+$/gm, "") ?? "";
+  const powerParts = power ? takeZones(power.content) : null;
+
+  return <>
+    {intro && <section className="container py-10"><div className="choice-prose mx-auto"><Content article={article} source={intro.content} /></div></section>}
+
+    {usage && (() => { const { intro: u, items } = splitH3(usage.content); return <section id="usages" aria-labelledby="usages-title" className="bg-muted/50 border-y border-border py-12 scroll-mt-28">
+      <div className="container max-w-6xl">
+        <SectionTitle id="usages-title">{usage.title}</SectionTitle>
+        {u.trim() && <div className="choice-prose"><Markdown source={u} /></div>}
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {items.map((item, i) => { const link = USAGE_LINKS[i]; const target = CHOICE_ARTICLES.find((a) => a.path === CHOICE_HUB + link?.slug); const Icon = link?.icon ?? Search;
+            return <li key={item.title} className="choice-card min-w-0 flex flex-col bg-card border border-border rounded-lg p-6">
+              <div className="flex items-start gap-4 mb-3"><span className="choice-icon shrink-0" aria-hidden="true"><Icon className="w-7 h-7" /></span><h3 className="text-xl md:text-2xl font-bold text-foreground leading-snug">{item.title}</h3></div>
+              <div className="choice-card-text flex-1"><Markdown source={item.body} /></div>
+              {target && <a href={target.path} className="choice-card-link mt-2 inline-flex items-start gap-2 text-lg font-bold text-primary underline underline-offset-4"><span>Guide : {target.h1}</span><ArrowRight aria-hidden="true" className="w-5 h-5 shrink-0 mt-1" /></a>}
+            </li>; })}
+        </ul>
+      </div>
+    </section>; })()}
+
+    {compare && <section id="comparatif" aria-labelledby="comparatif-title" className="container max-w-6xl py-12 scroll-mt-28">
+      <SectionTitle id="comparatif-title">{compare.title}</SectionTitle>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        {rows.map((row, i) => { const family = FAMILIES[i]; return <li key={row[0]} className="choice-card min-w-0 flex flex-col bg-card border border-border rounded-lg overflow-hidden">
+          {family && <img src={family.photo.src} alt="" width={family.photo.width} height={family.photo.height} loading="lazy" decoding="async" className="w-full h-40 object-contain bg-card border-b border-border" />}
+          <div className="p-5 flex flex-col flex-1">
+            <h3 className="text-xl font-bold text-primary leading-snug mb-3">{stripStrong(row[0])}</h3>
+            <p className="text-lg leading-relaxed mb-2"><strong>Convient pour :</strong> {row[1]}</p>
+            <p className="text-lg leading-relaxed mb-4 flex-1"><strong>À vérifier :</strong> {row[2]}</p>
+            {family && <a href={family.href} className="inline-flex items-start gap-2 text-lg font-bold text-primary underline underline-offset-4">{family.label}<ArrowRight aria-hidden="true" className="w-5 h-5 shrink-0 mt-1" /></a>}
+          </div>
+        </li>; })}
+      </ul>
+      <div className="choice-prose mx-auto"><Content article={article} source={compareRest} /></div>
+    </section>}
+
+    {power && powerParts && <section aria-labelledby="puissance-title" className="bg-muted/50 border-y border-border py-12">
+      <div className="container max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div className="min-w-0"><p className="choice-step">Repère 1 · Grossissement et largeur de texte</p><SectionTitle id="puissance-title">{power.title}</SectionTitle><Markdown source={powerParts.text} /></div>
+        <div className="min-w-0 lg:sticky lg:top-28">{powerParts.ids.map((id) => { const zone = article.zones.find((z) => z.id === id); return zone ? <ChoiceImages key={id} zone={zone} first={false} /> : null; })}</div>
+      </div>
+    </section>}
+
+    {lowVision && <section aria-labelledby="contraste-title" className="container max-w-6xl py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 items-start">
+        <div className="min-w-0"><p className="choice-step">Repère 2 · Grossir et contraster : deux fonctions distinctes</p><SectionTitle id="contraste-title">{lowVision.title}</SectionTitle><Content article={article} source={lowVision.content} /></div>
+        <figure className="min-w-0 border border-border rounded-lg overflow-hidden bg-card">
+          <img src={PHOTOS.amelie.src} alt={PHOTOS.amelie.alt} width={PHOTOS.amelie.width} height={PHOTOS.amelie.height} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-contain" />
+          <figcaption className="p-4 text-base text-muted-foreground border-t border-border leading-relaxed">{PHOTOS.amelie.caption} — illustration provisoire du matériel ; les modes de contraste se vérifient lors d’un essai.</figcaption>
+        </figure>
+      </div>
+    </section>}
+
+    <section aria-labelledby="criteres-title" className="bg-primary text-primary-foreground py-12">
+      <div className="container max-w-6xl">
+        <h2 id="criteres-title" className="text-2xl md:text-3xl font-bold mb-8 leading-snug">Trois critères à retenir</h2>
+        <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[{ icon: Eye, t: "Le champ de lecture", d: "Un grossissement suffisant sans perdre le fil de la lecture." },
+            { icon: Sun, t: "Le contraste et l’éclairage", d: "Un reflet ou une lampe mal orientée peut gêner davantage qu’une différence de puissance." },
+            { icon: Hand, t: "La maniabilité", d: "Facile à tenir, à déplacer et à utiliser chaque jour." }].map((c, i) => <li key={c.t} className="choice-criterion min-w-0 rounded-lg p-6">
+            <span className="flex items-center gap-3 mb-3"><span className="choice-num" aria-hidden="true">{i + 1}</span><c.icon aria-hidden="true" className="w-7 h-7 text-secondary" /></span>
+            <p className="text-xl font-bold mb-2">{c.t}</p><p className="text-lg leading-relaxed">{c.d}</p>
+          </li>)}
+        </ol>
+      </div>
+    </section>
+
+    {others.map((s) => <section key={s.title} className="container py-10"><div className="choice-prose mx-auto">{s.title && <SectionTitle>{s.title}</SectionTitle>}<Content article={article} source={s.content} /></div></section>)}
+
+    {guides && <section id="guides" aria-labelledby="guides-title" className="container max-w-6xl py-12 scroll-mt-28">
+      <SectionTitle id="guides-title">{guides.title}</SectionTitle>
+      <div className="choice-prose"><Markdown source={guides.content.split(/^- /m)[0]} /></div>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        {guideItems.map((m) => <li key={m[2]} className="min-w-0"><a href={localHref(m[2])} className="choice-guide-card h-full flex flex-col bg-card border border-border rounded-lg p-6">
+          <span className="text-xl font-bold text-primary leading-snug mb-3">{m[1]}</span>
+          <span className="text-lg leading-relaxed text-foreground flex-1">{m[3].replace(/\.$/, "")}.</span>
+          <span className="mt-4 inline-flex items-center gap-2 text-lg font-bold text-primary underline underline-offset-4">Lire le guide<ArrowRight aria-hidden="true" className="w-5 h-5" /></span>
+        </a></li>)}
+      </ul>
+      <div className="choice-prose"><Markdown source={guideRest.replace(/^Chaque guide[^\n]*\n/m, "")} /></div>
+    </section>}
+
+    {faq && <section aria-labelledby="faq-title" className="container max-w-4xl py-10"><div className="choice-faq rounded-lg">
+      <SectionTitle id="faq-title">{faq.title}</SectionTitle><Faq article={article} section={faq} />
+    </div></section>}
+
+    {advice && <section aria-labelledby="conseil-title" className="container max-w-4xl pb-14"><div className="choice-cta rounded-lg border border-border p-6 md:p-8">
+      <SectionTitle id="conseil-title">{advice.title}</SectionTitle><Markdown source={advice.content} />
+    </div></section>}
+  </>;
+}
+
+function Faq({ article, section }: { article: ChoiceArticle; section: ReturnType<typeof splitChoiceSections>[number] }) {
+  const intro = section.content.split(/^### /m)[0];
+  return <>
+    {intro.trim() && <Markdown source={intro} />}
+    {section.questions.map((item) => <details key={item.q} className="choice-faq-item">
+      <summary className="text-xl font-bold text-primary">{item.q}</summary>
+      <div className="choice-faq-answer"><Content article={article} source={item.a} /></div>
+    </details>)}
+  </>;
+}
+
+const sectionKind = (title: string, content: string) => {
+  if (/^Pour aller plus loin/.test(title)) return "further";
+  if (/vérif|essai|Comparer|comparer/.test(title)) return "check";
+  if (/^\|/m.test(content)) return "table";
+  return "plain";
+};
+
+function GuideBody({ article, sections }: { article: ChoiceArticle; sections: ReturnType<typeof splitChoiceSections> }) {
+  const siblings = CHOICE_ARTICLES.filter((a) => a.path !== article.path);
+  return <article className="container py-8 md:py-10"><div className="max-w-4xl mx-auto">
+    {sections.map((section, index) => {
+      if (section.faq) return <section key={index} aria-label={section.title} className="choice-faq rounded-lg my-10"><SectionTitle>{section.title}</SectionTitle><Faq article={article} section={section} /></section>;
+      const kind = sectionKind(section.title, section.content);
+      return <section key={index} className={`choice-section choice-${kind}`}>
+        {kind === "check" && <p className="choice-badge">À vérifier</p>}
+        {section.title && <h2 className="text-2xl md:text-3xl font-bold text-primary mt-10 mb-6 leading-snug">{section.title}</h2>}
+        <Content article={article} source={section.content} />
+      </section>;
+    })}
+    <nav aria-labelledby="autres-guides" className="mt-12 pt-8 border-t border-border">
+      <h2 id="autres-guides" className="text-2xl font-bold text-primary mb-5">Les autres guides du dossier</h2>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {siblings.map((a) => <li key={a.path} className="min-w-0"><a href={a.path} className="choice-guide-card h-full flex items-start justify-between gap-3 bg-card border border-border rounded-lg p-5 text-lg font-bold text-primary leading-snug">
+          <span>{a.path === CHOICE_HUB ? `Guide principal : ${a.h1}` : a.h1}</span><ArrowRight aria-hidden="true" className="w-5 h-5 shrink-0 mt-1" />
+        </a></li>)}
+      </ul>
+    </nav>
+  </div></article>;
+}
+
 export default function ChoiceArticlePage() {
   const { pathname } = useLocation();
   const article = getChoiceArticle(pathname);
   if (!article) return <NotFound />;
+  const isHub = article.path === CHOICE_HUB;
   const presentation = CHOICE_PRESENTATION[CHOICE_ARTICLES.indexOf(article)] ?? CHOICE_PRESENTATION[0];
   const photo = PHOTOS[presentation.photo];
   const sections = splitChoiceSections(article.body);
-  const renderContent = (content: string) => content.split(/\[choice-image:([^\]]+)\]/).map((segment, i) => {
-    if (i % 2 === 0) return <Markdown key={i} source={segment} />;
-    const zone = article.zones.find((item) => item.id === segment);
-    return zone ? <ChoiceImages key={zone.id} zone={zone} first={false} /> : null;
-  });
   return <div className="min-h-screen">
     <SEOHead /><Header />
     <main id="main-content" className="choice-article">
@@ -67,46 +245,32 @@ export default function ChoiceArticlePage() {
         </ol>
       </nav>
       <header className="choice-hero bg-primary text-primary-foreground py-8 md:py-12">
-        <div className="container grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center">
-          <div>
-            <p className="text-secondary font-bold text-lg mb-3">Bien choisir son aide à la lecture</p>
+        <div className="container max-w-6xl grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center">
+          <div className="min-w-0">
+            <p className="text-secondary font-bold text-lg mb-3">{isHub ? "Le guide LIRELIA des aides à la lecture" : "Bien choisir son aide à la lecture"}</p>
             <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-5">{article.h1}</h1>
-            <p className="text-xl leading-relaxed mb-6">{presentation.lead}</p>
-            <Button variant="secondary" asChild><a href={article.path === CHOICE_HUB ? "#usages" : "#essentiel"}>{article.path === CHOICE_HUB ? "Choisir selon mon usage" : "Les points à vérifier"}<ArrowRight aria-hidden="true" /></a></Button>
+            {!isHub && <p className="text-xl leading-relaxed mb-6">{presentation.lead}</p>}
+            {isHub && <p className="text-xl leading-relaxed mb-6">Étiquette, courrier, livre ou travail manuel : partez de ce que vous voulez lire, puis comparez les solutions.</p>}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+              <Button variant="secondary" asChild><a href={isHub ? "#usages" : "#essentiel"}>{isHub ? "Choisir selon mon usage" : "Les points à vérifier"}<ArrowRight aria-hidden="true" /></a></Button>
+              {isHub && <a href="#comparatif" className="text-lg font-semibold underline underline-offset-4 decoration-secondary">Voir le comparatif</a>}
+            </div>
           </div>
           <figure className="min-w-0">
-            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" className="w-full h-56 md:h-80 object-contain bg-card" />
+            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" className="w-full h-56 md:h-80 object-contain bg-card rounded-lg" />
             <figcaption className="text-lg mt-3">{photo.caption}</figcaption>
           </figure>
         </div>
       </header>
-      <section id="essentiel" className="bg-muted/50 border-b border-border py-8 scroll-mt-28" aria-labelledby="choice-essentials">
-        <div className="container max-w-5xl">
+      {!isHub && <section id="essentiel" className="bg-muted/50 border-b border-border py-8 scroll-mt-28" aria-labelledby="choice-essentials">
+        <div className="container max-w-4xl">
           <h2 id="choice-essentials" className="text-2xl font-bold text-primary mb-5">En un coup d’œil</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
             {presentation.essentials.map((item) => <li key={item} className="flex items-start gap-3 text-xl leading-relaxed"><Check className="text-primary w-6 h-6 shrink-0 mt-1" aria-hidden="true" /><span>{item}</span></li>)}
           </ul>
         </div>
-      </section>
-      {article.path === CHOICE_HUB && <section id="usages" className="container py-10 scroll-mt-28">
-        <h2 className="text-3xl font-bold text-primary mb-6">Que souhaitez-vous lire ou faire ?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[{ title: "Une étiquette ou un prix", slug: "loupe-optique-ou-electronique/", photo: PHOTOS.nora }, { title: "Un courrier ou une facture", slug: "personne-agee/", photo: PHOTOS.lina }, { title: "Un livre ou le journal", slug: "loupe-portable-ou-grand-ecran/", photo: PHOTOS.amelie }, { title: "Écrire, coudre, bricoler", slug: "lire-mains-libres/", photo: PHOTOS.astrid }].map((usage) => <a key={usage.slug} href={CHOICE_HUB + usage.slug} className="group border border-border rounded-lg overflow-hidden bg-card focus-visible:ring-4 focus-visible:ring-ring">
-            <img src={usage.photo.src} alt={usage.photo.alt} width={usage.photo.width} height={usage.photo.height} loading="lazy" className="w-full h-40 object-contain" />
-            <span className="block p-5 text-xl font-bold text-primary leading-snug border-t border-border">{usage.title}<ArrowRight aria-hidden="true" className="mt-3 w-5 h-5" /></span>
-          </a>)}
-        </div>
       </section>}
-      <article className="container py-8 md:py-10"><div className="max-w-4xl mx-auto">
-        {sections.map((section, index) => <section key={index} className={`choice-section ${section.faq ? "choice-faq" : ""} ${article.path === CHOICE_HUB ? "choice-hub-text" : ""}`}>
-          {section.title && <h2 className="text-2xl md:text-3xl font-bold text-primary mt-10 mb-6 leading-snug">{section.title}</h2>}
-          {section.faq ? <>
-            {section.content.split(/^### /m)[0].trim() && <Markdown source={section.content.split(/^### /m)[0]} />}
-            {section.questions.map((item) => <details key={item.q} className="choice-faq-item border-b border-border py-2"><summary className="cursor-pointer text-xl font-bold text-primary py-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-ring focus-visible:outline-offset-2">{item.q}</summary><div className="pt-3 pb-2">{renderContent(item.a)}</div></details>)}
-          </> : renderContent(section.content)}
-        </section>)}
-        <p className="mt-10 pt-6 border-t border-border text-lg"><a href="/qui-sommes-nous/" className="text-primary underline underline-offset-4">Qui sommes-nous ?</a></p>
-      </div></article>
+      {isHub ? <HubBody article={article} sections={sections} /> : <GuideBody article={article} sections={sections} />}
     </main><Footer />
   </div>;
 }
