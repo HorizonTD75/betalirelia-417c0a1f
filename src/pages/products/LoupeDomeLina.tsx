@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Check, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
+import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
 import imgMain from "@/assets/products/loupe-dome-eclairante-lina.jpg";
 import imgMotCroise from "@/assets/products/loupe-dome-eclairante-rechargeable-dmla-mot-croise.jpeg";
 import imgMagazine from "@/assets/products/loupe-dome-eclairante-rechargeable-dmla.jpeg";
@@ -191,6 +192,7 @@ const LoupeDomeLina = () => {
         <section className="container pb-12">
           <div className="max-w-md lg:ml-auto lg:mr-0">
             <ProductTrustBanner />
+            <ChoiceGuideLinks context="lina" />
           </div>
         </section>
 

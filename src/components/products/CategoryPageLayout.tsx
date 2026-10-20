@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -208,6 +209,8 @@ const CategoryPageLayout = ({
             </div>
           </div>
         </section>
+
+        <div className="container pb-8"><ChoiceGuideLinks context={seo.canonicalPath?.split("/").filter(Boolean).pop() ?? ""} /></div>
 
         {/* CATALOGUE CTA — vers la page commerciale associée (placé avant le bloc conseil personnalisé) */}
         {catalogueCta ? (

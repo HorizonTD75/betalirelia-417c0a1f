@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
 import Footer from "@/components/layout/Footer";
 import ComparisonSection from "@/components/sections/ComparisonSection";
 import SEOHead from "@/components/SEOHead";
@@ -321,6 +322,7 @@ const AidesLecture = () => {
               })}
             </div>
 
+            <ChoiceGuideLinks context="reading" />
             {/* Sections détaillées — bandeau coloré + layout horizontal compact, image alternée */}
             <div className="space-y-6 md:space-y-8">
               {categories.filter((c) => !(c as { placeholder?: boolean }).placeholder).map((cat, index) => {

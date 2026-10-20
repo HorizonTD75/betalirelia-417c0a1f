@@ -8,6 +8,7 @@
  */
 
 import { BreadcrumbItem } from "./entities";
+import { CHOICE_ARTICLES } from "@/content/choix-loupes/articles";
 
 const HOME: BreadcrumbItem = { name: "Accueil", path: "/" };
 const READING: BreadcrumbItem = { name: "Aides à la lecture", path: "/aides-lecture-bassevision" };
@@ -44,6 +45,7 @@ const leaf = (parents: BreadcrumbItem[], name: string, path: string): Breadcrumb
 ];
 
 export const VISIBLE_BREADCRUMBS: Record<string, BreadcrumbItem[]> = {
+  ...Object.fromEntries(CHOICE_ARTICLES.map((a) => [a.path.replace(/\/$/, ""), a.crumbs.map((name, i) => ({ name, path: i === 0 ? "/" : i === a.crumbs.length - 1 ? a.path.replace(/\/$/, "") : "/choisir-loupe-lecture" }))])),
   // ---- Catalogue ---------------------------------------------------------
   "/catalogue-aides-basse-vision": [HOME, { name: "Catalogue", path: "/catalogue-aides-basse-vision" }],
   "/catalogue-aides-basse-vision/loupes-verre": leaf([HOME, CATALOGUE_LONG], "Loupes en verre", "/catalogue-aides-basse-vision/loupes-verre"),
