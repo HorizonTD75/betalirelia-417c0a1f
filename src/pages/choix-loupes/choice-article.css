@@ -51,3 +51,13 @@ section.choice-table { background: hsl(var(--muted) / .5); border-radius: 8px; p
 .choice-article a { overflow-wrap: anywhere; }
 .choice-hero figure { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .choice-article *, [data-choice-entry] * { scroll-behavior: auto; transition: none; animation: none; } }
+
+.choice-zone { container-type: inline-size; }
+.choice-brief-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
+.choice-brief-frame-edge { border-bottom-width: 1px; }
+.choice-brief-frame { max-height: 22rem; }
+@container (min-width: 640px) {
+  .choice-brief-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+  .choice-brief-frame-edge { border-bottom-width: 0; border-right-width: 1px; }
+  .choice-brief-frame { max-height: none; }
+}
