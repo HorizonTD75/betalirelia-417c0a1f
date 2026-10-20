@@ -55,7 +55,7 @@ const MedicalSources = ({ sources }: MedicalSourcesProps) => {
           </ul>
 
           <p className="text-base text-muted-foreground leading-relaxed italic">
-            Ces ressources sont proposées à titre documentaire. Les informations présentes sur LirElia ne remplacent pas un diagnostic, un traitement ni l'avis personnalisé d'un ophtalmologiste ou d'un autre professionnel de santé.
+            Ces ressources sont proposées à titre documentaire. Les informations présentes sur LIRELIA ne remplacent pas un diagnostic, un traitement ni l'avis personnalisé d'un ophtalmologiste ou d'un autre professionnel de santé.
           </p>
         </div>
       </div>

@@ -189,7 +189,7 @@ const ContactBilan = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Prendre rendez-vous pour un bilan basse vision | LirElia"
+        title="Prendre rendez-vous pour un bilan basse vision | LIRELIA"
         description="Réservez votre bilan basse vision : Essentiel (75 €), Expert (135 €) ou Pack Suivi (215 €). Un appel préalable gratuit vous guide dans votre choix."
         canonicalPath="/rdv-bilan"
       />

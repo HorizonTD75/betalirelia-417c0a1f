@@ -72,16 +72,16 @@ const BILAN_SERVICES: Record<
 /** Products whose visible price is a "à partir de" starting price → no Offer. */
 const STARTING_PRICE_PRODUCTS = new Set(["/boutique/teleagrandisseur-mezzo-focus"]);
 
-/** Informational product pages: LirElia does not sell them → never an Offer. */
+/** Informational product pages: LIRELIA does not sell them → never an Offer. */
 const INFORMATIONAL_PRODUCTS = new Set(["/boutique/ray-ban-meta"]);
 
-/** Real manufacturer brands. Everything else is sold under the LirElia label. */
+/** Real manufacturer brands. Everything else is sold under the LIRELIA label. */
 const PRODUCT_BRAND: Record<string, string> = {
   "/boutique/teleagrandisseur-mezzo-focus": "Reinecker",
   "/boutique/ray-ban-meta": "Ray-Ban",
 };
 
-const brandOf = (path: string): string => PRODUCT_BRAND[path] ?? "LirElia";
+const brandOf = (path: string): string => PRODUCT_BRAND[path] ?? "LIRELIA";
 
 /** Stable variant identifiers required by the catalogue (SKU convention). */
 const VARIANT_SKU: Record<string, string> = {

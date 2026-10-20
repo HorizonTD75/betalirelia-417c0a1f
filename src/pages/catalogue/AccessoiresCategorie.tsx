@@ -9,13 +9,13 @@ import {
 const AccessoiresCategorie = () => (
   <CommercialCategoryPage
     path="/catalogue-aides-basse-vision/accessoires"
-    seoTitle="Accessoires pour malvoyants et basse vision | LirElia"
+    seoTitle="Accessoires pour malvoyants et basse vision | LIRELIA"
     seoDescription="Comparez les réveils et horloges à gros chiffres IVAR, FRIDA et OSKAR : taille d’affichage, couleurs, luminosité, date, température et prix."
     breadcrumbLabel="Accessoires utiles"
     h1="Accessoires utiles"
     h1Highlight="pour les personnes malvoyantes"
     subtitle="Lire l’heure plus facilement grâce à de grands chiffres contrastés"
-    intro="Les horloges et réveils à gros chiffres peuvent faciliter le repérage dans le temps lorsque les afficheurs classiques deviennent trop petits ou insuffisamment contrastés. LirElia propose trois modèles lumineux sur fond noir, avec des tailles, des couleurs et des fonctions différentes pour la chambre, le salon ou un hébergement médicalisé."
+    intro="Les horloges et réveils à gros chiffres peuvent faciliter le repérage dans le temps lorsque les afficheurs classiques deviennent trop petits ou insuffisamment contrastés. LIRELIA propose trois modèles lumineux sur fond noir, avec des tailles, des couleurs et des fonctions différentes pour la chambre, le salon ou un hébergement médicalisé."
     guide={{
       href: "/vivre-basse-vision",
       label: "Découvrir les conseils pour vivre avec une basse vision",

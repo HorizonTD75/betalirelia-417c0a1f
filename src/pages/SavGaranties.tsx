@@ -7,8 +7,8 @@ const SavGaranties = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="SAV et garanties des produits LirElia basse vision"
-        description="Service après-vente LirElia : aide à l'utilisation, garantie légale de conformité, vices cachés, garantie fabricant et retour sous 14 jours après réception."
+        title="SAV et garanties des produits LIRELIA basse vision"
+        description="Service après-vente LIRELIA : aide à l'utilisation, garantie légale de conformité, vices cachés, garantie fabricant et retour sous 14 jours après réception."
         canonicalPath="/sav-garanties"
       />
       <Header />
@@ -21,7 +21,7 @@ const SavGaranties = () => {
             <p className="text-base text-muted-foreground mb-10">Dernière mise à jour : 08/06/2026</p>
 
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Lirelia accompagne les personnes malvoyantes, leurs proches et les professionnels dans le choix de solutions d'aide à la lecture et de confort visuel.
+              LIRELIA accompagne les personnes malvoyantes, leurs proches et les professionnels dans le choix de solutions d'aide à la lecture et de confort visuel.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Notre service après-vente a pour objectif de vous aider en cas de question, de difficulté d'utilisation, de panne, de produit défectueux ou de demande de retour.
@@ -117,7 +117,7 @@ const SavGaranties = () => {
               Sauf instruction différente communiquée par email, les retours doivent être adressés à :
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Lirelia — Service retours<br />
+              LIRELIA — Service retours<br />
               4 rue Léon Blum<br />
               ZAE Les Glaises<br />
               91120 Palaiseau<br />

@@ -8,7 +8,7 @@ import astrid from "@/assets/products/lampe-loupe-astrid-noire.jpg";
 import mezzo from "@/assets/products/teleagrandisseur-mezzo-basse-vision.jpg";
 import type { ChoiceImageZone } from "@/content/choix-loupes/articles";
 
-const PHOTOS = {
+export const PHOTOS = {
   nora: { src: nora, width: 1000, height: 1000, alt: "Loupe rectangulaire NORA tenue au-dessus d’un document imprimé", caption: "Loupe à main NORA" },
   lina: { src: lina, width: 499, height: 499, alt: "Loupe dôme LINA présentée seule", caption: "Loupe à poser LINA" },
   amelie: { src: amelie, width: 600, height: 600, alt: "Loupe électronique Amélie avec sa poignée et son écran", caption: "Loupe électronique Amélie" },
@@ -38,6 +38,6 @@ export default function ChoiceImages({ zone, first }: { zone: ChoiceImageZone; f
         <figcaption className="p-4 text-lg text-foreground font-semibold border-t border-border">{photo.caption}</figcaption>
       </figure>; })}
     </div>
-    <p className="text-base text-muted-foreground leading-relaxed mt-3">Illustrations du matériel Lirelia, photographié séparément ; il ne s’agit pas d’un essai comparatif.</p>
+    <p className="text-base text-muted-foreground leading-relaxed mt-3">Illustrations du matériel LIRELIA, photographié séparément ; il ne s’agit pas d’un essai comparatif.</p>
   </div>;
 }

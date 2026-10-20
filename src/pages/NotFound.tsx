@@ -33,7 +33,7 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 — URL inexistante :", location.pathname);
-    document.title = "La page demandée est introuvable et sera bientot accessible | LirElia";
+    document.title = "La page demandée est introuvable et sera bientot accessible | LIRELIA";
     // Hint static hosts (OVH) that this is a real 404, when possible.
     const meta = document.querySelector('meta[name="prerender-status-code"]');
     if (!meta) {
@@ -46,7 +46,7 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEOHead title="Page introuvable | LirElia" description="Cette page n'existe pas ou a été déplacée. Retrouvez l'ensemble des solutions LirElia : maladies des yeux, aides à la lecture, bilans basse vision." />
+      <SEOHead title="Page introuvable | LIRELIA" description="Cette page n'existe pas ou a été déplacée. Retrouvez l'ensemble des solutions LIRELIA : maladies des yeux, aides à la lecture, bilans basse vision." />
       <Header />
       <main id="main-content" className="flex-1 bg-background">
         {/* Hero */}
@@ -72,10 +72,10 @@ const NotFound = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-foreground leading-relaxed">
               <p>
-                Le lien que vous avez utilisé est peut-être ancien, incomplet, ou la page que vous recherchez a été déplacée. Vous pouvez revenir à l'accueil ou poursuivre votre visite à partir des principales rubriques de LirElia.
+                Le lien que vous avez utilisé est peut-être ancien, incomplet, ou la page que vous recherchez a été déplacée. Vous pouvez revenir à l'accueil ou poursuivre votre visite à partir des principales rubriques de LIRELIA.
               </p>
               <p>
-                LirElia accompagne les personnes malvoyantes, leurs proches et leurs aidants. Vous y trouverez des informations claires pour mieux comprendre la basse vision et les principales maladies des yeux, des conseils pour préserver l'autonomie, des bilans personnalisés, ainsi qu'une sélection d'aides à la lecture et au quotidien.
+                LIRELIA accompagne les personnes malvoyantes, leurs proches et leurs aidants. Vous y trouverez des informations claires pour mieux comprendre la basse vision et les principales maladies des yeux, des conseils pour préserver l'autonomie, des bilans personnalisés, ainsi qu'une sélection d'aides à la lecture et au quotidien.
               </p>
               <p>
                 Retrouvez ici nos solutions pour la basse vision : loupes et téléagrandisseurs, éclairage adapté, outils numériques, conseils pratiques et accompagnement. Notre objectif est de vous aider à identifier des solutions concrètes, adaptées à vos besoins et à votre manière de vivre.

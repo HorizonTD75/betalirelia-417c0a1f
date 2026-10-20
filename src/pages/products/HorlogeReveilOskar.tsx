@@ -116,7 +116,7 @@ const HorlogeReveilOskar = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Horloge réveil OSKAR gros chiffres pour DMLA | LirElia"
+        title="Horloge réveil OSKAR gros chiffres pour DMLA | LIRELIA"
         description="Horloge réveil OSKAR : gros chiffres lumineux blancs ou verts sur fond noir, 45 mm, thermomètre intégré et double alimentation. Pour seniors et basse vision."
         canonicalPath="/boutique/horloge-reveil-gros-chiffres-oskar"
       />

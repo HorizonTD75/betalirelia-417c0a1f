@@ -128,7 +128,7 @@ const HorlogeReveilFrida = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Horloge FRIDA très gros chiffres en 5 couleurs | LirElia"
+        title="Horloge FRIDA très gros chiffres en 5 couleurs | LIRELIA"
         description="Horloge réveil FRIDA : très gros chiffres lumineux 52 mm en 5 couleurs, affichage cyclique, thermomètre et double alimentation. Pour seniors et basse vision."
         canonicalPath="/boutique/horloge-gros-chiffres-frida"
       />

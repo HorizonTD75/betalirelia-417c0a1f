@@ -6,8 +6,8 @@ const CharteClub = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Charte du Club LirElia : règles de bienveillance | LirElia"
-        description="Charte du Club LirElia : règles de bienveillance, confidentialité et respect pour des échanges sereins entre personnes malvoyantes, proches et aidants."
+        title="Charte du Club LIRELIA : règles de bienveillance | LIRELIA"
+        description="Charte du Club LIRELIA : règles de bienveillance, confidentialité et respect pour des échanges sereins entre personnes malvoyantes, proches et aidants."
         canonicalPath="/charte-club-lirelia"
       />
       <Header />
@@ -15,7 +15,7 @@ const CharteClub = () => {
         <div className="container py-16 lg:py-20">
           <div className="max-w-3xl mx-auto prose-lg">
             <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Charte du Club LirElia
+              Charte du Club LIRELIA
             </h1>
             <p className="text-xl text-muted-foreground mb-10">
               Échanges en visio pour personnes malvoyantes et aidants
@@ -23,15 +23,15 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Préambule</h2>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Le Club LirElia est un espace d'échange, de dialogue et de soutien proposé par LirElia. Il réunit, à intervalles réguliers, des personnes malvoyantes, avec ou sans leurs aidants, autour d'un animateur LirElia. Ce club a pour vocation de permettre à chacun de partager, dans un cadre rassurant et respectueux, ses préoccupations, ses expériences, ses questions liées à la malvoyance, à la vie quotidienne, à l'autonomie, aux aides techniques, aux démarches ou plus simplement au vécu personnel.
+              Le Club LIRELIA est un espace d'échange, de dialogue et de soutien proposé par LIRELIA. Il réunit, à intervalles réguliers, des personnes malvoyantes, avec ou sans leurs aidants, autour d'un animateur LIRELIA. Ce club a pour vocation de permettre à chacun de partager, dans un cadre rassurant et respectueux, ses préoccupations, ses expériences, ses questions liées à la malvoyance, à la vie quotidienne, à l'autonomie, aux aides techniques, aux démarches ou plus simplement au vécu personnel.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Le Club LirElia n'est pas un lieu de jugement, ni un lieu de polémique. C'est un lieu de parole, d'écoute, de lien social et de bienveillance.
+              Le Club LIRELIA n'est pas un lieu de jugement, ni un lieu de polémique. C'est un lieu de parole, d'écoute, de lien social et de bienveillance.
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">1. Esprit du club</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Le Club LirElia repose sur les valeurs suivantes :
+              Le Club LIRELIA repose sur les valeurs suivantes :
             </p>
             <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-6 space-y-1">
               <li>la bienveillance ;</li>
@@ -48,7 +48,7 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">2. Objet des rencontres</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Les rencontres du Club LirElia ont pour but de :
+              Les rencontres du Club LIRELIA ont pour but de :
             </p>
             <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
               <li>rompre l'isolement ;</li>
@@ -63,7 +63,7 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">3. Engagements des participants</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              En rejoignant le Club LirElia, chaque participant s'engage à :
+              En rejoignant le Club LIRELIA, chaque participant s'engage à :
             </p>
 
             <h3 className="font-serif text-xl font-bold text-foreground mt-6 mb-3">Respecter la parole d'autrui</h3>
@@ -98,7 +98,7 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">4. Confidentialité</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              La confidentialité est une règle essentielle du Club LirElia.
+              La confidentialité est une règle essentielle du Club LIRELIA.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               Tout ce qui est partagé pendant les rencontres doit rester dans le cadre du club, sauf accord explicite de la personne concernée.
@@ -113,12 +113,12 @@ const CharteClub = () => {
               <li>les images, captures d'écran, enregistrements audio ou vidéo de la réunion.</li>
             </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Aucune réunion ne doit être enregistrée sans information claire préalable et accord explicite de LirElia ainsi que des participants concernés.
+              Aucune réunion ne doit être enregistrée sans information claire préalable et accord explicite de LIRELIA ainsi que des participants concernés.
             </p>
 
-            <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">5. Place de l'animateur LirElia</h2>
+            <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">5. Place de l'animateur LIRELIA</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              L'animateur LirElia veille au bon déroulement des échanges. Son rôle est notamment de :
+              L'animateur LIRELIA veille au bon déroulement des échanges. Son rôle est notamment de :
             </p>
             <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
               <li>accueillir les participants ;</li>
@@ -135,7 +135,7 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">6. Limites du cadre</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Le Club LirElia est un espace d'échange et de soutien. Il ne remplace pas :
+              Le Club LIRELIA est un espace d'échange et de soutien. Il ne remplace pas :
             </p>
             <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
               <li>une consultation médicale ;</li>
@@ -167,7 +167,7 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">8. Respect des personnes et des différences</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Le Club LirElia accueille des participants aux parcours variés. La diversité des situations, des opinions, des niveaux d'autonomie, des caractères et des sensibilités doit être respectée. Aucun participant ne doit subir de remarque blessante concernant :
+              Le Club LIRELIA accueille des participants aux parcours variés. La diversité des situations, des opinions, des niveaux d'autonomie, des caractères et des sensibilités doit être respectée. Aucun participant ne doit subir de remarque blessante concernant :
             </p>
             <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-6 space-y-1">
               <li>son âge ;</li>
@@ -181,13 +181,13 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">9. En cas de non-respect de la charte</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              En cas de non-respect de la présente charte, LirElia se réserve le droit :
+              En cas de non-respect de la présente charte, LIRELIA se réserve le droit :
             </p>
             <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
               <li>de rappeler oralement les règles pendant la rencontre ;</li>
               <li>d'interrompre un échange devenu inadapté ;</li>
               <li>de suspendre l'accès d'un participant à une séance ;</li>
-              <li>ou, dans les cas répétés ou graves, d'exclure une personne du Club LirElia.</li>
+              <li>ou, dans les cas répétés ou graves, d'exclure une personne du Club LIRELIA.</li>
             </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Ces mesures visent uniquement à protéger le groupe, sa qualité d'écoute et la sécurité relationnelle de chacun.
@@ -195,13 +195,13 @@ const CharteClub = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">10. Adhésion à la charte</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              La participation à une rencontre du Club LirElia implique l'acceptation pleine et entière de la présente charte.
+              La participation à une rencontre du Club LIRELIA implique l'acceptation pleine et entière de la présente charte.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               Chaque participant reconnaît rejoindre un espace fondé sur la confiance, le respect, la discrétion et la bienveillance.
             </p>
             <p className="text-lg text-foreground leading-relaxed">
-              Le Club LirElia a pour ambition de rester un lieu simple, humain et utile, où l'on peut parler de la malvoyance et de la vie quotidienne sans peur d'être jugé, et avec le sentiment d'être compris.
+              Le Club LIRELIA a pour ambition de rester un lieu simple, humain et utile, où l'on peut parler de la malvoyance et de la vie quotidienne sans peur d'être jugé, et avec le sentiment d'être compris.
             </p>
           </div>
         </div>

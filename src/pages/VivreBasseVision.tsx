@@ -615,10 +615,10 @@ const VivreBasseVision = () => {
                 <span className="text-lg font-semibold">Rompre l'isolement, partager, s'entraider</span>
               </div>
               <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
-                Rejoignez le Club LirElia
+                Rejoignez le Club LIRELIA
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-6 leading-relaxed">
-                Vivre avec une basse vision peut être isolant. Le Club LirElia vous permet de rencontrer d'autres personnes malvoyantes, d'échanger des conseils pratiques pour le quotidien et de partager vos expériences lors de visioconférences thématiques.
+                Vivre avec une basse vision peut être isolant. Le Club LIRELIA vous permet de rencontrer d'autres personnes malvoyantes, d'échanger des conseils pratiques pour le quotidien et de partager vos expériences lors de visioconférences thématiques.
               </p>
               <p className="text-lg text-primary-foreground/80 mb-10 leading-relaxed">
                 Chaque mois, un thème différent : aides à la lecture, vie numérique, bien-être, témoignages d'aidants… Un espace bienveillant pour avancer ensemble et accompagner les personnes malvoyantes à domicile comme à l'extérieur.

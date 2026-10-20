@@ -1,5 +1,5 @@
 import Header from "@/components/layout/Header";
-import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
+import ChoiceGuideBanner from "@/components/choix-loupes/ChoiceGuideBanner";
 import Footer from "@/components/layout/Footer";
 import ComparisonSection from "@/components/sections/ComparisonSection";
 import SEOHead from "@/components/SEOHead";
@@ -281,6 +281,7 @@ const AidesLecture = () => {
               </p>
             </div>
 
+            <div className="mb-9"><ChoiceGuideBanner context="reading" /></div>
             {/* Grille des 5 catégories en cartes compactes avec bandeau coloré */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-12">
               {categories.map((cat, i) => {
@@ -322,7 +323,7 @@ const AidesLecture = () => {
               })}
             </div>
 
-            <ChoiceGuideLinks context="reading" />
+
             {/* Sections détaillées — bandeau coloré + layout horizontal compact, image alternée */}
             <div className="space-y-6 md:space-y-8">
               {categories.filter((c) => !(c as { placeholder?: boolean }).placeholder).map((cat, index) => {
@@ -446,7 +447,7 @@ const AidesLecture = () => {
                 vos habitudes et vos usages réels.
               </p>
               <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-8">
-                Chez LirElia, nous privilégions l'évaluation des besoins réels, les essais concrets
+                Chez LIRELIA, nous privilégions l'évaluation des besoins réels, les essais concrets
                 et un accompagnement humain et progressif.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

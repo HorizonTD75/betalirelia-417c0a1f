@@ -3,7 +3,7 @@ statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Comment lire en gardant les mains libres ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/lire-mains-libres/"
-title_seo: "Loupe de lecture mains libres : quelle solution ? | Lirelia"
+title_seo: "Loupe de lecture mains libres : quelle solution ? | LIRELIA"
 meta_description: "Lire, écrire ou coudre sans tenir de loupe : comparez loupe à poser, lunettes loupes, clip, lampe loupe et téléagrandisseur selon votre activité."
 requete_cible: "loupe de lecture main libre"
 requetes_secondaires: "loupe mains libres ; loupe broderie main libre ; loupe à poser ; loupe de bureau"
@@ -102,7 +102,7 @@ Pas toujours. Elle évite de tenir la lentille, mais il faut généralement la d
 
 ## Pour aller plus loin
 
-Pour replacer ce choix parmi les autres familles d’aides, consultez [« Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/). Vous pouvez également [demander un conseil Lirelia](https://lirelia.fr/contact-conseil/) en précisant l’activité et le matériel déjà utilisé, ou [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
+Pour replacer ce choix parmi les autres familles d’aides, consultez [« Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/). Vous pouvez également [demander un conseil LIRELIA](https://lirelia.fr/contact-conseil/) en précisant l’activité et le matériel déjà utilisé, ou [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
 
 <!-- FIN_CONTENU_PUBLIC -->
 

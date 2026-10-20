@@ -95,7 +95,7 @@ const DmlaSeche = () => (
         <Section id="conserver-son-autonomie-au-quotidien" title="Conserver son autonomie au quotidien" muted>
           <P>Les adaptations les plus utiles sont souvent concrètes : placer une lampe orientable près du fauteuil, agrandir les caractères du téléphone, utiliser des étiquettes contrastées et garder les objets aux mêmes endroits.</P>
           <P>Lorsque les difficultés deviennent importantes, un <strong>bilan et une réadaptation basse vision</strong> peuvent aider à identifier les activités prioritaires, les stratégies de vision excentrée et les équipements adaptés. Ces démarches complètent les soins ophtalmologiques, sans les remplacer.</P>
-          <P><Link to="/bilans-bassevision/" className={linkCls}>LirElia présente ses bilans et conseils en aides visuelles</Link>. Le choix d'un équipement dépend de vos besoins et de votre vision fonctionnelle ; il ne résulte pas du seul diagnostic médical.</P>
+          <P><Link to="/bilans-bassevision/" className={linkCls}>LIRELIA présente ses bilans et conseils en aides visuelles</Link>. Le choix d'un équipement dépend de vos besoins et de votre vision fonctionnelle ; il ne résulte pas du seul diagnostic médical.</P>
         </Section>
 
         <Section id="faq" title="Questions fréquentes sur la DMLA sèche">
@@ -113,7 +113,7 @@ const DmlaSeche = () => (
 
         <Section id="pour-approfondir-un-guide-pratique-sur-la-vie-avec-une-dmla" title="Pour approfondir : un guide pratique sur la vie avec une DMLA" muted>
           <P><strong>DMLA – Votre vie ne s'arrête pas</strong>, de Thierry DUCROS, aborde notamment la compréhension de la maladie, les aides visuelles, l'organisation du quotidien et le maintien de l'autonomie. Il s'agit d'un complément pratique à l'information médicale, et non d'un guide de traitement.</P>
-          <P><Link to="/livre-dmla-votre-vie-ne-sarrete-pas/" className={linkCls}>Découvrir le livre sur LirElia</Link>.</P>
+          <P><Link to="/livre-dmla-votre-vie-ne-sarrete-pas/" className={linkCls}>Découvrir le livre sur LIRELIA</Link>.</P>
         </Section>
 
         <Section id="sources" title="Sources et informations éditoriales">
@@ -128,7 +128,7 @@ const DmlaSeche = () => (
             <li><a href="https://www.ema.europa.eu/en/medicines/human/EPAR/syfovre" target="_blank" rel="noopener noreferrer" className={linkCls}>EMA — Syfovre, décision d'autorisation</a></li>
             <li><a href="https://www.ema.europa.eu/en/medicines/human/EPAR/izelvay" target="_blank" rel="noopener noreferrer" className={linkCls}>EMA — Izelvay, retrait de la demande</a></li>
           </ul>
-          <p className="text-base text-muted-foreground leading-relaxed mt-6"><em>Rédaction : LirElia — conseils pratiques en basse vision. Vérification documentaire : 19 octobre 2026. Toute mise à jour sur les traitements doit être contrôlée avant publication.</em></p>
+          <p className="text-base text-muted-foreground leading-relaxed mt-6"><em>Rédaction : LIRELIA — conseils pratiques en basse vision. Vérification documentaire : 19 octobre 2026. Toute mise à jour sur les traitements doit être contrôlée avant publication.</em></p>
         </Section>
   </DmlaChildLayout>
 );

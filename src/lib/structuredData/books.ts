@@ -1,5 +1,5 @@
 /**
- * Books published by LirElia — only fields visible and verified on the page.
+ * Books published by LIRELIA — only fields visible and verified on the page.
  *
  * RULE: no offer, price, format, page count or ISBN unless confirmed.
  * ASIN is an Amazon identifier, never an ISBN.

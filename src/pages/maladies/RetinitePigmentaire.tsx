@@ -24,7 +24,7 @@ const RetinitePigmentaire = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Rétinite pigmentaire : symptômes et accompagnement | LirElia"
+        title="Rétinite pigmentaire : symptômes et accompagnement | LIRELIA"
         description="Rétinite pigmentaire : maladie génétique de la rétine, vision tubulaire, héméralopie. Diagnostic, évolution et aides basse vision pour préserver l'autonomie."
         canonicalPath="/maladies-yeux/retinite-pigmentaire"
       />
@@ -386,7 +386,7 @@ const RetinitePigmentaire = () => {
                       La rétinite pigmentaire est l'une des causes de <strong>basse vision</strong> chez les personnes jeunes et actives. La perte progressive du champ visuel impacte les déplacements, la lecture, le travail et la vie sociale.
                     </p>
                     <p className="text-lg text-foreground leading-relaxed mb-6">
-                      Le Visiopraticien LirElia peut vous accompagner pour évaluer votre vision fonctionnelle, identifier les aides les plus adaptées et mettre en place des stratégies concrètes pour préserver votre autonomie.
+                      Le Visiopraticien LIRELIA peut vous accompagner pour évaluer votre vision fonctionnelle, identifier les aides les plus adaptées et mettre en place des stratégies concrètes pour préserver votre autonomie.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button variant="default" asChild>
@@ -428,7 +428,7 @@ const RetinitePigmentaire = () => {
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <Link to="/expert-basse-vision-visiopraticien">
-                    Le Visiopraticien LirElia
+                    Le Visiopraticien LIRELIA
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>

@@ -17,7 +17,7 @@ const ContactConseil = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Conseil basse vision personnalisé gratuit | LirElia"
+        title="Conseil basse vision personnalisé gratuit | LIRELIA"
         description="Besoin d'aide pour choisir une loupe, une lampe ou un télé-agrandisseur ? Décrivez votre situation et recevez un conseil personnalisé gratuit sous 48 h."
         canonicalPath="/contact-conseil"
       />
@@ -48,7 +48,7 @@ const ContactConseil = () => {
                   </Link>
                   , vers une aide technique ou un produit adapté, vers le{" "}
                   <Link to="/club" className="text-primary underline hover:no-underline">
-                    Club LirElia
+                    Club LIRELIA
                   </Link>
                   , ou simplement vous donner un premier conseil utile lorsqu'aucune
                   démarche supplémentaire n'est nécessaire.
@@ -93,7 +93,7 @@ const ContactConseil = () => {
                   to="/qui-sommes-nous"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
-                  En savoir plus sur LirElia
+                  En savoir plus sur LIRELIA
                 </Link>
               </nav>
             </div>

@@ -84,7 +84,7 @@ const LoupeMainNora = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Loupe à main NORA rectangulaire éclairante LED | LirElia"
+        title="Loupe à main NORA rectangulaire éclairante LED | LIRELIA"
         description="Loupe à main NORA : grande lentille rectangulaire ×2 et petite lentille ×6, 50 LED avec 3 intensités. Idéale DMLA, malvoyance, presbytie et lecture quotidienne."
         canonicalPath="/boutique/loupe-main-nora"
       />

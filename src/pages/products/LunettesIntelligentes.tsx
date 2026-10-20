@@ -189,7 +189,7 @@ const LunettesIntelligentes = () => {
             <div className="max-w-4xl mx-auto mb-12 rounded-2xl border-2 border-secondary/50 bg-secondary/10 p-5 md:p-6 flex items-start gap-4">
               <Info className="w-6 h-6 text-secondary shrink-0 mt-1" aria-hidden="true" />
               <p className="text-base md:text-lg text-foreground leading-relaxed">
-                <strong>Cette sélection est en cours de constitution.</strong> Les solutions présentées sont actuellement en évaluation et en test chez Lirelia.{" "}
+                <strong>Cette sélection est en cours de constitution.</strong> Les solutions présentées sont actuellement en évaluation et en test chez LIRELIA.{" "}
                 <Link to="/contact-conseil?produit=lunettes-intelligentes" className="underline font-semibold hover:text-primary">
                   Contactez-nous pour être conseillé(e)
                 </Link>{" "}
@@ -320,10 +320,10 @@ const LunettesIntelligentes = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto rounded-2xl border-2 border-secondary/40 bg-secondary/5 p-6 md:p-8 text-center">
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-3">
-                Découvrir les lunettes intelligentes présentées par LirElia
+                Découvrir les lunettes intelligentes présentées par LIRELIA
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
-                Consultez les modèles actuellement étudiés ou présentés par LirElia, leurs usages possibles et leurs limites pour les personnes malvoyantes.
+                Consultez les modèles actuellement étudiés ou présentés par LIRELIA, leurs usages possibles et leurs limites pour les personnes malvoyantes.
               </p>
               <Button variant="secondary" size="lg" asChild>
                 <Link to="/catalogue-aides-basse-vision/lunettes-intelligentes">

@@ -3,7 +3,7 @@ import HereditaryDiseasePageLayout from "@/components/maladies/HereditaryDisease
 import type { SiblingLink, DiseaseSection } from "@/components/maladies/HereditaryDiseasePageLayout";
 
 const siblings: SiblingLink[] = [
-  { title: "Maladie de Stargardt : dystrophie maculaire | LirElia", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
+  { title: "Maladie de Stargardt : dystrophie maculaire | LIRELIA", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
   { title: "Maladie de Leber", to: "/maladies-yeux/maladies-hereditaires/maladie-de-leber" },
   { title: "Achromatopsie", to: "/maladies-yeux/maladies-hereditaires/achromatopsie" },
   { title: "Syndrome d'Usher", to: "/maladies-yeux/maladies-hereditaires/syndrome-usher" },
@@ -96,7 +96,7 @@ const keyPoints = [
 
 const MaladieDeStargardt = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Maladie de Stargardt : Dystrophie Maculaire | LirElia"
+    seoTitle="Maladie de Stargardt : Dystrophie Maculaire | LIRELIA"
     seoDescription="Comprendre la maladie de Stargardt : dystrophie maculaire héréditaire liée au gène ABCA4, symptômes, diagnostic, évolution et accompagnement basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/maladie-de-stargardt"
     diseaseName="La maladie de Stargardt"

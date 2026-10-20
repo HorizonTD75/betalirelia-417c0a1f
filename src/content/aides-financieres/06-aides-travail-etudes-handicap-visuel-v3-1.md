@@ -1,13 +1,13 @@
 ---
 document_type: page_content
-project: LirElia
+project: LIRELIA
 work_step: '4.5'
 version: V3.1-lecture
 status: V3.1 révision éditoriale — contrôle réglementaire final requis avant publication
 last_verified: '2026-06-26'
 slug: /aides-financieres-basse-vision/travail-etudes/
 canonical: https://lirelia.fr/aides-financieres-basse-vision/travail-etudes/
-title: 'Travail et études : aides handicap visuel 2026 | LirElia'
+title: 'Travail et études : aides handicap visuel 2026 | LIRELIA'
 meta_description: 'Écrans adaptés, synthèse vocale, poste de travail : Agefiph, FIPHFP, Cap emploi et aides pour
   les étudiants malvoyants.'
 h1: "Travail et études avec une déficience visuelle : à qui demander de l'aide ?"
@@ -55,14 +55,14 @@ verification_scope: Barèmes nationaux clés contrôlés sur sources officielles
   requise
 robots: index, follow
 og_type: article
-og_title: 'Travail et études : aides handicap visuel 2026 | LirElia'
+og_title: 'Travail et études : aides handicap visuel 2026 | LIRELIA'
 og_description: 'Écrans adaptés, synthèse vocale, poste de travail : Agefiph, FIPHFP, Cap emploi et aides pour les
   étudiants malvoyants.'
 og_url: https://lirelia.fr/aides-financieres-basse-vision/travail-etudes/
-og_site_name: LirElia
+og_site_name: LIRELIA
 og_locale: fr_FR
 twitter_card: summary_large_image
-twitter_title: 'Travail et études : aides handicap visuel 2026 | LirElia'
+twitter_title: 'Travail et études : aides handicap visuel 2026 | LIRELIA'
 twitter_description: 'Écrans adaptés, synthèse vocale, poste de travail : Agefiph, FIPHFP, Cap emploi et aides pour
   les étudiants malvoyants.'
 social_image_status: 'À créer : visuel social 1200 × 630 px avec texte lisible et contraste élevé. Ne pas inventer

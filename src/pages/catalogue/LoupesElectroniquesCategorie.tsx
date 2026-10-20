@@ -5,13 +5,13 @@ import { LOUPE_AMELIE, LOUPE_CLOVER5 } from "@/data/products/catalogueCategories
 const LoupesElectroniquesCategorie = () => (
   <CommercialCategoryPage
     path="/catalogue-aides-basse-vision/loupes-electroniques"
-    seoTitle="Loupes électroniques basse vision : modèles | LirElia"
+    seoTitle="Loupes électroniques basse vision : modèles | LIRELIA"
     seoDescription="Comparez les loupes électroniques Amélie et CLOVER 5 : écran, grossissement, contrastes, mobilité et prix pour mieux lire avec une basse vision."
     breadcrumbLabel="Loupes électroniques"
     h1="Loupes électroniques"
     h1Highlight="pour basse vision"
     subtitle="Agrandissez les textes et adaptez les contrastes à votre vision"
-    intro="Les loupes électroniques affichent les textes et les images sur un écran lumineux avec un grossissement réglable. Elles peuvent faciliter la lecture du courrier, des notices, des étiquettes, des journaux ou des livres lorsque la loupe optique ne suffit plus. LirElia propose deux modèles complémentaires : la loupe Amélie, très simple à utiliser, et la CLOVER 5, plus complète et facilement transportable."
+    intro="Les loupes électroniques affichent les textes et les images sur un écran lumineux avec un grossissement réglable. Elles peuvent faciliter la lecture du courrier, des notices, des étiquettes, des journaux ou des livres lorsque la loupe optique ne suffit plus. LIRELIA propose deux modèles complémentaires : la loupe Amélie, très simple à utiliser, et la CLOVER 5, plus complète et facilement transportable."
     guide={{
       href: "/aides-lecture-bassevision/loupes-electroniques",
       label: "Mieux comprendre les loupes électroniques",

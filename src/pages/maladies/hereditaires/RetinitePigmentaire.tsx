@@ -3,7 +3,7 @@ import HereditaryDiseasePageLayout from "@/components/maladies/HereditaryDisease
 import type { SiblingLink, DiseaseSection } from "@/components/maladies/HereditaryDiseasePageLayout";
 
 const siblings: SiblingLink[] = [
-  { title: "Rétinite pigmentaire héréditaire : guide | LirElia", to: "/maladies-yeux/maladies-hereditaires/maladie-de-leber" },
+  { title: "Rétinite pigmentaire héréditaire : guide | LIRELIA", to: "/maladies-yeux/maladies-hereditaires/maladie-de-leber" },
   { title: "Maladie de Stargardt", to: "/maladies-yeux/maladies-hereditaires/maladie-de-stargardt" },
   { title: "Achromatopsie", to: "/maladies-yeux/maladies-hereditaires/achromatopsie" },
   { title: "Syndrome d'Usher", to: "/maladies-yeux/maladies-hereditaires/syndrome-usher" },
@@ -122,7 +122,7 @@ const keyPoints = [
 
 const RetinitePigmentaireHereditaire = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Rétinite pigmentaire héréditaire : génétique | LirElia"
+    seoTitle="Rétinite pigmentaire héréditaire : génétique | LIRELIA"
     seoDescription="Comprendre la rétinite pigmentaire héréditaire : transmission génétique, symptômes, diagnostic, évolution et accompagnement en basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/retinite-pigmentaire"
     diseaseName="Rétinite pigmentaire héréditaire : génétique et transmission"

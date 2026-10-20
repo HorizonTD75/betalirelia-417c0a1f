@@ -6,8 +6,8 @@ const Livraison = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Livraison gratuite en France métropolitaine | LirElia"
-        description="Conditions de livraison LirElia : livraison gratuite en France métropolitaine, délais d'expédition, suivi de commande et vérification du colis à la réception."
+        title="Livraison gratuite en France métropolitaine | LIRELIA"
+        description="Conditions de livraison LIRELIA : livraison gratuite en France métropolitaine, délais d'expédition, suivi de commande et vérification du colis à la réception."
         canonicalPath="/livraison"
       />
       <Header />
@@ -20,7 +20,7 @@ const Livraison = () => {
             <p className="text-base text-muted-foreground mb-10">Dernière mise à jour : 08/06/2026</p>
 
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Chez Lirelia, nous attachons une grande importance à la clarté des conditions de livraison. Les produits proposés sur le site sont principalement destinés aux personnes malvoyantes, à leurs proches aidants ou aux professionnels qui les accompagnent.
+              Chez LIRELIA, nous attachons une grande importance à la clarté des conditions de livraison. Les produits proposés sur le site sont principalement destinés aux personnes malvoyantes, à leurs proches aidants ou aux professionnels qui les accompagnent.
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Zone de livraison</h2>
@@ -49,7 +49,7 @@ const Livraison = () => {
               <li>le transporteur ;</li>
               <li>l'adresse de livraison ;</li>
               <li>les périodes de forte activité ;</li>
-              <li>les contraintes exceptionnelles indépendantes de Lirelia.</li>
+              <li>les contraintes exceptionnelles indépendantes de LIRELIA.</li>
             </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               En cas de retard significatif, vous pouvez nous contacter afin que nous vérifiions la situation de votre commande.
@@ -88,14 +88,14 @@ const Livraison = () => {
             <ul className="list-disc pl-6 text-lg text-foreground leading-relaxed mb-4 space-y-1">
               <li>émettre des réserves auprès du transporteur ;</li>
               <li>prendre des photos du colis et du produit ;</li>
-              <li>contacter Lirelia rapidement à <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4">contact@lirelia.fr</a>.</li>
+              <li>contacter LIRELIA rapidement à <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4">contact@lirelia.fr</a>.</li>
             </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Ces éléments nous aideront à traiter plus efficacement votre demande.
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Contact</h2>
-            <p className="text-lg text-foreground leading-relaxed mb-2">Lirelia est édité par :</p>
+            <p className="text-lg text-foreground leading-relaxed mb-2">LIRELIA est édité par :</p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               HORIZON TD — SAS<br />
               2 rue Pierre Louÿs<br />

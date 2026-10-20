@@ -46,7 +46,7 @@ const Header = () => {
               src="/images/logo-lirelia-bleu-300.png"
               srcSet="/images/logo-lirelia-bleu-120.png 120w, /images/logo-lirelia-bleu-180.png 180w, /images/logo-lirelia-bleu-300.png 300w"
               sizes="(min-width: 1280px) 56px, (min-width: 640px) 48px, 40px"
-              alt="Lirelia, expert en basse vision et aides à la lecture"
+              alt="LIRELIA, expert en basse vision et aides à la lecture"
               className="w-10 h-auto sm:w-12 xl:w-14 object-contain"
               width={300}
               height={169}
@@ -54,7 +54,7 @@ const Header = () => {
               decoding="async"
             />
             <div className="whitespace-nowrap">
-              <span className="font-serif text-base sm:text-lg xl:text-xl font-bold text-primary">LirElia</span>
+              <span className="font-serif text-base sm:text-lg xl:text-xl font-bold text-primary">LIRELIA</span>
               <span className="block text-xs text-muted-foreground">Basse Vision</span>
             </div>
           </a>

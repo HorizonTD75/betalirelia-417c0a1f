@@ -133,7 +133,7 @@ interface ProductNodeInput {
   image: string;
   price: string;
   status: string;
-  /** Real manufacturer brand. Defaults to LirElia for own-label products. */
+  /** Real manufacturer brand. Defaults to LIRELIA for own-label products. */
   brand?: string;
   /** Optional @id suffix override, used by variant sub-products. */
   id?: string;
@@ -153,7 +153,7 @@ export const productNode = ({
   image,
   price,
   status,
-  brand = "LirElia",
+  brand = "LIRELIA",
   id,
   offerUrl,
   withOffer = true,
@@ -278,7 +278,7 @@ export const faqNode = (path: string, items: { q: string; a: string }[]): Node =
   })),
 });
 
-/** The author of the LirElia books, published under his own name. */
+/** The author of the LIRELIA books, published under his own name. */
 export const AUTHOR_ID = `${SITE_URL}/#author-thierry-ducros`;
 
 export const authorNode = (): Node => ({

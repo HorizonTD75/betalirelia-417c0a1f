@@ -1,5 +1,5 @@
 /**
- * Cookie Consent Manager for LirElia — bandeau v2.0
+ * Cookie Consent Manager for LIRELIA — bandeau v2.0
  *
  * Aucun traceur optionnel n'est chargé avant consentement : le chargeur
  * « LIRELIA CONSENT LOADER » d'index.html expose lireliaLoadStatistics()

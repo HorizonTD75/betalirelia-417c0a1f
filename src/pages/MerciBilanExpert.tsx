@@ -2,7 +2,7 @@ import ThankYouPage from "@/components/ThankYouPage";
 
 const MerciBilanExpert = () => (
   <ThankYouPage
-    seoTitle="Demande de Bilan Expert envoyée – LirElia"
+    seoTitle="Demande de Bilan Expert envoyée – LIRELIA"
     title="Merci, votre demande de bilan expert est envoyée"
     description="Votre demande de Bilan Expert a bien été enregistrée."
     message="Votre demande de Bilan Expert (135 €) a bien été enregistrée. Nous vous recontacterons très rapidement par téléphone pour confirmer votre rendez-vous."

@@ -5,13 +5,13 @@
  */
 
 export const SITE_URL = "https://lirelia.fr";
-export const SITE_NAME = "LirElia";
+export const SITE_NAME = "LIRELIA";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export const ORGANIZATION_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "LirElia",
+  name: "LIRELIA",
   url: SITE_URL,
   logo: `${SITE_URL}/og-image.png`,
   description:
@@ -28,7 +28,7 @@ export const ORGANIZATION_JSONLD = {
 export const WEBSITE_JSONLD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "LirElia",
+  name: "LIRELIA",
   url: SITE_URL,
   description:
     "Accompagnement expert en basse vision : bilans fonctionnels, aides à la lecture, conseils et solutions adaptées.",
@@ -71,7 +71,7 @@ export function buildProductJsonLd(p: ProductSeoInput) {
     name: p.name,
     description: p.description,
     image: [p.image.startsWith("http") ? p.image : `${SITE_URL}${p.image}`],
-    brand: { "@type": "Brand", name: p.brand ?? "LirElia" },
+    brand: { "@type": "Brand", name: p.brand ?? "LIRELIA" },
   };
   if (p.price) {
     node.offers = {

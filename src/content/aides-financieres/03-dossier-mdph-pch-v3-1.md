@@ -1,13 +1,13 @@
 ---
 document_type: page_content
-project: LirElia
+project: LIRELIA
 work_step: '4.2'
 version: V3.1-lecture
 status: V3.1 révision éditoriale — contrôle réglementaire final requis avant publication
 last_verified: '2026-06-26'
 slug: /aides-financieres-basse-vision/dossier-mdph-pch/
 canonical: https://lirelia.fr/aides-financieres-basse-vision/dossier-mdph-pch/
-title: 'Dossier MDPH basse vision : PCH et démarches 2026 | LirElia'
+title: 'Dossier MDPH basse vision : PCH et démarches 2026 | LIRELIA'
 meta_description: Comment constituer un dossier MDPH pour une déficience visuelle ? Pièces, projet de vie, devis,
   PCH, délais et recours.
 h1: "Dossier MDPH et PCH : faire comprendre les difficultés liées à la vue"
@@ -54,14 +54,14 @@ verification_scope: Barèmes nationaux clés contrôlés sur sources officielles
   requise
 robots: index, follow
 og_type: article
-og_title: 'Dossier MDPH basse vision : PCH et démarches 2026 | LirElia'
+og_title: 'Dossier MDPH basse vision : PCH et démarches 2026 | LIRELIA'
 og_description: Comment constituer un dossier MDPH pour une déficience visuelle ? Pièces, projet de vie, devis,
   PCH, délais et recours.
 og_url: https://lirelia.fr/aides-financieres-basse-vision/dossier-mdph-pch/
-og_site_name: LirElia
+og_site_name: LIRELIA
 og_locale: fr_FR
 twitter_card: summary_large_image
-twitter_title: 'Dossier MDPH basse vision : PCH et démarches 2026 | LirElia'
+twitter_title: 'Dossier MDPH basse vision : PCH et démarches 2026 | LIRELIA'
 twitter_description: Comment constituer un dossier MDPH pour une déficience visuelle ? Pièces, projet de vie, devis,
   PCH, délais et recours.
 social_image_status: 'À créer : visuel social 1200 × 630 px avec texte lisible et contraste élevé. Ne pas inventer

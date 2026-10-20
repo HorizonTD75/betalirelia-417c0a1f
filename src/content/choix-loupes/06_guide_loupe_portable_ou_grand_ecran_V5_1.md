@@ -3,7 +3,7 @@ statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Loupe portable ou grand écran : quand choisir un téléagrandisseur ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/loupe-portable-ou-grand-ecran/"
-title_seo: "Loupe portable ou téléagrandisseur : que choisir ? | Lirelia"
+title_seo: "Loupe portable ou téléagrandisseur : que choisir ? | LIRELIA"
 meta_description: "Quel intérêt pour un grand écran ? Comparez loupe électronique portable et téléagrandisseur pour lire un journal ou écrire à domicile."
 requete_cible: "loupe portable ou téléagrandisseur"
 requetes_secondaires: "téléagrandisseur ; loupe électronique portable ; grand écran pour lire ; téléagrandisseur de bureau"
@@ -47,7 +47,7 @@ Un **téléagrandisseur de bureau** utilise une caméra pour afficher sur un éc
 
 Cette organisation peut être confortable pour un livre de recettes, le journal, un courrier ou des mots croisés. Certains téléagrandisseurs permettent également d’écrire sur un document placé sous la caméra. Il faut vérifier cette possibilité sur le modèle envisagé, notamment l’espace disponible pour la main et le stylo. Pour comparer ce type de poste avec d’autres solutions qui libèrent les mains, voyez notre guide [lire en gardant les mains libres](https://lirelia.fr/choisir-loupe-lecture/lire-mains-libres/).
 
-La page Lirelia dédiée aux [téléagrandisseurs](https://lirelia.fr/aides-lecture-bassevision/tele-agrandisseurs/) explique le fonctionnement et les différentes familles d’appareils. Notre guide s’intéresse ici au moment où le **passage à un grand écran** devient pertinent.
+La page LIRELIA dédiée aux [téléagrandisseurs](https://lirelia.fr/aides-lecture-bassevision/tele-agrandisseurs/) explique le fonctionnement et les différentes familles d’appareils. Notre guide s’intéresse ici au moment où le **passage à un grand écran** devient pertinent.
 
 <!-- IMAGE_ZONE
 id: te-02
@@ -111,7 +111,7 @@ Lorsque les caractères sont assez grands mais que la zone visible reste trop pe
 
 ## Pour aller plus loin
 
-Vous pouvez revenir au [guide « Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/), [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/) ou [décrire votre besoin à Lirelia](https://lirelia.fr/contact-conseil/), que vous cherchiez un matériel pour votre propre lecture ou pour celle d’un proche.
+Vous pouvez revenir au [guide « Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/), [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/) ou [décrire votre besoin à LIRELIA](https://lirelia.fr/contact-conseil/), que vous cherchiez un matériel pour votre propre lecture ou pour celle d’un proche.
 
 <!-- FIN_CONTENU_PUBLIC -->
 

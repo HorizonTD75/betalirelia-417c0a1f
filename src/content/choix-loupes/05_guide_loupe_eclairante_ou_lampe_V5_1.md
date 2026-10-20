@@ -3,7 +3,7 @@ statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Loupe éclairante ou lampe de lecture : que choisir ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/loupe-eclairante-ou-lampe/"
-title_seo: "Loupe éclairante ou lampe de lecture ? Guide | Lirelia"
+title_seo: "Loupe éclairante ou lampe de lecture ? Guide | LIRELIA"
 meta_description: "Loupe éclairante, loupe avec lumière, lampe loupe ou lampe de lecture : distinguez besoin de lumière et besoin de grossissement, évitez les reflets."
 requete_cible: "loupe éclairante"
 requetes_secondaires: "loupe avec lumière ; loupe lumineuse ; lampe grossissante ; lampe loupe ; lampe de lecture"
@@ -39,7 +39,7 @@ L’éclairage doit rendre le texte suffisamment lumineux et lisible sans éblou
 
 Il n’existe pas une intensité ou une couleur de lumière idéale pour tout le monde. Une personne malvoyante peut avoir besoin de davantage de lumière, tandis qu’une autre sera gênée par un éclairage trop fort. L’essai doit porter sur le document réellement lu et dans la pièce habituelle.
 
-La page Lirelia consacrée aux [lampes adaptées à la basse vision](https://lirelia.fr/aides-lecture-bassevision/lampes/) présente plusieurs formats d’éclairage.
+La page LIRELIA consacrée aux [lampes adaptées à la basse vision](https://lirelia.fr/aides-lecture-bassevision/lampes/) présente plusieurs formats d’éclairage.
 
 ## Quand choisir une loupe de lecture éclairante ?
 
@@ -109,7 +109,7 @@ Inclinez légèrement la loupe, changez l’angle de la lumière ambiante et ess
 
 ## Pour aller plus loin
 
-Le [guide général pour choisir une loupe de lecture](https://lirelia.fr/choisir-loupe-lecture/) présente toutes les familles. Si vous cherchez à améliorer la lecture pour vous-même ou pour un proche, vous pouvez également [consulter Lirelia](https://lirelia.fr/contact-conseil/) avant de changer de matériel, ou [parcourir le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
+Le [guide général pour choisir une loupe de lecture](https://lirelia.fr/choisir-loupe-lecture/) présente toutes les familles. Si vous cherchez à améliorer la lecture pour vous-même ou pour un proche, vous pouvez également [consulter LIRELIA](https://lirelia.fr/contact-conseil/) avant de changer de matériel, ou [parcourir le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
 
 <!-- FIN_CONTENU_PUBLIC -->
 

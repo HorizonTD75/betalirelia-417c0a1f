@@ -32,7 +32,7 @@ const Glaucome = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Glaucome : symptômes, dépistage et traitements | LirElia"
+        title="Glaucome : symptômes, dépistage et traitements | LIRELIA"
         description="Comprenez le glaucome : formes ouvertes et fermées, symptômes, dépistage du nerf optique, traitements et conseils pour préserver votre vision périphérique."
         canonicalPath="/maladies-yeux/glaucome"
         ogType="article"

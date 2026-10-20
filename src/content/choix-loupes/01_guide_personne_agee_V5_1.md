@@ -3,7 +3,7 @@ statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Quelle loupe choisir pour une personne âgée ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/personne-agee/"
-title_seo: "Loupe de lecture pour personne âgée : bien choisir | Lirelia"
+title_seo: "Loupe de lecture pour personne âgée : bien choisir | LIRELIA"
 meta_description: "Quelle loupe de lecture pour personne âgée ? Comparez prise en main, grossissement, contraste et confort sur des documents du quotidien."
 requete_cible: "loupe de lecture pour personne âgée"
 requetes_secondaires: "loupe pour personnes âgées ; loupe senior ; loupe pour lire"
@@ -57,7 +57,7 @@ Pour vérifier le prix d’un produit, lire une date ou déchiffrer quelques mot
 
 La **loupe à poser**, comme certains modèles dômes, conserve une distance stable avec le papier. Elle peut être plus agréable lorsqu’il est difficile de maintenir une loupe en suspension au-dessus du document, par exemple en cas de fatigue ou de raideur de la main. Une lentille rectangulaire peut aussi faciliter le suivi de certaines lignes, selon sa conception et son grossissement.
 
-Vous pouvez découvrir les formats dans notre page consacrée aux [loupes optiques](https://lirelia.fr/aides-lecture-bassevision/loupes-verre/), ainsi que les [loupes NORA](https://lirelia.fr/boutique/loupe-main-nora/) et [LINA](https://lirelia.fr/boutique/loupe-dome-eclairante-lina/) du catalogue Lirelia.
+Vous pouvez découvrir les formats dans notre page consacrée aux [loupes optiques](https://lirelia.fr/aides-lecture-bassevision/loupes-verre/), ainsi que les [loupes NORA](https://lirelia.fr/boutique/loupe-main-nora/) et [LINA](https://lirelia.fr/boutique/loupe-dome-eclairante-lina/) du catalogue LIRELIA.
 
 ## Quand envisager une loupe électronique de lecture ?
 
@@ -114,7 +114,7 @@ Oui, si les commandes sont faciles à retrouver et si l’appareil convient à s
 
 Le [guide général pour choisir une loupe de lecture](https://lirelia.fr/choisir-loupe-lecture/) permet de comparer toutes les familles de solutions. Si l’hésitation porte sur la luminosité du document, voyez aussi [loupe éclairante ou lampe de lecture](https://lirelia.fr/choisir-loupe-lecture/loupe-eclairante-ou-lampe/).
 
-Vous pouvez [demander conseil à Lirelia](https://lirelia.fr/contact-conseil/) en précisant l’activité recherchée, les appareils déjà utilisés et les difficultés rencontrées, ou [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/). Le choix final doit rester celui de la personne qui lira avec la loupe.
+Vous pouvez [demander conseil à LIRELIA](https://lirelia.fr/contact-conseil/) en précisant l’activité recherchée, les appareils déjà utilisés et les difficultés rencontrées, ou [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/). Le choix final doit rester celui de la personne qui lira avec la loupe.
 
 <!-- FIN_CONTENU_PUBLIC -->
 

@@ -10,13 +10,13 @@ import {
 const LampesCategorie = () => (
   <CommercialCategoryPage
     path="/catalogue-aides-basse-vision/lampes-basse-vision"
-    seoTitle="Lampes de lecture pour basse vision et DMLA | LirElia"
+    seoTitle="Lampes de lecture pour basse vision et DMLA | LIRELIA"
     seoDescription="Comparez nos lampes basse vision : tour de cou, lampe pliable, lampe loupe et lampadaire réglable pour mieux lire avec un éclairage adapté chez soi."
     breadcrumbLabel="Lampes basse vision"
     h1="Lampes basse vision"
     h1Highlight="pour la lecture"
     subtitle="Une lumière réglable et bien orientée pour mieux distinguer les textes"
-    intro="Un éclairage adapté peut améliorer le contraste d’un document et rendre la lecture plus confortable. La sélection LirElia comprend une lampe tour de cou mains libres, une lampe de bureau pliable, une lampe loupe pour les travaux de précision et un lampadaire de lecture réglable. Chaque format répond à une position et à un usage différents."
+    intro="Un éclairage adapté peut améliorer le contraste d’un document et rendre la lecture plus confortable. La sélection LIRELIA comprend une lampe tour de cou mains libres, une lampe de bureau pliable, une lampe loupe pour les travaux de précision et un lampadaire de lecture réglable. Chaque format répond à une position et à un usage différents."
     guide={{
       href: "/aides-lecture-bassevision/lampes",
       label: "Mieux comprendre l’éclairage basse vision",

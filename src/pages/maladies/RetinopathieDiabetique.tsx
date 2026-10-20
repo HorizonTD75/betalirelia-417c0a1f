@@ -25,7 +25,7 @@ const RetinopathieDiabetique = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Rétinopathie diabétique : prévention et traitement | LirElia"
+        title="Rétinopathie diabétique : prévention et traitement | LIRELIA"
         description="Rétinopathie diabétique : facteurs de risque, dépistage par fond d'œil, traitements au laser et accompagnement basse vision en cas de baisse de vision."
         canonicalPath="/maladies-yeux/retinopathie-diabetique"
       />
@@ -430,7 +430,7 @@ const RetinopathieDiabetique = () => {
                       La rétinopathie diabétique est l'une des principales causes de <strong>basse vision</strong> chez les personnes en âge actif. Lorsque la vision est durablement affectée, un accompagnement spécialisé permet de retrouver du confort et de l'autonomie.
                     </p>
                     <p className="text-lg text-foreground leading-relaxed mb-6">
-                      Le Visiopraticien LirElia peut vous aider à identifier les aides les plus adaptées à votre situation et à mettre en place des solutions concrètes pour votre quotidien.
+                      Le Visiopraticien LIRELIA peut vous aider à identifier les aides les plus adaptées à votre situation et à mettre en place des solutions concrètes pour votre quotidien.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button variant="default" asChild>
@@ -472,7 +472,7 @@ const RetinopathieDiabetique = () => {
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <Link to="/expert-basse-vision-visiopraticien">
-                    Le Visiopraticien LirElia
+                    Le Visiopraticien LIRELIA
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>

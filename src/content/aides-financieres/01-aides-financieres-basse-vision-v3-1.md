@@ -1,12 +1,12 @@
 ---
 document_type: page_content
-project: LirElia
+project: LIRELIA
 version: V3.1-lecture
 status: V3.1 révision éditoriale — contrôle réglementaire final requis avant publication
 last_verified: '2026-06-26'
 slug: /aides-financieres-basse-vision/
 canonical: https://lirelia.fr/aides-financieres-basse-vision/
-title: 'Aides financières malvoyance : droits et démarches 2026 | LirElia'
+title: 'Aides financières malvoyance : droits et démarches 2026 | LIRELIA'
 meta_description: 'PCH, MDPH, AAH, MaPrimeAdapt’ : identifiez les aides possibles pour la basse vision et les démarches
   à effectuer avant d’acheter.'
 h1: "Aides financières pour les personnes malvoyantes"
@@ -53,14 +53,14 @@ related_pages:
 - /aides-financieres-basse-vision/travail-etudes/
 robots: index, follow
 og_type: article
-og_title: 'Aides financières malvoyance : droits et démarches 2026 | LirElia'
+og_title: 'Aides financières malvoyance : droits et démarches 2026 | LIRELIA'
 og_description: 'PCH, MDPH, AAH, MaPrimeAdapt’ : identifiez les aides possibles pour la basse vision et les démarches
   à effectuer avant d’acheter.'
 og_url: https://lirelia.fr/aides-financieres-basse-vision/
-og_site_name: LirElia
+og_site_name: LIRELIA
 og_locale: fr_FR
 twitter_card: summary_large_image
-twitter_title: 'Aides financières malvoyance : droits et démarches 2026 | LirElia'
+twitter_title: 'Aides financières malvoyance : droits et démarches 2026 | LIRELIA'
 twitter_description: 'PCH, MDPH, AAH, MaPrimeAdapt’ : identifiez les aides possibles pour la basse vision et les
   démarches à effectuer avant d’acheter.'
 social_image_status: 'À créer : visuel social 1200 × 630 px avec texte lisible et contraste élevé. Ne pas inventer
@@ -171,7 +171,7 @@ Pour découvrir d'autres pistes d'adaptation au quotidien, vous pouvez aussi con
 
 Vous n'avez pas à comprendre seul toutes les règles. Le service social de votre commune (**CCAS**), un travailleur social, la **MDPH**, votre caisse de retraite ou votre référent handicap peuvent vous orienter selon votre situation. Pour un équipement visuel, l'avis d'un professionnel de la basse vision et l'essai du matériel sont particulièrement utiles.
 
-LirElia peut expliquer les différences entre certaines aides visuelles et leurs usages. **La décision de financement appartient toujours à l'organisme compétent.**
+LIRELIA peut expliquer les différences entre certaines aides visuelles et leurs usages. **La décision de financement appartient toujours à l'organisme compétent.**
 
 ## Questions fréquentes
 

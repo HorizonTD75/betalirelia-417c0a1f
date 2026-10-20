@@ -73,7 +73,7 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
         {!showPrefs ? (
           <>
             <h2 className="text-lg sm:text-xl font-bold text-foreground leading-tight">
-              Cookies sur Lirelia
+              Cookies sur LIRELIA
             </h2>
             <p className="text-base text-foreground leading-snug mt-0.5">
               Avec votre accord, nous utilisons des cookies pour mesurer la fréquentation du site

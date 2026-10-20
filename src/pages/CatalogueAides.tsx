@@ -1,5 +1,5 @@
 import Header from "@/components/layout/Header";
-import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
+import ChoiceGuideBanner from "@/components/choix-loupes/ChoiceGuideBanner";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -222,8 +222,8 @@ const CatalogueAides = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Catalogue complet des aides à la basse vision | LirElia"
-        description="Parcourez le catalogue LirElia : lunettes loupes, loupes en verre, loupes électroniques, lampes adaptées et télé-agrandisseurs pour la basse vision et la DMLA."
+        title="Catalogue complet des aides à la basse vision | LIRELIA"
+        description="Parcourez le catalogue LIRELIA : lunettes loupes, loupes en verre, loupes électroniques, lampes adaptées et télé-agrandisseurs pour la basse vision et la DMLA."
         canonicalPath="/catalogue-aides-basse-vision"
       />
       <Header />
@@ -280,7 +280,7 @@ const CatalogueAides = () => {
           </div>
         </nav>
 
-        <div className="container py-4"><ChoiceGuideLinks context="catalogue" /></div>
+        <div className="container py-4"><ChoiceGuideBanner context="catalogue" /></div>
         {/* Categories */}
         <section className="py-8 md:py-10">
           <div className="container space-y-8 md:space-y-10">

@@ -126,12 +126,12 @@ const TeleAgrandisseurs = () => (
     ctaText="Découvrir les télé-agrandisseurs"
     catalogueCta={{
       title: "Vous souhaitez comparer les modèles disponibles ?",
-      text: "Consultez les téléagrandisseurs actuellement proposés par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      text: "Consultez les téléagrandisseurs actuellement proposés par LIRELIA et comparez leurs caractéristiques, leurs usages et leurs prix.",
       label: "Comparer les téléagrandisseurs disponibles",
       href: "/catalogue-aides-basse-vision/teleagrandisseurs",
     }}
     seo={{
-      title: "Télé-agrandisseurs pour Basse Vision | LirElia",
+      title: "Télé-agrandisseurs pour Basse Vision | LIRELIA",
       description: "Lisez et écrivez longtemps, confortablement, grâce aux télé-agrandisseurs : grand écran, zoom puissant, plateau XY. Idéal DMLA et basse vision sévère.",
       canonicalPath: "/aides-lecture-bassevision/tele-agrandisseurs",
     }}

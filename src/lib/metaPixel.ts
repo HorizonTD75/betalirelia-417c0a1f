@@ -1,5 +1,5 @@
 /**
- * Meta Pixel (Facebook) tracking helpers for LirElia.
+ * Meta Pixel (Facebook) tracking helpers for LIRELIA.
  *
  * Le Pixel est initialisé dans index.html (ID 2202036963709336) et envoie
  * le PageView initial. Ce module centralise tous les autres événements afin

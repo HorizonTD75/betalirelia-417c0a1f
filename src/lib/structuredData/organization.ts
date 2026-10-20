@@ -4,7 +4,7 @@
  *
  * Every value below is verifiable on the site itself (mentions légales,
  * footer, return policy). Never add social profiles, ratings or identifiers
- * that are not published on LirElia.
+ * that are not published on LIRELIA.
  */
 
 import { Node, ORGANIZATION_ID, SITE_URL, WEBSITE_ID } from "./entities";
@@ -16,17 +16,17 @@ export const LOGO_URL = `${SITE_URL}/images/logo-lirelia-bleu-300.png`;
 export const organizationNode = (): Node => ({
   "@type": "OnlineStore",
   "@id": ORGANIZATION_ID,
-  name: "LirElia",
+  name: "LIRELIA",
   legalName: "HORIZON TD",
-  alternateName: "LirElia Basse Vision",
+  alternateName: "LIRELIA Basse Vision",
   url: `${SITE_URL}/`,
   description:
-    "LirElia accompagne les personnes malvoyantes, leurs proches et leurs aidants avec des bilans basse vision, des aides à la lecture et des solutions adaptées à la DMLA, au glaucome et aux autres pathologies visuelles.",
+    "LIRELIA accompagne les personnes malvoyantes, leurs proches et leurs aidants avec des bilans basse vision, des aides à la lecture et des solutions adaptées à la DMLA, au glaucome et aux autres pathologies visuelles.",
   logo: {
     "@type": "ImageObject",
     "@id": LOGO_ID,
     url: LOGO_URL,
-    caption: "LirElia",
+    caption: "LIRELIA",
   },
   image: { "@id": LOGO_ID },
   email: "contact@lirelia.fr",
@@ -74,7 +74,7 @@ export const websiteNode = (): Node => ({
   "@type": "WebSite",
   "@id": WEBSITE_ID,
   url: `${SITE_URL}/`,
-  name: "LirElia",
+  name: "LIRELIA",
   description:
     "Accompagnement expert en basse vision : bilans fonctionnels, aides à la lecture, conseils et solutions adaptées.",
   inLanguage: "fr-FR",

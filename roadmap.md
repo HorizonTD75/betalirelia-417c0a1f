@@ -1,9 +1,12 @@
-# Cocon choix des loupes V5.1
+# LIRELIA V5.2 — publication Lovable autorisée, lirelia.fr inchangé
 
-- [x] Lire le dossier complet, présenter les sept pages et vérifier les conflits.
-- [x] Vérifier que la prévisualisation refuse l'accès anonyme (HTTP 401).
-- [x] Créer les sept pages depuis les Markdown validés et intégrer les visuels existants.
-- [x] Ajouter les métadonnées noindex et le maillage contextuel demandé.
-- [x] Contrôler les sept pages, les liens et l'affichage ordinateur/smartphone ; 47 tests réussis.
-- [x] Conserver le sitemap et exclure les demandes de photographies du site publié.
-- [x] Préparer la demande de publication Lovable après vérification ; aucun déploiement sur lirelia.fr.
+- [x] Vérifier les sept guides et leurs liens sur le site public Lovable.
+- [ ] Publier V5.2 sur Lovable puis vérifier la version publique ; aucun déploiement OVH.
+
+- [x] Lire le cahier et inspecter les guides, les entrées et l’architecture SEO.
+- [x] Uniformiser la marque sans toucher aux identifiants techniques ; rapport des exceptions.
+- [x] Centraliser les métadonnées, actualiser les transitions et préparer le HTML statique.
+- [x] Créer les deux visuels OG avec les assets réels du projet.
+- [x] Améliorer les sept guides, les FAQ et les encarts accueil/conseils/catalogue.
+- [x] Contrôler les métadonnées et JSON-LD de toutes les routes ; tests et affichages 360/390/768/1280.
+- [x] Fournir rapport, matrice et consignes Codex ; préciser les limites de confidentialité.

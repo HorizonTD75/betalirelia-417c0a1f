@@ -21,7 +21,7 @@ const notes = ['La correction des cylindres (astigmatisme) n’est pas possible.
 const LunettesLoupeFocus = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead title="Lunettes loupe FOCUS x2,5 pour lecture de près | LirElia" description="Lunettes loupe FOCUS : grossissement 2,5x, réglage indépendant et mains libres pour lecture, couture, bricolage et activités de près en basse vision." canonicalPath="/boutique/lunettes-loupe-focus" />
+      <SEOHead title="Lunettes loupe FOCUS x2,5 pour lecture de près | LIRELIA" description="Lunettes loupe FOCUS : grossissement 2,5x, réglage indépendant et mains libres pour lecture, couture, bricolage et activités de près en basse vision." canonicalPath="/boutique/lunettes-loupe-focus" />
       <Header />
       <main id="main-content">
         <div className="container py-4">

@@ -8,7 +8,7 @@ import SEOHead from "@/components/SEOHead";
 const cards = [
   { to: "/comprendre-basse-vision", icon: Eye, title: "Comprendre la basse vision" },
   { to: "/aides-lecture-bassevision", icon: BookOpen, title: "Découvrir les aides à la lecture" },
-  { to: "/bilans-bassevision", icon: Stethoscope, title: "Consulter les bilans LirElia" },
+  { to: "/bilans-bassevision", icon: Stethoscope, title: "Consulter les bilans LIRELIA" },
   { to: "/", icon: Home, title: "Retour à l'accueil" },
 ];
 
@@ -16,8 +16,8 @@ const BientotDisponible = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOHead
-        title="Bientôt disponible | LirElia"
-        description="Cette page LirElia arrive très prochainement. En attendant, retrouvez les maladies des yeux, les aides à la lecture et nos bilans basse vision."
+        title="Bientôt disponible | LIRELIA"
+        description="Cette page LIRELIA arrive très prochainement. En attendant, retrouvez les maladies des yeux, les aides à la lecture et nos bilans basse vision."
       />
       <Header />
       <main id="main-content" className="flex-1 bg-background">
@@ -44,10 +44,10 @@ const BientotDisponible = () => {
                 Nous préparons actuellement ce contenu afin de vous proposer une information claire, accessible et réellement utile.
               </p>
               <p>
-                LirElia accompagne les personnes malvoyantes, leurs proches et leurs aidants pour mieux comprendre la basse vision, préserver l'autonomie et identifier les aides les plus adaptées à chaque situation.
+                LIRELIA accompagne les personnes malvoyantes, leurs proches et leurs aidants pour mieux comprendre la basse vision, préserver l'autonomie et identifier les aides les plus adaptées à chaque situation.
               </p>
               <p>
-                En attendant la publication de cette page, vous pouvez déjà découvrir nos informations sur les maladies des yeux, nos conseils pour mieux lire et organiser votre quotidien, nos aides techniques, ainsi que les bilans et accompagnements proposés par LirElia.
+                En attendant la publication de cette page, vous pouvez déjà découvrir nos informations sur les maladies des yeux, nos conseils pour mieux lire et organiser votre quotidien, nos aides techniques, ainsi que les bilans et accompagnements proposés par LIRELIA.
               </p>
               <p className="font-semibold">
                 Poursuivez votre visite en choisissant l'une des rubriques suivantes.

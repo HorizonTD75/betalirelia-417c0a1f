@@ -10,7 +10,7 @@ import {
 const LunettesLoupesCategorie = () => (
   <CommercialCategoryPage
     path="/catalogue-aides-basse-vision/lunettes-loupes"
-    seoTitle="Lunettes loupes pour voir de près ou de loin | LirElia"
+    seoTitle="Lunettes loupes pour voir de près ou de loin | LIRELIA"
     seoDescription="Comparez quatre lunettes loupes pour lire, bricoler ou mieux voir la télévision : grossissement, distance de travail, éclairage, poids et prix."
     breadcrumbLabel="Lunettes loupes"
     h1="Lunettes loupes"

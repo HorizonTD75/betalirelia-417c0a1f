@@ -42,7 +42,7 @@ const VisitesDomicile = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilan basse vision à domicile en Île-de-France | LirElia"
+        title="Bilan basse vision à domicile en Île-de-France | LIRELIA"
         description="Bilan basse vision à domicile en Île-de-France : votre visiopraticien se déplace chez vous, évalue votre vision et teste les aides dans votre environnement."
         canonicalPath="/bilans-bassevision/visites-domicile"
       />
@@ -63,7 +63,7 @@ const VisitesDomicile = () => {
                 Visites à domicile : le bilan <span className="text-secondary">basse vision</span> dans votre environnement
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                Parce qu'il n'est pas toujours simple de se déplacer, LirElia propose des visites à domicile pour réaliser le bilan basse vision dans le confort de votre cadre de vie.
+                Parce qu'il n'est pas toujours simple de se déplacer, LIRELIA propose des visites à domicile pour réaliser le bilan basse vision dans le confort de votre cadre de vie.
               </p>
               <Button variant="hero" size="lg" asChild>
                 <Link to="/rdv-bilan?type=domicile">
@@ -88,7 +88,7 @@ const VisitesDomicile = () => {
                 Une solution conçue pour le patient et ses proches
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                La visite à domicile est pensée pour les personnes qui rencontrent des difficultés, ponctuelles ou durables, pour se rendre au cabinet. Elle facilite l'accès aux services de LirElia, en tenant compte du rythme du patient, de sa fatigue ou de ses contraintes de déplacement.
+                La visite à domicile est pensée pour les personnes qui rencontrent des difficultés, ponctuelles ou durables, pour se rendre au cabinet. Elle facilite l'accès aux services de LIRELIA, en tenant compte du rythme du patient, de sa fatigue ou de ses contraintes de déplacement.
               </p>
               <p className="text-xl text-muted-foreground mb-8">
                 Les visites à domicile sont particulièrement adaptées lorsque le patient :
@@ -105,7 +105,7 @@ const VisitesDomicile = () => {
                 <div className="flex items-start gap-4">
                   <Users className="w-8 h-8 text-secondary shrink-0 mt-1" />
                   <p className="text-lg">
-                    Ce service est également une source de sérénité pour les <strong>aidants</strong> (conjoint, enfants, auxiliaire de vie). Recevoir le spécialiste LirElia à domicile permet de mieux comprendre les défis du quotidien et de participer activement à la recherche de solutions.
+                    Ce service est également une source de sérénité pour les <strong>aidants</strong> (conjoint, enfants, auxiliaire de vie). Recevoir le spécialiste LIRELIA à domicile permet de mieux comprendre les défis du quotidien et de participer activement à la recherche de solutions.
                   </p>
                 </div>
               </Card>
@@ -121,7 +121,7 @@ const VisitesDomicile = () => {
                 Pourquoi réaliser un bilan à domicile ?
               </h2>
               <p className="text-xl text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
-                Un bilan effectué sur votre lieu de vie offre une perspective unique et concrète sur vos habitudes et vos besoins réels. Il permet au spécialiste LirElia de :
+                Un bilan effectué sur votre lieu de vie offre une perspective unique et concrète sur vos habitudes et vos besoins réels. Il permet au spécialiste LIRELIA de :
               </p>
               <div className="grid md:grid-cols-2 gap-8">
                 {bilanDomicileAdvantages.map((item, i) => (

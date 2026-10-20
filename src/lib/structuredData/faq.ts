@@ -21,7 +21,7 @@ export const FAQ_BY_ROUTE: Record<string, FaqEntry[]> = {
     { q: "Est-ce remboursé ?", a: "Le bilan basse vision n’est pas un acte médical et n’est pas remboursé par la Sécurité sociale. Certaines mutuelles proposent un forfait « bien-être » ou « prévention » qui peut couvrir une partie. Renseignez-vous auprès de votre complémentaire santé." },
     { q: "Puis-je venir avec un proche ?", a: "Oui, c’est fortement recommandé. L’aidant (conjoint, enfant, proche) peut assister à l’ensemble de la séance et recevoir des conseils adaptés." },
     { q: "Combien de temps dure une séance ?", a: "En moyenne 1 h 15 à 1 h 30, toujours à votre rythme. Le Visiopraticien prend le temps nécessaire." },
-    { q: "Quelle est la différence avec un bilan chez l’ophtalmologiste ?", a: "L’ophtalmologiste diagnostique et traite la maladie de l’œil. Le bilan basse vision réalisé par le Visiopraticien LirElia est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie." }],
+    { q: "Quelle est la différence avec un bilan chez l’ophtalmologiste ?", a: "L’ophtalmologiste diagnostique et traite la maladie de l’œil. Le bilan basse vision réalisé par le Visiopraticien LIRELIA est un état des lieux fonctionnel : il se concentre sur votre quotidien et votre autonomie." }],
   "/aidants": [
     {
       q: "Comment aider un proche malvoyant sans l'infantiliser ?",
@@ -71,7 +71,7 @@ export const FAQ_BY_ROUTE: Record<string, FaqEntry[]> = {
     },
     {
       q: "Êtes-vous obligés de proposer un produit ou un bilan ?",
-      a: "Non. Notre objectif est d'abord de vous guider de manière utile et honnête. Selon les cas, cela peut conduire vers un bilan, un produit, le Club LirElia, ou simplement vers un conseil ponctuel sans autre démarche.",
+      a: "Non. Notre objectif est d'abord de vous guider de manière utile et honnête. Selon les cas, cela peut conduire vers un bilan, un produit, le Club LIRELIA, ou simplement vers un conseil ponctuel sans autre démarche.",
     },
   ],
   "/expert-basse-vision-visiopraticien": [
@@ -81,11 +81,11 @@ export const FAQ_BY_ROUTE: Record<string, FaqEntry[]> = {
     },
     {
       q: "Le Visiopraticien remplace-t-il un ophtalmologiste ?",
-      a: "Non. Le suivi médical est indispensable pour diagnostiquer et traiter la pathologie (DMLA, glaucome, cataracte…). Le Visiopraticien LirElia intervient en complément, pour l'adaptation pratique du quotidien et l'autonomie dans la lecture."
+      a: "Non. Le suivi médical est indispensable pour diagnostiquer et traiter la pathologie (DMLA, glaucome, cataracte…). Le Visiopraticien LIRELIA intervient en complément, pour l'adaptation pratique du quotidien et l'autonomie dans la lecture."
     },
     {
       q: "DMLA : quelles solutions pour continuer à lire ?",
-      a: "Dans de nombreux cas, la lecture reste possible avec une DMLA. Avec les bonnes aides — loupes adaptées, télé-agrandisseurs, éclairage optimisé, stratégies de lecture — le Visiopraticien LirElia aide à retrouver un confort de lecture."
+      a: "Dans de nombreux cas, la lecture reste possible avec une DMLA. Avec les bonnes aides — loupes adaptées, télé-agrandisseurs, éclairage optimisé, stratégies de lecture — le Visiopraticien LIRELIA aide à retrouver un confort de lecture."
     },
     {
       q: "À partir de quel moment consulter un Visiopraticien ?",
@@ -130,7 +130,7 @@ export const FAQ_BY_ROUTE: Record<string, FaqEntry[]> = {
     },
     {
       q: "Où se procurer ce livre ?",
-      a: "Le livre est disponible sur Amazon. Vous pouvez également contacter LirElia pour plus d'informations.",
+      a: "Le livre est disponible sur Amazon. Vous pouvez également contacter LIRELIA pour plus d'informations.",
     },
   ],
   "/livre-aider-proche-dmla": [
@@ -217,7 +217,7 @@ export const FAQ_BY_ROUTE: Record<string, FaqEntry[]> = {
           a: "Non. Elles peuvent comporter des erreurs, omettre un élément ou mal interpréter une scène. Les réponses doivent être vérifiées, particulièrement pour un médicament, un danger, une traversée, une orientation ou toute décision importante.",
         },
         {
-          q: "LirElia vend-il actuellement les Ray-Ban Meta ?",
+          q: "LIRELIA vend-il actuellement les Ray-Ban Meta ?",
           a: "Non. Le produit est présenté comme une solution prometteuse en cours d’évaluation. La page vise à donner une information factuelle sur ses usages possibles et ses limites pour les personnes malvoyantes.",
         },
       ],

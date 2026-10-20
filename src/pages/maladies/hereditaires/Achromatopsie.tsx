@@ -3,7 +3,7 @@ import HereditaryDiseasePageLayout from "@/components/maladies/HereditaryDisease
 import type { SiblingLink, DiseaseSection } from "@/components/maladies/HereditaryDiseasePageLayout";
 
 const siblings: SiblingLink[] = [
-  { title: "Achromatopsie : maladie génétique des cônes | LirElia", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
+  { title: "Achromatopsie : maladie génétique des cônes | LIRELIA", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
   { title: "Maladie de Leber", to: "/maladies-yeux/maladies-hereditaires/maladie-de-leber" },
   { title: "Maladie de Stargardt", to: "/maladies-yeux/maladies-hereditaires/maladie-de-stargardt" },
   { title: "Syndrome d'Usher", to: "/maladies-yeux/maladies-hereditaires/syndrome-usher" },
@@ -94,7 +94,7 @@ const keyPoints = [
 
 const Achromatopsie = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Achromatopsie : Maladie Génétique des Cônes | LirElia"
+    seoTitle="Achromatopsie : Maladie Génétique des Cônes | LIRELIA"
     seoDescription="L'achromatopsie est une maladie rétinienne rare touchant les cônes. Photophobie, baisse d'acuité, altération des couleurs : diagnostic et accompagnement."
     canonicalPath="/maladies-yeux/maladies-hereditaires/achromatopsie"
     diseaseName="L'achromatopsie"

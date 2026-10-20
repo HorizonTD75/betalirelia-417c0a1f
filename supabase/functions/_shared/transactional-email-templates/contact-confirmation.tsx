@@ -13,7 +13,7 @@ import {
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
-const SITE_NAME = "LirElia"
+const SITE_NAME = "LIRELIA"
 
 interface ContactConfirmationProps {
   name?: string
@@ -50,7 +50,7 @@ const ContactConfirmationEmail = ({ name, subject }: ContactConfirmationProps) =
 
 export const template = {
   component: ContactConfirmationEmail,
-  subject: 'Votre demande a bien été reçue – LirElia',
+  subject: 'Votre demande a bien été reçue – LIRELIA',
   displayName: 'Confirmation de contact',
   previewData: { name: 'Jean Dupont', subject: 'Loupe électronique' },
 } satisfies TemplateEntry
