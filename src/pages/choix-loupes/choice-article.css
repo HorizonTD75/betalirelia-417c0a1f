@@ -1,21 +1,7 @@
 .choice-article { letter-spacing: 0; }
+.choice-prose { max-width: 46rem; }
 .choice-table td::before { display: none; }
-.choice-hub-text ul:has(> li > a[href="/choisir-loupe-lecture/personne-agee/"]) {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 0;
-  list-style: none;
-}
-.choice-hub-text ul:has(> li > a[href="/choisir-loupe-lecture/personne-agee/"]) > li {
-  border: 1px solid hsl(var(--border));
-  border-top: 4px solid hsl(var(--secondary));
-  background: hsl(var(--card));
-  border-radius: 8px;
-  padding: 1.25rem;
-}
 @media (max-width: 767px) {
-  .choice-hub-text ul:has(> li > a[href="/choisir-loupe-lecture/personne-agee/"]) { grid-template-columns: minmax(0, 1fr); }
   .choice-table table, .choice-table tbody, .choice-table tr, .choice-table td { display: block; width: 100%; }
   .choice-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .choice-table tr { margin-bottom: 1rem; border: 1px solid hsl(var(--border)); border-radius: 8px; overflow: hidden; }
@@ -23,11 +9,45 @@
   .choice-table td:last-child { border-bottom: 0; }
   .choice-table td::before { display: block; content: attr(data-label); font-weight: 700; color: hsl(var(--primary)); margin-bottom: 0.25rem; }
 }
+
+/* Cartes et repères */
+.choice-card { border-top: 4px solid hsl(var(--secondary)); }
+.choice-card-text p:last-child { margin-bottom: 0.75rem; }
+.choice-icon { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 9999px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+.choice-step { display: inline-block; font-weight: 700; font-size: 1.05rem; color: hsl(var(--primary)); border-bottom: 3px solid hsl(var(--secondary)); margin-bottom: 1rem; padding-bottom: .15rem; }
+.choice-criterion { background: hsl(var(--primary-foreground) / .08); border: 1px solid hsl(var(--primary-foreground) / .25); }
+.choice-num { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: hsl(var(--secondary)); color: hsl(var(--secondary-foreground)); font-weight: 800; font-size: 1.25rem; }
+.choice-guide-card { border-left: 4px solid hsl(var(--secondary)); text-decoration: none; transition: border-color .15s, box-shadow .15s; }
+.choice-guide-card:hover { border-color: hsl(var(--primary)); box-shadow: 0 6px 18px -10px hsl(var(--primary) / .45); }
+.choice-guide-card:focus-visible, .choice-card-link:focus-visible { outline: 4px solid hsl(var(--ring)); outline-offset: 3px; }
+
+/* Pages filles : sections différenciées selon leur rôle */
 .choice-section { padding-bottom: 1.5rem; }
-.choice-section + .choice-section { border-top: 1px solid hsl(var(--border)); }
-.choice-section:nth-of-type(3n) { border-left: 4px solid hsl(var(--secondary)); padding-left: 1.5rem; }
-.choice-faq { background: hsl(var(--muted) / .4); padding: 1.5rem; }
-.choice-faq-item[open] summary { text-decoration: underline; text-underline-offset: .25em; }
+.choice-plain + .choice-plain { border-top: 1px solid hsl(var(--border)); }
+.choice-check { background: hsl(var(--secondary) / .12); border-left: 6px solid hsl(var(--secondary)); border-radius: 8px; padding: .5rem 1.5rem 1rem; margin: 2rem 0; }
+.choice-check h2 { margin-top: .5rem !important; }
+.choice-table-section, .choice-table { }
+section.choice-table { background: hsl(var(--muted) / .5); border-radius: 8px; padding: .5rem 1.5rem 1rem; margin: 2rem 0; }
+.choice-further { background: hsl(var(--card)); border: 2px solid hsl(var(--primary) / .25); border-radius: 8px; padding: .5rem 1.5rem 1rem; margin-top: 2rem; }
+.choice-badge { display: inline-block; margin-top: 1rem; padding: .2rem .75rem; border-radius: 9999px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-weight: 700; font-size: 1rem; }
+
+/* FAQ : accordéons natifs, réponses toujours dans le DOM */
+.choice-faq { background: hsl(var(--muted) / .6); padding: 1.5rem; }
+.choice-faq-item { border: 1px solid hsl(var(--border)); border-radius: 8px; background: hsl(var(--card)); margin-bottom: .75rem; }
+.choice-faq-item summary { cursor: pointer; padding: 1.1rem 1.25rem; list-style-position: inside; min-height: 3rem; }
+.choice-faq-item summary:hover { background: hsl(var(--muted)); }
+.choice-faq-item summary:focus-visible { outline: 4px solid hsl(var(--ring)); outline-offset: 2px; }
+.choice-faq-item[open] { border-color: hsl(var(--primary)); border-left-width: 5px; }
+.choice-faq-item[open] summary { text-decoration: underline; text-underline-offset: .25em; border-bottom: 1px solid hsl(var(--border)); }
+.choice-faq-answer { padding: 1rem 1.25rem .25rem; }
+
+/* CTA final sobre : liens présentés en deux boutons */
+.choice-cta { background: hsl(var(--muted) / .5); border-top: 4px solid hsl(var(--secondary)); }
+.choice-cta p:last-child { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.choice-cta p:last-child a { display: inline-flex; padding: .8rem 1.4rem; border-radius: 8px; text-decoration: none; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+.choice-cta p:last-child a + a, .choice-cta p:last-child a:nth-of-type(2) { background: hsl(var(--card)); color: hsl(var(--primary)); border: 2px solid hsl(var(--primary)); }
+
+.choice-brief-more summary:focus-visible { outline: 4px solid hsl(var(--ring)); outline-offset: 2px; }
 .choice-article a { overflow-wrap: anywhere; }
 .choice-hero figure { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .choice-article *, [data-choice-entry] * { scroll-behavior: auto; transition: none; animation: none; } }
