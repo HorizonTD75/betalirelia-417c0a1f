@@ -35,13 +35,13 @@ export function zoneState(id: string): "final" | "provisional" | "brief" {
 
 function PhotoBrief({ zone }: { zone: ChoiceImageZone }) {
   const missing = "à préciser";
-  return <div data-photo-brief={zone.id} className="choice-brief rounded-lg border-2 border-dashed border-primary/40 bg-muted/50 overflow-hidden">
-    <div className="choice-brief-frame flex flex-col items-center justify-center text-center gap-2 p-6 bg-card/60 border-b border-dashed border-primary/30" style={{ aspectRatio: zoneAspect(zone.format) }}>
+  return <div data-photo-brief={zone.id} className="choice-brief rounded-lg border-2 border-dashed border-primary/40 bg-muted/50 overflow-hidden grid grid-cols-1 md:grid-cols-[2fr_3fr]">
+    <div className="choice-brief-frame flex flex-col items-center justify-center text-center gap-2 p-6 bg-card/60 border-b md:border-b-0 md:border-r border-dashed border-primary/30 min-w-0" style={{ aspectRatio: zoneAspect(zone.format) }}>
       <Camera aria-hidden="true" className="w-10 h-10 text-primary" />
       <p className="text-base font-bold tracking-wide text-primary">PHOTO À RÉALISER · {zone.id}</p>
       <p className="text-xl font-bold text-foreground leading-snug max-w-xl">{ZONE_TITLES[zone.id] ?? missing}</p>
     </div>
-    <div className="p-5 space-y-3 text-lg leading-relaxed">
+    <div className="p-5 space-y-3 text-lg leading-relaxed min-w-0">
       <p><strong className="text-primary">À photographier :</strong> {zone.description}</p>
       <p><strong className="text-primary">Objectif pédagogique :</strong> {zone.caption ?? missing}</p>
       <p><strong className="text-primary">Cadrage et format :</strong> {zone.format ?? missing}</p>
