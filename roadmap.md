@@ -6,4 +6,4 @@
 - [x] Ajouter les métadonnées noindex et le maillage contextuel demandé.
 - [x] Contrôler les sept pages, les liens et l'affichage ordinateur/smartphone ; 47 tests réussis.
 - [x] Conserver le sitemap et exclure les demandes de photographies du site publié.
-- [ ] Demander la publication sur Lovable après vérification, selon la nouvelle demande ; ne pas déployer sur lirelia.fr.
+- [x] Préparer la demande de publication Lovable après vérification ; aucun déploiement sur lirelia.fr.
