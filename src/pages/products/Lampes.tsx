@@ -127,12 +127,12 @@ const Lampes = () => (
     ctaText="Optimiser mon éclairage de lecture"
     catalogueCta={{
       title: "Vous souhaitez comparer les modèles disponibles ?",
-      text: "Consultez les lampes basse vision actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      text: "Consultez les lampes basse vision actuellement proposées par LIRELIA et comparez leurs caractéristiques, leurs usages et leurs prix.",
       label: "Comparer les lampes basse vision disponibles",
       href: "/catalogue-aides-basse-vision/lampes-basse-vision",
     }}
     seo={{
-      title: "Lampes Basse Vision – Éclairage Adapté | LirElia",
+      title: "Lampes Basse Vision – Éclairage Adapté | LIRELIA",
       description: "Un bon éclairage change tout. Découvrez nos lampes lumière du jour, orientables et sans éblouissement, conçues pour la lecture en basse vision.",
       canonicalPath: "/aides-lecture-bassevision/lampes",
     }}

@@ -115,7 +115,7 @@ const LampadaireSolveig = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Lampadaire SOLVEIG pour lecture en basse vision | LirElia"
+        title="Lampadaire SOLVEIG pour lecture en basse vision | LIRELIA"
         description="Lampadaire SOLVEIG : 5 000 lux, 84 LED, 3 températures de couleur, hauteur réglable et télécommande. Pour la lecture en fauteuil, la couture et les loisirs."
         canonicalPath="/boutique/lampadaire-solveig"
       />

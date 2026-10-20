@@ -106,7 +106,7 @@ const LivreDmla = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="DMLA – Votre vie ne s'arrête pas, le livre | LirElia"
+        title="DMLA – Votre vie ne s'arrête pas, le livre | LIRELIA"
         canonicalPath="/livre-dmla-votre-vie-ne-sarrete-pas"
       />
       <Header />

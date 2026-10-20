@@ -15,14 +15,14 @@ const Footer = () => {
               src="/images/logo-lirelia-jaune-300.png"
               srcSet="/images/logo-lirelia-jaune-120.png 120w, /images/logo-lirelia-jaune-180.png 180w, /images/logo-lirelia-jaune-300.png 300w"
               sizes="80px"
-              alt="Lirelia, solutions pour la malvoyance"
+              alt="LIRELIA, solutions pour la malvoyance"
               className="w-20 h-auto object-contain"
               width={300}
               height={200}
               loading="lazy"
               decoding="async"
             />
-              <span className="font-serif text-2xl font-bold">LirElia</span>
+              <span className="font-serif text-2xl font-bold">LIRELIA</span>
             </Link>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-3">
               Expert en basse vision depuis 25 ans. Accompagnement, bilans et solutions adaptées.
@@ -95,7 +95,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-lg text-primary-foreground/60">
-            © 2026 LirElia. Tous droits réservés.
+            © 2026 LIRELIA. Tous droits réservés.
           </p>
           <p className="text-lg text-primary-foreground/60">
             Site accessible selon les normes WCAG 2.1

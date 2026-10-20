@@ -81,7 +81,7 @@ const BilanSuivi = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Pack Suivi basse vision : 3 mois d'accompagnement | LirElia"
+        title="Pack Suivi basse vision : 3 mois d'accompagnement | LIRELIA"
         description="Pack Suivi basse vision : 3 mois d'accompagnement avec appels réguliers et bilan final pour mettre en place vos aides visuelles et installer de bons réflexes."
         canonicalPath="/bilans-bassevision/suivi"
       />

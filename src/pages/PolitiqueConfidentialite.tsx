@@ -28,8 +28,8 @@ const PolitiqueConfidentialite = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Politique de confidentialité | LirElia"
-        description="Politique de confidentialité LirElia : données collectées, finalités, bases légales, conservation, droits RGPD et contact pour exercer vos droits."
+        title="Politique de confidentialité | LIRELIA"
+        description="Politique de confidentialité LIRELIA : données collectées, finalités, bases légales, conservation, droits RGPD et contact pour exercer vos droits."
         canonicalPath="/politique-de-confidentialite"
       />
       <Header />
@@ -37,17 +37,17 @@ const PolitiqueConfidentialite = () => {
         <div className="container py-16 lg:py-20">
           <article className="max-w-3xl mx-auto">
             <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">
-              Politique de confidentialité de LirElia
+              Politique de confidentialité de LIRELIA
             </h1>
             <p className="text-base text-muted-foreground italic mb-8">
               Dernière mise à jour : 19 juin 2026
             </p>
 
             <P>
-              La présente politique explique comment LirElia collecte, utilise, conserve et protège les données personnelles des visiteurs, prospects, clients, bénéficiaires de bilans, participants au Club LirElia et utilisateurs du site <strong>LirElia.fr</strong>.
+              La présente politique explique comment LIRELIA collecte, utilise, conserve et protège les données personnelles des visiteurs, prospects, clients, bénéficiaires de bilans, participants au Club LIRELIA et utilisateurs du site <strong>LirElia.fr</strong>.
             </P>
             <P>
-              Elle s'applique notamment à la navigation sur le site, aux formulaires de contact et de prise de rendez-vous, aux demandes de conseil, aux commandes, aux bilans basse vision, au service après-vente et aux inscriptions au Club LirElia.
+              Elle s'applique notamment à la navigation sur le site, aux formulaires de contact et de prise de rendez-vous, aux demandes de conseil, aux commandes, aux bilans basse vision, au service après-vente et aux inscriptions au Club LIRELIA.
             </P>
 
             <H2>1. Responsable du traitement</H2>
@@ -59,10 +59,10 @@ const PolitiqueConfidentialite = () => {
               Adresse électronique : <Mail /><br />
               Téléphone : <strong>07 68 47 42 35</strong>
             </P>
-            <P>LirElia est une marque et un nom commercial exploités par HORIZON TD.</P>
+            <P>LIRELIA est une marque et un nom commercial exploités par HORIZON TD.</P>
 
             <H2>2. Principes appliqués</H2>
-            <P>LirElia s'engage à :</P>
+            <P>LIRELIA s'engage à :</P>
             <UL>
               <li>ne collecter que les données utiles aux finalités annoncées ;</li>
               <li>informer clairement les personnes concernées ;</li>
@@ -76,7 +76,7 @@ const PolitiqueConfidentialite = () => {
             <H2>3. Données personnelles susceptibles d'être collectées</H2>
 
             <H3>3.1 Données d'identification et de contact</H3>
-            <P>Selon le service utilisé, LirElia peut collecter :</P>
+            <P>Selon le service utilisé, LIRELIA peut collecter :</P>
             <UL>
               <li>le nom et le prénom ;</li>
               <li>l'adresse électronique ;</li>
@@ -100,10 +100,10 @@ const PolitiqueConfidentialite = () => {
               <li>les informations nécessaires à un retour, une garantie, une réclamation ou un service après-vente.</li>
             </UL>
             <P>Les champs obligatoires sont signalés dans les formulaires. Les autres champs sont facultatifs.</P>
-            <P>Lorsque les informations obligatoires ne sont pas fournies, LirElia peut ne pas être en mesure de traiter la demande ou d'exécuter le service demandé.</P>
+            <P>Lorsque les informations obligatoires ne sont pas fournies, LIRELIA peut ne pas être en mesure de traiter la demande ou d'exécuter le service demandé.</P>
 
             <H3>3.3 Données relatives à la situation visuelle ou à la santé</H3>
-            <P>Dans le cadre d'une demande de conseil, d'un bilan basse vision ou d'une inscription au Club LirElia, une personne peut choisir de communiquer des informations concernant :</P>
+            <P>Dans le cadre d'une demande de conseil, d'un bilan basse vision ou d'une inscription au Club LIRELIA, une personne peut choisir de communiquer des informations concernant :</P>
             <UL>
               <li>une déficience ou une difficulté visuelle ;</li>
               <li>une DMLA, un glaucome, une cataracte ou une autre affection visuelle ;</li>
@@ -112,8 +112,8 @@ const PolitiqueConfidentialite = () => {
               <li>les aides techniques déjà utilisées ou envisagées.</li>
             </UL>
             <P>Ces informations peuvent constituer des <strong>données concernant la santé</strong>, qui bénéficient d'une protection renforcée au titre du Règlement général sur la protection des données, ou RGPD.</P>
-            <P>LirElia demande de ne transmettre que les informations strictement nécessaires. Il est déconseillé d'envoyer spontanément un dossier médical complet, une ordonnance ou un compte rendu médical.</P>
-            <P>LirElia ne réalise pas de diagnostic médical et ne constitue pas de dossier médical au sens du Code de la santé publique.</P>
+            <P>LIRELIA demande de ne transmettre que les informations strictement nécessaires. Il est déconseillé d'envoyer spontanément un dossier médical complet, une ordonnance ou un compte rendu médical.</P>
+            <P>LIRELIA ne réalise pas de diagnostic médical et ne constitue pas de dossier médical au sens du Code de la santé publique.</P>
 
             <H3>3.4 Données relatives aux commandes et aux paiements</H3>
             <P>Lors d'un achat, les données suivantes peuvent notamment être traitées :</P>
@@ -126,10 +126,10 @@ const PolitiqueConfidentialite = () => {
               <li>les informations relatives à la livraison ;</li>
               <li>les échanges concernant la commande, un retour, un remboursement ou une garantie.</li>
             </UL>
-            <P>Les paiements en ligne peuvent être réalisés au moyen des services de <strong>Stripe</strong>. Les données bancaires sont saisies et traitées directement par ce prestataire. LirElia n'a pas accès au numéro complet de la carte bancaire ni à son cryptogramme.</P>
+            <P>Les paiements en ligne peuvent être réalisés au moyen des services de <strong>Stripe</strong>. Les données bancaires sont saisies et traitées directement par ce prestataire. LIRELIA n'a pas accès au numéro complet de la carte bancaire ni à son cryptogramme.</P>
 
             <H3>3.5 Données collectées lors d'un bilan ou d'un accompagnement</H3>
-            <P>LirElia peut conserver des notes strictement nécessaires pour :</P>
+            <P>LIRELIA peut conserver des notes strictement nécessaires pour :</P>
             <UL>
               <li>comprendre les besoins exprimés ;</li>
               <li>préparer et réaliser le bilan ou l'accompagnement ;</li>
@@ -139,8 +139,8 @@ const PolitiqueConfidentialite = () => {
             </UL>
             <P>Ces notes sont limitées aux besoins fonctionnels et pratiques de l'accompagnement. Elles ne remplacent pas un dossier médical.</P>
 
-            <H3>3.6 Données liées au Club LirElia</H3>
-            <P>Pour organiser les visioconférences du Club LirElia, les données suivantes peuvent être traitées :</P>
+            <H3>3.6 Données liées au Club LIRELIA</H3>
+            <P>Pour organiser les visioconférences du Club LIRELIA, les données suivantes peuvent être traitées :</P>
             <UL>
               <li>l'identité et les coordonnées des participants ;</li>
               <li>la session choisie ;</li>
@@ -149,7 +149,7 @@ const PolitiqueConfidentialite = () => {
               <li>les informations nécessaires à l'envoi du lien et des rappels ;</li>
               <li>l'image et la voix lorsque le participant active volontairement sa caméra ou son microphone.</li>
             </UL>
-            <P>Les sessions ne sont pas enregistrées par LirElia, sauf information préalable claire et recueil de l'accord nécessaire.</P>
+            <P>Les sessions ne sont pas enregistrées par LIRELIA, sauf information préalable claire et recueil de l'accord nécessaire.</P>
             <P>Chaque participant reste responsable des informations qu'il choisit de partager pendant une réunion. Il lui est demandé de respecter la confidentialité des échanges et de ne pas enregistrer, reproduire ou diffuser les propos, images ou données concernant les autres participants.</P>
 
             <H3>3.7 Données techniques et de navigation</H3>
@@ -174,7 +174,7 @@ const PolitiqueConfidentialite = () => {
             <P>Le traitement repose, selon le contexte, sur :</P>
             <UL>
               <li>l'exécution de mesures précontractuelles demandées par la personne ;</li>
-              <li>l'intérêt légitime de LirElia à répondre aux demandes reçues.</li>
+              <li>l'intérêt légitime de LIRELIA à répondre aux demandes reçues.</li>
             </UL>
             <P>Lorsque le message contient des données relatives à la santé, leur traitement repose également sur le <strong>consentement explicite</strong> de la personne concernée.</P>
 
@@ -198,16 +198,16 @@ const PolitiqueConfidentialite = () => {
               <li>envoyer les confirmations et informations de suivi ;</li>
               <li>gérer les retours, remboursements, garanties et réclamations ;</li>
               <li>respecter les obligations comptables et fiscales ;</li>
-              <li>prévenir les fraudes et défendre les droits de LirElia.</li>
+              <li>prévenir les fraudes et défendre les droits de LIRELIA.</li>
             </UL>
             <P>Ces traitements reposent sur :</P>
             <UL>
               <li>l'exécution du contrat ;</li>
               <li>le respect d'obligations légales ;</li>
-              <li>l'intérêt légitime de LirElia à sécuriser ses transactions et défendre ses droits.</li>
+              <li>l'intérêt légitime de LIRELIA à sécuriser ses transactions et défendre ses droits.</li>
             </UL>
 
-            <H3>4.4 Organiser le Club LirElia</H3>
+            <H3>4.4 Organiser le Club LIRELIA</H3>
             <P>Les données sont utilisées pour :</P>
             <UL>
               <li>gérer les inscriptions ;</li>
@@ -228,10 +228,10 @@ const PolitiqueConfidentialite = () => {
               <li>les garanties ;</li>
               <li>les éventuels différends.</li>
             </UL>
-            <P>Le traitement repose sur l'exécution du contrat, le respect des obligations légales et l'intérêt légitime de LirElia à assurer la qualité de son service et la défense de ses droits.</P>
+            <P>Le traitement repose sur l'exécution du contrat, le respect des obligations légales et l'intérêt légitime de LIRELIA à assurer la qualité de son service et la défense de ses droits.</P>
 
             <H3>4.6 Envoyer des communications d'information ou commerciales</H3>
-            <P>LirElia peut envoyer des informations relatives à ses actualités, produits, services, événements ou formations :</P>
+            <P>LIRELIA peut envoyer des informations relatives à ses actualités, produits, services, événements ou formations :</P>
             <UL>
               <li>lorsque la personne a expressément demandé à les recevoir ;</li>
               <li>ou, dans les cas autorisés par la réglementation, à ses clients pour des produits ou services analogues.</li>
@@ -240,7 +240,7 @@ const PolitiqueConfidentialite = () => {
 
             <H3>4.7 Mesurer l'audience et améliorer le site</H3>
             <P>Le site utilise <strong>Ahrefs Web Analytics</strong> afin de mesurer de manière agrégée sa fréquentation. Cet outil n'est activé qu'après l'accord du visiteur pour la mesure d'audience, exprimé dans le bandeau de cookies.</P>
-            <P>Sous réserve des préférences de cookies, LirElia peut également utiliser <strong>Microsoft Clarity</strong> pour :</P>
+            <P>Sous réserve des préférences de cookies, LIRELIA peut également utiliser <strong>Microsoft Clarity</strong> pour :</P>
             <UL>
               <li>comprendre les parcours de navigation ;</li>
               <li>détecter des difficultés d'utilisation ;</li>
@@ -274,12 +274,12 @@ const PolitiqueConfidentialite = () => {
             <P>Ce traitement repose sur l'intérêt légitime de HORIZON TD à protéger son site, ses utilisateurs et ses systèmes d'information.</P>
 
             <H2>5. Consentement au traitement des données sensibles</H2>
-            <P>Lorsque des informations relatives à la santé ou à la déficience visuelle sont volontairement fournies, LirElia recueille un consentement explicite au moyen d'une action positive, notamment une case dédiée non précochée dans le formulaire concerné.</P>
+            <P>Lorsque des informations relatives à la santé ou à la déficience visuelle sont volontairement fournies, LIRELIA recueille un consentement explicite au moyen d'une action positive, notamment une case dédiée non précochée dans le formulaire concerné.</P>
             <P>Le consentement peut être retiré à tout moment en écrivant à <strong><Mail /></strong>.</P>
-            <P>Le retrait du consentement ne remet pas en cause la licéité des traitements effectués avant ce retrait. Il peut toutefois empêcher LirElia de poursuivre un conseil ou un accompagnement lorsque les informations concernées sont indispensables au service demandé.</P>
+            <P>Le retrait du consentement ne remet pas en cause la licéité des traitements effectués avant ce retrait. Il peut toutefois empêcher LIRELIA de poursuivre un conseil ou un accompagnement lorsque les informations concernées sont indispensables au service demandé.</P>
 
             <H2>6. Informations communiquées par un proche ou un aidant</H2>
-            <P>Un proche ou un aidant peut contacter LirElia pour le compte d'une personne malvoyante.</P>
+            <P>Un proche ou un aidant peut contacter LIRELIA pour le compte d'une personne malvoyante.</P>
             <P>Dans ce cas, il lui est demandé :</P>
             <UL>
               <li>de ne communiquer que les informations nécessaires ;</li>
@@ -287,7 +287,7 @@ const PolitiqueConfidentialite = () => {
               <li>de s'assurer qu'il est autorisé à transmettre ces informations ;</li>
               <li>de ne pas communiquer de document médical sans nécessité.</li>
             </UL>
-            <P>Lorsque cela est nécessaire, LirElia informe directement la personne concernée de l'utilisation de ses données au plus tard lors du premier échange avec elle.</P>
+            <P>Lorsque cela est nécessaire, LIRELIA informe directement la personne concernée de l'utilisation de ses données au plus tard lors du premier échange avec elle.</P>
 
             <H2>7. Destinataires des données</H2>
             <P>Les données sont accessibles uniquement aux personnes autorisées qui en ont besoin pour accomplir leurs missions.</P>
@@ -324,7 +324,7 @@ const PolitiqueConfidentialite = () => {
             <P>Des informations complémentaires peuvent être demandées à <strong><Mail /></strong>.</P>
 
             <H2>9. Durées de conservation</H2>
-            <P>LirElia conserve les données uniquement pendant la durée nécessaire à la finalité concernée, puis les supprime ou les archive avec un accès limité lorsque la loi l'exige.</P>
+            <P>LIRELIA conserve les données uniquement pendant la durée nécessaire à la finalité concernée, puis les supprime ou les archive avec un accès limité lorsque la loi l'exige.</P>
 
             <H3>9.1 Demandes de contact et de conseil sans prestation</H3>
             <P>Les coordonnées et échanges sont conservés pendant une durée maximale de <strong>trois ans à compter du dernier contact actif</strong>.</P>
@@ -335,7 +335,7 @@ const PolitiqueConfidentialite = () => {
 
             <H3>9.3 Bilans et accompagnements</H3>
             <P>Les données sont conservées pendant la durée de l'accompagnement.</P>
-            <P>Les éléments nécessaires à la preuve de la prestation ou à la défense des droits de LirElia peuvent ensuite être archivés pendant la durée de prescription applicable.</P>
+            <P>Les éléments nécessaires à la preuve de la prestation ou à la défense des droits de LIRELIA peuvent ensuite être archivés pendant la durée de prescription applicable.</P>
             <P>Les notes contenant des données relatives à la santé sont supprimées dès qu'elles ne sont plus nécessaires et, en principe, au plus tard <strong>trois ans après la dernière prestation</strong>, sauf obligation légale, litige ou demande justifiée de conservation.</P>
 
             <H3>9.4 Commandes, clients et facturation</H3>
@@ -350,7 +350,7 @@ const PolitiqueConfidentialite = () => {
             </UL>
             <P>La preuve du consentement peut être conservée pendant la durée nécessaire à la démonstration du respect des obligations légales.</P>
 
-            <H3>9.6 Club LirElia</H3>
+            <H3>9.6 Club LIRELIA</H3>
             <P>Les données d'inscription sont conservées tant que la personne souhaite participer au Club ou recevoir les informations demandées.</P>
             <P>Elles sont supprimées au plus tard <strong>douze mois après la dernière participation ou la demande de désinscription</strong>, sauf nécessité de conserver une preuve du consentement ou de gérer un différend.</P>
 
@@ -361,7 +361,7 @@ const PolitiqueConfidentialite = () => {
             <P>Les durées applicables aux cookies et autres traceurs sont précisées dans la <strong>Politique de cookies</strong> et dans le gestionnaire de préférences du site.</P>
 
             <H2>10. Sécurité et confidentialité</H2>
-            <P>LirElia met en œuvre des mesures techniques et organisationnelles adaptées aux risques, notamment :</P>
+            <P>LIRELIA met en œuvre des mesures techniques et organisationnelles adaptées aux risques, notamment :</P>
             <UL>
               <li>la limitation des accès aux seules personnes habilitées ;</li>
               <li>l'utilisation de mots de passe robustes et de moyens d'authentification adaptés ;</li>
@@ -373,7 +373,7 @@ const PolitiqueConfidentialite = () => {
               <li>le masquage ou l'exclusion des champs sensibles dans les outils d'analyse ;</li>
               <li>la suppression ou l'archivage sécurisé des données devenues inutiles.</li>
             </UL>
-            <P>Aucun système informatique ne pouvant garantir une sécurité absolue, LirElia s'engage à réagir de manière appropriée en cas d'incident et, lorsque la réglementation l'impose, à informer la CNIL et les personnes concernées.</P>
+            <P>Aucun système informatique ne pouvant garantir une sécurité absolue, LIRELIA s'engage à réagir de manière appropriée en cas d'incident et, lorsque la réglementation l'impose, à informer la CNIL et les personnes concernées.</P>
 
             <H2>11. Cookies et outils de mesure d'audience</H2>
             <P>Le site utilise des cookies ou technologies similaires :</P>
@@ -403,12 +403,12 @@ const PolitiqueConfidentialite = () => {
             <P><strong><Mail /></strong></P>
             <P>ou par courrier à :</P>
             <P>
-              <strong>HORIZON TD — LirElia</strong><br />
+              <strong>HORIZON TD — LIRELIA</strong><br />
               2 rue Pierre Louÿs<br />
               75116 Paris — France
             </P>
             <P>La demande doit permettre d'identifier suffisamment son auteur. Un justificatif d'identité ne sera demandé qu'en cas de doute raisonnable sur son identité.</P>
-            <P>LirElia répond dans les délais prévus par la réglementation, en principe dans un délai d'un mois à compter de la réception d'une demande complète.</P>
+            <P>LIRELIA répond dans les délais prévus par la réglementation, en principe dans un délai d'un mois à compter de la réception d'une demande complète.</P>
 
             <H2>13. Réclamation auprès de la CNIL</H2>
             <P>Toute personne estimant que ses droits ne sont pas respectés peut adresser une réclamation à :</P>
@@ -420,7 +420,7 @@ const PolitiqueConfidentialite = () => {
             </P>
 
             <H2>14. Décisions automatisées</H2>
-            <P>LirElia ne prend aucune décision produisant des effets juridiques ou significatifs à l'égard d'une personne sur le seul fondement d'un traitement automatisé ou d'un profilage.</P>
+            <P>LIRELIA ne prend aucune décision produisant des effets juridiques ou significatifs à l'égard d'une personne sur le seul fondement d'un traitement automatisé ou d'un profilage.</P>
 
             <H2>15. Modification de la politique</H2>
             <P>La présente politique peut être modifiée pour tenir compte :</P>

@@ -3,7 +3,7 @@ import HereditaryDiseasePageLayout from "@/components/maladies/HereditaryDisease
 import type { SiblingLink, DiseaseSection } from "@/components/maladies/HereditaryDiseasePageLayout";
 
 const siblings: SiblingLink[] = [
-  { title: "Syndrome d'Usher : surdité et rétinite pigmentaire | LirElia", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
+  { title: "Syndrome d'Usher : surdité et rétinite pigmentaire | LIRELIA", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
   { title: "Maladie de Leber", to: "/maladies-yeux/maladies-hereditaires/maladie-de-leber" },
   { title: "Maladie de Stargardt", to: "/maladies-yeux/maladies-hereditaires/maladie-de-stargardt" },
   { title: "Achromatopsie", to: "/maladies-yeux/maladies-hereditaires/achromatopsie" },
@@ -90,7 +90,7 @@ const keyPoints = [
 
 const SyndromeUsher = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Syndrome d'Usher : Surdité et Rétinite | LirElia"
+    seoTitle="Syndrome d'Usher : Surdité et Rétinite | LIRELIA"
     seoDescription="Le syndrome d'Usher associe surdité et rétinite pigmentaire. Types cliniques, diagnostic génétique et accompagnement basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/syndrome-usher"
     diseaseName="Le syndrome d'Usher"

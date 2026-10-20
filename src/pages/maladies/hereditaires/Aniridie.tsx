@@ -3,7 +3,7 @@ import HereditaryDiseasePageLayout from "@/components/maladies/HereditaryDisease
 import type { SiblingLink, DiseaseSection } from "@/components/maladies/HereditaryDiseasePageLayout";
 
 const siblings: SiblingLink[] = [
-  { title: "Aniridie : maladie génétique rare de l'œil | LirElia", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
+  { title: "Aniridie : maladie génétique rare de l'œil | LIRELIA", to: "/maladies-yeux/maladies-hereditaires/retinite-pigmentaire" },
   { title: "Maladie de Leber", to: "/maladies-yeux/maladies-hereditaires/maladie-de-leber" },
   { title: "Maladie de Stargardt", to: "/maladies-yeux/maladies-hereditaires/maladie-de-stargardt" },
   { title: "Achromatopsie", to: "/maladies-yeux/maladies-hereditaires/achromatopsie" },
@@ -95,7 +95,7 @@ const keyPoints = [
 
 const Aniridie = () => (
   <HereditaryDiseasePageLayout
-    seoTitle="Aniridie — Maladie génétique rare de l'œil | LirElia"
+    seoTitle="Aniridie — Maladie génétique rare de l'œil | LIRELIA"
     seoDescription="Comprendre l'aniridie congénitale : maladie génétique rare liée au gène PAX6, photophobie, complications oculaires, diagnostic et accompagnement basse vision."
     canonicalPath="/maladies-yeux/maladies-hereditaires/aniridie"
     diseaseName="L'aniridie"

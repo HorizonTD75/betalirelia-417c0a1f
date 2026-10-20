@@ -119,7 +119,7 @@ const SourisLoupeVera = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Souris loupe électronique VERA pour basse vision | LirElia"
+        title="Souris loupe électronique VERA pour basse vision | LIRELIA"
         description="Souris loupe électronique VERA : caméra de lecture connectée au téléviseur pour agrandir textes, journaux et documents en basse vision et DMLA. Conseil gratuit."
         canonicalPath="/boutique/souris-loupe-electronique-vera"
         ogImage={imgJournal}

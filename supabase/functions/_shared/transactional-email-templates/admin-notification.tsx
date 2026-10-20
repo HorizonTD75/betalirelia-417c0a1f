@@ -14,7 +14,7 @@ import {
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
-const SITE_NAME = "LirElia"
+const SITE_NAME = "LIRELIA"
 
 interface AdminNotificationProps {
   formType?: string
@@ -53,7 +53,7 @@ const AdminNotificationEmail = ({ formType, name, email, phone, details }: Admin
 export const template = {
   component: AdminNotificationEmail,
   subject: (data: Record<string, any>) =>
-    `[LirElia] Nouvelle inscription ${data.formType || 'formulaire'}`,
+    `[LIRELIA] Nouvelle inscription ${data.formType || 'formulaire'}`,
   displayName: 'Notification admin',
   previewData: { formType: 'Club', name: 'Marie Martin', email: 'marie@test.fr', phone: '06 12 34 56 78' },
   to: Deno.env.get('ADMIN_NOTIFICATION_EMAIL') || '',

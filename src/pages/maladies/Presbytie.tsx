@@ -19,7 +19,7 @@ const Presbytie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="La presbytie : vision de près après 40 ans | LirElia"
+        title="La presbytie : vision de près après 40 ans | LIRELIA"
         description="Comprendre la presbytie : vieillissement du cristallin, vision floue de près, besoin d'éloigner les textes. Causes, symptômes, lunettes et solutions adaptées."
         canonicalPath="/maladies-yeux/presbytie"
       />

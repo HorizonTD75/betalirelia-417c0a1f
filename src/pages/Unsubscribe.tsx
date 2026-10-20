@@ -69,8 +69,8 @@ const Unsubscribe = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Désinscription – LirElia"
-        description="Gérez vos préférences e-mail LirElia."
+        title="Désinscription – LIRELIA"
+        description="Gérez vos préférences e-mail LIRELIA."
         canonicalPath="/unsubscribe"
       />
       <Header />
@@ -92,7 +92,7 @@ const Unsubscribe = () => {
                     Confirmer la désinscription
                   </h2>
                   <p className="text-lg text-muted-foreground">
-                    Vous ne recevrez plus d'e-mails de LirElia.
+                    Vous ne recevrez plus d'e-mails de LIRELIA.
                   </p>
                   <Button
                     onClick={handleUnsubscribe}

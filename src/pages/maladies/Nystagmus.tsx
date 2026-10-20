@@ -25,7 +25,7 @@ const Nystagmus = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Nystagmus : causes, diagnostic et accompagnement | LirElia"
+        title="Nystagmus : causes, diagnostic et accompagnement | LIRELIA"
         description="Comprendre le nystagmus : mouvements involontaires des yeux, causes congénitales ou acquises, diagnostic et solutions basse vision pour gagner en confort."
         canonicalPath="/maladies-yeux/nystagmus"
       />
@@ -440,7 +440,7 @@ const Nystagmus = () => {
                       Le nystagmus peut entraîner une <strong>basse vision</strong> significative, en particulier lorsqu'il est associé à d'autres pathologies oculaires. La difficulté à fixer un point rend la lecture, l'utilisation des écrans et de nombreuses activités quotidiennes plus complexes.
                     </p>
                     <p className="text-lg text-foreground leading-relaxed mb-6">
-                      Le Visiopraticien LirElia peut vous accompagner pour évaluer votre vision fonctionnelle, identifier les aides les plus adaptées et mettre en place des stratégies concrètes pour améliorer votre confort au quotidien.
+                      Le Visiopraticien LIRELIA peut vous accompagner pour évaluer votre vision fonctionnelle, identifier les aides les plus adaptées et mettre en place des stratégies concrètes pour améliorer votre confort au quotidien.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button variant="default" asChild>
@@ -451,7 +451,7 @@ const Nystagmus = () => {
                       </Button>
                       <Button variant="outline" asChild>
                         <Link to="/expert-basse-vision-visiopraticien">
-                          Le Visiopraticien LirElia
+                          Le Visiopraticien LIRELIA
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </Button>

@@ -49,7 +49,7 @@ const HeroSection = () => {
           {/* Value proposition */}
           <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 mb-10 border border-primary-foreground/20 animate-slide-up delay-200">
             <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              Chez LirElia, vous pouvez comprendre votre situation, faire un bilan basse vision, découvrir des aides à la lecture adaptées et être orienté vers des solutions concrètes, simples et utiles.
+              Chez LIRELIA, vous pouvez comprendre votre situation, faire un bilan basse vision, découvrir des aides à la lecture adaptées et être orienté vers des solutions concrètes, simples et utiles.
             </p>
             <p className="text-base text-primary-foreground/70 mt-3 italic">
               Important : nous ne réalisons pas de diagnostic médical. Le suivi médical reste assuré par votre ophtalmologiste.

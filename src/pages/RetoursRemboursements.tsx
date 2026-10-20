@@ -7,8 +7,8 @@ const RetoursRemboursements = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Retours et remboursements sous 14 jours chez LirElia"
-        description="Politique de retour LirElia : droit de rétractation 14 jours après réception, modalités de retour par voie postale, adresse à utiliser, frais et délais de remboursement."
+        title="Retours et remboursements sous 14 jours chez LIRELIA"
+        description="Politique de retour LIRELIA : droit de rétractation 14 jours après réception, modalités de retour par voie postale, adresse à utiliser, frais et délais de remboursement."
         canonicalPath="/retours-remboursements"
       />
       <Header />
@@ -21,7 +21,7 @@ const RetoursRemboursements = () => {
             <p className="text-base text-muted-foreground mb-10">Dernière mise à jour : 24/06/2026</p>
 
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Lirelia souhaite proposer une politique de retour claire, simple et accessible.
+              LIRELIA souhaite proposer une politique de retour claire, simple et accessible.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Vous disposez d'un délai de 14 jours à compter de la réception du produit pour exercer votre droit de rétractation ou demander un retour, sans avoir à justifier votre décision.
@@ -73,7 +73,7 @@ const RetoursRemboursements = () => {
               <li>le retour doit être effectué par voie postale ;</li>
               <li>le client doit envoyer le produit à l'adresse de retour indiquée ci-dessous ;</li>
               <li>il est recommandé au client d'utiliser un envoi suivi ou avec preuve de dépôt ;</li>
-              <li>le client reste responsable du colis jusqu'à sa réception par Lirelia.</li>
+              <li>le client reste responsable du colis jusqu'à sa réception par LIRELIA.</li>
             </ul>
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Adresse de retour</h2>
@@ -81,7 +81,7 @@ const RetoursRemboursements = () => {
               Sauf instruction contraire communiquée par email, les produits doivent être retournés à l'adresse suivante :
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Lirelia — Service retours<br />
+              LIRELIA — Service retours<br />
               4 rue Léon Blum<br />
               ZAE Les Glaises<br />
               91120 Palaiseau<br />
@@ -100,7 +100,7 @@ const RetoursRemboursements = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Remboursement</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              En cas de rétractation valable, Lirelia procède au remboursement dans un délai maximum de 10 jours après la réception et la vérification du produit retourné.
+              En cas de rétractation valable, LIRELIA procède au remboursement dans un délai maximum de 10 jours après la réception et la vérification du produit retourné.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Le remboursement est effectué avec le même moyen de paiement que celui utilisé lors de la commande, sauf accord contraire avec le client.
@@ -125,7 +125,7 @@ const RetoursRemboursements = () => {
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Contact</h2>
             <p className="text-lg text-foreground leading-relaxed">
               Pour toute question liée à un retour ou un remboursement :<br /><br />
-              Lirelia — Service client<br />
+              LIRELIA — Service client<br />
               Email : <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4">contact@lirelia.fr</a><br />
               Téléphone : 07 68 47 42 35
             </p>

@@ -99,7 +99,7 @@ const LampeEira = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Lampe basse vision EIRA pliable et rechargeable | LirElia"
+        title="Lampe basse vision EIRA pliable et rechargeable | LIRELIA"
         description="Lampe de lecture EIRA basse vision et DMLA : 3 températures de couleur, 100 à 1600 lux, batterie 6 h, pliable. Disponible en coloris Blanc ou Gris."
         canonicalPath="/boutique/lampe-basse-vision-eira"
       />

@@ -1,8 +1,8 @@
-# LirElia
+# LIRELIA
 
-> LirElia est un site français consacré à la basse vision, à l'autonomie des personnes malvoyantes et à l'accompagnement de leurs proches. Il propose des informations pédagogiques, des bilans fonctionnels, des conseils pratiques et une sélection d'aides à la lecture.
+> LIRELIA est un site français consacré à la basse vision, à l'autonomie des personnes malvoyantes et à l'accompagnement de leurs proches. Il propose des informations pédagogiques, des bilans fonctionnels, des conseils pratiques et une sélection d'aides à la lecture.
 
-LirElia s'adresse principalement aux personnes vivant avec une basse vision, à leurs proches aidants et aux professionnels qui les accompagnent. Les contenus sont rédigés dans un langage accessible et orientés vers les usages concrets : lecture, éclairage, vie quotidienne, choix d'aides techniques et maintien de l'autonomie.
+LIRELIA s'adresse principalement aux personnes vivant avec une basse vision, à leurs proches aidants et aux professionnels qui les accompagnent. Les contenus sont rédigés dans un langage accessible et orientés vers les usages concrets : lecture, éclairage, vie quotidienne, choix d'aides techniques et maintien de l'autonomie.
 
 Les informations relatives aux maladies des yeux sont fournies à titre pédagogique. Elles ne constituent ni un diagnostic, ni une prescription, ni un avis médical personnalisé. Le diagnostic, le traitement et le suivi médical relèvent d'un ophtalmologiste ou d'un autre professionnel de santé habilité.
 
@@ -10,12 +10,12 @@ Les prix, disponibilités des produits, modalités de livraison, créneaux de re
 
 ## Pages essentielles
 
-- [Accueil](https://lirelia.fr/) : présentation générale de LirElia, de ses services, de ses ressources et de ses aides pour les personnes malvoyantes.
+- [Accueil](https://lirelia.fr/) : présentation générale de LIRELIA, de ses services, de ses ressources et de ses aides pour les personnes malvoyantes.
 - [Comprendre la basse vision](https://lirelia.fr/comprendre-basse-vision/) : définition de la basse vision, conséquences fonctionnelles et premiers repères.
 - [Vivre avec la basse vision](https://lirelia.fr/vivre-basse-vision/) : conseils pratiques pour préserver son autonomie au quotidien.
 - [Guide pour les proches aidants](https://lirelia.fr/aidants/) : conseils pour accompagner une personne malvoyante sans la surprotéger.
 - [Le visiopraticien et l'expertise basse vision](https://lirelia.fr/expert-basse-vision-visiopraticien/) : rôle, méthode et domaines d'intervention du visiopraticien.
-- [Qui sommes-nous ?](https://lirelia.fr/qui-sommes-nous/) : présentation de l'expérience, de la démarche et des valeurs de LirElia.
+- [Qui sommes-nous ?](https://lirelia.fr/qui-sommes-nous/) : présentation de l'expérience, de la démarche et des valeurs de LIRELIA.
 - [Contact et conseil](https://lirelia.fr/contact-conseil/) : formulaire et coordonnées pour demander un renseignement ou un conseil.
 
 ## Maladies des yeux et déficiences visuelles
@@ -41,7 +41,7 @@ Les prix, disponibilités des produits, modalités de livraison, créneaux de re
 ## Aides à la lecture et guides de choix
 
 - [Aides à la lecture pour la basse vision](https://lirelia.fr/aides-lecture-bassevision/) : panorama des principales familles de solutions pour lire, écrire, observer et mieux voir.
-- [Catalogue des aides basse vision](https://lirelia.fr/catalogue-aides-basse-vision/) : catalogue général des produits et solutions proposés par LirElia.
+- [Catalogue des aides basse vision](https://lirelia.fr/catalogue-aides-basse-vision/) : catalogue général des produits et solutions proposés par LIRELIA.
 - [Loupes optiques](https://lirelia.fr/aides-lecture-bassevision/loupes-verre/) : loupes à main, loupes éclairantes, loupes dôme et autres aides optiques.
 - [Loupes électroniques](https://lirelia.fr/aides-lecture-bassevision/loupes-electroniques/) : appareils avec écran, grossissement réglable et modes de contraste.
 - [Lampes et éclairage adapté](https://lirelia.fr/aides-lecture-bassevision/lampes/) : éclairage de lecture, lampes de bureau, lampes-loupes et lampadaires.
@@ -91,7 +91,7 @@ Les prix, disponibilités des produits, modalités de livraison, créneaux de re
 
 - [DMLA : votre vie ne s'arrête pas](https://lirelia.fr/livre-dmla-votre-vie-ne-sarrete-pas/) : guide pratique destiné aux personnes vivant avec une DMLA, à leurs proches et aux professionnels qui les accompagnent.
 - [DMLA – Aider un proche sans s'épuiser](https://lirelia.fr/livre-aider-proche-dmla/) : présentation du guide consacré aux proches aidants.
-- [Club LirElia](https://lirelia.fr/club/) : rencontres en visioconférence, échanges pratiques et information autour de la basse vision.
+- [Club LIRELIA](https://lirelia.fr/club/) : rencontres en visioconférence, échanges pratiques et information autour de la basse vision.
 
 ## Optional
 

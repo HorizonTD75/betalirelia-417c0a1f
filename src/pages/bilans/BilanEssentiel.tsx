@@ -43,7 +43,7 @@ const BilanEssentiel = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilan Essentiel basse vision à Paris dès 75 € | LirElia"
+        title="Bilan Essentiel basse vision à Paris dès 75 € | LIRELIA"
         description="Bilan Essentiel basse vision : évaluation fonctionnelle, essais d'aides à la lecture et plan d'action personnalisé en 1h30. À Paris ou à domicile, dès 75 €."
         canonicalPath="/bilans-bassevision/essentiel"
       />
@@ -94,7 +94,7 @@ const BilanEssentiel = () => {
               </div>
               <div className="flex-1">
                 <h2 className="font-serif text-xl font-bold text-foreground mb-1">Ce bilan peut aussi être réalisé à domicile</h2>
-                <p className="text-lg text-muted-foreground">Pour les personnes ayant des difficultés de déplacement, le Visiopraticien LirElia se rend chez vous. Le bilan est adapté à votre environnement réel.</p>
+                <p className="text-lg text-muted-foreground">Pour les personnes ayant des difficultés de déplacement, le Visiopraticien LIRELIA se rend chez vous. Le bilan est adapté à votre environnement réel.</p>
               </div>
               <Button variant="outline" size="default" asChild className="shrink-0">
                 <Link to="/bilans-bassevision/visites-domicile">Découvrir les visites à domicile <ArrowRight className="w-4 h-4" /></Link>

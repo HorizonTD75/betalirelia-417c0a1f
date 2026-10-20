@@ -6,8 +6,8 @@ const FormulaireRetractation = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Formulaire de rétractation sous 14 jours | LirElia"
-        description="Modèle de formulaire de rétractation LirElia : exercez votre droit de rétractation sous 14 jours après réception du produit, en toute simplicité."
+        title="Formulaire de rétractation sous 14 jours | LIRELIA"
+        description="Modèle de formulaire de rétractation LIRELIA : exercez votre droit de rétractation sous 14 jours après réception du produit, en toute simplicité."
         canonicalPath="/formulaire-retractation"
       />
       <Header />
@@ -33,7 +33,7 @@ const FormulaireRetractation = () => {
 
             <p className="text-lg text-foreground leading-relaxed mb-2">À l'attention de :</p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Lirelia — Service retours<br />
+              LIRELIA — Service retours<br />
               4 rue Léon Blum<br />
               ZAE Les Glaises<br />
               91120 Palaiseau<br />
@@ -67,7 +67,7 @@ const FormulaireRetractation = () => {
               <li>ou par courrier à l'adresse suivante :</li>
             </ul>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              Lirelia — Service retours<br />
+              LIRELIA — Service retours<br />
               4 rue Léon Blum<br />
               ZAE Les Glaises<br />
               91120 Palaiseau<br />
@@ -77,7 +77,7 @@ const FormulaireRetractation = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Retour du produit</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Après nous avoir informés de votre rétractation, le produit doit être retourné à l'adresse indiquée, sauf instruction différente communiquée par Lirelia.
+              Après nous avoir informés de votre rétractation, le produit doit être retourné à l'adresse indiquée, sauf instruction différente communiquée par LIRELIA.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Le produit doit être retourné dans un état permettant sa remise en vente, avec ses accessoires, notices et protections, dans la mesure du possible.
@@ -85,7 +85,7 @@ const FormulaireRetractation = () => {
 
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Remboursement</h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              En cas de rétractation valable, Lirelia rembourse les sommes dues dans un délai maximum de 14 jours à compter de la date à laquelle Lirelia est informé de votre décision de vous rétracter.
+              En cas de rétractation valable, LIRELIA rembourse les sommes dues dans un délai maximum de 14 jours à compter de la date à laquelle LIRELIA est informé de votre décision de vous rétracter.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               Le remboursement peut être différé jusqu'à récupération du produit ou jusqu'à réception d'une preuve d'expédition du produit retourné.
@@ -97,7 +97,7 @@ const FormulaireRetractation = () => {
             <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Contact</h2>
             <p className="text-lg text-foreground leading-relaxed">
               Pour toute question :<br /><br />
-              Lirelia — Service client<br />
+              LIRELIA — Service client<br />
               Email : <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4">contact@lirelia.fr</a><br />
               Téléphone : 07 68 47 42 35
             </p>

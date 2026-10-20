@@ -7,8 +7,8 @@ const PolitiqueCookies = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Politique de cookies du site LirElia | Basse vision"
-        description="Politique de cookies LirElia : types de cookies utilisés, finalités, durée de conservation, outils de mesure d'audience et gestion de vos préférences."
+        title="Politique de cookies du site LIRELIA | Basse vision"
+        description="Politique de cookies LIRELIA : types de cookies utilisés, finalités, durée de conservation, outils de mesure d'audience et gestion de vos préférences."
         canonicalPath="/politique-cookies"
       />
       <Header />
@@ -26,7 +26,7 @@ const PolitiqueCookies = () => {
               lors de vos prochaines visites.
             </p>
 
-            <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Quels cookies sont utilisés sur LirElia ?</h2>
+            <h2 className="font-serif text-2xl font-bold text-foreground mt-10 mb-4">Quels cookies sont utilisés sur LIRELIA ?</h2>
 
             <h3 className="font-serif text-xl font-bold text-foreground mt-8 mb-3">Cookies nécessaires</h3>
             <p className="text-lg text-foreground leading-relaxed mb-4">

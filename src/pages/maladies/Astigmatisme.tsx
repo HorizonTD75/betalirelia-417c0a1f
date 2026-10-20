@@ -19,7 +19,7 @@ const Astigmatisme = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Astigmatisme : causes, symptômes et correction | LirElia"
+        title="Astigmatisme : causes, symptômes et correction | LIRELIA"
         description="Comprendre l'astigmatisme : courbure irrégulière de la cornée, vision floue ou dédoublée, fatigue oculaire, diagnostic et correction optique adaptée."
         canonicalPath="/maladies-yeux/astigmatisme"
       />

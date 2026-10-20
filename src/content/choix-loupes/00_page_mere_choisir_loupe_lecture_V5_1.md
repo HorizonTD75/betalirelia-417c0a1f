@@ -3,7 +3,7 @@ statut: publication_lovable_autorisee_2026_10_20
 type: page_mere_decisionnelle
 h1: "Quelle loupe de lecture choisir ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/"
-title_seo: "Quelle loupe de lecture choisir ? Guide pratique | Lirelia"
+title_seo: "Quelle loupe de lecture choisir ? Guide pratique | LIRELIA"
 meta_description: "Quelle loupe de lecture choisir ? Guide par usages : loupe optique, électronique, clip lunettes loupe et grand écran, pour vous ou un proche."
 requete_cible: "loupe de lecture"
 requetes_secondaires: "loupe grossissante ; loupe pour lire ; loupe pour malvoyant ; loupe règle ; loupe rectangulaire ; loupe x10"
@@ -26,7 +26,7 @@ Une **loupe grossissante** optique convient à de nombreuses lectures courtes. L
 <!-- IMAGE_ZONE
 id: pm-01
 emplacement: sous l’introduction, avant le premier H2
-description_visuelle: Photo réelle, en plan serré et lumière naturelle, d’un même courrier imprimé posé sur une table avec, à côté, trois appareils réellement vendus par Lirelia : une loupe à main, une loupe à poser et une loupe électronique portable. Aucune personne identifiable. Le texte du courrier doit rester lisible sur l’image.
+description_visuelle: Photo réelle, en plan serré et lumière naturelle, d’un même courrier imprimé posé sur une table avec, à côté, trois appareils réellement vendus par LIRELIA : une loupe à main, une loupe à poser et une loupe électronique portable. Aucune personne identifiable. Le texte du courrier doit rester lisible sur l’image.
 alt_propose: Un courrier posé sur une table, entouré d’une loupe à main, d’une loupe à poser et d’une loupe électronique portable.
 legende_proposee: Trois types de loupes pour lire le même courrier : le bon choix dépend de la lecture à réaliser.
 format: paysage, 1600 × 900 px minimum, WebP ou JPEG optimisé
@@ -122,9 +122,9 @@ Oui, dans bien des cas : on peut lire avec la loupe tout en gardant ses lunettes
 
 ## Besoin d’un conseil pour choisir ?
 
-Vous utilisez déjà une loupe qui ne convient plus, ou vous souhaitez aider un proche à retrouver une activité de lecture ? Décrivez à Lirelia les documents à lire, les difficultés constatées et le matériel déjà essayé. Ces informations permettront de cibler les solutions qui méritent d’être examinées, **sans présumer du choix de la personne qui les utilisera**.
+Vous utilisez déjà une loupe qui ne convient plus, ou vous souhaitez aider un proche à retrouver une activité de lecture ? Décrivez à LIRELIA les documents à lire, les difficultés constatées et le matériel déjà essayé. Ces informations permettront de cibler les solutions qui méritent d’être examinées, **sans présumer du choix de la personne qui les utilisera**.
 
-[**Demander un conseil personnalisé**](https://lirelia.fr/contact-conseil/) · [**Consulter le catalogue Lirelia**](https://lirelia.fr/catalogue-aides-basse-vision/)
+[**Demander un conseil personnalisé**](https://lirelia.fr/contact-conseil/) · [**Consulter le catalogue LIRELIA**](https://lirelia.fr/catalogue-aides-basse-vision/)
 
 <!-- FIN_CONTENU_PUBLIC -->
 
@@ -139,4 +139,4 @@ Vous utilisez déjà une loupe qui ne convient plus, ou vous souhaitez aider un 
 - Fil d’Ariane aligné sur l’URL : Accueil > Quelle loupe de lecture choisir ? (guide) avec balisage BreadcrumbList.
 - Pages non-blog : ni auteur ni date affichés.
 - Les liens vers des guides non publiés doivent rester désactivés ; publication prévue avec les six guides.
-- À valider : les affirmations sur « ×4 / ×10 » sont volontairement générales ; compléter avec les grossissements réels des références Lirelia si souhaité.
+- À valider : les affirmations sur « ×4 / ×10 » sont volontairement générales ; compléter avec les grossissements réels des références LIRELIA si souhaité.

@@ -38,7 +38,7 @@ export const AVAILABILITY: Record<AvailabilityStatus, AvailabilityMeta> = {
     badge: "Bientôt disponible",
     badgeClass: "bg-secondary/25 text-secondary-foreground border-secondary/50",
     buttonLabel: "Bientôt disponible",
-    message: "Ce produit sera bientôt disponible sur LirElia.",
+    message: "Ce produit sera bientôt disponible sur LIRELIA.",
     purchasable: false,
   },
 };

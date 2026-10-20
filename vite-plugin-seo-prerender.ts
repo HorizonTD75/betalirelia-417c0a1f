@@ -1,133 +1,25 @@
-import { Plugin } from "vite";
-import * as fs from "fs";
-import * as path from "path";
-
-interface RouteSEO {
-  path: string;
-  title: string;
-  description: string;
-  canonical: string;
-  ogType?: string;
-  ogImage?: string;
-  noindex?: boolean;
-  noImage?: boolean;
-  jsonLd?: Record<string, unknown>;
+import type { Plugin } from "vite";
+import * as fs from "node:fs";
+import * as path from "node:path";
+import { applyHeadMetadata, type HeadMetadata } from "./src/lib/headMetadata";
+const escape = (v: string) => v.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+export function renderRouteHead(template: string, r: HeadMetadata): string {
+  let html=template.replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi,"");
+  html=html.replace(/<meta\b[^>]*>/gi,t=>/(?:name|property)=["'](?:description|author|robots|googlebot|og:[^"']+|twitter:[^"']+)["']/i.test(t)?"":t);
+  html=html.replace(/<link\b[^>]*>/gi,t=>/rel=["']canonical["']|hreflang=/i.test(t)?"":t);
+  const tag=(a:string,n:string,v:string)=>`<meta ${a}="${n}" content="${escape(v)}">`;
+  const robots=r.noindex?"noindex, follow":"index, follow";
+  const tags=[`<title>${escape(r.title)}</title>`,tag("name","description",r.description),tag("name","author","LIRELIA"),tag("name","robots",robots),tag("name","googlebot",robots),`<link rel="canonical" href="${escape(r.canonical)}">`,tag("property","og:title",r.title),tag("property","og:description",r.description),tag("property","og:url",r.canonical),tag("property","og:type",r.ogType),tag("property","og:site_name","LIRELIA"),tag("property","og:locale","fr_FR"),tag("name","twitter:card",r.ogImage?"summary_large_image":"summary"),tag("name","twitter:title",r.title),tag("name","twitter:description",r.description)];
+  if(r.ogImage){tags.push(tag("property","og:image",r.ogImage),tag("name","twitter:image",r.ogImage));if(r.imageAlt)tags.push(tag("property","og:image:alt",r.imageAlt),tag("name","twitter:image:alt",r.imageAlt));}
+  return html.replace(/<head\b[^>]*>/i,h=>h+"\n"+tags.join("\n"));
 }
-
-const BASE_URL = "https://lirelia.fr";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
-
-/**
- * Vite plugin that generates per-route HTML files at build time
- * with pre-populated SEO meta tags in the <head>.
- * 
- * Crawlers (Google, Facebook, Twitter) get correct meta tags 
- * from the initial HTML without needing JS execution.
- * The SPA still bootstraps normally for interactive users.
- */
-export function seoPrerender(routes: RouteSEO[]): Plugin {
-  return {
-    name: "vite-plugin-seo-prerender",
-    enforce: "post",
-    apply: "build",
-    closeBundle() {
-      const distDir = path.resolve(process.cwd(), "dist");
-      const indexHtml = path.join(distDir, "index.html");
-
-      if (!fs.existsSync(indexHtml)) {
-        console.warn("[seo-prerender] dist/index.html not found, skipping.");
-        return;
-      }
-
-      const template = fs.readFileSync(indexHtml, "utf-8");
-
-      for (const route of routes) {
-        const ogImage = route.ogImage || DEFAULT_OG_IMAGE;
-        const ogType = route.ogType || "website";
-        const canonicalUrl = `${BASE_URL}${route.canonical}`;
-
-        // Build meta tags to inject
-        const metaTags = [
-          `<title>${escapeHtml(route.title)}</title>`,
-          `<meta name="description" content="${escapeAttr(route.description)}">`,
-          `<link rel="canonical" href="${escapeAttr(canonicalUrl)}">`,
-          `<meta property="og:title" content="${escapeAttr(route.title)}">`,
-          `<meta property="og:description" content="${escapeAttr(route.description)}">`,
-          `<meta property="og:url" content="${escapeAttr(canonicalUrl)}">`,
-          `<meta property="og:type" content="${escapeAttr(ogType)}">`,
-          `<meta property="og:image" content="${escapeAttr(ogImage)}">`,
-          `<meta name="twitter:card" content="summary_large_image">`,
-          `<meta name="twitter:title" content="${escapeAttr(route.title)}">`,
-          `<meta name="twitter:description" content="${escapeAttr(route.description)}">`,
-          `<meta name="twitter:image" content="${escapeAttr(ogImage)}">`,
-        ];
-
-        if (route.noImage) {
-          for (let i = metaTags.length - 1; i >= 0; i--) {
-            if (/property="og:image"|name="twitter:image"/.test(metaTags[i])) metaTags.splice(i, 1);
-          }
-        }
-        if (route.noindex) metaTags.push('<meta name="robots" content="noindex, follow">', '<meta name="googlebot" content="noindex, follow">');
-
-        if (route.jsonLd) {
-          metaTags.push(
-            `<script type="application/ld+json">${JSON.stringify(route.jsonLd)}</script>`
-          );
-        }
-
-        const injection = metaTags.join("\n    ");
-
-        // Replace the generic <title> and inject route-specific tags right after <head>
-        let html = template;
-        
-        // Remove generic title from template
-        html = html.replace(/<title>[^<]*<\/title>/, "");
-        // Remove generic meta description
-        html = html.replace(/<meta\s+name="description"[^>]*>/, "");
-        // Remove generic og:title, og:description, og:image, og:type
-        html = html.replace(/<meta\s+property="og:title"[^>]*>/g, "");
-        html = html.replace(/<meta\s+property="og:description"[^>]*>/g, "");
-        html = html.replace(/<meta\s+property="og:image"[^>]*>/g, "");
-        html = html.replace(/<meta\s+property="og:type"[^>]*>/g, "");
-        // Remove generic twitter tags
-        html = html.replace(/<meta\s+name="twitter:title"[^>]*>/g, "");
-        html = html.replace(/<meta\s+name="twitter:description"[^>]*>/g, "");
-        html = html.replace(/<meta\s+name="twitter:image"[^>]*>/g, "");
-        html = html.replace(/<meta\s+name="twitter:card"[^>]*>/g, "");
-
-        if (route.noindex) {
-          html = html.replace(/<link\s+rel="canonical"[^>]*>/g, "");
-          html = html.replace(/<meta\s+property="og:url"[^>]*>/g, "");
-          html = html.replace(/<meta\s+name="(?:robots|googlebot)"[^>]*>/g, "");
-        }
-        if (route.noImage) html = html.replace(/<meta\s+(?:property="og:image:alt"|name="twitter:image:alt")[^>]*>/g, "");
-
-        // Inject after <head> opening
-        html = html.replace("<head>", `<head>\n    ${injection}`);
-
-        // Write the route-specific HTML file
-        const routePath = route.path.replace(/^\//, "");
-        const outputDir = path.join(distDir, routePath);
-        fs.mkdirSync(outputDir, { recursive: true });
-        fs.writeFileSync(path.join(outputDir, "index.html"), html, "utf-8");
-
-        console.log(`[seo-prerender] Generated: /${routePath}/index.html`);
-      }
-    },
-  };
-}
-
-function escapeHtml(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
-
-function escapeAttr(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+export function seoPrerender(routes:HeadMetadata[]):Plugin {
+ const map=Object.fromEntries(routes.map(r=>[r.path.replace(/\/+$/,"")||"/",r]));
+ return {name:"vite-plugin-seo-prerender",enforce:"post",
+ transformIndexHtml(html){const home=map["/"];if(!home)return html;
+ const script=`<script data-route-head>(${applyHeadMetadata.toString()})((${JSON.stringify(map).replace(/</g,"\\u003c")})[location.pathname.replace(/\\/+$/,"")||"/"]||{title:"Page introuvable | LIRELIA",description:"Page introuvable",canonical:"https://lirelia.fr"+location.pathname,noindex:true,ogType:"website"});</script>`;
+ return renderRouteHead(html,home).replace("</head>",script+"</head>");},
+ closeBundle(){const dist=path.resolve("dist");const file=path.join(dist,"index.html");if(!fs.existsSync(file))return;const template=fs.readFileSync(file,"utf8");
+ for(const r of routes){const output=path.join(dist,r.path.replace(/^\//,""));fs.mkdirSync(output,{recursive:true});fs.writeFileSync(path.join(output,"index.html"),renderRouteHead(template,r));}
+ }};
 }

@@ -1,13 +1,13 @@
 ---
 document_type: page_content
-project: LirElia
+project: LIRELIA
 work_step: '5.1'
 version: V3.1-lecture
 status: V3.1 révision éditoriale — contrôle réglementaire final requis avant publication
 last_verified: '2026-06-26'
 slug: /aides-financieres-basse-vision/financer-aide-visuelle/
 canonical: https://lirelia.fr/aides-financieres-basse-vision/financer-aide-visuelle/
-title: 'Loupe électronique : remboursement et aides 2026 | LirElia'
+title: 'Loupe électronique : remboursement et aides 2026 | LIRELIA'
 meta_description: 'Loupe électronique, téléagrandisseur : vérifiez LPP, PCH, MDPH, mutuelle et aides complémentaires
   avant d’acheter votre matériel.'
 h1: "Loupe électronique, téléagrandisseur : quelles aides financières ?"
@@ -52,14 +52,14 @@ verification_scope: Barèmes nationaux clés contrôlés sur sources officielles
   requise
 robots: index, follow
 og_type: article
-og_title: 'Loupe électronique : remboursement et aides 2026 | LirElia'
+og_title: 'Loupe électronique : remboursement et aides 2026 | LIRELIA'
 og_description: 'Loupe électronique, téléagrandisseur : vérifiez LPP, PCH, MDPH, mutuelle et aides complémentaires
   avant d’acheter votre matériel.'
 og_url: https://lirelia.fr/aides-financieres-basse-vision/financer-aide-visuelle/
-og_site_name: LirElia
+og_site_name: LIRELIA
 og_locale: fr_FR
 twitter_card: summary_large_image
-twitter_title: 'Loupe électronique : remboursement et aides 2026 | LirElia'
+twitter_title: 'Loupe électronique : remboursement et aides 2026 | LIRELIA'
 twitter_description: 'Loupe électronique, téléagrandisseur : vérifiez LPP, PCH, MDPH, mutuelle et aides complémentaires
   avant d’acheter votre matériel.'
 social_image_status: 'À créer : visuel social 1200 × 630 px avec texte lisible et contraste élevé. Ne pas inventer
@@ -162,7 +162,7 @@ N'achetez pas uniquement pour « gagner du temps » sans vous être renseigné s
 
 Une lampe de lecture adaptée, un réglage d'agrandissement sur téléphone ou ordinateur, ou une loupe optique testée dans de bonnes conditions peuvent rendre service. Leur intérêt dépend de la vision et de la tâche. Le conseil et l'essai évitent parfois un achat décevant.
 
-Sur LirElia, vous pouvez aussi consulter les [conseils sur les aides à la lecture](/aides-lecture-bassevision/). Le guide [*DMLA – Votre vie ne s'arrête pas*](/livre-dmla-votre-vie-ne-sarrete-pas/) aborde également les adaptations possibles pour préserver la lecture et l'autonomie.
+Sur LIRELIA, vous pouvez aussi consulter les [conseils sur les aides à la lecture](/aides-lecture-bassevision/). Le guide [*DMLA – Votre vie ne s'arrête pas*](/livre-dmla-votre-vie-ne-sarrete-pas/) aborde également les adaptations possibles pour préserver la lecture et l'autonomie.
 
 ## Questions fréquentes
 

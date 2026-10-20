@@ -1,13 +1,13 @@
 ---
 document_type: page_content
-project: LirElia
+project: LIRELIA
 work_step: '4.3'
 version: V3.1-lecture
 status: V3.1 révision éditoriale — contrôle réglementaire final requis avant publication
 last_verified: '2026-06-26'
 slug: /aides-financieres-basse-vision/aides-sociales-droits/
 canonical: https://lirelia.fr/aides-financieres-basse-vision/aides-sociales-droits/
-title: 'AAH, APA, PCH, CMI : droits des malvoyants 2026 | LirElia'
+title: 'AAH, APA, PCH, CMI : droits des malvoyants 2026 | LIRELIA'
 meta_description: 'AAH, APA, PCH, CMI et RQTH : distinguez les droits, les critères et les démarches pour les personnes
   malvoyantes.'
 h1: "AAH, APA, CMI : quels droits lorsqu'on voit mal ?"
@@ -53,14 +53,14 @@ verification_scope: Barèmes nationaux clés contrôlés sur sources officielles
   requise
 robots: index, follow
 og_type: article
-og_title: 'AAH, APA, PCH, CMI : droits des malvoyants 2026 | LirElia'
+og_title: 'AAH, APA, PCH, CMI : droits des malvoyants 2026 | LIRELIA'
 og_description: 'AAH, APA, PCH, CMI et RQTH : distinguez les droits, les critères et les démarches pour les personnes
   malvoyantes.'
 og_url: https://lirelia.fr/aides-financieres-basse-vision/aides-sociales-droits/
-og_site_name: LirElia
+og_site_name: LIRELIA
 og_locale: fr_FR
 twitter_card: summary_large_image
-twitter_title: 'AAH, APA, PCH, CMI : droits des malvoyants 2026 | LirElia'
+twitter_title: 'AAH, APA, PCH, CMI : droits des malvoyants 2026 | LIRELIA'
 twitter_description: 'AAH, APA, PCH, CMI et RQTH : distinguez les droits, les critères et les démarches pour les
   personnes malvoyantes.'
 social_image_status: 'À créer : visuel social 1200 × 630 px avec texte lisible et contraste élevé. Ne pas inventer

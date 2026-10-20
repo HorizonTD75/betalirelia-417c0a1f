@@ -117,7 +117,7 @@ const LampeAina = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Lampe tour de cou AINA pour lecture basse vision | LirElia"
+        title="Lampe tour de cou AINA pour lecture basse vision | LIRELIA"
         description="Lampe tour de cou AINA : éclairage de lecture mains libres pour livres, documents et activités du quotidien en basse vision, DMLA ou vision réduite."
         canonicalPath="/boutique/lampe-tour-cou-aina"
         ogImage={imgNoirBlanche}

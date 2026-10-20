@@ -4,13 +4,13 @@ import { SOURIS_VERA, MEZZO_FOCUS } from "@/data/products/catalogueCategories";
 const TeleagrandisseursCategorie = () => (
   <CommercialCategoryPage
     path="/catalogue-aides-basse-vision/teleagrandisseurs"
-    seoTitle="Téléagrandisseurs basse vision à comparer | LirElia"
+    seoTitle="Téléagrandisseurs basse vision à comparer | LIRELIA"
     seoDescription="Comparez la souris loupe VERA et le téléagrandisseur Mezzo Focus : écran, grossissement, contrastes, confort de lecture et prix pour la maison."
     breadcrumbLabel="Téléagrandisseurs"
     h1="Téléagrandisseurs"
     h1Highlight="pour basse vision"
     subtitle="Lire sur un grand écran avec un grossissement et des contrastes adaptés"
-    intro="Les téléagrandisseurs utilisent une caméra pour afficher un document agrandi sur un écran. Ils peuvent faciliter la lecture d’un journal, d’un courrier ou d’une ordonnance et, selon le modèle, permettre d’écrire ou de remplir un formulaire. LirElia propose une solution économique utilisant votre téléviseur et un téléagrandisseur de bureau complet pour un usage régulier."
+    intro="Les téléagrandisseurs utilisent une caméra pour afficher un document agrandi sur un écran. Ils peuvent faciliter la lecture d’un journal, d’un courrier ou d’une ordonnance et, selon le modèle, permettre d’écrire ou de remplir un formulaire. LIRELIA propose une solution économique utilisant votre téléviseur et un téléagrandisseur de bureau complet pour un usage régulier."
     guide={{
       href: "/aides-lecture-bassevision/tele-agrandisseurs",
       label: "Mieux comprendre les téléagrandisseurs",

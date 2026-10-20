@@ -89,13 +89,13 @@ const DmlaHumide = () => (
             <li>la <strong>lecture vocale</strong> lorsque la lecture visuelle est devenue trop fatigante.</li>
           </ul>
           <P>Une aide visuelle <strong>ne traite pas les néovaisseaux</strong> et ne remplace jamais les injections prescrites. Son rôle est de faciliter les activités que la baisse de vision rend difficiles.</P>
-          <P>LirElia présente les différentes solutions dans son <Link to="/aides-lecture-bassevision/" className={linkCls}>guide des aides à la lecture en basse vision</Link>. Un <Link to="/bilans-bassevision/" className={linkCls}>bilan des besoins visuels</Link> peut aider à orienter les essais d'équipements, en complément du suivi ophtalmologique.</P>
+          <P>LIRELIA présente les différentes solutions dans son <Link to="/aides-lecture-bassevision/" className={linkCls}>guide des aides à la lecture en basse vision</Link>. Un <Link to="/bilans-bassevision/" className={linkCls}>bilan des besoins visuels</Link> peut aider à orienter les essais d'équipements, en complément du suivi ophtalmologique.</P>
         </Section>
 
         <Section id="comment-accompagner-un-proche-atteint-de-dmla-humide" title="Comment accompagner un proche atteint de DMLA humide ?" muted>
           <P>Les consultations et les injections peuvent être fatigantes sur le plan pratique et émotionnel. L'aide la plus utile consiste souvent à organiser les déplacements, à noter les questions avant le rendez-vous, à faciliter l'accès aux documents et à respecter les choix de la personne.</P>
           <P>Évitez de promettre un résultat visuel ou de décider à sa place. Demandez-lui plutôt : « Qu'est-ce qui est difficile aujourd'hui, et comment puis-je vous aider ? »</P>
-          <P>Pour approfondir cet aspect, découvrez les <Link to="/aidants/" className={linkCls}>ressources LirElia pour les proches aidants</Link> et le guide <strong>DMLA – Aider un proche sans s'épuiser</strong> : <Link to="/livre-aider-proche-dmla/" className={linkCls}>présentation du livre</Link>.</P>
+          <P>Pour approfondir cet aspect, découvrez les <Link to="/aidants/" className={linkCls}>ressources LIRELIA pour les proches aidants</Link> et le guide <strong>DMLA – Aider un proche sans s'épuiser</strong> : <Link to="/livre-aider-proche-dmla/" className={linkCls}>présentation du livre</Link>.</P>
         </Section>
 
         <Section id="faq" title="Questions fréquentes sur la DMLA humide">
@@ -116,7 +116,7 @@ const DmlaHumide = () => (
         </Section>
 
         <Section id="sources" title="Sources et informations éditoriales">
-          <P>Cette page est informative et ne remplace pas une consultation médicale. <strong>LirElia n'établit pas de diagnostic et ne prescrit pas de traitement.</strong> Seul l'ophtalmologiste peut interpréter les examens et proposer une prise en charge.</P>
+          <P>Cette page est informative et ne remplace pas une consultation médicale. <strong>LIRELIA n'établit pas de diagnostic et ne prescrit pas de traitement.</strong> Seul l'ophtalmologiste peut interpréter les examens et proposer une prise en charge.</P>
           <ul className={ulCls}>
             <li><a href="https://www.ameli.fr/assure/sante/themes/dmla/symptomes-diagnostic" target="_blank" rel="noopener noreferrer" className={linkCls}>Assurance Maladie — Symptômes et diagnostic</a></li>
             <li><a href="https://www.ameli.fr/assure/sante/themes/dmla/dmla-humide-traitement" target="_blank" rel="noopener noreferrer" className={linkCls}>Assurance Maladie — DMLA humide : traiter les néovaisseaux</a></li>
@@ -124,7 +124,7 @@ const DmlaHumide = () => (
             <li><a href="https://www.inserm.fr/dossier/degenerescence-maculaire-liee-age-dmla/" target="_blank" rel="noopener noreferrer" className={linkCls}>Inserm — Comprendre la DMLA</a></li>
             <li><a href="https://www.has-sante.fr/jcms/p_3383781/fr/degenerescence-maculaire-liee-a-l-age" target="_blank" rel="noopener noreferrer" className={linkCls}>HAS — Recommandations DMLA</a></li>
           </ul>
-          <p className="text-base text-muted-foreground leading-relaxed mt-6"><em>Rédaction : LirElia — conseils pratiques en basse vision. Vérification documentaire : 19 octobre 2026. Les informations relatives aux traitements doivent être revues lors des mises à jour réglementaires.</em></p>
+          <p className="text-base text-muted-foreground leading-relaxed mt-6"><em>Rédaction : LIRELIA — conseils pratiques en basse vision. Vérification documentaire : 19 octobre 2026. Les informations relatives aux traitements doivent être revues lors des mises à jour réglementaires.</em></p>
         </Section>
   </DmlaChildLayout>
 );

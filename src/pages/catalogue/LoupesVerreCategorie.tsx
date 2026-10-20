@@ -104,8 +104,8 @@ const LoupesVerreCategorie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Loupes en verre pour malvoyants et basse vision | LirElia"
-        description="Découvrez les loupes en verre LirElia pour agrandir textes, courriers et détails. Comparez nos modèles à main et nos loupes dôme éclairantes."
+        title="Loupes en verre pour malvoyants et basse vision | LIRELIA"
+        description="Découvrez les loupes en verre LIRELIA pour agrandir textes, courriers et détails. Comparez nos modèles à main et nos loupes dôme éclairantes."
         canonicalPath={PAGE_PATH}
       />
       <Header />
@@ -130,7 +130,7 @@ const LoupesVerreCategorie = () => {
                 Des loupes simples et immédiatement utilisables pour agrandir les textes et les détails du quotidien.
               </p>
               <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-6 max-w-3xl">
-                Découvrez les loupes en verre sélectionnées par LirElia pour faciliter les petites lectures du quotidien. Loupe à main éclairante ou loupe dôme à poser : comparez les modèles disponibles, leurs grossissements et leurs principales caractéristiques.
+                Découvrez les loupes en verre sélectionnées par LIRELIA pour faciliter les petites lectures du quotidien. Loupe à main éclairante ou loupe dôme à poser : comparez les modèles disponibles, leurs grossissements et leurs principales caractéristiques.
               </p>
               <Button
                 asChild
@@ -240,7 +240,7 @@ const LoupesVerreCategorie = () => {
               <AlertCircle className="w-6 h-6 text-accent shrink-0 mt-1" aria-hidden="true" />
               <div>
                 <p className="text-base md:text-lg text-foreground leading-relaxed mb-3">
-                  Le grossissement le plus élevé n'est pas toujours le plus confortable. Lorsque le grossissement augmente, la zone visible devient généralement plus petite. En cas de doute, LirElia peut vous aider à comparer les solutions.
+                  Le grossissement le plus élevé n'est pas toujours le plus confortable. Lorsque le grossissement augmente, la zone visible devient généralement plus petite. En cas de doute, LIRELIA peut vous aider à comparer les solutions.
                 </p>
                 <Button asChild variant="outline">
                   <Link to="/contact-conseil">

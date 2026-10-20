@@ -8,7 +8,7 @@ import { Loader2, LogOut, Database, RefreshCw } from "lucide-react";
 type TableName = "contact_lirelia" | "cookie_consents";
 
 const TABLES: { name: TableName; label: string }[] = [
-  { name: "contact_lirelia", label: "Contacts LirElia" },
+  { name: "contact_lirelia", label: "Contacts LIRELIA" },
   { name: "cookie_consents", label: "Consentements cookies" },
 ];
 
@@ -104,7 +104,7 @@ const Admin = () => {
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <Database className="w-10 h-10 mx-auto text-primary mb-2" />
-            <CardTitle className="text-2xl">Administration LirElia</CardTitle>
+            <CardTitle className="text-2xl">Administration LIRELIA</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
@@ -172,7 +172,7 @@ const Admin = () => {
     <div className="min-h-screen bg-muted/30">
       <header className="bg-primary text-primary-foreground p-4 flex items-center justify-between">
         <h1 className="text-xl font-bold flex items-center gap-2">
-          <Database className="w-5 h-5" /> Administration LirElia
+          <Database className="w-5 h-5" /> Administration LIRELIA
         </h1>
         <div className="flex items-center gap-3">
           <span className="text-sm opacity-80">{session.user?.email}</span>

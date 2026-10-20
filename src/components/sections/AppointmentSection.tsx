@@ -11,7 +11,7 @@ const AppointmentSection = () => {
             Rencontrez le Visiopraticien
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Le Visiopraticien LirElia vous accompagne à Paris et, selon la situation, à domicile en région parisienne. Si un équipement optique spécifique est nécessaire, un opticien-optométriste partenaire à Antony peut intervenir dans le parcours.
+            Le Visiopraticien LIRELIA vous accompagne à Paris et, selon la situation, à domicile en région parisienne. Si un équipement optique spécifique est nécessaire, un opticien-optométriste partenaire à Antony peut intervenir dans le parcours.
           </p>
         </div>
 

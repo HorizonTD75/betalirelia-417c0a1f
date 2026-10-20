@@ -9,7 +9,7 @@ const QuiSommesNous = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Qui sommes-nous : LirElia, experts de la basse vision"
+        title="Qui sommes-nous : LIRELIA, experts de la basse vision"
         description="25 ans d'expérience en basse vision : un visiopraticien et un ingénieur réunis par une conviction simple : chacun mérite un accompagnement humain et concret."
         canonicalPath="/qui-sommes-nous"
       />
@@ -18,13 +18,13 @@ const QuiSommesNous = () => {
         {/* Hero Banner */}
         <section className="relative bg-primary text-primary-foreground py-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={(__getHeroSrcSet(heroImage)?.src) ?? heroImage} srcSet={__getHeroSrcSet(heroImage)?.srcSet} sizes="100vw" alt="L'équipe Lirelia, 25 ans d'expertise en basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={1920} height={800} />
+            <img src={(__getHeroSrcSet(heroImage)?.src) ?? heroImage} srcSet={__getHeroSrcSet(heroImage)?.srcSet} sizes="100vw" alt="L'équipe LIRELIA, 25 ans d'expertise en basse vision" className="w-full h-full object-cover opacity-20" aria-hidden="true" loading="eager" fetchPriority="high" decoding="async" width={1920} height={800} />
           </div>
           <div className="container relative z-10">
             <div className="max-w-4xl">
               <p className="text-secondary font-semibold text-lg mb-3">Notre histoire</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Qui sommes-nous ? L'expertise <span className="text-secondary">LirElia</span> en basse vision
+                Qui sommes-nous ? L'expertise <span className="text-secondary">LIRELIA</span> en basse vision
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
                 Deux expertises complémentaires au service de la basse vision. Une conviction commune : face à la malvoyance, chacun mérite un accompagnement humain, expérimenté et concret.
@@ -38,7 +38,7 @@ const QuiSommesNous = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-foreground leading-relaxed mb-6">
-                LirElia est né de la rencontre de deux parcours et d'une conviction commune : face à la malvoyance, les personnes ont besoin d'un accompagnement à la fois humain, expérimenté et concret.
+                LIRELIA est né de la rencontre de deux parcours et d'une conviction commune : face à la malvoyance, les personnes ont besoin d'un accompagnement à la fois humain, expérimenté et concret.
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@ const QuiSommesNous = () => {
               <div className="rounded-2xl overflow-hidden border-2 border-border shadow-lg mb-6">
                 <img
                   src={fondateursImage}
-                  alt="Les fondateurs de Lirelia, experts en basse vision"
+                  alt="Les fondateurs de LIRELIA, experts en basse vision"
                   className="w-full h-auto" width={800} height={600} loading="lazy" decoding="async" />
               </div>
               <p className="font-serif text-xl font-bold text-foreground">Les fondateurs</p>
@@ -111,7 +111,7 @@ const QuiSommesNous = () => {
               </h2>
               <div className="space-y-6 text-lg text-foreground leading-relaxed">
                 <p>
-                  Autour des fondateurs, LirElia s'appuie sur une équipe soudée composée de professionnels attentifs aux enjeux du handicap visuel, de spécialistes des technologies d'assistance et d'entrepreneurs engagés dans le domaine de la basse vision.
+                  Autour des fondateurs, LIRELIA s'appuie sur une équipe soudée composée de professionnels attentifs aux enjeux du handicap visuel, de spécialistes des technologies d'assistance et d'entrepreneurs engagés dans le domaine de la basse vision.
                 </p>
                 <p>
                   Cette dynamique collective permet de :
@@ -123,7 +123,7 @@ const QuiSommesNous = () => {
                   <li>rester proche des besoins du terrain.</li>
                 </ul>
                 <p>
-                  LirElia entretient également des relations solides avec des acteurs locaux, notamment des opticiens et optométristes, afin de garder une approche concrète, cohérente et connectée à la réalité des patients.
+                  LIRELIA entretient également des relations solides avec des acteurs locaux, notamment des opticiens et optométristes, afin de garder une approche concrète, cohérente et connectée à la réalité des patients.
                 </p>
               </div>
             </div>
@@ -141,10 +141,10 @@ const QuiSommesNous = () => {
                 </h2>
                 <div className="space-y-5 text-lg text-foreground leading-relaxed">
                   <p>
-                    LirElia n'a pas été conçu comme un simple catalogue d'aides visuelles ou de loupes électroniques. Le projet repose sur une idée plus large : aider les personnes malvoyantes à rester actrices de leur vie, en leur apportant des solutions utiles, compréhensibles et adaptées à leur quotidien.
+                    LIRELIA n'a pas été conçu comme un simple catalogue d'aides visuelles ou de loupes électroniques. Le projet repose sur une idée plus large : aider les personnes malvoyantes à rester actrices de leur vie, en leur apportant des solutions utiles, compréhensibles et adaptées à leur quotidien.
                   </p>
                   <p>
-                    C'est aussi dans cet esprit qu'a été imaginé le Club LirElia : un espace d'échange destiné aux personnes malvoyantes, à leurs proches et à leurs aidants, pour partager des expériences, découvrir de nouvelles solutions et ne pas rester seuls face aux difficultés.
+                    C'est aussi dans cet esprit qu'a été imaginé le Club LIRELIA : un espace d'échange destiné aux personnes malvoyantes, à leurs proches et à leurs aidants, pour partager des expériences, découvrir de nouvelles solutions et ne pas rester seuls face aux difficultés.
                   </p>
                 </div>
               </div>
@@ -156,7 +156,7 @@ const QuiSommesNous = () => {
                 </h2>
                 <div className="space-y-5 text-lg text-foreground leading-relaxed">
                   <p>
-                    La malvoyance touche bien sûr la personne concernée, mais aussi son entourage. C'est pourquoi les fondateurs de LirElia accordent une place importante aux aidants et aux familles.
+                    La malvoyance touche bien sûr la personne concernée, mais aussi son entourage. C'est pourquoi les fondateurs de LIRELIA accordent une place importante aux aidants et aux familles.
                   </p>
                   <p>
                     Cette volonté de transmission se retrouve également dans les ouvrages déjà publiés autour de la DMLA et de l'accompagnement des proches, avec le même objectif : rendre l'information plus claire, plus rassurante et plus utile.
@@ -175,7 +175,7 @@ const QuiSommesNous = () => {
                 Notre ambition
               </h2>
               <p className="text-lg text-foreground leading-relaxed">
-                LirElia s'adresse aux personnes malvoyantes, à leurs proches et à tous ceux qui recherchent des repères fiables dans l'univers de la basse vision. Notre ambition est simple : proposer un accompagnement sérieux, accessible et profondément humain, à la croisée de l'expérience, de la technologie et de l'attention portée à chacun. LirElia, c'est la rencontre de l'expertise terrain, de l'innovation utile et d'une équipe engagée pour aider chacun à continuer à vivre pleinement malgré la baisse de vision.
+                LIRELIA s'adresse aux personnes malvoyantes, à leurs proches et à tous ceux qui recherchent des repères fiables dans l'univers de la basse vision. Notre ambition est simple : proposer un accompagnement sérieux, accessible et profondément humain, à la croisée de l'expérience, de la technologie et de l'attention portée à chacun. LIRELIA, c'est la rencontre de l'expertise terrain, de l'innovation utile et d'une équipe engagée pour aider chacun à continuer à vivre pleinement malgré la baisse de vision.
               </p>
             </div>
           </div>

@@ -113,7 +113,7 @@ const RayBanMeta = () => {
                 <div className="flex flex-wrap gap-3">
                   <Button variant="secondary" size="lg" asChild>
                     <Link to="/contact-conseil?produit=ray-ban-meta">
-                      Demander un avis Lirelia
+                      Demander un avis LIRELIA
                       <ArrowRight className="w-5 h-5" />
                     </Link>
                   </Button>
@@ -286,7 +286,7 @@ const RayBanMeta = () => {
         <section className="py-14 md:py-16 bg-primary/5">
           <div className="container max-w-4xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/15 text-primary border border-primary/30 text-sm font-semibold mb-4">
-              L'avis Lirelia
+              L'avis LIRELIA
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5">
               Une solution prometteuse, mais à tester en situation réelle
@@ -332,7 +332,7 @@ const RayBanMeta = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch">
               <Button variant="default" size="lg" className="whitespace-normal h-auto py-3" asChild>
                 <Link to="/contact-conseil?produit=ray-ban-meta">
-                  Demander un conseil Lirelia
+                  Demander un conseil LIRELIA
                   <ArrowRight className="w-5 h-5 shrink-0" />
                 </Link>
               </Button>

@@ -1,13 +1,13 @@
 ---
 document_type: page_content
-project: LirElia
+project: LIRELIA
 work_step: '4.4'
 version: V3.1-lecture
 status: V3.1 révision éditoriale — contrôle réglementaire final requis avant publication
 last_verified: '2026-06-26'
 slug: /aides-financieres-basse-vision/adapter-logement/
 canonical: https://lirelia.fr/aides-financieres-basse-vision/adapter-logement/
-title: 'MaPrimeAdapt’ et PCH : logement malvoyant 2026 | LirElia'
+title: 'MaPrimeAdapt’ et PCH : logement malvoyant 2026 | LIRELIA'
 meta_description: 'Adapter son logement en cas de malvoyance : MaPrimeAdapt’, PCH, travaux, conditions et démarches
   à vérifier en 2026.'
 h1: "Adapter son logement quand on voit mal : quelles aides en 2026 ?"
@@ -52,14 +52,14 @@ verification_scope: Barèmes nationaux clés contrôlés sur sources officielles
   requise
 robots: index, follow
 og_type: article
-og_title: 'MaPrimeAdapt’ et PCH : logement malvoyant 2026 | LirElia'
+og_title: 'MaPrimeAdapt’ et PCH : logement malvoyant 2026 | LIRELIA'
 og_description: 'Adapter son logement en cas de malvoyance : MaPrimeAdapt’, PCH, travaux, conditions et démarches
   à vérifier en 2026.'
 og_url: https://lirelia.fr/aides-financieres-basse-vision/adapter-logement/
-og_site_name: LirElia
+og_site_name: LIRELIA
 og_locale: fr_FR
 twitter_card: summary_large_image
-twitter_title: 'MaPrimeAdapt’ et PCH : logement malvoyant 2026 | LirElia'
+twitter_title: 'MaPrimeAdapt’ et PCH : logement malvoyant 2026 | LIRELIA'
 twitter_description: 'Adapter son logement en cas de malvoyance : MaPrimeAdapt’, PCH, travaux, conditions et démarches
   à vérifier en 2026.'
 social_image_status: 'À créer : visuel social 1200 × 630 px avec texte lisible et contraste élevé. Ne pas inventer

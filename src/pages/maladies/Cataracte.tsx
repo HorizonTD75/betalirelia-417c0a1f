@@ -35,7 +35,7 @@ const Cataracte = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Cataracte : symptômes, opération et suivi | LirElia"
+        title="Cataracte : symptômes, opération et suivi | LIRELIA"
         description="Tout savoir sur la cataracte : causes, vision voilée, choix de l'implant, déroulement de l'opération et conseils pour bien préparer et suivre la chirurgie."
         canonicalPath="/maladies-yeux/cataracte" />
       
@@ -490,7 +490,7 @@ const Cataracte = () => {
                       La cataracte, lorsqu'elle est opérée, se résout dans la grande majorité des cas. Cependant, certains patients conservent des séquelles visuelles après l'opération, ou ne peuvent pas être opérés immédiatement. Dans ces situations, un <strong>accompagnement en basse vision</strong> peut aider à maintenir l'autonomie et le confort de lecture.
                     </p>
                     <p className="text-lg text-foreground leading-relaxed mb-6">
-                      Le Visiopraticien LirElia peut vous accompagner pour identifier les aides les plus adaptées et mettre en place des stratégies concrètes pour mieux vivre au quotidien.
+                      Le Visiopraticien LIRELIA peut vous accompagner pour identifier les aides les plus adaptées et mettre en place des stratégies concrètes pour mieux vivre au quotidien.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button variant="default" asChild>
@@ -501,7 +501,7 @@ const Cataracte = () => {
                       </Button>
                       <Button variant="outline" asChild>
                         <Link to="/expert-basse-vision-visiopraticien">
-                          Le Visiopraticien LirElia
+                          Le Visiopraticien LIRELIA
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </Button>

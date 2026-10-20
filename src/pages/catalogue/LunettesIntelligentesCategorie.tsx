@@ -5,7 +5,7 @@ import { RAYBAN_META } from "@/data/products/catalogueCategories";
 const LunettesIntelligentesCategorie = () => (
   <CommercialCategoryPage
     path="/catalogue-aides-basse-vision/lunettes-intelligentes"
-    seoTitle="Lunettes intelligentes pour basse vision | LirElia"
+    seoTitle="Lunettes intelligentes pour basse vision | LIRELIA"
     seoDescription="Découvrez les Ray-Ban Meta évaluées pour la basse vision : lecture vocale ponctuelle, identification d’objets, description de scène et limites à connaître."
     breadcrumbLabel="Lunettes intelligentes"
     h1="Lunettes intelligentes"
@@ -18,7 +18,7 @@ const LunettesIntelligentesCategorie = () => (
     }}
     isCommerce={false}
     productsHeading="Notre produit actuellement en évaluation"
-    productsIntro="LirElia présente les Ray-Ban Meta à titre informatif. Elles ne sont pas actuellement vendues sur le site et ne remplacent pas une aide basse vision spécialisée."
+    productsIntro="LIRELIA présente les Ray-Ban Meta à titre informatif. Elles ne sont pas actuellement vendues sur le site et ne remplacent pas une aide basse vision spécialisée."
     products={[RAYBAN_META]}
     choiceCardsTitle="Pour quels usages envisager les Ray-Ban Meta ?"
     choiceCards={[

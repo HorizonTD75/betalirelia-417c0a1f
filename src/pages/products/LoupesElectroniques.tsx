@@ -125,12 +125,12 @@ const LoupesElectroniques = () => (
     ctaText="Être orienté(e) vers une loupe électronique adaptée"
     catalogueCta={{
       title: "Vous souhaitez comparer les modèles disponibles ?",
-      text: "Consultez les loupes électroniques actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      text: "Consultez les loupes électroniques actuellement proposées par LIRELIA et comparez leurs caractéristiques, leurs usages et leurs prix.",
       label: "Comparer les loupes électroniques disponibles",
       href: "/catalogue-aides-basse-vision/loupes-electroniques",
     }}
     seo={{
-      title: "Loupes Électroniques pour Basse Vision | LirElia",
+      title: "Loupes Électroniques pour Basse Vision | LIRELIA",
       description: "Zoom réglable, contraste renforcé et écran HD : découvrez les loupes électroniques de poche, transportables ou de bureau. Conseil gratuit personnalisé.",
       canonicalPath: "/aides-lecture-bassevision/loupes-electroniques",
     }}

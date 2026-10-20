@@ -3,7 +3,7 @@ statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Peut-on fixer une loupe sur ses lunettes de vue ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/loupe-sur-lunettes/"
-title_seo: "Loupe sur lunettes de vue : clip loupe | Lirelia"
+title_seo: "Loupe sur lunettes de vue : clip loupe | LIRELIA"
 meta_description: "Une loupe pour lunette de vue est-elle possible ? Clip lunettes loupe, lentilles relevables, distance de travail, monture et limites à connaître."
 requete_cible: "loupe pour lunette"
 requetes_secondaires: "loupe sur lunettes de vue ; loupe adaptable sur lunettes ; loupe à clipser sur lunettes ; clip loupe pour lunettes ; surlunettes grossissantes"
@@ -26,7 +26,7 @@ La solution mérite aussi d’être connue lorsqu’on aide un parent ou un proc
 <!-- IMAGE_ZONE
 id: ls-01
 emplacement: sous l’introduction
-description_visuelle: Photo réelle d’une paire de lunettes de vue équipée du clip lunettes loupe Lirelia, lentilles abaissées, vue de trois quarts sur fond uni. Mêmes lunettes que dans les autres photos de la page.
+description_visuelle: Photo réelle d’une paire de lunettes de vue équipée du clip lunettes loupe LIRELIA, lentilles abaissées, vue de trois quarts sur fond uni. Mêmes lunettes que dans les autres photos de la page.
 alt_propose: Une paire de lunettes de vue équipée d’un clip lunettes loupe dont les lentilles sont abaissées.
 legende_proposee: Le clip se place devant les verres habituels, sans les remplacer.
 format: carré ou paysage, 1400 px minimum
@@ -65,7 +65,7 @@ Trois produits se ressemblent mais répondent à des besoins différents :
 - **Les lunettes loupes spécialisées** constituent un équipement porté à part entière pour le travail de près, comme les [lunettes loupes FOCUS](https://lirelia.fr/boutique/lunettes-loupe-focus/) du catalogue.
 - **Les lunettes de lecture ordinaires**, y compris prémontées, corrigent la vision de près ; elles ne sont pas conçues comme une aide au fort grossissement.
 
-La page Lirelia sur les [lunettes loupes](https://lirelia.fr/aides-lecture-bassevision/lunettes-loupes/) présente ces différences de familles.
+La page LIRELIA sur les [lunettes loupes](https://lirelia.fr/aides-lecture-bassevision/lunettes-loupes/) présente ces différences de familles.
 
 ## Les vérifications essentielles avant l’achat
 
@@ -77,9 +77,9 @@ La page Lirelia sur les [lunettes loupes](https://lirelia.fr/aides-lecture-basse
 
 **Le maniement du clip lunettes loupe.** Fixer l’accessoire, abaisser puis relever les lentilles, ou retirer le dispositif ne doit pas devenir une difficulté supplémentaire. Le poids et la stabilité sur le nez comptent autant que le grossissement annoncé.
 
-## Un exemple concret : le clip lunettes loupe Lirelia
+## Un exemple concret : le clip lunettes loupe LIRELIA
 
-Le [clip lunettes loupe proposé par Lirelia](https://lirelia.fr/boutique/clip-lunettes-loupe/) est annoncé en **trois grossissements : ×1,4, ×1,7 et ×2**. Les distances de travail indiquées pour ce modèle sont d’environ **50 cm, 33 cm et 25 cm**, respectivement. Ces valeurs figurent sur la fiche du modèle Lirelia consultée le 19 octobre 2026. Elles concernent cette référence et ne doivent pas être appliquées à tous les clips lunettes loupes.
+Le [clip lunettes loupe proposé par LIRELIA](https://lirelia.fr/boutique/clip-lunettes-loupe/) est annoncé en **trois grossissements : ×1,4, ×1,7 et ×2**. Les distances de travail indiquées pour ce modèle sont d’environ **50 cm, 33 cm et 25 cm**, respectivement. Ces valeurs figurent sur la fiche du modèle LIRELIA consultée le 19 octobre 2026. Elles concernent cette référence et ne doivent pas être appliquées à tous les clips lunettes loupes.
 
 Le choix dépend du document ou de l’objet à regarder, mais aussi de la possibilité de conserver une posture naturelle. Un clip lunettes loupe n’est pas une réponse universelle aux difficultés de lecture, en particulier lorsqu’un grossissement important ou une amélioration du contraste est nécessaire.
 
@@ -101,7 +101,7 @@ Pour lire un courrier posé sur la table, une loupe optique à poser peut être 
 
 ### Un clip loupe convient-il à toutes les montures ?
 
-Non. Le système de fixation, la largeur et la forme de la monture jouent un rôle. Le plus sûr est d’essayer le clip avec sa propre paire de lunettes, ou de décrire la monture à Lirelia avant l’achat.
+Non. Le système de fixation, la largeur et la forme de la monture jouent un rôle. Le plus sûr est d’essayer le clip avec sa propre paire de lunettes, ou de décrire la monture à LIRELIA avant l’achat.
 
 ### Peut-on lire un livre avec une loupe à clipser sur lunettes ?
 
@@ -113,7 +113,7 @@ Le clip lunettes loupe se fixe devant les verres de la paire de lunettes de vue 
 
 ## Pour aller plus loin
 
-Retrouvez une vue d’ensemble dans [« Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/). Vous pouvez également [interroger Lirelia](https://lirelia.fr/contact-conseil/) en décrivant votre paire de lunettes et l’activité pour laquelle vous recherchez une aide, ou [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
+Retrouvez une vue d’ensemble dans [« Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/). Vous pouvez également [interroger LIRELIA](https://lirelia.fr/contact-conseil/) en décrivant votre paire de lunettes et l’activité pour laquelle vous recherchez une aide, ou [consulter le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
 
 <!-- FIN_CONTENU_PUBLIC -->
 
@@ -121,7 +121,7 @@ Retrouvez une vue d’ensemble dans [« Quelle loupe de lecture choisir ? »](ht
 
 ## Notes internes
 
-Ne jamais promettre que les clips sont universellement compatibles ou qu’ils corrigent une pathologie. Le fonctionnement et les grossissements cités viennent de la fiche publique du clip Lirelia : https://lirelia.fr/boutique/clip-lunettes-loupe/ (vérifier la fiche à la publication, notamment les variantes disponibles). Ne pas mentionner de prix figé dans le guide.
+Ne jamais promettre que les clips sont universellement compatibles ou qu’ils corrigent une pathologie. Le fonctionnement et les grossissements cités viennent de la fiche publique du clip LIRELIA : https://lirelia.fr/boutique/clip-lunettes-loupe/ (vérifier la fiche à la publication, notamment les variantes disponibles). Ne pas mentionner de prix figé dans le guide.
 
 **Mots-clés (Keyword Planner, 19/10/2026 ; données internes, non additionnables) :** « loupe pour lunette » ~110, « loupe sur lunettes de vue » ~50, « loupe adaptable sur lunettes » ~40, « clip loupe pour lunettes » ~30, « loupe à clipser » ~30. « loupe sur lunettes » (~4 400) et « lunettes loupe / lunette de lecture » (~1 900, ~1 600, ~1 300) sont des requêtes ambiguës, souvent orientées lunettes de lecture de presbytie : elles relèvent de la page famille /lunettes-loupes/ ; ne pas les cibler ici.
 

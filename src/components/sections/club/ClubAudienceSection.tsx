@@ -64,7 +64,7 @@ const ClubAudienceSection = () => {
                 </h3>
 
                 <p className="text-lg text-foreground/90 leading-relaxed">
-                  Le Club LirElia est un espace d'échanges en visioconférence, animé et modéré, centré sur le partage d'expérience autour de la basse vision.
+                  Le Club LIRELIA est un espace d'échanges en visioconférence, animé et modéré, centré sur le partage d'expérience autour de la basse vision.
                 </p>
               </CardContent>
             </Card>

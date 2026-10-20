@@ -245,7 +245,7 @@ describe("structured data registry", () => {
     expect(brandsOf("/boutique/teleagrandisseur-mezzo-focus")).toContain("Reinecker");
     expect(brandsOf("/boutique/ray-ban-meta")).toContain("Ray-Ban");
     expect(brandsOf("/boutique/horloge-gros-chiffres-frida")).toEqual(
-      expect.arrayContaining(["LirElia"]),
+      expect.arrayContaining(["LIRELIA"]),
     );
   });
 
@@ -295,7 +295,7 @@ describe("structured data registry", () => {
     }
   });
 
-  it("credits Thierry DUCROS as book author and never LirElia as publisher", () => {
+  it("credits Thierry DUCROS as book author and never LIRELIA as publisher", () => {
     for (const path of ["/livre-dmla-votre-vie-ne-sarrete-pas", "/livre-aider-proche-dmla"]) {
       const nodes = nodesOf(getPageGraph(path));
       const book = nodes.find((n) => typeOf(n) === "Book");
@@ -334,13 +334,13 @@ describe("structured data registry", () => {
     expect(policy.merchantReturnDays).toBe(14);
   });
 
-  it("uses LirElia Basse Vision as alternateName", () => {
+  it("uses LIRELIA Basse Vision as alternateName", () => {
     const org = nodesOf(getPageGraph("/")).find(
       (n) => typeOf(n) === "OnlineStore" || typeOf(n) === "Organization",
     );
-    expect(org!.name).toBe("LirElia");
+    expect(org!.name).toBe("LIRELIA");
     expect(org!.legalName).toBe("HORIZON TD");
-    expect(org!.alternateName).toBe("LirElia Basse Vision");
+    expect(org!.alternateName).toBe("LIRELIA Basse Vision");
   });
 
   it("credits Thierry DUCROS as author AND publisher of the DMLA book", () => {

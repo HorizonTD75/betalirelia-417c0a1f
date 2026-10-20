@@ -98,7 +98,7 @@ const Visiopraticien = () => {
                 Visiopraticien, l'<span className="text-secondary">expert basse vision</span> pour lire et vivre mieux
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8">
-                La perte de vision bouleverse bien plus que la capacité à lire. Le Visiopraticien LirElia accompagne les personnes malvoyantes — et leurs proches — vers des solutions concrètes et une autonomie retrouvée.
+                La perte de vision bouleverse bien plus que la capacité à lire. Le Visiopraticien LIRELIA accompagne les personnes malvoyantes — et leurs proches — vers des solutions concrètes et une autonomie retrouvée.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="lg" asChild>
@@ -141,7 +141,7 @@ const Visiopraticien = () => {
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-xl text-muted-foreground mb-6">
-                    Le Visiopraticien LirElia accompagne les personnes atteintes de différentes pathologies responsables de baisse de vision ou de malvoyance :
+                    Le Visiopraticien LIRELIA accompagne les personnes atteintes de différentes pathologies responsables de baisse de vision ou de malvoyance :
                   </p>
                   <ul className="space-y-3">
                     {targetConditions.map((item, i) =>
@@ -172,7 +172,7 @@ const Visiopraticien = () => {
                 Ce que fait le Visiopraticien : évaluation, conseils et autonomie dans la lecture
               </h2>
               <p className="text-xl text-muted-foreground mb-10">
-                Le visiopraticien apporte une expertise basse vision concrète, centrée sur les gestes du quotidien : un bilan avec le Visiopraticien LirElia permet d'identifier vos difficultés réelles et de trouver des solutions pour mieux voir au quotidien.
+                Le visiopraticien apporte une expertise basse vision concrète, centrée sur les gestes du quotidien : un bilan avec le Visiopraticien LIRELIA permet d'identifier vos difficultés réelles et de trouver des solutions pour mieux voir au quotidien.
               </p>
               <Card className="p-4 sm:p-6 lg:p-8">
                 <ul className="space-y-4">
@@ -296,7 +296,7 @@ const Visiopraticien = () => {
                         Interventions à domicile
                       </h3>
                       <p className="text-lg text-muted-foreground leading-relaxed">
-                        Selon votre secteur géographique, le Visiopraticien LirElia peut se déplacer à domicile pour réaliser le bilan dans votre environnement quotidien.
+                        Selon votre secteur géographique, le Visiopraticien LIRELIA peut se déplacer à domicile pour réaliser le bilan dans votre environnement quotidien.
                       </p>
                     </div>
                   </div>
@@ -340,7 +340,7 @@ const Visiopraticien = () => {
                 Perdre de la vision ne signifie pas perdre son indépendance
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-10 leading-relaxed">
-                Avec les bonnes aides et les bonnes stratégies, lire reste possible, garder confiance reste possible. Le Visiopraticien LirElia accompagne chaque personne malvoyante — et ses proches — vers une autonomie adaptée et durable.
+                Avec les bonnes aides et les bonnes stratégies, lire reste possible, garder confiance reste possible. Le Visiopraticien LIRELIA accompagne chaque personne malvoyante — et ses proches — vers une autonomie adaptée et durable.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>

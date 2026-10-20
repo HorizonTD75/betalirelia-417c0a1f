@@ -124,12 +124,12 @@ const LunettesLoupes = () => (
     ctaText="Être conseillé(e) sur les lunettes loupes"
     catalogueCta={{
       title: "Vous souhaitez comparer les modèles disponibles ?",
-      text: "Consultez les lunettes loupes actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      text: "Consultez les lunettes loupes actuellement proposées par LIRELIA et comparez leurs caractéristiques, leurs usages et leurs prix.",
       label: "Comparer les lunettes loupes disponibles",
       href: "/catalogue-aides-basse-vision/lunettes-loupes",
     }}
     seo={{
-      title: "Lunettes Loupes pour Malvoyants — Près et Loin | LirElia",
+      title: "Lunettes Loupes pour Malvoyants — Près et Loin | LIRELIA",
       description: "Lunettes loupes pour lire, coudre, bricoler ou voir de loin (cinéma, conférence). Conseil personnalisé gratuit pour bien choisir selon la distance.",
       canonicalPath: "/aides-lecture-bassevision/lunettes-loupes",
     }}

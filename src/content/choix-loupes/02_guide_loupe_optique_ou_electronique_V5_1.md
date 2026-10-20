@@ -3,7 +3,7 @@ statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Loupe en verre ou loupe électronique : laquelle choisir ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/loupe-optique-ou-electronique/"
-title_seo: "Loupe en verre ou électronique : laquelle choisir ? | Lirelia"
+title_seo: "Loupe en verre ou électronique : laquelle choisir ? | LIRELIA"
 meta_description: "Loupe en verre ou loupe électronique pour lire ? Comparez grossissement, contraste, champ de lecture et maniement, avec conseils pour choisir."
 requete_cible: "loupe en verre ou loupe électronique"
 requetes_secondaires: "loupe optique ou électronique ; loupe numérique ; loupe de lecture électronique ; loupe x10 ; quel grossissement pour lire"
@@ -39,7 +39,7 @@ Pour lire une étiquette, vérifier un prix ou retrouver une référence sur une
 
 Une loupe à poser conserve sa distance au document et peut rendre le geste plus stable. Une loupe règle, de forme allongée, permet de suivre une ligne de texte. D’autres loupes peuvent être rectangulaires sans être des loupes règles. En contrepartie, le grossissement d’une loupe optique donnée reste fixe et la portion de texte visible peut se réduire lorsque la puissance augmente.
 
-La page Lirelia sur les [loupes en verre et loupes optiques](https://lirelia.fr/aides-lecture-bassevision/loupes-verre/) détaille leurs différentes formes. Le terme courant « loupe en verre » désigne ici une loupe optique, même si certaines lentilles sont fabriquées dans un autre matériau.
+La page LIRELIA sur les [loupes en verre et loupes optiques](https://lirelia.fr/aides-lecture-bassevision/loupes-verre/) détaille leurs différentes formes. Le terme courant « loupe en verre » désigne ici une loupe optique, même si certaines lentilles sont fabriquées dans un autre matériau.
 
 ## La loupe électronique : grossissement et contraste
 
@@ -52,7 +52,7 @@ Deux fonctions doivent être examinées séparément :
 
 La seconde fonction n’est pas une autre manière de grossir. Pour certaines personnes malvoyantes, elle améliore davantage la lisibilité qu’une augmentation supplémentaire de la taille des caractères. Les modes disponibles et leur efficacité varient selon les appareils et selon la vision de chaque utilisateur.
 
-Vous trouverez les principales familles dans le guide Lirelia sur les [loupes électroniques](https://lirelia.fr/aides-lecture-bassevision/loupes-electroniques/).
+Vous trouverez les principales familles dans le guide LIRELIA sur les [loupes électroniques](https://lirelia.fr/aides-lecture-bassevision/loupes-electroniques/).
 
 <!-- IMAGE_ZONE
 id: oe-02
@@ -123,7 +123,7 @@ Cela dépend des commandes et des habitudes de la personne. Avant d’acheter, v
 
 ## Pour aller plus loin
 
-Le [guide général « Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/) replace cette comparaison parmi les autres solutions. Pour un conseil lié à vos habitudes ou à celles d’un proche, [contactez Lirelia](https://lirelia.fr/contact-conseil/) ou [parcourez le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
+Le [guide général « Quelle loupe de lecture choisir ? »](https://lirelia.fr/choisir-loupe-lecture/) replace cette comparaison parmi les autres solutions. Pour un conseil lié à vos habitudes ou à celles d’un proche, [contactez LIRELIA](https://lirelia.fr/contact-conseil/) ou [parcourez le catalogue](https://lirelia.fr/catalogue-aides-basse-vision/).
 
 <!-- FIN_CONTENU_PUBLIC -->
 

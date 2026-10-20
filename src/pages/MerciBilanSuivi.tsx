@@ -2,7 +2,7 @@ import ThankYouPage from "@/components/ThankYouPage";
 
 const MerciBilanSuivi = () => (
   <ThankYouPage
-    seoTitle="Demande de Pack Suivi envoyée – LirElia"
+    seoTitle="Demande de Pack Suivi envoyée – LIRELIA"
     title="Merci, votre demande de pack suivi est envoyée"
     description="Votre demande de Pack Suivi a bien été enregistrée."
     message="Votre demande de Pack Suivi (215 €) a bien été enregistrée. Nous vous recontacterons très rapidement par téléphone pour confirmer votre rendez-vous."

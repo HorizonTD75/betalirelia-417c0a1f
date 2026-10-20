@@ -64,7 +64,7 @@ const MaladiesHereditaires = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Maladies héréditaires de l'œil : guide complet | LirElia"
+        title="Maladies héréditaires de l'œil : guide complet | LIRELIA"
         description="Rétinite pigmentaire, Stargardt, Leber, Usher, achromatopsie, aniridie : comprendre les maladies génétiques de l'œil, leur diagnostic et l'accompagnement."
         canonicalPath="/maladies-yeux/maladies-hereditaires"
       />
@@ -186,7 +186,7 @@ const MaladiesHereditaires = () => {
           <div className="container">
             <div className="max-w-5xl mx-auto">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Les principales maladies présentées sur LirElia
+                Les principales maladies présentées sur LIRELIA
               </h2>
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
                 Chaque fiche approfondit une maladie ou un groupe de maladies avec leurs symptômes, leur évolution, les examens utiles et les solutions d'accompagnement.

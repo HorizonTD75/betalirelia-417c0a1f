@@ -44,7 +44,7 @@ const BilanExpert = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Bilan Expert basse vision avec opticien à Paris | LirElia"
+        title="Bilan Expert basse vision avec opticien à Paris | LIRELIA"
         description="Bilan Expert basse vision avec consultation opticien-optométriste : essais de lunettes adaptées, verres filtrants et recommandations sur mesure. 135 €."
         canonicalPath="/bilans-bassevision/expert"
       />

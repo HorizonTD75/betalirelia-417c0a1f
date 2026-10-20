@@ -91,7 +91,7 @@ const ClipLunettesLoupe = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Clip lunettes loupe à clipser sur monture | LirElia"
+        title="Clip lunettes loupe à clipser sur monture | LIRELIA"
         description="Surlunette loupe à clipser sur monture existante : grossissements 1,4x, 1,7x ou 2x, relevable, vision binoculaire et seulement 14 g pour la lecture quotidienne."
         canonicalPath="/boutique/clip-lunettes-loupe"
       />

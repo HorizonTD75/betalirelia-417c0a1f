@@ -42,7 +42,7 @@ const ClubHeroSection = () => {
         {/* Title section — full width */}
         <div className="mb-10">
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
-            Club LirElia : visioconférences et échanges
+            Club LIRELIA : visioconférences et échanges
           </h1>
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 text-lg sm:text-xl font-semibold">
@@ -120,7 +120,7 @@ const ClubHeroSection = () => {
                   playsInline
                   preload="none"
                   className="w-full h-full object-cover"
-                  aria-label="Aperçu d'une session du Club LirElia en visioconférence"
+                  aria-label="Aperçu d'une session du Club LIRELIA en visioconférence"
                   width={640}
                   height={480}
                 />

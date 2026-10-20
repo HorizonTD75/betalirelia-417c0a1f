@@ -237,7 +237,7 @@ const ClubRegistrationSection = () => {
                   <UserPlus className="w-7 h-7" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl text-primary-foreground">Rejoindre le Club LirElia</CardTitle>
+                  <CardTitle className="text-2xl text-primary-foreground">Rejoindre le Club LIRELIA</CardTitle>
                   <CardDescription className="text-primary-foreground/80 text-lg">
                     Inscription gratuite, sans engagement
                   </CardDescription>

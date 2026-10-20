@@ -119,7 +119,7 @@ const LivreAidants = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="DMLA – Aider un proche sans s'épuiser, le livre | LirElia"
+        title="DMLA – Aider un proche sans s'épuiser, le livre | LIRELIA"
         canonicalPath="/livre-aider-proche-dmla"
       />
       <Header />
@@ -355,7 +355,7 @@ const LivreAidants = () => {
           <div className="container max-w-3xl text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">Le livre est disponible sur Amazon</h2>
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
-              Disponible dès maintenant sur Amazon. Découvrez aussi les bilans basse vision et les aides à la lecture proposés par LirElia pour aider concrètement votre proche malvoyant.
+              Disponible dès maintenant sur Amazon. Découvrez aussi les bilans basse vision et les aides à la lecture proposés par LIRELIA pour aider concrètement votre proche malvoyant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" asChild>

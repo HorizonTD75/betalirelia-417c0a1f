@@ -69,7 +69,7 @@ const faq = [
   { q: "Peut-on avoir une DMLA sur un seul œil ?", a: <>Oui. Un œil peut être atteint avant l'autre. C'est pourquoi il est utile de surveiller chaque œil séparément et de respecter le suivi prescrit.</> },
   { q: "Peut-on continuer à lire avec une DMLA ?", a: <>Souvent, oui, en adaptant les caractères, l'éclairage ou les aides visuelles. Si la lecture visuelle devient trop pénible, les outils de lecture vocale constituent une autre possibilité.</> },
   { q: "Les lunettes classiques corrigent-elles la DMLA ?", a: <>Les lunettes corrigent les défauts de réfraction associés, mais ne réparent pas les lésions de la macula. Un accompagnement en basse vision peut aider à choisir des solutions complémentaires.</> },
-  { q: "Quand demander un bilan basse vision ?", a: <>Lorsque les activités comme la lecture, l'écriture ou l'utilisation des écrans deviennent difficiles malgré la correction habituelle. Le bilan d'aides visuelles complète le suivi médical : il ne remplace pas l'examen ophtalmologique. <Link to="/bilans-bassevision/" className={linkCls}>Découvrir les bilans LirElia</Link>.</> },
+  { q: "Quand demander un bilan basse vision ?", a: <>Lorsque les activités comme la lecture, l'écriture ou l'utilisation des écrans deviennent difficiles malgré la correction habituelle. Le bilan d'aides visuelles complète le suivi médical : il ne remplace pas l'examen ophtalmologique. <Link to="/bilans-bassevision/" className={linkCls}>Découvrir les bilans LIRELIA</Link>.</> },
 ];
 
 const sources = [
@@ -287,7 +287,7 @@ const DMLA = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
               <h2 id="besoin-aide" className="font-serif text-3xl md:text-4xl font-bold mb-6">Besoin d’aide pour choisir une solution adaptée ?</h2>
-              <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed">Vous avez déjà un diagnostic ou un suivi ophtalmologique, mais certaines activités restent difficiles ? LirElia peut vous aider à identifier les aides visuelles à essayer selon vos besoins de lecture et votre environnement. Cette démarche est complémentaire de votre prise en charge médicale.</p>
+              <p className="text-xl text-primary-foreground/90 mb-8 leading-relaxed">Vous avez déjà un diagnostic ou un suivi ophtalmologique, mais certaines activités restent difficiles ? LIRELIA peut vous aider à identifier les aides visuelles à essayer selon vos besoins de lecture et votre environnement. Cette démarche est complémentaire de votre prise en charge médicale.</p>
               <Button variant="secondary" size="lg" asChild>
                 <Link to="/bilans-bassevision/">Découvrir nos bilans basse vision <ArrowRight className="w-5 h-5" aria-hidden="true" /></Link>
               </Button>
@@ -302,7 +302,7 @@ const DMLA = () => {
               <li key={url} className="text-lg"><a href={url} target="_blank" rel="noopener noreferrer" className={linkCls}>{label}</a></li>
             ))}
           </ul>
-          <p className="text-base italic text-muted-foreground">Contenu éditorial LirElia — informations médicales vérifiées le 19 octobre 2026 à partir des sources ci-dessus ; conseils pratiques dédiés à la basse vision.</p>
+          <p className="text-base italic text-muted-foreground">Contenu éditorial LIRELIA — informations médicales vérifiées le 19 octobre 2026 à partir des sources ci-dessus ; conseils pratiques dédiés à la basse vision.</p>
         </Section>
       </main>
       <Footer />

@@ -19,7 +19,7 @@ const Myopie = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Myopie : causes, correction et myopie forte | LirElia"
+        title="Myopie : causes, correction et myopie forte | LIRELIA"
         description="Comprendre la myopie : mécanisme, vision floue de loin, correction optique, chirurgie réfractive et risques de la myopie forte sur la rétine et la macula."
         canonicalPath="/maladies-yeux/myopie"
       />

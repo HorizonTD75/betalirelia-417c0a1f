@@ -107,7 +107,7 @@ const LoupeDomeLina = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Loupe dôme éclairante rechargeable LINA x2 à x3 | LirElia"
+        title="Loupe dôme éclairante rechargeable LINA x2 à x3 | LIRELIA"
         description="Loupe dôme éclairante rechargeable LINA : grossissement ×2 à ×3, à poser pour lire courrier, notices, mots croisés et petits caractères en basse vision."
         canonicalPath="/boutique/loupe-dome-eclairante-lina"
       />

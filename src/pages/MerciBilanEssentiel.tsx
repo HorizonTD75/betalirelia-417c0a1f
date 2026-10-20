@@ -2,7 +2,7 @@ import ThankYouPage from "@/components/ThankYouPage";
 
 const MerciBilanEssentiel = () => (
   <ThankYouPage
-    seoTitle="Demande de Bilan Essentiel envoyée – LirElia"
+    seoTitle="Demande de Bilan Essentiel envoyée – LIRELIA"
     title="Merci, votre demande de bilan essentiel est envoyée"
     description="Votre demande de Bilan Essentiel a bien été enregistrée."
     message="Votre demande de Bilan Essentiel (75 €) a bien été enregistrée. Nous vous recontacterons très rapidement par téléphone pour confirmer votre rendez-vous."

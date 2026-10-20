@@ -268,7 +268,7 @@ export const RAYBAN_META: CatalogueProduct = {
     "Demander une description simple de la scène",
     "Appeler, dicter ou obtenir une information à la voix",
   ],
-  status: "Produit présenté et en cours d’évaluation par LirElia — non vendu sur le site.",
+  status: "Produit présenté et en cours d’évaluation par LIRELIA — non vendu sur le site.",
   productUrl: "/boutique/ray-ban-meta",
   ctaLabel: "Découvrir l’évaluation des Ray-Ban Meta",
 };

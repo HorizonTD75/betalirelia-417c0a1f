@@ -2,7 +2,7 @@ import ThankYouPage from "@/components/ThankYouPage";
 
 const MerciVisiteDomicile = () => (
   <ThankYouPage
-    seoTitle="Demande de Visite à domicile envoyée – LirElia"
+    seoTitle="Demande de Visite à domicile envoyée – LIRELIA"
     title="Merci, votre demande de visite à domicile est envoyée"
     description="Votre demande de visite à domicile a bien été enregistrée."
     message="Votre demande de visite à domicile (75 €) a bien été enregistrée. Nous vous recontacterons très rapidement par téléphone pour confirmer votre rendez-vous."

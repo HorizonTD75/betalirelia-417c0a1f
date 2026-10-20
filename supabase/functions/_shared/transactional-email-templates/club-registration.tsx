@@ -14,7 +14,7 @@ import {
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
-const SITE_NAME = "LirElia"
+const SITE_NAME = "LIRELIA"
 const SITE_URL = "https://lirelia.fr"
 
 interface ClubRegistrationProps {
@@ -28,10 +28,10 @@ const ClubRegistrationEmail = ({ name }: ClubRegistrationProps) => (
     <Body style={main}>
       <Container style={container}>
         <Heading style={h1}>
-          {name ? `Bienvenue ${name} !` : 'Bienvenue au Club LirElia !'}
+          {name ? `Bienvenue ${name} !` : 'Bienvenue au Club LIRELIA !'}
         </Heading>
         <Text style={text}>
-          Votre inscription au Club LirElia a bien été enregistrée. Nous sommes ravis de vous compter parmi nous !
+          Votre inscription au Club LIRELIA a bien été enregistrée. Nous sommes ravis de vous compter parmi nous !
         </Text>
         <Text style={text}>
           Vous recevrez prochainement un e-mail avec les informations pour la prochaine session du Club.
@@ -53,7 +53,7 @@ const ClubRegistrationEmail = ({ name }: ClubRegistrationProps) => (
 
 export const template = {
   component: ClubRegistrationEmail,
-  subject: 'Bienvenue au Club LirElia !',
+  subject: 'Bienvenue au Club LIRELIA !',
   displayName: 'Inscription Club',
   previewData: { name: 'Marie Martin' },
 } satisfies TemplateEntry

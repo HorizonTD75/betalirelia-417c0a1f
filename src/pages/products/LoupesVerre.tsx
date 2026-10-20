@@ -119,12 +119,12 @@ const LoupesVerre = () => (
     contactSubject="loupes-verre"
     catalogueCta={{
       title: "Vous souhaitez comparer les modèles disponibles ?",
-      text: "Consultez les loupes en verre actuellement proposées par LirElia et comparez leurs caractéristiques, leurs usages et leurs prix.",
+      text: "Consultez les loupes en verre actuellement proposées par LIRELIA et comparez leurs caractéristiques, leurs usages et leurs prix.",
       label: "Comparer les loupes en verre disponibles",
       href: "/catalogue-aides-basse-vision/loupes-verre",
     }}
     seo={{
-      title: "Loupes en Verre pour Malvoyants | LirElia",
+      title: "Loupes en Verre pour Malvoyants | LIRELIA",
       description: "Loupe classique, éclairante ou dôme : trouvez la loupe en verre adaptée à votre vue. Grossissements de ×2 à ×6, conseil personnalisé gratuit.",
       canonicalPath: "/aides-lecture-bassevision/loupes-verre",
     }}

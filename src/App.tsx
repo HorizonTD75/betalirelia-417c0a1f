@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useCartSync } from "@/hooks/useCartSync";
 import ScrollToTop from "./components/ScrollToTop";
+import RouteHeadSync from "./components/RouteHeadSync";
 import MetaViewContentTracker from "./components/MetaViewContentTracker";
 import CookieConsentWrapper from "./components/CookieConsentWrapper";
 
@@ -125,6 +126,7 @@ const App = () => (
       <BrowserRouter>
         <AppContent />
         <ScrollToTop />
+        <RouteHeadSync />
         <MetaViewContentTracker />
         <Suspense fallback={<PageLoader />}>
           <Routes>

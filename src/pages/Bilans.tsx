@@ -89,7 +89,7 @@ const Bilans = () => {
 
   const steps = [
   { title: "Avant le bilan", text: "Lors de la prise de rendez-vous, le Visiopraticien fait un premier point sur votre situation et vous indique ce qu’il est utile d’apporter." },
-  { title: "Accueil et entretien", text: "Le Visiopraticien LirElia échange avec vous sur votre acuité visuelle, vos activités importantes et ce qui vous pose le plus problème aujourd’hui." },
+  { title: "Accueil et entretien", text: "Le Visiopraticien LIRELIA échange avec vous sur votre acuité visuelle, vos activités importantes et ce qui vous pose le plus problème aujourd’hui." },
   { title: "Évaluation de la vision fonctionnelle", text: "Le Visiopraticien observe comment vous utilisez votre vue dans des tâches simples : lecture, repérage, contrastes…" },
   { title: "Mises en situation concrètes", text: "Selon vos besoins, des situations du quotidien sont simulées pour mieux cerner vos difficultés." },
   { title: "Essai d’aides et d’aménagements", text: "Vous testez différentes aides : loupes, télé-agrandisseurs, lampes, supports, machines à lire, claviers, téléphones à grosses touches, aides pour écrire…" },
@@ -133,7 +133,7 @@ const Bilans = () => {
                 Bilans <span className="text-secondary">basse vision</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed mb-8 max-w-3xl">
-                Les bilans basse vision LirElia sont des temps dédiés pour faire le point sur votre vue, comprendre vos difficultés au quotidien et identifier les solutions adaptées à votre situation.
+                Les bilans basse vision LIRELIA sont des temps dédiés pour faire le point sur votre vue, comprendre vos difficultés au quotidien et identifier les solutions adaptées à votre situation.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="hero" size="lg" asChild>

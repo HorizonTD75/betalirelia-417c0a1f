@@ -6,8 +6,8 @@ const MentionsLegales = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Mentions légales | LirElia"
-        description="Mentions légales du site LirElia : éditeur HORIZON TD, hébergeur OVHcloud, propriété intellectuelle, responsabilité et coordonnées légales."
+        title="Mentions légales | LIRELIA"
+        description="Mentions légales du site LIRELIA : éditeur HORIZON TD, hébergeur OVHcloud, propriété intellectuelle, responsabilité et coordonnées légales."
         canonicalPath="/mentions-legales"
       />
       <Header />
@@ -15,7 +15,7 @@ const MentionsLegales = () => {
         <div className="container py-16 lg:py-20">
           <article className="max-w-3xl mx-auto">
             <h1 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">
-              Mentions légales du site LirElia
+              Mentions légales du site LIRELIA
             </h1>
             <p className="text-base text-muted-foreground italic mb-10">
               Dernière mise à jour : 19 juin 2026
@@ -35,7 +35,7 @@ const MentionsLegales = () => {
               Code APE : <strong>4791B — Vente à distance sur catalogue spécialisé</strong>
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              LirElia est une marque et un nom commercial exploités par HORIZON TD.
+              LIRELIA est une marque et un nom commercial exploités par HORIZON TD.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               Téléphone : <strong>07 68 47 42 35</strong><br />
@@ -85,7 +85,7 @@ const MentionsLegales = () => {
               Ils ne constituent ni un diagnostic médical, ni une prescription, ni un avis médical personnalisé. Ils ne remplacent pas une consultation auprès d'un médecin ophtalmologiste ou de tout autre professionnel de santé compétent.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Les bilans, conseils et accompagnements proposés par LirElia portent sur les besoins fonctionnels, l'autonomie, les usages quotidiens et les aides techniques. Ils ne se substituent pas à un examen médical.
+              Les bilans, conseils et accompagnements proposés par LIRELIA portent sur les besoins fonctionnels, l'autonomie, les usages quotidiens et les aides techniques. Ils ne se substituent pas à un examen médical.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-6">
               En cas de symptôme inhabituel, de baisse brutale de la vision, de douleur oculaire ou de situation urgente, l'utilisateur doit consulter rapidement un professionnel de santé ou contacter les services d'urgence.
@@ -162,7 +162,7 @@ const MentionsLegales = () => {
               Pour toute question concernant le site ou son contenu :
             </p>
             <p className="text-lg text-foreground leading-relaxed">
-              <strong>HORIZON TD — LirElia</strong><br />
+              <strong>HORIZON TD — LIRELIA</strong><br />
               2 rue Pierre Louÿs<br />
               75116 Paris — France<br />
               Téléphone : <strong>07 68 47 42 35</strong><br />

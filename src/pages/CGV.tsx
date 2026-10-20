@@ -6,8 +6,8 @@ const CGV = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Conditions générales de vente (CGV) du site LirElia"
-        description="Conditions générales de vente LirElia : commandes, paiement par Stripe, livraison, droit de rétractation 14 jours, garanties, retours et service client."
+        title="Conditions générales de vente (CGV) du site LIRELIA"
+        description="Conditions générales de vente LIRELIA : commandes, paiement par Stripe, livraison, droit de rétractation 14 jours, garanties, retours et service client."
         canonicalPath="/cgv"
       />
       <Header />
@@ -138,22 +138,22 @@ const CGV = () => {
               Le consommateur dispose d'un délai de 14 jours à compter de la réception du produit pour exercer son droit de rétractation, sans avoir à motiver sa décision.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Pour exercer ce droit, le client peut contacter Lirelia par email à <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4 hover:text-primary/80">contact@lirelia.fr</a> ou utiliser le <a href="/formulaire-retractation" className="text-primary underline underline-offset-4 hover:text-primary/80">formulaire de rétractation</a> disponible sur le site.
+              Pour exercer ce droit, le client peut contacter LIRELIA par email à <a href="mailto:contact@lirelia.fr" className="text-primary underline underline-offset-4 hover:text-primary/80">contact@lirelia.fr</a> ou utiliser le <a href="/formulaire-retractation" className="text-primary underline underline-offset-4 hover:text-primary/80">formulaire de rétractation</a> disponible sur le site.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              En cas de rétractation valable, Lirelia rembourse les sommes dues dans un délai maximum de 14 jours à compter de la date à laquelle Lirelia est informé de la décision du client de se rétracter.
+              En cas de rétractation valable, LIRELIA rembourse les sommes dues dans un délai maximum de 14 jours à compter de la date à laquelle LIRELIA est informé de la décision du client de se rétracter.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
               Le remboursement peut être différé jusqu'à récupération du produit ou jusqu'à réception d'une preuve d'expédition du produit retourné.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Sauf erreur de Lirelia, produit défectueux ou produit non conforme, les frais de retour sont à la charge du client.
+              Sauf erreur de LIRELIA, produit défectueux ou produit non conforme, les frais de retour sont à la charge du client.
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-2">
               Adresse de retour (sauf instruction différente communiquée) :
             </p>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              Lirelia — Service retours<br />
+              LIRELIA — Service retours<br />
               4 rue Léon Blum<br />
               ZAE Les Glaises<br />
               91120 Palaiseau<br />
