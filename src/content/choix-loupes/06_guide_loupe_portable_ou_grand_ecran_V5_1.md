@@ -1,5 +1,5 @@
 ---
-statut: maquette_privee_non_publiee
+statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Loupe portable ou grand écran : quand choisir un téléagrandisseur ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/loupe-portable-ou-grand-ecran/"

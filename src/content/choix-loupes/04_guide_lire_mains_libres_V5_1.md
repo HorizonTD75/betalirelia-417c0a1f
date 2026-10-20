@@ -1,5 +1,5 @@
 ---
-statut: maquette_privee_non_publiee
+statut: publication_lovable_autorisee_2026_10_20
 type: article_decisionnel
 h1: "Comment lire en gardant les mains libres ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/lire-mains-libres/"

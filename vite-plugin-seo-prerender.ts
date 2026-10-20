@@ -9,6 +9,8 @@ interface RouteSEO {
   canonical: string;
   ogType?: string;
   ogImage?: string;
+  noindex?: boolean;
+  noImage?: boolean;
   jsonLd?: Record<string, unknown>;
 }
 
@@ -60,6 +62,13 @@ export function seoPrerender(routes: RouteSEO[]): Plugin {
           `<meta name="twitter:image" content="${escapeAttr(ogImage)}">`,
         ];
 
+        if (route.noImage) {
+          for (let i = metaTags.length - 1; i >= 0; i--) {
+            if (/property="og:image"|name="twitter:image"/.test(metaTags[i])) metaTags.splice(i, 1);
+          }
+        }
+        if (route.noindex) metaTags.push('<meta name="robots" content="noindex, follow">', '<meta name="googlebot" content="noindex, follow">');
+
         if (route.jsonLd) {
           metaTags.push(
             `<script type="application/ld+json">${JSON.stringify(route.jsonLd)}</script>`
@@ -85,6 +94,13 @@ export function seoPrerender(routes: RouteSEO[]): Plugin {
         html = html.replace(/<meta\s+name="twitter:description"[^>]*>/g, "");
         html = html.replace(/<meta\s+name="twitter:image"[^>]*>/g, "");
         html = html.replace(/<meta\s+name="twitter:card"[^>]*>/g, "");
+
+        if (route.noindex) {
+          html = html.replace(/<link\s+rel="canonical"[^>]*>/g, "");
+          html = html.replace(/<meta\s+property="og:url"[^>]*>/g, "");
+          html = html.replace(/<meta\s+name="(?:robots|googlebot)"[^>]*>/g, "");
+        }
+        if (route.noImage) html = html.replace(/<meta\s+(?:property="og:image:alt"|name="twitter:image:alt")[^>]*>/g, "");
 
         // Inject after <head> opening
         html = html.replace("<head>", `<head>\n    ${injection}`);

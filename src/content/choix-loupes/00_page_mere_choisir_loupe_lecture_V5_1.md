@@ -1,5 +1,5 @@
 ---
-statut: maquette_privee_non_publiee
+statut: publication_lovable_autorisee_2026_10_20
 type: page_mere_decisionnelle
 h1: "Quelle loupe de lecture choisir ?"
 url_cible: "https://lirelia.fr/choisir-loupe-lecture/"
