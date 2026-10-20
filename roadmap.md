@@ -5,6 +5,7 @@
 - [ ] Alléger la page mère et différencier les compositions pédagogiques des filles.
 - [ ] Vérifier les sept guides en deux modes à 320/375/768/1440 px, liens, FAQ, zoom et animations réduites.
 - [ ] Fournir un rapport factuel des images et emplacements conservés.
+- [ ] Bandeau RGPD : retirer le lien politique du bandeau/panneau, bouton Accepter jaune/bleu ; Refuser et logique inchangés, vérifier ordinateur/mobile.
 
 ## Historique V5.2 (publication non relancée)
 
