@@ -1,10 +1,17 @@
-/**
- * MODE ÉDITORIAL — briefs photo visibles.
- * Actif pendant la phase de conception pour préparer les 20 prises de vue du cocon.
- * À PASSER À `false` AVANT TOUTE MISE EN LIGNE PUBLIQUE : les consignes de prise de vue
- * ne doivent jamais apparaître sur le site final (un test vérifie la valeur attendue).
- */
-export const CHOICE_PHOTO_BRIEFS_ENABLED = true;
+/** Explicit development-only capability: production bundles cannot enable editorial UI. */
+export const CHOICE_PHOTO_BRIEFS_ENABLED = import.meta.env.DEV;
+export const DEFAULT_CHOICE_MODE = "reading" as const;
+export type ChoiceMode = "reading" | "photos";
+
+/** V5.4 supersedes the historical twenty-zone plan; reserve zones never render. */
+export const ACTIVE_PHOTO_ZONES = [
+  ["pm-01", "pm-03"], ["pa-01", "pa-02"], ["oe-01", "oe-02"],
+  ["ls-01", "ls-02"], ["ml-01", "ml-02"], ["el-02", "el-03"], ["te-01", "te-03"],
+] as const;
+export const HERO_PHOTO_ZONES = ["pm-01", "pa-01", undefined, "ls-01", undefined, undefined, undefined] as const;
+export const RESERVE_PHOTO_ZONES = ["ls-03"] as const;
+export const isActivePhotoZone = (id: string) => ACTIVE_PHOTO_ZONES.some((ids) => ids.some((active) => active === id));
+export const canPreparePhotos = (development: boolean) => development;
 
 /** Titres de travail compréhensibles des 20 emplacements photo (aucun résultat inventé). */
 export const ZONE_TITLES: Record<string, string> = {
@@ -20,7 +27,7 @@ export const ZONE_TITLES: Record<string, string> = {
   "ls-01": "Le clip fixé sur des lunettes de vue",
   "ls-02": "Lentilles du clip relevées puis abaissées",
   "ls-03": "Lire à la bonne distance de travail",
-  "ml-01": "Quatre situations de travail les mains libres",
+  "ml-01": "Une situation réelle avec les mains disponibles",
   "ml-02": "Écrire sous un téléagrandisseur",
   "el-01": "Lampe, loupe éclairante et lampe loupe sur le même objet",
   "el-02": "D’où viennent les reflets sur un emballage brillant",
