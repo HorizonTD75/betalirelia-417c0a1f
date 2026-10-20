@@ -10,6 +10,9 @@ import { ArrowRight, BookOpen, Check, Eye, Hand, Mail, PenLine, Search, Sun, Tag
 import { CHOICE_PRESENTATION, splitChoiceSections } from "@/content/choix-loupes/presentation";
 import ChoiceImages, { PHOTOS } from "@/components/choix-loupes/ChoiceImages";
 import { CHOICE_HUB, CHOICE_ARTICLES, getChoiceArticle, type ChoiceArticle } from "@/content/choix-loupes/articles";
+import ChoiceEditorialContext from "@/components/choix-loupes/ChoiceEditorialContext";
+import { HERO_PHOTO_ZONES } from "@/content/choix-loupes/editorialMode";
+import { FINAL_PHOTOS } from "@/components/choix-loupes/ChoiceImages";
 import "./choice-article.css";
 
 type HtmlNode = { type: string; tagName?: string; value?: string; children?: HtmlNode[]; properties?: Record<string, unknown> };
@@ -48,7 +51,8 @@ function Content({ article, source }: { article: ChoiceArticle; source: string }
   return <>{source.split(/\[choice-image:([^\]]+)\]/).map((segment, i) => {
     if (i % 2 === 0) return segment.trim() ? <Markdown key={i} source={segment} /> : null;
     const zone = article.zones.find((item) => item.id === segment);
-    return zone ? <ChoiceImages key={zone.id} zone={zone} first={false} /> : null;
+    const heroZone = HERO_PHOTO_ZONES[CHOICE_ARTICLES.indexOf(article)];
+    return zone && zone.id !== heroZone ? <ChoiceImages key={zone.id} zone={zone} first={false} /> : null;
   })}</>;
 }
 const splitH3 = (content: string) => {
@@ -61,10 +65,10 @@ const takeZones = (source: string) => ({ text: source.replace(/\[choice-image:[^
 const SectionTitle = ({ id, children }: { id?: string; children: React.ReactNode }) => <h2 id={id} className="text-2xl md:text-3xl font-bold text-primary mb-6 leading-snug">{children}</h2>;
 
 const USAGE_LINKS = [
-  { icon: Tag, slug: "loupe-optique-ou-electronique/" },
-  { icon: Mail, slug: "personne-agee/" },
-  { icon: BookOpen, slug: "loupe-portable-ou-grand-ecran/" },
-  { icon: PenLine, slug: "lire-mains-libres/" },
+  { icon: Tag, slug: "loupe-optique-ou-electronique/", title: "Étiquette ou prix", summary: "Une loupe à main peut suffire pour quelques mots." },
+  { icon: Mail, slug: "personne-agee/", title: "Courrier ou facture", summary: "Suivre une ligne et retrouver facilement la suivante." },
+  { icon: BookOpen, slug: "loupe-portable-ou-grand-ecran/", title: "Livre ou journal", summary: "Lire plusieurs paragraphes sans perdre le fil." },
+  { icon: PenLine, slug: "lire-mains-libres/", title: "Écrire, coudre ou bricoler", summary: "Garder de la place pour les mains et les outils." },
 ];
 const FAMILIES = [
   { photo: PHOTOS.nora, href: "/aides-lecture-bassevision/loupes-verre/", label: "Voir les loupes optiques" },
@@ -95,20 +99,24 @@ function HubBody({ article, sections }: { article: ChoiceArticle; sections: Retu
   const powerParts = power ? takeZones(power.content) : null;
 
   return <>
-    {intro && <section className="container py-10"><div className="choice-prose mx-auto"><Content article={article} source={intro.content} /></div></section>}
-
     {usage && (() => { const { intro: u, items } = splitH3(usage.content); return <section id="usages" aria-labelledby="usages-title" className="bg-muted/50 border-y border-border py-12 scroll-mt-28">
       <div className="container max-w-6xl">
-        <SectionTitle id="usages-title">{usage.title}</SectionTitle>
+        <SectionTitle id="usages-title">Que souhaitez-vous lire ou faire ?</SectionTitle>
         {u.trim() && <div className="choice-prose"><Markdown source={u} /></div>}
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {items.map((item, i) => { const link = USAGE_LINKS[i]; const target = CHOICE_ARTICLES.find((a) => a.path === CHOICE_HUB + link?.slug); const Icon = link?.icon ?? Search;
             return <li key={item.title} className="choice-card min-w-0 flex flex-col bg-card border border-border rounded-lg p-6">
-              <div className="flex items-start gap-4 mb-3"><span className="choice-icon shrink-0" aria-hidden="true"><Icon className="w-7 h-7" /></span><h3 className="text-xl md:text-2xl font-bold text-foreground leading-snug">{item.title}</h3></div>
-              <div className="choice-card-text flex-1"><Markdown source={item.body} /></div>
-              {target && <a href={target.path} className="choice-card-link mt-2 inline-flex items-start gap-2 text-lg font-bold text-primary underline underline-offset-4"><span>Guide : {target.h1}</span><ArrowRight aria-hidden="true" className="w-5 h-5 shrink-0 mt-1" /></a>}
+              <div className="flex items-start gap-4 mb-3"><span className="choice-icon shrink-0" aria-hidden="true"><Icon className="w-7 h-7" /></span><h3 className="text-xl md:text-2xl font-bold text-foreground leading-snug">{link?.title ?? item.title}</h3></div>
+              <p className="text-xl leading-relaxed flex-1 mb-3">{link?.summary}</p>
+              {target && <a href={target.path} className="choice-card-link mt-2 inline-flex items-start gap-2 text-lg font-bold text-primary underline underline-offset-4" aria-label={`Lire le guide : ${target.h1}`}><span>Lire le guide</span><ArrowRight aria-hidden="true" className="w-5 h-5 shrink-0 mt-1" /></a>}
             </li>; })}
         </ul>
+        <div className="choice-prose mx-auto mt-8">
+          <details className="choice-usage-details"><summary className="text-xl font-bold text-primary cursor-pointer py-4">{usage.title} — les explications</summary>
+            {intro && <Content article={article} source={intro.content} />}
+            <Markdown source={usage.content} />
+          </details>
+        </div>
       </div>
     </section>; })()}
 
@@ -116,10 +124,10 @@ function HubBody({ article, sections }: { article: ChoiceArticle; sections: Retu
       <SectionTitle id="comparatif-title">{compare.title}</SectionTitle>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
         {rows.map((row, i) => { const family = FAMILIES[i]; return <li key={row[0]} className="choice-card min-w-0 flex flex-col bg-card border border-border rounded-lg overflow-hidden">
-          {family && <img src={family.photo.src} alt="" width={family.photo.width} height={family.photo.height} loading="lazy" decoding="async" className="w-full h-40 object-contain bg-card border-b border-border" />}
+           {family && <img src={family.photo.src} alt={family.photo.alt} width={family.photo.width} height={family.photo.height} loading="lazy" decoding="async" className="w-full h-32 object-contain bg-card border-b border-border" />}
           <div className="p-5 flex flex-col flex-1">
             <h3 className="text-xl font-bold text-primary leading-snug mb-3">{stripStrong(row[0])}</h3>
-            <p className="text-lg leading-relaxed mb-2"><strong>Convient pour :</strong> {row[1]}</p>
+             <p className="text-lg leading-relaxed mb-2"><strong>Adaptée à :</strong> {row[1]}</p>
             <p className="text-lg leading-relaxed mb-4 flex-1"><strong>À vérifier :</strong> {row[2]}</p>
             {family && <a href={family.href} className="inline-flex items-start gap-2 text-lg font-bold text-primary underline underline-offset-4">{family.label}<ArrowRight aria-hidden="true" className="w-5 h-5 shrink-0 mt-1" /></a>}
           </div>
@@ -129,19 +137,19 @@ function HubBody({ article, sections }: { article: ChoiceArticle; sections: Retu
     </section>}
 
     {power && powerParts && <section aria-labelledby="puissance-title" className="bg-muted/50 border-y border-border py-12">
-      <div className="container max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+       <div className="container max-w-6xl choice-teaching-layout">
         <div className="min-w-0"><p className="choice-step">Repère 1 · Grossissement et largeur de texte</p><SectionTitle id="puissance-title">{power.title}</SectionTitle><Markdown source={powerParts.text} /></div>
         <div className="min-w-0 lg:sticky lg:top-28">{powerParts.ids.map((id) => { const zone = article.zones.find((z) => z.id === id); return zone ? <ChoiceImages key={id} zone={zone} first={false} /> : null; })}</div>
       </div>
     </section>}
 
     {lowVision && <section aria-labelledby="contraste-title" className="container max-w-6xl py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 items-start">
-        <div className="min-w-0"><p className="choice-step">Repère 2 · Grossir et contraster : deux fonctions distinctes</p><SectionTitle id="contraste-title">{lowVision.title}</SectionTitle><Content article={article} source={lowVision.content} /></div>
-        <figure className="min-w-0 border border-border rounded-lg overflow-hidden bg-card">
-          <img src={PHOTOS.amelie.src} alt={PHOTOS.amelie.alt} width={PHOTOS.amelie.width} height={PHOTOS.amelie.height} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-contain" />
-          <figcaption className="p-4 text-base text-muted-foreground border-t border-border leading-relaxed">{PHOTOS.amelie.caption} — illustration provisoire du matériel ; les modes de contraste se vérifient lors d’un essai.</figcaption>
-        </figure>
+       <div className="min-w-0"><p className="choice-step">Repère 2 · Grossir et contraster : deux fonctions distinctes</p><SectionTitle id="contraste-title">{lowVision.title}</SectionTitle>
+         <dl className="choice-functions grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+           <div><dt className="text-xl font-bold text-primary mb-2">Grossissement réglable</dt><dd className="text-xl leading-relaxed">Agrandir ou réduire l’image affichée sur l’écran.</dd></div>
+           <div><dt className="text-xl font-bold text-primary mb-2">Amélioration du contraste</dt><dd className="text-xl leading-relaxed">Selon le modèle, renforcer les couleurs naturelles ou afficher le texte avec deux couleurs contrastées.</dd></div>
+         </dl>
+         <div className="choice-prose"><Content article={article} source={lowVision.content} /></div>
       </div>
     </section>}
 
@@ -208,10 +216,12 @@ function GuideBody({ article, sections }: { article: ChoiceArticle; sections: Re
     {sections.map((section, index) => {
       if (section.faq) return <section key={index} aria-label={section.title} className="choice-faq rounded-lg my-10"><SectionTitle>{section.title}</SectionTitle><Faq article={article} section={section} /></section>;
       const kind = sectionKind(section.title, section.content);
-      return <section key={index} className={`choice-section choice-${kind}`}>
+       const teaching = /Essayez avec des documents|Comment fonctionne un clip|La loupe électronique :|Pour lire et écrire :|Quand choisir une loupe de lecture éclairante|Comparer deux appareils avec la même page/.test(section.title);
+       const activity = /Pour lire à plat|Pour coudre|Pour travailler sous une lentille/.test(section.title);
+       return <section key={index} className={`choice-section choice-${kind}${teaching ? " choice-teaching" : ""}${activity ? " choice-activity" : ""}${/La loupe électronique :/.test(section.title) ? " choice-distinct-functions" : ""}`}>
         {kind === "check" && <p className="choice-badge">À vérifier</p>}
         {section.title && <h2 className="text-2xl md:text-3xl font-bold text-primary mt-10 mb-6 leading-snug">{section.title}</h2>}
-        <Content article={article} source={section.content} />
+         {teaching ? (() => { const parts = takeZones(section.content); return <div className="choice-teaching-layout"><div className="min-w-0"><Content article={article} source={parts.text} /></div><div className="min-w-0">{parts.ids.map((id) => { const zone = article.zones.find((z) => z.id === id); return zone ? <ChoiceImages key={id} zone={zone} first={false} /> : null; })}</div></div>; })() : <Content article={article} source={section.content} />}
       </section>;
     })}
     <nav aria-labelledby="autres-guides" className="mt-12 pt-8 border-t border-border">
@@ -233,9 +243,15 @@ export default function ChoiceArticlePage() {
   const presentation = CHOICE_PRESENTATION[CHOICE_ARTICLES.indexOf(article)] ?? CHOICE_PRESENTATION[0];
   const photo = PHOTOS[presentation.photo];
   const sections = splitChoiceSections(article.body);
+  const heroZoneId = HERO_PHOTO_ZONES[CHOICE_ARTICLES.indexOf(article)];
+  const heroZone = article.zones.find((zone) => zone.id === heroZoneId);
+  const finalHero = heroZoneId ? FINAL_PHOTOS[heroZoneId] : undefined;
+  const introText = sections[0]?.content.replace(/\*\*/g, "").trim() ?? "";
+  const repeatedLead = introText.startsWith(presentation.lead);
   return <div className="min-h-screen">
     <SEOHead /><Header />
     <main id="main-content" className="choice-article">
+      <ChoiceEditorialContext key={article.path}>
       <nav className="bg-muted border-b border-border py-3" aria-label="Fil d’Ariane">
         <ol className="container flex flex-wrap gap-x-2 gap-y-1 text-lg leading-relaxed">
           {article.crumbs.map((crumb, i) => <li key={crumb} className="inline-flex gap-2 items-start">
@@ -248,18 +264,21 @@ export default function ChoiceArticlePage() {
         <div className="container max-w-6xl grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center">
           <div className="min-w-0">
             <p className="text-secondary font-bold text-lg mb-3">{isHub ? "Le guide LIRELIA des aides à la lecture" : "Bien choisir son aide à la lecture"}</p>
-            <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-5">{article.h1}</h1>
-            {!isHub && <p className="text-xl leading-relaxed mb-6">{presentation.lead}</p>}
+             <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-5">{article.h1.replace(/\s+([?!:;])/g, "\u00a0$1")}</h1>
+             {!isHub && !repeatedLead && <p className="text-xl leading-relaxed mb-6">{presentation.lead}</p>}
             {isHub && <p className="text-xl leading-relaxed mb-6">Étiquette, courrier, livre ou travail manuel : partez de ce que vous voulez lire, puis comparez les solutions.</p>}
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
               <Button variant="secondary" asChild><a href={isHub ? "#usages" : "#essentiel"}>{isHub ? "Choisir selon mon usage" : "Les points à vérifier"}<ArrowRight aria-hidden="true" /></a></Button>
               {isHub && <a href="#comparatif" className="text-lg font-semibold underline underline-offset-4 decoration-secondary">Voir le comparatif</a>}
             </div>
           </div>
-          <figure className="min-w-0">
-            <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" className="w-full h-56 md:h-80 object-contain bg-card rounded-lg" />
-            <figcaption className="text-lg mt-3">{photo.caption}</figcaption>
-          </figure>
+           <div className="min-w-0">
+             {finalHero && heroZone ? <ChoiceImages zone={heroZone} first /> : isHub ? <div className="choice-hero-motif" aria-hidden="true"><Mail className="w-20 h-20" /><BookOpen className="w-12 h-12" /><Search className="w-12 h-12" /></div> : <figure className="min-w-0">
+               <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" className="choice-hero-photo w-full object-contain bg-card rounded-lg" />
+               <figcaption className="text-lg mt-3">{photo.caption} — illustration du matériel</figcaption>
+             </figure>}
+             {heroZone && !finalHero && <ChoiceImages zone={heroZone} first />}
+           </div>
         </div>
       </header>
       {!isHub && <section id="essentiel" className="bg-muted/50 border-b border-border py-8 scroll-mt-28" aria-labelledby="choice-essentials">
@@ -271,6 +290,7 @@ export default function ChoiceArticlePage() {
         </div>
       </section>}
       {isHub ? <HubBody article={article} sections={sections} /> : <GuideBody article={article} sections={sections} />}
+      </ChoiceEditorialContext>
     </main><Footer />
   </div>;
 }

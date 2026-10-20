@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { CHOICE_ARTICLES, parseChoiceArticle, getChoiceArticle } from "@/content/choix-loupes/articles";
 import { getPageGraph } from "@/lib/structuredData/registry";
 import { ROUTE_META } from "@/lib/structuredData/routeMeta";
+import { ACTIVE_PHOTO_ZONES, DEFAULT_CHOICE_MODE, isActivePhotoZone, canPreparePhotos } from "@/content/choix-loupes/editorialMode";
 
 describe("Choice-loupe V5.1 publication boundaries", () => {
   it("registers only the seven validated paths", () => {
@@ -27,11 +28,22 @@ describe("Choice-loupe V5.1 publication boundaries", () => {
     }
   });
 });
-describe("Choice-loupe V5.3 photo zones", () => {
-  it("declares the 20 planned photo zones with complete briefs", () => {
-    const ids = CHOICE_ARTICLES.flatMap((a) => a.zones.map((z) => z.id));
-    expect(ids.length).toBe(20);
-    expect(CHOICE_ARTICLES.map((a) => a.zones.length)).toEqual([3, 3, 3, 3, 2, 3, 3]);
-    for (const a of CHOICE_ARTICLES) for (const z of a.zones) { expect(z.alt).toBeTruthy(); expect(z.format).toBeTruthy(); }
+describe("Choice-loupe V5.4 photographic plan", () => {
+  it.each([
+    [0, ["pm-01", "pm-03"]], [1, ["pa-01", "pa-02"]], [2, ["oe-01", "oe-02"]],
+    [3, ["ls-01", "ls-02"]], [4, ["ml-01", "ml-02"]], [5, ["el-02", "el-03"]], [6, ["te-01", "te-03"]],
+  ])("keeps only the revised active zones for guide %i", (index, expected) => {
+    expect(CHOICE_ARTICLES[Number(index)].zones.filter((zone) => isActivePhotoZone(zone.id)).map((zone) => zone.id)).toEqual(expected);
+    expect(ACTIVE_PHOTO_ZONES[Number(index)]).toEqual(expected);
+  });
+  it("keeps distance-of-work photography in reserve", () => {
+    expect(isActivePhotoZone("ls-03")).toBe(false);
+  });
+  it("defaults to reading", () => {
+    expect(DEFAULT_CHOICE_MODE).toBe("reading");
+  });
+  it("excludes photo preparation from production", () => {
+    expect(canPreparePhotos(false)).toBe(false);
+    expect(canPreparePhotos(true)).toBe(true);
   });
 });
