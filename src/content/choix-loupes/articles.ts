@@ -1,7 +1,7 @@
 import { parse } from "yaml";
 
 export const CHOICE_HUB = "/choisir-loupe-lecture/";
-export interface ChoiceImageZone { id: string; description: string }
+export interface ChoiceImageZone { id: string; description: string; alt?: string; caption?: string; format?: string; status?: string; placement?: string }
 export interface ChoiceArticle {
   path: string;
   h1: string;
@@ -29,10 +29,11 @@ export function parseChoiceArticle(raw: string): ChoiceArticle {
   if (!path.startsWith(CHOICE_HUB) || !path.endsWith("/")) throw new Error("Adresse de guide invalide");
   const zones: ChoiceImageZone[] = [];
   const body = publicContent[1].replace(/<!-- IMAGE_ZONE\s*([\s\S]*?)-->/g, (_match, fields: string) => {
-    const id = fields.match(/^id:\s*(.+)$/m)?.[1]?.trim();
-    const description = fields.match(/^description_visuelle:\s*(.+)$/m)?.[1]?.trim();
+    const field = (key: string) => fields.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1]?.trim();
+    const id = field("id");
+    const description = field("description_visuelle");
     if (!id || !description) throw new Error("Zone d’image invalide");
-    zones.push({ id, description });
+    zones.push({ id, description, alt: field("alt_propose"), caption: field("legende_proposee"), format: field("format"), status: field("statut"), placement: field("emplacement") });
     return `\n\n[choice-image:${id}]\n\n`;
   }).replace(/<!--[^]*?-->/g, "").replace(/^\s*# .+\r?\n/, "").trim();
   return { path, canonical, h1: required("h1"), title: required("title_seo"),
