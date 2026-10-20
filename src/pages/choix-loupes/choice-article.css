@@ -78,7 +78,7 @@ section.choice-table { background: hsl(var(--muted) / .5); border-radius: 8px; p
   .choice-teaching:nth-of-type(even) .choice-teaching-layout:has([data-choice-images]) > :first-child { order: 2; }
 }
 @media (max-width: 374px) {
-  .choice-hero h1 { font-size: 1.75rem; }
+  .choice-hero h1 { font-size: 1.625rem; }
   .choice-hero-photo { height: 10rem; }
   .choice-faq, .choice-check, section.choice-table { padding-inline: 1rem; }
 }

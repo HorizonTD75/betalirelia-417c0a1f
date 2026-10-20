@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Link } from "react-router-dom";
 import { getConsent, saveConsent } from "@/lib/cookieConsent";
 import {
   buildEvent,
@@ -80,7 +79,7 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
               et améliorer nos contenus. À vous de choisir !
             </p>
             <div className="flex flex-row gap-3 mt-2">
-              <Button type="button" onClick={() => decide("accepte", true, true)} className={btn}>
+              <Button type="button" onClick={() => decide("accepte", true, true)} className="flex-1 min-h-11 min-w-0 px-4 text-lg font-bold bg-secondary text-primary border-2 border-secondary hover:bg-secondary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                 Accepter
               </Button>
               <Button type="button" onClick={() => decide("refuse", false, false)} className={btn}>
@@ -95,12 +94,6 @@ const CookieConsentBanner = ({ forceOpen = false, onClose }: Props) => {
               >
                 Personnaliser mes choix
               </button>
-              <Link
-                to="/politique-cookies"
-                className="hidden sm:inline text-base text-primary underline underline-offset-4 py-1"
-              >
-                Politique de cookies
-              </Link>
             </div>
           </>
         ) : (
