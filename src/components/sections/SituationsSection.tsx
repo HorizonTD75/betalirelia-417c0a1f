@@ -2,6 +2,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { BookOpen, Activity, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
 
 const situations = [
 {
@@ -49,6 +50,7 @@ const SituationsSection = () => {
           </p>
         </div>
 
+        <ChoiceGuideLinks context="home" />
         <div className="grid md:grid-cols-3 gap-6">
           {situations.map((situation, index) => {
             const Icon = situation.icon;

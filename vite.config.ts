@@ -3,6 +3,17 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { seoPrerender } from "./vite-plugin-seo-prerender";
+import { readFileSync, readdirSync } from "node:fs";
+import { parse } from "yaml";
+
+const choiceRoutes = readdirSync("src/content/choix-loupes").filter((name) => /^0[0-6]_.*\.md$/.test(name)).sort().map((name) => {
+  const raw = readFileSync(`src/content/choix-loupes/${name}`, "utf8");
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) throw new Error(`Guide sans métadonnées : ${name}`);
+  const fm = parse(match[1]) as Record<string, string>;
+  const canonical = new URL(fm.url_cible).pathname;
+  return { path: canonical.replace(/\/$/, ""), canonical, title: fm.title_seo, description: fm.meta_description, ogType: "website", noindex: true, noImage: true };
+});
 
 // Per-route HTML prerender — bakes correct <title>, description, canonical,
 // og:* and twitter:* into route-specific index.html so social crawlers and
@@ -38,7 +49,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    seoPrerender(prerenderRoutes),
+    seoPrerender([...prerenderRoutes, ...choiceRoutes]),
   ].filter(Boolean),
   resolve: {
     alias: {

@@ -12,7 +12,10 @@ export interface RouteMeta {
   noindex?: boolean;
 }
 
+import { CHOICE_ARTICLES } from "@/content/choix-loupes/articles";
+
 export const ROUTE_META: Record<string, RouteMeta> = {
+  ...Object.fromEntries(CHOICE_ARTICLES.map((a) => [a.path.replace(/\/$/, ""), { title: a.title, description: a.description, short: a.crumbs[a.crumbs.length - 1], noindex: true }])),
   "/": {"title": "LirElia | Basse vision & DMLA : bilans et aides lecture", "description": "Vous perdez la vue ? Retrouvez votre autonomie de lecture grâce à nos bilans basse vision et aides adaptées (DMLA, glaucome). 25 ans d'expertise à Paris.", "short": "LirElia"},
   "/maladies-yeux/glaucome": {"title": "Glaucome : symptômes, dépistage et traitements | LirElia", "description": "Comprenez le glaucome : formes ouvertes et fermées, symptômes, dépistage du nerf optique, traitements et conseils pour préserver votre vision périphérique.", "short": "Glaucome"},
   "/maladies-yeux/dmla/seche": {"title": "DMLA sèche : symptômes et évolution | LirElia", "description": "Comprendre la DMLA sèche : stades, symptômes, évolution, suivi et solutions pour lire et préserver son autonomie. Informations médicales sourcées.", "short": "DMLA sèche"},

@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
 import Footer from "@/components/layout/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -279,6 +280,7 @@ const CatalogueAides = () => {
           </div>
         </nav>
 
+        <div className="container py-4"><ChoiceGuideLinks context="catalogue" /></div>
         {/* Categories */}
         <section className="py-8 md:py-10">
           <div className="container space-y-8 md:space-y-10">

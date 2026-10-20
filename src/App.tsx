@@ -102,6 +102,7 @@ const SavGaranties = lazy(() => import("./pages/SavGaranties"));
 const DmlaSeche = lazy(() => import("./pages/maladies/dmla/DmlaSeche"));
 const DmlaHumide = lazy(() => import("./pages/maladies/dmla/DmlaHumide"));
 const CoconArticlePage = lazy(() => import("./pages/aides-financieres/CoconArticlePage"));
+const ChoiceArticlePage = lazy(() => import("./pages/choix-loupes/ChoiceArticlePage"));
 
 const queryClient = new QueryClient();
 
@@ -231,6 +232,13 @@ const App = () => (
             <Route path="/aides-financieres-basse-vision/aides-sociales-droits" element={<CoconArticlePage />} />
             <Route path="/aides-financieres-basse-vision/adapter-logement" element={<CoconArticlePage />} />
             <Route path="/aides-financieres-basse-vision/travail-etudes" element={<CoconArticlePage />} />
+            <Route path="/choisir-loupe-lecture/" element={<ChoiceArticlePage />} />
+            <Route path="/choisir-loupe-lecture/personne-agee/" element={<ChoiceArticlePage />} />
+            <Route path="/choisir-loupe-lecture/loupe-optique-ou-electronique/" element={<ChoiceArticlePage />} />
+            <Route path="/choisir-loupe-lecture/loupe-sur-lunettes/" element={<ChoiceArticlePage />} />
+            <Route path="/choisir-loupe-lecture/lire-mains-libres/" element={<ChoiceArticlePage />} />
+            <Route path="/choisir-loupe-lecture/loupe-eclairante-ou-lampe/" element={<ChoiceArticlePage />} />
+            <Route path="/choisir-loupe-lecture/loupe-portable-ou-grand-ecran/" element={<ChoiceArticlePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

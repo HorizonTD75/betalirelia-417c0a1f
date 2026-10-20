@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight, Check, Glasses } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductTrustGrid from "@/components/products/ProductTrustGrid";
 import ProductTrustBanner from "@/components/products/ProductTrustBanner";
+import ChoiceGuideLinks from "@/components/choix-loupes/ChoiceGuideLinks";
 import productImage from "@/assets/products/lunettes-loupes-focus-dmla.jpg";
 
 const STRIPE_URL = "https://buy.stripe.com/14A00k0nQ5dJ6lF4Fn2Fa01";
@@ -69,6 +70,7 @@ const LunettesLoupeFocus = () => {
         <section className="container pb-12">
           <div className="max-w-md lg:ml-auto lg:mr-0">
             <ProductTrustBanner />
+            <ChoiceGuideLinks context="focus" />
           </div>
         </section>
 
