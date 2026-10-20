@@ -8,5 +8,5 @@
 - [x] Centraliser les métadonnées, actualiser les transitions et préparer le HTML statique.
 - [x] Créer les deux visuels OG avec les assets réels du projet.
 - [x] Améliorer les sept guides, les FAQ et les encarts accueil/conseils/catalogue.
-- [ ] Contrôler les métadonnées et JSON-LD de toutes les routes ; tests et affichages 360/390/768/1280.
-- [ ] Fournir rapport, matrice et consignes Codex ; préciser les limites de confidentialité.
+- [x] Contrôler les métadonnées et JSON-LD de toutes les routes ; tests et affichages 360/390/768/1280.
+- [x] Fournir rapport, matrice et consignes Codex ; préciser les limites de confidentialité.
