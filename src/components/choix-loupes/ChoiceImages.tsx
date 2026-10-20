@@ -26,6 +26,8 @@ const ZONE_PHOTOS: Record<string, (keyof typeof PHOTOS)[]> = {
 
 export default function ChoiceImages({ zone, first }: { zone: ChoiceImageZone; first: boolean }) {
   const photos = ZONE_PHOTOS[zone.id];
+  const privatePreview = window.location.hostname === "localhost" || window.location.hostname.startsWith("id-preview--");
+  if (!photos && !privatePreview) return null;
   if (!photos) return <aside data-choice-pending={zone.id} className="my-8 border border-dashed border-border rounded-lg bg-muted/40 p-5 text-base text-muted-foreground leading-relaxed">
     <p className="font-semibold mb-2">Visuel à réaliser · {zone.id}</p><p>{zone.description}</p>
   </aside>;
