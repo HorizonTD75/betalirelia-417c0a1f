@@ -1,5 +1,5 @@
 /** Explicit development-only capability: production bundles cannot enable editorial UI. */
-export const CHOICE_PHOTO_BRIEFS_ENABLED = import.meta.env.DEV;
+export const CHOICE_PHOTO_BRIEFS_ENABLED = canPreparePhotos(import.meta.env.DEV);
 export const DEFAULT_CHOICE_MODE = "reading" as const;
 export type ChoiceMode = "reading" | "photos";
 
@@ -11,7 +11,7 @@ export const ACTIVE_PHOTO_ZONES = [
 export const HERO_PHOTO_ZONES = ["pm-01", "pa-01", undefined, "ls-01", undefined, undefined, undefined] as const;
 export const RESERVE_PHOTO_ZONES = ["ls-03"] as const;
 export const isActivePhotoZone = (id: string) => ACTIVE_PHOTO_ZONES.some((ids) => ids.some((active) => active === id));
-export const canPreparePhotos = (development: boolean) => development;
+export function canPreparePhotos(development: boolean) { return development; }
 
 /** Titres de travail compréhensibles des 20 emplacements photo (aucun résultat inventé). */
 export const ZONE_TITLES: Record<string, string> = {

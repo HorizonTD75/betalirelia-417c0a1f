@@ -46,8 +46,8 @@ function PhotoBrief({ zone }: { zone: ChoiceImageZone }) {
           {zone.id === "oe-02" && <p><strong>À vérifier :</strong> photographier uniquement les modes réellement disponibles sur le modèle choisi, avec le même texte.</p>}
           {zone.id === "te-01" && <p><strong>Comparaison :</strong> garder une taille de caractères comparable sur le même document ; indiquer les appareils et réglages utilisés.</p>}
           <p><strong>Cadrage et format :</strong> {zone.id === "ml-01" ? "Une photographie paysage, 1600 × 900 px minimum ; cadrage sur les mains, l’aide et l’activité, sans visage identifiable." : zone.format ?? missing}</p>
-          <p><strong>Texte alternatif :</strong> {zone.alt ?? missing}</p>
-          <p><strong>Légende :</strong> {zone.caption ?? missing}</p>
+          <p><strong>Texte alternatif :</strong> {zone.id === "ml-01" ? "Une personne réalise une activité de près avec une aide adaptée, les deux mains disponibles." : zone.alt ?? missing}</p>
+          <p><strong>Légende :</strong> {zone.id === "ml-01" ? "Une situation réelle pour vérifier la place disponible pour les mains et les outils." : zone.caption ?? missing}</p>
           <p><strong>Emplacement :</strong> {["pm-01", "pa-01", "ls-01"].includes(zone.id) ? "Photo principale du bandeau d’ouverture, remplace l’illustration provisoire." : zone.placement ?? missing}</p>
           <p><strong>Statut :</strong> {zone.status ?? missing}</p>
         </div>
