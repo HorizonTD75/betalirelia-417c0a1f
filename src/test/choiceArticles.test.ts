@@ -27,3 +27,11 @@ describe("Choice-loupe V5.1 publication boundaries", () => {
     }
   });
 });
+describe("Choice-loupe V5.3 photo zones", () => {
+  it("declares the 20 planned photo zones with complete briefs", () => {
+    const ids = CHOICE_ARTICLES.flatMap((a) => a.zones.map((z) => z.id));
+    expect(ids.length).toBe(20);
+    expect(CHOICE_ARTICLES.map((a) => a.zones.length)).toEqual([3, 3, 3, 3, 2, 3, 3]);
+    for (const a of CHOICE_ARTICLES) for (const z of a.zones) { expect(z.alt).toBeTruthy(); expect(z.format).toBeTruthy(); }
+  });
+});
