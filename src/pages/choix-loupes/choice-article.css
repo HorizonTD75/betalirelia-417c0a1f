@@ -52,7 +52,7 @@ section.choice-table { background: hsl(var(--muted) / .5); border-radius: 8px; p
 .choice-hero figure { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .choice-article *, [data-choice-entry] * { scroll-behavior: auto; transition: none; animation: none; } }
 
-.choice-hero h1 { text-wrap: balance; overflow-wrap: normal; }
+.choice-hero h1 { text-wrap: balance; overflow-wrap: normal; word-break: normal; }
 .choice-hero .items-center { align-items: start; }
 .choice-hero-photo { height: 16rem; }
 .choice-hero-motif { display: flex; align-items: center; justify-content: center; gap: 1.5rem; min-height: 10rem; color: hsl(var(--secondary)); border-block: 1px solid hsl(var(--primary-foreground) / .25); }
