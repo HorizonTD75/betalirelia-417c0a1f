@@ -12,6 +12,7 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "douce latérale, table neutre, pas de reflets sur les lentilles ni l'écran.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],

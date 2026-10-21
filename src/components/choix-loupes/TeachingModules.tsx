@@ -32,7 +32,7 @@ export function FunctionCards() {
 }
 
 export function GuideOpening({ index }: { index: number }) {
-  if (index === 1) return <CriteriaStrip items={[{ icon: Hand, title: "Prise en main", text: "Une loupe lourde ou difficile à maintenir devient fatigante, même si l’image est nette." }, { icon: ShieldCheck, title: "Stabilité", text: "La loupe à poser conserve une distance stable avec le papier." }, { icon: Sun, title: "Éclairage", text: "La lumière doit aider à lire sans produire de reflets gênants." }, { icon: SlidersHorizontal, title: "Commandes accessibles", text: "Les réglages doivent rester accessibles, même lorsque la personne porte ses lunettes habituelles." }]} />;
+  if (index === 1) return <CriteriaStrip items={[{ icon: Hand, title: "Prise en main", text: "Tenir la loupe ou déplacer le document provoque-t-il une gêne ?" }, { icon: ShieldCheck, title: "Stabilité", text: "Une loupe trop légère ou trop étroite peut être instable selon la prise en main." }, { icon: Sun, title: "Éclairage", text: "Un écran très lumineux ne conviendra pas nécessairement à une personne sensible à l’éblouissement." }, { icon: SlidersHorizontal, title: "Commandes accessibles", text: "Ce qui compte est la simplicité des réglages et le confort observé pendant l’essai." }]} />;
   if (index === 2) return <CriteriaStrip items={[{ icon: Search, title: "Loupe optique", text: "Une lentille pour agrandir le texte." }, { icon: Monitor, title: "Loupe électronique", text: "Une caméra et un écran pour afficher le document." }]} />;
   if (index === 4) return <CriteriaStrip items={[
     { icon: Glasses, title: "Lunettes loupes", text: "Leur efficacité dépend de la distance de travail prévue par les lentilles." },
@@ -44,7 +44,7 @@ export function GuideOpening({ index }: { index: number }) {
 }
 
 export function SectionCues({ title }: { title: string }) {
-  if (/Essayez avec des documents/.test(title)) return <CriteriaStrip items={[{ icon: Tag, title: "Étiquette", text: "Un emballage ou une étiquette pour voir si le petit texte devient accessible." }, { icon: FileText, title: "Courrier", text: "Un courrier reçu à la maison, pour juger la lecture de plusieurs lignes." }, { icon: BookOpen, title: "Livre", text: "Un livre ou un journal, si la personne souhaite retrouver une lecture suivie." }]} />;
+  if (/Essayez avec des documents/.test(title)) return <CriteriaStrip items={[{ icon: Tag, title: "Étiquette", text: "Les lettres sont-elles trop petites, leur contraste est-il insuffisant ?" }, { icon: FileText, title: "Courrier", text: "La ligne suivante est-elle difficile à retrouver ?" }, { icon: BookOpen, title: "Livre", text: "La facilité à retrouver une ligne, à poursuivre sa lecture et à manipuler la loupe de manière autonome." }]} />;
   if (/Pour quelles activités utiliser/.test(title)) return <CriteriaStrip items={[{ icon: FileText, title: "Lire" }, { icon: Wrench, title: "Travaux de détail" }, { icon: Hand, title: "Garder les mains disponibles" }]} />;
   if (/La taille de la zone visible/.test(title)) return <CriteriaStrip items={[{ icon: Search, title: "Loupe portable", text: "Pour quelques mots" }, { icon: Monitor, title: "Grand écran", text: "Pour lire longtemps, selon le confort observé" }]} />;
   if (/véritable poste de lecture/.test(title)) return <CriteriaStrip items={[{ icon: BookOpen, title: "Lecture" }, { icon: Hand, title: "Manipulation" }, { icon: Monitor, title: "Écran" }]} />;
