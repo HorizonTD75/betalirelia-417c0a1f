@@ -1,14 +1,15 @@
 /** Explicit development-only capability: production bundles cannot enable editorial UI. */
 export const CHOICE_PHOTO_BRIEFS_ENABLED = canPreparePhotos(import.meta.env.DEV);
-export const DEFAULT_CHOICE_MODE = "reading" as const;
+export const DEFAULT_CHOICE_MODE: ChoiceMode = defaultChoiceMode(import.meta.env.DEV);
 export type ChoiceMode = "reading" | "photos";
+export function defaultChoiceMode(development: boolean): ChoiceMode { return development ? "photos" : "reading"; }
 
 /** V5.4 supersedes the historical twenty-zone plan; reserve zones never render. */
 export const ACTIVE_PHOTO_ZONES = [
   ["pm-01", "pm-03"], ["pa-01", "pa-02"], ["oe-01", "oe-02"],
   ["ls-01", "ls-02"], ["ml-01", "ml-02"], ["el-02", "el-03"], ["te-01", "te-03"],
 ] as const;
-export const HERO_PHOTO_ZONES = ["pm-01", "pa-01", undefined, "ls-01", undefined, undefined, undefined] as const;
+export const HERO_PHOTO_ZONES = ["pm-01", "pa-01", undefined, "ls-01", "ml-01", undefined, undefined] as const;
 export const RESERVE_PHOTO_ZONES = ["ls-03"] as const;
 export const isActivePhotoZone = (id: string) => ACTIVE_PHOTO_ZONES.some((ids) => ids.some((active) => active === id));
 export function canPreparePhotos(development: boolean) { return development; }

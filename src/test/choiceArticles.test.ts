@@ -2,7 +2,8 @@ import { describe, it, expect } from "vitest";
 import { CHOICE_ARTICLES, parseChoiceArticle, getChoiceArticle } from "@/content/choix-loupes/articles";
 import { getPageGraph } from "@/lib/structuredData/registry";
 import { ROUTE_META } from "@/lib/structuredData/routeMeta";
-import { ACTIVE_PHOTO_ZONES, DEFAULT_CHOICE_MODE, isActivePhotoZone, canPreparePhotos } from "@/content/choix-loupes/editorialMode";
+import { ACTIVE_PHOTO_ZONES, defaultChoiceMode, isActivePhotoZone, canPreparePhotos } from "@/content/choix-loupes/editorialMode";
+import { PHOTO_REGISTRY, getPhotoBrief } from "@/content/choix-loupes/photoRegistry";
 
 describe("Choice-loupe V5.1 publication boundaries", () => {
   it("registers only the seven validated paths", () => {
@@ -39,11 +40,31 @@ describe("Choice-loupe V5.4 photographic plan", () => {
   it("keeps distance-of-work photography in reserve", () => {
     expect(isActivePhotoZone("ls-03")).toBe(false);
   });
-  it("defaults to reading", () => {
-    expect(DEFAULT_CHOICE_MODE).toBe("reading");
+  it("defaults to photo preparation only in preview", () => {
+    expect(defaultChoiceMode(true)).toBe("photos");
+    expect(defaultChoiceMode(false)).toBe("reading");
   });
   it("excludes photo preparation from production", () => {
     expect(canPreparePhotos(false)).toBe(false);
     expect(canPreparePhotos(true)).toBe(true);
+  });
+});
+
+describe("V5.5 exact photographic requirements", () => {
+  it("registers exactly the fourteen prescribed ids", () => {
+    expect(PHOTO_REGISTRY.map((entry) => entry.id)).toEqual(["pm-01", "pm-03", "pa-01", "pa-02", "oe-01", "oe-02", "ls-01", "ls-02", "ml-01", "ml-02", "el-02", "el-03", "te-01", "te-03"]);
+  });
+  it("keeps the sewing scene prescribed for ml-01", () => {
+    expect(getPhotoBrief("ml-01")?.scene).toBe("des mains cousent ou brodent sous une lampe loupe allumée ; les deux mains sont effectivement disponibles, le support tient la loupe ; position du tissu et de la lentille réaliste.");
+  });
+  it("never assigns unverified bicolour modes to Amélie", () => {
+    expect(getPhotoBrief("oe-02")?.produits).toContain("Ne pas utiliser Amélie pour inventer un affichage inversé/bicolore.");
+    expect(getPhotoBrief("oe-02")?.statut).toBe("bloc gris à réaliser");
+  });
+  it("keeps comparisons as separately photographed views", () => {
+    expect(getPhotoBrief("pa-02")?.vues).toBe(3);
+    expect(getPhotoBrief("oe-01")?.vues).toBe(2);
+    expect(getPhotoBrief("oe-02")?.vues).toBe(3);
+    expect(getPhotoBrief("ls-02")?.vues).toBe(2);
   });
 });
