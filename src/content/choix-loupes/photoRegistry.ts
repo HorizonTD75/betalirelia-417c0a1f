@@ -13,6 +13,8 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
       "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -34,6 +36,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -55,6 +60,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -76,6 +84,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -97,6 +108,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -118,6 +132,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -139,6 +156,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -160,6 +180,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -181,6 +204,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -202,6 +228,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -223,6 +252,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -244,6 +276,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -265,6 +300,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
@@ -286,6 +324,9 @@ export const PHOTO_REGISTRY: PhotoBrief[] = [
     "lumiere": "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
     "pointsDeControle": [
       "Lumière douce, fond neutre, appareil photographié sous un angle réaliste ; éviter tout reflet masquant l’écran. Les vues de contraste doivent réellement provenir du dispositif pris en photo, pas d’un montage inventé.",
+      "Utiliser un même document d’essai neutre, fabriqué pour la photo, sans données personnelles, et vérifier l’orthographe.",
+      "Comparaison : document identique, réglages et modèles notés ; tailles de caractères rapprochées seulement si techniquement possible et clairement documentées. Ne pas prétendre à une mesure de performance à partir d’une seule photo.",
+      "Pour deux loupes optiques de puissances différentes, respecter la distance focale réelle propre à chaque loupe, pas une distance unique artificielle.",
       "Visages identifiables : obtenir l’autorisation appropriée ; sinon cadrer sur les mains, l’épaule, les objets.",
       "Fichiers : idéalement WebP/JPEG, largeur 1400–1800 px ; jamais gonfler artificiellement une basse résolution."
     ],
