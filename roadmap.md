@@ -1,9 +1,9 @@
 # LIRELIA V5.5 — Preview uniquement, aucune publication
 
-- [ ] Intégrer le registre exact des 14 photos et vérifier les candidats réels.
-- [ ] Appliquer les modules HTML pédagogiques aux sept guides, sans modifier les articles ni le SEO.
-- [ ] Vérifier les deux vues, quatre largeurs, clavier, zoom, liens et absence de répétitions.
-- [ ] Fournir le bilan par page des images et prises de vue manquantes.
+- [x] Intégrer le registre exact des 14 photos et vérifier les candidats réels.
+- [x] Appliquer les modules HTML pédagogiques aux sept guides, sans modifier les articles ni le SEO.
+- [x] Vérifier les deux vues, quatre largeurs, clavier, zoom, liens et absence de répétitions.
+- [x] Fournir le bilan par page des images et prises de vue manquantes : docs/rapport-v55.md.
 
 ## V5.4
 
