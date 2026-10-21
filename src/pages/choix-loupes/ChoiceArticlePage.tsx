@@ -12,7 +12,8 @@ import ChoiceImages, { PHOTOS } from "@/components/choix-loupes/ChoiceImages";
 import { CHOICE_HUB, CHOICE_ARTICLES, getChoiceArticle, type ChoiceArticle } from "@/content/choix-loupes/articles";
 import ChoiceEditorialContext from "@/components/choix-loupes/ChoiceEditorialContext";
 import { HERO_PHOTO_ZONES } from "@/content/choix-loupes/editorialMode";
-import { FINAL_PHOTOS } from "@/components/choix-loupes/ChoiceImages";
+import PhotoBriefSlot from "@/components/choix-loupes/PhotoBriefSlot";
+import { ContrastModesHTML, FieldOfViewHTML, FunctionCards, GuideOpening, SectionCues } from "@/components/choix-loupes/TeachingModules";
 import "./choice-article.css";
 
 type HtmlNode = { type: string; tagName?: string; value?: string; children?: HtmlNode[]; properties?: Record<string, unknown> };
@@ -74,7 +75,7 @@ const FAMILIES = [
   { photo: PHOTOS.nora, href: "/aides-lecture-bassevision/loupes-verre/", label: "Voir les loupes optiques" },
   { photo: PHOTOS.lina, href: "/aides-lecture-bassevision/loupes-verre/", label: "Voir les loupes optiques" },
   { photo: PHOTOS.amelie, href: "/aides-lecture-bassevision/loupes-electroniques/", label: "Voir les loupes électroniques" },
-  { photo: PHOTOS.focus, href: "/aides-lecture-bassevision/lunettes-loupes/", label: "Voir les lunettes loupes" },
+  { photo: PHOTOS.clip, href: "/aides-lecture-bassevision/lunettes-loupes/", label: "Voir les lunettes loupes" },
   { photo: PHOTOS.mezzo, href: "/aides-lecture-bassevision/tele-agrandisseurs/", label: "Voir les téléagrandisseurs" },
 ];
 
@@ -103,7 +104,7 @@ function HubBody({ article, sections }: { article: ChoiceArticle; sections: Retu
       <div className="container max-w-6xl">
         <SectionTitle id="usages-title">Que souhaitez-vous lire ou faire ?</SectionTitle>
         {u.trim() && <div className="choice-prose"><Markdown source={u} /></div>}
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <ul className="choice-use-grid">
           {items.map((item, i) => { const link = USAGE_LINKS[i]; const target = CHOICE_ARTICLES.find((a) => a.path === CHOICE_HUB + link?.slug); const Icon = link?.icon ?? Search;
             return <li key={item.title} className="choice-card min-w-0 flex flex-col bg-card border border-border rounded-lg p-6">
               <div className="flex items-start gap-4 mb-3"><span className="choice-icon shrink-0" aria-hidden="true"><Icon className="w-7 h-7" /></span><h3 className="text-xl md:text-2xl font-bold text-foreground leading-snug">{link?.title ?? item.title}</h3></div>
@@ -112,10 +113,10 @@ function HubBody({ article, sections }: { article: ChoiceArticle; sections: Retu
             </li>; })}
         </ul>
         <div className="choice-prose mx-auto mt-8">
-          <details className="choice-usage-details"><summary className="text-xl font-bold text-primary cursor-pointer py-4">{usage.title} — les explications</summary>
+          <div className="choice-usage-details"><SectionTitle>{usage.title}</SectionTitle>
             {intro && <Content article={article} source={intro.content} />}
             <Markdown source={usage.content} />
-          </details>
+          </div>
         </div>
       </div>
     </section>; })()}
@@ -139,16 +140,13 @@ function HubBody({ article, sections }: { article: ChoiceArticle; sections: Retu
     {power && powerParts && <section aria-labelledby="puissance-title" className="bg-muted/50 border-y border-border py-12">
        <div className="container max-w-6xl choice-teaching-layout">
         <div className="min-w-0"><p className="choice-step">Repère 1 · Grossissement et largeur de texte</p><SectionTitle id="puissance-title">{power.title}</SectionTitle><Markdown source={powerParts.text} /></div>
-        <div className="min-w-0 lg:sticky lg:top-28">{powerParts.ids.map((id) => { const zone = article.zones.find((z) => z.id === id); return zone ? <ChoiceImages key={id} zone={zone} first={false} /> : null; })}</div>
+        <div className="min-w-0">{powerParts.ids.map((id) => { const zone = article.zones.find((z) => z.id === id); return zone ? <ChoiceImages key={id} zone={zone} first={false} /> : null; })}<FieldOfViewHTML /></div>
       </div>
     </section>}
 
     {lowVision && <section aria-labelledby="contraste-title" className="container max-w-6xl py-12">
        <div className="min-w-0"><p className="choice-step">Repère 2 · Grossir et contraster : deux fonctions distinctes</p><SectionTitle id="contraste-title">{lowVision.title}</SectionTitle>
-         <dl className="choice-functions grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-           <div><dt className="text-xl font-bold text-primary mb-2">Grossissement réglable</dt><dd className="text-xl leading-relaxed">Agrandir ou réduire l’image affichée sur l’écran.</dd></div>
-           <div><dt className="text-xl font-bold text-primary mb-2">Amélioration du contraste</dt><dd className="text-xl leading-relaxed">Selon le modèle, renforcer les couleurs naturelles ou afficher le texte avec deux couleurs contrastées.</dd></div>
-         </dl>
+         <FunctionCards /><ContrastModesHTML />
          <div className="choice-prose"><Content article={article} source={lowVision.content} /></div>
       </div>
     </section>}
@@ -172,9 +170,9 @@ function HubBody({ article, sections }: { article: ChoiceArticle; sections: Retu
     {guides && <section id="guides" aria-labelledby="guides-title" className="container max-w-6xl py-12 scroll-mt-28">
       <SectionTitle id="guides-title">{guides.title}</SectionTitle>
       <div className="choice-prose"><Markdown source={guides.content.split(/^- /m)[0]} /></div>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
         {guideItems.map((m) => <li key={m[2]} className="min-w-0"><a href={localHref(m[2])} className="choice-guide-card h-full flex flex-col bg-card border border-border rounded-lg p-6">
-          <span className="text-xl font-bold text-primary leading-snug mb-3">{m[1]}</span>
+          <span className="choice-icon mb-4" aria-hidden="true"><BookOpen /></span><span className="text-xl font-bold text-primary leading-snug mb-3">{m[1]}</span>
           <span className="text-lg leading-relaxed text-foreground flex-1">{m[3].replace(/\.$/, "")}.</span>
           <span className="mt-4 inline-flex items-center gap-2 text-lg font-bold text-primary underline underline-offset-4">Lire le guide<ArrowRight aria-hidden="true" className="w-5 h-5" /></span>
         </a></li>)}
@@ -212,16 +210,38 @@ const sectionKind = (title: string, content: string) => {
 
 function GuideBody({ article, sections }: { article: ChoiceArticle; sections: ReturnType<typeof splitChoiceSections> }) {
   const siblings = CHOICE_ARTICLES.filter((a) => a.path !== article.path);
-  return <article className="container py-8 md:py-10"><div className="max-w-4xl mx-auto">
+  const pageIndex = CHOICE_ARTICLES.indexOf(article);
+  // V5.5 placement supersedes historical IMAGE_ZONE positions without changing editorial text.
+  const slotFor = (title: string) => {
+    if (pageIndex === 1 && /^Essayez avec/.test(title)) return "pa-02";
+    if (pageIndex === 2 && !title) return "oe-01";
+    if (pageIndex === 2 && /^La loupe électronique :/.test(title)) return "oe-02";
+    if (pageIndex === 3 && /^Comment fonctionne/.test(title)) return "ls-02";
+    if (pageIndex === 4 && /^Pour lire et écrire/.test(title)) return "ml-02";
+    if (pageIndex === 5 && /^Quand choisir/.test(title)) return "el-02";
+    if (pageIndex === 5 && /^Vérifier d’abord/.test(title)) return "el-03";
+    if (pageIndex === 6 && /^La taille de la zone/.test(title)) return "te-01";
+    if (pageIndex === 6 && /^Le grand écran n’est/.test(title)) return "te-03";
+    return undefined;
+  };
+  return <article className="container max-w-6xl py-8 md:py-10">
     {sections.map((section, index) => {
-      if (section.faq) return <section key={index} aria-label={section.title} className="choice-faq rounded-lg my-10"><SectionTitle>{section.title}</SectionTitle><Faq article={article} section={section} /></section>;
-      const kind = sectionKind(section.title, section.content);
-       const teaching = /Essayez avec des documents|Comment fonctionne un clip|La loupe électronique :|Pour lire et écrire :|Quand choisir une loupe de lecture éclairante|Comparer deux appareils avec la même page/.test(section.title);
-       const activity = /Pour lire à plat|Pour coudre|Pour travailler sous une lentille/.test(section.title);
-       return <section key={index} className={`choice-section choice-${kind}${teaching ? " choice-teaching" : ""}${activity ? " choice-activity" : ""}${/La loupe électronique :/.test(section.title) ? " choice-distinct-functions" : ""}`}>
+      if (section.faq) return <section key={index} aria-label={section.title} className="choice-faq rounded-lg my-10 choice-prose mx-auto"><SectionTitle>{section.title}</SectionTitle><Faq article={article} section={section} /></section>;
+      const content = takeZones(section.content).text;
+      const kind = sectionKind(section.title, content);
+      const slot = slotFor(section.title);
+      const functions = /^La loupe électronique :/.test(section.title);
+      const activity = /Pour lire à plat|Pour coudre|Pour travailler sous une lentille/.test(section.title);
+      return <section key={index} className={`choice-section choice-${kind}${slot ? " choice-teaching" : ""}${activity ? " choice-activity" : ""}${functions ? " choice-distinct-functions" : ""}${slot ? "" : " choice-prose mx-auto"}`}>
         {kind === "check" && <p className="choice-badge">À vérifier</p>}
         {section.title && <h2 className="text-2xl md:text-3xl font-bold text-primary mt-10 mb-6 leading-snug">{section.title}</h2>}
-         {teaching ? (() => { const parts = takeZones(section.content); return <div className="choice-teaching-layout"><div className="min-w-0"><Content article={article} source={parts.text} /></div><div className="min-w-0">{parts.ids.map((id) => { const zone = article.zones.find((z) => z.id === id); return zone ? <ChoiceImages key={id} zone={zone} first={false} /> : null; })}</div></div>; })() : <Content article={article} source={section.content} />}
+        <SectionCues title={section.title} />
+        {functions && <FunctionCards />}
+        <div className={slot ? "choice-teaching-layout" : ""}>
+          <div className="min-w-0"><Content article={article} source={content} /></div>
+          {slot && <div className="min-w-0"><PhotoBriefSlot id={slot} />{functions && <ContrastModesHTML />}</div>}
+        </div>
+        {!section.title && <GuideOpening index={pageIndex} />}
       </section>;
     })}
     <nav aria-labelledby="autres-guides" className="mt-12 pt-8 border-t border-border">
@@ -232,7 +252,7 @@ function GuideBody({ article, sections }: { article: ChoiceArticle; sections: Re
         </a></li>)}
       </ul>
     </nav>
-  </div></article>;
+  </article>;
 }
 
 export default function ChoiceArticlePage() {
@@ -245,7 +265,6 @@ export default function ChoiceArticlePage() {
   const sections = splitChoiceSections(article.body);
   const heroZoneId = HERO_PHOTO_ZONES[CHOICE_ARTICLES.indexOf(article)];
   const heroZone = article.zones.find((zone) => zone.id === heroZoneId);
-  const finalHero = heroZoneId ? FINAL_PHOTOS[heroZoneId] : undefined;
   const introText = sections[0]?.content.replace(/\*\*/g, "").trim() ?? "";
   const repeatedLead = introText.startsWith(presentation.lead);
   return <div className="min-h-screen">
@@ -260,24 +279,23 @@ export default function ChoiceArticlePage() {
           </li>)}
         </ol>
       </nav>
-      <header className="choice-hero bg-primary text-primary-foreground py-8 md:py-12">
+      <header className="choice-hero py-8 md:py-12">
         <div className="container max-w-6xl grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 items-center">
           <div className="min-w-0">
-            <p className="text-secondary font-bold text-lg mb-3">{isHub ? "Le guide LIRELIA des aides à la lecture" : "Bien choisir son aide à la lecture"}</p>
-             <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-5">{article.h1.replace(/\s+([?!:;])/g, "\u00a0$1")}</h1>
+            <p className="text-primary font-bold text-lg mb-3">{isHub ? "Le guide LIRELIA des aides à la lecture" : "Bien choisir son aide à la lecture"}</p>
+             <h1 className="text-3xl md:text-4xl text-primary font-bold leading-snug mb-5">{article.h1.replace(/\s+([?!:;])/g, "\u00a0$1")}</h1>
              {!isHub && !repeatedLead && <p className="text-xl leading-relaxed mb-6">{presentation.lead}</p>}
             {isHub && <p className="text-xl leading-relaxed mb-6">Étiquette, courrier, livre ou travail manuel : partez de ce que vous voulez lire, puis comparez les solutions.</p>}
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
               <Button variant="secondary" asChild><a href={isHub ? "#usages" : "#essentiel"}>{isHub ? "Choisir selon mon usage" : "Les points à vérifier"}<ArrowRight aria-hidden="true" /></a></Button>
-              {isHub && <a href="#comparatif" className="text-lg font-semibold underline underline-offset-4 decoration-secondary">Voir le comparatif</a>}
+              {isHub && <a href="#comparatif" className="text-lg font-semibold underline underline-offset-4 decoration-secondary">Comparer les solutions</a>}
             </div>
           </div>
            <div className="min-w-0">
-             {finalHero && heroZone ? <ChoiceImages zone={heroZone} first /> : isHub ? <div className="choice-hero-motif" aria-hidden="true"><Mail className="w-20 h-20" /><BookOpen className="w-12 h-12" /><Search className="w-12 h-12" /></div> : <figure className="min-w-0">
+             {heroZone ? <ChoiceImages zone={heroZone} first /> : <figure className="min-w-0">
                <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="eager" className="choice-hero-photo w-full object-contain bg-card rounded-lg" />
                <figcaption className="text-lg mt-3">{photo.caption} — illustration du matériel</figcaption>
              </figure>}
-             {heroZone && !finalHero && <ChoiceImages zone={heroZone} first />}
            </div>
         </div>
       </header>
