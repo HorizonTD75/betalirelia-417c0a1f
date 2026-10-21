@@ -94,7 +94,7 @@ section.choice-table { background: hsl(var(--muted) / .5); border-radius: 8px; p
 .choice-card { box-shadow: var(--card-shadow); }
 .choice-section { margin-bottom: 2rem; }
 .choice-usage-details { padding-block: 1.5rem; }
-.choice-photo-slot { background: hsl(var(--photo-slot-background)); color: hsl(var(--photo-slot-foreground)); border: 1px solid hsl(var(--border)); border-radius: 8px; min-height: 0; margin-block: 1.5rem; display: flex; align-items: center; }
+.choice-photo-slot { background: hsl(var(--photo-slot-background)); color: hsl(var(--photo-slot-foreground)); border: 1px solid hsl(var(--border)); border-radius: 8px; margin-block: 1.5rem; display: block; height: auto; }
 .choice-ratio-16-10 { aspect-ratio: 16 / 10; }
 .choice-ratio-4-3 { aspect-ratio: 4 / 3; }
 .choice-brief { padding: 1.25rem; width: 100%; font-size: 1rem; line-height: 1.6; }
